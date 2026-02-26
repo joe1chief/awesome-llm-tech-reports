@@ -347,7 +347,7 @@ def render_updated_readme(
     model_index = generate_model_index_section(rows)
     text = re.sub(
         r"## Model Index \(Folded by Year\).*?(?=\n## Star History)",
-        model_index.rstrip(),
+        model_index.rstrip() + "\n\n",
         text,
         flags=re.S,
     )

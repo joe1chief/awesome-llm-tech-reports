@@ -254,6 +254,8 @@ flowchart LR
 | 2025-01 | DeepSeek | DeepSeek V3 | Strong MoE language model (671B total / 37B active) adopting Multi-head Latent Attention (MLA) and DeepSeekMoE architectures for efficient inference and cost-effective training. | https://arxiv.org/pdf/2412.19437 | 2025/deepseek/2025-01_deepseek-v3.pdf |
 
 </details>
+
+
 ## Star History
 
 <a href="https://star-history.com/#joe1chief/awesome-llm-tech-reports&Date">

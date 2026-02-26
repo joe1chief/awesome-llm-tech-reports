@@ -182,6 +182,7 @@ flowchart LR
         out = updater.render_updated_readme(readme, rows)
         self.assertIn("2026 (1 models)", out)
         self.assertIn("GPT-5.3-Codex", out)
+        self.assertIn("\n\n## Star History", out)
 
     def test_model_index_keeps_input_order_within_year(self) -> None:
         rows = [
