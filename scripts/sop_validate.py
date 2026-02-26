@@ -30,6 +30,26 @@ def parse_readme_table_month_counts(text: str) -> Counter:
     return Counter(r[0] for r in rows)
 
 
+def parse_readme_table_year_counts(text: str) -> Counter:
+    rows: List[List[str]] = []
+    for line in text.splitlines():
+        if not line.startswith("| "):
+            continue
+        if line.startswith("| Release Date") or line.startswith("| ---"):
+            continue
+        parts = [x.strip() for x in line.strip().strip("|").split("|")]
+        if len(parts) >= 6 and re.match(r"^20\d{2}-\d{2}$", parts[0]):
+            rows.append(parts)
+    return Counter(r[0][:4] for r in rows)
+
+
+def parse_year_summary_counts(text: str) -> Dict[str, int]:
+    out: Dict[str, int] = {}
+    for year, count in re.findall(r"<summary><b>(20\d{2}) \((\d+) models\)</b></summary>", text):
+        out[year] = int(count)
+    return out
+
+
 def parse_snapshot_counts(text: str) -> Dict[str, int]:
     out: Dict[str, int] = {}
     for yy, mm, rr in re.findall(r'\("(\d\d)-(\d\d)<br/>R(\d\d)"\)', text):
@@ -104,11 +124,15 @@ def validate() -> int:
     # Gate 3: monthly counts consistency: MODELS == README table == snapshot.
     model_counts = Counter(m["release_date"] for m in download_papers.MODELS)
     table_counts = parse_readme_table_month_counts(text)
+    table_year_counts = parse_readme_table_year_counts(text)
+    summary_year_counts = parse_year_summary_counts(text)
     snapshot_counts = parse_snapshot_counts(text)
     if dict(sorted(model_counts.items())) != dict(sorted(table_counts.items())):
         errors.append("monthly counts mismatch: MODELS vs README table")
     if dict(sorted(table_counts.items())) != dict(sorted(snapshot_counts.items())):
         errors.append("monthly counts mismatch: README table vs Monthly Density Snapshot")
+    if dict(sorted(table_year_counts.items())) != dict(sorted(summary_year_counts.items())):
+        errors.append("yearly counts mismatch: README table vs year summary headers")
 
     # Gate 4: monthly snapshot must remove side tags.
     snapshot_block = find_snapshot_block(text)

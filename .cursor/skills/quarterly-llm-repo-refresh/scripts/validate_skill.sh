@@ -8,9 +8,14 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../../../" && pwd)"
 SKILL_MD="$SKILL_DIR/SKILL.md"
 REFERENCE_MD="$SKILL_DIR/reference.md"
 EXAMPLES_MD="$SKILL_DIR/examples.md"
+README_UPDATER="$REPO_ROOT/scripts/update_readme_incremental.py"
 
 if [[ ! -f "$SKILL_MD" ]]; then
   echo "ERROR: missing SKILL.md"
+  exit 1
+fi
+if [[ ! -f "$README_UPDATER" ]]; then
+  echo "ERROR: missing README updater script $README_UPDATER"
   exit 1
 fi
 
@@ -55,6 +60,31 @@ PY
 cd "$REPO_ROOT"
 python3 scripts/sop_validate.py
 python3 -m unittest tests/test_download_papers.py
+python3 -m unittest tests/test_update_readme_incremental.py
+
+TMP_DIR="$(mktemp -d /tmp/quarterly-skill-validate.XXXXXX)"
+trap 'rm -rf "$TMP_DIR"' EXIT
+cp README.md "$TMP_DIR/README.md"
+cat > "$TMP_DIR/results.json" <<'JSON'
+[
+  {
+    "release_date": "2026-02",
+    "org": "OpenAI",
+    "org_slug": "openai",
+    "model": "GPT-5.3-Codex",
+    "core_feature": "agentic coding model",
+    "official_link": "https://cdn.openai.com/pdf/example.pdf",
+    "local_file_path": "2026/openai/2026-02_gpt-5.3-codex.pdf"
+  }
+]
+JSON
+python3 scripts/update_readme_incremental.py \
+  --readme "$TMP_DIR/README.md" \
+  --results-json "$TMP_DIR/results.json"
+python3 scripts/update_readme_incremental.py \
+  --readme "$TMP_DIR/README.md" \
+  --results-json "$TMP_DIR/results.json" \
+  --from-scratch
 
 python3 - <<'PY'
 from playwright.sync_api import sync_playwright

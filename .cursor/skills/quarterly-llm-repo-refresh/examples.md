@@ -10,12 +10,23 @@ python3 scripts/sop_validate.py
 python3 -m unittest tests/test_download_papers.py
 
 python3 download_papers.py --models-json /path/to/models.json
+python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
 ```
 
 ## Example 2: Fallback Run With In-File MODELS
 
 ```bash
 python3 download_papers.py
+python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+```
+
+## Example 2.1: Bootstrap Rebuild Mode
+
+```bash
+python3 download_papers.py --models-json /path/to/models.json
+python3 scripts/update_readme_incremental.py \
+  --results-json scripts/latest_download_results.json \
+  --from-scratch
 ```
 
 ## Example 3: `models.json` With Candidate Links
@@ -47,4 +58,3 @@ Expected behavior:
 ```bash
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```
-

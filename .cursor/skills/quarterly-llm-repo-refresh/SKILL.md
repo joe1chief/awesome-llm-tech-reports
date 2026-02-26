@@ -27,8 +27,9 @@ Use this skill when you need to:
 2. Re-crawl monitored organizations and rebuild model candidates.
 3. Prefer running downloader with dynamic snapshot:
    - `python3 download_papers.py --models-json <path/to/models.json>`
-4. Let downloader pick the best source URL at runtime from candidate links.
-5. Download direct PDF or render official webpage to PDF.
+4. Let downloader pick the best source URL at runtime from candidate links and write run results JSON.
+5. Update README incrementally from run results:
+   - `python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json`
 6. Validate repository consistency before commit/push.
 
 ## Hard Requirements
@@ -40,6 +41,9 @@ Use this skill when you need to:
 - Monthly snapshot rules:
   - no side tags;
   - bubble class name must be `b<count>` (dynamic, not fixed buckets).
+- Update policy:
+  - default mode is incremental append without breaking existing README style;
+  - for bootstrapping runs, use `--from-scratch` in README updater.
 
 ## Additional Resources
 
@@ -54,4 +58,3 @@ Before claiming completion, run:
 ```bash
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```
-

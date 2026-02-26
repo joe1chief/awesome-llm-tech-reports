@@ -51,6 +51,12 @@ Run:
 python3 download_papers.py --models-json <path/to/models.json>
 ```
 
+Downloader writes structured run output by default:
+
+```bash
+scripts/latest_download_results.json
+```
+
 ## 5) Release Month Accuracy
 
 Downloader must calibrate `release_date` by source evidence at runtime:
@@ -93,6 +99,20 @@ Example:
 - release count `7` -> class `b7`
 - release count `12` -> class `b12`
 
+README update command (incremental append mode):
+
+```bash
+python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+```
+
+From-scratch bootstrap mode:
+
+```bash
+python3 scripts/update_readme_incremental.py \
+  --results-json scripts/latest_download_results.json \
+  --from-scratch
+```
+
 ## 8) Mandatory Validation
 
 Run in repo root:
@@ -100,6 +120,7 @@ Run in repo root:
 ```bash
 python3 scripts/sop_validate.py
 python3 -m unittest tests/test_download_papers.py
+python3 -m unittest tests/test_update_readme_incremental.py
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```
 
