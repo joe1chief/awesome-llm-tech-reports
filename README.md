@@ -6,40 +6,16 @@
   <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--02-4c1" alt="time range">
   <img src="https://img.shields.io/badge/Models-46-blue" alt="models">
   <img src="https://img.shields.io/badge/Local%20PDF-43-success" alt="local pdf">
-  <img src="https://img.shields.io/badge/Failed-3-critical" alt="failed">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
 </p>
-
-<div align="center">
-
-### **46 Models · 18 Organizations · 43 Local PDFs**
-
-</div>
-
-<details>
-<summary><b>View All 18 Organizations</b></summary>
-
-<div align="center">
-
-| | | |
-|:---:|:---:|:---:|
-| **OpenAI** (6) | **Anthropic** (5) | **Google** (6) |
-| **Meta** (1) | **xAI** (3) | **DeepSeek** (4) |
-| **Alibaba / Qwen** (3) | **Zhipu AI** (2) | **Moonshot AI** (2) |
-| **MiniMax** (2) | **StepFun** (2) | **Baidu** (2) |
-| **Baichuan** (2) | **InclusionAI** (1) | **ByteDance** (4) |
-| **Tencent** (1) | **Meituan** (2) | **Quark** (1) |
-
-</div>
-
-</details>
 
 ---
 
 ## Table of Contents
 
 - [Project Scope](#project-scope)
+- [Release Timeline](#release-timeline)
 - [Company Quick Links](#company-quick-links)
 - [Model Index (Folded by Year)](#model-index-folded-by-year)
 - [Star History](#star-history)
@@ -49,6 +25,141 @@
 - Systematically archives major model releases from **January 2025** to **February 2026** across LLM, multimodal, and medical-vertical domains.
 - Downloads official papers, system cards, model cards as local PDFs; exports web-only blog pages to PDF via headless browser.
 - Provides a single searchable Markdown index sorted in reverse chronological order.
+
+## Release Timeline
+
+**Legend (Camp Colors):** `OpenAI` · `Anthropic` · `Google` · `China-based Labs` · `Other Global`  
+**Impact Highlight:** nodes with **★** are ecosystem-shaping releases (community discussion, benchmark influence, or deployment adoption).
+
+```mermaid
+flowchart TB
+  %% Main backbone
+  T1["2025-01"] --> T2["2025-03"] --> T3["2025-04"] --> T4["2025-05"] --> T5["2025-06"] --> T6["2025-07"] --> T7["2025-08"] --> T8["2025-09"] --> T9["2025-10"] --> T10["2025-11"] --> T11["2025-12"] --> T12["2026-02"]
+
+  %% OpenAI lane
+  subgraph O["OpenAI"]
+    direction LR
+    O1["2025-04<br/>o3 / o4-mini"] --> O2["2025-08<br/>★ GPT-5<br/>gpt-oss-120b/20b"] --> O3["2025-12<br/>GPT-5.2"] --> O4["2026-02<br/>★ GPT-5.3-Codex"]
+  end
+
+  %% Anthropic lane
+  subgraph A["Anthropic"]
+    direction LR
+    A1["2025-05<br/>Claude Opus 4 / Sonnet 4"] --> A2["2025-06<br/>Claude Opus 4.5<br/>Claude Sonnet 4.5"] --> A3["2026-02<br/>★ Claude Opus 4.6"]
+  end
+
+  %% Google lane
+  subgraph G["Google"]
+    direction LR
+    G1["2025-03<br/>Gemma 3"] --> G2["2025-07<br/>★ Gemini 2.5 Pro<br/>Gemini 2.5 Flash"] --> G3["2025-11<br/>Gemini 3 Pro"] --> G4["2025-12<br/>Gemini 3 Flash"]
+  end
+
+  %% China-based lane
+  subgraph C["China-based Labs"]
+    direction LR
+    C1["2025-01<br/>★ DeepSeek R1<br/>DeepSeek V3"] --> C2["2025-04<br/>Seed1.5-Thinking"] --> C3["2025-05<br/>★ Qwen3<br/>Yuanbao (Hunyuan-TurboS)<br/>Seed1.5-VL"] --> C4["2025-07<br/>Kimi K2.0"] --> C5["2025-08<br/>GLM-4.5<br/>QuarkMed"] --> C6["2025-09<br/>DeepSeek V3.1-Terminus<br/>Baichuan-M2<br/>LongCat-Flash<br/>LongCat-Flash-Thinking"] --> C7["2025-10<br/>MiniMax M2.0"] --> C8["2025-11<br/>Qwen3-VL"] --> C9["2025-12<br/>DeepSeek V3.2<br/>Step-DeepResearch"] --> C10["2026-02<br/>★ GLM-5<br/>Step-3.5-Flash<br/>ERNIE 5.0<br/>Baichuan-M3<br/>MedXIAOHE<br/>Seed 2.0<br/>Qwen 3.5<br/>MiniMax M2.5<br/>★ Kimi K2.5<br/>Ling 2.5"]
+  end
+
+  %% Other global lane
+  subgraph X["Other Global"]
+    direction LR
+    X1["2025-04<br/>★ Llama 4 Scout/Maverick"] --> X2["2025-07<br/>Grok 4"] --> X3["2025-09<br/>Grok 4 Fast"] --> X4["2025-11<br/>Grok 4.1"]
+  end
+
+  %% Sync lines to the global timeline
+  T1 -.-> C1
+  T2 -.-> G1
+  T3 -.-> O1
+  T3 -.-> C2
+  T3 -.-> X1
+  T4 -.-> A1
+  T4 -.-> C3
+  T5 -.-> A2
+  T6 -.-> G2
+  T6 -.-> C4
+  T6 -.-> X2
+  T7 -.-> O2
+  T7 -.-> C5
+  T8 -.-> C6
+  T8 -.-> X3
+  T9 -.-> C7
+  T10 -.-> G3
+  T10 -.-> C8
+  T10 -.-> X4
+  T11 -.-> O3
+  T11 -.-> G4
+  T11 -.-> C9
+  T12 -.-> O4
+  T12 -.-> A3
+  T12 -.-> C10
+
+  %% Camp colors
+  classDef openai fill:#e8f2ff,stroke:#2f6feb,stroke-width:1.5px,color:#0b1f44;
+  classDef anthropic fill:#fff4e8,stroke:#b15f00,stroke-width:1.5px,color:#4a2800;
+  classDef google fill:#e9fbe9,stroke:#1a7f37,stroke-width:1.5px,color:#083b1e;
+  classDef china fill:#fff0f6,stroke:#bf3989,stroke-width:1.5px,color:#4a0d2f;
+  classDef other fill:#f4f4f4,stroke:#6e7781,stroke-width:1.5px,color:#24292f;
+  classDef impact fill:#fff8c5,stroke:#d4a72c,stroke-width:3px,color:#3d2f00;
+
+  class O1,O2,O3,O4 openai;
+  class A1,A2,A3 anthropic;
+  class G1,G2,G3,G4 google;
+  class C1,C2,C3,C4,C5,C6,C7,C8,C9,C10 china;
+  class X1,X2,X3,X4 other;
+  class O2,O4,A3,G2,C1,C3,C10,X1 impact;
+```
+
+<details>
+<summary><b>Monthly Density Snapshot</b></summary>
+
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#f8fafc",
+    "primaryTextColor": "#000000",
+    "lineColor": "#64748b",
+    "fontFamily": "Segoe UI, Arial, sans-serif"
+  }
+}}%%
+flowchart LR
+  M1(("25-01<br/>R02")) --> M2(("25-03<br/>R01")) --> M3(("25-04<br/>R03")) --> M4(("25-05<br/>R04")) --> M5(("25-06<br/>R03")) --> M6(("25-07<br/>R04")) --> M7(("25-08<br/>R04")) --> M8(("25-09<br/>R05")) --> M9(("25-10<br/>R01")) --> M10(("25-11<br/>R03")) --> M11(("25-12<br/>R04")) --> M12(("26-02<br/>R12"))
+
+  M1 --- T1["DeepSeek"]
+  M2 --- T2["Google"]
+  M3 --- T3["OpenAI · Meta · ByteDance"]
+  M4 --- T4["Anthropic · Alibaba · Tencent · ByteDance"]
+  M5 --- T5["Anthropic · Baidu"]
+  M6 --- T6["Google · xAI · Moonshot"]
+  M7 --- T7["OpenAI · Zhipu · Quark"]
+  M8 --- T8["xAI · DeepSeek · Baichuan · Meituan"]
+  M9 --- T9["MiniMax"]
+  M10 --- T10["Google · xAI · Alibaba"]
+  M11 --- T11["OpenAI · DeepSeek · Google · StepFun"]
+  T12L["OpenAI · Anthropic · ByteDance · Alibaba · MiniMax · Moonshot"] --- M12
+  M12 --- T12R["Zhipu · Baidu · Baichuan · StepFun · InclusionAI"]
+
+  classDef b1 fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#000000,font-size:10px;
+  classDef b2 fill:#eef2ff,stroke:#818cf8,stroke-width:1.5px,color:#000000,font-size:12px;
+  classDef b3 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#000000,font-size:14px;
+  classDef b4 fill:#bfdbfe,stroke:#2563eb,stroke-width:3px,color:#000000,font-size:16px;
+  classDef b5 fill:#a5b4fc,stroke:#4f46e5,stroke-width:4px,color:#000000,font-size:19px;
+  classDef b12 fill:#6366f1,stroke:#312e81,stroke-width:6px,color:#000000,font-size:24px;
+  classDef tag fill:#ffffff,stroke:#cbd5e1,stroke-width:1px,color:#000000,font-size:11px;
+
+  class M2,M9 b1;
+  class M1 b2;
+  class M3,M5,M10 b3;
+  class M4,M6,M7,M11 b4;
+  class M8 b5;
+  class M12 b12;
+  class T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12L,T12R tag;
+```
+
+> Main bubbles: month + release count. Side tags: representative companies for that month.
+
+</details>
 
 ## Company Quick Links
 
