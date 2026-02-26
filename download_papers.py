@@ -3,7 +3,7 @@ import html
 import argparse
 from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -17,8 +17,21 @@ except Exception:  # pragma: no cover - optional dependency fallback
 
 ROOT = Path(__file__).resolve().parent
 
+SOURCE_PRIORITY_RULES: List[Tuple[str, int]] = [
+    ("arxiv.org/pdf/", 100),
+    ("arxiv.org/abs/", 98),
+    ("cdn.openai.com/pdf/", 95),
+    ("assets.anthropic.com/", 94),
+    ("www-cdn.anthropic.com/", 94),
+    ("storage.googleapis.com/deepmind-media/model-cards/", 93),
+    ("data.x.ai/", 92),
+    ("yiyan.baidu.com/blog/publication/", 90),
+    ("lf3-static.bytednsdoc.com/", 89),
+    ("raw.githubusercontent.com/", 88),
+]
+_WEB_RENDER_READY: Optional[bool] = None
 
-MODELS: List[Dict[str, str]] = [
+MODELS: List[Dict[str, Any]] = [
     # 2026-02
     {
         "release_date": "2026-02",
@@ -430,6 +443,120 @@ def normalize_url(url: str) -> str:
     return url
 
 
+def collect_candidate_links(record: Dict[str, Any]) -> List[str]:
+    candidates: List[str] = []
+    raw_candidates = record.get("candidate_links")
+    if isinstance(raw_candidates, list):
+        for c in raw_candidates:
+            if isinstance(c, str) and c.strip():
+                candidates.append(normalize_url(c.strip()))
+    official = record.get("official_link")
+    if isinstance(official, str) and official.strip():
+        candidates.append(normalize_url(official.strip()))
+
+    deduped: List[str] = []
+    seen = set()
+    for c in candidates:
+        if c in seen:
+            continue
+        seen.add(c)
+        deduped.append(c)
+    return deduped
+
+
+def source_priority_score(url: str) -> int:
+    u = url.lower()
+    for pattern, score in SOURCE_PRIORITY_RULES:
+        if pattern in u:
+            return score
+    if is_pdf_url(url):
+        return 75
+    if should_render_webpage_to_pdf(url):
+        if "github.com/" in u and "/raw/" not in u:
+            return 35
+        return 45
+    return 10
+
+
+def can_render_webpage_to_pdf() -> bool:
+    global _WEB_RENDER_READY
+    if _WEB_RENDER_READY is not None:
+        return _WEB_RENDER_READY
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            browser.close()
+        _WEB_RENDER_READY = True
+    except Exception:
+        _WEB_RENDER_READY = False
+    return _WEB_RENDER_READY
+
+
+def probe_source_url(session: requests.Session, url: str) -> Tuple[bool, str]:
+    try:
+        if is_pdf_url(url):
+            with session.get(url, timeout=20, stream=True) as resp:
+                if resp.status_code >= 400:
+                    return False, f"http_{resp.status_code}"
+                content_type = (resp.headers.get("Content-Type") or "").lower()
+                if "pdf" in content_type:
+                    return True, "pdf_content_type"
+                first_chunk = b""
+                for chunk in resp.iter_content(chunk_size=16):
+                    if chunk:
+                        first_chunk = chunk
+                        break
+                if first_chunk.startswith(b"%PDF-"):
+                    return True, "pdf_signature"
+                return False, f"not_pdf:{content_type or 'unknown'}"
+
+        if should_render_webpage_to_pdf(url):
+            resp = session.get(url, timeout=20)
+            if resp.status_code >= 400:
+                return False, f"http_{resp.status_code}"
+            content_type = (resp.headers.get("Content-Type") or "").lower()
+            if "html" not in content_type and "text" not in content_type:
+                return False, f"non_html:{content_type or 'unknown'}"
+            if not can_render_webpage_to_pdf():
+                return False, "renderer_unavailable"
+            return True, "html_renderable"
+
+        return False, "unsupported_scheme"
+    except Exception as e:
+        return False, f"probe_error:{type(e).__name__}"
+
+
+def choose_best_source_url(
+    session: requests.Session,
+    record: Dict[str, Any],
+    probe_cache: Dict[str, Tuple[bool, str]],
+) -> Tuple[str, str]:
+    candidates = collect_candidate_links(record)
+    if not candidates:
+        return "", "no_candidate_url"
+
+    available: List[Tuple[int, int, str, str]] = []
+    unavailable: List[Tuple[int, int, str, str]] = []
+    for idx, url in enumerate(candidates):
+        base = source_priority_score(url)
+        if url in probe_cache:
+            ok, reason = probe_cache[url]
+        else:
+            ok, reason = probe_source_url(session, url)
+            probe_cache[url] = (ok, reason)
+        bucket = available if ok else unavailable
+        bucket.append((base, -idx, url, reason))
+
+    if available:
+        base, _, url, reason = max(available)
+        return url, f"probe_ok:{reason}|priority={base}"
+
+    base, _, url, reason = max(unavailable)
+    return url, f"probe_fail_fallback:{reason}|priority={base}"
+
+
 def extract_arxiv_id(url: str) -> Optional[str]:
     m = re.search(r"arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]{4,5})(?:v\d+)?", url)
     if not m:
@@ -706,10 +833,9 @@ def _render_text_fallback_pdf(page, url: str, output: Path) -> bool:
 
 def render_webpage_to_pdf(url: str, output: Path) -> bool:
     output.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        from playwright.sync_api import sync_playwright
-    except Exception:
+    if not can_render_webpage_to_pdf():
         return False
+    from playwright.sync_api import sync_playwright
 
     try:
         with sync_playwright() as p:
@@ -772,22 +898,57 @@ def generate_markdown(records: List[Dict[str, str]]) -> str:
     return "\n".join(lines)
 
 
-def main(write_readme: bool = False) -> None:
+def load_models_from_json(models_json_path: Path) -> List[Dict[str, Any]]:
+    import json
+
+    raw = json.loads(models_json_path.read_text(encoding="utf-8"))
+    if not isinstance(raw, list):
+        raise ValueError("models_json must be a list")
+
+    required = {"release_date", "org", "org_slug", "model", "core_feature", "official_link"}
+    models: List[Dict[str, Any]] = []
+    for idx, item in enumerate(raw, start=1):
+        if not isinstance(item, dict):
+            raise ValueError(f"models_json item #{idx} must be an object")
+        missing = required - set(item.keys())
+        if missing:
+            raise ValueError(f"models_json item #{idx} missing fields: {sorted(missing)}")
+        models.append(dict(item))
+    return models
+
+
+def main(write_readme: bool = False, models: Optional[List[Dict[str, Any]]] = None) -> None:
     session = build_session()
     results: List[Dict[str, str]] = []
     ok, fail, skip = 0, 0, 0
 
-    normalized_links = [normalize_url(m["official_link"]) for m in MODELS]
+    active_models = models if models is not None else MODELS
+    sorted_models = sorted(active_models, key=lambda x: x["release_date"], reverse=True)
+
+    probe_cache: Dict[str, Tuple[bool, str]] = {}
+    selected_links: List[str] = []
+    selected_reasons: List[str] = []
+    for item in sorted_models:
+        selected_link, select_reason = choose_best_source_url(session, item, probe_cache)
+        if not selected_link:
+            selected_link = normalize_url(str(item.get("official_link", "")))
+            select_reason = "single_source_fallback"
+        selected_links.append(selected_link)
+        selected_reasons.append(select_reason)
+
+    normalized_links = [normalize_url(x) for x in selected_links if x]
     link_frequency = Counter(normalized_links)
     release_month_cache: Dict[str, Tuple[Optional[str], str]] = {}
 
-    sorted_models = sorted(MODELS, key=lambda x: x["release_date"], reverse=True)
-
     for idx, item in enumerate(sorted_models, start=1):
         record = dict(item)
-        link = normalize_url(record["official_link"])
+        declared_link = normalize_url(str(record["official_link"]))
+        link = normalize_url(selected_links[idx - 1])
+        source_reason = selected_reasons[idx - 1]
+        if link != declared_link:
+            print(f"  URL优选: {declared_link} -> {link} ({source_reason})", flush=True)
         record["official_link"] = link
-        declared_release_date = record["release_date"]
+        declared_release_date = str(record["release_date"])
         release_date, release_source = resolve_release_month(
             session=session,
             declared_release_date=declared_release_date,
@@ -875,5 +1036,13 @@ if __name__ == "__main__":
         action="store_true",
         help="Regenerate README.md from raw records (disabled by default)",
     )
+    parser.add_argument(
+        "--models-json",
+        type=Path,
+        help="Optional JSON list regenerated by crawler to override in-file MODELS snapshot",
+    )
     args = parser.parse_args()
-    main(write_readme=args.write_readme)
+    runtime_models = None
+    if args.models_json:
+        runtime_models = load_models_from_json(args.models_json)
+    main(write_readme=args.write_readme, models=runtime_models)

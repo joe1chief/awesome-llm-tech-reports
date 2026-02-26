@@ -2,6 +2,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
+import json
 
 try:
     from llm_papers import download_papers
@@ -84,6 +85,53 @@ class DownloadPapersTests(unittest.TestCase):
             )
         self.assertEqual(month, "2025-07")
         self.assertEqual(source, "manual_shared_link")
+
+    def test_source_priority_prefers_pdf_over_blog(self) -> None:
+        self.assertGreater(
+            download_papers.source_priority_score("https://arxiv.org/pdf/2505.09388"),
+            download_papers.source_priority_score("https://qwen.ai/blog?id=qwen3.5"),
+        )
+
+    def test_choose_best_source_url_prefers_available_candidate(self) -> None:
+        record = {
+            "official_link": "https://qwen.ai/blog?id=qwen3.5",
+            "candidate_links": [
+                "https://qwen.ai/blog?id=qwen3.5",
+                "https://arxiv.org/abs/2505.09388",
+            ],
+        }
+        with patch.object(
+            download_papers,
+            "probe_source_url",
+            side_effect=[(False, "renderer_unavailable"), (True, "pdf_content_type")],
+        ):
+            url, reason = download_papers.choose_best_source_url(
+                download_papers.build_session(), record, {}
+            )
+        self.assertEqual(url, "https://arxiv.org/pdf/2505.09388")
+        self.assertIn("probe_ok", reason)
+
+    def test_load_models_from_json_accepts_runtime_snapshot(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            models_path = Path(tmpdir) / "models.json"
+            models_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "release_date": "2026-02",
+                            "org": "OpenAI",
+                            "org_slug": "openai",
+                            "model": "GPT-X",
+                            "core_feature": "runtime generated",
+                            "official_link": "https://cdn.openai.com/pdf/example.pdf",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            models = download_papers.load_models_from_json(models_path)
+            self.assertEqual(len(models), 1)
+            self.assertEqual(models[0]["model"], "GPT-X")
 
 
 if __name__ == "__main__":

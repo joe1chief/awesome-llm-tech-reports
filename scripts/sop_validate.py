@@ -115,16 +115,15 @@ def validate() -> int:
     if re.search(r"\bT\d+\[", snapshot_block) or "classDef tag" in snapshot_block:
         errors.append("Monthly Density Snapshot still contains side tags")
 
-    # Gate 5: bubble size class must match count buckets.
-    # Mapping frozen in README style.
+    # Gate 5: bubble size class must match release count dynamically.
+    # Naming contract: class name must be b<count>, e.g. count=7 -> b7.
     class_map = parse_snapshot_node_class_map(snapshot_block)
     node_counts = parse_snapshot_nodes(snapshot_block)
-    expected = {1: "b1", 2: "b2", 3: "b3", 4: "b4", 5: "b5", 12: "b12"}
     for node, cnt in sorted(node_counts.items()):
-        exp = expected.get(cnt)
-        if not exp:
-            continue
+        exp = f"b{cnt}"
         got = class_map.get(node)
+        if got and not re.match(r"^b\d+$", got):
+            errors.append(f"bubble class format invalid: {node} got={got} (expect b<count>)")
         if got != exp:
             errors.append(f"bubble class mismatch: {node} count={cnt} expected={exp} got={got}")
 
