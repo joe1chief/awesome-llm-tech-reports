@@ -4,8 +4,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--02-4c1" alt="time range">
-  <img src="https://img.shields.io/badge/Models-46-blue" alt="models">
-  <img src="https://img.shields.io/badge/Local%20PDF-43-success" alt="local pdf">
+  <img src="https://img.shields.io/badge/Models-47-blue" alt="models">
+  <img src="https://img.shields.io/badge/Local%20PDF-44-success" alt="local pdf">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
 </p>
@@ -57,13 +57,13 @@ flowchart TB
   %% China-based lane
   subgraph C["China-based Labs"]
     direction LR
-    C1["2025-01<br/>★ DeepSeek R1<br/>DeepSeek V3"] --> C2["2025-04<br/>Seed1.5-Thinking"] --> C3["2025-05<br/>★ Qwen3<br/>Yuanbao (Hunyuan-TurboS)<br/>Seed1.5-VL"] --> C4["2025-07<br/>Kimi K2.0"] --> C5["2025-08<br/>GLM-4.5<br/>QuarkMed"] --> C6["2025-09<br/>DeepSeek V3.1-Terminus<br/>Baichuan-M2<br/>LongCat-Flash<br/>LongCat-Flash-Thinking"] --> C7["2025-10<br/>MiniMax M2.0"] --> C8["2025-11<br/>Qwen3-VL"] --> C9["2025-12<br/>DeepSeek V3.2<br/>Step-DeepResearch"] --> C10["2026-02<br/>★ GLM-5<br/>Step-3.5-Flash<br/>ERNIE 5.0<br/>Baichuan-M3<br/>MedXIAOHE<br/>Seed 2.0<br/>Qwen 3.5<br/>MiniMax M2.5<br/>★ Kimi K2.5<br/>Ling 2.5"]
+    C1["2025-01<br/>★ DeepSeek R1<br/>DeepSeek V3"] --> C2["2025-04<br/>Seed1.5-Thinking"] --> C3["2025-05<br/>★ Qwen3<br/>Yuanbao (Hunyuan-TurboS)<br/>Seed1.5-VL"] --> C4["2025-07<br/>Kimi K2.0"] --> C5["2025-08<br/>GLM-4.5<br/>QuarkMed"] --> C6["2025-09<br/>DeepSeek V3.1-Terminus<br/>Baichuan-M2<br/>LongCat-Flash<br/>LongCat-Flash-Thinking"] --> C7["2025-10<br/>LongCat-Flash-Omni<br/>MiniMax M2.0"] --> C8["2025-11<br/>Qwen3-VL"] --> C9["2025-12<br/>DeepSeek V3.2<br/>Step-DeepResearch"] --> C10["2026-02<br/>★ GLM-5<br/>Step-3.5-Flash<br/>ERNIE 5.0<br/>Baichuan-M3<br/>MedXIAOHE<br/>Seed 2.0<br/>Qwen 3.5<br/>MiniMax M2.5<br/>★ Kimi K2.5<br/>Ling 2.5"]
   end
 
   %% Other global lane
   subgraph X["Other Global"]
     direction LR
-    X1["2025-04<br/>★ Llama 4 Scout/Maverick"] --> X2["2025-07<br/>Grok 4"] --> X3["2025-09<br/>Grok 4 Fast"] --> X4["2025-11<br/>Grok 4.1"]
+    X1["2025-04<br/>★ Llama 4 Scout/Maverick"] --> X2["2025-08<br/>Grok 4"] --> X3["2025-09<br/>Grok 4 Fast"] --> X4["2025-11<br/>Grok 4.1"]
   end
 
   %% Sync lines to the global timeline
@@ -77,9 +77,9 @@ flowchart TB
   T5 -.-> A2
   T6 -.-> G2
   T6 -.-> C4
-  T6 -.-> X2
   T7 -.-> O2
   T7 -.-> C5
+  T7 -.-> X2
   T8 -.-> C6
   T8 -.-> X3
   T9 -.-> C7
@@ -124,21 +124,7 @@ flowchart TB
   }
 }}%%
 flowchart LR
-  M1(("25-01<br/>R02")) --> M2(("25-03<br/>R01")) --> M3(("25-04<br/>R03")) --> M4(("25-05<br/>R04")) --> M5(("25-06<br/>R03")) --> M6(("25-07<br/>R04")) --> M7(("25-08<br/>R04")) --> M8(("25-09<br/>R05")) --> M9(("25-10<br/>R01")) --> M10(("25-11<br/>R03")) --> M11(("25-12<br/>R04")) --> M12(("26-02<br/>R12"))
-
-  M1 --- T1["DeepSeek"]
-  M2 --- T2["Google"]
-  M3 --- T3["OpenAI · Meta · ByteDance"]
-  M4 --- T4["Anthropic · Alibaba · Tencent · ByteDance"]
-  M5 --- T5["Anthropic · Baidu"]
-  M6 --- T6["Google · xAI · Moonshot"]
-  M7 --- T7["OpenAI · Zhipu · Quark"]
-  M8 --- T8["xAI · DeepSeek · Baichuan · Meituan"]
-  M9 --- T9["MiniMax"]
-  M10 --- T10["Google · xAI · Alibaba"]
-  M11 --- T11["OpenAI · DeepSeek · Google · StepFun"]
-  T12L["OpenAI · Anthropic · ByteDance · Alibaba · MiniMax · Moonshot"] --- M12
-  M12 --- T12R["Zhipu · Baidu · Baichuan · StepFun · InclusionAI"]
+  M1(("25-01<br/>R02")) --> M2(("25-03<br/>R01")) --> M3(("25-04<br/>R03")) --> M4(("25-05<br/>R04")) --> M5(("25-06<br/>R03")) --> M6(("25-07<br/>R03")) --> M7(("25-08<br/>R05")) --> M8(("25-09<br/>R05")) --> M9(("25-10<br/>R02")) --> M10(("25-11<br/>R03")) --> M11(("25-12<br/>R04")) --> M12(("26-02<br/>R12"))
 
   classDef b1 fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#000000,font-size:10px;
   classDef b2 fill:#eef2ff,stroke:#818cf8,stroke-width:1.5px,color:#000000,font-size:12px;
@@ -146,18 +132,16 @@ flowchart LR
   classDef b4 fill:#bfdbfe,stroke:#2563eb,stroke-width:3px,color:#000000,font-size:16px;
   classDef b5 fill:#a5b4fc,stroke:#4f46e5,stroke-width:4px,color:#000000,font-size:19px;
   classDef b12 fill:#6366f1,stroke:#312e81,stroke-width:6px,color:#000000,font-size:24px;
-  classDef tag fill:#ffffff,stroke:#cbd5e1,stroke-width:1px,color:#000000,font-size:11px;
 
-  class M2,M9 b1;
-  class M1 b2;
-  class M3,M5,M10 b3;
-  class M4,M6,M7,M11 b4;
-  class M8 b5;
+  class M2 b1;
+  class M1,M9 b2;
+  class M3,M5,M6,M10 b3;
+  class M4,M11 b4;
+  class M7,M8 b5;
   class M12 b12;
-  class T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12L,T12R tag;
 ```
 
-> Main bubbles: month + release count. Side tags: representative companies for that month.
+> Bubbles show month + release count from the model index table.
 
 </details>
 
@@ -240,6 +224,7 @@ flowchart LR
 | 2025-11 | Google | Gemini 3 Pro | Model card for Gemini 3 Pro covering complex reasoning and agentic workflow capabilities; includes known limitations, mitigation approaches, and safety performance documentation. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf | 2025/google/2025-11_gemini-3-pro.pdf |
 | 2025-11 | xAI | Grok 4.1 | Iterative update to Grok 4 model card with continued safety evaluation coverage. | https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf | Download failed |
 | 2025-11 | Alibaba | Qwen3-VL | Most capable vision-language model in the Qwen series; natively supports interleaved contexts up to 256K tokens, seamlessly integrating text, images, and video for multimodal reasoning. | https://arxiv.org/pdf/2511.21631 | 2025/alibaba_qwen/2025-11_qwen3-vl.pdf |
+| 2025-10 | Meituan | LongCat-Flash-Omni | Open-source omni-modal 560B model (27B activated) optimized for low-latency real-time audio-visual interaction; uses curriculum-inspired progressive multimodal training with modality-decoupled parallelism sustaining over 90% of text-only training throughput. | https://arxiv.org/pdf/2511.00279 | 2025/meituan/2025-10_longcat-flash-omni.pdf |
 | 2025-10 | MiniMax | MiniMax M2.0 | Compact MoE model (230B total / 10B active) built for elite coding and agentic workflows; ranks #1 among open-source models on Artificial Analysis composite score with strong tool-use performance. | https://github.com/MiniMax-AI/MiniMax-M2 | 2025/minimax/2025-10_minimax-m2.0.pdf |
 | 2025-09 | xAI | Grok 4 Fast | Low-latency inference variant of Grok 4 with safety evaluation coverage. | https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf | Download failed |
 | 2025-09 | DeepSeek | DeepSeek V3.1-Terminus | Engineering iteration of V3 (MoE 671B/37B); adopts Multi-head Latent Attention (MLA) and DeepSeekMoE architectures for efficient inference and cost-effective training. | https://arxiv.org/pdf/2412.19437 | 2025/deepseek/2025-09_deepseek-v3.1-terminus.pdf |
@@ -250,8 +235,8 @@ flowchart LR
 | 2025-08 | OpenAI | GPT-5 | Unified system card covering multi-model routing architecture and comprehensive safety evaluations across the GPT-5 model family including reasoning and tool-use capabilities. | https://cdn.openai.com/pdf/8124a3ce-ab78-4f06-96eb-49ea29ffb52f/gpt5-system-card-aug7.pdf | 2025/openai/2025-08_gpt-5.pdf |
 | 2025-08 | OpenAI | gpt-oss-120b/20b | Apache 2.0 open-weight MoE models (120B and 20B); model card covers architecture, quantization, and post-training for reasoning and tool use. | https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf | 2025/openai/2025-08_gpt-oss-120b-20b.pdf |
 | 2025-08 | Quark (Alibaba) | QuarkMed | Medical foundation model trained on 1T healthcare tokens with verifiable RL pipeline; technical report covers clinical reasoning, safety, and multi-task medical benchmarks. | https://arxiv.org/pdf/2508.11894 | 2025/quark/2025-08_quarkmed.pdf |
+| 2025-08 | xAI | Grok 4 | High-capability reasoning and tool-use model card with 256K context and comprehensive safety evaluation. | https://data.x.ai/2025-08-20-grok-4-model-card.pdf | Download failed |
 | 2025-07 | Moonshot AI | Kimi K2.0 | MoE LLM with 1T total / 32B active parameters; proposes MuonClip optimizer with QK-clip technique to address training instability while enabling efficient large-scale agentic training. | https://arxiv.org/pdf/2507.20534 | 2025/moonshot/2025-07_kimi-k2.0.pdf |
-| 2025-07 | xAI | Grok 4 | High-capability reasoning and tool-use model card with 256K context and comprehensive safety evaluation. | https://data.x.ai/2025-08-20-grok-4-model-card.pdf | Download failed |
 | 2025-07 | Google | Gemini 2.5 Pro | Native multimodal MoE Transformer model card with 1M context; covers known limitations, mitigation approaches, and safety performance for the Gemini 2.5 Pro release. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf | 2025/google/2025-07_gemini-2.5-pro.pdf |
 | 2025-07 | Google | Gemini 2.5 Flash | High-efficiency reasoning model card with 1M context and native audio/image capabilities; balances long-context performance with low-latency inference. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Flash-Model-Card.pdf | 2025/google/2025-07_gemini-2.5-flash.pdf |
 | 2025-06 | Anthropic | Claude Opus 4.5 | System card covering frontier capabilities in software engineering, tool use, and computer use; details a wide range of pre-deployment safety evaluations. | https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf | 2025/anthropic/2025-06_claude-opus-4.5.pdf |

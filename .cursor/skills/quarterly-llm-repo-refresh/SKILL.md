@@ -1,6 +1,6 @@
 ---
 name: quarterly-llm-repo-refresh
-description: Use when performing a quarterly incremental update of the awesome-llm-tech-reports repository -- search new model releases, download/verify PDFs, and update README with frozen visual style conventions.
+description: Use when performing a quarterly incremental update of the awesome-llm-tech-reports repository with mandatory re-crawl, model-release filtering, timestamp prefix calibration, and README synchronization.
 ---
 
 # Quarterly LLM Repo Refresh SOP
@@ -13,6 +13,21 @@ This skill standardizes quarterly incremental updates for `awesome-llm-tech-repo
 - Filename pattern: `YYYY-MM_slugified-model-name.pdf`
 - README visual structure and Mermaid style
 - Reverse-chronological model index
+
+## Hard Rules (Non-Negotiable)
+
+1. Only include **model-release technical reports**.
+- Exclude standalone method papers / architectures / benchmarks / datasets unless explicitly tied to an official released model card/report.
+
+2. Filename prefix timestamp (`YYYY-MM_`) must be accurate.
+- `download_papers.py` must resolve release month from source evidence at runtime (arXiv published date, official URL date pattern, or webpage published metadata).
+
+3. `README.md` must stay English-only.
+- `Core Highlights` must be summarized from downloaded PDF content (or rendered blog PDF content), not guessed.
+
+4. Monthly bubble chart rules:
+- No side tags in `Monthly Density Snapshot`.
+- Bubble size class must match release count (`b1/b2/b3/b4/b5/b12`).
 
 ## Monitored Organizations (Fixed)
 
@@ -39,35 +54,43 @@ Track these 18 organizations and channels every refresh cycle:
 
 ## SOP
 
-### Step 1 - Research New Releases
+### Step 1 - Mandatory Re-Crawl (Every Run)
 
-- Use official channels first, then reputable secondary references.
-- For each candidate release, verify:
+Do not run downloader first.
+
+- Re-search all monitored organizations.
+- Keep only model-release technical reports.
+- Verify each candidate:
   - release month (`YYYY-MM`)
   - exact model name/version
-  - official URL (priority: arXiv PDF > official CDN PDF > official blog page)
-- Exclude speculative or unreleased versions.
+  - official link (priority: arXiv PDF > official CDN PDF > official blog page)
+- Exclude speculative/unreleased entries.
 
-### Step 2 - Update `download_papers.py`
+### Step 2 - Regenerate `MODELS` in `download_papers.py`
 
-Append only new entries into `MODELS` with this schema:
+Do not treat in-file old links as source of truth.
 
-- `release_date`
-- `org`
-- `org_slug`
-- `model`
-- `core_feature`
-- `official_link`
+- Rebuild `MODELS` snapshot with fields:
+  - `release_date`
+  - `org`
+  - `org_slug`
+  - `model`
+  - `core_feature`
+  - `official_link`
+- Keep release-date sorting consistent with existing script behavior.
 
-Rules:
+### Step 3 - Mandatory Code Gates Before Download
 
-- `org_slug` must match existing directory conventions.
-- Keep release-date sorting compatible with current script behavior.
-- Do not alter prior validated entries unless source links are broken.
+Run both commands in repo root:
 
-### Step 3 - Run Download and Validation
+```bash
+python3 scripts/sop_validate.py
+python3 -m unittest tests/test_download_papers.py
+```
 
-Run in repo root:
+Both must pass before continuing.
+
+### Step 4 - Download and Validate
 
 ```bash
 python3 download_papers.py
@@ -75,15 +98,11 @@ python3 download_papers.py
 
 Critical:
 
-- Never add `--write-readme` during routine refresh.
-- Confirm newly downloaded files are true PDFs (header `%PDF-`).
-- Confirm extracted text length passes threshold (avoid screenshot-only artifacts).
-- For blog URLs, ensure rendered PDFs include complete page content.
+- Never use `--write-readme` in routine refresh.
+- Confirm PDF signature (`%PDF-`) for newly downloaded files.
+- Confirm text extraction threshold passes (avoid screenshot-only artifacts).
 
-### Step 4 - Consolidate PDFs into `pdf/`
-
-After download validation, aggregate all technical-report PDFs from year directories
-into a single flat directory for easy bulk access.
+### Step 5 - Consolidate PDFs into `pdf/`
 
 Run in repo root:
 
@@ -111,41 +130,28 @@ for p in sorted(root.rglob("*.pdf")):
 PY
 ```
 
-Checks:
+If duplicate `*__*.pdf` files appear after reruns:
 
-- Ensure `pdf/` exists and file count matches current year-tree PDFs.
-- Keep original `2025/` and `2026/` files untouched (copy, not move).
+```bash
+find pdf -maxdepth 1 -name '*__*.pdf' -delete
+```
 
-### Step 5 - Incrementally Update `README.md`
+### Step 6 - Incremental README Update
 
 Do append/update only; do not regenerate from templates.
 
-- **Badges**: update only count values.
-- **Release Timeline** (`mermaid flowchart TB`):
-  - append month backbone nodes
-  - append entries in camp subgraphs:
-    - OpenAI
-    - Anthropic
-    - Google
-    - China-based Labs
-    - Other Global
-  - use `★` for high-impact releases.
-- **Monthly Density Snapshot** (`mermaid flowchart LR`):
-  - use bubble node format: `(("YY-MM<br/>Rxx"))`
-  - keep side tags for representative companies
-  - split overly long tags into left/right labels.
-- **Company Quick Links**: add anchors only if new org appears.
-- **Model Index**:
-  - columns must remain:
-    - `Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File`
-  - append rows into correct year `<details>` block
-  - keep reverse chronological order.
-- **Core Highlights source rule**:
-  - arXiv PDF links: summarize from PDF abstract/body
-  - non-arXiv links: summarize from webpage content (not OCR-garbled fragments).
-- **Star History**: keep static section unchanged.
+- Badges: update count values only.
+- Release Timeline: append month/camp nodes only.
+- Monthly Density Snapshot:
+  - bubble format: `(("YY-MM<br/>Rxx"))`
+  - no side tags
+  - class mapping follows count (`1->b1, 2->b2, 3->b3, 4->b4, 5->b5, 12->b12`)
+- Model Index:
+  - keep columns unchanged
+  - keep reverse chronological order
+  - `Core Highlights` derived from crawled PDF/blog-PDF content
 
-### Step 6 - Commit and Push
+### Step 7 - Commit and Push
 
 ```bash
 git add .
@@ -157,38 +163,35 @@ Use author identity:
 
 - `joe1chief <joe1chief1993@gmail.com>`
 
-## Frozen Style Reference Snippets
+## Debug Playbook
 
-### Timeline Camp Colors
+### Network / Proxy
 
-```text
-openai:    fill:#e8f2ff, stroke:#2f6feb, color:#0b1f44
-anthropic: fill:#fff4e8, stroke:#b15f00, color:#4a2800
-google:    fill:#e9fbe9, stroke:#1a7f37, color:#083b1e
-china:     fill:#fff0f6, stroke:#bf3989, color:#4a0d2f
-other:     fill:#f4f4f4, stroke:#6e7781, color:#24292f
-impact:    fill:#fff8c5, stroke:#d4a72c, color:#3d2f00
+```bash
+export https_proxy=http://127.0.0.1:13659
+export http_proxy=http://127.0.0.1:13659
 ```
 
-### Bubble Size Classes
+Quick checks:
 
-```text
-b1,b2,b3,b4,b5,b12 + tag
-Keep existing class-to-count mapping from README and extend conservatively.
+```bash
+git ls-remote https://github.com/joe1chief/awesome-llm-tech-reports.git | head -n 3
+curl -I -L --max-time 20 https://arxiv.org/pdf/2602.15763 | head -n 10
 ```
 
-## Common Mistakes (Do Not Repeat)
+### Recovery for Accidental Deletions
 
-- Never run `python3 download_papers.py --write-readme` for incremental updates.
-- Never use `_rebuild_readme.py` (deprecated overwrite script).
-- Never regenerate Mermaid diagrams from scratch; append into existing structure.
-- Never replace curated README sections with auto-generated templates.
-- Never skip PDF signature/text checks for new files.
+If a failed run removed tracked PDFs:
+
+```bash
+git restore 2025 2026
+```
 
 ## Completion Checklist
 
-- New releases verified and non-speculative
+- Re-crawl completed and non-model papers excluded
+- `scripts/sop_validate.py` passed
+- unit tests passed
 - PDFs downloaded and validated
-- README updated with frozen style
-- Model index sorted correctly
+- README updated (English-only, snapshot consistent)
 - Git status clean after push

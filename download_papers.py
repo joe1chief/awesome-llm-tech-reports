@@ -1,8 +1,9 @@
 import re
 import html
 import argparse
+from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -176,6 +177,14 @@ MODELS: List[Dict[str, str]] = [
     # 2025-10/09
     {
         "release_date": "2025-10",
+        "org": "美团",
+        "org_slug": "meituan",
+        "model": "LongCat-Flash-Omni",
+        "core_feature": "560B/27B 激活的开源全模态模型，课程式渐进训练实现低时延实时音视频交互。",
+        "official_link": "https://arxiv.org/abs/2511.00279",
+    },
+    {
+        "release_date": "2025-10",
         "org": "MiniMax",
         "org_slug": "minimax",
         "model": "MiniMax M2.0",
@@ -264,7 +273,7 @@ MODELS: List[Dict[str, str]] = [
         "official_link": "https://arxiv.org/abs/2507.20534",
     },
     {
-        "release_date": "2025-07",
+        "release_date": "2025-08",
         "org": "xAI",
         "org_slug": "xai",
         "model": "Grok 4",
@@ -419,6 +428,122 @@ def normalize_url(url: str) -> str:
     if "github.com" in url and "/blob/" in url and url.endswith(".pdf"):
         return url.replace("/blob/", "/raw/")
     return url
+
+
+def extract_arxiv_id(url: str) -> Optional[str]:
+    m = re.search(r"arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]{4,5})(?:v\d+)?", url)
+    if not m:
+        return None
+    return m.group(1)
+
+
+def extract_year_month_from_text(text: str) -> Optional[str]:
+    if not text:
+        return None
+    patterns = [
+        # YYYY-MM-DD / YYYY/MM/DD / YYYY.MM.DD
+        r"(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])",
+        # YYYY-MM / YYYY/MM / YYYY.MM
+        r"(20\d{2})[-/\.](0?[1-9]|1[0-2])",
+    ]
+    for p in patterns:
+        m = re.search(p, text)
+        if m:
+            return f"{m.group(1)}-{int(m.group(2)):02d}"
+    return None
+
+
+def extract_year_month_from_url(url: str) -> Optional[str]:
+    return extract_year_month_from_text(url)
+
+
+def fetch_arxiv_published_month(session: requests.Session, arxiv_id: str) -> Optional[str]:
+    try:
+        resp = session.get(
+            "https://export.arxiv.org/api/query",
+            params={"id_list": arxiv_id},
+            timeout=20,
+        )
+        resp.raise_for_status()
+    except Exception:
+        return None
+    m = re.search(r"<published>(\d{4})-(\d{2})-\d{2}T", resp.text)
+    if not m:
+        return None
+    return f"{m.group(1)}-{m.group(2)}"
+
+
+def fetch_webpage_published_month(session: requests.Session, url: str) -> Optional[str]:
+    try:
+        resp = session.get(url, timeout=20)
+        resp.raise_for_status()
+    except Exception:
+        return None
+
+    body = resp.text[:300000]
+    patterns = [
+        # OpenGraph / metadata published date
+        r'(?i)article:published_time[^>]*content=["\'](20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
+        r'(?i)datePublished["\']?\s*[:=]\s*["\'](20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
+        # Common inline date blocks like 2026/02/16 · ...
+        r"(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])\s*[·|\\-]",
+        # Keyword-near-date fallback
+        r'(?i)(published|release(?:d)?|date)\D{0,30}(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
+    ]
+    for p in patterns:
+        m = re.search(p, body)
+        if not m:
+            continue
+        if len(m.groups()) == 3:
+            year, month = m.group(1), m.group(2)
+        else:
+            year, month = m.group(2), m.group(3)
+        return f"{year}-{int(month):02d}"
+    return None
+
+
+def infer_release_month_from_source(
+    session: requests.Session,
+    url: str,
+) -> Tuple[Optional[str], str]:
+    arxiv_id = extract_arxiv_id(url)
+    if arxiv_id:
+        published = fetch_arxiv_published_month(session, arxiv_id)
+        if published:
+            return published, "arxiv_published"
+
+    url_month = extract_year_month_from_url(url)
+    if url_month:
+        return url_month, "url_pattern"
+
+    if should_render_webpage_to_pdf(url):
+        web_month = fetch_webpage_published_month(session, url)
+        if web_month:
+            return web_month, "webpage_published"
+
+    return None, "manual_fallback"
+
+
+def resolve_release_month(
+    session: requests.Session,
+    declared_release_date: str,
+    url: str,
+    link_frequency: Dict[str, int],
+    cache: Dict[str, Tuple[Optional[str], str]],
+) -> Tuple[str, str]:
+    # If one source link maps to multiple model entries, preserve manual release dates.
+    if link_frequency.get(url, 0) > 1:
+        return declared_release_date, "manual_shared_link"
+
+    if url in cache:
+        inferred, source = cache[url]
+    else:
+        inferred, source = infer_release_month_from_source(session, url)
+        cache[url] = (inferred, source)
+
+    if inferred and re.match(r"^20\d{2}-\d{2}$", inferred):
+        return inferred, source
+    return declared_release_date, "manual_fallback"
 
 
 def is_pdf_url(url: str) -> bool:
@@ -652,14 +777,31 @@ def main(write_readme: bool = False) -> None:
     results: List[Dict[str, str]] = []
     ok, fail, skip = 0, 0, 0
 
+    normalized_links = [normalize_url(m["official_link"]) for m in MODELS]
+    link_frequency = Counter(normalized_links)
+    release_month_cache: Dict[str, Tuple[Optional[str], str]] = {}
+
     sorted_models = sorted(MODELS, key=lambda x: x["release_date"], reverse=True)
 
     for idx, item in enumerate(sorted_models, start=1):
         record = dict(item)
-        release_date = record["release_date"]
-        year = release_date.split("-")[0]
         link = normalize_url(record["official_link"])
         record["official_link"] = link
+        declared_release_date = record["release_date"]
+        release_date, release_source = resolve_release_month(
+            session=session,
+            declared_release_date=declared_release_date,
+            url=link,
+            link_frequency=link_frequency,
+            cache=release_month_cache,
+        )
+        if release_date != declared_release_date:
+            print(
+                f"  时间前缀校正: {declared_release_date} -> {release_date} ({release_source})",
+                flush=True,
+            )
+        record["release_date"] = release_date
+        year = release_date.split("-")[0]
         print(f"[{idx}/{len(sorted_models)}] {record['model']} -> {year}/{record['org_slug']}", flush=True)
 
         if record["model"].lower() == "grok 4.5":

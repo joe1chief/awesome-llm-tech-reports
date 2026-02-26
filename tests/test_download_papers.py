@@ -1,8 +1,12 @@
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
-from llm_papers import download_papers
+try:
+    from llm_papers import download_papers
+except ModuleNotFoundError:  # pragma: no cover - local fallback
+    import download_papers
 
 
 class DownloadPapersTests(unittest.TestCase):
@@ -40,6 +44,46 @@ class DownloadPapersTests(unittest.TestCase):
         with TemporaryDirectory() as tmpdir:
             path = Path(tmpdir) / "missing.pdf"
             self.assertEqual(download_papers.extract_text_length_from_pdf(path), 0)
+
+    def test_extract_arxiv_id_from_abs_and_pdf_links(self) -> None:
+        self.assertEqual(
+            download_papers.extract_arxiv_id("https://arxiv.org/abs/2511.00279"),
+            "2511.00279",
+        )
+        self.assertEqual(
+            download_papers.extract_arxiv_id("https://arxiv.org/pdf/2510.26692v2"),
+            "2510.26692",
+        )
+        self.assertIsNone(download_papers.extract_arxiv_id("https://example.com/a.pdf"))
+
+    def test_extract_year_month_from_url_supports_multiple_formats(self) -> None:
+        self.assertEqual(
+            download_papers.extract_year_month_from_url(
+                "https://data.x.ai/2025-08-20-grok-4-model-card.pdf"
+            ),
+            "2025-08",
+        )
+        self.assertEqual(
+            download_papers.extract_year_month_from_url("https://foo.bar/release/2026/2/16"),
+            "2026-02",
+        )
+        self.assertIsNone(download_papers.extract_year_month_from_url("https://foo.bar/no-date"))
+
+    def test_resolve_release_month_keeps_manual_for_shared_link(self) -> None:
+        with patch.object(
+            download_papers,
+            "infer_release_month_from_source",
+            return_value=("2025-08", "url_pattern"),
+        ):
+            month, source = download_papers.resolve_release_month(
+                session=download_papers.build_session(),
+                declared_release_date="2025-07",
+                url="https://arxiv.org/pdf/2412.19437",
+                link_frequency={"https://arxiv.org/pdf/2412.19437": 2},
+                cache={},
+            )
+        self.assertEqual(month, "2025-07")
+        self.assertEqual(source, "manual_shared_link")
 
 
 if __name__ == "__main__":
