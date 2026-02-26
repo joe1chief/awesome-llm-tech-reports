@@ -80,7 +80,43 @@ Critical:
 - Confirm extracted text length passes threshold (avoid screenshot-only artifacts).
 - For blog URLs, ensure rendered PDFs include complete page content.
 
-### Step 4 - Incrementally Update `README.md`
+### Step 4 - Consolidate PDFs into `pdf/`
+
+After download validation, aggregate all technical-report PDFs from year directories
+into a single flat directory for easy bulk access.
+
+Run in repo root:
+
+```bash
+python3 - <<'PY'
+from pathlib import Path
+import shutil
+
+root = Path(".").resolve()
+out = root / "pdf"
+out.mkdir(exist_ok=True)
+
+for p in sorted(root.rglob("*.pdf")):
+    if out in p.parents:
+        continue
+    top = p.parts[len(root.parts)]
+    if top not in {"2025", "2026"}:
+        continue
+    dst = out / p.name
+    if dst.exists():
+        rel_tag = "_".join(p.relative_to(root).parts[:-1]).replace("/", "_")
+        dst = out / f"{p.stem}__{rel_tag}{p.suffix}"
+    if not dst.exists():
+        shutil.copy2(p, dst)
+PY
+```
+
+Checks:
+
+- Ensure `pdf/` exists and file count matches current year-tree PDFs.
+- Keep original `2025/` and `2026/` files untouched (copy, not move).
+
+### Step 5 - Incrementally Update `README.md`
 
 Do append/update only; do not regenerate from templates.
 
@@ -109,7 +145,7 @@ Do append/update only; do not regenerate from templates.
   - non-arXiv links: summarize from webpage content (not OCR-garbled fragments).
 - **Star History**: keep static section unchanged.
 
-### Step 5 - Commit and Push
+### Step 6 - Commit and Push
 
 ```bash
 git add .
