@@ -94,10 +94,6 @@ def validate() -> int:
     table_year_counts = parse_readme_table_year_counts(text)
     summary_year_counts = parse_year_summary_counts(text)
 
-    if not MONTHLY_JSON.exists():
-        errors.append("missing scripts/generated/monthly_density.json")
-    if not TIMELINE_JSON.exists():
-        errors.append("missing scripts/generated/release_timeline.json")
     if not MONTHLY_SVG.exists():
         errors.append("missing assets/diagrams/monthly-density.svg")
     if not TIMELINE_SVG.exists():
@@ -125,7 +121,8 @@ def validate() -> int:
 
     if MONTHLY_SVG.exists():
         monthly_svg = MONTHLY_SVG.read_text(encoding="utf-8")
-        for month, count in load_generated_monthly_counts().items():
+        expected_monthly_counts = load_generated_monthly_counts() if MONTHLY_JSON.exists() else dict(table_counts)
+        for month, count in expected_monthly_counts.items():
             if f'data-month="{month}"' not in monthly_svg:
                 errors.append(f"monthly SVG missing month node: {month}")
             if f'data-count="{count}"' not in monthly_svg:

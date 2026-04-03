@@ -179,10 +179,12 @@ node scripts/render_readme_diagrams.mjs
 Generated assets:
 - `scripts/generated/monthly_density.json`
 - `scripts/generated/release_timeline.json`
-- `assets/diagrams/monthly-density.excalidraw`
 - `assets/diagrams/monthly-density.svg`
-- `assets/diagrams/release-timeline.excalidraw`
 - `assets/diagrams/release-timeline.svg`
+
+Notes:
+- `scripts/generated/*` is a local intermediate cache used during refresh and validation; it should not be committed to `main`.
+- The repository only keeps the final SVG diagrams in `assets/diagrams/`.
 
 Rules:
 - README must remain English-only

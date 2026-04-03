@@ -79,6 +79,41 @@ function textBlock(x, y, lines, opts = {}) {
   return `<text x="${x}" y="${y}" fill="${color}" font-size="${size}" font-weight="${weight}" text-anchor="${anchor}" font-family="Virgil, Segoe Print, Comic Sans MS, cursive">${tspans}</text>`;
 }
 
+function tokenizeLabel(value) {
+  return String(value || "")
+    .trim()
+    .split(/(?<=[-/])|\s+/)
+    .filter(Boolean);
+}
+
+function wrapLabel(value, maxChars = 16) {
+  const tokens = tokenizeLabel(value);
+  if (!tokens.length) return [String(value || "").trim()];
+  const lines = [];
+  let current = "";
+  for (const token of tokens) {
+    const separator = current && !/[/-]$/.test(current) ? " " : "";
+    const next = `${current}${separator}${token}`;
+    if (next.length <= maxChars) {
+      current = next;
+      continue;
+    }
+    if (current) {
+      lines.push(current.trim());
+      current = "";
+    }
+    if (token.length <= maxChars) {
+      current = token;
+      continue;
+    }
+    for (let start = 0; start < token.length; start += maxChars) {
+      lines.push(token.slice(start, start + maxChars));
+    }
+  }
+  if (current) lines.push(current.trim());
+  return lines.length ? lines : [String(value || "").trim()];
+}
+
 function monthlyColors(count) {
   if (count <= 1) return { fill: "#f8fafc", stroke: "#94a3b8" };
   if (count <= 2) return { fill: "#eef2ff", stroke: "#818cf8" };
@@ -142,19 +177,21 @@ function campPalette(camp) {
 function renderReleaseTimelineSvg(data) {
   const months = data.months || [];
   const lanes = data.lanes || [];
-  const width = Math.max(1320, 220 + months.length * 120);
+  const width = Math.max(1520, 260 + months.length * 150);
   const height = 220 + lanes.length * 160;
   const timelineY = 110;
-  const startX = 120;
-  const endX = width - 120;
+  const startX = 140;
+  const endX = width - 140;
   const gap = months.length > 1 ? (endX - startX) / (months.length - 1) : 0;
   const monthX = new Map(months.map((month, idx) => [month, startX + idx * gap]));
+  const monthBoxWidth = 96;
+  const cardWidth = Math.max(146, Math.min(170, gap - 16));
 
   const monthNodes = months
     .map((month) => {
       const x = monthX.get(month);
       return `
-        ${scribbleRect(x - 42, timelineY - 26, 84, 42, "#374151", "#ffffff")}
+        ${scribbleRect(x - monthBoxWidth / 2, timelineY - 26, monthBoxWidth, 42, "#374151", "#ffffff")}
         ${textBlock(x, timelineY + 2, [month], { size: 15, weight: 700, anchor: "middle" })}
       `;
     })
@@ -166,15 +203,18 @@ function renderReleaseTimelineSvg(data) {
       const palette = campPalette(lane.camp);
       const cards = (lane.entries || [])
         .map((entry) => {
-          const x = (monthX.get(entry.month) || startX) - 60;
-          const models = (entry.models || []).map((model) =>
-            (entry.highlighted_models || []).includes(model) ? `★ ${model}` : model,
+          const x = (monthX.get(entry.month) || startX) - cardWidth / 2;
+          const modelLines = (entry.models || []).flatMap((model) =>
+            wrapLabel(
+              (entry.highlighted_models || []).includes(model) ? `★ ${model}` : model,
+              16,
+            ),
           );
-          const cardHeight = 54 + models.length * 18;
+          const cardHeight = 32 + modelLines.length * 18;
           return `
-            ${scribbleLine(x + 60, timelineY + 18, x + 60, top + 12, "#9ca3af", 1.5)}
-            ${scribbleRect(x, top + 12, 120, cardHeight, palette.stroke, palette.fill)}
-            ${textBlock(x + 12, top + 35, models, {
+            ${scribbleLine(x + cardWidth / 2, timelineY + 18, x + cardWidth / 2, top + 12, "#9ca3af", 1.5)}
+            ${scribbleRect(x, top + 12, cardWidth, cardHeight, palette.stroke, palette.fill)}
+            ${textBlock(x + 12, top + 34, modelLines, {
               size: 14,
               weight: 600,
               lineHeight: 18,
@@ -293,8 +333,6 @@ function writeOutputs({ generatedDir, assetsDir }) {
 
   fs.writeFileSync(path.join(assetsDir, "monthly-density.svg"), renderMonthlyDensitySvg(monthlyData));
   fs.writeFileSync(path.join(assetsDir, "release-timeline.svg"), renderReleaseTimelineSvg(timelineData));
-  fs.writeFileSync(path.join(assetsDir, "monthly-density.excalidraw"), JSON.stringify(buildMonthlyScene(monthlyData), null, 2));
-  fs.writeFileSync(path.join(assetsDir, "release-timeline.excalidraw"), JSON.stringify(buildTimelineScene(timelineData), null, 2));
 }
 
 const args = parseArgs(process.argv.slice(2));

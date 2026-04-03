@@ -10,7 +10,7 @@ SCRIPT = ROOT / "scripts" / "render_readme_diagrams.mjs"
 
 
 class RenderReadmeDiagramsTests(unittest.TestCase):
-    def test_render_script_emits_svg_and_excalidraw_assets(self) -> None:
+    def test_render_script_emits_wrapped_svg_assets_only(self) -> None:
         with TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)
             generated = tmp / "generated"
@@ -41,7 +41,7 @@ class RenderReadmeDiagramsTests(unittest.TestCase):
                                 "entries": [
                                     {
                                         "month": "2026-03",
-                                        "models": ["Gemma 4", "MedGemma 1.5"],
+                                        "models": ["LongCat-Flash-Thinking-2601", "MedGemma 1.5"],
                                         "highlighted_models": ["Gemma 4"],
                                     }
                                 ],
@@ -67,13 +67,12 @@ class RenderReadmeDiagramsTests(unittest.TestCase):
 
             monthly_svg = (assets / "monthly-density.svg").read_text(encoding="utf-8")
             timeline_svg = (assets / "release-timeline.svg").read_text(encoding="utf-8")
-            monthly_scene = json.loads((assets / "monthly-density.excalidraw").read_text(encoding="utf-8"))
-            timeline_scene = json.loads((assets / "release-timeline.excalidraw").read_text(encoding="utf-8"))
 
             self.assertIn('data-count="7"', monthly_svg)
-            self.assertIn("Gemma 4", timeline_svg)
-            self.assertEqual(monthly_scene["type"], "excalidraw")
-            self.assertEqual(timeline_scene["type"], "excalidraw")
+            self.assertIn("LongCat-", timeline_svg)
+            self.assertIn("<tspan", timeline_svg)
+            self.assertFalse((assets / "monthly-density.excalidraw").exists())
+            self.assertFalse((assets / "release-timeline.excalidraw").exists())
 
 
 if __name__ == "__main__":

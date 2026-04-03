@@ -1,440 +1,440 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2140" height="1020" viewBox="0 0 2140 1020" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="2660" height="1020" viewBox="0 0 2660 1020" role="img" aria-labelledby="title desc">
   <title id="title">Release Timeline</title>
   <desc id="desc">Release timeline grouped by ecosystem camp and organization lane.</desc>
-  <rect width="2140" height="1020" fill="#fffdf8" />
+  <rect width="2660" height="1020" fill="#fffdf8" />
   <text x="70" y="56" fill="#111827" font-size="32" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Release Timeline</tspan></text>
   <text x="70" y="88" fill="#4b5563" font-size="16" font-weight="500" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Camp colors stay aligned with the README legend. ★ marks impact releases.</tspan></text>
-  <line x1="120" y1="110" x2="2020" y2="110" stroke="#1f2937" stroke-width="3" stroke-linecap="round" /><line x1="121.5" y1="111.2" x2="2018.8" y2="110.8" stroke="#1f2937" stroke-width="2.4" stroke-linecap="round" opacity="0.75" />
+  <line x1="140" y1="110" x2="2520" y2="110" stroke="#1f2937" stroke-width="3" stroke-linecap="round" /><line x1="141.5" y1="111.2" x2="2518.8" y2="110.8" stroke="#1f2937" stroke-width="2.4" stroke-linecap="round" opacity="0.75" />
   
         
-    <rect x="78" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="79.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="92" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="93.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="120" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="120" dy="0">2025-01</tspan></text>
+        <text x="140" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="140" dy="0">2025-01</tspan></text>
       
 
         
-    <rect x="204.66666666666669" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="206.16666666666669" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="250.66666666666663" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="252.16666666666663" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="246.66666666666669" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="246.66666666666669" dy="0">2025-02</tspan></text>
+        <text x="298.66666666666663" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="298.66666666666663" dy="0">2025-02</tspan></text>
       
 
         
-    <rect x="331.33333333333337" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="332.83333333333337" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="409.3333333333333" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="410.8333333333333" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="373.33333333333337" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="373.33333333333337" dy="0">2025-03</tspan></text>
+        <text x="457.3333333333333" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="457.3333333333333" dy="0">2025-03</tspan></text>
       
 
         
-    <rect x="458" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="459.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="568" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="569.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="500" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="500" dy="0">2025-04</tspan></text>
+        <text x="616" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="616" dy="0">2025-04</tspan></text>
       
 
         
-    <rect x="584.6666666666667" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="586.1666666666667" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="726.6666666666666" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="728.1666666666666" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="626.6666666666667" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="626.6666666666667" dy="0">2025-05</tspan></text>
+        <text x="774.6666666666666" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="774.6666666666666" dy="0">2025-05</tspan></text>
       
 
         
-    <rect x="711.3333333333334" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="712.8333333333334" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="885.3333333333333" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="886.8333333333333" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="753.3333333333334" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="753.3333333333334" dy="0">2025-06</tspan></text>
+        <text x="933.3333333333333" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="933.3333333333333" dy="0">2025-06</tspan></text>
       
 
         
-    <rect x="838" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="839.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1044" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1045.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="880" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="880" dy="0">2025-07</tspan></text>
+        <text x="1092" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1092" dy="0">2025-07</tspan></text>
       
 
         
-    <rect x="964.6666666666667" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="966.1666666666667" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1202.6666666666665" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1204.1666666666665" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1006.6666666666667" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1006.6666666666667" dy="0">2025-08</tspan></text>
+        <text x="1250.6666666666665" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1250.6666666666665" dy="0">2025-08</tspan></text>
       
 
         
-    <rect x="1091.3333333333335" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1092.8333333333335" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1361.3333333333333" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1362.8333333333333" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1133.3333333333335" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1133.3333333333335" dy="0">2025-09</tspan></text>
+        <text x="1409.3333333333333" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1409.3333333333333" dy="0">2025-09</tspan></text>
       
 
         
-    <rect x="1218" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1219.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1520" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1521.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1260" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1260" dy="0">2025-10</tspan></text>
+        <text x="1568" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1568" dy="0">2025-10</tspan></text>
       
 
         
-    <rect x="1344.6666666666667" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1346.1666666666667" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1678.6666666666665" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1680.1666666666665" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1386.6666666666667" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1386.6666666666667" dy="0">2025-11</tspan></text>
+        <text x="1726.6666666666665" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1726.6666666666665" dy="0">2025-11</tspan></text>
       
 
         
-    <rect x="1471.3333333333335" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1472.8333333333335" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1837.3333333333333" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1838.8333333333333" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1513.3333333333335" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1513.3333333333335" dy="0">2025-12</tspan></text>
+        <text x="1885.3333333333333" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1885.3333333333333" dy="0">2025-12</tspan></text>
       
 
         
-    <rect x="1598" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1599.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="1996" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="1997.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1640" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1640" dy="0">2026-01</tspan></text>
+        <text x="2044" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2044" dy="0">2026-01</tspan></text>
       
 
         
-    <rect x="1724.6666666666667" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1726.1666666666667" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="2154.6666666666665" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="2156.1666666666665" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1766.6666666666667" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1766.6666666666667" dy="0">2026-02</tspan></text>
+        <text x="2202.6666666666665" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2202.6666666666665" dy="0">2026-02</tspan></text>
       
 
         
-    <rect x="1851.3333333333335" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1852.8333333333335" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="2313.333333333333" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="2314.833333333333" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="1893.3333333333335" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1893.3333333333335" dy="0">2026-03</tspan></text>
+        <text x="2361.333333333333" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2361.333333333333" dy="0">2026-03</tspan></text>
       
 
         
-    <rect x="1978" y="84" width="84" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="1979.5" y="85.2" width="81.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="2472" y="84" width="96" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="2473.5" y="85.2" width="93.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="2020" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2020" dy="0">2026-04</tspan></text>
+        <text x="2520" y="112" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2520" dy="0">2026-04</tspan></text>
       
   
         <text x="36" y="230" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">OpenAI</tspan></text>
         
-            <line x1="500" y1="128" x2="500" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="501.5" y1="129.2" x2="498.8" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="616" y1="128" x2="616" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="617.5" y1="129.2" x2="614.8" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="440" y="192" width="120" height="72" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
-    <rect x="441.5" y="193.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+    <rect x="543" y="192" width="146" height="50" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="544.5" y="193.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
   
-            <text x="452" y="215" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="452" dy="0">o3 / o4-mini</tspan></text>
+            <text x="555" y="214" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="555" dy="0">o3 / o4-mini</tspan></text>
           
 
-            <line x1="1006.6666666666667" y1="128" x2="1006.6666666666667" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1008.1666666666667" y1="129.2" x2="1005.4666666666667" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1250.6666666666665" y1="128" x2="1250.6666666666665" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1252.1666666666665" y1="129.2" x2="1249.4666666666665" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="946.6666666666667" y="192" width="120" height="90" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
-    <rect x="948.1666666666667" y="193.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+    <rect x="1177.6666666666665" y="192" width="146" height="68" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="1179.1666666666665" y="193.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
   
-            <text x="958.6666666666667" y="215" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="958.6666666666667" dy="0">★ GPT-5</tspan><tspan x="958.6666666666667" dy="18">gpt-oss-120b/20b</tspan></text>
+            <text x="1189.6666666666665" y="214" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1189.6666666666665" dy="0">★ GPT-5</tspan><tspan x="1189.6666666666665" dy="18">gpt-oss-120b/20b</tspan></text>
           
 
-            <line x1="1513.3333333333335" y1="128" x2="1513.3333333333335" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1514.8333333333335" y1="129.2" x2="1512.1333333333334" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1885.3333333333333" y1="128" x2="1885.3333333333333" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1886.8333333333333" y1="129.2" x2="1884.1333333333332" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1453.3333333333335" y="192" width="120" height="72" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
-    <rect x="1454.8333333333335" y="193.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+    <rect x="1812.3333333333333" y="192" width="146" height="50" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="1813.8333333333333" y="193.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1465.3333333333335" y="215" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1465.3333333333335" dy="0">GPT-5.2</tspan></text>
+            <text x="1824.3333333333333" y="214" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1824.3333333333333" dy="0">GPT-5.2</tspan></text>
           
 
-            <line x1="1766.6666666666667" y1="128" x2="1766.6666666666667" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1768.1666666666667" y1="129.2" x2="1765.4666666666667" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2202.6666666666665" y1="128" x2="2202.6666666666665" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2204.1666666666665" y1="129.2" x2="2201.4666666666667" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1706.6666666666667" y="192" width="120" height="72" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
-    <rect x="1708.1666666666667" y="193.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+    <rect x="2129.6666666666665" y="192" width="146" height="50" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="2131.1666666666665" y="193.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1718.6666666666667" y="215" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1718.6666666666667" dy="0">★ GPT-5.3-Codex</tspan></text>
+            <text x="2141.6666666666665" y="214" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2141.6666666666665" dy="0">★ GPT-5.3-Codex</tspan></text>
           
 
-            <line x1="1893.3333333333335" y1="128" x2="1893.3333333333335" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1894.8333333333335" y1="129.2" x2="1892.1333333333334" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2361.333333333333" y1="128" x2="2361.333333333333" y2="192" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2362.833333333333" y1="129.2" x2="2360.133333333333" y2="192.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1833.3333333333335" y="192" width="120" height="90" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
-    <rect x="1834.8333333333335" y="193.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+    <rect x="2288.333333333333" y="192" width="146" height="68" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="2289.833333333333" y="193.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1845.3333333333335" y="215" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1845.3333333333335" dy="0">GPT-5.4 Thinking</tspan><tspan x="1845.3333333333335" dy="18">GPT-5.3 Instant</tspan></text>
+            <text x="2300.333333333333" y="214" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2300.333333333333" dy="0">GPT-5.4 Thinking</tspan><tspan x="2300.333333333333" dy="18">GPT-5.3 Instant</tspan></text>
           
       
 
         <text x="36" y="380" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Anthropic</tspan></text>
         
-            <line x1="626.6666666666667" y1="128" x2="626.6666666666667" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="628.1666666666667" y1="129.2" x2="625.4666666666667" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="774.6666666666666" y1="128" x2="774.6666666666666" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="776.1666666666666" y1="129.2" x2="773.4666666666666" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="566.6666666666667" y="342" width="120" height="72" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
-    <rect x="568.1666666666667" y="343.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
+    <rect x="701.6666666666666" y="342" width="146" height="68" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
+    <rect x="703.1666666666666" y="343.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
   
-            <text x="578.6666666666667" y="365" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="578.6666666666667" dy="0">Claude Opus 4 / Sonnet 4</tspan></text>
+            <text x="713.6666666666666" y="364" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="713.6666666666666" dy="0">Claude Opus 4 /</tspan><tspan x="713.6666666666666" dy="18">Sonnet 4</tspan></text>
           
 
-            <line x1="753.3333333333334" y1="128" x2="753.3333333333334" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="754.8333333333334" y1="129.2" x2="752.1333333333333" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="933.3333333333333" y1="128" x2="933.3333333333333" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="934.8333333333333" y1="129.2" x2="932.1333333333332" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="693.3333333333334" y="342" width="120" height="90" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
-    <rect x="694.8333333333334" y="343.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
+    <rect x="860.3333333333333" y="342" width="146" height="86" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
+    <rect x="861.8333333333333" y="343.2" width="143.4" height="83.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
   
-            <text x="705.3333333333334" y="365" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="705.3333333333334" dy="0">Claude Opus 4.5</tspan><tspan x="705.3333333333334" dy="18">Claude Sonnet 4.5</tspan></text>
+            <text x="872.3333333333333" y="364" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="872.3333333333333" dy="0">Claude Opus 4.5</tspan><tspan x="872.3333333333333" dy="18">Claude Sonnet</tspan><tspan x="872.3333333333333" dy="18">4.5</tspan></text>
           
 
-            <line x1="1766.6666666666667" y1="128" x2="1766.6666666666667" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1768.1666666666667" y1="129.2" x2="1765.4666666666667" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2202.6666666666665" y1="128" x2="2202.6666666666665" y2="342" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2204.1666666666665" y1="129.2" x2="2201.4666666666667" y2="342.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1706.6666666666667" y="342" width="120" height="72" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
-    <rect x="1708.1666666666667" y="343.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
+    <rect x="2129.6666666666665" y="342" width="146" height="68" rx="18" ry="18" fill="#fff4e8" stroke="#b15f00" stroke-width="2.4" />
+    <rect x="2131.1666666666665" y="343.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#b15f00" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1718.6666666666667" y="365" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1718.6666666666667" dy="0">★ Claude Opus 4.6</tspan></text>
+            <text x="2141.6666666666665" y="364" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2141.6666666666665" dy="0">★ Claude Opus</tspan><tspan x="2141.6666666666665" dy="18">4.6</tspan></text>
           
       
 
         <text x="36" y="530" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Google</tspan></text>
         
-            <line x1="246.66666666666669" y1="128" x2="246.66666666666669" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="248.16666666666669" y1="129.2" x2="245.4666666666667" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="298.66666666666663" y1="128" x2="298.66666666666663" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="300.16666666666663" y1="129.2" x2="297.46666666666664" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="186.66666666666669" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="188.16666666666669" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="225.66666666666663" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="227.16666666666663" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="198.66666666666669" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="198.66666666666669" dy="0">Gemma 2</tspan></text>
+            <text x="237.66666666666663" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="237.66666666666663" dy="0">Gemma 2</tspan></text>
           
 
-            <line x1="373.33333333333337" y1="128" x2="373.33333333333337" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="374.83333333333337" y1="129.2" x2="372.1333333333334" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="457.3333333333333" y1="128" x2="457.3333333333333" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="458.8333333333333" y1="129.2" x2="456.1333333333333" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="313.33333333333337" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="314.83333333333337" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="384.3333333333333" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="385.8333333333333" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="325.33333333333337" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="325.33333333333337" dy="0">Gemma 3</tspan></text>
+            <text x="396.3333333333333" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="396.3333333333333" dy="0">Gemma 3</tspan></text>
           
 
-            <line x1="753.3333333333334" y1="128" x2="753.3333333333334" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="754.8333333333334" y1="129.2" x2="752.1333333333333" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="933.3333333333333" y1="128" x2="933.3333333333333" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="934.8333333333333" y1="129.2" x2="932.1333333333332" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="693.3333333333334" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="694.8333333333334" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="860.3333333333333" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="861.8333333333333" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="705.3333333333334" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="705.3333333333334" dy="0">Gemma 3N</tspan></text>
+            <text x="872.3333333333333" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="872.3333333333333" dy="0">Gemma 3N</tspan></text>
           
 
-            <line x1="880" y1="128" x2="880" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="881.5" y1="129.2" x2="878.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1092" y1="128" x2="1092" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1093.5" y1="129.2" x2="1090.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="820" y="492" width="120" height="90" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="821.5" y="493.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1019" y="492" width="146" height="68" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1020.5" y="493.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="832" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="832" dy="0">★ Gemini 2.5 Pro</tspan><tspan x="832" dy="18">Gemini 2.5 Flash</tspan></text>
+            <text x="1031" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1031" dy="0">★ Gemini 2.5 Pro</tspan><tspan x="1031" dy="18">Gemini 2.5 Flash</tspan></text>
           
 
-            <line x1="1006.6666666666667" y1="128" x2="1006.6666666666667" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1008.1666666666667" y1="129.2" x2="1005.4666666666667" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1250.6666666666665" y1="128" x2="1250.6666666666665" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1252.1666666666665" y1="129.2" x2="1249.4666666666665" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="946.6666666666667" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="948.1666666666667" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1177.6666666666665" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1179.1666666666665" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="958.6666666666667" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="958.6666666666667" dy="0">Gemma 3 270M</tspan></text>
+            <text x="1189.6666666666665" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1189.6666666666665" dy="0">Gemma 3 270M</tspan></text>
           
 
-            <line x1="1386.6666666666667" y1="128" x2="1386.6666666666667" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1388.1666666666667" y1="129.2" x2="1385.4666666666667" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1726.6666666666665" y1="128" x2="1726.6666666666665" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1728.1666666666665" y1="129.2" x2="1725.4666666666665" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1326.6666666666667" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1328.1666666666667" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1653.6666666666665" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1655.1666666666665" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1338.6666666666667" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1338.6666666666667" dy="0">Gemini 3 Pro</tspan></text>
+            <text x="1665.6666666666665" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1665.6666666666665" dy="0">Gemini 3 Pro</tspan></text>
           
 
-            <line x1="1513.3333333333335" y1="128" x2="1513.3333333333335" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1514.8333333333335" y1="129.2" x2="1512.1333333333334" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1885.3333333333333" y1="128" x2="1885.3333333333333" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1886.8333333333333" y1="129.2" x2="1884.1333333333332" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1453.3333333333335" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1454.8333333333335" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1812.3333333333333" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1813.8333333333333" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1465.3333333333335" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1465.3333333333335" dy="0">Gemini 3 Flash</tspan></text>
+            <text x="1824.3333333333333" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1824.3333333333333" dy="0">Gemini 3 Flash</tspan></text>
           
 
-            <line x1="1640" y1="128" x2="1640" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1641.5" y1="129.2" x2="1638.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2044" y1="128" x2="2044" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2045.5" y1="129.2" x2="2042.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1580" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1581.5" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1971" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1972.5" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1592" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1592" dy="0">MedGemma 1.5</tspan></text>
+            <text x="1983" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1983" dy="0">MedGemma 1.5</tspan></text>
           
 
-            <line x1="1766.6666666666667" y1="128" x2="1766.6666666666667" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1768.1666666666667" y1="129.2" x2="1765.4666666666667" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2202.6666666666665" y1="128" x2="2202.6666666666665" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2204.1666666666665" y1="129.2" x2="2201.4666666666667" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1706.6666666666667" y="492" width="120" height="90" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1708.1666666666667" y="493.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2129.6666666666665" y="492" width="146" height="86" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2131.1666666666665" y="493.2" width="143.4" height="83.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1718.6666666666667" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1718.6666666666667" dy="0">Gemini 3.1 Pro</tspan><tspan x="1718.6666666666667" dy="18">Gemini 3.1 Flash Image</tspan></text>
+            <text x="2141.6666666666665" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2141.6666666666665" dy="0">Gemini 3.1 Pro</tspan><tspan x="2141.6666666666665" dy="18">Gemini 3.1 Flash</tspan><tspan x="2141.6666666666665" dy="18">Image</tspan></text>
           
 
-            <line x1="1893.3333333333335" y1="128" x2="1893.3333333333335" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1894.8333333333335" y1="129.2" x2="1892.1333333333334" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2361.333333333333" y1="128" x2="2361.333333333333" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2362.833333333333" y1="129.2" x2="2360.133333333333" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1833.3333333333335" y="492" width="120" height="90" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1834.8333333333335" y="493.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2288.333333333333" y="492" width="146" height="104" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2289.833333333333" y="493.2" width="143.4" height="101.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1845.3333333333335" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1845.3333333333335" dy="0">Gemini 3.1 Flash-Lite</tspan><tspan x="1845.3333333333335" dy="18">Gemini 3.1 Flash Live</tspan></text>
+            <text x="2300.333333333333" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2300.333333333333" dy="0">Gemini 3.1</tspan><tspan x="2300.333333333333" dy="18">Flash-Lite</tspan><tspan x="2300.333333333333" dy="18">Gemini 3.1 Flash</tspan><tspan x="2300.333333333333" dy="18">Live</tspan></text>
           
 
-            <line x1="2020" y1="128" x2="2020" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2021.5" y1="129.2" x2="2018.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2520" y1="128" x2="2520" y2="492" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2521.5" y1="129.2" x2="2518.8" y2="492.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1960" y="492" width="120" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1961.5" y="493.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2447" y="492" width="146" height="50" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2448.5" y="493.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1972" y="515" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1972" dy="0">★ Gemma 4</tspan></text>
+            <text x="2459" y="514" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2459" dy="0">★ Gemma 4</tspan></text>
           
       
 
         <text x="36" y="680" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">China-based Labs</tspan></text>
         
-            <line x1="120" y1="128" x2="120" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="121.5" y1="129.2" x2="118.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="140" y1="128" x2="140" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="141.5" y1="129.2" x2="138.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="60" y="642" width="120" height="90" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="61.5" y="643.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="67" y="642" width="146" height="68" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="68.5" y="643.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="72" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="72" dy="0">★ DeepSeek R1</tspan><tspan x="72" dy="18">DeepSeek V3</tspan></text>
+            <text x="79" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="79" dy="0">★ DeepSeek R1</tspan><tspan x="79" dy="18">DeepSeek V3</tspan></text>
           
 
-            <line x1="373.33333333333337" y1="128" x2="373.33333333333337" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="374.83333333333337" y1="129.2" x2="372.1333333333334" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="457.3333333333333" y1="128" x2="457.3333333333333" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="458.8333333333333" y1="129.2" x2="456.1333333333333" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="313.33333333333337" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="314.83333333333337" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="384.3333333333333" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="385.8333333333333" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="325.33333333333337" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="325.33333333333337" dy="0">Qwen2.5-Omni</tspan></text>
+            <text x="396.3333333333333" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="396.3333333333333" dy="0">Qwen2.5-Omni</tspan></text>
           
 
-            <line x1="500" y1="128" x2="500" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="501.5" y1="129.2" x2="498.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="616" y1="128" x2="616" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="617.5" y1="129.2" x2="614.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="440" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="441.5" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="543" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="544.5" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="452" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="452" dy="0">Seed1.5-Thinking</tspan></text>
+            <text x="555" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="555" dy="0">Seed1.5-Thinking</tspan></text>
           
 
-            <line x1="626.6666666666667" y1="128" x2="626.6666666666667" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="628.1666666666667" y1="129.2" x2="625.4666666666667" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="774.6666666666666" y1="128" x2="774.6666666666666" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="776.1666666666666" y1="129.2" x2="773.4666666666666" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="566.6666666666667" y="642" width="120" height="108" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="568.1666666666667" y="643.2" width="117.4" height="105.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="701.6666666666666" y="642" width="146" height="104" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="703.1666666666666" y="643.2" width="143.4" height="101.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="578.6666666666667" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="578.6666666666667" dy="0">★ Qwen3</tspan><tspan x="578.6666666666667" dy="18">Yuanbao (Hunyuan-TurboS)</tspan><tspan x="578.6666666666667" dy="18">Seed1.5-VL</tspan></text>
+            <text x="713.6666666666666" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="713.6666666666666" dy="0">★ Qwen3</tspan><tspan x="713.6666666666666" dy="18">Yuanbao</tspan><tspan x="713.6666666666666" dy="18">(Hunyuan-TurboS)</tspan><tspan x="713.6666666666666" dy="18">Seed1.5-VL</tspan></text>
           
 
-            <line x1="753.3333333333334" y1="128" x2="753.3333333333334" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="754.8333333333334" y1="129.2" x2="752.1333333333333" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="933.3333333333333" y1="128" x2="933.3333333333333" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="934.8333333333333" y1="129.2" x2="932.1333333333332" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="693.3333333333334" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="694.8333333333334" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="860.3333333333333" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="861.8333333333333" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="705.3333333333334" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="705.3333333333334" dy="0">ERNIE 4.5</tspan></text>
+            <text x="872.3333333333333" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="872.3333333333333" dy="0">ERNIE 4.5</tspan></text>
           
 
-            <line x1="880" y1="128" x2="880" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="881.5" y1="129.2" x2="878.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1092" y1="128" x2="1092" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1093.5" y1="129.2" x2="1090.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="820" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="821.5" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1019" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1020.5" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="832" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="832" dy="0">Kimi K2.0</tspan></text>
+            <text x="1031" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1031" dy="0">Kimi K2.0</tspan></text>
           
 
-            <line x1="1006.6666666666667" y1="128" x2="1006.6666666666667" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1008.1666666666667" y1="129.2" x2="1005.4666666666667" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1250.6666666666665" y1="128" x2="1250.6666666666665" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1252.1666666666665" y1="129.2" x2="1249.4666666666665" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="946.6666666666667" y="642" width="120" height="108" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="948.1666666666667" y="643.2" width="117.4" height="105.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1177.6666666666665" y="642" width="146" height="86" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1179.1666666666665" y="643.2" width="143.4" height="83.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="958.6666666666667" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="958.6666666666667" dy="0">GLM-4.5</tspan><tspan x="958.6666666666667" dy="18">QuarkMed</tspan><tspan x="958.6666666666667" dy="18">Qwen-Image</tspan></text>
+            <text x="1189.6666666666665" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1189.6666666666665" dy="0">GLM-4.5</tspan><tspan x="1189.6666666666665" dy="18">QuarkMed</tspan><tspan x="1189.6666666666665" dy="18">Qwen-Image</tspan></text>
           
 
-            <line x1="1133.3333333333335" y1="128" x2="1133.3333333333335" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1134.8333333333335" y1="129.2" x2="1132.1333333333334" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1409.3333333333333" y1="128" x2="1409.3333333333333" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1410.8333333333333" y1="129.2" x2="1408.1333333333332" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1073.3333333333335" y="642" width="120" height="144" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1074.8333333333335" y="643.2" width="117.4" height="141.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1336.3333333333333" y="642" width="146" height="158" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1337.8333333333333" y="643.2" width="143.4" height="155.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1085.3333333333335" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1085.3333333333335" dy="0">DeepSeek V3.1-Terminus</tspan><tspan x="1085.3333333333335" dy="18">Baichuan-M2</tspan><tspan x="1085.3333333333335" dy="18">LongCat-Flash</tspan><tspan x="1085.3333333333335" dy="18">LongCat-Flash-Thinking</tspan><tspan x="1085.3333333333335" dy="18">Qwen3-Omni</tspan></text>
+            <text x="1348.3333333333333" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1348.3333333333333" dy="0">DeepSeek V3.1-</tspan><tspan x="1348.3333333333333" dy="18">Terminus</tspan><tspan x="1348.3333333333333" dy="18">Baichuan-M2</tspan><tspan x="1348.3333333333333" dy="18">LongCat-Flash</tspan><tspan x="1348.3333333333333" dy="18">LongCat-Flash-</tspan><tspan x="1348.3333333333333" dy="18">Thinking</tspan><tspan x="1348.3333333333333" dy="18">Qwen3-Omni</tspan></text>
           
 
-            <line x1="1260" y1="128" x2="1260" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1261.5" y1="129.2" x2="1258.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1568" y1="128" x2="1568" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1569.5" y1="129.2" x2="1566.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1200" y="642" width="120" height="126" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1201.5" y="643.2" width="117.4" height="123.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1495" y="642" width="146" height="122" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1496.5" y="643.2" width="143.4" height="119.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1212" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1212" dy="0">LongCat-Flash-Omni</tspan><tspan x="1212" dy="18">MiniMax M2.0</tspan><tspan x="1212" dy="18">MiniMax M2</tspan><tspan x="1212" dy="18">LongCat-Video</tspan></text>
+            <text x="1507" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1507" dy="0">LongCat-Flash-</tspan><tspan x="1507" dy="18">Omni</tspan><tspan x="1507" dy="18">MiniMax M2.0</tspan><tspan x="1507" dy="18">MiniMax M2</tspan><tspan x="1507" dy="18">LongCat-Video</tspan></text>
           
 
-            <line x1="1386.6666666666667" y1="128" x2="1386.6666666666667" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1388.1666666666667" y1="129.2" x2="1385.4666666666667" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1726.6666666666665" y1="128" x2="1726.6666666666665" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1728.1666666666665" y1="129.2" x2="1725.4666666666665" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1326.6666666666667" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1328.1666666666667" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1653.6666666666665" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1655.1666666666665" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1338.6666666666667" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1338.6666666666667" dy="0">Qwen3-VL</tspan></text>
+            <text x="1665.6666666666665" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1665.6666666666665" dy="0">Qwen3-VL</tspan></text>
           
 
-            <line x1="1513.3333333333335" y1="128" x2="1513.3333333333335" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1514.8333333333335" y1="129.2" x2="1512.1333333333334" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1885.3333333333333" y1="128" x2="1885.3333333333333" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1886.8333333333333" y1="129.2" x2="1884.1333333333332" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1453.3333333333335" y="642" width="120" height="144" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1454.8333333333335" y="643.2" width="117.4" height="141.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1812.3333333333333" y="642" width="146" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1813.8333333333333" y="643.2" width="143.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1465.3333333333335" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1465.3333333333335" dy="0">DeepSeek V3.2</tspan><tspan x="1465.3333333333335" dy="18">Step-DeepResearch</tspan><tspan x="1465.3333333333335" dy="18">GLM-4.7</tspan><tspan x="1465.3333333333335" dy="18">MiniMax M2.1</tspan><tspan x="1465.3333333333335" dy="18">LongCat-Image</tspan></text>
+            <text x="1824.3333333333333" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1824.3333333333333" dy="0">DeepSeek V3.2</tspan><tspan x="1824.3333333333333" dy="18">Step-</tspan><tspan x="1824.3333333333333" dy="18">DeepResearch</tspan><tspan x="1824.3333333333333" dy="18">GLM-4.7</tspan><tspan x="1824.3333333333333" dy="18">MiniMax M2.1</tspan><tspan x="1824.3333333333333" dy="18">LongCat-Image</tspan></text>
           
 
-            <line x1="1640" y1="128" x2="1640" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1641.5" y1="129.2" x2="1638.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2044" y1="128" x2="2044" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2045.5" y1="129.2" x2="2042.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1580" y="642" width="120" height="90" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1581.5" y="643.2" width="117.4" height="87.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1971" y="642" width="146" height="86" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1972.5" y="643.2" width="143.4" height="83.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1592" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1592" dy="0">GLM-4.7-Flash</tspan><tspan x="1592" dy="18">LongCat-Flash-Thinking-2601</tspan></text>
+            <text x="1983" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1983" dy="0">GLM-4.7-Flash</tspan><tspan x="1983" dy="18">LongCat-Flash-</tspan><tspan x="1983" dy="18">Thinking-2601</tspan></text>
           
 
-            <line x1="1766.6666666666667" y1="128" x2="1766.6666666666667" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1768.1666666666667" y1="129.2" x2="1765.4666666666667" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2202.6666666666665" y1="128" x2="2202.6666666666665" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2204.1666666666665" y1="129.2" x2="2201.4666666666667" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1706.6666666666667" y="642" width="120" height="252" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1708.1666666666667" y="643.2" width="117.4" height="249.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2129.6666666666665" y="642" width="146" height="230" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2131.1666666666665" y="643.2" width="143.4" height="227.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1718.6666666666667" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1718.6666666666667" dy="0">★ GLM-5</tspan><tspan x="1718.6666666666667" dy="18">Step-3.5-Flash</tspan><tspan x="1718.6666666666667" dy="18">ERNIE 5.0</tspan><tspan x="1718.6666666666667" dy="18">Baichuan-M3</tspan><tspan x="1718.6666666666667" dy="18">MedXIAOHE</tspan><tspan x="1718.6666666666667" dy="18">Seed 2.0</tspan><tspan x="1718.6666666666667" dy="18">Qwen 3.5</tspan><tspan x="1718.6666666666667" dy="18">MiniMax M2.5</tspan><tspan x="1718.6666666666667" dy="18">★ Kimi K2.5</tspan><tspan x="1718.6666666666667" dy="18">Ling 2.5</tspan><tspan x="1718.6666666666667" dy="18">Qwen3-Coder-Next</tspan></text>
+            <text x="2141.6666666666665" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2141.6666666666665" dy="0">★ GLM-5</tspan><tspan x="2141.6666666666665" dy="18">Step-3.5-Flash</tspan><tspan x="2141.6666666666665" dy="18">ERNIE 5.0</tspan><tspan x="2141.6666666666665" dy="18">Baichuan-M3</tspan><tspan x="2141.6666666666665" dy="18">MedXIAOHE</tspan><tspan x="2141.6666666666665" dy="18">Seed 2.0</tspan><tspan x="2141.6666666666665" dy="18">Qwen 3.5</tspan><tspan x="2141.6666666666665" dy="18">MiniMax M2.5</tspan><tspan x="2141.6666666666665" dy="18">★ Kimi K2.5</tspan><tspan x="2141.6666666666665" dy="18">Ling 2.5</tspan><tspan x="2141.6666666666665" dy="18">Qwen3-Coder-Next</tspan></text>
           
 
-            <line x1="1893.3333333333335" y1="128" x2="1893.3333333333335" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1894.8333333333335" y1="129.2" x2="1892.1333333333334" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2361.333333333333" y1="128" x2="2361.333333333333" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2362.833333333333" y1="129.2" x2="2360.133333333333" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1833.3333333333335" y="642" width="120" height="108" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1834.8333333333335" y="643.2" width="117.4" height="105.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2288.333333333333" y="642" width="146" height="104" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2289.833333333333" y="643.2" width="143.4" height="101.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1845.3333333333335" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1845.3333333333335" dy="0">MiniMax M2.7</tspan><tspan x="1845.3333333333335" dy="18">LongCat-Next</tspan><tspan x="1845.3333333333335" dy="18">★ LongCat-Flash-Prover</tspan></text>
+            <text x="2300.333333333333" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2300.333333333333" dy="0">MiniMax M2.7</tspan><tspan x="2300.333333333333" dy="18">LongCat-Next</tspan><tspan x="2300.333333333333" dy="18">★ LongCat-Flash-</tspan><tspan x="2300.333333333333" dy="18">Prover</tspan></text>
           
 
-            <line x1="2020" y1="128" x2="2020" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2021.5" y1="129.2" x2="2018.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="2520" y1="128" x2="2520" y2="642" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2521.5" y1="129.2" x2="2518.8" y2="642.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1960" y="642" width="120" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1961.5" y="643.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2447" y="642" width="146" height="50" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2448.5" y="643.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1972" y="665" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1972" dy="0">GLM-5V-Turbo</tspan></text>
+            <text x="2459" y="664" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2459" dy="0">GLM-5V-Turbo</tspan></text>
           
       
 
         <text x="36" y="830" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Other Global</tspan></text>
         
-            <line x1="500" y1="128" x2="500" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="501.5" y1="129.2" x2="498.8" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="616" y1="128" x2="616" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="617.5" y1="129.2" x2="614.8" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="440" y="792" width="120" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="441.5" y="793.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="543" y="792" width="146" height="68" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="544.5" y="793.2" width="143.4" height="65.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-            <text x="452" y="815" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="452" dy="0">★ Llama 4 Scout/Maverick</tspan></text>
+            <text x="555" y="814" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="555" dy="0">★ Llama 4 Scout/</tspan><tspan x="555" dy="18">Maverick</tspan></text>
           
 
-            <line x1="1006.6666666666667" y1="128" x2="1006.6666666666667" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1008.1666666666667" y1="129.2" x2="1005.4666666666667" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1250.6666666666665" y1="128" x2="1250.6666666666665" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1252.1666666666665" y1="129.2" x2="1249.4666666666665" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="946.6666666666667" y="792" width="120" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="948.1666666666667" y="793.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="1177.6666666666665" y="792" width="146" height="50" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="1179.1666666666665" y="793.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-            <text x="958.6666666666667" y="815" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="958.6666666666667" dy="0">Grok 4</tspan></text>
+            <text x="1189.6666666666665" y="814" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1189.6666666666665" dy="0">Grok 4</tspan></text>
           
 
-            <line x1="1133.3333333333335" y1="128" x2="1133.3333333333335" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1134.8333333333335" y1="129.2" x2="1132.1333333333334" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1409.3333333333333" y1="128" x2="1409.3333333333333" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1410.8333333333333" y1="129.2" x2="1408.1333333333332" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1073.3333333333335" y="792" width="120" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="1074.8333333333335" y="793.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="1336.3333333333333" y="792" width="146" height="50" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="1337.8333333333333" y="793.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1085.3333333333335" y="815" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1085.3333333333335" dy="0">Grok 4 Fast</tspan></text>
+            <text x="1348.3333333333333" y="814" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1348.3333333333333" dy="0">Grok 4 Fast</tspan></text>
           
 
-            <line x1="1386.6666666666667" y1="128" x2="1386.6666666666667" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1388.1666666666667" y1="129.2" x2="1385.4666666666667" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <line x1="1726.6666666666665" y1="128" x2="1726.6666666666665" y2="792" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1728.1666666666665" y1="129.2" x2="1725.4666666666665" y2="792.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
             
-    <rect x="1326.6666666666667" y="792" width="120" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="1328.1666666666667" y="793.2" width="117.4" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="1653.6666666666665" y="792" width="146" height="50" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="1655.1666666666665" y="793.2" width="143.4" height="47.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-            <text x="1338.6666666666667" y="815" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1338.6666666666667" dy="0">Grok 4.1</tspan></text>
+            <text x="1665.6666666666665" y="814" fill="#111827" font-size="14" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1665.6666666666665" dy="0">Grok 4.1</tspan></text>
           
       
 </svg>
