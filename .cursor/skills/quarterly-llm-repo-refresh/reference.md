@@ -30,6 +30,10 @@ Monitored ecosystems:
 - `Zhipu / Z.AI`: `docs.z.ai`, `docs.bigmodel.cn`, `huggingface.co/zai-org`
 - `MiniMax`: official news pages and related official article sources
 - `Google`: `deepmind.google/models/model-cards/`, `deepmind.google/models/gemma/`, `ai.google.dev/gemma/docs`
+- `OpenAI`: `deploymentsafety.openai.com/sitemap.xml` + top-level model pages + official PDFs
+- `xAI`: `data.x.ai`, `x.ai/news`, `docs.x.ai/docs/release-notes`
+- `Anthropic`: `anthropic.com/sitemap.xml` + official news / PDF pages
+- `Meta`: official Llama release pages such as `ai.meta.com/blog/llama-4-multimodal-intelligence/`
 
 Discovery output must retain:
 - `canonical_model_id`
@@ -75,6 +79,7 @@ Rules:
 - official docs/model card title wins,
 - paper titles and repo titles remain in `aliases`,
 - README display name should use the canonical model name unless backward compatibility requires the existing label.
+- `o3 / o4-mini` remains the canonical README label even when the source page title is `OpenAI o3 and o4-mini`.
 
 ## 5) Source URL Prioritization
 
@@ -92,6 +97,7 @@ The curated snapshot must:
 - overlay fresher official links / aliases / evidence from dynamic discovery,
 - keep README model labels stable for backward-compatible incremental refreshes,
 - filter static assets and unrelated external links out of `candidate_links`.
+- add explicit official fallbacks when direct PDFs are known to be anti-bot blocked in the current environment.
 
 Priority order:
 1. official PDF / model card / system card
@@ -108,6 +114,10 @@ python3 download_papers.py --models-json scripts/latest_models_curated.json
 
 If `--models-json` is omitted, `download_papers.py` should try dynamic discovery first and only then fall back to static `MODELS`.
 When `README.md` is present, the default runtime path should prefer `scripts/latest_models_curated.json`.
+
+Special cases:
+- `o3 / o4-mini`: keep the corrected `2025-04` month even if a source page exposes stale or conflicting metadata.
+- `xAI`: if `data.x.ai` and `x.ai/news` both return anti-bot `403`, allow `docs.x.ai/docs/release-notes` as the materialization source, but do not let that page override the model's declared month.
 
 ## 6) Release Month Accuracy
 
@@ -186,6 +196,7 @@ Run in repo root:
 
 ```bash
 python3 -m unittest \
+  tests/test_build_curated_models.py \
   tests/test_download_papers.py \
   tests/test_update_readme_incremental.py \
   tests/test_discover_models.py \
@@ -211,4 +222,20 @@ Quick checks:
 ```bash
 git ls-remote https://github.com/joe1chief/awesome-llm-tech-reports.git | head -n 3
 curl -I -L --max-time 20 https://arxiv.org/pdf/2603.21065 | head -n 10
+```
+
+xAI anti-bot check:
+
+```bash
+curl -I -L --max-time 20 https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf
+python3 - <<'PY'
+import requests
+for url in [
+    "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+    "https://x.ai/news/grok-4",
+    "https://docs.x.ai/docs/release-notes",
+]:
+    r = requests.get(url, timeout=20, verify=False)
+    print(url, r.status_code, r.headers.get("content-type"))
+PY
 ```

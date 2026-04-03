@@ -1,7 +1,7 @@
 ---
 name: quarterly-llm-repo-refresh
 description: Refresh awesome-llm-tech-reports by dynamically discovering latest model-release technical reports, downloading or rendering official PDFs, regenerating README sections, and validating the full SOP before push.
-argument-hint: "[models-json(optional)]"
+argument-hint: "[latest_models_curated.json(optional)]"
 ---
 
 # Quarterly LLM Repo Refresh
@@ -18,8 +18,9 @@ Use this skill when you need to:
 
 ## Required Inputs
 
-- Optional: `$ARGUMENTS[0]` as a pre-generated `models.json`.
-- If no argument is provided, run dynamic discovery first. Do not blindly execute the static `MODELS` list.
+- Optional: `$ARGUMENTS[0]` as a pre-generated curated runtime snapshot.
+- If no argument is provided, run dynamic discovery first, then build the curated runtime snapshot from the current `README.md` boundary.
+- Do not blindly execute the static `MODELS` list and do not feed raw `scripts/latest_models.json` directly into incremental refreshes.
 
 ## Core Workflow
 
@@ -46,6 +47,10 @@ Use this skill when you need to:
   - `Zhipu / Z.AI`: `docs.z.ai`, `docs.bigmodel.cn`, `zai-org`
   - `MiniMax`: official news pages and related official article sources
   - `Google`: DeepMind model cards, Gemma pages, AI docs
+  - `OpenAI`: Deployment Safety Hub sitemap + model pages + official PDFs
+  - `xAI`: `data.x.ai`, `x.ai/news`, and `docs.x.ai/docs/release-notes` fallback
+  - `Anthropic`: sitemap-first discovery with official PDF fallback
+  - `Meta`: direct official Llama release pages
 - Discovery output must include:
   - `canonical_model_id`
   - `aliases`
@@ -59,11 +64,14 @@ Use this skill when you need to:
 - Alias merging is mandatory:
   - `GLM 5V Flash` -> `GLM-5V-Turbo`
   - `LongCat` paper title / repo title / README title variants -> one canonical name
+  - `OpenAI o3 and o4-mini` -> `o3 / o4-mini`
 - Include only model-release records. Keep excluded findings with machine-readable reasons.
 - Source URL selection must be dynamic and priority-driven per run.
 - `scripts/latest_models.json` is a discovery superset, not a safe direct download input.
 - `scripts/latest_models_curated.json` is the required runtime boundary for incremental repo refreshes.
 - `YYYY-MM_` filename prefixes must match runtime-calibrated release months.
+- `o3 / o4-mini` must stay pinned to the corrected `2025-04` release month at runtime.
+- If xAI PDF/news endpoints are anti-bot blocked, fall back to `docs.x.ai/docs/release-notes` for materialization but keep the model's declared release month.
 - `Core Highlights` must be regenerated from downloaded PDF text or webpage-rendered PDF text, in English only.
 - README diagrams must be SVG assets generated from structured JSON, not Mermaid blocks.
 - Monthly Density Snapshot must keep bubble size proportional to release count and must not render side tags.

@@ -10,6 +10,7 @@ REFERENCE_MD="$SKILL_DIR/reference.md"
 EXAMPLES_MD="$SKILL_DIR/examples.md"
 README_UPDATER="$REPO_ROOT/scripts/update_readme_incremental.py"
 DISCOVER_SCRIPT="$REPO_ROOT/scripts/discover_models.py"
+BUILD_CURATED_SCRIPT="$REPO_ROOT/scripts/build_curated_models.py"
 RENDER_SCRIPT="$REPO_ROOT/scripts/render_readme_diagrams.mjs"
 
 if [[ ! -f "$SKILL_MD" ]]; then
@@ -22,6 +23,10 @@ if [[ ! -f "$README_UPDATER" ]]; then
 fi
 if [[ ! -f "$DISCOVER_SCRIPT" ]]; then
   echo "ERROR: missing discover script $DISCOVER_SCRIPT"
+  exit 1
+fi
+if [[ ! -f "$BUILD_CURATED_SCRIPT" ]]; then
+  echo "ERROR: missing curated builder script $BUILD_CURATED_SCRIPT"
   exit 1
 fi
 if [[ ! -f "$RENDER_SCRIPT" ]]; then
@@ -114,6 +119,7 @@ if [[ -d "$BACKUP_DIR/scripts/generated" ]]; then
 fi
 
 python3 -m unittest \
+  tests/test_build_curated_models.py \
   tests/test_download_papers.py \
   tests/test_update_readme_incremental.py \
   tests/test_discover_models.py \
