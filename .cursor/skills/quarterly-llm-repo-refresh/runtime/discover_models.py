@@ -19,9 +19,10 @@ from urllib.parse import quote, urlencode, urljoin
 import requests
 from requests import exceptions as requests_exceptions
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "scripts" / "latest_models.json"
-ALIASES_PATH = ROOT / "scripts" / "model_aliases.json"
+from runtime_paths import ALIASES_JSON, LATEST_MODELS_JSON, ROOT
+
+DEFAULT_OUTPUT = LATEST_MODELS_JSON
+ALIASES_PATH = ALIASES_JSON
 
 LONGCAT_ARXIV_FEED_URL = (
     "https://export.arxiv.org/api/query?search_query=all:LongCat"

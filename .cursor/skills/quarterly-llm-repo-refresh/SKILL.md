@@ -20,7 +20,7 @@ Use this skill when you need to:
 
 - Optional: `$ARGUMENTS[0]` as a pre-generated curated runtime snapshot.
 - If no argument is provided, run dynamic discovery first, then build the curated runtime snapshot from the current `README.md` boundary.
-- Do not blindly execute the static `MODELS` list and do not feed raw `scripts/latest_models.json` directly into incremental refreshes.
+- Do not blindly execute the static `MODELS` list and do not feed raw `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json` directly into incremental refreshes.
 
 ## Core Workflow
 
@@ -29,15 +29,15 @@ Use this skill when you need to:
    - ensure Playwright Chromium is installed,
    - confirm the repo is clean enough to update safely.
 2. Discover model candidates:
-   - `python3 scripts/discover_models.py --until <today> --output scripts/latest_models.json`
+   - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/discover_models.py --until <today> --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json`
 3. Build the curated runtime snapshot from the current README boundary:
-   - `python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json`
+   - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/build_curated_models.py --discover-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json`
 4. Download/render from the curated snapshot:
-   - `python3 download_papers.py --models-json scripts/latest_models_curated.json`
+   - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/download_papers.py --models-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json`
 5. Update README incrementally:
-   - `python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json`
+   - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/update_readme_incremental.py --results-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_download_results.json`
 6. Regenerate Excalidraw-style SVG assets:
-   - `node scripts/render_readme_diagrams.mjs`
+   - `node .cursor/skills/quarterly-llm-repo-refresh/runtime/render_readme_diagrams.mjs`
 7. Run the validation gate before commit/push.
 
 ## Hard Requirements
@@ -67,8 +67,8 @@ Use this skill when you need to:
   - `OpenAI o3 and o4-mini` -> `o3 / o4-mini`
 - Include only model-release records. Keep excluded findings with machine-readable reasons.
 - Source URL selection must be dynamic and priority-driven per run.
-- `scripts/latest_models.json` is a discovery superset, not a safe direct download input.
-- `scripts/latest_models_curated.json` is the required runtime boundary for incremental repo refreshes.
+- `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json` is a discovery superset, not a safe direct download input.
+- `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json` is the required runtime boundary for incremental repo refreshes.
 - `YYYY-MM_` filename prefixes must match runtime-calibrated release months.
 - `o3 / o4-mini` must stay pinned to the corrected `2025-04` release month at runtime.
 - If xAI PDF/news endpoints are anti-bot blocked, fall back to `docs.x.ai/docs/release-notes` for materialization but keep the model's declared release month.

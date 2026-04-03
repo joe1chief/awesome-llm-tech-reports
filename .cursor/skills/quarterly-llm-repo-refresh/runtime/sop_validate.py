@@ -10,9 +10,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Dict, List
 
-ROOT = Path(__file__).resolve().parents[1]
-README = ROOT / "README.md"
-GENERATED_DIR = ROOT / "scripts" / "generated"
+from runtime_paths import GENERATED_DIR, README, ROOT
+
 MONTHLY_JSON = GENERATED_DIR / "monthly_density.json"
 TIMELINE_JSON = GENERATED_DIR / "release_timeline.json"
 MONTHLY_SVG = ROOT / "assets" / "diagrams" / "monthly-density.svg"

@@ -3,8 +3,10 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const DEFAULT_GENERATED_DIR = path.join(ROOT, "scripts", "generated");
+const RUNTIME_DIR = path.dirname(new URL(import.meta.url).pathname);
+const SKILL_DIR = path.resolve(RUNTIME_DIR, "..");
+const ROOT = path.resolve(SKILL_DIR, "../../..");
+const DEFAULT_GENERATED_DIR = path.join(SKILL_DIR, "state", "generated");
 const DEFAULT_ASSETS_DIR = path.join(ROOT, "assets", "diagrams");
 
 function parseArgs(argv) {

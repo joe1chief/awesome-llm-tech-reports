@@ -1,6 +1,6 @@
 import unittest
 
-from scripts import discover_models
+from tests.runtime_imports import discover_models
 
 
 class ModelAliasTests(unittest.TestCase):

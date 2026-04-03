@@ -10,10 +10,11 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, Iterable, List
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_README = ROOT / "README.md"
-DEFAULT_RESULTS_JSON = ROOT / "scripts" / "latest_download_results.json"
-DEFAULT_GENERATED_DIR = ROOT / "scripts" / "generated"
+from runtime_paths import GENERATED_DIR, LATEST_RESULTS_JSON, README, ROOT
+
+DEFAULT_README = README
+DEFAULT_RESULTS_JSON = LATEST_RESULTS_JSON
+DEFAULT_GENERATED_DIR = GENERATED_DIR
 
 ASSET_RELEASE_TIMELINE = "assets/diagrams/release-timeline.svg"
 ASSET_MONTHLY_DENSITY = "assets/diagrams/monthly-density.svg"

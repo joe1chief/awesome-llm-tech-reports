@@ -1,6 +1,6 @@
 import unittest
 
-from scripts import update_readme_incremental as updater
+from tests.runtime_imports import update_readme_incremental as updater
 
 
 class UpdateReadmeIncrementalTests(unittest.TestCase):

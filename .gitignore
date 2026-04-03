@@ -1,7 +1,5 @@
 __pycache__/
 *.pyc
-scripts/latest_download_results.json
-scripts/latest_models*.json
-scripts/generated/
+.cursor/skills/quarterly-llm-repo-refresh/state/
 assets/diagrams/*.excalidraw
 docs/plans/

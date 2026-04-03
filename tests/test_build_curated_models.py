@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from scripts import build_curated_models
+from tests.runtime_imports import build_curated_models
 
 
 class BuildCuratedModelsTests(unittest.TestCase):

@@ -4,18 +4,16 @@ from tempfile import TemporaryDirectory
 from unittest.mock import patch
 import json
 
-try:
-    from llm_papers import download_papers
-except ModuleNotFoundError:  # pragma: no cover - local fallback
-    import download_papers
+from tests.runtime_imports import download_papers
 
 
 class DownloadPapersTests(unittest.TestCase):
     def test_runtime_models_prefer_curated_snapshot_when_present(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
-            curated_models = root / "scripts" / "latest_models_curated.json"
-            discovered_models = root / "scripts" / "latest_models.json"
+            state_dir = root / ".cursor" / "skills" / "quarterly-llm-repo-refresh" / "state"
+            curated_models = state_dir / "latest_models_curated.json"
+            discovered_models = state_dir / "latest_models.json"
             curated_models.parent.mkdir(parents=True, exist_ok=True)
             curated_models.write_text(
                 json.dumps(
@@ -76,7 +74,9 @@ class DownloadPapersTests(unittest.TestCase):
     def test_runtime_models_prefer_discovered_snapshot_when_present(self) -> None:
         with TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
-            latest_models = root / "scripts" / "latest_models.json"
+            latest_models = (
+                root / ".cursor" / "skills" / "quarterly-llm-repo-refresh" / "state" / "latest_models.json"
+            )
             latest_models.parent.mkdir(parents=True, exist_ok=True)
             latest_models.write_text(
                 json.dumps(

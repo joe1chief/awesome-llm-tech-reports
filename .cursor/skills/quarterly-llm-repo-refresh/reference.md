@@ -21,8 +21,8 @@ Discovery is the first-class source of truth. Do not start with the static `MODE
 Run:
 
 ```bash
-python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/discover_models.py --until 2026-04-03 --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/build_curated_models.py --discover-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json
 ```
 
 Monitored ecosystems:
@@ -89,7 +89,7 @@ Do not feed the raw discovery superset directly into the downloader for incremen
 Curated runtime boundary:
 
 ```bash
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/build_curated_models.py --discover-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json
 ```
 
 The curated snapshot must:
@@ -109,11 +109,11 @@ Priority order:
 Downloader command:
 
 ```bash
-python3 download_papers.py --models-json scripts/latest_models_curated.json
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/download_papers.py --models-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json
 ```
 
-If `--models-json` is omitted, `download_papers.py` should try dynamic discovery first and only then fall back to static `MODELS`.
-When `README.md` is present, the default runtime path should prefer `scripts/latest_models_curated.json`.
+If `--models-json` is omitted, `.cursor/skills/quarterly-llm-repo-refresh/runtime/download_papers.py` should try dynamic discovery first and only then fall back to static `MODELS`.
+When `README.md` is present, the default runtime path should prefer `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json`.
 
 Special cases:
 - `o3 / o4-mini`: keep the corrected `2025-04` month even if a source page exposes stale or conflicting metadata.
@@ -159,31 +159,31 @@ Do not let navigation text, section headings, or marketing boilerplate overwrite
 Update README incrementally:
 
 ```bash
-python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/update_readme_incremental.py --results-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_download_results.json
 ```
 
 Bootstrap rebuild:
 
 ```bash
-python3 scripts/update_readme_incremental.py \
-  --results-json scripts/latest_download_results.json \
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/update_readme_incremental.py \
+  --results-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_download_results.json \
   --from-scratch
 ```
 
 Render diagrams:
 
 ```bash
-node scripts/render_readme_diagrams.mjs
+node .cursor/skills/quarterly-llm-repo-refresh/runtime/render_readme_diagrams.mjs
 ```
 
 Generated assets:
-- `scripts/generated/monthly_density.json`
-- `scripts/generated/release_timeline.json`
+- `.cursor/skills/quarterly-llm-repo-refresh/state/generated/monthly_density.json`
+- `.cursor/skills/quarterly-llm-repo-refresh/state/generated/release_timeline.json`
 - `assets/diagrams/monthly-density.svg`
 - `assets/diagrams/release-timeline.svg`
 
 Notes:
-- `scripts/generated/*` is a local intermediate cache used during refresh and validation; it should not be committed to `main`.
+- `.cursor/skills/quarterly-llm-repo-refresh/state/generated/*` is a local intermediate cache used during refresh and validation; it should not be committed to `main`.
 - The repository only keeps the final SVG diagrams in `assets/diagrams/`.
 
 Rules:
@@ -204,7 +204,7 @@ python3 -m unittest \
   tests/test_discover_models.py \
   tests/test_model_aliases.py \
   tests/test_render_readme_diagrams.py
-python3 scripts/sop_validate.py
+python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/sop_validate.py
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```
 

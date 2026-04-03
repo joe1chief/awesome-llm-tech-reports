@@ -18,10 +18,17 @@ try:
 except Exception:  # pragma: no cover - optional dependency fallback
     PdfReader = None
 
+from runtime_paths import (
+    LATEST_CURATED_MODELS_JSON,
+    LATEST_MODELS_JSON,
+    LATEST_RESULTS_JSON,
+    README,
+    ROOT,
+    SKILL_DIR,
+)
 
-ROOT = Path(__file__).resolve().parent
-DEFAULT_DISCOVERED_MODELS_JSON = ROOT / "scripts" / "latest_models.json"
-DEFAULT_CURATED_MODELS_JSON = ROOT / "scripts" / "latest_models_curated.json"
+DEFAULT_DISCOVERED_MODELS_JSON = LATEST_MODELS_JSON
+DEFAULT_CURATED_MODELS_JSON = LATEST_CURATED_MODELS_JSON
 
 SOURCE_PRIORITY_RULES: List[Tuple[str, int]] = [
     ("arxiv.org/pdf/", 100),
@@ -1373,7 +1380,7 @@ def refresh_discovered_models_snapshot(
     until: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     try:
-        from scripts import discover_models as model_discovery
+        import discover_models as model_discovery
     except Exception as exc:
         print(f"动态发现不可用，回退静态 MODELS: {exc}", flush=True)
         return []
@@ -1397,8 +1404,9 @@ def refresh_curated_models_snapshot(
     root: Path = ROOT,
     until: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
-    discovered_output = root / "scripts" / "latest_models.json"
-    curated_output = root / "scripts" / "latest_models_curated.json"
+    state_dir = root / ".cursor" / "skills" / "quarterly-llm-repo-refresh" / "state"
+    discovered_output = state_dir / "latest_models.json"
+    curated_output = state_dir / "latest_models_curated.json"
     if discovered_output.exists():
         discovered_models = load_models_from_json(discovered_output)
     else:
@@ -1411,7 +1419,7 @@ def refresh_curated_models_snapshot(
         return []
 
     try:
-        from scripts import build_curated_models as curated_builder
+        import build_curated_models as curated_builder
     except Exception as exc:
         print(f"curated snapshot 构建不可用，回退动态发现: {exc}", flush=True)
         return []
@@ -1446,13 +1454,13 @@ def merge_models(preferred: List[Dict[str, Any]], fallback: List[Dict[str, Any]]
 def load_runtime_models(root: Path = ROOT, models_json_path: Optional[Path] = None) -> List[Dict[str, Any]]:
     if models_json_path:
         return load_models_from_json(models_json_path)
-    curated_snapshot = root / "scripts" / "latest_models_curated.json"
+    state_dir = root / ".cursor" / "skills" / "quarterly-llm-repo-refresh" / "state"
+    curated_snapshot = state_dir / "latest_models_curated.json"
     if curated_snapshot.exists():
         return load_models_from_json(curated_snapshot)
-    default_snapshot = root / "scripts" / "latest_models.json"
+    default_snapshot = state_dir / "latest_models.json"
     discovered_models: List[Dict[str, Any]] = []
-    readme_path = root / "README.md"
-    if readme_path.exists():
+    if (root / "README.md").exists():
         curated_models = refresh_curated_models_snapshot(root=root)
         if curated_models:
             return curated_models
@@ -1628,7 +1636,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--results-json",
         type=Path,
-        default=ROOT / "scripts" / "latest_download_results.json",
+        default=LATEST_RESULTS_JSON,
         help="Path to write structured download results for downstream README update",
     )
     args = parser.parse_args()

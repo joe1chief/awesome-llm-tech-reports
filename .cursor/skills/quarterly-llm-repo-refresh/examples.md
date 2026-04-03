@@ -5,42 +5,48 @@
 ```bash
 export https_proxy=http://127.0.0.1:13659
 export http_proxy=http://127.0.0.1:13659
+RUNTIME=.cursor/skills/quarterly-llm-repo-refresh/runtime
+STATE=.cursor/skills/quarterly-llm-repo-refresh/state
 
 python3 -m pip install playwright
 python3 -m playwright install chromium
 
-python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
-python3 download_papers.py --models-json scripts/latest_models_curated.json
-python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
-node scripts/render_readme_diagrams.mjs
-python3 scripts/sop_validate.py
+python3 "$RUNTIME/discover_models.py" --until 2026-04-03 --output "$STATE/latest_models.json"
+python3 "$RUNTIME/build_curated_models.py" --discover-json "$STATE/latest_models.json" --output "$STATE/latest_models_curated.json"
+python3 "$RUNTIME/download_papers.py" --models-json "$STATE/latest_models_curated.json"
+python3 "$RUNTIME/update_readme_incremental.py" --results-json "$STATE/latest_download_results.json"
+node "$RUNTIME/render_readme_diagrams.mjs"
+python3 "$RUNTIME/sop_validate.py"
 ```
 
 ## Example 2: No Argument Run With Automatic Discovery
 
 ```bash
-python3 download_papers.py
-python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
-node scripts/render_readme_diagrams.mjs
+RUNTIME=.cursor/skills/quarterly-llm-repo-refresh/runtime
+STATE=.cursor/skills/quarterly-llm-repo-refresh/state
+python3 "$RUNTIME/download_papers.py"
+python3 "$RUNTIME/update_readme_incremental.py" --results-json "$STATE/latest_download_results.json"
+node "$RUNTIME/render_readme_diagrams.mjs"
 ```
 
 Behavior:
 - tries dynamic discovery first,
-- writes `scripts/latest_models.json`,
-- builds `scripts/latest_models_curated.json` when `README.md` is present,
+- writes `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json`,
+- builds `.cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json` when `README.md` is present,
 - falls back to static `MODELS` only if discovery fails.
 
 ## Example 3: Bootstrap Rebuild
 
 ```bash
-python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
-python3 download_papers.py --models-json scripts/latest_models_curated.json
-python3 scripts/update_readme_incremental.py \
-  --results-json scripts/latest_download_results.json \
+RUNTIME=.cursor/skills/quarterly-llm-repo-refresh/runtime
+STATE=.cursor/skills/quarterly-llm-repo-refresh/state
+python3 "$RUNTIME/discover_models.py" --until 2026-04-03 --output "$STATE/latest_models.json"
+python3 "$RUNTIME/build_curated_models.py" --discover-json "$STATE/latest_models.json" --output "$STATE/latest_models_curated.json"
+python3 "$RUNTIME/download_papers.py" --models-json "$STATE/latest_models_curated.json"
+python3 "$RUNTIME/update_readme_incremental.py" \
+  --results-json "$STATE/latest_download_results.json" \
   --from-scratch
-node scripts/render_readme_diagrams.mjs
+node "$RUNTIME/render_readme_diagrams.mjs"
 ```
 
 ## Example 4: Discovery Output Shape
@@ -76,8 +82,10 @@ node scripts/render_readme_diagrams.mjs
 Use this when you only want to backfill a known missing subset before the next full run.
 
 ```bash
-python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output /tmp/latest_models_curated.json
+RUNTIME=.cursor/skills/quarterly-llm-repo-refresh/runtime
+STATE=.cursor/skills/quarterly-llm-repo-refresh/state
+python3 "$RUNTIME/discover_models.py" --until 2026-04-03 --output "$STATE/latest_models.json"
+python3 "$RUNTIME/build_curated_models.py" --discover-json "$STATE/latest_models.json" --output /tmp/latest_models_curated.json
 python3 - <<'PY'
 import json
 from pathlib import Path
@@ -100,20 +108,22 @@ Path("/tmp/latest_models_curated_subset.json").write_text(
 )
 PY
 
-python3 download_papers.py --models-json /tmp/latest_models_curated_subset.json
-python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
-node scripts/render_readme_diagrams.mjs
+python3 "$RUNTIME/download_papers.py" --models-json /tmp/latest_models_curated_subset.json
+python3 "$RUNTIME/update_readme_incremental.py" --results-json "$STATE/latest_download_results.json"
+node "$RUNTIME/render_readme_diagrams.mjs"
 ```
 
 ## Example 6: xAI Fallback Check
 
 ```bash
-python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
-python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
+RUNTIME=.cursor/skills/quarterly-llm-repo-refresh/runtime
+STATE=.cursor/skills/quarterly-llm-repo-refresh/state
+python3 "$RUNTIME/discover_models.py" --until 2026-04-03 --output "$STATE/latest_models.json"
+python3 "$RUNTIME/build_curated_models.py" --discover-json "$STATE/latest_models.json" --output "$STATE/latest_models_curated.json"
 python3 - <<'PY'
 import json
 from pathlib import Path
-rows = json.loads(Path("scripts/latest_models_curated.json").read_text())
+rows = json.loads(Path(".cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json").read_text())
 for row in rows:
     if row["org_slug"] == "xai":
         print(row["model"], row["release_date"], row["candidate_links"])

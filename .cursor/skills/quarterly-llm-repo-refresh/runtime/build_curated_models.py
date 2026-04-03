@@ -6,19 +6,17 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+import discover_models
+import update_readme_incremental
+from runtime_paths import LATEST_CURATED_MODELS_JSON, LATEST_MODELS_JSON, README, ROOT
 
-from scripts import discover_models, update_readme_incremental
-DEFAULT_README = ROOT / "README.md"
-DEFAULT_DISCOVERED_MODELS = ROOT / "scripts" / "latest_models.json"
-DEFAULT_OUTPUT = ROOT / "scripts" / "latest_models_curated.json"
+DEFAULT_README = README
+DEFAULT_DISCOVERED_MODELS = LATEST_MODELS_JSON
+DEFAULT_OUTPUT = LATEST_CURATED_MODELS_JSON
 MAX_CANDIDATE_LINKS = 12
 NOISE_HOSTS = {
     "https://fonts.googleapis.com",

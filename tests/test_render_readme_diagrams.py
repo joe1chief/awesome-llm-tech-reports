@@ -6,7 +6,7 @@ from tempfile import TemporaryDirectory
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "scripts" / "render_readme_diagrams.mjs"
+SCRIPT = ROOT / ".cursor" / "skills" / "quarterly-llm-repo-refresh" / "runtime" / "render_readme_diagrams.mjs"
 
 
 class RenderReadmeDiagramsTests(unittest.TestCase):

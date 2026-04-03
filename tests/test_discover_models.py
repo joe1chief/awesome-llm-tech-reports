@@ -3,7 +3,7 @@ import re
 import base64
 from pathlib import Path
 
-from scripts import discover_models
+from tests.runtime_imports import discover_models
 
 
 LONGCAT_FEED = """<?xml version="1.0" encoding="UTF-8"?>
