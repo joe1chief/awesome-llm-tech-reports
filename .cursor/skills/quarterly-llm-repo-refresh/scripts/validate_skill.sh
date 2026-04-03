@@ -9,6 +9,8 @@ SKILL_MD="$SKILL_DIR/SKILL.md"
 REFERENCE_MD="$SKILL_DIR/reference.md"
 EXAMPLES_MD="$SKILL_DIR/examples.md"
 README_UPDATER="$REPO_ROOT/scripts/update_readme_incremental.py"
+DISCOVER_SCRIPT="$REPO_ROOT/scripts/discover_models.py"
+RENDER_SCRIPT="$REPO_ROOT/scripts/render_readme_diagrams.mjs"
 
 if [[ ! -f "$SKILL_MD" ]]; then
   echo "ERROR: missing SKILL.md"
@@ -16,6 +18,14 @@ if [[ ! -f "$SKILL_MD" ]]; then
 fi
 if [[ ! -f "$README_UPDATER" ]]; then
   echo "ERROR: missing README updater script $README_UPDATER"
+  exit 1
+fi
+if [[ ! -f "$DISCOVER_SCRIPT" ]]; then
+  echo "ERROR: missing discover script $DISCOVER_SCRIPT"
+  exit 1
+fi
+if [[ ! -f "$RENDER_SCRIPT" ]]; then
+  echo "ERROR: missing diagram renderer $RENDER_SCRIPT"
   exit 1
 fi
 
@@ -58,12 +68,18 @@ print("skill-structure-ok")
 PY
 
 cd "$REPO_ROOT"
-python3 scripts/sop_validate.py
-python3 -m unittest tests/test_download_papers.py
-python3 -m unittest tests/test_update_readme_incremental.py
-
 TMP_DIR="$(mktemp -d /tmp/quarterly-skill-validate.XXXXXX)"
-trap 'rm -rf "$TMP_DIR"' EXIT
+BACKUP_DIR="$(mktemp -d /tmp/quarterly-skill-backup.XXXXXX)"
+trap 'rm -rf "$TMP_DIR" "$BACKUP_DIR"' EXIT
+
+mkdir -p "$BACKUP_DIR/assets" "$BACKUP_DIR/scripts"
+if [[ -d assets/diagrams ]]; then
+  cp -R assets/diagrams "$BACKUP_DIR/assets/diagrams"
+fi
+if [[ -d scripts/generated ]]; then
+  cp -R scripts/generated "$BACKUP_DIR/scripts/generated"
+fi
+
 cp README.md "$TMP_DIR/README.md"
 cat > "$TMP_DIR/results.json" <<'JSON'
 [
@@ -85,6 +101,25 @@ python3 scripts/update_readme_incremental.py \
   --readme "$TMP_DIR/README.md" \
   --results-json "$TMP_DIR/results.json" \
   --from-scratch
+node scripts/render_readme_diagrams.mjs
+
+rm -rf assets/diagrams scripts/generated
+if [[ -d "$BACKUP_DIR/assets/diagrams" ]]; then
+  mkdir -p assets
+  cp -R "$BACKUP_DIR/assets/diagrams" assets/diagrams
+fi
+if [[ -d "$BACKUP_DIR/scripts/generated" ]]; then
+  mkdir -p scripts
+  cp -R "$BACKUP_DIR/scripts/generated" scripts/generated
+fi
+
+python3 -m unittest \
+  tests/test_download_papers.py \
+  tests/test_update_readme_incremental.py \
+  tests/test_discover_models.py \
+  tests/test_model_aliases.py \
+  tests/test_render_readme_diagrams.py
+python3 scripts/sop_validate.py
 
 python3 - <<'PY'
 from playwright.sync_api import sync_playwright

@@ -2,9 +2,12 @@ import re
 import html
 import argparse
 import json
+import unicodedata
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from urllib.parse import urlparse
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -17,6 +20,8 @@ except Exception:  # pragma: no cover - optional dependency fallback
 
 
 ROOT = Path(__file__).resolve().parent
+DEFAULT_DISCOVERED_MODELS_JSON = ROOT / "scripts" / "latest_models.json"
+DEFAULT_CURATED_MODELS_JSON = ROOT / "scripts" / "latest_models_curated.json"
 
 SOURCE_PRIORITY_RULES: List[Tuple[str, int]] = [
     ("arxiv.org/pdf/", 100),
@@ -493,6 +498,42 @@ def normalize_url(url: str) -> str:
     return url
 
 
+def is_noise_candidate_url(url: str) -> bool:
+    lower = url.lower()
+    if any(lower.startswith(prefix) for prefix in ("https://fonts.googleapis.com", "https://fonts.gstatic.com", "https://www.gstatic.com")):
+        return True
+    if "#" in lower:
+        return True
+    if any(token in lower for token in ["/_next/", "/_astro/", "_server-islands", "favicon"]):
+        return True
+    if lower.endswith(
+        (
+            ".css",
+            ".js",
+            ".svg",
+            ".ico",
+            ".png",
+            ".jpg",
+            ".jpeg",
+            ".webp",
+            ".woff",
+            ".woff2",
+            ".xml",
+        )
+    ):
+        return True
+    return False
+
+
+def candidate_host(url: str) -> str:
+    return urlparse(url).netloc.casefold()
+
+
+def is_allowed_cross_host(url: str) -> bool:
+    lower = url.lower()
+    return "arxiv.org/" in lower or lower.endswith(".pdf")
+
+
 def collect_candidate_links(record: Dict[str, Any]) -> List[str]:
     candidates: List[str] = []
     raw_candidates = record.get("candidate_links")
@@ -502,16 +543,27 @@ def collect_candidate_links(record: Dict[str, Any]) -> List[str]:
                 candidates.append(normalize_url(c.strip()))
     official = record.get("official_link")
     if isinstance(official, str) and official.strip():
-        candidates.append(normalize_url(official.strip()))
+        candidates.insert(0, normalize_url(official.strip()))
+    preferred_hosts = {
+        candidate_host(normalize_url(str(value).strip()))
+        for value in [record.get("official_link", ""), record.get("source_page", "")]
+        if isinstance(value, str) and value.strip()
+    }
 
     deduped: List[str] = []
     seen = set()
     for c in candidates:
+        if is_noise_candidate_url(c):
+            continue
+        if preferred_hosts and candidate_host(c) not in preferred_hosts and not is_allowed_cross_host(c):
+            continue
         if c in seen:
             continue
         seen.add(c)
         deduped.append(c)
-    return deduped
+    # Discovery should keep this list short; cap defensively so a noisy page does
+    # not turn source probing into an N*timeout crawl.
+    return deduped[:12]
 
 
 def source_priority_score(url: str) -> int:
@@ -587,6 +639,17 @@ def choose_best_source_url(
     if not candidates:
         return "", "no_candidate_url"
 
+    first_url = candidates[0]
+    first_priority = source_priority_score(first_url)
+    if is_pdf_url(first_url) or first_priority >= 88:
+        if first_url in probe_cache:
+            ok, reason = probe_cache[first_url]
+        else:
+            ok, reason = probe_source_url(session, first_url)
+            probe_cache[first_url] = (ok, reason)
+        if ok:
+            return first_url, f"probe_ok:{reason}|priority={first_priority}|early"
+
     available: List[Tuple[int, int, str, str]] = []
     unavailable: List[Tuple[int, int, str, str]] = []
     for idx, url in enumerate(candidates):
@@ -658,9 +721,7 @@ def fetch_webpage_published_month(session: requests.Session, url: str) -> Option
         return None
 
     body = resp.text[:300000]
-    text_body = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", body)
-    text_body = re.sub(r"(?s)<[^>]+>", " ", text_body)
-    text_body = html.unescape(re.sub(r"\s+", " ", text_body)).strip()
+    text_body = extract_visible_text_from_html(body)
     patterns = [
         # Prefer the first visible article date in rendered text over mutable metadata.
         r"(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])",
@@ -686,6 +747,21 @@ def fetch_webpage_published_month(session: requests.Session, url: str) -> Option
     return None
 
 
+def extract_visible_text_from_html(body: str) -> str:
+    text_body = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", body)
+    text_body = re.sub(r"(?s)<[^>]+>", " ", text_body)
+    return html.unescape(re.sub(r"\s+", " ", text_body)).strip()
+
+
+def fetch_http_last_modified_month(session: requests.Session, url: str) -> Optional[str]:
+    try:
+        resp = session.get(url, timeout=20, stream=True)
+        resp.raise_for_status()
+    except Exception:
+        return None
+    return extract_year_month_from_text(resp.headers.get("Last-Modified", ""))
+
+
 def infer_release_month_from_source(
     session: requests.Session,
     url: str,
@@ -700,12 +776,30 @@ def infer_release_month_from_source(
     if url_month:
         return url_month, "url_pattern"
 
+    header_month = fetch_http_last_modified_month(session, url)
+    if header_month:
+        return header_month, "http_last_modified"
+
     if should_render_webpage_to_pdf(url):
         web_month = fetch_webpage_published_month(session, url)
         if web_month:
             return web_month, "webpage_published"
 
     return None, "manual_fallback"
+
+
+def summarize_core_feature_from_webpage(
+    session: requests.Session,
+    url: str,
+    model_name: str = "",
+) -> str:
+    try:
+        resp = session.get(url, timeout=20)
+        resp.raise_for_status()
+    except Exception:
+        return ""
+    visible_text = extract_visible_text_from_html(resp.text[:400000])
+    return summarize_core_feature_from_text(visible_text, model_name=model_name)
 
 
 def resolve_release_month(
@@ -718,6 +812,8 @@ def resolve_release_month(
     # If one source link maps to multiple model entries, preserve manual release dates.
     if link_frequency.get(url, 0) > 1:
         return declared_release_date, "manual_shared_link"
+    if "docs.x.ai/docs/release-notes" in url and declared_release_date:
+        return declared_release_date, "manual_xai_release_notes"
 
     if url in cache:
         inferred, source = cache[url]
@@ -771,8 +867,268 @@ def extract_text_length_from_pdf(path: Path, max_pages: int = 5) -> int:
         return 0
 
 
+def extract_text_from_pdf(path: Path, max_pages: int = 5) -> str:
+    if not path.exists() or PdfReader is None:
+        return ""
+    try:
+        reader = PdfReader(str(path))
+        chunks = []
+        for page in reader.pages[:max_pages]:
+            chunks.append((page.extract_text() or "").strip())
+        return "\n".join(chunk for chunk in chunks if chunk)
+    except Exception:
+        return ""
+
+
 def looks_like_text_pdf(path: Path, min_chars: int) -> bool:
     return extract_text_length_from_pdf(path) >= min_chars
+
+
+def contains_han(text: str) -> bool:
+    return any("\u4e00" <= ch <= "\u9fff" for ch in text)
+
+
+def clean_summary_text(text: str, model_name: str = "") -> str:
+    cleaned = unicodedata.normalize("NFKC", text or "")
+    cleaned = cleaned.replace("\u200b", " ").replace("\ufeff", " ")
+    cleaned = re.sub(r"([a-z])([A-Z])", r"\1 \2", cleaned)
+    replacements = {
+        "Mini Max": "MiniMax",
+        "Long Cat": "LongCat",
+        "Med Gemma": "MedGemma",
+        "Mo E": "MoE",
+        "Di NA": "DiNA",
+        "Reasoningin": "Reasoning in",
+        "Mixture-of- Experts": "Mixture-of-Experts",
+        "tool- integrated": "tool-integrated",
+    }
+    for src, dst in replacements.items():
+        cleaned = cleaned.replace(src, dst)
+    cleaned = re.sub(r"LongCat-\s+", "LongCat-", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    cleaned = re.sub(r"^(abstract|introduction|overview)\s*[:\-]?\s*", "", cleaned, flags=re.I)
+    if model_name:
+        cleaned = re.sub(
+            rf"^Introducing\s+{re.escape(model_name)}\s+\d+\s+[A-Z][A-Za-z0-9+\-]+(?:\s+[A-Z][A-Za-z0-9+\-]+){{0,5}}\s+",
+            "",
+            cleaned,
+            flags=re.I,
+        )
+    cleaned = re.sub(r"^Introducing\s+", "", cleaned, flags=re.I)
+
+    trim_markers = [
+        r"\bCitation\b",
+        r"\bJoin our Discord community\b",
+        r"\bMiniMax Agent:\b",
+        r"\bAPI:\b",
+        r"\bCoding Plan:\b",
+        r"\bEvaluation Parameters\b",
+        r"\bServe\b.*?\bLocally\b",
+        r"\bIntelligence with Everyone\b",
+    ]
+    for marker in trim_markers:
+        match = re.search(marker, cleaned, flags=re.I)
+        if match:
+            cleaned = cleaned[: match.start()].strip(" .;:-")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" .;:-")
+    return cleaned
+
+
+def summary_quality_score(text: str, model_name: str = "") -> int:
+    cleaned = clean_summary_text(text, model_name=model_name)
+    if not cleaned:
+        return -10_000
+
+    lower = cleaned.casefold()
+    score = 0
+    if 40 <= len(cleaned) <= 280:
+        score += 12
+    if len(cleaned.split()) >= 8:
+        score += 8
+
+    model_tokens = [token.casefold() for token in re.split(r"[^A-Za-z0-9]+", model_name) if token]
+    score += sum(5 for token in model_tokens if token in lower)
+    score += sum(
+        3
+        for keyword in [
+            "model",
+            "multimodal",
+            "reasoning",
+            "agent",
+            "agentic",
+            "coding",
+            "proof",
+            "medical",
+            "vision",
+            "audio",
+            "video",
+            "reinforcement",
+            "benchmark",
+        ]
+        if keyword in lower
+    )
+
+    if any(phrase in lower for phrase in [" is ", " are ", " delivers ", " supports ", " advances "]):
+        score += 10
+
+    penalties = [
+        "news",
+        "who we are",
+        "menu",
+        "log in",
+        "sign up",
+        "pricing",
+        "search",
+        "cookies",
+        "community",
+        "discord",
+        "hugging face",
+        "docs",
+        "source:",
+        "copy page",
+    ]
+    score -= sum(8 for marker in penalties if marker in lower)
+    return score
+
+
+def choose_best_generated_summary(*summaries: str, model_name: str = "") -> str:
+    ranked = sorted(
+        (
+            (summary_quality_score(summary, model_name=model_name), clean_summary_text(summary, model_name=model_name))
+            for summary in summaries
+            if clean_summary_text(summary, model_name=model_name)
+        ),
+        reverse=True,
+    )
+    return ranked[0][1] if ranked else ""
+
+
+def summarize_core_feature_from_text(text: str, model_name: str = "") -> str:
+    normalized = re.sub(r"\s+", " ", (text or "").strip().replace("|", ". "))
+    normalized = clean_summary_text(normalized, model_name=model_name)
+    if not normalized:
+        return ""
+
+    meaningful_markers = []
+    model_markers = [
+        f"{model_name} is",
+        f"{model_name} are",
+        f"{model_name} delivers",
+        f"{model_name} supports",
+        f"{model_name} advances",
+        f"{model_name} features",
+    ]
+    for marker in [*model_markers, "To our knowledge", "Abstract", "Introduction", "Overview"]:
+        idx = normalized.lower().find(marker.lower())
+        if idx >= 0:
+            meaningful_markers.append(idx)
+    if meaningful_markers:
+        normalized = normalized[min(meaningful_markers):]
+    normalized = re.sub(
+        r"(Skip to main content|Jump to Content|Sign in|Models Solutions Code assistance Community|Tired of limits\?)",
+        " ",
+        normalized,
+        flags=re.I,
+    )
+
+    sentences = re.split(r"(?<=[\.\?!])\s+", normalized)
+    candidates: List[Tuple[int, int, str]] = []
+    model_tokens = [token for token in re.split(r"[^A-Za-z0-9]+", model_name) if token]
+    keywords = {
+        "model",
+        "multimodal",
+        "reasoning",
+        "agent",
+        "agentic",
+        "coding",
+        "context",
+        "training",
+        "safety",
+        "medical",
+        "vision",
+        "audio",
+        "video",
+        "reinforcement",
+        "theorem",
+        "proof",
+    }
+    blacklist = {
+        "cookies policy",
+        "source:",
+        "sign in",
+        "home",
+        "docs",
+        "models",
+        "conferences",
+        "events",
+        "privacy",
+        "terms",
+        "follow",
+        "log in",
+        "try it now",
+        "official skills",
+        "partners",
+    }
+    action_phrases = {
+        " is ",
+        " are ",
+        " introduces ",
+        " introduce ",
+        " delivers ",
+        " offers ",
+        " supports ",
+        " advances ",
+        " features ",
+        " achieves ",
+        " processes ",
+        " built for ",
+    }
+
+    for idx, sentence in enumerate(sentences):
+        sentence = clean_summary_text(sentence.strip(), model_name=model_name)
+        if len(sentence) < 30 or len(sentence) > 260:
+            continue
+        if sentence.count(" ") < 4:
+            continue
+        if not re.search(r"[A-Za-z]", sentence):
+            continue
+        score = 0
+        lower = sentence.lower()
+        if any(term in lower for term in blacklist):
+            continue
+        if idx <= 2:
+            score += 8
+        token_hits = sum(1 for token in model_tokens if token.lower() in lower)
+        if token_hits:
+            score += 7 + token_hits * 3
+        score += sum(4 for keyword in keywords if keyword in lower)
+        if any(phrase in lower for phrase in action_phrases):
+            score += 8
+        if re.match(r"^(abstract|overview|introduction)\b", lower):
+            score += 8
+        if re.search(r"\[[0-9]+\]|\(\d{4}\)", sentence):
+            score -= 4
+        candidates.append((score, -idx, sentence))
+
+    if not candidates:
+        return ""
+
+    selected: List[str] = []
+    seen = set()
+    for _, _, sentence in sorted(candidates, reverse=True):
+        compact = sentence.strip()
+        key = compact.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        selected.append(compact)
+        if len(selected) == 2:
+            break
+    return clean_summary_text(" ".join(selected).strip(), model_name=model_name)
+
+
+def summarize_core_feature_from_pdf(path: Path, model_name: str = "") -> str:
+    return summarize_core_feature_from_text(extract_text_from_pdf(path), model_name=model_name)
 
 
 def download_file(session: requests.Session, url: str, output: Path) -> Tuple[bool, str]:
@@ -888,6 +1244,20 @@ def _render_text_fallback_pdf(page, url: str, output: Path) -> bool:
     return has_pdf_signature(output) and looks_like_text_pdf(output, min_chars=800)
 
 
+def should_force_text_fallback(url: str) -> bool:
+    url_l = url.lower()
+    return any(
+        domain in url_l
+        for domain in [
+            "ai.google.dev/",
+            "research.google/",
+            "huggingface.co/",
+            "docs.z.ai/",
+            "docs.bigmodel.cn/",
+        ]
+    )
+
+
 def render_webpage_to_pdf(url: str, output: Path) -> bool:
     output.parent.mkdir(parents=True, exist_ok=True)
     if not can_render_webpage_to_pdf():
@@ -901,12 +1271,33 @@ def render_webpage_to_pdf(url: str, output: Path) -> bool:
             min_chars_for_webpage_pdf = 800
             for attempt in range(2):
                 page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                try:
+                    page.wait_for_load_state("networkidle", timeout=15000)
+                except Exception:
+                    pass
                 page.wait_for_timeout(1800 + attempt * 1400)
-                _expand_common_read_more(page)
-                _scroll_until_stable(page)
-                page.evaluate("window.scrollTo(0, 0)")
+                try:
+                    _expand_common_read_more(page)
+                except Exception:
+                    pass
+                try:
+                    _scroll_until_stable(page)
+                except Exception:
+                    pass
+                try:
+                    page.evaluate("window.scrollTo(0, 0)")
+                except Exception:
+                    pass
                 page.wait_for_timeout(600)
-                raw_text_len = len((page.evaluate("document.body.innerText || ''") or "").strip())
+                try:
+                    raw_text_len = len((page.evaluate("document.body.innerText || ''") or "").strip())
+                except Exception:
+                    raw_text_len = 0
+                if raw_text_len >= 500 and should_force_text_fallback(url) and _render_text_fallback_pdf(
+                    page, url, output
+                ):
+                    browser.close()
+                    return True
                 page.emulate_media(media="screen")
                 page.pdf(
                     path=str(output),
@@ -970,8 +1361,108 @@ def load_models_from_json(models_json_path: Path) -> List[Dict[str, Any]]:
         missing = required - set(item.keys())
         if missing:
             raise ValueError(f"models_json item #{idx} missing fields: {sorted(missing)}")
+        classification = str(item.get("release_classification", "model_release")).strip()
+        if classification and classification != "model_release":
+            continue
         models.append(dict(item))
     return models
+
+
+def refresh_discovered_models_snapshot(
+    output_path: Path = DEFAULT_DISCOVERED_MODELS_JSON,
+    until: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    try:
+        from scripts import discover_models as model_discovery
+    except Exception as exc:
+        print(f"动态发现不可用，回退静态 MODELS: {exc}", flush=True)
+        return []
+
+    until = until or datetime.now().strftime("%Y-%m-%d")
+    try:
+        records = model_discovery.discover_all_models(until=until)
+    except Exception as exc:
+        print(f"动态发现失败，回退静态 MODELS: {exc}", flush=True)
+        return []
+
+    if not records:
+        return []
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
+    return load_models_from_json(output_path)
+
+
+def refresh_curated_models_snapshot(
+    root: Path = ROOT,
+    until: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    discovered_output = root / "scripts" / "latest_models.json"
+    curated_output = root / "scripts" / "latest_models_curated.json"
+    if discovered_output.exists():
+        discovered_models = load_models_from_json(discovered_output)
+    else:
+        discovered_models = refresh_discovered_models_snapshot(discovered_output, until=until)
+    if not discovered_models:
+        return []
+
+    readme_path = root / "README.md"
+    if not readme_path.exists():
+        return []
+
+    try:
+        from scripts import build_curated_models as curated_builder
+    except Exception as exc:
+        print(f"curated snapshot 构建不可用，回退动态发现: {exc}", flush=True)
+        return []
+
+    try:
+        curated_builder.write_curated_models_snapshot(
+            readme_path=readme_path,
+            discovered_models_path=discovered_output,
+            output_path=curated_output,
+        )
+    except Exception as exc:
+        print(f"curated snapshot 构建失败，回退动态发现: {exc}", flush=True)
+        return []
+    return load_models_from_json(curated_output)
+
+
+def merge_models(preferred: List[Dict[str, Any]], fallback: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    merged: Dict[tuple[str, str], Dict[str, Any]] = {}
+    for item in fallback:
+        key = (str(item.get("org_slug", "")).strip(), str(item.get("model", "")).strip().lower())
+        merged[key] = dict(item)
+    for item in preferred:
+        key = (str(item.get("org_slug", "")).strip(), str(item.get("model", "")).strip().lower())
+        merged[key] = dict(item)
+    return sorted(
+        merged.values(),
+        key=lambda x: (str(x.get("release_date", "")), str(x.get("org_slug", "")), str(x.get("model", ""))),
+        reverse=True,
+    )
+
+
+def load_runtime_models(root: Path = ROOT, models_json_path: Optional[Path] = None) -> List[Dict[str, Any]]:
+    if models_json_path:
+        return load_models_from_json(models_json_path)
+    curated_snapshot = root / "scripts" / "latest_models_curated.json"
+    if curated_snapshot.exists():
+        return load_models_from_json(curated_snapshot)
+    default_snapshot = root / "scripts" / "latest_models.json"
+    discovered_models: List[Dict[str, Any]] = []
+    readme_path = root / "README.md"
+    if readme_path.exists():
+        curated_models = refresh_curated_models_snapshot(root=root)
+        if curated_models:
+            return curated_models
+    if default_snapshot.exists():
+        discovered_models = load_models_from_json(default_snapshot)
+    else:
+        discovered_models = refresh_discovered_models_snapshot(default_snapshot)
+    if discovered_models:
+        return merge_models(discovered_models, list(MODELS))
+    return list(MODELS)
 
 
 def main(
@@ -983,40 +1474,40 @@ def main(
     results: List[Dict[str, str]] = []
     ok, fail, skip = 0, 0, 0
 
-    active_models = models if models is not None else MODELS
+    active_models = models if models is not None else load_runtime_models(ROOT)
     sorted_models = sorted(active_models, key=lambda x: x["release_date"], reverse=True)
 
     probe_cache: Dict[str, Tuple[bool, str]] = {}
-    selected_links: List[str] = []
-    selected_reasons: List[str] = []
-    for item in sorted_models:
-        selected_link, select_reason = choose_best_source_url(session, item, probe_cache)
-        if not selected_link:
-            selected_link = normalize_url(str(item.get("official_link", "")))
-            select_reason = "single_source_fallback"
-        selected_links.append(selected_link)
-        selected_reasons.append(select_reason)
-
-    normalized_links = [normalize_url(x) for x in selected_links if x]
-    link_frequency = Counter(normalized_links)
+    declared_link_frequency = Counter(
+        normalize_url(str(item.get("official_link", "")))
+        for item in sorted_models
+        if str(item.get("official_link", "")).strip()
+    )
     release_month_cache: Dict[str, Tuple[Optional[str], str]] = {}
 
     for idx, item in enumerate(sorted_models, start=1):
         record = dict(item)
         declared_link = normalize_url(str(record["official_link"]))
-        link = normalize_url(selected_links[idx - 1])
-        source_reason = selected_reasons[idx - 1]
+        link, source_reason = choose_best_source_url(session, record, probe_cache)
+        if not link:
+            link = declared_link
+            source_reason = "single_source_fallback"
+        link = normalize_url(link)
         record["declared_official_link"] = declared_link
         record["source_selection_reason"] = source_reason
         if link != declared_link:
             print(f"  URL优选: {declared_link} -> {link} ({source_reason})", flush=True)
         record["official_link"] = link
         declared_release_date = str(record["release_date"])
+        shared_link_frequency = max(
+            declared_link_frequency.get(link, 0),
+            declared_link_frequency.get(declared_link, 0),
+        )
         release_date, release_source = resolve_release_month(
             session=session,
             declared_release_date=declared_release_date,
             url=link,
-            link_frequency=link_frequency,
+            link_frequency={link: shared_link_frequency},
             cache=release_month_cache,
         )
         if release_date != declared_release_date:
@@ -1054,6 +1545,12 @@ def main(
                     fail += 1
                     print(f"  下载失败: 非原始 PDF 响应 ({content_type})", flush=True)
                 else:
+                    generated_summary = summarize_core_feature_from_pdf(output, model_name=record["model"])
+                    if generated_summary and (
+                        not str(record.get("core_feature", "")).strip()
+                        or contains_han(str(record.get("core_feature", "")))
+                    ):
+                        record["core_feature"] = generated_summary
                     record["local_file_path"] = str(output.relative_to(ROOT))
                     ok += 1
                     print(
@@ -1067,6 +1564,22 @@ def main(
         elif should_render_webpage_to_pdf(link):
             success = render_webpage_to_pdf(link, output)
             if success:
+                webpage_summary = summarize_core_feature_from_webpage(
+                    session,
+                    link,
+                    model_name=record["model"],
+                )
+                pdf_summary = summarize_core_feature_from_pdf(output, model_name=record["model"])
+                generated_summary = choose_best_generated_summary(
+                    webpage_summary,
+                    pdf_summary,
+                    model_name=record["model"],
+                )
+                if generated_summary and (
+                    not str(record.get("core_feature", "")).strip()
+                    or contains_han(str(record.get("core_feature", "")))
+                ):
+                    record["core_feature"] = generated_summary
                 record["local_file_path"] = str(output.relative_to(ROOT))
                 ok += 1
                 print(f"  网页转 PDF 成功: {record['local_file_path']}", flush=True)
@@ -1119,7 +1632,5 @@ if __name__ == "__main__":
         help="Path to write structured download results for downstream README update",
     )
     args = parser.parse_args()
-    runtime_models = None
-    if args.models_json:
-        runtime_models = load_models_from_json(args.models_json)
+    runtime_models = load_runtime_models(ROOT, args.models_json)
     main(write_readme=args.write_readme, models=runtime_models, results_json=args.results_json)

@@ -1,0 +1,151 @@
+{
+  "alibaba_qwen": {
+    "Qwen3": [
+      "Qwen 3",
+      "Qwen3: Think Deeper, Act Faster"
+    ],
+    "Qwen3.5": [
+      "Qwen 3.5"
+    ],
+    "Qwen3-Coder": [
+      "Qwen3-Coder-Next",
+      "Qwen 3 Coder",
+      "Qwen 3 Coder Next",
+      "Qwen3 Coder"
+    ],
+    "Qwen3-Next": [
+      "Qwen 3 Next",
+      "Qwen3 Next"
+    ],
+    "Qwen3-Max": [
+      "Qwen 3 Max",
+      "Qwen3 Max"
+    ],
+    "Qwen3-Omni": [
+      "Qwen 3 Omni"
+    ],
+    "Qwen3-VL": [
+      "Qwen 3 VL"
+    ],
+    "Qwen2.5-Omni": [
+      "Qwen 2.5 Omni",
+      "Qwen2.5 Omni"
+    ],
+    "Qwen-Image": [
+      "Qwen Image"
+    ]
+  },
+  "google": {
+    "Gemini 3.1 Pro": [
+      "Gemini-3.1-Pro",
+      "Gemini 3.1 Pro - Model Card"
+    ],
+    "Gemini 3.1 Flash Live": [
+      "Gemini-3.1-Flash-Live",
+      "Gemini 3.1 Flash Live - Model Card"
+    ],
+    "Gemini 3.1 Flash-Lite": [
+      "Gemini 3.1 Flash Lite",
+      "Gemini-3.1-Flash-Lite",
+      "Gemini 3.1 Flash-Lite - Model Card"
+    ],
+    "Gemma 2": [
+      "Gemma 2 model card",
+      "Gemma 2 model card &nbsp;",
+      "Gemma 2 &Nbsp;"
+    ],
+    "Gemma 3": [
+      "Gemma 3 model card",
+      "Gemma 3 model card &nbsp;",
+      "Gemma 3 &Nbsp;"
+    ],
+    "Gemma 3N": [
+      "Gemma 3N model card",
+      "Gemma 3n model card",
+      "Gemma 3N &Nbsp;"
+    ],
+    "Gemma 4": [
+      "Gemma-4",
+      "Gemma Four"
+    ],
+    "MedGemma 1.5": [
+      "Med Gemma 1.5",
+      "MedGemma-1.5"
+    ],
+    "ShieldGemma 2": [
+      "Shield Gemma 2",
+      "ShieldGemma-2"
+    ],
+    "EmbeddingGemma": [
+      "Embedding Gemma"
+    ],
+    "FunctionGemma": [
+      "Function Gemma"
+    ]
+  },
+  "openai": {
+    "gpt-oss-120b/20b": [
+      "gpt-oss-120b & gpt-oss-20b",
+      "gpt-oss 120b & gpt-oss 20b"
+    ],
+    "o3 / o4-mini": [
+      "OpenAI o3 and o4-mini",
+      "o3 and o4-mini",
+      "OpenAI o3 and o4 mini"
+    ]
+  },
+  "meituan": {
+    "LongCat-Flash-Prover": [
+      "LongCat Flash Prover",
+      "LongCat Flash-Prover"
+    ],
+    "LongCat-Next": [
+      "LongCat Next"
+    ],
+    "LongCat-Flash-Thinking-2601": [
+      "LongCat Flash Thinking 2601",
+      "LongCat Flash-Thinking-2601"
+    ],
+    "LongCat-Image": [
+      "LongCat Image"
+    ],
+    "LongCat-Video": [
+      "LongCat Video"
+    ]
+  },
+  "zhipu": {
+    "GLM-5V-Turbo": [
+      "GLM 5V Flash",
+      "GLM-5V Flash",
+      "GLM5V Flash"
+    ],
+    "GLM-4.7": [
+      "GLM 4.7"
+    ],
+    "GLM-4.7-Flash": [
+      "GLM 4.7 Flash",
+      "GLM-4.7 Flash",
+      "GLM-4.7-FlashX"
+    ]
+  },
+  "minimax": {
+    "MiniMax M2.0": [
+      "MiniMax M2",
+      "MiniMax-M2"
+    ],
+    "MiniMax M2.7": [
+      "MiniMax-M2.7"
+    ]
+  },
+  "meta": {
+    "Llama 4 Scout/Maverick": [
+      "Llama 4 multimodal intelligence",
+      "Introducing Llama 4 Scout and Maverick"
+    ]
+  },
+  "inclusionai": {
+    "Ling 2.5": [
+      "Ling-V2.5"
+    ]
+  }
+}

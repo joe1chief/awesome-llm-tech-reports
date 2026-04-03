@@ -1,3 +1,4 @@
 __pycache__/
 *.pyc
 scripts/latest_download_results.json
+scripts/latest_models*.json

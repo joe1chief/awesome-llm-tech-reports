@@ -13,6 +13,10 @@ from typing import Dict, Iterable, List
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_README = ROOT / "README.md"
 DEFAULT_RESULTS_JSON = ROOT / "scripts" / "latest_download_results.json"
+DEFAULT_GENERATED_DIR = ROOT / "scripts" / "generated"
+
+ASSET_RELEASE_TIMELINE = "assets/diagrams/release-timeline.svg"
+ASSET_MONTHLY_DENSITY = "assets/diagrams/monthly-density.svg"
 
 ORG_DISPLAY: Dict[str, str] = {
     "openai": "OpenAI",
@@ -34,6 +38,72 @@ ORG_DISPLAY: Dict[str, str] = {
     "meituan": "Meituan",
     "quark": "Quark (Alibaba)",
 }
+DISPLAY_TO_SLUG: Dict[str, str] = {value: key for key, value in ORG_DISPLAY.items()}
+ORG_ANCHOR_LABELS: Dict[str, str] = {
+    "openai": "OpenAI",
+    "anthropic": "Anthropic",
+    "google": "Google",
+    "meta": "Meta",
+    "xai": "xAI",
+    "deepseek": "DeepSeek",
+    "alibaba_qwen": "Alibaba / Qwen",
+    "zhipu": "Zhipu AI",
+    "moonshot": "Moonshot AI",
+    "minimax": "MiniMax",
+    "stepfun": "StepFun",
+    "baidu": "Baidu",
+    "baichuan": "Baichuan Intelligence",
+    "inclusionai": "InclusionAI (Ant Group)",
+    "bytedance": "ByteDance",
+    "tencent": "Tencent",
+    "meituan": "Meituan",
+    "quark": "Quark (Alibaba)",
+}
+ORG_LINK_LABELS: Dict[str, str] = {
+    "alibaba_qwen": "Alibaba",
+    "quark": "Quark",
+    **{k: v for k, v in ORG_DISPLAY.items() if k not in {"alibaba_qwen", "quark"}},
+}
+TIMELINE_LANES = [
+    ("openai", "OpenAI", "openai"),
+    ("anthropic", "Anthropic", "anthropic"),
+    ("google", "Google", "google"),
+    ("china", "China-based Labs", "china"),
+    ("other", "Other Global", "other"),
+]
+ORG_TO_LANE = {
+    "openai": "openai",
+    "anthropic": "anthropic",
+    "google": "google",
+    "deepseek": "china",
+    "alibaba_qwen": "china",
+    "zhipu": "china",
+    "moonshot": "china",
+    "minimax": "china",
+    "stepfun": "china",
+    "baidu": "china",
+    "baichuan": "china",
+    "inclusionai": "china",
+    "bytedance": "china",
+    "tencent": "china",
+    "meituan": "china",
+    "quark": "china",
+    "meta": "other",
+    "xai": "other",
+}
+IMPACT_MODEL_NAMES = {
+    "DeepSeek R1",
+    "Qwen3",
+    "Llama 4 Scout/Maverick",
+    "GPT-5",
+    "GPT-5.3-Codex",
+    "Claude Opus 4.6",
+    "Gemini 2.5 Pro",
+    "GLM-5",
+    "Kimi K2.5",
+    "LongCat-Flash-Prover",
+    "Gemma 4",
+}
 
 LOCAL_STATUS_MAP = {
     "下载失败": "Download failed",
@@ -45,6 +115,54 @@ LOCAL_STATUS_VALUES = set(LOCAL_STATUS_MAP.values())
 
 def contains_han(text: str) -> bool:
     return any("\u4e00" <= ch <= "\u9fff" for ch in text)
+
+
+def summary_quality_score(text: str) -> int:
+    value = (text or "").strip()
+    if not value:
+        return -10_000
+    if contains_han(value):
+        return -5_000
+
+    lower = value.casefold()
+    score = 0
+    if 40 <= len(value) <= 320:
+        score += 10
+    if len(value.split()) >= 8:
+        score += 8
+    score += sum(
+        3
+        for keyword in [
+            "model",
+            "multimodal",
+            "reasoning",
+            "agent",
+            "agentic",
+            "coding",
+            "medical",
+            "vision",
+            "audio",
+            "video",
+            "proof",
+            "benchmark",
+        ]
+        if keyword in lower
+    )
+    penalties = [
+        "news",
+        "who we are",
+        "menu",
+        "community",
+        "discord",
+        "log in",
+        "sign up",
+        "pricing",
+        "search",
+        "source:",
+        "copy page",
+    ]
+    score -= sum(8 for marker in penalties if marker in lower)
+    return score
 
 
 def normalize_local_file(value: str) -> str:
@@ -116,7 +234,13 @@ def _merge_row_content(prev: Dict[str, str], row: Dict[str, str]) -> Dict[str, s
         if is_materialized_local_file(row["local_file"]) or not is_materialized_local_file(prev["local_file"]):
             out["local_file"] = row["local_file"]
     if row["core_highlights"]:
-        if not contains_han(row["core_highlights"]) or contains_han(prev["core_highlights"]):
+        if contains_han(prev["core_highlights"]):
+            if not contains_han(row["core_highlights"]):
+                out["core_highlights"] = row["core_highlights"]
+        elif not contains_han(row["core_highlights"]) and (
+            summary_quality_score(row["core_highlights"])
+            > summary_quality_score(prev["core_highlights"]) + 2
+        ):
             out["core_highlights"] = row["core_highlights"]
     return out
 
@@ -180,6 +304,20 @@ def merge_rows(
 
 def escape_md_cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\n", " ").strip()
+
+
+def infer_org_slug(row: Dict[str, str]) -> str:
+    local_file = row.get("local_file", "").strip()
+    parts = local_file.split("/")
+    if len(parts) >= 2 and re.match(r"^20\d{2}$", parts[0]):
+        return parts[1]
+    return DISPLAY_TO_SLUG.get(row["organization"], slugify_org_name(row["organization"]))
+
+
+def slugify_org_name(value: str) -> str:
+    slug = value.lower().replace("&", "and")
+    slug = re.sub(r"[^a-z0-9]+", "_", slug).strip("_")
+    return slug or "unknown"
 
 
 def generate_model_index_section(rows: List[Dict[str, str]]) -> str:
@@ -316,6 +454,65 @@ def build_snapshot_details(rows: List[Dict[str, str]], existing_defs: Dict[int, 
     return "\n".join(lines)
 
 
+def build_monthly_density_data(rows: List[Dict[str, str]]) -> Dict[str, List[Dict[str, int]]]:
+    counts = Counter(r["release_date"] for r in rows)
+    return {
+        "months": [
+            {"month": month, "count": counts[month]}
+            for month in sorted(counts.keys())
+        ]
+    }
+
+
+def build_release_timeline_data(rows: List[Dict[str, str]]) -> Dict[str, object]:
+    months = sorted({row["release_date"] for row in rows})
+    lane_map: Dict[str, List[Dict[str, object]]] = {lane_id: [] for lane_id, _, _ in TIMELINE_LANES}
+    grouped: Dict[tuple[str, str], List[Dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        org_slug = infer_org_slug(row)
+        lane_id = ORG_TO_LANE.get(org_slug, "other")
+        grouped[(lane_id, row["release_date"])].append(row)
+
+    for lane_id, _, _ in TIMELINE_LANES:
+        for month in months:
+            current = grouped.get((lane_id, month), [])
+            if not current:
+                continue
+            models = [row["model"] for row in current]
+            highlighted = [model for model in models if model in IMPACT_MODEL_NAMES]
+            lane_map[lane_id].append(
+                {
+                    "month": month,
+                    "models": models,
+                    "highlighted_models": highlighted,
+                }
+            )
+
+    lanes = []
+    for lane_id, label, camp in TIMELINE_LANES:
+        lanes.append(
+            {
+                "id": lane_id,
+                "label": label,
+                "camp": camp,
+                "entries": lane_map[lane_id],
+            }
+        )
+    return {"months": months, "lanes": lanes}
+
+
+def write_generated_diagram_data(rows: List[Dict[str, str]], generated_dir: Path = DEFAULT_GENERATED_DIR) -> None:
+    generated_dir.mkdir(parents=True, exist_ok=True)
+    (generated_dir / "monthly_density.json").write_text(
+        json.dumps(build_monthly_density_data(rows), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    (generated_dir / "release_timeline.json").write_text(
+        json.dumps(build_release_timeline_data(rows), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
 def update_badges(text: str, rows: List[Dict[str, str]]) -> str:
     if not rows:
         return text
@@ -343,6 +540,104 @@ def update_badges(text: str, rows: List[Dict[str, str]]) -> str:
     return text
 
 
+def generate_project_scope_section(rows: List[Dict[str, str]]) -> str:
+    min_month = min(r["release_date"] for r in rows)
+    max_month = max(r["release_date"] for r in rows)
+    start_label = datetime_label(min_month)
+    end_label = datetime_label(max_month)
+    return "\n".join(
+        [
+            "## Project Scope",
+            "",
+            f"- Systematically archives major model releases from **{start_label}** to **{end_label}** across LLM, multimodal, and medical-vertical domains.",
+            "- Downloads official papers, system cards, model cards as local PDFs; exports web-only blog pages to PDF via headless browser.",
+            "- Provides a single searchable Markdown index sorted in reverse chronological order.",
+        ]
+    )
+
+
+def datetime_label(month: str) -> str:
+    year, mm = month.split("-")
+    month_names = {
+        "01": "January",
+        "02": "February",
+        "03": "March",
+        "04": "April",
+        "05": "May",
+        "06": "June",
+        "07": "July",
+        "08": "August",
+        "09": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December",
+    }
+    return f"{month_names[mm]} {year}"
+
+
+def generate_release_visual_section() -> str:
+    return "\n".join(
+        [
+            "## Release Timeline",
+            "",
+            "**Legend (Camp Colors):** `OpenAI` · `Anthropic` · `Google` · `China-based Labs` · `Other Global`  ",
+            "**Impact Highlight:** nodes with **★** are ecosystem-shaping releases (community discussion, benchmark influence, or deployment adoption).",
+            "",
+            f"![Release Timeline]({ASSET_RELEASE_TIMELINE})",
+            "",
+            "<details>",
+            "<summary><b>Monthly Density Snapshot</b></summary>",
+            "",
+            f"![Monthly Density Snapshot]({ASSET_MONTHLY_DENSITY})",
+            "",
+            "> Bubble size follows the release count from the model index table.",
+            "",
+            "</details>",
+        ]
+    )
+
+
+def generate_company_links_section(rows: List[Dict[str, str]]) -> str:
+    year_to_orgs: Dict[str, List[str]] = defaultdict(list)
+    org_years: Dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        year = row["release_date"][:4]
+        org_slug = infer_org_slug(row)
+        if org_slug not in year_to_orgs[year]:
+            year_to_orgs[year].append(org_slug)
+        org_years[org_slug].add(year)
+
+    years = sorted(year_to_orgs.keys(), reverse=True)
+    lines = ["## Company Quick Links", ""]
+    for year in years:
+        links = [
+            f"[`{ORG_LINK_LABELS.get(org_slug, org_slug.title())}`](#company-{org_slug})"
+            for org_slug in year_to_orgs[year]
+        ]
+        lines.append(f"`{year}`: " + " · ".join(links))
+        lines.append("")
+
+    lines.append("### Company Directory Index")
+    lines.append("")
+    ordered_orgs = sorted(org_years.keys(), key=lambda slug: (ORG_ANCHOR_LABELS.get(slug, slug), slug))
+    for org_slug in ordered_orgs:
+        years_for_org = sorted(org_years[org_slug])
+        directories = ", ".join(f"`{year}/{org_slug}/`" for year in years_for_org)
+        lines.append(f'<a id="company-{org_slug}"></a>')
+        lines.append(f"- **{ORG_ANCHOR_LABELS.get(org_slug, org_slug.title())}**: {directories}")
+    return "\n".join(lines)
+
+
+def replace_or_insert_section(text: str, pattern: str, replacement: str, before_header: str) -> str:
+    updated, count = re.subn(pattern, replacement.rstrip() + "\n", text, flags=re.S)
+    if count:
+        return updated
+    marker = f"\n{before_header}"
+    if marker in text:
+        return text.replace(marker, "\n" + replacement.rstrip() + "\n\n" + before_header, 1)
+    return text.rstrip() + "\n\n" + replacement.rstrip() + "\n"
+
+
 def render_updated_readme(
     text: str,
     rows: List[Dict[str, str]],
@@ -350,15 +645,24 @@ def render_updated_readme(
     if not rows:
         return text
 
-    snapshot_defs = parse_existing_snapshot_classdefs(text)
-    snapshot_block = build_snapshot_details(rows, existing_defs=snapshot_defs)
-    if snapshot_block:
-        text = re.sub(
-            r"<details>\s*\n<summary><b>Monthly Density Snapshot</b></summary>.*?</details>",
-            snapshot_block,
-            text,
-            flags=re.S,
-        )
+    text = replace_or_insert_section(
+        text,
+        r"## Project Scope.*?(?=\n## Release Timeline)",
+        generate_project_scope_section(rows).rstrip() + "\n",
+        "## Model Index (Folded by Year)",
+    )
+    text = replace_or_insert_section(
+        text,
+        r"## Release Timeline.*?(?=\n## Company Quick Links)",
+        generate_release_visual_section().rstrip() + "\n",
+        "## Model Index (Folded by Year)",
+    )
+    text = replace_or_insert_section(
+        text,
+        r"## Company Quick Links.*?(?=\n## Model Index \(Folded by Year\))",
+        generate_company_links_section(rows).rstrip() + "\n",
+        "## Model Index (Folded by Year)",
+    )
 
     model_index = generate_model_index_section(rows)
     text = re.sub(
@@ -396,6 +700,7 @@ def main() -> None:
     run_rows = rows_from_results(load_results(args.results_json))
     merged_rows = merge_rows(existing_rows, run_rows, from_scratch=args.from_scratch)
     out_text = render_updated_readme(readme_text, merged_rows)
+    write_generated_diagram_data(merged_rows)
 
     output = args.output or args.readme
     output.write_text(out_text, encoding="utf-8")

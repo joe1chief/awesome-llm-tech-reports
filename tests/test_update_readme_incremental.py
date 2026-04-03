@@ -136,6 +136,34 @@ class UpdateReadmeIncrementalTests(unittest.TestCase):
         self.assertEqual(merged[0]["core_highlights"], "english summary")
         self.assertEqual(merged[0]["official_link"], "https://example.com/new.pdf")
 
+    def test_merge_rows_upgrades_to_higher_quality_english_summary(self) -> None:
+        existing = [
+            {
+                "release_date": "2026-03",
+                "organization": "MiniMax",
+                "model": "MiniMax M2.7",
+                "core_highlights": "MiniMax M2.7: Early Echoes of Self-Evolution - MiniMax News",
+                "official_link": "https://example.com/old",
+                "local_file": "2026/minimax/2026-03_minimax-m2.7.pdf",
+            }
+        ]
+        run_rows = [
+            {
+                "release_date": "2026-03",
+                "organization": "MiniMax",
+                "model": "MiniMax M2.7",
+                "core_highlights": (
+                    "M2.7 is the first MiniMax model deeply participating in its own evolution, "
+                    "with complex agent harnesses, dynamic tool search, and stronger software engineering delivery."
+                ),
+                "official_link": "https://example.com/new",
+                "local_file": "2026/minimax/2026-03_minimax-m2.7.pdf",
+            }
+        ]
+        merged = updater.merge_rows(existing, run_rows, from_scratch=False)
+        self.assertIn("deeply participating in its own evolution", merged[0]["core_highlights"])
+        self.assertEqual(merged[0]["official_link"], "https://example.com/new")
+
     def test_merge_rows_skips_new_failed_or_non_english_row(self) -> None:
         existing = [
             {
@@ -176,6 +204,42 @@ class UpdateReadmeIncrementalTests(unittest.TestCase):
         block = updater.build_snapshot_details(rows)
         self.assertIn("classDef b7", block)
         self.assertIn("R07", block)
+
+    def test_build_monthly_density_data_reflects_release_counts(self) -> None:
+        rows = [
+            {
+                "release_date": "2026-02",
+                "organization": "OpenAI",
+                "model": "A",
+                "core_highlights": "a",
+                "official_link": "a",
+                "local_file": "a.pdf",
+            },
+            {
+                "release_date": "2026-02",
+                "organization": "OpenAI",
+                "model": "B",
+                "core_highlights": "b",
+                "official_link": "b",
+                "local_file": "b.pdf",
+            },
+            {
+                "release_date": "2026-03",
+                "organization": "Google",
+                "model": "Gemma 4",
+                "core_highlights": "c",
+                "official_link": "c",
+                "local_file": "c.pdf",
+            },
+        ]
+        payload = updater.build_monthly_density_data(rows)
+        self.assertEqual(
+            payload["months"],
+            [
+                {"month": "2026-02", "count": 2},
+                {"month": "2026-03", "count": 1},
+            ],
+        )
 
     def test_snapshot_reuses_existing_class_def_style(self) -> None:
         text = """
@@ -233,6 +297,8 @@ flowchart LR
         out = updater.render_updated_readme(readme, rows)
         self.assertIn("2026 (1 models)", out)
         self.assertIn("GPT-5.3-Codex", out)
+        self.assertIn("assets/diagrams/release-timeline.svg", out)
+        self.assertIn("assets/diagrams/monthly-density.svg", out)
         self.assertIn("\n\n## Star History", out)
 
     def test_model_index_keeps_input_order_within_year(self) -> None:
@@ -256,6 +322,29 @@ flowchart LR
         ]
         section = updater.generate_model_index_section(rows)
         self.assertLess(section.find("Model B"), section.find("Model A"))
+
+    def test_generate_company_directory_section_tracks_years_per_org(self) -> None:
+        rows = [
+            {
+                "release_date": "2025-03",
+                "organization": "Google",
+                "model": "Gemma 3",
+                "core_highlights": "a",
+                "official_link": "a",
+                "local_file": "2025/google/2025-03_gemma-3.pdf",
+            },
+            {
+                "release_date": "2026-03",
+                "organization": "Google",
+                "model": "Gemma 4",
+                "core_highlights": "b",
+                "official_link": "b",
+                "local_file": "2026/google/2026-03_gemma-4.pdf",
+            },
+        ]
+        section = updater.generate_company_links_section(rows)
+        self.assertIn("`2026`", section)
+        self.assertIn("**Google**: `2025/google/`, `2026/google/`", section)
 
 
 if __name__ == "__main__":

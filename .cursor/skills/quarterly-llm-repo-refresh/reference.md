@@ -7,105 +7,152 @@ Target repository: `awesome-llm-tech-reports`
 Preserve:
 - directory layout: `<year>/<org_slug>/`
 - filename pattern: `YYYY-MM_slugified-model-name.pdf`
-- reverse-chronological model index in README.
+- reverse-chronological README table and folded year index
+- existing README style and section order
 
-## 2) Model Inclusion Rules
+Default update mode:
+- incremental append from `2025-01` to the current run date
+- bootstrap rebuild only when explicitly using `--from-scratch`
 
-Include only model-release technical reports.
+## 2) Discovery Rules
 
-Exclude:
-- standalone method papers,
-- generic benchmark papers,
-- unrelated architecture-only papers,
-- pages without a released model context.
-
-## 3) Source URL Prioritization (Runtime)
-
-For each model entry, build `candidate_links` and select source dynamically per run.
-
-Priority order:
-1. arXiv PDF
-2. official CDN model card/report PDF
-3. official repo raw PDF
-4. official blog/news page (render to PDF)
-
-Do not keep a lower-priority URL if a higher-priority URL is downloadable.
-
-## 4) Dynamic Input Contract
-
-Preferred run input is crawler output JSON:
-
-- required fields:
-  - `release_date`
-  - `org`
-  - `org_slug`
-  - `model`
-  - `core_feature`
-  - `official_link`
-- optional field:
-  - `candidate_links` (recommended)
+Discovery is the first-class source of truth. Do not start with the static `MODELS` list.
 
 Run:
 
 ```bash
-python3 download_papers.py --models-json <path/to/models.json>
+python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
+python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
 ```
 
-Downloader writes structured run output by default:
+Monitored ecosystems:
+- `LongCat / Meituan`: arXiv `LongCat` family + `meituan-longcat`
+- `Zhipu / Z.AI`: `docs.z.ai`, `docs.bigmodel.cn`, `huggingface.co/zai-org`
+- `MiniMax`: official news pages and related official article sources
+- `Google`: `deepmind.google/models/model-cards/`, `deepmind.google/models/gemma/`, `ai.google.dev/gemma/docs`
+
+Discovery output must retain:
+- `canonical_model_id`
+- `aliases`
+- `source_page`
+- `evidence_urls`
+- `evidence_type`
+- `release_classification`
+- `classification_reason`
+- `confidence`
+- `discovered_at`
+
+## 3) Inclusion / Exclusion Rules
+
+Include only:
+- official model cards,
+- official system cards,
+- official model pages with released models,
+- model-release technical reports on arXiv,
+- official web pages that can be rendered to PDF and clearly correspond to a released model.
+
+Exclude:
+- standalone method papers,
+- benchmark-only papers,
+- product/tool variants that are not frontier model releases,
+- pages without a released model context.
+
+Examples:
+- `LongCat-Flash-Prover` and `LongCat-Next`: include
+- `GLM-5V-Turbo`: include
+- `ShieldGemma 2` / `EmbeddingGemma` / `FunctionGemma`: discover but exclude
+
+## 4) Alias And Canonical Naming
+
+Canonical names must come from the strongest official source.
+
+Alias mapping examples:
+- `GLM 5V Flash` -> `GLM-5V-Turbo`
+- `GLM-4.7 Flash` -> `GLM-4.7-Flash`
+- `LongCat` paper title / repo title / README title variants -> one canonical model id
+
+Rules:
+- official docs/model card title wins,
+- paper titles and repo titles remain in `aliases`,
+- README display name should use the canonical model name unless backward compatibility requires the existing label.
+
+## 5) Source URL Prioritization
+
+For each discovered record, probe `candidate_links` dynamically at runtime.
+Do not feed the raw discovery superset directly into the downloader for incremental repo refreshes.
+
+Curated runtime boundary:
 
 ```bash
-scripts/latest_download_results.json
+python3 scripts/build_curated_models.py --discover-json scripts/latest_models.json --output scripts/latest_models_curated.json
 ```
 
-## 5) Release Month Accuracy
+The curated snapshot must:
+- preserve the current README model boundary,
+- overlay fresher official links / aliases / evidence from dynamic discovery,
+- keep README model labels stable for backward-compatible incremental refreshes,
+- filter static assets and unrelated external links out of `candidate_links`.
 
-Downloader must calibrate `release_date` by source evidence at runtime:
+Priority order:
+1. official PDF / model card / system card
+2. arXiv PDF
+3. official model page
+4. official Hugging Face / GitHub model page
+5. other links only as supporting evidence, not primary download source
+
+Downloader command:
+
+```bash
+python3 download_papers.py --models-json scripts/latest_models_curated.json
+```
+
+If `--models-json` is omitted, `download_papers.py` should try dynamic discovery first and only then fall back to static `MODELS`.
+When `README.md` is present, the default runtime path should prefer `scripts/latest_models_curated.json`.
+
+## 6) Release Month Accuracy
+
+Filename prefixes must be calibrated at runtime from source evidence:
 - arXiv published date,
-- date pattern in official URL,
-- webpage published metadata/content.
+- date pattern in URL,
+- HTTP `Last-Modified`,
+- webpage published metadata,
+- visible date text near the page title when available.
 
-Prefix `YYYY-MM_` in filename must match calibrated month.
+The final saved filename must use the resolved `YYYY-MM`.
 
-## 6) Webpage To PDF Rules
+## 7) Webpage To PDF Rules
 
-If selected URL is a webpage:
-- use Playwright to render PDF,
-- enforce `%PDF-` signature check,
-- enforce minimum extractable text threshold.
+If the selected URL is a webpage:
+- prefer the best official model page/news page,
+- render to PDF with Playwright,
+- if the page is hostile to stable browser printing, fall back to visible-text PDF generation,
+- enforce `%PDF-` signature and usable text extraction.
 
-Preflight:
+Playwright preflight:
 
 ```bash
 python3 -m pip install playwright
 python3 -m playwright install chromium
-python3 - <<'PY'
-from playwright.sync_api import sync_playwright
-with sync_playwright() as p:
-    b = p.chromium.launch(headless=True)
-    b.close()
-print("playwright-ready")
-PY
 ```
 
-## 7) README Rules
+## 8) Core Highlights Rules
 
-- README must remain English-only.
-- `Core Highlights` must come from downloaded PDF/blog-PDF content.
-- Monthly Density Snapshot:
-  - no side tags,
-  - bubble class is dynamic: `b<count>`.
+`Core Highlights` must be English only and regenerated from:
+- downloaded PDF text,
+- or webpage-rendered PDF / visible webpage text when no raw PDF exists.
 
-Example:
-- release count `7` -> class `b7`
-- release count `12` -> class `b12`
+Do not keep Chinese summaries in README.
+Do not let navigation text, section headings, or marketing boilerplate overwrite a good existing English summary.
 
-README update command (incremental append mode):
+## 9) README And Diagram Rules
+
+Update README incrementally:
 
 ```bash
 python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
 ```
 
-From-scratch bootstrap mode:
+Bootstrap rebuild:
 
 ```bash
 python3 scripts/update_readme_incremental.py \
@@ -113,20 +160,46 @@ python3 scripts/update_readme_incremental.py \
   --from-scratch
 ```
 
-## 8) Mandatory Validation
+Render diagrams:
+
+```bash
+node scripts/render_readme_diagrams.mjs
+```
+
+Generated assets:
+- `scripts/generated/monthly_density.json`
+- `scripts/generated/release_timeline.json`
+- `assets/diagrams/monthly-density.excalidraw`
+- `assets/diagrams/monthly-density.svg`
+- `assets/diagrams/release-timeline.excalidraw`
+- `assets/diagrams/release-timeline.svg`
+
+Rules:
+- README must remain English-only
+- README must reference SVG assets, not Mermaid
+- `Star History` stays external
+- bubble size must scale with actual monthly release count
+
+## 10) Validation
 
 Run in repo root:
 
 ```bash
+python3 -m unittest \
+  tests/test_download_papers.py \
+  tests/test_update_readme_incremental.py \
+  tests/test_discover_models.py \
+  tests/test_model_aliases.py \
+  tests/test_render_readme_diagrams.py
 python3 scripts/sop_validate.py
-python3 -m unittest tests/test_download_papers.py
-python3 -m unittest tests/test_update_readme_incremental.py
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```
 
 All must pass before commit/push.
 
-## 9) Network Debug
+## 11) Network Debug
+
+If internet access is blocked:
 
 ```bash
 export https_proxy=http://127.0.0.1:13659
@@ -137,5 +210,5 @@ Quick checks:
 
 ```bash
 git ls-remote https://github.com/joe1chief/awesome-llm-tech-reports.git | head -n 3
-curl -I -L --max-time 20 https://arxiv.org/pdf/2602.15763 | head -n 10
+curl -I -L --max-time 20 https://arxiv.org/pdf/2603.21065 | head -n 10
 ```

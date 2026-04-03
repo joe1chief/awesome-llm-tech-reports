@@ -11,6 +11,92 @@ except ModuleNotFoundError:  # pragma: no cover - local fallback
 
 
 class DownloadPapersTests(unittest.TestCase):
+    def test_runtime_models_prefer_curated_snapshot_when_present(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            curated_models = root / "scripts" / "latest_models_curated.json"
+            discovered_models = root / "scripts" / "latest_models.json"
+            curated_models.parent.mkdir(parents=True, exist_ok=True)
+            curated_models.write_text(
+                json.dumps(
+                    [
+                        {
+                            "release_date": "2025-04",
+                            "org": "OpenAI",
+                            "org_slug": "openai",
+                            "model": "o3 / o4-mini",
+                            "core_feature": "",
+                            "official_link": "https://cdn.openai.com/pdf/o3.pdf",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            discovered_models.write_text(
+                json.dumps(
+                    [
+                        {
+                            "release_date": "2026-04",
+                            "org": "Zhipu AI",
+                            "org_slug": "zhipu",
+                            "model": "GLM-5V-Turbo",
+                            "core_feature": "",
+                            "official_link": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            models = download_papers.load_runtime_models(root=root)
+
+        self.assertEqual([item["model"] for item in models], ["o3 / o4-mini"])
+
+    def test_runtime_models_attempt_discovery_when_snapshot_missing(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            with patch.object(
+                download_papers,
+                "refresh_discovered_models_snapshot",
+                return_value=[
+                    {
+                        "release_date": "2026-04",
+                        "org": "Zhipu AI",
+                        "org_slug": "zhipu",
+                        "model": "GLM-5V-Turbo",
+                        "core_feature": "",
+                        "official_link": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+                    }
+                ],
+            ) as mocked_refresh:
+                models = download_papers.load_runtime_models(root=root)
+            mocked_refresh.assert_called_once()
+            self.assertIn("GLM-5V-Turbo", [item["model"] for item in models])
+
+    def test_runtime_models_prefer_discovered_snapshot_when_present(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            latest_models = root / "scripts" / "latest_models.json"
+            latest_models.parent.mkdir(parents=True, exist_ok=True)
+            latest_models.write_text(
+                json.dumps(
+                    [
+                        {
+                            "release_date": "2026-03",
+                            "org": "Meituan",
+                            "org_slug": "meituan",
+                            "model": "LongCat-Flash-Prover",
+                            "core_feature": "",
+                            "official_link": "https://arxiv.org/pdf/2603.21065",
+                            "release_classification": "model_release",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            models = download_papers.load_runtime_models(root=root)
+            self.assertIn("LongCat-Flash-Prover", [item["model"] for item in models])
+
     def test_should_render_webpage_to_pdf_for_blog_links(self) -> None:
         self.assertTrue(
             download_papers.should_render_webpage_to_pdf("https://qwen.ai/blog?id=qwen3.5")
@@ -86,6 +172,17 @@ class DownloadPapersTests(unittest.TestCase):
         self.assertEqual(month, "2025-07")
         self.assertEqual(source, "manual_shared_link")
 
+    def test_resolve_release_month_keeps_declared_for_xai_release_notes(self) -> None:
+        month, source = download_papers.resolve_release_month(
+            session=download_papers.build_session(),
+            declared_release_date="2025-08",
+            url="https://docs.x.ai/docs/release-notes",
+            link_frequency={},
+            cache={},
+        )
+        self.assertEqual(month, "2025-08")
+        self.assertEqual(source, "manual_xai_release_notes")
+
     def test_fetch_webpage_published_month_prefers_visible_header_date(self) -> None:
         class FakeResponse:
             text = """
@@ -142,6 +239,55 @@ class DownloadPapersTests(unittest.TestCase):
         self.assertEqual(url, "https://arxiv.org/pdf/2505.09388")
         self.assertIn("probe_ok", reason)
 
+    def test_choose_best_source_url_short_circuits_on_valid_official_pdf(self) -> None:
+        record = {
+            "official_link": "https://cdn.openai.com/pdf/example.pdf",
+            "candidate_links": [
+                "https://cdn.openai.com/pdf/example.pdf",
+                "https://example.com/fallback",
+            ],
+        }
+        with patch.object(
+            download_papers,
+            "probe_source_url",
+            return_value=(True, "pdf_content_type"),
+        ) as mocked_probe:
+            url, reason = download_papers.choose_best_source_url(
+                download_papers.build_session(), record, {}
+            )
+        self.assertEqual(url, "https://cdn.openai.com/pdf/example.pdf")
+        self.assertIn("|early", reason)
+        mocked_probe.assert_called_once()
+
+    def test_collect_candidate_links_caps_noisy_candidate_lists(self) -> None:
+        record = {
+            "official_link": "https://cdn.openai.com/pdf/example.pdf",
+            "candidate_links": [f"https://example.com/{idx}" for idx in range(30)],
+        }
+        candidates = download_papers.collect_candidate_links(record)
+        self.assertEqual(candidates, ["https://cdn.openai.com/pdf/example.pdf"])
+
+    def test_collect_candidate_links_filters_static_assets(self) -> None:
+        record = {
+            "official_link": "https://cdn.openai.com/pdf/example.pdf",
+            "source_page": "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+            "candidate_links": [
+                "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+                "https://deploymentsafety.openai.com/favicon.svg",
+                "https://fonts.googleapis.com/css2?family=Google+Sans",
+                "https://deploymentsafety.openai.com/_astro/app.css",
+                "https://deploymentsafety.openai.com/gpt-5-4-thinking#main",
+            ],
+        }
+        candidates = download_papers.collect_candidate_links(record)
+        self.assertEqual(
+            candidates,
+            [
+                "https://cdn.openai.com/pdf/example.pdf",
+                "https://deploymentsafety.openai.com/gpt-5-4-thinking",
+            ],
+        )
+
     def test_load_models_from_json_accepts_runtime_snapshot(self) -> None:
         with TemporaryDirectory() as tmpdir:
             models_path = Path(tmpdir) / "models.json"
@@ -163,6 +309,63 @@ class DownloadPapersTests(unittest.TestCase):
             models = download_papers.load_models_from_json(models_path)
             self.assertEqual(len(models), 1)
             self.assertEqual(models[0]["model"], "GPT-X")
+
+    def test_load_models_from_json_filters_non_release_records(self) -> None:
+        with TemporaryDirectory() as tmpdir:
+            models_path = Path(tmpdir) / "models.json"
+            models_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "release_date": "2026-03",
+                            "org": "Google",
+                            "org_slug": "google",
+                            "model": "Gemma 4",
+                            "core_feature": "",
+                            "official_link": "https://example.com/gemma4.pdf",
+                            "release_classification": "model_release",
+                        },
+                        {
+                            "release_date": "2026-03",
+                            "org": "Google",
+                            "org_slug": "google",
+                            "model": "ShieldGemma 2",
+                            "core_feature": "",
+                            "official_link": "https://example.com/shieldgemma2.pdf",
+                            "release_classification": "exclude_tool_model",
+                        },
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            models = download_papers.load_models_from_json(models_path)
+            self.assertEqual([item["model"] for item in models], ["Gemma 4"])
+
+    def test_summarize_core_feature_from_text_extracts_english_highlights(self) -> None:
+        summary = download_papers.summarize_core_feature_from_text(
+            """
+            Abstract
+            LongCat-Flash-Prover is a formal-reasoning model built for theorem proving.
+            It introduces verifier-guided reinforcement learning, specialized proof search,
+            and stronger tool use for mathematical reasoning across long trajectories.
+            """,
+            model_name="LongCat-Flash-Prover",
+        )
+        self.assertIn("formal-reasoning model", summary)
+        self.assertIn("verifier-guided reinforcement learning", summary)
+
+    def test_choose_best_generated_summary_prefers_technical_summary_over_page_title(self) -> None:
+        summary = download_papers.choose_best_generated_summary(
+            "MiniMax M2.7: Early Echoes of Self-Evolution - MiniMax News",
+            (
+                "M2.7 is our first model deeply participating in its own evolution. "
+                "M2.7 is capable of building complex agent harnesses and completing "
+                "highly elaborate productivity tasks."
+            ),
+            model_name="MiniMax M2.7",
+        )
+        self.assertIn("participating in its own evolution", summary)
+        self.assertNotIn("News", summary)
 
 
 if __name__ == "__main__":

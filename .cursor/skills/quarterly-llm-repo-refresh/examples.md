@@ -1,59 +1,106 @@
 # Usage Examples
 
-## Example 1: Full Quarterly Refresh With Crawler Output
+## Example 1: Full Incremental Refresh From Discovery
 
 ```bash
 export https_proxy=http://127.0.0.1:13659
 export http_proxy=http://127.0.0.1:13659
 
-python3 scripts/sop_validate.py
-python3 -m unittest tests/test_download_papers.py
+python3 -m pip install playwright
+python3 -m playwright install chromium
 
-python3 download_papers.py --models-json /path/to/models.json
+python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
+python3 download_papers.py --models-json scripts/latest_models.json
 python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+node scripts/render_readme_diagrams.mjs
+python3 scripts/sop_validate.py
 ```
 
-## Example 2: Fallback Run With In-File MODELS
+## Example 2: No Argument Run With Automatic Discovery
 
 ```bash
 python3 download_papers.py
 python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+node scripts/render_readme_diagrams.mjs
 ```
 
-## Example 2.1: Bootstrap Rebuild Mode
+Behavior:
+- tries dynamic discovery first,
+- writes `scripts/latest_models.json`,
+- falls back to static `MODELS` only if discovery fails.
+
+## Example 3: Bootstrap Rebuild
 
 ```bash
-python3 download_papers.py --models-json /path/to/models.json
+python3 scripts/discover_models.py --until 2026-04-03 --output scripts/latest_models.json
+python3 download_papers.py --models-json scripts/latest_models.json
 python3 scripts/update_readme_incremental.py \
   --results-json scripts/latest_download_results.json \
   --from-scratch
+node scripts/render_readme_diagrams.mjs
 ```
 
-## Example 3: `models.json` With Candidate Links
+## Example 4: Discovery Output Shape
 
 ```json
 [
   {
-    "release_date": "2026-02",
-    "org": "Alibaba",
-    "org_slug": "alibaba_qwen",
-    "model": "Qwen 3.5",
-    "core_feature": "Reasoning + coding improvements.",
-    "official_link": "https://qwen.ai/blog?id=qwen3.5",
-    "candidate_links": [
-      "https://qwen.ai/blog?id=qwen3.5",
-      "https://arxiv.org/abs/2505.09388"
-    ]
+    "release_date": "2026-04",
+    "org": "Zhipu AI",
+    "org_slug": "zhipu",
+    "model": "GLM-5V-Turbo",
+    "canonical_model_id": "zhipu/glm-5v-turbo",
+    "aliases": ["GLM-5V-Turbo", "GLM 5V Flash"],
+    "core_feature": "",
+    "official_link": "https://docs.z.ai/guides/vlm/glm-5v-turbo",
+    "candidate_links": ["https://docs.z.ai/guides/vlm/glm-5v-turbo"],
+    "source_page": "https://docs.z.ai/",
+    "evidence_urls": [
+      "https://docs.z.ai/",
+      "https://docs.z.ai/guides/vlm/glm-5v-turbo"
+    ],
+    "evidence_type": "official_model_page",
+    "release_classification": "model_release",
+    "classification_reason": "glm_frontier_release",
+    "confidence": 0.9,
+    "discovered_at": "2026-04-03T10:00:00Z"
   }
 ]
 ```
 
-Expected behavior:
-- downloader probes candidates,
-- chooses highest-priority downloadable official source,
-- downloads PDF (or renders webpage if needed).
+## Example 5: Curated Incremental Catch-Up
 
-## Example 4: Skill Verification
+Use this when you only want to backfill a known missing subset before the next full run.
+
+```bash
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+wanted = {
+    "LongCat-Flash-Prover",
+    "LongCat-Next",
+    "GLM-5V-Turbo",
+    "GLM-4.7",
+    "GLM-4.7-Flash",
+    "MiniMax M2.7",
+    "Gemma 4",
+    "MedGemma 1.5",
+}
+records = json.loads(Path("scripts/latest_models.json").read_text())
+subset = [item for item in records if item["model"] in wanted]
+Path("/tmp/latest_models_curated.json").write_text(
+    json.dumps(subset, ensure_ascii=False, indent=2),
+    encoding="utf-8",
+)
+PY
+
+python3 download_papers.py --models-json /tmp/latest_models_curated.json
+python3 scripts/update_readme_incremental.py --results-json scripts/latest_download_results.json
+node scripts/render_readme_diagrams.mjs
+```
+
+## Example 6: Skill Verification
 
 ```bash
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh

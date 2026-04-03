@@ -3,44 +3,41 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+GENERATED_DIR = ROOT / "scripts" / "generated"
+MONTHLY_JSON = GENERATED_DIR / "monthly_density.json"
+TIMELINE_JSON = GENERATED_DIR / "release_timeline.json"
+MONTHLY_SVG = ROOT / "assets" / "diagrams" / "monthly-density.svg"
+TIMELINE_SVG = ROOT / "assets" / "diagrams" / "release-timeline.svg"
 
-import download_papers
+
+def parse_readme_table_rows(text: str) -> List[List[str]]:
+    rows: List[List[str]] = []
+    for line in text.splitlines():
+        if not line.startswith("| "):
+            continue
+        if line.startswith("| Release Date") or line.startswith("| ---"):
+            continue
+        parts = [x.strip() for x in line.strip().strip("|").split("|")]
+        if len(parts) >= 6 and re.match(r"^20\d{2}-\d{2}$", parts[0]):
+            rows.append(parts)
+    return rows
 
 
 def parse_readme_table_month_counts(text: str) -> Counter:
-    rows: List[List[str]] = []
-    for line in text.splitlines():
-        if not line.startswith("| "):
-            continue
-        if line.startswith("| Release Date") or line.startswith("| ---"):
-            continue
-        parts = [x.strip() for x in line.strip().strip("|").split("|")]
-        if len(parts) >= 6 and re.match(r"^20\d{2}-\d{2}$", parts[0]):
-            rows.append(parts)
-    return Counter(r[0] for r in rows)
+    return Counter(r[0] for r in parse_readme_table_rows(text))
 
 
 def parse_readme_table_year_counts(text: str) -> Counter:
-    rows: List[List[str]] = []
-    for line in text.splitlines():
-        if not line.startswith("| "):
-            continue
-        if line.startswith("| Release Date") or line.startswith("| ---"):
-            continue
-        parts = [x.strip() for x in line.strip().strip("|").split("|")]
-        if len(parts) >= 6 and re.match(r"^20\d{2}-\d{2}$", parts[0]):
-            rows.append(parts)
-    return Counter(r[0][:4] for r in rows)
+    return Counter(r[0][:4] for r in parse_readme_table_rows(text))
 
 
 def parse_year_summary_counts(text: str) -> Dict[str, int]:
@@ -50,58 +47,32 @@ def parse_year_summary_counts(text: str) -> Dict[str, int]:
     return out
 
 
-def parse_snapshot_counts(text: str) -> Dict[str, int]:
-    out: Dict[str, int] = {}
-    for yy, mm, rr in re.findall(r'\("(\d\d)-(\d\d)<br/>R(\d\d)"\)', text):
-        out[f"20{yy}-{mm}"] = int(rr)
-    return out
+def load_generated_monthly_counts() -> Dict[str, int]:
+    payload = json.loads(MONTHLY_JSON.read_text(encoding="utf-8"))
+    return {item["month"]: int(item["count"]) for item in payload.get("months", [])}
 
 
-def parse_snapshot_node_class_map(text: str) -> Dict[str, str]:
-    out: Dict[str, str] = {}
-    for nodes, cls in re.findall(r"^\s*class\s+([A-Za-z0-9_,]+)\s+([a-z0-9]+);", text, flags=re.M):
-        for node in nodes.split(","):
-            out[node.strip()] = cls
-    return out
+def load_generated_timeline_months() -> List[str]:
+    payload = json.loads(TIMELINE_JSON.read_text(encoding="utf-8"))
+    return list(payload.get("months", []))
 
 
-def parse_snapshot_nodes(text: str) -> Dict[str, int]:
-    # Example: M1(("25-01<br/>R02"))
-    out: Dict[str, int] = {}
-    for node, yy, mm, rr in re.findall(r'(M\d+)\(\("(\d\d)-(\d\d)<br/>R(\d\d)"\)\)', text):
-        out[node] = int(rr)
-    return out
-
-
-def find_snapshot_block(text: str) -> str:
-    m = re.search(
-        r"<summary><b>Monthly Density Snapshot</b></summary>\s*```mermaid(.*?)```",
-        text,
-        flags=re.S,
-    )
-    return m.group(1) if m else ""
-
-
-def validate_release_prefix_accuracy() -> List[str]:
+def validate_release_prefix_accuracy(text: str) -> List[str]:
     errors: List[str] = []
-    session = download_papers.build_session()
-    links = [download_papers.normalize_url(m["official_link"]) for m in download_papers.MODELS]
-    link_frequency = Counter(links)
-    cache: Dict[str, Tuple[str | None, str]] = {}
-
-    for r in download_papers.MODELS:
-        link = download_papers.normalize_url(r["official_link"])
-        resolved, source = download_papers.resolve_release_month(
-            session=session,
-            declared_release_date=r["release_date"],
-            url=link,
-            link_frequency=link_frequency,
-            cache=cache,
-        )
-        if resolved != r["release_date"]:
+    for release_date, _, model, _, _, local_file in parse_readme_table_rows(text):
+        if local_file.lower() in {"download failed", "only online", "仅在线", "下载失败", "未发布"}:
+            continue
+        prefix_match = re.match(r"^\d{4}/[^/]+/(20\d{2}-\d{2})_.+\.pdf$", local_file)
+        if not prefix_match:
+            errors.append(f"unexpected local file path format: {model} -> {local_file}")
+            continue
+        if prefix_match.group(1) != release_date:
             errors.append(
-                f"release_date mismatch: {r['model']} {r['release_date']} -> {resolved} ({source})"
+                f"release_date mismatch: {model} table={release_date} file_prefix={prefix_match.group(1)}"
             )
+            continue
+        if not (ROOT / local_file).exists():
+            errors.append(f"missing local PDF: {local_file}")
     return errors
 
 
@@ -113,52 +84,67 @@ def validate() -> int:
 
     text = README.read_text(encoding="utf-8")
 
-    # Gate 1: README must remain English-only (no Han chars).
     han_count = sum(1 for ch in text if "\u4e00" <= ch <= "\u9fff")
     if han_count > 0:
         errors.append(f"README contains Chinese characters: {han_count}")
 
-    # Gate 2: release_date prefix must match runtime-calibrated result.
-    errors.extend(validate_release_prefix_accuracy())
+    errors.extend(validate_release_prefix_accuracy(text))
 
-    # Gate 3: monthly counts consistency: MODELS == README table == snapshot.
-    model_counts = Counter(m["release_date"] for m in download_papers.MODELS)
     table_counts = parse_readme_table_month_counts(text)
     table_year_counts = parse_readme_table_year_counts(text)
     summary_year_counts = parse_year_summary_counts(text)
-    snapshot_counts = parse_snapshot_counts(text)
-    if dict(sorted(model_counts.items())) != dict(sorted(table_counts.items())):
-        errors.append("monthly counts mismatch: MODELS vs README table")
-    if dict(sorted(table_counts.items())) != dict(sorted(snapshot_counts.items())):
-        errors.append("monthly counts mismatch: README table vs Monthly Density Snapshot")
+
+    if not MONTHLY_JSON.exists():
+        errors.append("missing scripts/generated/monthly_density.json")
+    if not TIMELINE_JSON.exists():
+        errors.append("missing scripts/generated/release_timeline.json")
+    if not MONTHLY_SVG.exists():
+        errors.append("missing assets/diagrams/monthly-density.svg")
+    if not TIMELINE_SVG.exists():
+        errors.append("missing assets/diagrams/release-timeline.svg")
+
+    if MONTHLY_JSON.exists():
+        generated_monthly_counts = load_generated_monthly_counts()
+        if dict(sorted(table_counts.items())) != dict(sorted(generated_monthly_counts.items())):
+            errors.append("monthly counts mismatch: README table vs monthly_density.json")
+
+    if TIMELINE_JSON.exists():
+        timeline_months = load_generated_timeline_months()
+        if sorted(table_counts.keys()) != sorted(timeline_months):
+            errors.append("month coverage mismatch: README table vs release_timeline.json")
+
     if dict(sorted(table_year_counts.items())) != dict(sorted(summary_year_counts.items())):
         errors.append("yearly counts mismatch: README table vs year summary headers")
 
-    # Gate 4: monthly snapshot must remove side tags.
-    snapshot_block = find_snapshot_block(text)
-    if re.search(r"\bT\d+\[", snapshot_block) or "classDef tag" in snapshot_block:
-        errors.append("Monthly Density Snapshot still contains side tags")
+    if "```mermaid" in text:
+        errors.append("README still contains Mermaid diagrams")
+    if "assets/diagrams/release-timeline.svg" not in text:
+        errors.append("README missing release timeline SVG reference")
+    if "assets/diagrams/monthly-density.svg" not in text:
+        errors.append("README missing monthly density SVG reference")
 
-    # Gate 5: bubble size class must match release count dynamically.
-    # Naming contract: class name must be b<count>, e.g. count=7 -> b7.
-    class_map = parse_snapshot_node_class_map(snapshot_block)
-    node_counts = parse_snapshot_nodes(snapshot_block)
-    for node, cnt in sorted(node_counts.items()):
-        exp = f"b{cnt}"
-        got = class_map.get(node)
-        if got and not re.match(r"^b\d+$", got):
-            errors.append(f"bubble class format invalid: {node} got={got} (expect b<count>)")
-        if got != exp:
-            errors.append(f"bubble class mismatch: {node} count={cnt} expected={exp} got={got}")
+    if MONTHLY_SVG.exists():
+        monthly_svg = MONTHLY_SVG.read_text(encoding="utf-8")
+        for month, count in load_generated_monthly_counts().items():
+            if f'data-month="{month}"' not in monthly_svg:
+                errors.append(f"monthly SVG missing month node: {month}")
+            if f'data-count="{count}"' not in monthly_svg:
+                errors.append(f"monthly SVG missing count marker: {month} -> {count}")
+
+    if TIMELINE_SVG.exists():
+        timeline_svg = TIMELINE_SVG.read_text(encoding="utf-8")
+        for month in table_counts.keys():
+            if month not in timeline_svg:
+                errors.append(f"timeline SVG missing month label: {month}")
 
     if errors:
         print("SOP validation FAILED:")
-        for e in errors:
-            print(f"- {e}")
+        for error in errors:
+            print(f"- {error}")
         return 1
 
     print("SOP validation passed")
-    print(f"models={len(download_papers.MODELS)}")
+    print(f"models={len(parse_readme_table_rows(text))}")
     print(f"months={len(table_counts)}")
     return 0
 

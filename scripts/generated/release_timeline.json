@@ -1,0 +1,379 @@
+{
+  "months": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04"
+  ],
+  "lanes": [
+    {
+      "id": "openai",
+      "label": "OpenAI",
+      "camp": "openai",
+      "entries": [
+        {
+          "month": "2025-04",
+          "models": [
+            "o3 / o4-mini"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-08",
+          "models": [
+            "GPT-5",
+            "gpt-oss-120b/20b"
+          ],
+          "highlighted_models": [
+            "GPT-5"
+          ]
+        },
+        {
+          "month": "2025-12",
+          "models": [
+            "GPT-5.2"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-02",
+          "models": [
+            "GPT-5.3-Codex"
+          ],
+          "highlighted_models": [
+            "GPT-5.3-Codex"
+          ]
+        },
+        {
+          "month": "2026-03",
+          "models": [
+            "GPT-5.4 Thinking",
+            "GPT-5.3 Instant"
+          ],
+          "highlighted_models": []
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic",
+      "camp": "anthropic",
+      "entries": [
+        {
+          "month": "2025-05",
+          "models": [
+            "Claude Opus 4 / Sonnet 4"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-06",
+          "models": [
+            "Claude Opus 4.5",
+            "Claude Sonnet 4.5"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-02",
+          "models": [
+            "Claude Opus 4.6"
+          ],
+          "highlighted_models": [
+            "Claude Opus 4.6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "camp": "google",
+      "entries": [
+        {
+          "month": "2025-02",
+          "models": [
+            "Gemma 2"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-03",
+          "models": [
+            "Gemma 3"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-06",
+          "models": [
+            "Gemma 3N"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-07",
+          "models": [
+            "Gemini 2.5 Pro",
+            "Gemini 2.5 Flash"
+          ],
+          "highlighted_models": [
+            "Gemini 2.5 Pro"
+          ]
+        },
+        {
+          "month": "2025-08",
+          "models": [
+            "Gemma 3 270M"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-11",
+          "models": [
+            "Gemini 3 Pro"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-12",
+          "models": [
+            "Gemini 3 Flash"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-01",
+          "models": [
+            "MedGemma 1.5"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-02",
+          "models": [
+            "Gemini 3.1 Pro",
+            "Gemini 3.1 Flash Image"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-03",
+          "models": [
+            "Gemini 3.1 Flash-Lite",
+            "Gemini 3.1 Flash Live"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-04",
+          "models": [
+            "Gemma 4"
+          ],
+          "highlighted_models": [
+            "Gemma 4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "label": "China-based Labs",
+      "camp": "china",
+      "entries": [
+        {
+          "month": "2025-01",
+          "models": [
+            "DeepSeek R1",
+            "DeepSeek V3"
+          ],
+          "highlighted_models": [
+            "DeepSeek R1"
+          ]
+        },
+        {
+          "month": "2025-03",
+          "models": [
+            "Qwen2.5-Omni"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-04",
+          "models": [
+            "Seed1.5-Thinking"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-05",
+          "models": [
+            "Qwen3",
+            "Yuanbao (Hunyuan-TurboS)",
+            "Seed1.5-VL"
+          ],
+          "highlighted_models": [
+            "Qwen3"
+          ]
+        },
+        {
+          "month": "2025-06",
+          "models": [
+            "ERNIE 4.5"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-07",
+          "models": [
+            "Kimi K2.0"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-08",
+          "models": [
+            "GLM-4.5",
+            "QuarkMed",
+            "Qwen-Image"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-09",
+          "models": [
+            "DeepSeek V3.1-Terminus",
+            "Baichuan-M2",
+            "LongCat-Flash",
+            "LongCat-Flash-Thinking",
+            "Qwen3-Omni"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-10",
+          "models": [
+            "LongCat-Flash-Omni",
+            "MiniMax M2.0",
+            "MiniMax M2",
+            "LongCat-Video"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-11",
+          "models": [
+            "Qwen3-VL"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-12",
+          "models": [
+            "DeepSeek V3.2",
+            "Step-DeepResearch",
+            "GLM-4.7",
+            "MiniMax M2.1",
+            "LongCat-Image"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-01",
+          "models": [
+            "GLM-4.7-Flash",
+            "LongCat-Flash-Thinking-2601"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2026-02",
+          "models": [
+            "GLM-5",
+            "Step-3.5-Flash",
+            "ERNIE 5.0",
+            "Baichuan-M3",
+            "MedXIAOHE",
+            "Seed 2.0",
+            "Qwen 3.5",
+            "MiniMax M2.5",
+            "Kimi K2.5",
+            "Ling 2.5",
+            "Qwen3-Coder-Next"
+          ],
+          "highlighted_models": [
+            "GLM-5",
+            "Kimi K2.5"
+          ]
+        },
+        {
+          "month": "2026-03",
+          "models": [
+            "MiniMax M2.7",
+            "LongCat-Next",
+            "LongCat-Flash-Prover"
+          ],
+          "highlighted_models": [
+            "LongCat-Flash-Prover"
+          ]
+        },
+        {
+          "month": "2026-04",
+          "models": [
+            "GLM-5V-Turbo"
+          ],
+          "highlighted_models": []
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "label": "Other Global",
+      "camp": "other",
+      "entries": [
+        {
+          "month": "2025-04",
+          "models": [
+            "Llama 4 Scout/Maverick"
+          ],
+          "highlighted_models": [
+            "Llama 4 Scout/Maverick"
+          ]
+        },
+        {
+          "month": "2025-08",
+          "models": [
+            "Grok 4"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-09",
+          "models": [
+            "Grok 4 Fast"
+          ],
+          "highlighted_models": []
+        },
+        {
+          "month": "2025-11",
+          "models": [
+            "Grok 4.1"
+          ],
+          "highlighted_models": []
+        }
+      ]
+    }
+  ]
+}
