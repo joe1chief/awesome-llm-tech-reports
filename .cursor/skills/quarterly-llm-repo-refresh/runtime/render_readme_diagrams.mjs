@@ -88,7 +88,37 @@ function tokenizeLabel(value) {
     .filter(Boolean);
 }
 
-function wrapLabel(value, maxChars = 16) {
+function estimateTextWidth(value, size = 13) {
+  return [...String(value || "")]
+    .reduce((total, ch) => {
+      if (ch === " ") return total + size * 0.34;
+      if ("ilI1|".includes(ch)) return total + size * 0.34;
+      if ("mwMWQO@#%&".includes(ch)) return total + size * 0.9;
+      if ("-/()[]".includes(ch)) return total + size * 0.46;
+      if (/[A-Z]/.test(ch)) return total + size * 0.74;
+      if (/[0-9]/.test(ch)) return total + size * 0.64;
+      if (/[a-z]/.test(ch)) return total + size * 0.6;
+      return total + size * 0.68;
+    }, 0) + 2;
+}
+
+function splitTokenToWidth(token, maxWidth, size = 13) {
+  const parts = [];
+  let current = "";
+  for (const ch of String(token || "")) {
+    const next = `${current}${ch}`;
+    if (current && estimateTextWidth(next, size) > maxWidth) {
+      parts.push(current);
+      current = ch;
+    } else {
+      current = next;
+    }
+  }
+  if (current) parts.push(current);
+  return parts.length ? parts : [String(token || "")];
+}
+
+function wrapLabel(value, maxWidth = 128, size = 13) {
   const tokens = tokenizeLabel(value);
   if (!tokens.length) return [String(value || "").trim()];
   const lines = [];
@@ -96,7 +126,7 @@ function wrapLabel(value, maxChars = 16) {
   for (const token of tokens) {
     const separator = current && !/[/-]$/.test(current) ? " " : "";
     const next = `${current}${separator}${token}`;
-    if (next.length <= maxChars) {
+    if (estimateTextWidth(next, size) <= maxWidth) {
       current = next;
       continue;
     }
@@ -104,16 +134,49 @@ function wrapLabel(value, maxChars = 16) {
       lines.push(current.trim());
       current = "";
     }
-    if (token.length <= maxChars) {
+    if (estimateTextWidth(token, size) <= maxWidth) {
       current = token;
       continue;
     }
-    for (let start = 0; start < token.length; start += maxChars) {
-      lines.push(token.slice(start, start + maxChars));
+    const tokenParts = splitTokenToWidth(token, maxWidth, size);
+    for (let idx = 0; idx < tokenParts.length - 1; idx += 1) {
+      lines.push(tokenParts[idx]);
     }
+    current = tokenParts[tokenParts.length - 1];
   }
   if (current) lines.push(current.trim());
   return lines.length ? lines : [String(value || "").trim()];
+}
+
+function decorateModelLabel(model, highlightedModels = []) {
+  return highlightedModels.includes(model) ? `★ ${model}` : model;
+}
+
+function collectEntryLines(entry, maxWidth, fontSize = 13) {
+  return (entry.models || []).flatMap((model) =>
+    wrapLabel(decorateModelLabel(model, entry.highlighted_models || []), maxWidth, fontSize),
+  );
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function computeMonthWidth(month, lanes, fontSize = 13) {
+  const labels = [];
+  lanes.forEach((lane) => {
+    (lane.entries || []).forEach((entry) => {
+      if (entry.month !== month) return;
+      (entry.models || []).forEach((model) => {
+        labels.push(decorateModelLabel(model, entry.highlighted_models || []));
+      });
+    });
+  });
+  const labelWidth = labels.length
+    ? Math.max(...labels.map((label) => estimateTextWidth(label, fontSize) + 34))
+    : 176;
+  const densityBonus = labels.length >= 8 ? 24 : labels.length >= 5 ? 12 : 0;
+  return clamp(labelWidth + densityBonus, 176, 260);
 }
 
 function monthlyColors(count) {
@@ -179,69 +242,100 @@ function campPalette(camp) {
 function renderReleaseTimelineSvg(data) {
   const months = data.months || [];
   const lanes = data.lanes || [];
-  const width = Math.max(1520, 260 + months.length * 150);
-  const height = 220 + lanes.length * 160;
-  const timelineY = 110;
+  const titleY = 56;
+  const subtitleY = 92;
+  const timelineY = 132;
   const startX = 140;
-  const endX = width - 140;
-  const gap = months.length > 1 ? (endX - startX) / (months.length - 1) : 0;
-  const monthX = new Map(months.map((month, idx) => [month, startX + idx * gap]));
-  const monthBoxWidth = 96;
-  const cardWidth = Math.max(146, Math.min(170, gap - 16));
+  const monthGap = 18;
+  const monthMetrics = months.map((month) => ({
+    month,
+    width: computeMonthWidth(month, lanes, 13),
+  }));
+  let cursorX = startX;
+  monthMetrics.forEach((metric) => {
+    metric.center = cursorX + metric.width / 2;
+    cursorX += metric.width + monthGap;
+  });
+  const endX = monthMetrics.length ? monthMetrics[monthMetrics.length - 1].center : startX;
+  const width = Math.max(1520, cursorX + 100);
+  const monthX = new Map(monthMetrics.map((metric) => [metric.month, metric.center]));
+  const monthWidthMap = new Map(monthMetrics.map((metric) => [metric.month, metric.width]));
 
-  const monthNodes = months
-    .map((month) => {
-      const x = monthX.get(month);
+  const monthNodes = monthMetrics
+    .map((metric) => {
+      const x = metric.center;
+      const monthBoxWidth = clamp(metric.width - 54, 96, 126);
       return `
         ${scribbleRect(x - monthBoxWidth / 2, timelineY - 26, monthBoxWidth, 42, "#374151", "#ffffff")}
-        ${textBlock(x, timelineY + 2, [month], { size: 15, weight: 700, anchor: "middle" })}
+        ${textBlock(x, timelineY + 2, [metric.month], { size: 15, weight: 700, anchor: "middle" })}
       `;
     })
     .join("\n");
 
-  const laneBlocks = lanes
-    .map((lane, idx) => {
-      const top = 180 + idx * 150;
-      const palette = campPalette(lane.camp);
-      const cards = (lane.entries || [])
+  const laneLayouts = lanes.map((lane) => {
+    const palette = campPalette(lane.camp);
+    const entries = (lane.entries || []).map((entry) => {
+      const monthWidth = monthWidthMap.get(entry.month) || 176;
+      const cardWidth = monthWidth - 12;
+      const modelLines = collectEntryLines(entry, cardWidth - 26, 13);
+      const cardHeight = 38 + modelLines.length * 17;
+      const maxLineWidth = modelLines.length
+        ? Math.max(...modelLines.map((line) => estimateTextWidth(line, 13)))
+        : 0;
+      return {
+        ...entry,
+        cardWidth,
+        cardHeight,
+        maxLineWidth,
+        modelLines,
+        centerX: monthX.get(entry.month) || startX,
+      };
+    });
+    const laneHeight = Math.max(118, ...entries.map((entry) => entry.cardHeight + 38));
+    return { lane, palette, entries, laneHeight };
+  });
+
+  let currentLaneTop = 192;
+  const laneBlocks = laneLayouts
+    .map(({ lane, palette, entries, laneHeight }) => {
+      const laneTop = currentLaneTop;
+      currentLaneTop += laneHeight + 24;
+      const cards = entries
         .map((entry) => {
-          const x = (monthX.get(entry.month) || startX) - cardWidth / 2;
-          const modelLines = (entry.models || []).flatMap((model) =>
-            wrapLabel(
-              (entry.highlighted_models || []).includes(model) ? `★ ${model}` : model,
-              16,
-            ),
-          );
-          const cardHeight = 32 + modelLines.length * 18;
+          const x = entry.centerX - entry.cardWidth / 2;
+          const cardY = laneTop + (laneHeight - entry.cardHeight) / 2;
           return `
-            ${scribbleLine(x + cardWidth / 2, timelineY + 18, x + cardWidth / 2, top + 12, "#9ca3af", 1.5)}
-            ${scribbleRect(x, top + 12, cardWidth, cardHeight, palette.stroke, palette.fill)}
-            ${textBlock(x + 12, top + 34, modelLines, {
-              size: 14,
-              weight: 600,
-              lineHeight: 18,
-            })}
+            <g data-lane="${escapeXml(lane.id || lane.label || "lane")}" data-month="${escapeXml(entry.month)}" data-card-width="${entry.cardWidth}" data-card-height="${entry.cardHeight}" data-max-line-width="${entry.maxLineWidth}">
+              ${scribbleLine(entry.centerX, timelineY + 18, entry.centerX, cardY, "#9ca3af", 1.5)}
+              ${scribbleRect(x, cardY, entry.cardWidth, entry.cardHeight, palette.stroke, palette.fill)}
+              ${textBlock(x + 13, cardY + 30, entry.modelLines, {
+                size: 13,
+                weight: 600,
+                lineHeight: 17,
+              })}
+            </g>
           `;
         })
         .join("\n");
       return `
-        ${textBlock(36, top + 50, [lane.label], { size: 18, weight: 700 })}
+        ${textBlock(36, laneTop + laneHeight / 2 + 6, [lane.label], { size: 18, weight: 700 })}
         ${cards}
       `;
     })
     .join("\n");
+  const height = currentLaneTop + 28;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">Release Timeline</title>
   <desc id="desc">Release timeline grouped by ecosystem camp and organization lane.</desc>
   <rect width="${width}" height="${height}" fill="#fffdf8" />
-  ${textBlock(70, 56, ["Release Timeline"], { size: 32, weight: 700 })}
-  ${textBlock(70, 88, ["Camp colors stay aligned with the README legend. ★ marks impact releases."], {
+  ${textBlock(70, titleY, ["Release Timeline"], { size: 32, weight: 700 })}
+  ${textBlock(70, subtitleY, ["Camp colors stay aligned with the README legend. ★ marks impact releases."], {
     size: 16,
     color: "#4b5563",
   })}
-  ${scribbleLine(startX, timelineY, endX, timelineY, "#1f2937", 3)}
+  ${scribbleLine(monthMetrics.length ? monthMetrics[0].center : startX, timelineY, endX, timelineY, "#1f2937", 3)}
   ${monthNodes}
   ${laneBlocks}
 </svg>`;

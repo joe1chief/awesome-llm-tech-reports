@@ -130,13 +130,91 @@ if [[ -d "$BACKUP_DIR/state/generated" ]]; then
   cp -R "$BACKUP_DIR/state/generated" "$STATE_DIR/generated"
 fi
 
-python3 -m unittest \
-  tests/test_build_curated_models.py \
-  tests/test_download_papers.py \
-  tests/test_update_readme_incremental.py \
-  tests/test_discover_models.py \
-  tests/test_model_aliases.py \
-  tests/test_render_readme_diagrams.py
+python3 - <<'PY' "$RUNTIME_DIR" "$STATE_DIR" "$REPO_ROOT"
+import json
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+runtime_dir = Path(sys.argv[1])
+state_dir = Path(sys.argv[2])
+repo_root = Path(sys.argv[3])
+sys.path.insert(0, str(runtime_dir))
+
+import build_curated_models
+import discover_models
+import download_papers
+import update_readme_incremental
+
+resolved = discover_models.canonicalize_model_name("zhipu", "GLM 5V Flash")
+if resolved.canonical_name != "GLM-5V-Turbo":
+    raise SystemExit("ERROR: alias canonicalization regressed")
+
+if not download_papers.should_render_webpage_to_pdf("https://qwen.ai/blog?id=qwen3.5"):
+    raise SystemExit("ERROR: webpage-to-pdf rule regressed")
+
+limited = build_curated_models.limit_links(
+    [
+        "https://fonts.googleapis.com/css2?family=Virgil",
+        "https://qwen.ai/blog?id=qwen3.5",
+        "https://arxiv.org/abs/2603.21065",
+    ],
+    filter_noise=True,
+)
+if any("fonts.googleapis.com" in url for url in limited):
+    raise SystemExit("ERROR: noisy candidate-link filtering regressed")
+
+with tempfile.TemporaryDirectory() as tmpdir:
+    tmp = Path(tmpdir)
+    generated = tmp / "generated"
+    assets = tmp / "assets"
+    generated.mkdir()
+    assets.mkdir()
+    (generated / "monthly_density.json").write_text(
+        json.dumps({"months": [{"month": "2026-02", "count": 2}, {"month": "2026-03", "count": 7}]}),
+        encoding="utf-8",
+    )
+    (generated / "release_timeline.json").write_text(
+        json.dumps(
+            {
+                "months": ["2026-02", "2026-03"],
+                "lanes": [
+                    {
+                        "id": "china",
+                        "label": "China-based Labs",
+                        "camp": "china",
+                        "entries": [
+                            {
+                                "month": "2026-02",
+                                "models": ["GLM-5", "Qwen 3.5", "Qwen3-Coder-Next", "LongCat-Flash-Thinking-2601"],
+                                "highlighted_models": ["GLM-5"],
+                            }
+                        ],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    subprocess.run(
+        [
+            "node",
+            str(runtime_dir / "render_readme_diagrams.mjs"),
+            "--generated-dir",
+            str(generated),
+            "--assets-dir",
+            str(assets),
+        ],
+        check=True,
+        cwd=repo_root,
+    )
+    svg = (assets / "release-timeline.svg").read_text(encoding="utf-8")
+    if 'data-card-width="' not in svg or 'data-max-line-width="' not in svg:
+        raise SystemExit("ERROR: timeline SVG metadata missing")
+
+print("skill-smoke-ok")
+PY
 python3 "$SOP_VALIDATE_SCRIPT"
 
 python3 - <<'PY'

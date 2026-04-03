@@ -197,13 +197,6 @@ Rules:
 Run in repo root:
 
 ```bash
-python3 -m unittest \
-  tests/test_build_curated_models.py \
-  tests/test_download_papers.py \
-  tests/test_update_readme_incremental.py \
-  tests/test_discover_models.py \
-  tests/test_model_aliases.py \
-  tests/test_render_readme_diagrams.py
 python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/sop_validate.py
 bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 ```

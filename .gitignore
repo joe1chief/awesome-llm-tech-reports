@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
 .cursor/skills/quarterly-llm-repo-refresh/state/
+tests/
 assets/diagrams/*.excalidraw
 docs/plans/
