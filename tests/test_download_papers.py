@@ -86,6 +86,37 @@ class DownloadPapersTests(unittest.TestCase):
         self.assertEqual(month, "2025-07")
         self.assertEqual(source, "manual_shared_link")
 
+    def test_fetch_webpage_published_month_prefers_visible_header_date(self) -> None:
+        class FakeResponse:
+            text = """
+            <html>
+              <head>
+                <script type="application/ld+json">
+                  {"datePublished":"2026-04-01"}
+                </script>
+              </head>
+              <body>
+                <nav>Models News Company</nav>
+                <div>2026.2.12</div>
+                <h1>MiniMax M2.5: Built for Real-World Productivity.</h1>
+              </body>
+            </html>
+            """
+
+            def raise_for_status(self) -> None:
+                return None
+
+        class FakeSession:
+            def get(self, url: str, timeout: int = 20) -> FakeResponse:
+                return FakeResponse()
+
+        self.assertEqual(
+            download_papers.fetch_webpage_published_month(
+                FakeSession(), "https://www.minimax.io/news/minimax-m25"
+            ),
+            "2026-02",
+        )
+
     def test_source_priority_prefers_pdf_over_blog(self) -> None:
         self.assertGreater(
             download_papers.source_priority_score("https://arxiv.org/pdf/2505.09388"),

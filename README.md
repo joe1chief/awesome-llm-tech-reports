@@ -1,11 +1,11 @@
-# Awesome LLM Technical Reports (2025-01 ~ 2026-02)
+# Awesome LLM Technical Reports (2025-01 ~ 2026-03)
 
 > A curated, structured local archive of frontier LLM / multimodal / medical-vertical model documentation — papers, system cards, model cards, and official blog posts — organized by **year / company**.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--02-4c1" alt="time range">
-  <img src="https://img.shields.io/badge/Models-47-blue" alt="models">
-  <img src="https://img.shields.io/badge/Local%20PDF-44-success" alt="local pdf">
+  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--03-4c1" alt="time range">
+  <img src="https://img.shields.io/badge/Models-53-blue" alt="models">
+  <img src="https://img.shields.io/badge/Local%20PDF-50-success" alt="local pdf">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
 </p>
@@ -124,21 +124,21 @@ flowchart TB
   }
 }}%%
 flowchart LR
-  M1(("25-01<br/>R02")) --> M2(("25-03<br/>R01")) --> M3(("25-04<br/>R03")) --> M4(("25-05<br/>R04")) --> M5(("25-06<br/>R03")) --> M6(("25-07<br/>R03")) --> M7(("25-08<br/>R05")) --> M8(("25-09<br/>R05")) --> M9(("25-10<br/>R02")) --> M10(("25-11<br/>R03")) --> M11(("25-12<br/>R04")) --> M12(("26-02<br/>R12"))
+  M1(("25-01<br/>R02")) --> M2(("25-03<br/>R01")) --> M3(("25-04<br/>R03")) --> M4(("25-05<br/>R04")) --> M5(("25-06<br/>R03")) --> M6(("25-07<br/>R03")) --> M7(("25-08<br/>R05")) --> M8(("25-09<br/>R05")) --> M9(("25-10<br/>R02")) --> M10(("25-11<br/>R03")) --> M11(("25-12<br/>R04")) --> M12(("26-02<br/>R14")) --> M13(("26-03<br/>R04"))
 
   classDef b1 fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#000000,font-size:10px;
   classDef b2 fill:#eef2ff,stroke:#818cf8,stroke-width:1.5px,color:#000000,font-size:12px;
   classDef b3 fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#000000,font-size:14px;
   classDef b4 fill:#bfdbfe,stroke:#2563eb,stroke-width:3px,color:#000000,font-size:16px;
   classDef b5 fill:#a5b4fc,stroke:#4f46e5,stroke-width:4px,color:#000000,font-size:19px;
-  classDef b12 fill:#6366f1,stroke:#312e81,stroke-width:6px,color:#000000,font-size:24px;
+  classDef b14 fill:#6366f1,stroke:#312e81,stroke-width:6px,color:#000000,font-size:24px;
 
   class M2 b1;
   class M1,M9 b2;
   class M3,M5,M6,M10 b3;
-  class M4,M11 b4;
+  class M4,M11,M13 b4;
   class M7,M8 b5;
-  class M12 b12;
+  class M12 b14;
 ```
 
 > Bubbles show month + release count from the model index table.
@@ -193,10 +193,14 @@ flowchart LR
 ## Model Index (Folded by Year)
 
 <details open>
-<summary><b>2026 (12 models)</b></summary>
+<summary><b>2026 (18 models)</b></summary>
 
 | Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |
 | --- | --- | --- | --- | --- | --- |
+| 2026-03 | OpenAI | GPT-5.4 Thinking | Frontier reasoning model that unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations and stronger chain-of-thought monitoring. | https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf | 2026/openai/2026-03_gpt-5.4-thinking.pdf |
+| 2026-03 | OpenAI | GPT-5.3 Instant | General-purpose GPT-5 update tuned for richer web-grounded answers, smoother follow-up behavior, fewer dead ends and caveats, and improved everyday conversational usefulness. | https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf | 2026/openai/2026-03_gpt-5.3-instant.pdf |
+| 2026-03 | Google | Gemini 3.1 Flash-Lite | Cost-efficient multimodal reasoning model for high-volume, low-latency workloads, with 1M context, configurable reasoning depth, and strong coding and tool-use tradeoffs for production throughput. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf | 2026/google/2026-03_gemini-3.1-flash-lite.pdf |
+| 2026-03 | Google | Gemini 3.1 Flash Live | Real-time multimodal model with native audio input/output, 128K context, and evaluation emphasis on low-latency voice and video interactions, conversational audio understanding, and multi-step function use. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Live-Model-Card.pdf | 2026/google/2026-03_gemini-3.1-flash-live.pdf |
 | 2026-02 | Zhipu AI | GLM-5 | Next-generation foundation model designed for agentic engineering; adopts DSA (DeepSeek Sparse Attention) on top of MoE 744B/40B with async RL to strengthen reasoning, coding, and agent capabilities. | https://arxiv.org/pdf/2602.15763 | 2026/zhipu/2026-02_glm-5.pdf |
 | 2026-02 | StepFun | Step-3.5-Flash | Sparse MoE model (196B/11B) bridging frontier agentic intelligence with computational efficiency; combines sliding-window and full attention for sharp reasoning and fast reliable execution. | https://arxiv.org/pdf/2602.10604 | 2026/stepfun/2026-02_step-3.5-flash.pdf |
 | 2026-02 | Baidu | ERNIE 5.0 | Natively autoregressive foundation model for unified multimodal understanding and generation across text, image, video, and audio; trained under a next-group-of-tokens prediction objective with ultra-sparse MoE. | https://arxiv.org/pdf/2602.04705 | 2026/baidu/2026-02_ernie-5.0.pdf |
@@ -209,6 +213,8 @@ flowchart LR
 | 2026-02 | MiniMax | MiniMax M2.5 | Extensively RL-trained frontier model; SOTA in coding (80.2% SWE-Bench Verified), agentic tool use, and search; 37% faster than M2.1 at 100 tok/s with costs as low as $1/hour continuous operation. | https://www.minimax.io/news/minimax-m25 | 2026/minimax/2026-02_minimax-m2.5.pdf |
 | 2026-02 | Moonshot AI | Kimi K2.5 | Open-source multimodal agentic model (1T MoE) jointly optimizing text and vision; features Agent Swarm for parallel sub-task execution and emphasizes mutual enhancement between modalities. | https://github.com/MoonshotAI/Kimi-K2.5/raw/master/tech_report.pdf | 2026/moonshot/2026-02_kimi-k2.5.pdf |
 | 2026-02 | InclusionAI (Ant Group) | Ling 2.5 | 1T total / 63B active parameters with hybrid linear attention; supports up to 1M context via YaRN, features composite reward RL for efficiency-performance balance, and is compatible with mainstream agent platforms. | https://github.com/inclusionAI/Ling-V2.5 | 2026/inclusionai/2026-02_ling-2.5.pdf |
+| 2026-02 | Google | Gemini 3.1 Pro | Advanced sparse-MoE multimodal reasoning model with 1M context, stronger agentic coding and long-context performance than Gemini 3 Pro, and published safety assessments under Google DeepMind's Frontier Safety Framework. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf | 2026/google/2026-02_gemini-3.1-pro.pdf |
+| 2026-02 | Google | Gemini 3.1 Flash Image | Multimodal image generation and editing model with 1M context, text and image outputs, and reported gains on prompt following, edit preservation, and multi-turn image workflows. | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf | 2026/google/2026-02_gemini-3.1-flash-image.pdf |
 
 </details>
 

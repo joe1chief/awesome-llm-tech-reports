@@ -40,6 +40,7 @@ LOCAL_STATUS_MAP = {
     "仅在线": "Online only",
     "未发布": "Unreleased",
 }
+LOCAL_STATUS_VALUES = set(LOCAL_STATUS_MAP.values())
 
 
 def contains_han(text: str) -> bool:
@@ -49,6 +50,11 @@ def contains_han(text: str) -> bool:
 def normalize_local_file(value: str) -> str:
     value = (value or "").strip()
     return LOCAL_STATUS_MAP.get(value, value)
+
+
+def is_materialized_local_file(value: str) -> bool:
+    value = (value or "").strip()
+    return bool(value) and value not in LOCAL_STATUS_VALUES
 
 
 def row_key(row: Dict[str, str]) -> tuple[str, str]:
@@ -106,11 +112,17 @@ def _merge_row_content(prev: Dict[str, str], row: Dict[str, str]) -> Dict[str, s
     out = dict(prev)
     out["organization"] = row["organization"] or prev["organization"]
     out["official_link"] = row["official_link"] or prev["official_link"]
-    out["local_file"] = row["local_file"] or prev["local_file"]
+    if row["local_file"]:
+        if is_materialized_local_file(row["local_file"]) or not is_materialized_local_file(prev["local_file"]):
+            out["local_file"] = row["local_file"]
     if row["core_highlights"]:
         if not contains_han(row["core_highlights"]) or contains_han(prev["core_highlights"]):
             out["core_highlights"] = row["core_highlights"]
     return out
+
+
+def _should_insert_new_row(row: Dict[str, str]) -> bool:
+    return is_materialized_local_file(row["local_file"]) and not contains_han(row["core_highlights"])
 
 
 def _insert_row_preserving_style(ordered_rows: List[Dict[str, str]], row: Dict[str, str]) -> None:
@@ -144,6 +156,8 @@ def merge_rows(
             key = row_key(row)
             if key in used:
                 continue
+            if not _should_insert_new_row(row):
+                continue
             _insert_row_preserving_style(ordered_rows, row)
             used.add(key)
         return ordered_rows
@@ -156,6 +170,8 @@ def merge_rows(
         if key in index:
             i = index[key]
             ordered_rows[i] = _merge_row_content(ordered_rows[i], row)
+            continue
+        if not _should_insert_new_row(row):
             continue
         _insert_row_preserving_style(ordered_rows, row)
         index = {row_key(r): i for i, r in enumerate(ordered_rows)}

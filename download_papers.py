@@ -33,6 +33,39 @@ SOURCE_PRIORITY_RULES: List[Tuple[str, int]] = [
 _WEB_RENDER_READY: Optional[bool] = None
 
 MODELS: List[Dict[str, Any]] = [
+    # 2026-03
+    {
+        "release_date": "2026-03",
+        "org": "OpenAI",
+        "org_slug": "openai",
+        "model": "GPT-5.4 Thinking",
+        "core_feature": "Frontier reasoning model that unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations and stronger chain-of-thought monitoring.",
+        "official_link": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+    },
+    {
+        "release_date": "2026-03",
+        "org": "OpenAI",
+        "org_slug": "openai",
+        "model": "GPT-5.3 Instant",
+        "core_feature": "General-purpose GPT-5 update tuned for richer web-grounded answers, smoother follow-up behavior, fewer dead ends and caveats, and improved everyday conversational usefulness.",
+        "official_link": "https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf",
+    },
+    {
+        "release_date": "2026-03",
+        "org": "Google",
+        "org_slug": "google",
+        "model": "Gemini 3.1 Flash-Lite",
+        "core_feature": "Cost-efficient multimodal reasoning model for high-volume, low-latency workloads, with 1M context, configurable reasoning depth, and strong coding and tool-use tradeoffs for production throughput.",
+        "official_link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf",
+    },
+    {
+        "release_date": "2026-03",
+        "org": "Google",
+        "org_slug": "google",
+        "model": "Gemini 3.1 Flash Live",
+        "core_feature": "Real-time multimodal model with native audio input/output, 128K context, and evaluation emphasis on low-latency voice and video interactions, conversational audio understanding, and multi-step function use.",
+        "official_link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Live-Model-Card.pdf",
+    },
     # 2026-02
     {
         "release_date": "2026-02",
@@ -89,6 +122,22 @@ MODELS: List[Dict[str, Any]] = [
         "model": "Claude Opus 4.6",
         "core_feature": "系统卡覆盖高能力编码、长上下文与对齐评估。",
         "official_link": "https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf",
+    },
+    {
+        "release_date": "2026-02",
+        "org": "Google",
+        "org_slug": "google",
+        "model": "Gemini 3.1 Pro",
+        "core_feature": "Advanced sparse-MoE multimodal reasoning model with 1M context, stronger agentic coding and long-context performance than Gemini 3 Pro, and published safety assessments under Google DeepMind's Frontier Safety Framework.",
+        "official_link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
+    },
+    {
+        "release_date": "2026-02",
+        "org": "Google",
+        "org_slug": "google",
+        "model": "Gemini 3.1 Flash Image",
+        "core_feature": "Multimodal image generation and editing model with 1M context, text and image outputs, and reported gains on prompt following, edit preservation, and multi-turn image workflows.",
+        "official_link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf",
     },
     {
         "release_date": "2026-02",
@@ -609,7 +658,12 @@ def fetch_webpage_published_month(session: requests.Session, url: str) -> Option
         return None
 
     body = resp.text[:300000]
+    text_body = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", body)
+    text_body = re.sub(r"(?s)<[^>]+>", " ", text_body)
+    text_body = html.unescape(re.sub(r"\s+", " ", text_body)).strip()
     patterns = [
+        # Prefer the first visible article date in rendered text over mutable metadata.
+        r"(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])",
         # OpenGraph / metadata published date
         r'(?i)article:published_time[^>]*content=["\'](20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
         r'(?i)datePublished["\']?\s*[:=]\s*["\'](20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
@@ -618,8 +672,10 @@ def fetch_webpage_published_month(session: requests.Session, url: str) -> Option
         # Keyword-near-date fallback
         r'(?i)(published|release(?:d)?|date)\D{0,30}(20\d{2})[-/\.](0?[1-9]|1[0-2])[-/\.](0?[1-9]|[12]\d|3[01])',
     ]
-    for p in patterns:
-        m = re.search(p, body)
+    haystacks = [text_body[:5000], body]
+    for idx, p in enumerate(patterns):
+        haystack = haystacks[0] if idx == 0 else haystacks[1]
+        m = re.search(p, haystack)
         if not m:
             continue
         if len(m.groups()) == 3:

@@ -110,6 +110,57 @@ class UpdateReadmeIncrementalTests(unittest.TestCase):
         merged = updater.merge_rows(existing, run_rows, from_scratch=True)
         self.assertEqual(merged[0]["core_highlights"], "english summary")
 
+    def test_merge_rows_keeps_existing_local_file_when_rerun_failed(self) -> None:
+        existing = [
+            {
+                "release_date": "2026-02",
+                "organization": "MiniMax",
+                "model": "MiniMax M2.5",
+                "core_highlights": "english summary",
+                "official_link": "https://example.com/old.pdf",
+                "local_file": "2026/minimax/2026-02_minimax-m2.5.pdf",
+            }
+        ]
+        run_rows = [
+            {
+                "release_date": "2026-02",
+                "organization": "MiniMax",
+                "model": "MiniMax M2.5",
+                "core_highlights": "中文摘要",
+                "official_link": "https://example.com/new.pdf",
+                "local_file": "Download failed",
+            }
+        ]
+        merged = updater.merge_rows(existing, run_rows, from_scratch=False)
+        self.assertEqual(merged[0]["local_file"], "2026/minimax/2026-02_minimax-m2.5.pdf")
+        self.assertEqual(merged[0]["core_highlights"], "english summary")
+        self.assertEqual(merged[0]["official_link"], "https://example.com/new.pdf")
+
+    def test_merge_rows_skips_new_failed_or_non_english_row(self) -> None:
+        existing = [
+            {
+                "release_date": "2025-01",
+                "organization": "DeepSeek",
+                "model": "DeepSeek R1",
+                "core_highlights": "existing",
+                "official_link": "https://arxiv.org/pdf/2501.12948",
+                "local_file": "2025/deepseek/2025-01_deepseek-r1.pdf",
+            }
+        ]
+        run_rows = [
+            {
+                "release_date": "2026-04",
+                "organization": "MiniMax",
+                "model": "MiniMax M2.5",
+                "core_highlights": "中文摘要",
+                "official_link": "https://example.com/new.pdf",
+                "local_file": "Download failed",
+            }
+        ]
+        merged = updater.merge_rows(existing, run_rows, from_scratch=False)
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0]["model"], "DeepSeek R1")
+
     def test_snapshot_uses_dynamic_bubble_class(self) -> None:
         rows = [
             {
