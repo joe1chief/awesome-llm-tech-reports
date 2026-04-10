@@ -35,6 +35,12 @@ Monitored ecosystems:
 - `Anthropic`: `anthropic.com/sitemap.xml` + official news / PDF pages
 - `Meta`: official Llama release pages such as `ai.meta.com/blog/llama-4-multimodal-intelligence/`
 
+ATOM-backed vendor expansion:
+- the live registry now covers `36` vendor slugs
+- `24` of them come directly from the April 2026 ATOM report vendor list
+- the remaining `12` are supplementary vendors already tracked by the repository before the ATOM alignment
+- use [vendor_sources.md](vendor_sources.md) as the authoritative source-map for each covered vendor's official crawl entry points
+
 Discovery output must retain:
 - `canonical_model_id`
 - `aliases`

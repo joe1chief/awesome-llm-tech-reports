@@ -8,6 +8,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../../../" && pwd)"
 SKILL_MD="$SKILL_DIR/SKILL.md"
 REFERENCE_MD="$SKILL_DIR/reference.md"
 EXAMPLES_MD="$SKILL_DIR/examples.md"
+VENDOR_SOURCES_MD="$SKILL_DIR/vendor_sources.md"
 RUNTIME_DIR="$SKILL_DIR/runtime"
 STATE_DIR="$SKILL_DIR/state"
 README_UPDATER="$RUNTIME_DIR/update_readme_incremental.py"
@@ -46,7 +47,7 @@ if [[ ! -f "$SOP_VALIDATE_SCRIPT" ]]; then
   exit 1
 fi
 
-python3 - <<'PY' "$SKILL_MD" "$REFERENCE_MD" "$EXAMPLES_MD" "$SCRIPT_DIR/validate_skill.sh"
+python3 - <<'PY' "$SKILL_MD" "$REFERENCE_MD" "$EXAMPLES_MD" "$VENDOR_SOURCES_MD" "$SCRIPT_DIR/validate_skill.sh"
 from pathlib import Path
 import re
 import sys
@@ -54,7 +55,8 @@ import sys
 skill_md = Path(sys.argv[1])
 reference_md = Path(sys.argv[2])
 examples_md = Path(sys.argv[3])
-script_path = Path(sys.argv[4])
+vendor_sources_md = Path(sys.argv[4])
+script_path = Path(sys.argv[5])
 text = skill_md.read_text(encoding="utf-8")
 
 if len(text.splitlines()) > 500:
@@ -68,13 +70,14 @@ for field in ["name:", "description:"]:
     if field not in frontmatter:
         raise SystemExit(f"ERROR: missing frontmatter field {field}")
 
-for p in [reference_md, examples_md, script_path]:
+for p in [reference_md, examples_md, vendor_sources_md, script_path]:
     if not p.exists():
         raise SystemExit(f"ERROR: missing supporting file {p}")
 
 required_links = [
     "[reference.md](reference.md)",
     "[examples.md](examples.md)",
+    "[vendor_sources.md](vendor_sources.md)",
     "[scripts/validate_skill.sh](scripts/validate_skill.sh)",
 ]
 for link in required_links:
@@ -146,6 +149,36 @@ import build_curated_models
 import discover_models
 import download_papers
 import update_readme_incremental
+
+required_vendor_slugs = {
+    "meta",
+    "google",
+    "microsoft",
+    "nvidia",
+    "openai",
+    "allenai",
+    "ibm",
+    "snowflake",
+    "ai21",
+    "alibaba_qwen",
+    "deepseek",
+    "bytedance",
+    "baidu",
+    "internlm",
+    "zhipu",
+    "openbmb",
+    "inclusionai",
+    "skywork",
+    "tencent",
+    "xiaomi",
+    "moonshot",
+    "minimax",
+    "mistral",
+    "huggingface",
+}
+missing_vendor_slugs = sorted(required_vendor_slugs - set(discover_models.VENDOR_REGISTRY))
+if missing_vendor_slugs:
+    raise SystemExit(f"ERROR: ATOM-backed vendor coverage regressed: {missing_vendor_slugs}")
 
 resolved = discover_models.canonicalize_model_name("zhipu", "GLM 5V Flash")
 if resolved.canonical_name != "GLM-5V-Turbo":

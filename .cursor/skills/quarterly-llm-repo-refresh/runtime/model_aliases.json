@@ -1,5 +1,22 @@
 {
   "alibaba_qwen": {
+    "Qwen2.5-Max": [
+      "Qwen 2.5 Max",
+      "Qwen2.5 Max"
+    ],
+    "Qwen2.5-1M": [
+      "Qwen 2.5 1M",
+      "Qwen2.5 1M"
+    ],
+    "Qwen2.5-VL": [
+      "Qwen 2.5 VL",
+      "Qwen2.5 VL",
+      "Qwen2.5 VL! Qwen2.5 VL! Qwen2.5 VL!"
+    ],
+    "Qwen2.5-VL-32B": [
+      "Qwen 2.5 VL 32B",
+      "Qwen2.5-VL 32B"
+    ],
     "Qwen3": [
       "Qwen 3",
       "Qwen3: Think Deeper, Act Faster"
@@ -141,6 +158,97 @@
     "Llama 4 Scout/Maverick": [
       "Llama 4 multimodal intelligence",
       "Introducing Llama 4 Scout and Maverick"
+    ]
+  },
+  "microsoft": {
+    "Phi-4-reasoning-vision-15B": [
+      "Phi 4 reasoning vision 15B",
+      "Phi-4 reasoning vision 15B",
+      "Phi-4-reasoning-vision and the lessons of training a multimodal reasoning model"
+    ]
+  },
+  "nvidia": {
+    "Nemotron 3 Super": [
+      "NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+      "NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+      "NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+      "NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
+      "Nemotron 3 Super: An Open Hybrid Mamba-Transformer MoE for Agentic Reasoning"
+    ],
+    "Nemotron 3 Nano 4B": [
+      "Nemotron 3 Nano 4B: A Compact Hybrid Model for Efficient Local AI"
+    ]
+  },
+  "allenai": {
+    "OLMo 3": [
+      "Olmo 3",
+      "[2512.13961] Olmo 3"
+    ]
+  },
+  "snowflake": {
+    "Arctic-AWM": [
+      "Arctic AWM",
+      "Snowflake/Arctic-AWM-4B · Hugging Face",
+      "Snowflake/Arctic-AWM-8B · Hugging Face",
+      "Snowflake/Arctic-AWM-14B · Hugging Face"
+    ]
+  },
+  "internlm": {
+    "InternLM3": [
+      "InternLM 3",
+      "Internlm3 8b Instruct - a Hugging Face Space by internlm",
+      "InternLM3 — InternLM"
+    ],
+    "Intern-S1": [
+      "internlm/Intern-S1",
+      "Intern S1"
+    ],
+    "Intern-S1-mini": [
+      "internlm/Intern-S1-mini",
+      "Intern S1 mini"
+    ],
+    "Intern-S1-Pro": [
+      "internlm/Intern-S1-Pro",
+      "internlm/Intern-S1-Pro-BF16",
+      "Intern S1 Pro"
+    ]
+  },
+  "openbmb": {
+    "MiniCPM-o 4.5": [
+      "openbmb/MiniCPM-o-4_5",
+      "openbmb/MiniCPM-o-4_5-awq",
+      "openbmb/MiniCPM-o-4_5-gguf",
+      "MiniCPM-o 4.5 Demo - a Hugging Face Space by openbmb"
+    ],
+    "MiniCPM-V 4.5": [
+      "openbmb/MiniCPM-V-4_5",
+      "openbmb/MiniCPM-V-4_5-int4",
+      "openbmb/MiniCPM-V-4_5-gguf"
+    ],
+    "MiniCPM-SALA": [
+      "openbmb/MiniCPM-SALA · Hugging Face"
+    ]
+  },
+  "xiaomi": {
+    "MiMo-7B": [
+      "MiMo-7B-SFT",
+      "MiMo-7B-RL-Zero",
+      "MiMo-7B-RL",
+      "MiMo-7B-Base",
+      "🤗 XiaomiMiMo/MiMo-7B-SFT",
+      "🤗 XiaomiMiMo/MiMo-7B-RL-Zero",
+      "🤗 XiaomiMiMo/MiMo-7B-RL",
+      "🤗 XiaomiMiMo/MiMo-7B-Base"
+    ],
+    "MiMo-VL": [
+      "MiMo-VL Technical Report"
+    ]
+  },
+  "huggingface": {
+    "SmolLM3": [
+      "SmolLM 3",
+      "SmolLM3-3B",
+      "SmolLM3-3B-Base"
     ]
   },
   "inclusionai": {

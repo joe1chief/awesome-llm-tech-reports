@@ -38,6 +38,15 @@ ORG_DISPLAY: Dict[str, str] = {
     "tencent": "Tencent",
     "meituan": "Meituan",
     "quark": "Quark (Alibaba)",
+    "microsoft": "Microsoft",
+    "nvidia": "NVIDIA",
+    "allenai": "Allen AI",
+    "snowflake": "Snowflake",
+    "internlm": "InternLM",
+    "openbmb": "OpenBMB",
+    "skywork": "Skywork",
+    "xiaomi": "Xiaomi",
+    "huggingface": "Hugging Face",
 }
 DISPLAY_TO_SLUG: Dict[str, str] = {value: key for key, value in ORG_DISPLAY.items()}
 ORG_ANCHOR_LABELS: Dict[str, str] = {
@@ -59,6 +68,15 @@ ORG_ANCHOR_LABELS: Dict[str, str] = {
     "tencent": "Tencent",
     "meituan": "Meituan",
     "quark": "Quark (Alibaba)",
+    "microsoft": "Microsoft",
+    "nvidia": "NVIDIA",
+    "allenai": "Allen AI",
+    "snowflake": "Snowflake",
+    "internlm": "InternLM",
+    "openbmb": "OpenBMB",
+    "skywork": "Skywork",
+    "xiaomi": "Xiaomi",
+    "huggingface": "Hugging Face",
 }
 ORG_LINK_LABELS: Dict[str, str] = {
     "alibaba_qwen": "Alibaba",
@@ -89,8 +107,17 @@ ORG_TO_LANE = {
     "tencent": "china",
     "meituan": "china",
     "quark": "china",
+    "internlm": "china",
+    "openbmb": "china",
+    "skywork": "china",
+    "xiaomi": "china",
     "meta": "other",
     "xai": "other",
+    "microsoft": "other",
+    "nvidia": "other",
+    "allenai": "other",
+    "snowflake": "other",
+    "huggingface": "other",
 }
 IMPACT_MODEL_NAMES = {
     "DeepSeek R1",
@@ -274,6 +301,8 @@ def merge_rows(
         for old in existing_rows:
             key = row_key(old)
             if key not in run_map:
+                continue
+            if not _should_insert_new_row(run_map[key]):
                 continue
             ordered_rows.append(_merge_row_content(old, run_map[key]))
             used.add(key)

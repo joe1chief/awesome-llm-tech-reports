@@ -502,6 +502,18 @@ def normalize_url(url: str) -> str:
         return url.replace("/abs/", "/pdf/")
     if "github.com" in url and "/blob/" in url and url.endswith(".pdf"):
         return url.replace("/blob/", "/raw/")
+    if "docs.qwenlm.ai/" in url and url.endswith("/index.json"):
+        match = re.search(
+            r"docs\.qwenlm\.ai/(?:(research|news)|home/latest-research|research/latest-advancements)/([^/]+)/index\.json$",
+            url,
+        )
+        if match:
+            section, slug = match.groups()
+            section = section or "research"
+            if section == "research":
+                return f"https://qwen.ai/blog?id={slug}"
+            return f"https://qwen.ai/news?id={slug}"
+        return url
     return url
 
 
@@ -538,7 +550,7 @@ def candidate_host(url: str) -> str:
 
 def is_allowed_cross_host(url: str) -> bool:
     lower = url.lower()
-    return "arxiv.org/" in lower or lower.endswith(".pdf")
+    return "arxiv.org/" in lower
 
 
 def collect_candidate_links(record: Dict[str, Any]) -> List[str]:
@@ -842,8 +854,37 @@ def is_pdf_url(url: str) -> bool:
     )
 
 
+def resolve_pdf_redirect_url(session: requests.Session, url: str) -> str:
+    if not url.startswith(("http://", "https://")) or is_pdf_url(url):
+        return url
+    try:
+        with session.get(url, timeout=20, stream=True, allow_redirects=True) as resp:
+            if resp.status_code >= 400:
+                return url
+            content_type = (resp.headers.get("Content-Type") or "").lower()
+            if "pdf" in content_type:
+                return normalize_url(str(resp.url or url))
+            first_chunk = b""
+            for chunk in resp.iter_content(chunk_size=16):
+                if chunk:
+                    first_chunk = chunk
+                    break
+            if first_chunk.startswith(b"%PDF-"):
+                return normalize_url(str(resp.url or url))
+    except Exception:
+        return url
+    return url
+
+
 def should_render_webpage_to_pdf(url: str) -> bool:
-    return url.lower().startswith(("http://", "https://")) and not is_pdf_url(url)
+    lower = url.lower()
+    if not lower.startswith(("http://", "https://")):
+        return False
+    if is_pdf_url(url):
+        return False
+    if lower.endswith(".json") or "/api/" in lower or lower.startswith("mailto:"):
+        return False
+    return True
 
 
 def slugify_model(name: str) -> str:
@@ -1524,6 +1565,11 @@ def main(
                 flush=True,
             )
         record["release_date"] = release_date
+        effective_link = resolve_pdf_redirect_url(session, link)
+        if effective_link != link:
+            print(f"  URL重定向PDF: {link} -> {effective_link}", flush=True)
+            link = effective_link
+            record["official_link"] = link
         year = release_date.split("-")[0]
         print(f"[{idx}/{len(sorted_models)}] {record['model']} -> {year}/{record['org_slug']}", flush=True)
 

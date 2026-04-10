@@ -48,6 +48,7 @@ QWEN_PAGE_CONFIG_CODES = (
 )
 XAI_RELEASE_NOTES_URL = "https://docs.x.ai/docs/release-notes"
 META_LLAMA4_BLOG_URL = "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+HUGGINGFACE_SMOLLM3_DOC_URL = "https://huggingface.co/docs/transformers/en/model_doc/smollm3"
 OPENAI_RELEASE_OVERRIDES: Dict[str, Dict[str, str]] = {
     "o3 / o4-mini": {
         "release_date": "2025-04",
@@ -64,6 +65,8 @@ QWEN_REPO_ALLOWLIST = {
     "Qwen3-Coder",
     "Qwen3-Omni",
     "Qwen3-VL",
+    "Qwen2.5-VL",
+    "Qwen2.5-1M",
     "Qwen2.5-Omni",
     "Qwen-Image",
 }
@@ -145,6 +148,10 @@ VENDOR_REGISTRY: Dict[str, Dict[str, object]] = {
         ],
         "arxiv_queries": [
             {"query": 'ti:"DeepSeek"', "include_patterns": [r"^DeepSeek (?:V|R)\d"]},
+        ],
+        "github_repos": [
+            {"url": "https://github.com/deepseek-ai/DeepSeek-R1", "title_hint": "DeepSeek-R1"},
+            {"url": "https://github.com/deepseek-ai/DeepSeek-V3", "title_hint": "DeepSeek-V3"},
         ],
     },
     "moonshot": {
@@ -291,6 +298,96 @@ VENDOR_REGISTRY: Dict[str, Dict[str, object]] = {
             {"kind": "research", "url": "https://research.ibm.com/blog"},
         ],
         "catalog_patterns": [r"Granite"],
+    },
+    "microsoft": {
+        "display_name": "Microsoft",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/microsoft"},
+            {"kind": "phi", "url": "https://www.microsoft.com/en-us/research/project/phi-3/"},
+        ],
+        "arxiv_queries": [
+            {
+                "query": 'all:"Phi-4-reasoning-vision-15B"',
+                "include_patterns": [r"Phi-4-reasoning-vision-15B"],
+            }
+        ],
+        "catalog_patterns": [r"Phi(?:[- ](?:3|4|4-mini|4-reasoning|4-multimodal))?"],
+    },
+    "nvidia": {
+        "display_name": "NVIDIA",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/nvidia"},
+            {"kind": "nemotron", "url": "https://developer.nvidia.com/nemotron"},
+        ],
+        "catalog_patterns": [r"Nemotron"],
+    },
+    "allenai": {
+        "display_name": "Allen AI",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/allenai"},
+            {"kind": "olmo", "url": "https://allenai.org/olmo"},
+        ],
+        "arxiv_queries": [
+            {
+                "query": 'all:"Olmo 3"',
+                "include_patterns": [r"Olmo 3"],
+            }
+        ],
+        "catalog_patterns": [r"OLMo"],
+    },
+    "snowflake": {
+        "display_name": "Snowflake",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/Snowflake"},
+            {"kind": "arctic", "url": "https://www.snowflake.com/en/blog/arctic-open-efficient-foundation-language-models-snowflake/"},
+        ],
+        "catalog_patterns": [r"Arctic"],
+    },
+    "internlm": {
+        "display_name": "InternLM",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/internlm"},
+            {"kind": "docs", "url": "https://internlm.readthedocs.io/en/latest/"},
+        ],
+        "catalog_patterns": [r"InternLM", r"Intern-S1"],
+    },
+    "openbmb": {
+        "display_name": "OpenBMB",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/openbmb"},
+            {"kind": "site", "url": "https://www.openbmb.org/"},
+        ],
+        "catalog_patterns": [r"MiniCPM", r"\bCPM\b"],
+    },
+    "skywork": {
+        "display_name": "Skywork",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/Skywork"},
+            {"kind": "github", "url": "https://github.com/SkyworkAI/Skywork-Open"},
+        ],
+        "catalog_patterns": [r"Skywork"],
+    },
+    "xiaomi": {
+        "display_name": "Xiaomi",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/XiaomiMiMo"},
+            {"kind": "github", "url": "https://github.com/XiaomiMiMo/MiMo"},
+        ],
+        "arxiv_queries": [
+            {
+                "query": 'all:"MiMo: Unlocking the Reasoning Potential of Language Model"',
+                "include_patterns": [r"MiMo:"],
+            }
+        ],
+        "catalog_patterns": [r"MiMo"],
+    },
+    "huggingface": {
+        "display_name": "Hugging Face",
+        "sources": [
+            {"kind": "hf", "url": "https://huggingface.co/HuggingFaceTB"},
+            {"kind": "blog", "url": "https://huggingface.co/blog/smollm"},
+        ],
+        "catalog_patterns": [r"SmolLM"],
     },
     "01ai": {
         "display_name": "01.AI",
@@ -465,6 +562,15 @@ def _generic_canonical_name(org_slug: str, name: str) -> str:
     if org_slug == "alibaba_qwen":
         raw = raw.split(":", 1)[0].strip()
         raw = re.sub(r"\s+", " ", raw).strip()
+        normalized = normalize_alias_token(raw).replace(" ", "")
+        if "qwen25max" in normalized:
+            return "Qwen2.5-Max"
+        if "qwen251m" in normalized:
+            return "Qwen2.5-1M"
+        if "qwen25vl32b" in normalized:
+            return "Qwen2.5-VL-32B"
+        if "qwen25vl" in normalized:
+            return "Qwen2.5-VL"
         return raw
     if org_slug == "openai":
         raw = re.sub(r"\s*-\s*OpenAI Deployment Safety Hub$", "", raw, flags=re.I).strip()
@@ -503,6 +609,92 @@ def _generic_canonical_name(org_slug: str, name: str) -> str:
     if org_slug == "inclusionai":
         if "ling-v2.5" in raw.casefold():
             return "Ling 2.5"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "microsoft":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^microsoft/+", "", raw).strip()
+        if "phi-4-reasoning-vision-15b" in lowered or "phi 4 reasoning vision 15b" in lowered:
+            return "Phi-4-reasoning-vision-15B"
+        if "phi-4-multimodal" in lowered or "phi 4 multimodal" in lowered:
+            return "Phi-4-multimodal"
+        if "phi-4-reasoning" in lowered or "phi 4 reasoning" in lowered:
+            return "Phi-4-reasoning"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "nvidia":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)\s*\(free\)\s*-\s*api pricing & providers$", "", raw).strip()
+        raw = re.sub(r"(?i)\s*model by nvidia$", "", raw).strip()
+        raw = re.sub(r"(?i)^nvidia/+", "", raw).strip()
+        if "nemotron 3 super" in lowered or "nemotron-3-super" in lowered:
+            return "Nemotron 3 Super"
+        if "nemotron 3 nano 4b" in lowered or "nemotron-3-nano-4b" in lowered:
+            return "Nemotron 3 Nano 4B"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "allenai":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^allenai/+", "", raw).strip()
+        if "olmo 3" in lowered:
+            return "OLMo 3"
+        if "molmoweb 8b" in lowered:
+            return "MolmoWeb 8B"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "snowflake":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^snowflake/+", "", raw).strip()
+        if "arctic-awm" in lowered or "arctic awm" in lowered:
+            return "Arctic-AWM"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "internlm":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^internlm/+", "", raw).strip()
+        if "internlm3" in lowered or "internlm 3" in lowered:
+            return "InternLM3"
+        if "intern-s1-pro" in lowered:
+            return "Intern-S1-Pro"
+        if "intern-s1-mini" in lowered:
+            return "Intern-S1-mini"
+        if "intern-s1" in lowered:
+            return "Intern-S1"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "openbmb":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^openbmb/+", "", raw).strip()
+        if "minicpm-o-4_5" in lowered or "minicpm-o 4.5" in lowered:
+            return "MiniCPM-o 4.5"
+        if "minicpm-v-4_5" in lowered or "minicpm-v 4.5" in lowered:
+            return "MiniCPM-V 4.5"
+        if "minicpm-sala" in lowered:
+            return "MiniCPM-SALA"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "skywork":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"(?i)^skywork/+", "", raw).strip()
+        if "skyreels-v3-r2v-14b" in lowered:
+            return "SkyReels-V3-R2V-14B"
+        if "r1v4" in lowered:
+            return "R1V4"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "xiaomi":
+        lowered = raw.casefold()
+        raw = re.sub(r"(?i)\s*·\s*hugging face$", "", raw).strip()
+        raw = re.sub(r"^🤗\s*", "", raw).strip()
+        raw = re.sub(r"(?i)^xiaomimimo/+", "", raw).strip()
+        if "mimo-7b" in lowered:
+            return "MiMo-7B"
+        if "mimo-vl" in lowered:
+            return "MiMo-VL"
+        return re.sub(r"\s+", " ", raw).strip()
+    if org_slug == "huggingface":
+        lowered = raw.casefold()
+        if "smollm3" in lowered:
+            return "SmolLM3"
         return re.sub(r"\s+", " ", raw).strip()
     return raw
 
@@ -746,6 +938,10 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
             "Qwen3-Max",
             "Qwen3-Omni",
             "Qwen3-VL",
+            "Qwen2.5-Max",
+            "Qwen2.5-1M",
+            "Qwen2.5-VL",
+            "Qwen2.5-VL-32B",
             "Qwen2.5-Omni",
             "Qwen-Image",
         }:
@@ -780,7 +976,7 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
             return "exclude_tool_model", "glm_auxiliary_or_product_variant"
     if org_slug == "minimax" and re.match(r"^MiniMax M\d", canonical_name):
         return "model_release", "minimax_frontier_release"
-    if org_slug == "deepseek" and canonical_name.startswith("DeepSeek "):
+    if org_slug == "deepseek" and re.match(r"^DeepSeek[- ](?:V|R)\d", canonical_name):
         return "model_release", "deepseek_frontier_release"
     if org_slug == "moonshot" and canonical_name.startswith("Kimi K2"):
         return "model_release", "moonshot_frontier_release"
@@ -800,6 +996,32 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
         return "model_release", "quark_frontier_release"
     if org_slug == "inclusionai" and canonical_name.startswith("Ling "):
         return "model_release", "inclusionai_frontier_release"
+    if org_slug == "microsoft" and canonical_name.startswith("Phi-4"):
+        return "model_release", "microsoft_phi_release"
+    if org_slug == "nvidia":
+        if canonical_name in {"Nemotron 3 Super", "Nemotron 3 Nano 4B"}:
+            return "model_release", "nvidia_nemotron_release"
+        if any(token in canonical_name.casefold() for token in ["dataset", "collection", "pricing", "ocr"]):
+            return "exclude_tool_model", "nvidia_non_frontier_or_auxiliary_release"
+    if org_slug == "allenai":
+        if canonical_name == "OLMo 3":
+            return "model_release", "allenai_olmo_release"
+        if canonical_name.startswith("MolmoWeb"):
+            return "exclude_tool_model", "allenai_non_llm_or_auxiliary_release"
+    if org_slug == "snowflake":
+        if canonical_name == "Arctic-AWM":
+            return "model_release", "snowflake_arctic_release"
+        if "Speculator" in canonical_name:
+            return "exclude_tool_model", "snowflake_auxiliary_release"
+    if org_slug == "internlm":
+        if canonical_name.startswith("Intern-S1") or canonical_name == "InternLM3":
+            return "model_release", "internlm_release"
+    if org_slug == "openbmb" and canonical_name in {"MiniCPM-o 4.5", "MiniCPM-V 4.5", "MiniCPM-SALA"}:
+        return "model_release", "openbmb_release"
+    if org_slug == "xiaomi" and canonical_name in {"MiMo-7B", "MiMo-VL"}:
+        return "model_release", "xiaomi_mimo_release"
+    if org_slug == "huggingface" and canonical_name == "SmolLM3":
+        return "model_release", "huggingface_smollm_release"
     return "needs_review", "unmatched_release_rule"
 
 
@@ -994,6 +1216,10 @@ def parse_markdown_heading(markdown: str) -> str:
         if "qwen" in heading.casefold():
             return heading
     for candidate in [
+        "Qwen2.5-Max",
+        "Qwen2.5-1M",
+        "Qwen2.5-VL-32B",
+        "Qwen2.5-VL",
         "Qwen3-Coder",
         "Qwen3-Next",
         "Qwen3-Max",
@@ -1018,6 +1244,10 @@ def qwen_repo_tokens(repo_name: str) -> List[str]:
         "Qwen3-Max": ["qwen3-max"],
         "Qwen3-Omni": ["qwen3-omni"],
         "Qwen3-VL": ["qwen3-vl"],
+        "Qwen2.5-Max": ["qwen2.5-max", "qwen25-max"],
+        "Qwen2.5-1M": ["qwen2.5-1m", "qwen25-1m"],
+        "Qwen2.5-VL": ["qwen2.5-vl", "qwen25-vl"],
+        "Qwen2.5-VL-32B": ["qwen2.5-vl-32b", "qwen25-vl-32b"],
         "Qwen2.5-Omni": ["qwen2.5-omni", "qwen25-omni"],
         "Qwen-Image": ["qwen-image"],
     }
@@ -1090,21 +1320,37 @@ def qwen_link_rank(url: str) -> tuple[int, int]:
     lowered = url.casefold()
     if "arxiv.org/pdf/" in lowered or lowered.endswith(".pdf") or "/tree/main/assets/" in lowered:
         return (0, len(url))
-    if "github.com/qwenlm/" in lowered:
+    if "qwen.ai/blog?id=" in lowered or "qwen.ai/news?id=" in lowered:
         return (1, len(url))
     if "docs.qwenlm.ai" in lowered:
         return (2, len(url))
-    if "alibabacloud.com/help/en/model-studio" in lowered:
+    if "github.com/qwenlm/" in lowered:
         return (3, len(url))
-    if "huggingface.co/collections/qwen" in lowered:
+    if "alibabacloud.com/help/en/model-studio" in lowered:
         return (4, len(url))
-    if "modelscope.cn/collections/" in lowered:
+    if "huggingface.co/collections/qwen" in lowered:
         return (5, len(url))
+    if "modelscope.cn/collections/" in lowered:
+        return (6, len(url))
     if "chat.qwen" in lowered:
         return (8, len(url))
     if "discord.gg" in lowered:
         return (9, len(url))
-    return (6, len(url))
+    return (7, len(url))
+
+
+def qwen_public_page_url(url: str) -> str:
+    match = re.search(
+        r"docs\.qwenlm\.ai/(?:(research|news)|home/latest-research|research/latest-advancements)/([^/]+)/index\.json$",
+        url,
+    )
+    if not match:
+        return ""
+    section, slug = match.groups()
+    section = section or "research"
+    if section == "research":
+        return f"https://qwen.ai/blog?id={slug}"
+    return f"https://qwen.ai/news?id={slug}"
 
 
 def normalize_xai_release_title(title: str) -> Optional[str]:
@@ -1322,7 +1568,7 @@ def parse_last_updated_month(html: str) -> Optional[str]:
 
 def parse_zhipu_doc_links(html: str, base_url: str) -> List[str]:
     matches = re.findall(
-        r'href="([^"]*(?:glm-5v-turbo|glm-4\.7(?:-flash)?|glm-5)[^"]*)"',
+        r'href="([^"]*(?:glm-5v-turbo|glm-4\.7(?:-flash)?|glm-4\.5|glm-5)[^"]*)"',
         html,
         flags=re.I,
     )
@@ -1878,7 +2124,9 @@ def discover_alibaba_qwen(
             token_heading = token_links.get("heading") or ""
             if should_override_qwen_raw_name(raw_name, token_heading):
                 raw_name = token_heading
+            public_page_url = qwen_public_page_url(token_links_url)
             candidate_links = [
+                public_page_url,
                 *token_links.get("links", []),
                 token_links_url,
             ]
@@ -2339,6 +2587,45 @@ def discover_meta(
     return records
 
 
+def discover_huggingface_lab(
+    fetcher: Fetcher,
+    discovered_at: str,
+    alias_config: Dict[str, Dict[str, List[str]]],
+) -> List[Dict[str, Any]]:
+    page_html = safe_get_text(fetcher, HUGGINGFACE_SMOLLM3_DOC_URL)
+    if not page_html:
+        return []
+    page_links = extract_generic_page_links(page_html, HUGGINGFACE_SMOLLM3_DOC_URL)
+    candidate_links = [HUGGINGFACE_SMOLLM3_DOC_URL, *page_links]
+    official_link = next(
+        (
+            link
+            for link in candidate_links
+            if "huggingface.co/HuggingFaceTB/SmolLM3-3B" in link
+        ),
+        HUGGINGFACE_SMOLLM3_DOC_URL,
+    )
+    release_date = (
+        month_from_date_text(strip_html_tags(page_html))
+        or explicit_release_month_from_html(page_html, allow_last_updated=False)
+        or "1970-01"
+    )
+    return [
+        build_record(
+            org_slug="huggingface",
+            raw_name="SmolLM3",
+            release_date=release_date,
+            official_link=official_link,
+            candidate_links=candidate_links,
+            source_page=HUGGINGFACE_SMOLLM3_DOC_URL,
+            evidence_urls=[HUGGINGFACE_SMOLLM3_DOC_URL, *candidate_links],
+            evidence_type="official_model_page",
+            discovered_at=discovered_at,
+            alias_config=alias_config,
+        )
+    ]
+
+
 def discover_baidu(
     fetcher: Fetcher,
     discovered_at: str,
@@ -2352,7 +2639,10 @@ def discover_deepseek(
     discovered_at: str,
     alias_config: Dict[str, Dict[str, List[str]]],
 ) -> List[Dict[str, Any]]:
-    return discover_vendor_arxiv("deepseek", fetcher, discovered_at, alias_config)
+    return [
+        *discover_vendor_arxiv("deepseek", fetcher, discovered_at, alias_config),
+        *discover_vendor_github_repos("deepseek", fetcher, discovered_at, alias_config),
+    ]
 
 
 def discover_moonshot(
@@ -2419,6 +2709,7 @@ DISCOVERY_DISPATCH = {
     "anthropic": discover_anthropic,
     "xai": discover_xai,
     "meta": discover_meta,
+    "huggingface": discover_huggingface_lab,
     "alibaba_qwen": discover_alibaba_qwen,
     "quark": discover_quark,
     "deepseek": discover_deepseek,

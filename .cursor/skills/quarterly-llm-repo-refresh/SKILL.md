@@ -112,4 +112,5 @@ bash .cursor/skills/quarterly-llm-repo-refresh/scripts/validate_skill.sh
 
 - SOP details: [reference.md](reference.md)
 - Example commands and input/output shapes: [examples.md](examples.md)
+- ATOM-aligned vendor source map: [vendor_sources.md](vendor_sources.md)
 - Validation script: [scripts/validate_skill.sh](scripts/validate_skill.sh)
