@@ -6,6 +6,7 @@ Target repository: `awesome-llm-tech-reports`
 
 Preserve:
 - directory layout: `<year>/<org_slug>/`
+- flat PDF mirror: `pdf/<filename>.pdf`
 - filename pattern: `YYYY-MM_slugified-model-name.pdf`
 - reverse-chronological README table and folded year index
 - existing README style and section order
@@ -105,6 +106,8 @@ The curated snapshot must:
 - filter static assets and unrelated external links out of `candidate_links`.
 - add explicit official fallbacks when direct PDFs are known to be anti-bot blocked in the current environment.
 
+After each successful materialization, the runtime must sync the file into the flat `pdf/` mirror directory.
+
 Priority order:
 1. official PDF / model card / system card
 2. arXiv PDF
@@ -135,6 +138,7 @@ Filename prefixes must be calibrated at runtime from source evidence:
 - visible date text near the page title when available.
 
 The final saved filename must use the resolved `YYYY-MM`.
+The same filename must also be mirrored to `pdf/`.
 
 ## 7) Webpage To PDF Rules
 

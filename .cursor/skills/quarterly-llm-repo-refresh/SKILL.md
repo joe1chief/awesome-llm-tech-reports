@@ -34,6 +34,7 @@ Use this skill when you need to:
    - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/build_curated_models.py --discover-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models.json --output .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json`
 4. Download/render from the curated snapshot:
    - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/download_papers.py --models-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_models_curated.json`
+   - this step must also mirror every materialized PDF into the flat `pdf/` directory in repo root.
 5. Update README incrementally:
    - `python3 .cursor/skills/quarterly-llm-repo-refresh/runtime/update_readme_incremental.py --results-json .cursor/skills/quarterly-llm-repo-refresh/state/latest_download_results.json`
 6. Regenerate Excalidraw-style SVG assets:
@@ -73,6 +74,9 @@ Use this skill when you need to:
 - `o3 / o4-mini` must stay pinned to the corrected `2025-04` release month at runtime.
 - If xAI PDF/news endpoints are anti-bot blocked, fall back to `docs.x.ai/docs/release-notes` for materialization but keep the model's declared release month.
 - `Core Highlights` must be regenerated from downloaded PDF text or webpage-rendered PDF text, in English only.
+- Every materialized PDF must exist in both places:
+  - canonical storage: `<year>/<org_slug>/YYYY-MM_slugified-model-name.pdf`
+  - flat mirror: `pdf/<same-filename>.pdf`
 - README diagrams must be SVG assets generated from structured JSON, not Mermaid blocks.
 - Monthly Density Snapshot must keep bubble size proportional to release count and must not render side tags.
 - `Star History` remains the external chart; do not rewrite it.

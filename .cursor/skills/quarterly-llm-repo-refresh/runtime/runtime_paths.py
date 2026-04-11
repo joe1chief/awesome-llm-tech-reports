@@ -15,3 +15,4 @@ LATEST_CURATED_MODELS_JSON = STATE_DIR / "latest_models_curated.json"
 LATEST_RESULTS_JSON = STATE_DIR / "latest_download_results.json"
 
 ASSETS_DIR = ROOT / "assets" / "diagrams"
+PDF_DIR = ROOT / "pdf"

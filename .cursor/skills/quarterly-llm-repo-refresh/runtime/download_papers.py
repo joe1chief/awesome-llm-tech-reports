@@ -1,7 +1,9 @@
 import re
 import html
 import argparse
+import filecmp
 import json
+import shutil
 import unicodedata
 from collections import Counter
 from datetime import datetime
@@ -22,6 +24,7 @@ from runtime_paths import (
     LATEST_CURATED_MODELS_JSON,
     LATEST_MODELS_JSON,
     LATEST_RESULTS_JSON,
+    PDF_DIR,
     README,
     ROOT,
     SKILL_DIR,
@@ -1179,6 +1182,69 @@ def summarize_core_feature_from_pdf(path: Path, model_name: str = "") -> str:
     return summarize_core_feature_from_text(extract_text_from_pdf(path), model_name=model_name)
 
 
+def _iter_repo_pdf_sources(root: Path = ROOT, mirror_dir: Path = PDF_DIR) -> List[Path]:
+    sources: List[Path] = []
+    for path in root.rglob("*.pdf"):
+        try:
+            path.relative_to(mirror_dir)
+            continue
+        except ValueError:
+            pass
+        if ".git" in path.parts:
+            continue
+        sources.append(path)
+    return sorted(sources)
+
+
+def _ensure_flat_pdf_filenames_are_unique(paths: List[Path]) -> None:
+    seen: Dict[str, Path] = {}
+    duplicates: List[Tuple[str, Path, Path]] = []
+    for path in paths:
+        previous = seen.get(path.name)
+        if previous and previous != path:
+            duplicates.append((path.name, previous, path))
+            continue
+        seen[path.name] = path
+    if duplicates:
+        formatted = "; ".join(
+            f"{name}: {left.relative_to(ROOT)} <> {right.relative_to(ROOT)}"
+            for name, left, right in duplicates[:5]
+        )
+        raise ValueError(f"Flat pdf mirror filename collision detected: {formatted}")
+
+
+def sync_flat_pdf_library(
+    source_pdf: Optional[Path] = None,
+    root: Path = ROOT,
+    mirror_dir: Path = PDF_DIR,
+) -> Tuple[int, int]:
+    mirror_dir.mkdir(parents=True, exist_ok=True)
+    if source_pdf is not None:
+        try:
+            source_pdf.relative_to(mirror_dir)
+            return 0, 1
+        except ValueError:
+            pass
+        sources = [source_pdf]
+    else:
+        sources = _iter_repo_pdf_sources(root=root, mirror_dir=mirror_dir)
+        _ensure_flat_pdf_filenames_are_unique(sources)
+
+    copied = 0
+    skipped = 0
+    for source in sources:
+        if not source.exists():
+            skipped += 1
+            continue
+        destination = mirror_dir / source.name
+        if destination.exists() and filecmp.cmp(source, destination, shallow=False):
+            skipped += 1
+            continue
+        shutil.copy2(source, destination)
+        copied += 1
+    return copied, skipped
+
+
 def download_file(session: requests.Session, url: str, output: Path) -> Tuple[bool, str]:
     output.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -1605,6 +1671,7 @@ def main(
                         or contains_han(str(record.get("core_feature", "")))
                     ):
                         record["core_feature"] = generated_summary
+                    sync_flat_pdf_library(source_pdf=output)
                     record["local_file_path"] = str(output.relative_to(ROOT))
                     ok += 1
                     print(
@@ -1634,6 +1701,7 @@ def main(
                     or contains_han(str(record.get("core_feature", "")))
                 ):
                     record["core_feature"] = generated_summary
+                sync_flat_pdf_library(source_pdf=output)
                 record["local_file_path"] = str(output.relative_to(ROOT))
                 ok += 1
                 print(f"  网页转 PDF 成功: {record['local_file_path']}", flush=True)
@@ -1662,6 +1730,9 @@ def main(
         print(f"README: {readme}")
     else:
         print("README: skipped (preserving existing curated README.md)")
+
+    copied, skipped_flat = sync_flat_pdf_library(root=ROOT, mirror_dir=PDF_DIR)
+    print(f"Flat PDF library: {PDF_DIR} | copied={copied} skipped={skipped_flat}")
 
     print("=== 下载完成 ===")
     print(f"成功: {ok}")
