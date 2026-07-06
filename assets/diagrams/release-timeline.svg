@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="4027.9800000000005" height="999" viewBox="0 0 4027.9800000000005 999" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="4627.8" height="1016" viewBox="0 0 4627.8 1016" role="img" aria-labelledby="title desc">
   <title id="title">Release Timeline</title>
   <desc id="desc">Release timeline grouped by ecosystem camp and organization lane.</desc>
-  <rect width="4027.9800000000005" height="999" fill="#fffdf8" />
+  <rect width="4627.8" height="1016" fill="#fffdf8" />
   <text x="70" y="56" fill="#111827" font-size="32" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Release Timeline</tspan></text>
   <text x="70" y="92" fill="#4b5563" font-size="16" font-weight="500" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Camp colors stay aligned with the README legend. ★ marks impact releases.</tspan></text>
-  <line x1="228" y1="132" x2="3821.9800000000005" y2="132" stroke="#1f2937" stroke-width="3" stroke-linecap="round" /><line x1="229.5" y1="133.2" x2="3820.7800000000007" y2="132.8" stroke="#1f2937" stroke-width="2.4" stroke-linecap="round" opacity="0.75" />
+  <line x1="228" y1="132" x2="4379.8" y2="132" stroke="#1f2937" stroke-width="3" stroke-linecap="round" /><line x1="229.5" y1="133.2" x2="4378.6" y2="132.8" stroke="#1f2937" stroke-width="2.4" stroke-linecap="round" opacity="0.75" />
   
         
     <rect x="167" y="106" width="122" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
@@ -113,10 +113,24 @@
       
 
         
-    <rect x="3760.9800000000005" y="106" width="122" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
-    <rect x="3762.4800000000005" y="107.2" width="119.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+    <rect x="3800.9800000000005" y="106" width="126" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="3802.4800000000005" y="107.2" width="123.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
   
-        <text x="3821.9800000000005" y="134" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3821.9800000000005" dy="0">2026-04</tspan></text>
+        <text x="3863.9800000000005" y="134" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3863.9800000000005" dy="0">2026-04</tspan></text>
+      
+
+        
+    <rect x="4058.8900000000003" y="106" width="126" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="4060.3900000000003" y="107.2" width="123.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+  
+        <text x="4121.89" y="134" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4121.89" dy="0">2026-05</tspan></text>
+      
+
+        
+    <rect x="4316.8" y="106" width="126" height="42" rx="18" ry="18" fill="#ffffff" stroke="#374151" stroke-width="2.4" />
+    <rect x="4318.3" y="107.2" width="123.4" height="39.8" rx="18" ry="18" fill="none" stroke="#374151" stroke-width="1.3" opacity="0.75" />
+  
+        <text x="4379.8" y="134" fill="#111827" font-size="15" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4379.8" dy="0">2026-06</tspan></text>
       
   
         <text x="36" y="257" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">OpenAI</tspan></text>
@@ -170,6 +184,26 @@
               <text x="3491.6800000000003" y="245" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">GPT-5.4 Thinking</tspan><tspan x="3491.6800000000003" dy="17">GPT-5.3 Instant</tspan></text>
             </g>
           
+
+            <g data-lane="openai" data-month="2026-04" data-card-width="248" data-card-height="55" data-max-line-width="62.32">
+              <line x1="3863.9800000000005" y1="150" x2="3863.9800000000005" y2="223.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3865.4800000000005" y1="151.2" x2="3862.7800000000007" y2="224.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="3739.9800000000005" y="223.5" width="248" height="55" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="3741.4800000000005" y="224.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="3752.9800000000005" y="253.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3752.9800000000005" dy="0">GPT-5.5</tspan></text>
+            </g>
+          
+
+            <g data-lane="openai" data-month="2026-05" data-card-width="207.82" data-card-height="55" data-max-line-width="117.95999999999998">
+              <line x1="4121.89" y1="150" x2="4121.89" y2="223.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="4123.39" y1="151.2" x2="4120.6900000000005" y2="224.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="4017.9800000000005" y="223.5" width="207.82" height="55" rx="18" ry="18" fill="#e8f2ff" stroke="#2f6feb" stroke-width="2.4" />
+    <rect x="4019.4800000000005" y="224.7" width="205.22" height="52.8" rx="18" ry="18" fill="none" stroke="#2f6feb" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="4030.9800000000005" y="253.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4030.9800000000005" dy="0">GPT-5.5 Instant</tspan></text>
+            </g>
+          
       
 
         <text x="36" y="399" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Anthropic</tspan></text>
@@ -205,331 +239,381 @@
           
       
 
-        <text x="36" y="545.5" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Google</tspan></text>
+        <text x="36" y="554" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Google</tspan></text>
         
             <g data-lane="google" data-month="2025-02" data-card-width="164" data-card-height="72" data-max-line-width="63.36">
-              <line x1="422" y1="150" x2="422" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="423.5" y1="151.2" x2="420.8" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="422" y1="150" x2="422" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="423.5" y1="151.2" x2="420.8" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="340" y="503.5" width="164" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="341.5" y="504.7" width="161.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="340" y="512" width="164" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="341.5" y="513.2" width="161.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="353" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="353" dy="0">Gemma 2</tspan><tspan x="353" dy="17">Gemma 1</tspan></text>
+              <text x="353" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="353" dy="0">Gemma 2</tspan><tspan x="353" dy="17">Gemma 1</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-04" data-card-width="217.48000000000005" data-card-height="72" data-max-line-width="155.14000000000001">
-              <line x1="836.74" y1="150" x2="836.74" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="836.74" y1="150" x2="836.74" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="728" y="503.5" width="217.48000000000005" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="729.5" y="504.7" width="214.88000000000005" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="728" y="512" width="217.48000000000005" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="729.5" y="513.2" width="214.88000000000005" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="741" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">Gemini 2.0 Flash-Lite</tspan><tspan x="741" dy="17">Gemini 2.0 Flash</tspan></text>
+              <text x="741" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">Gemini 2.0 Flash-Lite</tspan><tspan x="741" dy="17">Gemini 2.0 Flash</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-06" data-card-width="164" data-card-height="72" data-max-line-width="120.56000000000002">
-              <line x1="1335.48" y1="150" x2="1335.48" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1336.98" y1="151.2" x2="1334.28" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1335.48" y1="150" x2="1335.48" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1336.98" y1="151.2" x2="1334.28" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="1253.48" y="503.5" width="164" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1254.98" y="504.7" width="161.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1253.48" y="512" width="164" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1254.98" y="513.2" width="161.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="1266.48" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1266.48" dy="0">Gemma 3N</tspan><tspan x="1266.48" dy="17">★ Gemini 2.5 Pro</tspan></text>
+              <text x="1266.48" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1266.48" dy="0">Gemma 3N</tspan><tspan x="1266.48" dy="17">★ Gemini 2.5 Pro</tspan></text>
+            </g>
+          
+
+            <g data-lane="google" data-month="2025-07" data-card-width="248" data-card-height="55" data-max-line-width="188.16000000000003">
+              <line x1="1571.48" y1="150" x2="1571.48" y2="520.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1572.98" y1="151.2" x2="1570.28" y2="521.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="1447.48" y="520.5" width="248" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1448.98" y="521.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="1460.48" y="550.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1460.48" dy="0">Gemini Robotics On-Device</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-08" data-card-width="248" data-card-height="89" data-max-line-width="156.96">
-              <line x1="1849.48" y1="150" x2="1849.48" y2="495" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1850.98" y1="151.2" x2="1848.28" y2="495.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1849.48" y1="150" x2="1849.48" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1850.98" y1="151.2" x2="1848.28" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="1725.48" y="495" width="248" height="89" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="1726.98" y="496.2" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="1725.48" y="503.5" width="248" height="89" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="1726.98" y="504.7" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="1738.48" y="525" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1738.48" dy="0">Gemma 3 270M</tspan><tspan x="1738.48" dy="17">Gemma 3</tspan><tspan x="1738.48" dy="17">Gemini 2.5 Deep Think</tspan></text>
+              <text x="1738.48" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1738.48" dy="0">Gemma 3 270M</tspan><tspan x="1738.48" dy="17">Gemma 3</tspan><tspan x="1738.48" dy="17">Gemini 2.5 Deep Think</tspan></text>
             </g>
           
 
-            <g data-lane="google" data-month="2025-09" data-card-width="248" data-card-height="89" data-max-line-width="197.52">
+            <g data-lane="google" data-month="2025-09" data-card-width="248" data-card-height="106" data-max-line-width="197.52">
               <line x1="2127.48" y1="150" x2="2127.48" y2="495" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2128.98" y1="151.2" x2="2126.28" y2="495.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2003.48" y="495" width="248" height="89" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="2004.98" y="496.2" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2003.48" y="495" width="248" height="106" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2004.98" y="496.2" width="245.4" height="103.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2016.48" y="525" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2016.48" dy="0">Gemini 2.5 Flash-Lite</tspan><tspan x="2016.48" dy="17">Gemini 2.5 Flash and Gemini</tspan><tspan x="2016.48" dy="17">2.5 Flash Image</tspan></text>
+              <text x="2016.48" y="525" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2016.48" dy="0">Gemini 2.5 Flash-Lite</tspan><tspan x="2016.48" dy="17">Gemini 2.5 Flash and Gemini</tspan><tspan x="2016.48" dy="17">2.5 Flash Image</tspan><tspan x="2016.48" dy="17">Gemini Robotics 1.5</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-10" data-card-width="213.84000000000003" data-card-height="55" data-max-line-width="179.84000000000003">
-              <line x1="2388.4" y1="150" x2="2388.4" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2389.9" y1="151.2" x2="2387.2000000000003" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2388.4" y1="150" x2="2388.4" y2="520.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2389.9" y1="151.2" x2="2387.2000000000003" y2="521.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2281.48" y="512" width="213.84000000000003" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="2282.98" y="513.2" width="211.24000000000004" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2281.48" y="520.5" width="213.84000000000003" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2282.98" y="521.7" width="211.24000000000004" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2294.48" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2294.48" dy="0">Gemini 2.5 Computer Use</tspan></text>
+              <text x="2294.48" y="550.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2294.48" dy="0">Gemini 2.5 Computer Use</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-11" data-card-width="188.66" data-card-height="72" data-max-line-width="134.08">
-              <line x1="2619.65" y1="150" x2="2619.65" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2619.65" y1="150" x2="2619.65" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2525.32" y="503.5" width="188.66" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="2526.82" y="504.7" width="186.06" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2525.32" y="512" width="188.66" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2526.82" y="513.2" width="186.06" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2538.32" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Gemini 3 Pro Image</tspan><tspan x="2538.32" dy="17">Gemini 3 Pro</tspan></text>
+              <text x="2538.32" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Gemini 3 Pro Image</tspan><tspan x="2538.32" dy="17">Gemini 3 Pro</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2025-12" data-card-width="172.24" data-card-height="55" data-max-line-width="102.36">
-              <line x1="2830.1" y1="150" x2="2830.1" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2830.1" y1="150" x2="2830.1" y2="520.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="521.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2743.98" y="512" width="172.24" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="2745.48" y="513.2" width="169.64000000000001" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2743.98" y="520.5" width="172.24" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2745.48" y="521.7" width="169.64000000000001" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2756.98" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">Gemini 3 Flash</tspan></text>
+              <text x="2756.98" y="550.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">Gemini 3 Flash</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2026-01" data-card-width="224.45999999999998" data-card-height="55" data-max-line-width="103.92000000000002">
-              <line x1="3058.4500000000003" y1="150" x2="3058.4500000000003" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3059.9500000000003" y1="151.2" x2="3057.2500000000005" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3058.4500000000003" y1="150" x2="3058.4500000000003" y2="520.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3059.9500000000003" y1="151.2" x2="3057.2500000000005" y2="521.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2946.2200000000003" y="512" width="224.45999999999998" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="2947.7200000000003" y="513.2" width="221.85999999999999" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="2946.2200000000003" y="520.5" width="224.45999999999998" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="2947.7200000000003" y="521.7" width="221.85999999999999" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2959.2200000000003" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2959.2200000000003" dy="0">MedGemma 1.5</tspan></text>
+              <text x="2959.2200000000003" y="550.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2959.2200000000003" dy="0">MedGemma 1.5</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2026-02" data-card-width="248" data-card-height="72" data-max-line-width="159.56000000000003">
-              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3200.6800000000003" y="503.5" width="248" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="3202.1800000000003" y="504.7" width="245.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="3200.6800000000003" y="512" width="248" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="3202.1800000000003" y="513.2" width="245.4" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3213.6800000000003" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">Gemini 3.1 Pro</tspan><tspan x="3213.6800000000003" dy="17">Gemini 3.1 Flash Image</tspan></text>
+              <text x="3213.6800000000003" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">Gemini 3.1 Pro</tspan><tspan x="3213.6800000000003" dy="17">Gemini 3.1 Flash Image</tspan></text>
             </g>
           
 
             <g data-lane="google" data-month="2026-03" data-card-width="231.29999999999998" data-card-height="72" data-max-line-width="151.24">
-              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3478.6800000000003" y="503.5" width="231.29999999999998" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="3480.1800000000003" y="504.7" width="228.7" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="3478.6800000000003" y="512" width="231.29999999999998" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="3480.1800000000003" y="513.2" width="228.7" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3491.6800000000003" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">Gemini 3.1 Flash-Lite</tspan><tspan x="3491.6800000000003" dy="17">Gemini 3.1 Flash Live</tspan></text>
+              <text x="3491.6800000000003" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">Gemini 3.1 Flash-Lite</tspan><tspan x="3491.6800000000003" dy="17">Gemini 3.1 Flash Live</tspan></text>
             </g>
           
 
-            <g data-lane="google" data-month="2026-04" data-card-width="164" data-card-height="55" data-max-line-width="76.62">
-              <line x1="3821.9800000000005" y1="150" x2="3821.9800000000005" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3823.4800000000005" y1="151.2" x2="3820.7800000000007" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <g data-lane="google" data-month="2026-04" data-card-width="248" data-card-height="106" data-max-line-width="205.32000000000002">
+              <line x1="3863.9800000000005" y1="150" x2="3863.9800000000005" y2="495" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3865.4800000000005" y1="151.2" x2="3862.7800000000007" y2="495.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3739.9800000000005" y="512" width="164" height="55" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
-    <rect x="3741.4800000000005" y="513.2" width="161.4" height="52.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+    <rect x="3739.9800000000005" y="495" width="248" height="106" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="3741.4800000000005" y="496.2" width="245.4" height="103.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3752.9800000000005" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3752.9800000000005" dy="0">★ Gemma 4</tspan></text>
+              <text x="3752.9800000000005" y="525" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3752.9800000000005" dy="0">★ Gemma 4</tspan><tspan x="3752.9800000000005" dy="17">Gemini Robotics-ER 1.6</tspan><tspan x="3752.9800000000005" dy="17">Gemini 3.1 Flash Audio (Flash</tspan><tspan x="3752.9800000000005" dy="17">Live, TTS)</tspan></text>
+            </g>
+          
+
+            <g data-lane="google" data-month="2026-05" data-card-width="207.82" data-card-height="72" data-max-line-width="129.66">
+              <line x1="4121.89" y1="150" x2="4121.89" y2="512" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="4123.39" y1="151.2" x2="4120.6900000000005" y2="512.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="4017.9800000000005" y="512" width="207.82" height="72" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="4019.4800000000005" y="513.2" width="205.22" height="69.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="4030.9800000000005" y="542" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4030.9800000000005" dy="0">Gemini Omni Flash</tspan><tspan x="4030.9800000000005" dy="17">Gemini 3.5 Flash</tspan></text>
+            </g>
+          
+
+            <g data-lane="google" data-month="2026-06" data-card-width="248" data-card-height="89" data-max-line-width="195.18">
+              <line x1="4379.8" y1="150" x2="4379.8" y2="503.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="4381.3" y1="151.2" x2="4378.6" y2="504.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="4255.8" y="503.5" width="248" height="89" rx="18" ry="18" fill="#e9fbe9" stroke="#1a7f37" stroke-width="2.4" />
+    <rect x="4257.3" y="504.7" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#1a7f37" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="4268.8" y="533.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4268.8" dy="0">Gemini 3.5 Audio (Live</tspan><tspan x="4268.8" dy="17">Translate)</tspan><tspan x="4268.8" dy="17">Gemini 3.1 Flash-Lite Image</tspan></text>
             </g>
           
       
 
-        <text x="36" y="722" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">China-based Labs</tspan></text>
+        <text x="36" y="739" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">China-based Labs</tspan></text>
         
             <g data-lane="china" data-month="2025-01" data-card-width="164" data-card-height="123" data-max-line-width="99.75999999999999">
-              <line x1="228" y1="150" x2="228" y2="654.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="229.5" y1="151.2" x2="226.8" y2="655.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="228" y1="150" x2="228" y2="671.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="229.5" y1="151.2" x2="226.8" y2="672.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="146" y="654.5" width="164" height="123" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="147.5" y="655.7" width="161.4" height="120.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="146" y="671.5" width="164" height="123" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="147.5" y="672.7" width="161.4" height="120.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="159" y="684.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="159" dy="0">Qwen2.5-1M</tspan><tspan x="159" dy="17">Qwen2.5-Max</tspan><tspan x="159" dy="17">Qwen2.5-VL</tspan><tspan x="159" dy="17">InternLM3</tspan><tspan x="159" dy="17">DeepSeek-R1</tspan></text>
+              <text x="159" y="701.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="159" dy="0">Qwen2.5-1M</tspan><tspan x="159" dy="17">Qwen2.5-Max</tspan><tspan x="159" dy="17">Qwen2.5-VL</tspan><tspan x="159" dy="17">InternLM3</tspan><tspan x="159" dy="17">DeepSeek-R1</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-03" data-card-width="164" data-card-height="55" data-max-line-width="108.08">
-              <line x1="616" y1="150" x2="616" y2="688.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="617.5" y1="151.2" x2="614.8" y2="689.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="616" y1="150" x2="616" y2="705.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="617.5" y1="151.2" x2="614.8" y2="706.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="534" y="688.5" width="164" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="535.5" y="689.7" width="161.4" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="534" y="705.5" width="164" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="535.5" y="706.7" width="161.4" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="547" y="718.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="547" dy="0">Qwen2.5-Omni</tspan></text>
+              <text x="547" y="735.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="547" dy="0">Qwen2.5-Omni</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-04" data-card-width="217.48000000000005" data-card-height="55" data-max-line-width="62.58">
-              <line x1="836.74" y1="150" x2="836.74" y2="688.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="689.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="836.74" y1="150" x2="836.74" y2="705.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="706.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="728" y="688.5" width="217.48000000000005" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="729.5" y="689.7" width="214.88000000000005" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="728" y="705.5" width="217.48000000000005" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="729.5" y="706.7" width="214.88000000000005" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="741" y="718.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">★ Qwen3</tspan></text>
+              <text x="741" y="735.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">★ Qwen3</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-05" data-card-width="248" data-card-height="140" data-max-line-width="220.92000000000002">
-              <line x1="1099.48" y1="150" x2="1099.48" y2="646" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1100.98" y1="151.2" x2="1098.28" y2="646.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1099.48" y1="150" x2="1099.48" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1100.98" y1="151.2" x2="1098.28" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="975.48" y="646" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="976.98" y="647.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="975.48" y="663" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="976.98" y="664.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="988.48" y="676" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="988.48" dy="0">Seed1.5-VL</tspan><tspan x="988.48" dy="17">Hunyuan-TurboS: Advancing</tspan><tspan x="988.48" dy="17">Large Language Models</tspan><tspan x="988.48" dy="17">through Mamba-Transformer</tspan><tspan x="988.48" dy="17">Synergy and Adaptive Chain-of-</tspan><tspan x="988.48" dy="17">Thought</tspan></text>
+              <text x="988.48" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="988.48" dy="0">Seed1.5-VL</tspan><tspan x="988.48" dy="17">Hunyuan-TurboS: Advancing</tspan><tspan x="988.48" dy="17">Large Language Models</tspan><tspan x="988.48" dy="17">through Mamba-Transformer</tspan><tspan x="988.48" dy="17">Synergy and Adaptive Chain-of-</tspan><tspan x="988.48" dy="17">Thought</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-07" data-card-width="248" data-card-height="106" data-max-line-width="160.34000000000003">
-              <line x1="1571.48" y1="150" x2="1571.48" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1572.98" y1="151.2" x2="1570.28" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1571.48" y1="150" x2="1571.48" y2="680" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1572.98" y1="151.2" x2="1570.28" y2="680.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="1447.48" y="663" width="248" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1448.98" y="664.2" width="245.4" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1447.48" y="680" width="248" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1448.98" y="681.2" width="245.4" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="1460.48" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1460.48" dy="0">Kimi K2: Open Agentic</tspan><tspan x="1460.48" dy="17">Intelligence</tspan><tspan x="1460.48" dy="17">Qwen3-Coder</tspan><tspan x="1460.48" dy="17">GLM-4.5</tspan></text>
+              <text x="1460.48" y="710" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1460.48" dy="0">Kimi K2: Open Agentic</tspan><tspan x="1460.48" dy="17">Intelligence</tspan><tspan x="1460.48" dy="17">Qwen3-Coder</tspan><tspan x="1460.48" dy="17">GLM-4.5</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-08" data-card-width="248" data-card-height="89" data-max-line-width="209.22000000000008">
-              <line x1="1849.48" y1="150" x2="1849.48" y2="671.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1850.98" y1="151.2" x2="1848.28" y2="672.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1849.48" y1="150" x2="1849.48" y2="688.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1850.98" y1="151.2" x2="1848.28" y2="689.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="1725.48" y="671.5" width="248" height="89" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="1726.98" y="672.7" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="1725.48" y="688.5" width="248" height="89" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="1726.98" y="689.7" width="245.4" height="86.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="1738.48" y="701.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1738.48" dy="0">Intern-S1-mini</tspan><tspan x="1738.48" dy="17">QuarkMed Medical Foundation</tspan><tspan x="1738.48" dy="17">Model</tspan></text>
+              <text x="1738.48" y="718.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1738.48" dy="0">Intern-S1-mini</tspan><tspan x="1738.48" dy="17">QuarkMed Medical Foundation</tspan><tspan x="1738.48" dy="17">Model</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-09" data-card-width="248" data-card-height="140" data-max-line-width="167.10000000000002">
-              <line x1="2127.48" y1="150" x2="2127.48" y2="646" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2128.98" y1="151.2" x2="2126.28" y2="646.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2127.48" y1="150" x2="2127.48" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2128.98" y1="151.2" x2="2126.28" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2003.48" y="646" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="2004.98" y="647.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2003.48" y="663" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2004.98" y="664.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2016.48" y="676" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2016.48" dy="0">LongCat-Flash</tspan><tspan x="2016.48" dy="17">LongCat-Flash-Thinking</tspan><tspan x="2016.48" dy="17">Qwen3-Omni</tspan><tspan x="2016.48" dy="17">Qwen3.5</tspan><tspan x="2016.48" dy="17">Qwen3-Next</tspan><tspan x="2016.48" dy="17">Qwen3-Max</tspan></text>
+              <text x="2016.48" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2016.48" dy="0">LongCat-Flash</tspan><tspan x="2016.48" dy="17">LongCat-Flash-Thinking</tspan><tspan x="2016.48" dy="17">Qwen3-Omni</tspan><tspan x="2016.48" dy="17">Qwen3.5</tspan><tspan x="2016.48" dy="17">Qwen3-Next</tspan><tspan x="2016.48" dy="17">Qwen3-Max</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-10" data-card-width="213.84000000000003" data-card-height="106" data-max-line-width="145.26">
-              <line x1="2388.4" y1="150" x2="2388.4" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2389.9" y1="151.2" x2="2387.2000000000003" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2388.4" y1="150" x2="2388.4" y2="680" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2389.9" y1="151.2" x2="2387.2000000000003" y2="680.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2281.48" y="663" width="213.84000000000003" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="2282.98" y="664.2" width="211.24000000000004" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2281.48" y="680" width="213.84000000000003" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2282.98" y="681.2" width="211.24000000000004" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2294.48" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2294.48" dy="0">LongCat-Flash-Omni</tspan><tspan x="2294.48" dy="17">MiniMax M2</tspan><tspan x="2294.48" dy="17">LongCat-Video</tspan><tspan x="2294.48" dy="17">Intern-S1</tspan></text>
+              <text x="2294.48" y="710" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2294.48" dy="0">LongCat-Flash-Omni</tspan><tspan x="2294.48" dy="17">MiniMax M2</tspan><tspan x="2294.48" dy="17">LongCat-Video</tspan><tspan x="2294.48" dy="17">Intern-S1</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-11" data-card-width="188.66" data-card-height="55" data-max-line-width="74.53999999999999">
-              <line x1="2619.65" y1="150" x2="2619.65" y2="688.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="689.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2619.65" y1="150" x2="2619.65" y2="705.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="706.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2525.32" y="688.5" width="188.66" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="2526.82" y="689.7" width="186.06" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2525.32" y="705.5" width="188.66" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2526.82" y="706.7" width="186.06" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2538.32" y="718.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Qwen3-VL</tspan></text>
+              <text x="2538.32" y="735.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Qwen3-VL</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2025-12" data-card-width="172.24" data-card-height="123" data-max-line-width="138.24">
-              <line x1="2830.1" y1="150" x2="2830.1" y2="654.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="655.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2830.1" y1="150" x2="2830.1" y2="671.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="672.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2743.98" y="654.5" width="172.24" height="123" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="2745.48" y="655.7" width="169.64000000000001" height="120.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2743.98" y="671.5" width="172.24" height="123" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2745.48" y="672.7" width="169.64000000000001" height="120.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2756.98" y="684.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">Step-DeepResearch</tspan><tspan x="2756.98" dy="17">GLM-4.7</tspan><tspan x="2756.98" dy="17">MiniMax M2.1</tspan><tspan x="2756.98" dy="17">LongCat-Image</tspan><tspan x="2756.98" dy="17">Qwen-Image</tspan></text>
+              <text x="2756.98" y="701.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">Step-DeepResearch</tspan><tspan x="2756.98" dy="17">GLM-4.7</tspan><tspan x="2756.98" dy="17">MiniMax M2.1</tspan><tspan x="2756.98" dy="17">LongCat-Image</tspan><tspan x="2756.98" dy="17">Qwen-Image</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2026-01" data-card-width="224.45999999999998" data-card-height="106" data-max-line-width="173.08">
-              <line x1="3058.4500000000003" y1="150" x2="3058.4500000000003" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3059.9500000000003" y1="151.2" x2="3057.2500000000005" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3058.4500000000003" y1="150" x2="3058.4500000000003" y2="680" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3059.9500000000003" y1="151.2" x2="3057.2500000000005" y2="680.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2946.2200000000003" y="663" width="224.45999999999998" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="2947.7200000000003" y="664.2" width="221.85999999999999" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="2946.2200000000003" y="680" width="224.45999999999998" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="2947.7200000000003" y="681.2" width="221.85999999999999" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2959.2200000000003" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2959.2200000000003" dy="0">GLM-4.7-Flash</tspan><tspan x="2959.2200000000003" dy="17">LongCat-Flash-Thinking-</tspan><tspan x="2959.2200000000003" dy="17">2601</tspan><tspan x="2959.2200000000003" dy="17">★ Kimi K2.5</tspan></text>
+              <text x="2959.2200000000003" y="710" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2959.2200000000003" dy="0">GLM-4.7-Flash</tspan><tspan x="2959.2200000000003" dy="17">LongCat-Flash-Thinking-</tspan><tspan x="2959.2200000000003" dy="17">2601</tspan><tspan x="2959.2200000000003" dy="17">★ Kimi K2.5</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2026-02" data-card-width="248" data-card-height="140" data-max-line-width="214.9400000000001">
-              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="646" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="646.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3200.6800000000003" y="646" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="3202.1800000000003" y="647.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="3200.6800000000003" y="663" width="248" height="140" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="3202.1800000000003" y="664.2" width="245.4" height="137.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3213.6800000000003" y="676" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">★ GLM-5</tspan><tspan x="3213.6800000000003" dy="17">MiniMax M2.5</tspan><tspan x="3213.6800000000003" dy="17">Ling 2.5</tspan><tspan x="3213.6800000000003" dy="17">MedXIAOHE: A Comprehensive</tspan><tspan x="3213.6800000000003" dy="17">Recipe for Building Medical</tspan><tspan x="3213.6800000000003" dy="17">MLLMs</tspan></text>
+              <text x="3213.6800000000003" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">★ GLM-5</tspan><tspan x="3213.6800000000003" dy="17">MiniMax M2.5</tspan><tspan x="3213.6800000000003" dy="17">Ling 2.5</tspan><tspan x="3213.6800000000003" dy="17">MedXIAOHE: A Comprehensive</tspan><tspan x="3213.6800000000003" dy="17">Recipe for Building Medical</tspan><tspan x="3213.6800000000003" dy="17">MLLMs</tspan></text>
             </g>
           
 
             <g data-lane="china" data-month="2026-03" data-card-width="231.29999999999998" data-card-height="106" data-max-line-width="171.52000000000004">
-              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="663" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="663.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="680" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="680.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3478.6800000000003" y="663" width="231.29999999999998" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="3480.1800000000003" y="664.2" width="228.7" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="3478.6800000000003" y="680" width="231.29999999999998" height="106" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="3480.1800000000003" y="681.2" width="228.7" height="103.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3491.6800000000003" y="693" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">MiniMax M2.7</tspan><tspan x="3491.6800000000003" dy="17">LongCat-Next</tspan><tspan x="3491.6800000000003" dy="17">★ LongCat-Flash-Prover</tspan><tspan x="3491.6800000000003" dy="17">Intern-S1-Pro</tspan></text>
+              <text x="3491.6800000000003" y="710" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">MiniMax M2.7</tspan><tspan x="3491.6800000000003" dy="17">LongCat-Next</tspan><tspan x="3491.6800000000003" dy="17">★ LongCat-Flash-Prover</tspan><tspan x="3491.6800000000003" dy="17">Intern-S1-Pro</tspan></text>
             </g>
           
 
-            <g data-lane="china" data-month="2026-04" data-card-width="164" data-card-height="55" data-max-line-width="103.66">
-              <line x1="3821.9800000000005" y1="150" x2="3821.9800000000005" y2="688.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3823.4800000000005" y1="151.2" x2="3820.7800000000007" y2="689.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+            <g data-lane="china" data-month="2026-04" data-card-width="248" data-card-height="72" data-max-line-width="104.96000000000001">
+              <line x1="3863.9800000000005" y1="150" x2="3863.9800000000005" y2="697" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3865.4800000000005" y1="151.2" x2="3862.7800000000007" y2="697.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3739.9800000000005" y="688.5" width="164" height="55" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
-    <rect x="3741.4800000000005" y="689.7" width="161.4" height="52.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+    <rect x="3739.9800000000005" y="697" width="248" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="3741.4800000000005" y="698.2" width="245.4" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3752.9800000000005" y="718.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3752.9800000000005" dy="0">GLM-5V-Turbo</tspan></text>
+              <text x="3752.9800000000005" y="727" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3752.9800000000005" dy="0">GLM-5V-Turbo</tspan><tspan x="3752.9800000000005" dy="17">MiniCPM-o 4.5</tspan></text>
+            </g>
+          
+
+            <g data-lane="china" data-month="2026-05" data-card-width="207.82" data-card-height="72" data-max-line-width="164.24">
+              <line x1="4121.89" y1="150" x2="4121.89" y2="697" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="4123.39" y1="151.2" x2="4120.6900000000005" y2="697.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="4017.9800000000005" y="697" width="207.82" height="72" rx="18" ry="18" fill="#fff0f6" stroke="#bf3989" stroke-width="2.4" />
+    <rect x="4019.4800000000005" y="698.2" width="205.22" height="69.8" rx="18" ry="18" fill="none" stroke="#bf3989" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="4030.9800000000005" y="727" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="4030.9800000000005" dy="0">LongCat-Video-Avatar-</tspan><tspan x="4030.9800000000005" dy="17">1.5</tspan></text>
             </g>
           
       
 
-        <text x="36" y="894" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Other Global</tspan></text>
+        <text x="36" y="911" fill="#111827" font-size="18" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="36" dy="0">Other Global</tspan></text>
         
             <g data-lane="other" data-month="2025-04" data-card-width="217.48000000000005" data-card-height="55" data-max-line-width="183.48000000000005">
-              <line x1="836.74" y1="150" x2="836.74" y2="860.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="861.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="836.74" y1="150" x2="836.74" y2="877.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="838.24" y1="151.2" x2="835.54" y2="878.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="728" y="860.5" width="217.48000000000005" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="729.5" y="861.7" width="214.88000000000005" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="728" y="877.5" width="217.48000000000005" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="729.5" y="878.7" width="214.88000000000005" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="741" y="890.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">★ Llama 4 Scout/Maverick</tspan></text>
+              <text x="741" y="907.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="741" dy="0">★ Llama 4 Scout/Maverick</tspan></text>
             </g>
           
 
             <g data-lane="other" data-month="2025-07" data-card-width="248" data-card-height="55" data-max-line-width="47.76">
-              <line x1="1571.48" y1="150" x2="1571.48" y2="860.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1572.98" y1="151.2" x2="1570.28" y2="861.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="1571.48" y1="150" x2="1571.48" y2="877.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="1572.98" y1="151.2" x2="1570.28" y2="878.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="1447.48" y="860.5" width="248" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="1448.98" y="861.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="1447.48" y="877.5" width="248" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="1448.98" y="878.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="1460.48" y="890.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1460.48" dy="0">Grok 4</tspan></text>
+              <text x="1460.48" y="907.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1460.48" dy="0">Grok 4</tspan></text>
+            </g>
+          
+
+            <g data-lane="other" data-month="2025-10" data-card-width="213.84000000000003" data-card-height="55" data-max-line-width="65.18">
+              <line x1="2388.4" y1="150" x2="2388.4" y2="877.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2389.9" y1="151.2" x2="2387.2000000000003" y2="878.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              
+    <rect x="2281.48" y="877.5" width="213.84000000000003" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="2282.98" y="878.7" width="211.24000000000004" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+  
+              <text x="2294.48" y="907.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2294.48" dy="0">SmolLM3</tspan></text>
             </g>
           
 
             <g data-lane="other" data-month="2025-11" data-card-width="188.66" data-card-height="72" data-max-line-width="142.66">
-              <line x1="2619.65" y1="150" x2="2619.65" y2="852" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="852.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2619.65" y1="150" x2="2619.65" y2="869" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2621.15" y1="151.2" x2="2618.4500000000003" y2="869.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2525.32" y="852" width="188.66" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="2526.82" y="853.2" width="186.06" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="2525.32" y="869" width="188.66" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="2526.82" y="870.2" width="186.06" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2538.32" y="882" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Nemotron 3 Nano 4B</tspan><tspan x="2538.32" dy="17">Grok 4.1 Fast</tspan></text>
+              <text x="2538.32" y="899" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2538.32" dy="0">Nemotron 3 Nano 4B</tspan><tspan x="2538.32" dy="17">Grok 4.1 Fast</tspan></text>
             </g>
           
 
             <g data-lane="other" data-month="2025-12" data-card-width="172.24" data-card-height="55" data-max-line-width="55.56">
-              <line x1="2830.1" y1="150" x2="2830.1" y2="860.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="861.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="2830.1" y1="150" x2="2830.1" y2="877.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="2831.6" y1="151.2" x2="2828.9" y2="878.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="2743.98" y="860.5" width="172.24" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="2745.48" y="861.7" width="169.64000000000001" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="2743.98" y="877.5" width="172.24" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="2745.48" y="878.7" width="169.64000000000001" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="2756.98" y="890.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">OLMo 3</tspan></text>
+              <text x="2756.98" y="907.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2756.98" dy="0">OLMo 3</tspan></text>
             </g>
           
 
             <g data-lane="other" data-month="2026-02" data-card-width="248" data-card-height="55" data-max-line-width="86.24">
-              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="860.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="861.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3324.6800000000003" y1="150" x2="3324.6800000000003" y2="877.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3326.1800000000003" y1="151.2" x2="3323.4800000000005" y2="878.3" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3200.6800000000003" y="860.5" width="248" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="3202.1800000000003" y="861.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="3200.6800000000003" y="877.5" width="248" height="55" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="3202.1800000000003" y="878.7" width="245.4" height="52.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3213.6800000000003" y="890.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">Arctic-AWM</tspan></text>
+              <text x="3213.6800000000003" y="907.5" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3213.6800000000003" dy="0">Arctic-AWM</tspan></text>
             </g>
           
 
             <g data-lane="other" data-month="2026-03" data-card-width="231.29999999999998" data-card-height="72" data-max-line-width="185.29999999999998">
-              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="852" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="852.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
+              <line x1="3594.3300000000004" y1="150" x2="3594.3300000000004" y2="869" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" /><line x1="3595.8300000000004" y1="151.2" x2="3593.1300000000006" y2="869.8" stroke="#9ca3af" stroke-width="1" stroke-linecap="round" opacity="0.75" />
               
-    <rect x="3478.6800000000003" y="852" width="231.29999999999998" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
-    <rect x="3480.1800000000003" y="853.2" width="228.7" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
+    <rect x="3478.6800000000003" y="869" width="231.29999999999998" height="72" rx="18" ry="18" fill="#f3f4f6" stroke="#6b7280" stroke-width="2.4" />
+    <rect x="3480.1800000000003" y="870.2" width="228.7" height="69.8" rx="18" ry="18" fill="none" stroke="#6b7280" stroke-width="1.3" opacity="0.75" />
   
-              <text x="3491.6800000000003" y="882" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">Nemotron 3 Super</tspan><tspan x="3491.6800000000003" dy="17">Phi-4-reasoning-vision-15B</tspan></text>
+              <text x="3491.6800000000003" y="899" fill="#111827" font-size="13" font-weight="600" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="3491.6800000000003" dy="0">Nemotron 3 Super</tspan><tspan x="3491.6800000000003" dy="17">Phi-4-reasoning-vision-15B</tspan></text>
             </g>
           
       

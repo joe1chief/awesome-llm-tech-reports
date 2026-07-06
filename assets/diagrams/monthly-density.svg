@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2420" height="420" viewBox="0 0 2420 420" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="2700" height="420" viewBox="0 0 2700 420" role="img" aria-labelledby="title desc">
   <title id="title">Monthly Density Snapshot</title>
   <desc id="desc">Bubble size follows monthly release count.</desc>
-  <rect width="2420" height="420" fill="#fffdf8" />
-  <line x1="60" y1="370" x2="2370" y2="370" stroke="#374151" stroke-width="2.5" stroke-linecap="round" /><line x1="61.5" y1="371.2" x2="2368.8" y2="370.8" stroke="#374151" stroke-width="1.9" stroke-linecap="round" opacity="0.75" />
+  <rect width="2700" height="420" fill="#fffdf8" />
+  <line x1="60" y1="370" x2="2650" y2="370" stroke="#374151" stroke-width="2.5" stroke-linecap="round" /><line x1="61.5" y1="371.2" x2="2648.8" y2="370.8" stroke="#374151" stroke-width="1.9" stroke-linecap="round" opacity="0.75" />
   <text x="70" y="60" fill="#111827" font-size="30" font-weight="700" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Monthly Density Snapshot</tspan></text>
   <text x="70" y="95" fill="#4b5563" font-size="16" font-weight="500" text-anchor="start" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="70" dy="0">Bubble size follows the release count from the model index table.</tspan></text>
   
@@ -18,136 +18,154 @@
 
         <g data-month="2025-02" data-count="2">
           
-    <ellipse cx="230.66666666666666" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
-    <ellipse cx="231.76666666666665" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="229.41176470588235" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
+    <ellipse cx="230.51176470588234" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="230.66666666666666" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="230.66666666666666" dy="0">25-02</tspan><tspan x="230.66666666666666" dy="18">R02</tspan></text>
+          <text x="229.41176470588235" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="229.41176470588235" dy="0">25-02</tspan><tspan x="229.41176470588235" dy="18">R02</tspan></text>
         </g>
       
 
         <g data-month="2025-03" data-count="1">
           
-    <ellipse cx="381.3333333333333" cy="290" rx="24" ry="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.4" />
-    <ellipse cx="382.43333333333334" cy="290.8" rx="22.5" ry="22.9" fill="none" stroke="#94a3b8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="378.8235294117647" cy="290" rx="24" ry="24" fill="#f8fafc" stroke="#94a3b8" stroke-width="2.4" />
+    <ellipse cx="379.9235294117647" cy="290.8" rx="22.5" ry="22.9" fill="none" stroke="#94a3b8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="381.3333333333333" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="381.3333333333333" dy="0">25-03</tspan><tspan x="381.3333333333333" dy="18">R01</tspan></text>
+          <text x="378.8235294117647" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="378.8235294117647" dy="0">25-03</tspan><tspan x="378.8235294117647" dy="18">R01</tspan></text>
         </g>
       
 
         <g data-month="2025-04" data-count="5">
           
-    <ellipse cx="532" cy="290" rx="40" ry="40" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="533.1" cy="290.8" rx="38.5" ry="38.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="528.2352941176471" cy="290" rx="40" ry="40" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="529.3352941176471" cy="290.8" rx="38.5" ry="38.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="532" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="532" dy="0">25-04</tspan><tspan x="532" dy="18">R05</tspan></text>
+          <text x="528.2352941176471" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="528.2352941176471" dy="0">25-04</tspan><tspan x="528.2352941176471" dy="18">R05</tspan></text>
         </g>
       
 
         <g data-month="2025-05" data-count="2">
           
-    <ellipse cx="682.6666666666666" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
-    <ellipse cx="683.7666666666667" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="677.6470588235294" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
+    <ellipse cx="678.7470588235294" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="682.6666666666666" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="682.6666666666666" dy="0">25-05</tspan><tspan x="682.6666666666666" dy="18">R02</tspan></text>
+          <text x="677.6470588235294" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="677.6470588235294" dy="0">25-05</tspan><tspan x="677.6470588235294" dy="18">R02</tspan></text>
         </g>
       
 
         <g data-month="2025-06" data-count="2">
           
-    <ellipse cx="833.3333333333333" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
-    <ellipse cx="834.4333333333333" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="827.0588235294117" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
+    <ellipse cx="828.1588235294117" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="833.3333333333333" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="833.3333333333333" dy="0">25-06</tspan><tspan x="833.3333333333333" dy="18">R02</tspan></text>
+          <text x="827.0588235294117" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="827.0588235294117" dy="0">25-06</tspan><tspan x="827.0588235294117" dy="18">R02</tspan></text>
         </g>
       
 
-        <g data-month="2025-07" data-count="4">
+        <g data-month="2025-07" data-count="5">
           
-    <ellipse cx="984" cy="290" rx="36" ry="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2.4" />
-    <ellipse cx="985.1" cy="290.8" rx="34.5" ry="34.9" fill="none" stroke="#2563eb" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="976.4705882352941" cy="290" rx="40" ry="40" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="977.5705882352942" cy="290.8" rx="38.5" ry="38.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="984" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="984" dy="0">25-07</tspan><tspan x="984" dy="18">R04</tspan></text>
+          <text x="976.4705882352941" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="976.4705882352941" dy="0">25-07</tspan><tspan x="976.4705882352941" dy="18">R05</tspan></text>
         </g>
       
 
         <g data-month="2025-08" data-count="9">
           
-    <ellipse cx="1134.6666666666665" cy="290" rx="56" ry="56" fill="#c7d2fe" stroke="#312e81" stroke-width="2.4" />
-    <ellipse cx="1135.7666666666664" cy="290.8" rx="54.5" ry="54.9" fill="none" stroke="#312e81" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1125.8823529411764" cy="290" rx="56" ry="56" fill="#c7d2fe" stroke="#312e81" stroke-width="2.4" />
+    <ellipse cx="1126.9823529411763" cy="290.8" rx="54.5" ry="54.9" fill="none" stroke="#312e81" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1134.6666666666665" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1134.6666666666665" dy="0">25-08</tspan><tspan x="1134.6666666666665" dy="18">R09</tspan></text>
+          <text x="1125.8823529411764" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1125.8823529411764" dy="0">25-08</tspan><tspan x="1125.8823529411764" dy="18">R09</tspan></text>
         </g>
       
 
-        <g data-month="2025-09" data-count="8">
+        <g data-month="2025-09" data-count="9">
           
-    <ellipse cx="1285.3333333333333" cy="290" rx="52" ry="52" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="1286.4333333333332" cy="290.8" rx="50.5" ry="50.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1275.2941176470588" cy="290" rx="56" ry="56" fill="#c7d2fe" stroke="#312e81" stroke-width="2.4" />
+    <ellipse cx="1276.3941176470587" cy="290.8" rx="54.5" ry="54.9" fill="none" stroke="#312e81" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1285.3333333333333" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1285.3333333333333" dy="0">25-09</tspan><tspan x="1285.3333333333333" dy="18">R08</tspan></text>
+          <text x="1275.2941176470588" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1275.2941176470588" dy="0">25-09</tspan><tspan x="1275.2941176470588" dy="18">R09</tspan></text>
         </g>
       
 
-        <g data-month="2025-10" data-count="5">
+        <g data-month="2025-10" data-count="6">
           
-    <ellipse cx="1436" cy="290" rx="40" ry="40" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="1437.1" cy="290.8" rx="38.5" ry="38.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1424.7058823529412" cy="290" rx="44" ry="44" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="1425.8058823529411" cy="290.8" rx="42.5" ry="42.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1436" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1436" dy="0">25-10</tspan><tspan x="1436" dy="18">R05</tspan></text>
+          <text x="1424.7058823529412" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1424.7058823529412" dy="0">25-10</tspan><tspan x="1424.7058823529412" dy="18">R06</tspan></text>
         </g>
       
 
         <g data-month="2025-11" data-count="8">
           
-    <ellipse cx="1586.6666666666665" cy="290" rx="52" ry="52" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="1587.7666666666664" cy="290.8" rx="50.5" ry="50.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1574.1176470588234" cy="290" rx="52" ry="52" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="1575.2176470588233" cy="290.8" rx="50.5" ry="50.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1586.6666666666665" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1586.6666666666665" dy="0">25-11</tspan><tspan x="1586.6666666666665" dy="18">R08</tspan></text>
+          <text x="1574.1176470588234" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1574.1176470588234" dy="0">25-11</tspan><tspan x="1574.1176470588234" dy="18">R08</tspan></text>
         </g>
       
 
         <g data-month="2025-12" data-count="7">
           
-    <ellipse cx="1737.3333333333333" cy="290" rx="48" ry="48" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="1738.4333333333332" cy="290.8" rx="46.5" ry="46.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1723.5294117647059" cy="290" rx="48" ry="48" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="1724.6294117647058" cy="290.8" rx="46.5" ry="46.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1737.3333333333333" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1737.3333333333333" dy="0">25-12</tspan><tspan x="1737.3333333333333" dy="18">R07</tspan></text>
+          <text x="1723.5294117647059" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1723.5294117647059" dy="0">25-12</tspan><tspan x="1723.5294117647059" dy="18">R07</tspan></text>
         </g>
       
 
         <g data-month="2026-01" data-count="4">
           
-    <ellipse cx="1888" cy="290" rx="36" ry="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2.4" />
-    <ellipse cx="1889.1" cy="290.8" rx="34.5" ry="34.9" fill="none" stroke="#2563eb" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="1872.9411764705883" cy="290" rx="36" ry="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2.4" />
+    <ellipse cx="1874.0411764705882" cy="290.8" rx="34.5" ry="34.9" fill="none" stroke="#2563eb" stroke-width="1.3" opacity="0.75" />
   
-          <text x="1888" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1888" dy="0">26-01</tspan><tspan x="1888" dy="18">R04</tspan></text>
+          <text x="1872.9411764705883" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="1872.9411764705883" dy="0">26-01</tspan><tspan x="1872.9411764705883" dy="18">R04</tspan></text>
         </g>
       
 
         <g data-month="2026-02" data-count="8">
           
-    <ellipse cx="2038.6666666666665" cy="290" rx="52" ry="52" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
-    <ellipse cx="2039.7666666666664" cy="290.8" rx="50.5" ry="50.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="2022.3529411764705" cy="290" rx="52" ry="52" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="2023.4529411764704" cy="290.8" rx="50.5" ry="50.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="2038.6666666666665" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2038.6666666666665" dy="0">26-02</tspan><tspan x="2038.6666666666665" dy="18">R08</tspan></text>
+          <text x="2022.3529411764705" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2022.3529411764705" dy="0">26-02</tspan><tspan x="2022.3529411764705" dy="18">R08</tspan></text>
         </g>
       
 
         <g data-month="2026-03" data-count="11">
           
-    <ellipse cx="2189.333333333333" cy="290" rx="64" ry="64" fill="#c7d2fe" stroke="#312e81" stroke-width="2.4" />
-    <ellipse cx="2190.433333333333" cy="290.8" rx="62.5" ry="62.9" fill="none" stroke="#312e81" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="2171.7647058823527" cy="290" rx="64" ry="64" fill="#c7d2fe" stroke="#312e81" stroke-width="2.4" />
+    <ellipse cx="2172.8647058823526" cy="290.8" rx="62.5" ry="62.9" fill="none" stroke="#312e81" stroke-width="1.3" opacity="0.75" />
   
-          <text x="2189.333333333333" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2189.333333333333" dy="0">26-03</tspan><tspan x="2189.333333333333" dy="18">R11</tspan></text>
+          <text x="2171.7647058823527" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2171.7647058823527" dy="0">26-03</tspan><tspan x="2171.7647058823527" dy="18">R11</tspan></text>
         </g>
       
 
-        <g data-month="2026-04" data-count="2">
+        <g data-month="2026-04" data-count="6">
           
-    <ellipse cx="2340" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
-    <ellipse cx="2341.1" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
+    <ellipse cx="2321.176470588235" cy="290" rx="44" ry="44" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.4" />
+    <ellipse cx="2322.276470588235" cy="290.8" rx="42.5" ry="42.9" fill="none" stroke="#1d4ed8" stroke-width="1.3" opacity="0.75" />
   
-          <text x="2340" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2340" dy="0">26-04</tspan><tspan x="2340" dy="18">R02</tspan></text>
+          <text x="2321.176470588235" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2321.176470588235" dy="0">26-04</tspan><tspan x="2321.176470588235" dy="18">R06</tspan></text>
+        </g>
+      
+
+        <g data-month="2026-05" data-count="4">
+          
+    <ellipse cx="2470.5882352941176" cy="290" rx="36" ry="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2.4" />
+    <ellipse cx="2471.6882352941175" cy="290.8" rx="34.5" ry="34.9" fill="none" stroke="#2563eb" stroke-width="1.3" opacity="0.75" />
+  
+          <text x="2470.5882352941176" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2470.5882352941176" dy="0">26-05</tspan><tspan x="2470.5882352941176" dy="18">R04</tspan></text>
+        </g>
+      
+
+        <g data-month="2026-06" data-count="2">
+          
+    <ellipse cx="2620" cy="290" rx="28" ry="28" fill="#eef2ff" stroke="#818cf8" stroke-width="2.4" />
+    <ellipse cx="2621.1" cy="290.8" rx="26.5" ry="26.9" fill="none" stroke="#818cf8" stroke-width="1.3" opacity="0.75" />
+  
+          <text x="2620" y="286" fill="#111827" font-size="16" font-weight="700" text-anchor="middle" font-family="Virgil, Segoe Print, Comic Sans MS, cursive"><tspan x="2620" dy="0">26-06</tspan><tspan x="2620" dy="18">R02</tspan></text>
         </g>
       
 </svg>

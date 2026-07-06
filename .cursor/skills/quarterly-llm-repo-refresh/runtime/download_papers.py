@@ -9,7 +9,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlsplit, urlunsplit
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -503,7 +503,7 @@ def build_session() -> requests.Session:
 def normalize_url(url: str) -> str:
     if "arxiv.org/abs/" in url:
         return url.replace("/abs/", "/pdf/")
-    if "github.com" in url and "/blob/" in url and url.endswith(".pdf"):
+    if "github.com" in url and "/blob/" in url and is_pdf_url(url):
         return url.replace("/blob/", "/raw/")
     if "docs.qwenlm.ai/" in url and url.endswith("/index.json"):
         match = re.search(
@@ -518,6 +518,13 @@ def normalize_url(url: str) -> str:
             return f"https://qwen.ai/news?id={slug}"
         return url
     return url
+
+
+def strip_url_fragment(url: str) -> str:
+    parts = urlsplit(url)
+    if not parts.fragment:
+        return url
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, parts.query, ""))
 
 
 def is_noise_candidate_url(url: str) -> bool:
@@ -850,10 +857,11 @@ def resolve_release_month(
 
 def is_pdf_url(url: str) -> bool:
     url_l = url.lower()
+    path_l = urlparse(url_l).path
     return (
-        url_l.endswith(".pdf")
+        path_l.endswith(".pdf")
         or "arxiv.org/pdf/" in url_l
-        or "raw/" in url_l and url_l.endswith(".pdf")
+        or "raw/" in url_l and path_l.endswith(".pdf")
     )
 
 
@@ -1247,20 +1255,23 @@ def sync_flat_pdf_library(
 
 def download_file(session: requests.Session, url: str, output: Path) -> Tuple[bool, str]:
     output.parent.mkdir(parents=True, exist_ok=True)
+    tmp_output = output.with_name(f"{output.name}.tmp")
     try:
         content_type = ""
-        with session.get(url, timeout=20, stream=True) as resp:
+        tmp_output.unlink(missing_ok=True)
+        with session.get(strip_url_fragment(url), timeout=20, stream=True) as resp:
             resp.raise_for_status()
             content_type = resp.headers.get("Content-Type", "")
-            with output.open("wb") as f:
+            with tmp_output.open("wb") as f:
                 for chunk in resp.iter_content(chunk_size=8192):
                     if chunk:
                         f.write(chunk)
-        success = output.exists() and output.stat().st_size > 0
+        success = tmp_output.exists() and tmp_output.stat().st_size > 0
+        if success:
+            tmp_output.replace(output)
         return success, content_type
     except Exception:
-        if output.exists():
-            output.unlink(missing_ok=True)
+        tmp_output.unlink(missing_ok=True)
         return False, ""
 
 
@@ -1378,7 +1389,9 @@ def render_webpage_to_pdf(url: str, output: Path) -> bool:
         return False
     from playwright.sync_api import sync_playwright
 
+    tmp_output = output.with_name(f"{output.name}.tmp")
     try:
+        tmp_output.unlink(missing_ok=True)
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1600, "height": 2200})
@@ -1408,37 +1421,39 @@ def render_webpage_to_pdf(url: str, output: Path) -> bool:
                 except Exception:
                     raw_text_len = 0
                 if raw_text_len >= 500 and should_force_text_fallback(url) and _render_text_fallback_pdf(
-                    page, url, output
+                    page, url, tmp_output
                 ):
+                    tmp_output.replace(output)
                     browser.close()
                     return True
                 page.emulate_media(media="screen")
                 page.pdf(
-                    path=str(output),
+                    path=str(tmp_output),
                     format="A4",
                     print_background=True,
                     prefer_css_page_size=True,
                     margin={"top": "12mm", "right": "10mm", "bottom": "12mm", "left": "10mm"},
                 )
-                if has_pdf_signature(output) and looks_like_text_pdf(
-                    output, min_chars=min_chars_for_webpage_pdf
+                if has_pdf_signature(tmp_output) and looks_like_text_pdf(
+                    tmp_output, min_chars=min_chars_for_webpage_pdf
                 ):
+                    tmp_output.replace(output)
                     browser.close()
                     return True
-                output.unlink(missing_ok=True)
+                tmp_output.unlink(missing_ok=True)
 
                 # Some blogs hide core content in print CSS. Fall back to text-first export.
                 if raw_text_len >= min_chars_for_webpage_pdf and _render_text_fallback_pdf(
-                    page, url, output
+                    page, url, tmp_output
                 ):
+                    tmp_output.replace(output)
                     browser.close()
                     return True
-                output.unlink(missing_ok=True)
+                tmp_output.unlink(missing_ok=True)
             browser.close()
         return False
     except Exception:
-        if output.exists():
-            output.unlink(missing_ok=True)
+        tmp_output.unlink(missing_ok=True)
         return False
 
 
@@ -1655,7 +1670,7 @@ def main(
                 is_pdf = has_pdf_signature(output)
                 is_original_pdf = is_pdf and (
                     "pdf" in content_type.lower()
-                    or link.lower().endswith(".pdf")
+                    or is_pdf_url(link)
                     or "arxiv.org/pdf/" in link.lower()
                 )
                 text_len = extract_text_length_from_pdf(output)

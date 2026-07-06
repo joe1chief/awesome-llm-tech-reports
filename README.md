@@ -1,11 +1,11 @@
-# Awesome LLM Technical Reports (2025-01 ~ 2026-04)
+# Awesome LLM Technical Reports (2025-01 ~ 2026-06)
 
 > A curated, structured local archive of frontier LLM / multimodal / medical-vertical model documentation — papers, system cards, model cards, and official blog posts — organized by **year / company**.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--04-4c1" alt="time range">
-  <img src="https://img.shields.io/badge/Models-83-blue" alt="models">
-  <img src="https://img.shields.io/badge/Local%20PDF-83-success" alt="local pdf">
+  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--06-4c1" alt="time range">
+  <img src="https://img.shields.io/badge/Models-96-blue" alt="models">
+  <img src="https://img.shields.io/badge/Local%20PDF-96-success" alt="local pdf">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
 </p>
@@ -22,7 +22,7 @@
 
 ## Project Scope
 
-- Systematically archives major model releases from **January 2025** to **April 2026** across LLM, multimodal, and medical-vertical domains.
+- Systematically archives major model releases from **January 2025** to **June 2026** across LLM, multimodal, and medical-vertical domains.
 - Downloads official papers, system cards, model cards as local PDFs; exports web-only blog pages to PDF via headless browser.
 - Provides a single searchable Markdown index sorted in reverse chronological order.
 
@@ -44,9 +44,9 @@
 
 ## Company Quick Links
 
-`2026`: [`Zhipu AI`](#company-zhipu) · [`Google`](#company-google) · [`OpenAI`](#company-openai) · [`MiniMax`](#company-minimax) · [`Meituan`](#company-meituan) · [`NVIDIA`](#company-nvidia) · [`Microsoft`](#company-microsoft) · [`InternLM`](#company-internlm) · [`Anthropic`](#company-anthropic) · [`InclusionAI (Ant Group)`](#company-inclusionai) · [`Snowflake`](#company-snowflake) · [`ByteDance`](#company-bytedance) · [`Moonshot AI`](#company-moonshot)
+`2026`: [`Google`](#company-google) · [`OpenAI`](#company-openai) · [`Meituan`](#company-meituan) · [`Zhipu AI`](#company-zhipu) · [`OpenBMB`](#company-openbmb) · [`MiniMax`](#company-minimax) · [`NVIDIA`](#company-nvidia) · [`Microsoft`](#company-microsoft) · [`InternLM`](#company-internlm) · [`Anthropic`](#company-anthropic) · [`InclusionAI (Ant Group)`](#company-inclusionai) · [`Snowflake`](#company-snowflake) · [`ByteDance`](#company-bytedance) · [`Moonshot AI`](#company-moonshot)
 
-`2025`: [`StepFun`](#company-stepfun) · [`Zhipu AI`](#company-zhipu) · [`MiniMax`](#company-minimax) · [`Meituan`](#company-meituan) · [`Allen AI`](#company-allenai) · [`Alibaba`](#company-alibaba_qwen) · [`Google`](#company-google) · [`NVIDIA`](#company-nvidia) · [`xAI`](#company-xai) · [`OpenAI`](#company-openai) · [`Anthropic`](#company-anthropic) · [`InternLM`](#company-internlm) · [`Quark`](#company-quark) · [`Moonshot AI`](#company-moonshot) · [`ByteDance`](#company-bytedance) · [`Tencent`](#company-tencent) · [`Meta`](#company-meta) · [`DeepSeek`](#company-deepseek)
+`2025`: [`StepFun`](#company-stepfun) · [`Zhipu AI`](#company-zhipu) · [`MiniMax`](#company-minimax) · [`Meituan`](#company-meituan) · [`Allen AI`](#company-allenai) · [`Alibaba`](#company-alibaba_qwen) · [`Google`](#company-google) · [`NVIDIA`](#company-nvidia) · [`xAI`](#company-xai) · [`OpenAI`](#company-openai) · [`Anthropic`](#company-anthropic) · [`InternLM`](#company-internlm) · [`Hugging Face`](#company-huggingface) · [`Quark`](#company-quark) · [`Moonshot AI`](#company-moonshot) · [`ByteDance`](#company-bytedance) · [`Tencent`](#company-tencent) · [`Meta`](#company-meta) · [`DeepSeek`](#company-deepseek)
 
 ### Company Directory Index
 
@@ -62,6 +62,8 @@
 - **DeepSeek**: `2025/deepseek/`
 <a id="company-google"></a>
 - **Google**: `2025/google/`, `2026/google/`
+<a id="company-huggingface"></a>
+- **Hugging Face**: `2025/huggingface/`
 <a id="company-inclusionai"></a>
 - **InclusionAI (Ant Group)**: `2026/inclusionai/`
 <a id="company-internlm"></a>
@@ -80,6 +82,8 @@
 - **NVIDIA**: `2025/nvidia/`, `2026/nvidia/`
 <a id="company-openai"></a>
 - **OpenAI**: `2025/openai/`, `2026/openai/`
+<a id="company-openbmb"></a>
+- **OpenBMB**: `2026/openbmb/`
 <a id="company-quark"></a>
 - **Quark (Alibaba)**: `2025/quark/`
 <a id="company-snowflake"></a>
@@ -96,12 +100,22 @@
 ## Model Index (Folded by Year)
 
 <details open>
-<summary><b>2026 (25 models)</b></summary>
+<summary><b>2026 (35 models)</b></summary>
 
 | Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |
 | --- | --- | --- | --- | --- | --- |
+| 2026-06 | Google | Gemini 3.5 Audio (Live Translate) | Model Data Training Dataset: Gemini 3.5 Live Translate is based on Gemini 3 Pro Gemini 3.5 Live Translate is designed to filter out background noise, but not all background audio may be ignored | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Audio-Model-Card.pdf | 2026/google/2026-06_gemini-3.5-audio-live-translate.pdf |
+| 2026-06 | Google | Gemini 3.1 Flash-Lite Image | Gemini 3.1 Flash-Lite Image can comprehend input from different information sources, including text, images, audio and video 1 Model Data Training Dataset: Gemini 3.1 Flash-Lite Image is based on Gemini 3.1 Flash-Lite | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Image-Model-Card.pdf | 2026/google/2026-06_gemini-3.1-flash-lite-image.pdf |
+| 2026-05 | OpenAI | GPT-5.5 Instant | 19 2 1 Introduction GPT-5.5 Instant is our latest Instant model, and explained in our blog Note that there is not a model named GPT-5.4 Instant, and the main model to baseline against is GPT-5.3 Instant | https://deploymentsafety.openai.com/gpt-5-5-instant/gpt-5-5-instant.pdf | 2026/openai/2026-05_gpt-5.5-instant.pdf |
+| 2026-05 | Meituan | LongCat-Video-Avatar-1.5 | By upgrading the audio encoder to Whisper Large and meticulously scaling our training recipes, v1.5 achieves accurate lip-synchronization, full-body temporal stability, and robust long-video generation with strict identity consistency Despite advances in audio-driven video generation, achieving commercial-grade stability remains challenging | https://arxiv.org/pdf/2605.26486 | 2026/meituan/2026-05_longcat-video-avatar-1.5.pdf |
+| 2026-05 | Google | Gemini Omni Flash | Architecture: Gemini Omni Flash is a transformer-based model (Vaswani et al., 2017) with native multimodal support for text, vision, video and audio inputs Model Data Training Dataset: Gemini Omni Flash was trained on audio, video, image, and text data | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-Omni-Flash-Model-Card.pdf | 2026/google/2026-05_gemini-omni-flash.pdf |
+| 2026-05 | Google | Gemini 3.5 Flash | 3 Evaluation Approach : Gemini 3.5 Flash was evaluated across a range of benchmarks, including reasoning, coding, agentic tool use, multimodal capabilities, multi-lingual performance, and long-context Gemini 3.5 Flash is based on the Gemini 3 Flash reasoning foundation with thinking levels to control the mix of quality, cost and latency | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf | 2026/google/2026-05_gemini-3.5-flash.pdf |
 | 2026-04 | Zhipu AI | GLM-5V-Turbo | multimodal coding and agentic tasks, as well as pure-text coding, GLM-5V-Turbo delivers strong performance with a smaller model size 30+ Task Joint Reinforcement Learning : During RL, the model is jointly optimized across 30+ task types, spanning STEM, grounding, video, GUI agents, and coding agents, resulting in more robust gains in perception, reasoning, and agentic execution | https://docs.z.ai/guides/vlm/glm-5v-turbo | 2026/zhipu/2026-04_glm-5v-turbo.pdf |
 | 2026-04 | Google | Gemma 4 | Featuring both Dense and Mixture-of-Experts (MoE) architectures, Gemma 4 is well-suited for tasks like text generation, coding, and reasoning They are well-suited for reasoning, agentic workflows, coding, and multimodal understanding | https://ai.google.dev/gemma/docs/core/model_card_4?utm_source=deepmind.google&utm_medium=referral&utm_campaign=gdm&utm_content | 2026/google/2026-04_gemma-4.pdf |
+| 2026-04 | OpenBMB | MiniCPM-o 4.5 | To fully exploit the rich omni-modal knowledge during training, Mini CPM-o 4.5 is built on an end-to-end multimodal architecture featuring token-level continuous connections (2) Extensive evaluations show that Mini CPM-o 4.5 approaches Gemini 2.5 Flash in vision-language capabilities and achieves state-of-the-art open-source performance at its scale | https://arxiv.org/pdf/2604.27393 | 2026/openbmb/2026-04_minicpm-o-4.5.pdf |
+| 2026-04 | OpenAI | GPT-5.5 | 4 2 Model Data and Training 4 3 Safety 5 3.1 Disallowed Content We generally treat GPT-5.5’s safety results as strong proxies for GPT-5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute | https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf | 2026/openai/2026-04_gpt-5.5.pdf |
+| 2026-04 | Google | Gemini Robotics-ER 1.6 | Published: April 2026 Model Information Description : Gemini Robotics-ER (Embodied Reasoning) 1.6 is a Vision-Language-Model that enhances Gemini’s spatial and physical reasoning capabilities The model card below covers Gemini Robotics-ER 1.6 | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-Robotics-ER-1-6-Model-Card.pdf | 2026/google/2026-04_gemini-robotics-er-1.6.pdf |
+| 2026-04 | Google | Gemini 3.1 Flash Audio (Flash Live, TTS) | Information specific to these modalities is specified in-line and referred to as Gemini 3.1 Flash Live or Gemini 3.1 Flash TTS (Text-to-Speech), referred to collectively as Gemini 3.1 Flash Audio 1 Model Data Training Dataset: Gemini 3.1 Flash Audio is based on Gemini 3 Pro | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Audio-Model-Card.pdf | 2026/google/2026-04_gemini-3.1-flash-audio-flash-live-tts.pdf |
 | 2026-03 | OpenAI | GPT-5.4 Thinking | Frontier reasoning model that unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations and stronger chain-of-thought monitoring. | https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf | 2026/openai/2026-03_gpt-5.4-thinking.pdf |
 | 2026-03 | OpenAI | GPT-5.3 Instant | General-purpose GPT-5 update tuned for richer web-grounded answers, smoother follow-up behavior, fewer dead ends and caveats, and improved everyday conversational usefulness. | https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf | 2026/openai/2026-03_gpt-5.3-instant.pdf |
 | 2026-03 | Google | Gemini 3.1 Flash-Lite | Evaluation Approach : Gemini 3.1 Flash-Lite was evaluated across a range of benchmarks, including speed, reasoning, multimodal capabilities, factuality, agentic tool use, multi-lingual performance, coding, and long-context Model dependencies: Gemini 3.1 Flash-Lite is based on Gemini 3 Pro | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf | 2026/google/2026-03_gemini-3.1-flash-lite.pdf |
@@ -129,7 +143,7 @@
 </details>
 
 <details>
-<summary><b>2025 (58 models)</b></summary>
+<summary><b>2025 (61 models)</b></summary>
 
 | Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |
 | --- | --- | --- | --- | --- | --- |
@@ -153,6 +167,7 @@
 | 2025-10 | Meituan | LongCat-Video | Toward this end, we introduce LongCat-Video, a foundational video generation model with 13.6B parameters, delivering strong performance across multiple video generation tasks In this report, we introduce LongCat-Video, a foundational video generation model with 13.6B parameters that delivers strong performance across general video generation tasks, particularly excelling in efficient, high-quality long video generation | https://arxiv.org/pdf/2510.22200 | 2025/meituan/2025-10_longcat-video.pdf |
 | 2025-10 | InternLM | Intern-S1 | Intern- S1 is a multimodal Mixture-of-Experts (MoE) model with 28 billion activated parameters and 241 billion total parameters, continually pre-trained on 5T to- kens, including over 2.5T tokens from scientific domains 2 Intern-S1 Technical Report In the pre-training stage, the key challenge is to prepare large-scale pre-training data for those low-resource but high-value science domains | https://arxiv.org/pdf/2508.15763 | 2025/internlm/2025-10_intern-s1.pdf |
 | 2025-10 | Google | Gemini 2.5 Computer Use | Ethics and Safety Evaluation Approach: As the Gemini 2.5 Computer Use Model is based off of Gemini 2.5 Pro, we rely on Ethics & Safety evaluations reported for Gemini 2.5 Pro Frontier Safety Assessment: Because model usage is restricted to the Gemini 2.5 Computer Use tool, the scope of capabilities is limited to browser and mobile user interface controls; it is therefore not in scope for a Frontier Safety Framework assessment | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Computer-Use-Model-Card.pdf | 2025/google/2025-10_gemini-2.5-computer-use.pdf |
+| 2025-10 | Hugging Face | SmolLM3 | It supports dual mode reasoning, 6 languages and long context The model is a decoder-only transformer using GQA and No PE (with 3:1 ratio), it was pretrained on 11.2T tokens with a staged curriculum of web, code, math and reasoning data | https://huggingface.co/HuggingFaceTB/SmolLM3-3B | 2025/huggingface/2025-10_smollm3.pdf |
 | 2025-09 | Meituan | LongCat-Flash | 560B MoE language model designed for computational efficiency and agentic capabilities; introduces Zero-computation Experts and novel routing for scalable inference. | https://arxiv.org/pdf/2509.01322 | 2025/meituan/2025-09_longcat-flash.pdf |
 | 2025-09 | Meituan | LongCat-Flash-Thinking | Efficient 560B MoE reasoning model built on LongCat-Flash; cultivated through long CoT data cold-start and curriculum RL for formal and agentic reasoning. | https://arxiv.org/pdf/2509.18883 | 2025/meituan/2025-09_longcat-flash-thinking.pdf |
 | 2025-09 | Alibaba | Qwen3-Omni | We present Qwen3-Omni, a single multimodal model that for the first time maintains state-of-the-art performance across text, image, audio, and video without any degra- dation relative to single-modal counterparts Based on these features, Qwen3-Omni supports a wide range of tasks, including but not limited to voice dialogue, video dialogue, and video reasoning | https://arxiv.org/pdf/2509.17765 | 2025/alibaba_qwen/2025-09_qwen3-omni.pdf |
@@ -161,6 +176,7 @@
 | 2025-09 | Alibaba | Qwen3.5 | Under the 32k/256k context length, the decoding throughput of Qwen3.5-397B-A17B is 8.6x/19.0x that of Qwen3-Max, and the performance is comparable The decoding throughput of Qwen3.5-397B-A17B is 3.5x/7.2 times that of Qwen3-235B-A22B | https://qwen.ai/blog?id=qwen3.5 | 2025/alibaba_qwen/2025-09_qwen3.5.pdf |
 | 2025-09 | Alibaba | Qwen3-Next | Post-training Instruct Model Performance Qwen3-Next-80B-A3B-Instruct significantly outperforms Qwen3-30B-A3B-Instruct-2507 and Qwen3- 32B-Non-thinking, and achieves results nearly matching our flagship Qwen3-235B-A22B- Instruct-2507 This base model achieves performance comparable to (or even slightly better than) the dense Qwen3-32B model, while using less than 10% of its training cost (GPU hours) | https://qwen.ai/blog?id=qwen3-next | 2025/alibaba_qwen/2025-09_qwen3-next.pdf |
 | 2025-09 | Alibaba | Qwen3-Max | Meanwhile, Qwen3-Max-Thinking — still under active training — is already demonstrating remarkable potential Moreover, on Tau2-Bench — a rigorous evaluation of agent tool-calling proficiency — Qwen3-Max-Instruct delivers a breakthrough score of 74.8, surpassing both Claude Opus 4 and Deep Seek V3.1 | https://qwen.ai/blog?id=qwen3-max | 2025/alibaba_qwen/2025-09_qwen3-max.pdf |
+| 2025-09 | Google | Gemini Robotics 1.5 | Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, which enables it to learn from heterogeneous, multi-embodiment robot data and makes the VLA more general In Gemini Robotics 1.5, we also introduce a new model architecture and training recipe for the VLA | https://storage.googleapis.com/deepmind-media/gemini-robotics/Gemini-Robotics-1-5-Tech-Report.pdf#page=30 | 2025/google/2025-09_gemini-robotics-1.5.pdf |
 | 2025-08 | OpenAI | GPT-5 | Unified system card covering multi-model routing architecture and comprehensive safety evaluations across the GPT-5 model family including reasoning and tool-use capabilities. | https://cdn.openai.com/gpt-5-system-card.pdf | 2025/openai/2025-08_gpt-5.pdf |
 | 2025-08 | OpenAI | gpt-oss-120b/20b | Apache 2.0 open-weight MoE models (120B and 20B); model card covers architecture, quantization, and post-training for reasoning and tool use. | https://deploymentsafety.openai.com/gpt-oss | 2025/openai/2025-08_gpt-oss-120b-20b.pdf |
 | 2025-08 | Google | Gemma 3 270M | Gemma 3 270M is its low power consumption For example, check out this Bedtime Story Generator web app : Link to Youtube Video (visible only when JS is disabled) Gemma 3 270M used to power a Bedtime Story Generator web app using Transformers.js | https://developers.googleblog.com/en/introducing-gemma-3-270m/ | 2025/google/2025-08_gemma-3-270m.pdf |
@@ -174,6 +190,7 @@
 | 2025-07 | Moonshot AI | Kimi K2: Open Agentic Intelligence | Post-training must transform those priors into actionable behaviors, yet agentic capabilities such as multi-step reasoning, long-term planning, and tool use are rare in natural data and costly to scale We introduce Kimi K2, a Mixture-of-Experts (MoE) large language model with 32 billion activated parameters and 1 trillion total parameters | https://arxiv.org/pdf/2507.20534 | 2025/moonshot/2025-07_kimi-k2-open-agentic-intelligence.pdf |
 | 2025-07 | Alibaba | Qwen3-Coder | Qwen3-Coder is the code version of Qwen3, the large language model series developed by Qwen team Table of Contents Introduction Key Features Basic Information Quick Start 👉🏻 Chat with Qwen3-Coder Fill in the middle with Qwen3-Coder Use Cases Example: Releasing a Website Example: Desktop Tidy Example: Zombies vs | https://github.com/QwenLM/Qwen3-Coder | 2025/alibaba_qwen/2025-07_qwen3-coder.pdf |
 | 2025-07 | Zhipu AI | GLM-4.5 | GLM-4.5 and GLM-4.5-Air are optimized for tool invocation, web browsing, software engineering, and front-end development On charts such as SWE-Bench Verified, the GLM-4.5 series lies on the Pareto frontier for performance-to-parameter ratio, demonstrating that at the same scale, the GLM-4.5 series delivers optimal performance | https://docs.z.ai/guides/llm/glm-4.5 | 2025/zhipu/2025-07_glm-4.5.pdf |
+| 2025-07 | Google | Gemini Robotics On-Device | It is designed for general-purpose robotic manipulation, operating efficiently on local devices We actively work on safety features and evaluation metrics, building on recent work on semantic safety and automated red-teaming, to improve overall safety and performance of Gemini Robotics | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-Robotics-On-Device-Model-Card.pdf | 2025/google/2025-07_gemini-robotics-on-device.pdf |
 | 2025-06 | Google | Gemma 3N | They are capable of multimodal input, handling text, image, video, and audio input, and generating text outputs, with open weights for pre-trained and instruction-tuned variants For more information on Gemma 3n's efficient parameter management technology, see the Gemma 3n page | https://ai.google.dev/gemma/docs/gemma-3n/model_card | 2025/google/2025-06_gemma-3n.pdf |
 | 2025-06 | Google | Gemini 2.5 Pro | As Google’s most advanced model for complex tasks, Gemini 2.5 Pro can comprehend vast datasets and challenging problems from different information sources, including text, audio, images, video, and even entire code repositories 1 We’ve updated the naming convention throughout this model card to reflect that Gemini 2.5 Pro is generally available and to clearly differentiate between different Gemini 2.5 Pro versions | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf | 2025/google/2025-06_gemini-2.5-pro.pdf |
 | 2025-05 | ByteDance | Seed1.5-VL | Vision-language foundation model (MoE 20B active / 532M vision encoder) designed for general-purpose multimodal understanding and reasoning with enhanced visual capabilities. | https://arxiv.org/pdf/2505.07062 | 2025/bytedance/2025-05_seed1.5-vl.pdf |

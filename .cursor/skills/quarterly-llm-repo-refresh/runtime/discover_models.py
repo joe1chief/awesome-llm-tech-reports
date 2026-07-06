@@ -8,6 +8,8 @@ import base64
 import html
 import json
 import re
+import signal
+import sys
 import unicodedata
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
@@ -49,6 +51,8 @@ QWEN_PAGE_CONFIG_CODES = (
 XAI_RELEASE_NOTES_URL = "https://docs.x.ai/docs/release-notes"
 META_LLAMA4_BLOG_URL = "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
 HUGGINGFACE_SMOLLM3_DOC_URL = "https://huggingface.co/docs/transformers/en/model_doc/smollm3"
+REQUEST_TIMEOUT = (5, 10)
+REQUEST_DEADLINE_SECONDS = 20
 OPENAI_RELEASE_OVERRIDES: Dict[str, Dict[str, str]] = {
     "o3 / o4-mini": {
         "release_date": "2025-04",
@@ -460,9 +464,19 @@ class RequestsFetcher:
         self.fallback_user_agent = "Mozilla/5.0"
 
     def _request(self, url: str, *, parse_json: bool) -> Any:
+        def deadline_handler(signum: int, frame: object) -> None:
+            raise TimeoutError(f"request deadline exceeded after {REQUEST_DEADLINE_SECONDS}s: {url}")
+
         def perform(*, verify: bool, fallback_ua: bool) -> requests.Response:
             headers = {"User-Agent": self.fallback_user_agent} if fallback_ua else None
-            return self.session.get(url, timeout=20, verify=verify, headers=headers)
+            previous_handler = signal.getsignal(signal.SIGALRM)
+            signal.signal(signal.SIGALRM, deadline_handler)
+            signal.setitimer(signal.ITIMER_REAL, REQUEST_DEADLINE_SECONDS)
+            try:
+                return self.session.get(url, timeout=REQUEST_TIMEOUT, verify=verify, headers=headers)
+            finally:
+                signal.setitimer(signal.ITIMER_REAL, 0)
+                signal.signal(signal.SIGALRM, previous_handler)
 
         try:
             resp = perform(verify=True, fallback_ua=False)
@@ -827,14 +841,16 @@ def evidence_confidence(evidence_type: str) -> float:
 def safe_get_text(fetcher: Fetcher, url: str) -> str:
     try:
         return fetcher.get_text(url)
-    except Exception:
+    except Exception as exc:
+        print(f"WARN: skipped text source {url}: {type(exc).__name__}: {exc}", file=sys.stderr)
         return ""
 
 
 def safe_get_json(fetcher: Fetcher, url: str) -> Any:
     try:
         return fetcher.get_json(url)
-    except Exception:
+    except Exception as exc:
+        print(f"WARN: skipped json source {url}: {type(exc).__name__}: {exc}", file=sys.stderr)
         return []
 
 
