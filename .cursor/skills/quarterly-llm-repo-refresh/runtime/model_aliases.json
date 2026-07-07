@@ -111,7 +111,35 @@
       "OpenAI o3 and o4 mini"
     ]
   },
+  "anthropic": {
+    "Claude Sonnet 5": [
+      "Claude Sonnet 5 System Card"
+    ],
+    "Claude Fable 5 / Mythos 5": [
+      "Claude Fable 5 and Claude Mythos 5",
+      "Claude Fable 5 & Claude Mythos 5",
+      "Claude Fable 5 / Claude Mythos 5",
+      "Claude Fable 5 and Mythos 5 System Card"
+    ],
+    "Claude Opus 4.8": [
+      "Claude Opus 4.8 System Card"
+    ],
+    "Claude Opus 4.7": [
+      "Claude Opus 4.7 System Card"
+    ],
+    "Claude Sonnet 4.6": [
+      "Claude Sonnet 4.6 System Card"
+    ]
+  },
   "meituan": {
+    "LongCat-2.0": [
+      "LongCat 2.0",
+      "LongCat-2.0 Technical Blog"
+    ],
+    "LongCat-Flash-Lite": [
+      "LongCat Flash Lite",
+      "LongCat Flash-Lite"
+    ],
     "LongCat-Flash-Prover": [
       "LongCat Flash Prover",
       "LongCat Flash-Prover"
@@ -128,9 +156,27 @@
     ],
     "LongCat-Video": [
       "LongCat Video"
+    ],
+    "LongCat-Video-Avatar-1.5": [
+      "LongCat Video Avatar 1.5",
+      "LongCat-Video-Avatar 1.5"
     ]
   },
   "zhipu": {
+    "GLM-5.2": [
+      "GLM 5.2",
+      "GLM-5.2 Air",
+      "glm-5.2"
+    ],
+    "GLM-5.1": [
+      "GLM 5.1",
+      "glm-5.1"
+    ],
+    "GLM-5-Turbo": [
+      "GLM 5 Turbo",
+      "GLM-5 Turbo",
+      "glm-5-turbo"
+    ],
     "GLM-5V-Turbo": [
       "GLM 5V Flash",
       "GLM-5V Flash",
@@ -143,6 +189,35 @@
       "GLM 4.7 Flash",
       "GLM-4.7 Flash",
       "GLM-4.7-FlashX"
+    ],
+    "GLM-4.6V": [
+      "GLM 4.6V",
+      "GLM-4.6 V",
+      "glm-4.6v"
+    ],
+    "GLM-4.6": [
+      "GLM 4.6",
+      "glm-4.6"
+    ],
+    "GLM-4.5V": [
+      "GLM 4.5V",
+      "GLM-4.5 V",
+      "glm-4.5v"
+    ]
+  },
+  "tencent": {
+    "Hy3-preview": [
+      "Hy3 preview",
+      "Hy3 Preview",
+      "Tencent-Hunyuan/Hy3-preview"
+    ],
+    "HunyuanImage 3.0": [
+      "HunyuanImage-3.0",
+      "Hunyuan Image 3.0"
+    ],
+    "HunyuanVideo 1.5": [
+      "HunyuanVideo-1.5",
+      "Hunyuan Video 1.5"
     ]
   },
   "minimax": {

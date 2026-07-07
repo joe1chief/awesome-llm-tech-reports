@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlparse
@@ -18,6 +19,8 @@ DEFAULT_README = README
 DEFAULT_DISCOVERED_MODELS = LATEST_MODELS_JSON
 DEFAULT_OUTPUT = LATEST_CURATED_MODELS_JSON
 MAX_CANDIDATE_LINKS = 12
+MIN_APPEND_RELEASE_MONTH = "2025-01"
+MIN_APPEND_CONFIDENCE = 0.78
 NOISE_HOSTS = {
     "https://fonts.googleapis.com",
     "https://fonts.gstatic.com",
@@ -169,6 +172,91 @@ def build_discovered_index(
     return {key: value[1] for key, value in index.items()}
 
 
+def model_tokens_for_record(
+    org_slug: str,
+    model: str,
+    aliases: Iterable[str],
+    alias_config: Dict[str, Dict[str, List[str]]],
+) -> set[Tuple[str, str]]:
+    resolution = discover_models.canonicalize_model_name(org_slug, model, alias_config=alias_config)
+    candidates = [model, resolution.canonical_name, *resolution.aliases, *aliases]
+    return {
+        (org_slug, token)
+        for token in (discover_models.normalize_alias_token(candidate) for candidate in candidates)
+        if token
+    }
+
+
+def is_in_append_date_window(release_date: str) -> bool:
+    release_date = (release_date or "").strip()
+    if not re.match(r"^20\d{2}-\d{2}$", release_date):
+        return False
+    current_month = datetime.now().strftime("%Y-%m")
+    return MIN_APPEND_RELEASE_MONTH <= release_date <= current_month
+
+
+def is_appendable_discovered_record(
+    record: Dict[str, Any],
+    *,
+    allowed_org_slugs: set[str],
+) -> bool:
+    org_slug = str(record.get("org_slug", "")).strip()
+    official_link = extract_url(str(record.get("official_link", "")))
+    if org_slug not in allowed_org_slugs:
+        return False
+    if str(record.get("release_classification", "")).strip() != "model_release":
+        return False
+    if float(record.get("confidence") or 0) < MIN_APPEND_CONFIDENCE:
+        return False
+    if not is_in_append_date_window(str(record.get("release_date", ""))):
+        return False
+    if not official_link.startswith(("http://", "https://")):
+        return False
+    return True
+
+
+def curated_entry_from_discovered_record(record: Dict[str, Any]) -> Dict[str, Any]:
+    official_link = extract_url(str(record.get("official_link", "")))
+    source_page = extract_url(str(record.get("source_page", ""))) or official_link
+    candidate_links = limit_links(
+        [
+            official_link,
+            source_page,
+            *(record.get("candidate_links") or []),
+        ],
+        filter_noise=True,
+    )
+    evidence_urls = limit_links(
+        [
+            *(record.get("evidence_urls") or []),
+            *candidate_links,
+            official_link,
+            source_page,
+        ]
+    )
+    return {
+        "release_date": str(record.get("release_date", "")),
+        "org": update_readme_incremental.ORG_DISPLAY.get(
+            str(record.get("org_slug", "")),
+            str(record.get("org", "")),
+        ),
+        "org_slug": str(record.get("org_slug", "")),
+        "model": str(record.get("model", "")),
+        "canonical_model_id": str(record.get("canonical_model_id", "")),
+        "aliases": list(dict.fromkeys(str(alias) for alias in (record.get("aliases") or []) if alias)),
+        "core_feature": str(record.get("core_feature", "")),
+        "official_link": official_link,
+        "candidate_links": candidate_links,
+        "source_page": source_page,
+        "evidence_urls": evidence_urls,
+        "evidence_type": str(record.get("evidence_type", "discovered_official_source")),
+        "release_classification": "model_release",
+        "classification_reason": str(record.get("classification_reason", "append_discovered_model_release")),
+        "confidence": float(record.get("confidence") or 0),
+        "discovered_at": str(record.get("discovered_at", "")),
+    }
+
+
 def select_release_date(readme_date: str, discovered_date: str) -> str:
     if re.match(r"^20\d{2}-\d{2}$", (readme_date or "").strip()):
         return readme_date.strip()
@@ -184,12 +272,18 @@ def build_curated_models(
 ) -> List[Dict[str, Any]]:
     alias_config = discover_models.load_alias_config()
     readme_rows = update_readme_incremental.parse_existing_rows(readme_path.read_text(encoding="utf-8"))
-    discovered_index = build_discovered_index(load_discovered_models(discovered_models_path), alias_config)
+    discovered_records = load_discovered_models(discovered_models_path)
+    discovered_index = build_discovered_index(discovered_records, alias_config)
+    allowed_org_slugs = {update_readme_incremental.infer_org_slug(row) for row in readme_rows}
 
     curated: List[Dict[str, Any]] = []
+    existing_tokens: set[Tuple[str, str]] = set()
     for row in readme_rows:
         org_slug = update_readme_incremental.infer_org_slug(row)
         resolution = discover_models.canonicalize_model_name(org_slug, row["model"], alias_config=alias_config)
+        existing_tokens.update(
+            model_tokens_for_record(org_slug, row["model"], [resolution.canonical_name, *resolution.aliases], alias_config)
+        )
         match = discovered_index.get((org_slug, discover_models.normalize_alias_token(row["model"])))
         if match is None:
             match = discovered_index.get(
@@ -273,6 +367,28 @@ def build_curated_models(
                 "discovered_at": str((match or {}).get("discovered_at", "")),
             }
         )
+    for record in sorted(
+        discovered_records,
+        key=lambda item: (
+            str(item.get("release_date", "")),
+            str(item.get("org_slug", "")),
+            str(item.get("model", "")),
+        ),
+        reverse=True,
+    ):
+        if not is_appendable_discovered_record(record, allowed_org_slugs=allowed_org_slugs):
+            continue
+        org_slug = str(record.get("org_slug", ""))
+        tokens = model_tokens_for_record(
+            org_slug,
+            str(record.get("model", "")),
+            [str(alias) for alias in (record.get("aliases") or [])],
+            alias_config,
+        )
+        if existing_tokens.intersection(tokens):
+            continue
+        curated.append(curated_entry_from_discovered_record(record))
+        existing_tokens.update(tokens)
     return curated
 
 

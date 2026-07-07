@@ -246,7 +246,7 @@ def rows_from_results(results: Iterable[dict]) -> List[Dict[str, str]]:
                 "release_date": release_date,
                 "organization": organization,
                 "model": model,
-                "core_highlights": str(r.get("core_feature", "")).strip(),
+                "core_highlights": sanitize_core_highlights(str(r.get("core_feature", ""))),
                 "official_link": str(r.get("official_link", "")).strip(),
                 "local_file": normalize_local_file(str(r.get("local_file_path", "")).strip()),
             }
@@ -332,8 +332,32 @@ def merge_rows(
     return ordered_rows
 
 
+def sanitize_core_highlights(value: str) -> str:
+    text = html_unescape_like(value)
+    text = text.replace("\\n", " ").replace("\\r", " ").replace("\\t", " ")
+    text = re.split(r'\s*,\s*_jsx\(', text, maxsplit=1)[0]
+    text = re.split(r"\s*_jsx\(", text, maxsplit=1)[0]
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip(' "\'[]{}:,')
+
+
+def html_unescape_like(value: str) -> str:
+    return (
+        (value or "")
+        .replace('\\"', '"')
+        .replace("\\/", "/")
+        .replace("&nbsp;", " ")
+        .replace("&amp;", "&")
+    )
+
+
 def escape_md_cell(value: str) -> str:
-    return value.replace("|", "\\|").replace("\n", " ").strip()
+    text = html_unescape_like(value)
+    text = text.replace("\\n", " ").replace("\\r", " ").replace("\\t", " ")
+    text = text.replace("\r", " ").replace("\n", " ")
+    text = re.sub(r"\s+", " ", text).strip()
+    return text.replace("|", "\\|")
 
 
 def infer_org_slug(row: Dict[str, str]) -> str:

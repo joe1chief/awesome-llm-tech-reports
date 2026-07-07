@@ -35,6 +35,10 @@ function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
+function cleanGeneratedText(value) {
+  return `${String(value).split("\n").map((line) => line.trimEnd()).join("\n").trimEnd()}\n`;
+}
+
 function escapeXml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -427,8 +431,8 @@ function writeOutputs({ generatedDir, assetsDir }) {
   const monthlyData = readJson(path.join(generatedDir, "monthly_density.json"));
   const timelineData = readJson(path.join(generatedDir, "release_timeline.json"));
 
-  fs.writeFileSync(path.join(assetsDir, "monthly-density.svg"), renderMonthlyDensitySvg(monthlyData));
-  fs.writeFileSync(path.join(assetsDir, "release-timeline.svg"), renderReleaseTimelineSvg(timelineData));
+  fs.writeFileSync(path.join(assetsDir, "monthly-density.svg"), cleanGeneratedText(renderMonthlyDensitySvg(monthlyData)));
+  fs.writeFileSync(path.join(assetsDir, "release-timeline.svg"), cleanGeneratedText(renderReleaseTimelineSvg(timelineData)));
 }
 
 const args = parseArgs(process.argv.slice(2));

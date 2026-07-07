@@ -843,6 +843,19 @@ def resolve_release_month(
         return declared_release_date, "manual_shared_link"
     if "docs.x.ai/docs/release-notes" in url and declared_release_date:
         return declared_release_date, "manual_xai_release_notes"
+    if declared_release_date and any(
+        token in url
+        for token in [
+            "anthropic.com/",
+            "www-cdn.anthropic.com/",
+            "assets.anthropic.com/",
+            "docs.z.ai/",
+            "github.com/Tencent-Hunyuan/Hy3-preview",
+            "huggingface.co/meituan-longcat/",
+            "longcat.chat/blog/",
+        ]
+    ):
+        return declared_release_date, "manual_verified_official_release"
 
     if url in cache:
         inferred, source = cache[url]

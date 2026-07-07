@@ -39,6 +39,7 @@ GOOGLE_MODEL_CARDS_URL = "https://deepmind.google/models/model-cards/"
 GOOGLE_GEMMA_URL = "https://deepmind.google/models/gemma/"
 GOOGLE_GEMMA_DOCS_URL = "https://ai.google.dev/gemma/docs"
 ZHIPU_DOCS_ROOT_URL = "https://docs.z.ai/"
+ZHIPU_RELEASE_NOTES_URL = "https://docs.z.ai/release-notes/new-released"
 BIGMODEL_DOCS_ROOT_URL = "https://docs.bigmodel.cn/cn/guide/models"
 QWEN_GITHUB_REPOS_URL = "https://api.github.com/orgs/QwenLM/repos?per_page=100"
 QWEN_PAGE_CONFIG_URL = "https://qwen.ai/api/page_config"
@@ -59,6 +60,151 @@ OPENAI_RELEASE_OVERRIDES: Dict[str, Dict[str, str]] = {
         "evidence_url": "https://openai.com/index/introducing-o3-and-o4-mini/",
     }
 }
+ANTHROPIC_EXPLICIT_RELEASES: List[Dict[str, Any]] = [
+    {
+        "raw_name": "Claude Sonnet 5",
+        "release_date": "2026-06",
+        "official_link": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+        "candidate_links": [
+            "https://www.anthropic.com/news/claude-sonnet-5",
+            "https://www.anthropic.com/claude-sonnet-5-system-card",
+        ],
+        "source_page": "https://www.anthropic.com/news/claude-sonnet-5",
+        "evidence_type": "official_system_card",
+    },
+    {
+        "raw_name": "Claude Fable 5 / Mythos 5",
+        "release_date": "2026-06",
+        "official_link": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20%26%20Claude%20Mythos%205%20System%20Card.pdf",
+        "core_feature": "System card covering Claude Fable 5 and Mythos 5 release-specific capability, safety, and deployment evaluations.",
+        "candidate_links": [
+            "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+            "https://www.anthropic.com/claude-fable-5-mythos-5-system-card",
+        ],
+        "source_page": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        "evidence_type": "official_system_card",
+    },
+    {
+        "raw_name": "Claude Opus 4.8",
+        "release_date": "2026-05",
+        "official_link": "https://www-cdn.anthropic.com/0f0c97ad20d8005706296bd92aa1c27c6b2f4f61/Claude%20Opus%204.8%20System%20Card.pdf",
+        "core_feature": "System card for Claude Opus 4.8 with capability, agentic coding, and safety evaluations for the Opus 4 series update.",
+        "candidate_links": [
+            "https://www.anthropic.com/news/claude-opus-4-8",
+            "https://www.anthropic.com/claude-opus-4-8-system-card",
+        ],
+        "source_page": "https://www.anthropic.com/news/claude-opus-4-8",
+        "evidence_type": "official_system_card",
+    },
+    {
+        "raw_name": "Claude Opus 4.7",
+        "release_date": "2026-04",
+        "official_link": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf",
+        "core_feature": "System card for Claude Opus 4.7 covering coding, tool-use, alignment, and safety evaluations for the model update.",
+        "candidate_links": [
+            "https://www.anthropic.com/news/claude-opus-4-7",
+            "https://www.anthropic.com/claude-opus-4-7-system-card",
+        ],
+        "source_page": "https://www.anthropic.com/news/claude-opus-4-7",
+        "evidence_type": "official_system_card",
+    },
+    {
+        "raw_name": "Claude Sonnet 4.6",
+        "release_date": "2026-02",
+        "official_link": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf",
+        "candidate_links": [
+            "https://www.anthropic.com/news/claude-sonnet-4-6",
+            "https://www.anthropic.com/claude-sonnet-4-6-system-card",
+        ],
+        "source_page": "https://www.anthropic.com/news/claude-sonnet-4-6",
+        "evidence_type": "official_system_card",
+    },
+]
+ZHIPU_EXPLICIT_RELEASES: List[Dict[str, Any]] = [
+    {
+        "raw_name": "GLM-5.2",
+        "release_date": "2026-06",
+        "official_link": "https://docs.z.ai/guides/llm/glm-5.2",
+    },
+    {
+        "raw_name": "GLM-5.1",
+        "release_date": "2026-04",
+        "official_link": "https://docs.z.ai/guides/llm/glm-5.1",
+    },
+    {
+        "raw_name": "GLM-5-Turbo",
+        "release_date": "2026-03",
+        "official_link": "https://docs.z.ai/guides/llm/glm-5-turbo",
+    },
+    {
+        "raw_name": "GLM-4.6V",
+        "release_date": "2025-12",
+        "official_link": "https://docs.z.ai/guides/vlm/glm-4.6v",
+    },
+    {
+        "raw_name": "GLM-4.6",
+        "release_date": "2025-09",
+        "official_link": "https://docs.z.ai/guides/llm/glm-4.6",
+    },
+    {
+        "raw_name": "GLM-4.5V",
+        "release_date": "2025-08",
+        "official_link": "https://docs.z.ai/guides/vlm/glm-4.5v",
+    },
+]
+TENCENT_EXPLICIT_RELEASES: List[Dict[str, Any]] = [
+    {
+        "raw_name": "Hy3-preview",
+        "release_date": "2026-04",
+        "official_link": "https://github.com/Tencent-Hunyuan/Hy3-preview",
+        "candidate_links": [
+            "https://raw.githubusercontent.com/Tencent-Hunyuan/Hy3-preview/main/README.md",
+            "https://huggingface.co/tencent/Hy3-preview",
+        ],
+        "source_page": "https://github.com/Tencent-Hunyuan/Hy3-preview",
+        "evidence_type": "official_model_page",
+    },
+    {
+        "raw_name": "HunyuanImage 3.0",
+        "release_date": "2025-09",
+        "official_link": "https://arxiv.org/pdf/2509.23951",
+        "candidate_links": ["https://arxiv.org/abs/2509.23951"],
+        "source_page": "https://arxiv.org/abs/2509.23951",
+        "evidence_type": "arxiv_report",
+    },
+    {
+        "raw_name": "HunyuanVideo 1.5",
+        "release_date": "2025-11",
+        "official_link": "https://arxiv.org/pdf/2511.18870",
+        "candidate_links": ["https://arxiv.org/abs/2511.18870"],
+        "source_page": "https://arxiv.org/abs/2511.18870",
+        "evidence_type": "arxiv_report",
+    },
+]
+LONGCAT_EXPLICIT_RELEASES: List[Dict[str, Any]] = [
+    {
+        "raw_name": "LongCat-2.0",
+        "release_date": "2026-07",
+        "official_link": "https://huggingface.co/meituan-longcat/LongCat-2.0",
+        "candidate_links": [
+            "https://huggingface.co/meituan-longcat/LongCat-2.0/raw/main/README.md",
+            "https://longcat.chat/blog/longcat-2.0",
+        ],
+        "source_page": "https://huggingface.co/meituan-longcat/LongCat-2.0",
+        "evidence_type": "official_hf_model_page",
+    },
+    {
+        "raw_name": "LongCat-Flash-Lite",
+        "release_date": "2026-01",
+        "official_link": "https://arxiv.org/pdf/2601.21204",
+        "candidate_links": [
+            "https://arxiv.org/abs/2601.21204",
+            "https://huggingface.co/meituan-longcat/LongCat-Flash-Lite",
+        ],
+        "source_page": "https://arxiv.org/abs/2601.21204",
+        "evidence_type": "arxiv_report",
+    },
+]
 ARXIV_QUERY_TEMPLATE = (
     "https://export.arxiv.org/api/query?search_query={query}"
     "&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending"
@@ -93,7 +239,7 @@ VENDOR_REGISTRY: Dict[str, Dict[str, object]] = {
             {"kind": "sitemap", "url": "https://www.anthropic.com/sitemap.xml"},
             {"kind": "assets", "url": "https://assets.anthropic.com/"},
         ],
-        "catalog_patterns": [r"Claude (?:Opus|Sonnet|Haiku) 4"],
+        "catalog_patterns": [r"Claude (?:Opus|Sonnet|Haiku|Fable|Mythos) (?:4|5)"],
     },
     "google": {
         "display_name": "Google",
@@ -194,8 +340,13 @@ VENDOR_REGISTRY: Dict[str, Dict[str, object]] = {
         ],
         "arxiv_queries": [
             {
-                "query": 'ti:"Yuanbao" OR ti:"Hunyuan-TurboS"',
-                "include_patterns": [r"^Yuanbao", r"Hunyuan-TurboS"],
+                "query": 'ti:"Yuanbao" OR ti:"Hunyuan-TurboS" OR ti:"HunyuanImage 3.0" OR ti:"HunyuanVideo 1.5"',
+                "include_patterns": [
+                    r"^Yuanbao",
+                    r"Hunyuan-TurboS",
+                    r"HunyuanImage 3\.0",
+                    r"HunyuanVideo 1\.5",
+                ],
             },
         ],
     },
@@ -939,7 +1090,10 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
             return "model_release", "openai_frontier_release"
         if canonical_name == "o3 / o4-mini":
             return "model_release", "openai_frontier_release"
-    if org_slug == "anthropic" and re.search(r"Claude (?:Opus|Sonnet|Haiku) 4", canonical_name):
+    if org_slug == "anthropic" and re.search(
+        r"Claude (?:Opus|Sonnet|Haiku|Fable|Mythos) (?:4(?:\.\d+)?|5)",
+        canonical_name,
+    ):
         return "model_release", "anthropic_frontier_release"
     if org_slug == "xai" and canonical_name.startswith("Grok 4"):
         return "model_release", "xai_frontier_release"
@@ -977,6 +1131,7 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
     if org_slug == "meituan" and canonical_name.startswith("LongCat"):
         if canonical_name.startswith(
             (
+                "LongCat-2.0",
                 "LongCat-Flash",
                 "LongCat-Next",
                 "LongCat-Image",
@@ -986,7 +1141,19 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
             return "model_release", "longcat_frontier_release"
         return "exclude_method_paper", "longcat_non_frontier_or_component_release"
     if org_slug == "zhipu":
-        if canonical_name in {"GLM-5", "GLM-5V-Turbo", "GLM-4.7", "GLM-4.7-Flash", "GLM-4.5"}:
+        if canonical_name in {
+            "GLM-5.2",
+            "GLM-5.1",
+            "GLM-5-Turbo",
+            "GLM-5",
+            "GLM-5V-Turbo",
+            "GLM-4.7",
+            "GLM-4.7-Flash",
+            "GLM-4.6V",
+            "GLM-4.6",
+            "GLM-4.5V",
+            "GLM-4.5",
+        }:
             return "model_release", "glm_frontier_release"
         if canonical_name.startswith("GLM-"):
             return "exclude_tool_model", "glm_auxiliary_or_product_variant"
@@ -998,7 +1165,10 @@ def classify_release(org_slug: str, canonical_name: str) -> tuple[str, str]:
         return "model_release", "moonshot_frontier_release"
     if org_slug == "stepfun" and canonical_name.startswith("Step-"):
         return "model_release", "stepfun_frontier_release"
-    if org_slug == "tencent" and ("Hunyuan-TurboS" in canonical_name or canonical_name.startswith("Yuanbao")):
+    if org_slug == "tencent" and (
+        "Hunyuan-TurboS" in canonical_name
+        or canonical_name.startswith(("Yuanbao", "Hy3", "HunyuanImage", "HunyuanVideo"))
+    ):
         return "model_release", "tencent_frontier_release"
     if org_slug == "baidu" and canonical_name.startswith("ERNIE "):
         return "model_release", "baidu_frontier_release"
@@ -1078,6 +1248,48 @@ def build_record(
     }
 
 
+def build_explicit_records(
+    org_slug: str,
+    releases: Iterable[Dict[str, Any]],
+    discovered_at: str,
+    alias_config: Dict[str, Dict[str, List[str]]],
+) -> List[Dict[str, Any]]:
+    records: List[Dict[str, Any]] = []
+    for release in releases:
+        official_link = str(release.get("official_link") or "").strip()
+        if not official_link:
+            continue
+        candidate_links = [
+            official_link,
+            *(str(link).strip() for link in release.get("candidate_links", []) if str(link).strip()),
+        ]
+        source_page = str(release.get("source_page") or official_link).strip()
+        evidence_urls = [
+            source_page,
+            *candidate_links,
+            *(str(link).strip() for link in release.get("evidence_urls", []) if str(link).strip()),
+        ]
+        record = build_record(
+            org_slug=org_slug,
+            raw_name=str(release["raw_name"]),
+            release_date=str(release.get("release_date") or "1970-01"),
+            official_link=official_link,
+            candidate_links=candidate_links,
+            source_page=source_page,
+            evidence_urls=evidence_urls,
+            evidence_type=str(
+                release.get("evidence_type")
+                or evidence_type_for_link(official_link, str(release["raw_name"]))
+            ),
+            discovered_at=discovered_at,
+            alias_config=alias_config,
+        )
+        if str(release.get("core_feature") or "").strip():
+            record["core_feature"] = str(release["core_feature"]).strip()
+        records.append(record)
+    return records
+
+
 def parse_longcat_arxiv(feed_text: str) -> List[Dict[str, str]]:
     root = ET.fromstring(feed_text)
     records: List[Dict[str, str]] = []
@@ -1112,7 +1324,11 @@ def parse_hf_models(items: Any, org_slug: str) -> List[Dict[str, str]]:
         if "/" not in model_id:
             continue
         _, raw_name = model_id.split("/", 1)
-        if org_slug == "zhipu" and not re.search(r"GLM-(?:5V-Turbo|5$|4\.7(?:-Flash)?$|4\.5$)", raw_name, flags=re.I):
+        if org_slug == "zhipu" and not re.search(
+            r"GLM-(?:5\.2|5\.1|5-Turbo|5V-Turbo|5$|4\.7(?:-Flash)?$|4\.6V|4\.6$|4\.5V|4\.5$)",
+            raw_name,
+            flags=re.I,
+        ):
             continue
         created_at = parse_iso_month(str(item.get("createdAt") or item.get("lastModified") or ""))
         out.append(
@@ -1858,6 +2074,8 @@ def merge_records(records: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
         existing["evidence_urls"] = list(
             dict.fromkeys([*existing["evidence_urls"], *record["evidence_urls"]])
         )
+        if not str(existing.get("core_feature", "")).strip() and str(record.get("core_feature", "")).strip():
+            existing["core_feature"] = record["core_feature"]
         if record["confidence"] > existing["confidence"]:
             for field in ["official_link", "source_page", "evidence_type", "confidence"]:
                 existing[field] = record[field]
@@ -1884,7 +2102,12 @@ def discover_longcat(
     discovered_at: str,
     alias_config: Dict[str, Dict[str, List[str]]],
 ) -> List[Dict[str, Any]]:
-    records: List[Dict[str, Any]] = []
+    records: List[Dict[str, Any]] = build_explicit_records(
+        "meituan",
+        LONGCAT_EXPLICIT_RELEASES,
+        discovered_at,
+        alias_config,
+    )
     feed_text = safe_get_text(fetcher, LONGCAT_ARXIV_FEED_URL)
     if not feed_text:
         return records
@@ -1911,7 +2134,24 @@ def discover_zhipu(
     discovered_at: str,
     alias_config: Dict[str, Dict[str, List[str]]],
 ) -> List[Dict[str, Any]]:
-    records: List[Dict[str, Any]] = []
+    records: List[Dict[str, Any]] = build_explicit_records(
+        "zhipu",
+        [
+            {
+                **release,
+                "candidate_links": [
+                    release["official_link"],
+                    ZHIPU_RELEASE_NOTES_URL,
+                    *(release.get("candidate_links", []) or []),
+                ],
+                "source_page": ZHIPU_RELEASE_NOTES_URL,
+                "evidence_type": "official_model_page",
+            }
+            for release in ZHIPU_EXPLICIT_RELEASES
+        ],
+        discovered_at,
+        alias_config,
+    )
     for root_url in [ZHIPU_DOCS_ROOT_URL, BIGMODEL_DOCS_ROOT_URL]:
         root_html = safe_get_text(fetcher, root_url)
         if not root_html:
@@ -2497,11 +2737,16 @@ def discover_anthropic(
     discovered_at: str,
     alias_config: Dict[str, Dict[str, List[str]]],
 ) -> List[Dict[str, Any]]:
-    records: List[Dict[str, Any]] = []
+    records: List[Dict[str, Any]] = build_explicit_records(
+        "anthropic",
+        ANTHROPIC_EXPLICIT_RELEASES,
+        discovered_at,
+        alias_config,
+    )
     sitemap_xml = safe_get_text(fetcher, "https://www.anthropic.com/sitemap.xml")
     for entry in parse_sitemap_entries(sitemap_xml, "https://www.anthropic.com/sitemap.xml"):
         page_url = entry["url"]
-        if not re.search(r"/news/claude-(?:opus|sonnet|haiku)-", page_url):
+        if not re.search(r"/news/claude-(?:opus|sonnet|haiku|fable|mythos)-", page_url):
             continue
         page_html = safe_get_text(fetcher, page_url)
         if not page_html:
@@ -2685,7 +2930,10 @@ def discover_tencent(
     discovered_at: str,
     alias_config: Dict[str, Dict[str, List[str]]],
 ) -> List[Dict[str, Any]]:
-    return discover_vendor_arxiv("tencent", fetcher, discovered_at, alias_config)
+    return [
+        *build_explicit_records("tencent", TENCENT_EXPLICIT_RELEASES, discovered_at, alias_config),
+        *discover_vendor_arxiv("tencent", fetcher, discovered_at, alias_config),
+    ]
 
 
 def discover_baichuan(
@@ -2746,6 +2994,7 @@ DISCOVERY_DISPATCH = {
 def discover_all_models(
     *,
     until: str,
+    vendor_slugs: Optional[List[str]] = None,
     fetcher: Optional[Fetcher] = None,
     discovered_at: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
@@ -2753,8 +3002,12 @@ def discover_all_models(
     fetcher = fetcher or RequestsFetcher()
     discovered_at = discovered_at or datetime.now(timezone.utc).isoformat()
     alias_config = load_alias_config()
+    selected_vendors = vendor_slugs or list(VENDOR_REGISTRY)
+    unknown_vendors = [slug for slug in selected_vendors if slug not in VENDOR_REGISTRY]
+    if unknown_vendors:
+        raise ValueError(f"unknown vendor slug(s): {', '.join(unknown_vendors)}")
     records: List[Dict[str, Any]] = []
-    for vendor_slug in VENDOR_REGISTRY:
+    for vendor_slug in selected_vendors:
         discoverer = DISCOVERY_DISPATCH.get(vendor_slug)
         if discoverer is not None:
             records.extend(discoverer(fetcher, discovered_at, alias_config))
@@ -2782,9 +3035,14 @@ def main() -> None:
         action="store_true",
         help="Only write model_release records suitable for download_papers.py",
     )
+    parser.add_argument(
+        "--vendors",
+        help="Comma-separated vendor slugs to recrawl. Defaults to all monitored vendors.",
+    )
     args = parser.parse_args()
 
-    records = discover_all_models(until=args.until)
+    vendor_slugs = [slug.strip() for slug in args.vendors.split(",") if slug.strip()] if args.vendors else None
+    records = discover_all_models(until=args.until, vendor_slugs=vendor_slugs)
     if args.downloadable_only:
         records = downloadable_records(records)
 
