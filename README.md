@@ -3,12 +3,18 @@
 > A curated, structured local archive of frontier LLM / multimodal / medical-vertical model documentation — papers, system cards, model cards, and official blog posts — organized by **year / company**.
 
 <p align="center">
+  <a href="https://joe1chief.github.io/awesome-llm-tech-reports/"><img src="https://img.shields.io/badge/🌐%20Interactive%20Portal-Live%20Demo-6366f1?style=for-the-badge" alt="Interactive Portal"></a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--07-4c1" alt="time range">
   <img src="https://img.shields.io/badge/Models-112-blue" alt="models">
   <img src="https://img.shields.io/badge/Local%20PDF-112-success" alt="local pdf">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
 </p>
+
+> 🚀 **Interactive Web Experience**: Visit our [LMSYS-style Interactive Web Portal](https://joe1chief.github.io/awesome-llm-tech-reports/) for instant multi-category filtering, alternating evolution timeline, Head-to-Head model technical diff arena, full-text search, and one-click BibTeX citations!
 
 ---
 
