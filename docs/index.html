@@ -1,396 +1,399 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Awesome LLM Technical Reports (2025-2026) | LMSYS Style Portal</title>
   <meta name="description" content="A curated, structured archive of frontier LLM, multimodal, reasoning, and vertical technical reports from 2025 to 2026.">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Custom CSS -->
+  <!-- LMSYS Exact Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+<body>
 
-  <!-- Top Navigation Bar -->
-  <header class="sticky top-0 z-40 w-full border-b border-white/10 glass-panel">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-      <!-- Logo & Wordmark -->
-      <a href="./" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-          📑
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold text-base sm:text-lg tracking-tight text-white">LLM Tech Reports</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">LMSYS Hub</span>
-          </div>
-          <p class="text-[11px] text-gray-400 font-mono hidden sm:block">Archive (2025.01 ~ 2026.07)</p>
-        </div>
+  <!-- Navigation Bar (LMSYS exact) -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">
+        <div class="nav-logo-icon">📑</div>
+        <span class="nav-logo-text">LLM Technical Reports</span>
       </a>
 
-      <!-- Right Action Bar -->
-      <div class="flex items-center gap-2.5 sm:gap-4">
-        <!-- Model Arena Compare Button -->
-        <button onclick="window.ArenaCompare && window.ArenaCompare.openCompareModal()" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white shadow-md shadow-indigo-500/20 transition-all flex items-center gap-1.5 cursor-pointer">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-          <span class="hidden md:inline">Arena</span> Compare
-        </button>
+      <ul class="nav-links-group">
+        <li><a onclick="window.App.switchView('timeline')" class="nav-link-item">Timeline</a></li>
+        <li><a onclick="window.App.switchView('table')" class="nav-link-item">Leaderboard</a></li>
+        <li><a onclick="window.App.switchView('grid')" class="nav-link-item">Archive</a></li>
+        <li><a onclick="window.App.switchView('analytics')" class="nav-link-item">Analytics</a></li>
+        <li><a href="#labs" class="nav-link-item">Labs</a></li>
+      </ul>
 
-        <!-- Theme Toggle -->
-        <button onclick="window.App.toggleTheme()" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors cursor-pointer" title="Toggle Dark/Light Mode">
-          <svg id="theme-toggle-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-          </svg>
+      <div class="nav-right-actions">
+        <button onclick="window.ArenaCompare.openCompareModal()" class="nav-arena-btn">
+          ⚔️ Arena Diff
         </button>
-
-        <!-- GitHub Repo Link -->
-        <a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-medium" title="GitHub Repository">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-          <span class="hidden sm:inline">GitHub</span>
+        <button onclick="window.App.toggleTheme()" class="nav-icon-btn" title="Toggle Dark/Light Mode">
+          <svg id="theme-toggle-icon" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path></svg>
+        </button>
+        <a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" title="GitHub Repository">
+          <svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
         </a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero Section & KPI Stats Bar -->
-  <section class="relative pt-10 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-    <div class="text-center max-w-3xl mx-auto mb-8">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4">
-        Awesome <span class="hero-gradient-text">LLM Technical Reports</span>
-      </h1>
-      <p class="text-sm sm:text-base text-gray-300 leading-relaxed font-sans">
-        A curated, structured local archive of frontier LLM, multimodal, and reasoning model documentation — papers, system cards, model cards, and official reports organized by <span class="text-indigo-400 font-semibold">year & company</span>.
+  <main>
+    <!-- Hero Section (LMSYS exact wordmark & typography) -->
+    <div class="hero">
+      <div class="hero-wordmark">
+        <span class="hero-lmsys">AWESOME</span><span class="hero-org">REPORTS</span>
+      </div>
+      <p class="hero-desc">
+        A curated, structured archive of frontier LLM, multimodal, reasoning, and vertical technical reports from leading AI research organizations across the globe.
       </p>
-    </div>
 
-    <!-- 4 KPI Stat Counters (LMSYS Arena style) -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto mb-6">
-      <div class="glass-panel p-4 rounded-xl border text-center">
-        <div id="stat-total-models" class="text-2xl sm:text-3xl font-black text-white font-mono">112+</div>
-        <div class="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">Reports Archived</div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl border text-center">
-        <div id="stat-total-orgs" class="text-2xl sm:text-3xl font-black text-indigo-400 font-mono">23</div>
-        <div class="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">Global AI Labs</div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl border text-center">
-        <div id="stat-date-span" class="text-xl sm:text-2xl font-black text-purple-400 font-mono">19 Months</div>
-        <div class="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">2025.01 - 2026.07</div>
-      </div>
-      <div class="glass-panel p-4 rounded-xl border text-center">
-        <div id="stat-milestones" class="text-2xl sm:text-3xl font-black text-amber-400 font-mono">44★</div>
-        <div class="text-xs font-medium text-gray-400 mt-1 uppercase tracking-wider">Milestone Breakthroughs</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Category Tabs Bar (LMSYS Arena Style) -->
-  <div class="w-full border-b border-white/10 glass-panel sticky top-16 z-30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center overflow-x-auto no-scrollbar" id="category-tabs-container">
-      <!-- Generated via JS -->
-    </div>
-  </div>
-
-  <!-- Search, Filter & View Controls Toolbar -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 w-full">
-    <div class="glass-panel p-4 rounded-xl border flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-      
-      <!-- Search Input -->
-      <div class="relative flex-1">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      <!-- LMSYS 4 KPI Counters -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-value" id="stat-total-models">112+</span>
+          <span class="hero-stat-label">Technical Reports</span>
         </div>
-        <input 
-          id="global-search-input" 
-          type="text" 
-          placeholder="Search models, labs, highlights, e.g. 'DeepSeek-R1', 'MoE', 'Agent', 'Gemini 3'..." 
-          class="w-full pl-9 pr-14 py-2 text-xs sm:text-sm rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all font-sans"
-        >
-        <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
-          <kbd class="px-1.5 py-0.5 text-[10px] font-mono text-gray-400 bg-white/5 border border-white/10 rounded">⌘K</kbd>
+        <div class="hero-stat">
+          <span class="hero-stat-value" id="stat-total-orgs">23</span>
+          <span class="hero-stat-label">AI Organizations</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" id="stat-date-span">19 Mos</span>
+          <span class="hero-stat-label">2025.01 ~ 2026.07</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" id="stat-milestones" style="color: var(--orange);">44★</span>
+          <span class="hero-stat-label">Milestones</span>
         </div>
       </div>
 
-      <!-- Filters & Toggles -->
-      <div class="flex flex-wrap items-center gap-2.5 text-xs">
-        <!-- Camp Filter -->
-        <select id="camp-filter-select" class="px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-indigo-500">
-          <option value="all">All Camps</option>
-          <option value="OpenAI">OpenAI</option>
-          <option value="Anthropic">Anthropic</option>
-          <option value="Google">Google</option>
-          <option value="China-based Labs">China-based Labs</option>
-          <option value="Other Global">Other Global</option>
-        </select>
+      <!-- Featured Milestone Reports (LMSYS latest blog style) -->
+      <section class="hero-latest-blog">
+        <div class="hero-section-header">
+          <h2 class="hero-section-title">Featured Milestone Reports</h2>
+          <a class="see-all-btn" onclick="window.App.scrollToArchive()">Browse all 112 reports ↓</a>
+        </div>
 
-        <!-- Year Filter -->
-        <select id="year-filter-select" class="px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-indigo-500">
-          <option value="all">All Years</option>
-          <option value="2026">2026</option>
-          <option value="2025">2025</option>
-        </select>
+        <div class="hero-blog-cards">
+          <!-- Card 1: DeepSeek-R1 -->
+          <div class="hero-blog-card" onclick="window.App.openDrawer('2025-01_deepseek_r1')">
+            <div class="hero-blog-card-body">
+              <span class="hero-blog-card-tag hero-blog-card-tag--reasoning">Reasoning · MoE</span>
+              <h3 class="hero-blog-card-title">DeepSeek-R1: Incentivizing Reasoning in LLMs via Reinforcement Learning</h3>
+              <p class="hero-blog-card-excerpt">
+                Demonstrates remarkable reasoning capabilities via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step.
+              </p>
+              <div class="hero-blog-card-meta">
+                <span>DeepSeek</span>
+                <span>2025-01 · ★ Milestone</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Sort Select -->
-        <select id="sort-select" class="px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-gray-200 focus:outline-none focus:border-indigo-500">
-          <option value="date_desc">Newest First</option>
-          <option value="date_asc">Oldest First</option>
-          <option value="model">Model Name</option>
-          <option value="org">Organization</option>
-        </select>
+          <!-- Card 2: Claude Sonnet 5 -->
+          <div class="hero-blog-card" onclick="window.App.openDrawer('2026-06_claude_sonnet_5')">
+            <div class="hero-blog-card-body">
+              <span class="hero-blog-card-tag hero-blog-card-tag--agent">Coding · Agentic</span>
+              <h3 class="hero-blog-card-title">Claude Sonnet 5 System Card & Technical Evaluation</h3>
+              <p class="hero-blog-card-excerpt">
+                Clear gains over Claude Sonnet 4.6 in coding, agentic search, multimodal reasoning, and professional-task performance across industry benchmarks.
+              </p>
+              <div class="hero-blog-card-meta">
+                <span>Anthropic</span>
+                <span>2026-06 · ★ Milestone</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Milestones Only Checkbox -->
-        <label class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-black/40 border border-white/10 text-amber-400 cursor-pointer select-none">
-          <input id="milestone-filter-checkbox" type="checkbox" class="rounded border-white/20 text-amber-500 focus:ring-0">
-          <span class="font-medium">★ Milestones</span>
-        </label>
-      </div>
-
-      <!-- 4-Way View Switcher -->
-      <div class="flex items-center bg-black/50 p-1 rounded-lg border border-white/10 self-start md:self-auto">
-        <button id="view-btn-table" onclick="window.App.switchView('table')" class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1 bg-indigo-600 text-white cursor-pointer" title="Leaderboard Table View">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-          <span class="hidden sm:inline">Table</span>
-        </button>
-        <button id="view-btn-timeline" onclick="window.App.switchView('timeline')" class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1 text-gray-400 hover:text-gray-200 cursor-pointer" title="LMSYS Alternating Timeline View">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span class="hidden sm:inline">Timeline</span>
-        </button>
-        <button id="view-btn-grid" onclick="window.App.switchView('grid')" class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1 text-gray-400 hover:text-gray-200 cursor-pointer" title="Grid Cards View">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
-          <span class="hidden sm:inline">Grid</span>
-        </button>
-        <button id="view-btn-analytics" onclick="window.App.switchView('analytics')" class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all flex items-center gap-1 text-gray-400 hover:text-gray-200 cursor-pointer" title="Analytics & Trends View">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          <span class="hidden sm:inline">Analytics</span>
-        </button>
-      </div>
-
+          <!-- Card 3: GPT-5.4 Thinking -->
+          <div class="hero-blog-card" onclick="window.App.openDrawer('2026-03_gpt_5_4_thinking')">
+            <div class="hero-blog-card-body">
+              <span class="hero-blog-card-tag hero-blog-card-tag--multimodal">Frontier Reasoning</span>
+              <h3 class="hero-blog-card-title">GPT-5.4 Thinking: Frontier Reasoning & Agentic Safety</h3>
+              <p class="hero-blog-card-excerpt">
+                Unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations.
+              </p>
+              <div class="hero-blog-card-meta">
+                <span>OpenAI</span>
+                <span>2026-03 · ★ Milestone</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Active Filter Counter Summary -->
-    <div class="flex items-center justify-between text-xs text-gray-400 mt-3 px-1">
-      <span id="filtered-results-count">Loading reports...</span>
-      <span class="text-gray-500">Click any row/card to view full spec & BibTeX citation</span>
-    </div>
-  </section>
-
-  <!-- Main View Containers -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 flex-1 w-full">
-
-    <!-- View 1: Arena Leaderboard Table -->
-    <div id="view-container-table" class="glass-panel rounded-xl border overflow-hidden shadow-2xl">
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="border-b border-white/10 bg-black/40 text-[11px] font-bold uppercase tracking-wider text-gray-400">
-              <th class="px-4 py-3.5 text-center w-12 font-mono">#</th>
-              <th class="px-4 py-3.5">Model</th>
-              <th class="px-4 py-3.5">Organization</th>
-              <th class="px-4 py-3.5">Release</th>
-              <th class="px-4 py-3.5">Key Technical Highlights</th>
-              <th class="px-4 py-3.5">Modalities</th>
-              <th class="px-4 py-3.5 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="arena-table-body" class="divide-y divide-white/5 font-sans">
-            <!-- Rendered by JS -->
-          </tbody>
-        </table>
+    <!-- Main Content & Interactive Archive Section -->
+    <section class="main-content-section" id="archive-section">
+      <div class="hero-section-header" style="margin-bottom: 16px;">
+        <h2 class="hero-section-title">Technical Reports Archive & Leaderboard</h2>
+        <span id="filtered-results-count" style="font-size: 13px; color: var(--ink-lighter); font-family: var(--font-mono);">Loading...</span>
       </div>
-    </div>
 
-    <!-- View 2: LMSYS Alternating Timeline -->
-    <div id="view-container-timeline" class="hidden">
-      <div class="lmsys-timeline" id="timeline-flow-container">
+      <!-- Category Filter Pills Bar (LMSYS tabs) -->
+      <div class="filter-category-bar" id="category-tabs-container">
         <!-- Rendered by JS -->
       </div>
-    </div>
 
-    <!-- View 3: Grid Cards -->
-    <div id="view-container-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div id="grid-cards-container" class="contents">
-        <!-- Rendered by JS -->
+      <!-- Toolbar Row: Search, Camp, Year, Milestone, View Switcher -->
+      <div class="toolbar-row">
+        <div class="search-input-wrapper">
+          <input 
+            id="global-search-input" 
+            type="text" 
+            class="search-input" 
+            placeholder="Search models, labs, highlights (e.g. 'DeepSeek', 'MoE', 'GLM-5')..."
+          >
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <!-- Camp Filter -->
+          <select id="camp-filter-select" style="padding: 8px 14px; border-radius: 100px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13px; outline: none; font-family: var(--font-inter);">
+            <option value="all">All Camps</option>
+            <option value="OpenAI">OpenAI</option>
+            <option value="Anthropic">Anthropic</option>
+            <option value="Google">Google</option>
+            <option value="China-based Labs">China-based Labs</option>
+            <option value="Other Global">Other Global</option>
+          </select>
+
+          <!-- Year Filter -->
+          <select id="year-filter-select" style="padding: 8px 14px; border-radius: 100px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13px; outline: none; font-family: var(--font-inter);">
+            <option value="all">All Years</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+          </select>
+
+          <!-- Milestone Toggle -->
+          <label style="display: flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 100px; border: 1px solid var(--border); font-size: 13px; color: var(--orange); cursor: pointer; user-select: none;">
+            <input id="milestone-filter-checkbox" type="checkbox" style="accent-color: var(--orange);">
+            <span style="font-weight: 600;">★ Milestones</span>
+          </label>
+
+          <!-- View Switcher -->
+          <div class="view-switcher-group">
+            <button id="view-btn-timeline" onclick="window.App.switchView('timeline')" class="view-btn active">
+              ⏳ Timeline
+            </button>
+            <button id="view-btn-table" onclick="window.App.switchView('table')" class="view-btn">
+              📊 Table
+            </button>
+            <button id="view-btn-grid" onclick="window.App.switchView('grid')" class="view-btn">
+              🗂️ Grid
+            </button>
+            <button id="view-btn-analytics" onclick="window.App.switchView('analytics')" class="view-btn">
+              📈 Analytics
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- View 4: Analytics Matrix & Charts -->
-    <div id="view-container-analytics" class="hidden space-y-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Monthly Release Trends Chart -->
-        <div class="glass-panel p-5 rounded-xl border">
-          <h3 class="text-base font-bold text-white mb-1">Monthly Release Cadence</h3>
-          <p class="text-xs text-gray-400 mb-4">Volume of frontier technical reports published over time (2025-01 ~ 2026-07)</p>
-          <div class="h-64">
-            <canvas id="chart-monthly-trends"></canvas>
+      <!-- View 1: LMSYS Signature Alternating Timeline -->
+      <div id="view-container-timeline">
+        <div class="timeline" id="timeline-flow-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- View 2: Leaderboard Table View -->
+      <div id="view-container-table" style="display: none;">
+        <div class="lmsys-table-container">
+          <table class="lmsys-table">
+            <thead>
+              <tr>
+                <th class="table-rank">#</th>
+                <th>Model</th>
+                <th>Organization</th>
+                <th>Release</th>
+                <th>Highlights</th>
+                <th>Modalities</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="arena-table-body">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- View 3: Grid Cards View -->
+      <div id="view-container-grid" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;" id="grid-cards-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- View 4: Analytics Matrix & Trends View -->
+      <div id="view-container-analytics" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px; margin-bottom: 24px;">
+          <div style="padding: 24px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg);">
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Monthly Release Cadence</h3>
+            <p style="font-size: 13px; color: var(--ink-dim); margin-bottom: 16px;">Volume of technical reports published from Jan 2025 to Jul 2026</p>
+            <div style="height: 240px;"><canvas id="chart-monthly-trends"></canvas></div>
+          </div>
+
+          <div style="padding: 24px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg);">
+            <h3 style="font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">AI Organization Share</h3>
+            <p style="font-size: 13px; color: var(--ink-dim); margin-bottom: 16px;">Distribution of reports across leading research labs</p>
+            <div style="height: 240px; display: flex; align-items: center; justify-content: center;"><canvas id="chart-org-share"></canvas></div>
           </div>
         </div>
 
-        <!-- Organization Market Share Chart -->
-        <div class="glass-panel p-5 rounded-xl border">
-          <h3 class="text-base font-bold text-white mb-1">AI Lab Share of Reports</h3>
-          <p class="text-xs text-gray-400 mb-4">Distribution across global AI frontier research organizations</p>
-          <div class="h-64 flex items-center justify-center">
-            <canvas id="chart-org-share"></canvas>
+        <div style="padding: 24px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg); margin-bottom: 24px;">
+          <h3 style="font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Capability & Modality Breakdown</h3>
+          <p style="font-size: 13px; color: var(--ink-dim); margin-bottom: 16px;">Distribution across reasoning, agentic coding, multimodal vision, video, and medical domains</p>
+          <div style="height: 260px;"><canvas id="chart-tag-breakdown"></canvas></div>
+        </div>
+
+        <div style="padding: 24px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg);">
+          <h3 style="font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Ecosystem Roadmap Diagram</h3>
+          <p style="font-size: 13px; color: var(--ink-dim); margin-bottom: 16px;">Full resolution release timeline vector map</p>
+          <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; padding: 12px; background: var(--card-hover-bg);">
+            <img src="assets/diagrams/release-timeline.svg" alt="Release Timeline Roadmap" style="width: 100%; min-width: 700px; display: block;">
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Modality Distribution Chart -->
-      <div class="glass-panel p-5 rounded-xl border">
-        <h3 class="text-base font-bold text-white mb-1">Capability & Modality Breakdown</h3>
-        <p class="text-xs text-gray-400 mb-4">Focus areas across reasoning, coding agents, multimodal vision, video, and medical verticals</p>
-        <div class="h-64">
-          <canvas id="chart-tag-breakdown"></canvas>
-        </div>
-      </div>
-
-      <!-- Static SVG Timeline Diagrams Embed -->
-      <div class="glass-panel p-5 rounded-xl border">
-        <h3 class="text-base font-bold text-white mb-1">High-Resolution Ecosystem Diagrams</h3>
-        <p class="text-xs text-gray-400 mb-4">Original curated roadmap vector diagrams from repository</p>
-        <div class="grid grid-cols-1 gap-6 pt-2">
-          <div class="border border-white/10 rounded-lg p-2 bg-black/30 overflow-x-auto">
-            <img src="assets/diagrams/release-timeline.svg" alt="Release Timeline Vector Map" class="w-full min-w-[700px] h-auto rounded">
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <!-- Labs & Organizations Tracked (LMSYS sponsors exact style) -->
+    <section class="home-sponsors" id="labs">
+      <h2 class="hero-section-title">Labs & Organizations Tracked</h2>
+      <p class="hero-sponsors-subtitle">Curating primary technical documentation from the world's leading AI research institutions.</p>
+      <p class="sponsors-text">
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('OpenAI')">OpenAI</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Anthropic')">Anthropic</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Google')">Google DeepMind</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('DeepSeek')">DeepSeek</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Alibaba')">Alibaba (Qwen)</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Zhipu AI')">Zhipu AI</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Moonshot AI')">Moonshot AI (Kimi)</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Tencent')">Tencent Hunyuan</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('ByteDance')">ByteDance</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('MiniMax')">MiniMax</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Meituan')">Meituan (LongCat)</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Meta')">Meta AI</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('NVIDIA')">NVIDIA</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Microsoft')">Microsoft</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('StepFun')">StepFun</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('InternLM')">InternLM</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('OpenBMB')">OpenBMB</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('InclusionAI (Ant Group)')">InclusionAI (Ant Group)</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Allen AI')">Allen AI</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Hugging Face')">Hugging Face</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('Snowflake')">Snowflake</a>, 
+        <a href="javascript:void(0)" onclick="window.App.filterByOrg('xAI')">xAI</a>.
+      </p>
+    </section>
   </main>
 
-  <!-- LMSYS Head-to-Head Compare Modal (Arena Model Diff) -->
-  <div id="arena-compare-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 lg:p-8 drawer-backdrop">
-    <div class="glass-panel w-full max-w-5xl max-h-[90vh] rounded-2xl border flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/40">
-        <div class="flex items-center gap-2.5">
-          <span class="text-xl">⚔️</span>
+  <!-- LMSYS Head-to-Head Compare Modal (Arena Diff) -->
+  <div id="arena-compare-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">⚔️</span>
           <div>
-            <h3 class="text-base sm:text-lg font-bold text-white">Model Arena Technical Diff</h3>
-            <p class="text-xs text-gray-400 font-sans">Side-by-side technical report specification comparison</p>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--ink);">Model Arena Technical Diff</h3>
+            <p style="font-size: 12px; color: var(--ink-dim);">Side-by-side technical report specification comparison</p>
           </div>
         </div>
-        <button onclick="window.ArenaCompare.closeCompareModal()" class="p-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-gray-400 hover:text-white transition-colors cursor-pointer">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
+        <button onclick="window.ArenaCompare.closeCompareModal()" style="background: none; border: none; font-size: 20px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
       </div>
 
-      <!-- Quick Presets -->
-      <div class="px-6 py-3 border-b border-white/5 bg-black/20 flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider flex-shrink-0">Presets:</span>
-        <div id="compare-presets" class="flex items-center gap-2"></div>
+      <div style="padding: 12px 24px; border-bottom: 1px solid var(--border); background: var(--card-hover-bg); display: flex; align-items: center; gap: 8px; overflow-x: auto;">
+        <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; flex-shrink: 0;">Presets:</span>
+        <div id="compare-presets" style="display: flex; align-items: center; gap: 8px;"></div>
       </div>
 
-      <!-- Dropdown Selectors -->
-      <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-white/5 bg-black/10">
+      <div style="padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-bottom: 1px solid var(--border);">
         <div>
-          <label class="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1.5">Model A</label>
-          <select id="compare-select-a" class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg bg-black/50 border border-white/15 text-white focus:border-indigo-500 focus:outline-none"></select>
+          <label style="display: block; font-size: 12px; font-weight: 600; color: var(--orange); text-transform: uppercase; margin-bottom: 6px;">Model A</label>
+          <select id="compare-select-a" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13px;"></select>
         </div>
         <div>
-          <label class="block text-xs font-semibold text-purple-400 uppercase tracking-wider mb-1.5">Model B</label>
-          <select id="compare-select-b" class="w-full px-3 py-2 text-xs sm:text-sm rounded-lg bg-black/50 border border-white/15 text-white focus:border-purple-500 focus:outline-none"></select>
+          <label style="display: block; font-size: 12px; font-weight: 600; color: #6366f1; text-transform: uppercase; margin-bottom: 6px;">Model B</label>
+          <select id="compare-select-b" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13px;"></select>
         </div>
       </div>
 
-      <!-- Comparison Matrix Content -->
-      <div id="compare-content-matrix" class="p-6 overflow-y-auto flex-1">
+      <div class="modal-body" id="compare-content-matrix">
         <!-- Rendered by JS -->
       </div>
     </div>
   </div>
 
-  <!-- Model Spec Sheet Drawer (Right Slide-over) -->
-  <div id="model-spec-drawer" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 drawer-backdrop" onclick="window.App.closeDrawer()"></div>
-    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
-      <div class="w-screen max-w-md sm:max-w-lg drawer-panel flex flex-col shadow-2xl">
-        
-        <!-- Drawer Header -->
-        <div class="p-6 border-b border-white/10 flex items-start justify-between bg-black/30">
-          <div>
-            <div class="flex items-center gap-2 mb-2">
-              <span id="drawer-org" class="px-2.5 py-1 text-xs font-semibold rounded-md badge-default">Org</span>
-              <span id="drawer-date" class="text-xs text-gray-400 font-mono">Date</span>
-            </div>
-            <h3 id="drawer-title" class="text-xl font-bold text-white">Model Name</h3>
+  <!-- Model Detail Spec Drawer (LMSYS Card Spec) -->
+  <div id="model-spec-drawer" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 650px;">
+      <div class="modal-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span id="drawer-org" class="tl-badge">Org</span>
+            <span id="drawer-date" style="font-size: 12px; color: var(--ink-lighter); font-family: var(--font-mono);">Date</span>
           </div>
-          <button onclick="window.App.closeDrawer()" class="p-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-gray-400 hover:text-white transition-colors cursor-pointer">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </button>
+          <h3 id="drawer-title" style="font-size: 20px; font-weight: 700; color: var(--ink);">Model Name</h3>
+        </div>
+        <button onclick="window.App.closeDrawer()" style="background: none; border: none; font-size: 20px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Capabilities & Modalities</h4>
+          <div id="drawer-tags" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
         </div>
 
-        <!-- Drawer Body -->
-        <div class="p-6 space-y-6 overflow-y-auto flex-1 font-sans">
-          
-          <!-- Capabilities & Modalities -->
-          <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Capabilities & Modalities</h4>
-            <div id="drawer-tags" class="flex flex-wrap gap-1.5"></div>
-          </div>
-
-          <!-- Technical Highlights Excerpt -->
-          <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Technical Report Excerpt</h4>
-            <div id="drawer-highlights" class="text-sm text-gray-200 leading-relaxed bg-black/40 p-4 rounded-xl border border-white/10 font-sans"></div>
-          </div>
-
-          <!-- Actions -->
-          <div class="pt-2 flex flex-col sm:flex-row gap-3">
-            <a id="drawer-official-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-center transition-colors flex items-center justify-center gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              Open Official Paper
-            </a>
-            <a id="drawer-pdf-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 text-xs font-semibold rounded-lg bg-white/10 hover:bg-white/20 text-red-300 text-center transition-colors flex items-center justify-center gap-2">
-              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
-              Download Local PDF
-            </a>
-          </div>
-
-          <!-- Academic BibTeX Citation -->
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">BibTeX Academic Citation</h4>
-              <button onclick="window.App.copyCitation()" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold cursor-pointer">Copy</button>
-            </div>
-            <pre id="drawer-bibtex" class="p-3 rounded-lg bg-black/60 border border-white/10 text-xs font-mono text-gray-300 overflow-x-auto"></pre>
-          </div>
-
+        <div>
+          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Technical Highlights</h4>
+          <p id="drawer-highlights" style="font-size: 14px; color: var(--ink-dim); line-height: 1.65; background: var(--card-hover-bg); padding: 16px; border-radius: 10px; border: 1px solid var(--border);"></p>
         </div>
 
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a id="drawer-official-link" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; padding: 10px 16px; border-radius: 8px; background: var(--orange); color: #fff; font-size: 13px; font-weight: 600; text-align: center; text-decoration: none;">
+            Official Paper &rarr;
+          </a>
+          <a id="drawer-pdf-link" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; padding: 10px 16px; border-radius: 8px; background: var(--card-hover-bg); border: 1px solid var(--border); color: var(--ink); font-size: 13px; font-weight: 600; text-align: center; text-decoration: none;">
+            View Local PDF 📥
+          </a>
+        </div>
+
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+            <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter);">BibTeX Academic Citation</h4>
+            <button onclick="window.App.copyCitation()" style="background: none; border: none; color: var(--orange); font-size: 12px; font-weight: 600; cursor: pointer;">Copy BibTeX</button>
+          </div>
+          <pre id="drawer-bibtex" style="padding: 14px; border-radius: 8px; background: var(--card-hover-bg); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); overflow-x: auto; line-height: 1.5;"></pre>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Floating Toast Notifications -->
-  <div id="toast-container" class="toast-container"></div>
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 glass-panel py-8 px-4 sm:px-6 lg:px-8 mt-auto">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-sans">
-      <div class="flex items-center gap-2">
-        <span>Curated with ❤️ by <a href="https://github.com/joe1chief" target="_blank" class="text-indigo-400 hover:underline">joe1chief</a></span>
-        <span>•</span>
-        <span>Hosted on GitHub Pages</span>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" class="hover:text-white transition-colors">GitHub Repository</a>
-        <a href="https://www.lmsys.org" target="_blank" class="hover:text-white transition-colors">Inspired by LMSYS</a>
-        <a href="#top" class="hover:text-white transition-colors">Back to top ↑</a>
-      </div>
+  <!-- Footer (LMSYS exact) -->
+  <footer>
+    <div>
+      Curated with ❤️ by <a href="https://github.com/joe1chief" target="_blank" style="color: var(--orange); text-decoration: none; font-weight: 600;">joe1chief</a> • Hosted on GitHub Pages
     </div>
+    <ul class="foot-links">
+      <li><a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank">GitHub Repository</a></li>
+      <li><a href="https://www.lmsys.org" target="_blank">Inspired by LMSYS</a></li>
+      <li><a href="#top">Back to top ↑</a></li>
+    </ul>
   </footer>
 
   <!-- Scripts -->

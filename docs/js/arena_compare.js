@@ -1,6 +1,5 @@
 /**
  * LMSYS Head-to-Head Model Comparison Module (Arena Diff)
- * Enables side-by-side technical report and specification comparison.
  */
 
 window.ArenaCompare = (function() {
@@ -28,7 +27,6 @@ window.ArenaCompare = (function() {
 
     if (!selectA || !selectB) return;
 
-    // Populate dropdowns
     selectA.innerHTML = '<option value="">-- Select Model A --</option>';
     selectB.innerHTML = '<option value="">-- Select Model B --</option>';
 
@@ -44,12 +42,11 @@ window.ArenaCompare = (function() {
       selectB.appendChild(optB);
     });
 
-    // Populate presets
     if (presetsContainer) {
       presetsContainer.innerHTML = "";
       PRESETS.forEach(p => {
         const btn = document.createElement("button");
-        btn.className = "px-3 py-1 text-xs rounded-full bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 transition-all cursor-pointer";
+        btn.style.cssText = "padding: 4px 12px; font-size: 12px; border-radius: 100px; background: rgba(234, 106, 16, 0.08); color: var(--orange); border: 1px solid rgba(234, 106, 16, 0.25); cursor: pointer; white-space: nowrap; font-weight: 500;";
         btn.textContent = p.name;
         btn.onclick = () => loadPreset(p.a, p.b);
         presetsContainer.appendChild(btn);
@@ -80,8 +77,7 @@ window.ArenaCompare = (function() {
     const modal = document.getElementById("arena-compare-modal");
     if (!modal) return;
 
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+    modal.style.display = "flex";
 
     const selectA = document.getElementById("compare-select-a");
     const selectB = document.getElementById("compare-select-b");
@@ -107,10 +103,7 @@ window.ArenaCompare = (function() {
 
   function closeCompareModal() {
     const modal = document.getElementById("arena-compare-modal");
-    if (modal) {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    }
+    if (modal) modal.style.display = "none";
   }
 
   function renderComparison() {
@@ -119,57 +112,48 @@ window.ArenaCompare = (function() {
 
     if (!modelA || !modelB) {
       container.innerHTML = `
-        <div class="text-center py-16 text-gray-400">
-          <svg class="w-12 h-12 mx-auto mb-3 opacity-40 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-          <p class="text-base font-medium">Select both Model A and Model B above to compare their technical reports.</p>
+        <div style="text-align: center; padding: 48px 0; color: var(--ink-lighter);">
+          <p style="font-size: 15px; font-weight: 500;">Select both Model A and Model B above to compare their technical specifications.</p>
         </div>
       `;
       return;
     }
 
-    const getOrgBadge = (org) => {
-      const cls = window.App ? window.App.getOrgBadgeClass(org) : "badge-default";
-      return `<span class="px-2.5 py-1 text-xs font-semibold rounded-md ${cls}">${org}</span>`;
-    };
-
-    const renderCard = (m, label) => `
-      <div class="glass-panel p-5 rounded-xl border flex-1 space-y-4">
-        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">${label}</span>
-          ${m.is_milestone ? '<span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">★ Milestone</span>' : ''}
+    const renderCard = (m, label, accentColor) => `
+      <div style="padding: 24px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg); display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+          <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: ${accentColor};">${label}</span>
+          ${m.is_milestone ? '<span class="tl-badge">★ Milestone</span>' : ''}
         </div>
         
         <div>
-          <div class="flex items-center gap-2 mb-1.5">
-            ${getOrgBadge(m.org)}
-            <span class="text-xs text-gray-400 font-mono">${m.date}</span>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span class="tl-badge" style="background: rgba(8,12,38,0.06); color: var(--ink);">${m.org}</span>
+            <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-lighter);">${m.date}</span>
           </div>
-          <h4 class="text-xl font-bold text-white">${m.model}</h4>
+          <h4 style="font-size: 20px; font-weight: 700; color: var(--ink);">${m.model}</h4>
         </div>
 
         <div>
-          <h5 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Capabilities & Modalities</h5>
-          <div class="flex flex-wrap gap-1.5">
-            ${m.tags.map(t => `<span class="px-2 py-0.5 text-xs rounded bg-white/5 text-gray-300 border border-white/10">${t}</span>`).join('')}
+          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Capabilities</h5>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            ${m.tags.map(t => `<span class="table-tag">${t}</span>`).join('')}
           </div>
         </div>
 
         <div>
-          <h5 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">Key Technical Highlights</h5>
-          <p class="text-sm text-gray-300 leading-relaxed bg-black/30 p-3 rounded-lg border border-white/5 font-sans">${m.highlights}</p>
+          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Key Highlights</h5>
+          <p style="font-size: 13.5px; color: var(--ink-dim); line-height: 1.6; background: var(--card-hover-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border);">${m.highlights}</p>
         </div>
 
-        <div class="pt-2 flex flex-wrap gap-2">
-          <a href="${m.link}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-colors inline-flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-            Official Paper
+        <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 10px;">
+          <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: var(--orange); color: #fff; text-decoration: none;">
+            Official Paper &rarr;
           </a>
-          <a href="${window.App ? window.App.getPdfUrl(m.file) : m.file}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/10 hover:bg-white/20 text-gray-200 transition-colors inline-flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
-            View Local PDF
+          <a href="${window.App ? window.App.getPdfUrl(m.file) : m.file}" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: var(--card-hover-bg); border: 1px solid var(--border); color: var(--ink); text-decoration: none;">
+            View PDF
           </a>
-          <button onclick="window.App && window.App.copyCitation('${m.id}')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/5 hover:bg-white/15 text-gray-300 transition-colors inline-flex items-center gap-1.5 cursor-pointer">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          <button onclick="window.App && window.App.copyCitation('${m.id}')" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: none; border: 1px solid var(--border); color: var(--ink-dim); cursor: pointer;">
             Cite
           </button>
         </div>
@@ -177,9 +161,9 @@ window.ArenaCompare = (function() {
     `;
 
     container.innerHTML = `
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        ${renderCard(modelA, "Model A")}
-        ${renderCard(modelB, "Model B")}
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        ${renderCard(modelA, "Model A", "var(--orange)")}
+        ${renderCard(modelB, "Model B", "#6366f1")}
       </div>
     `;
   }
