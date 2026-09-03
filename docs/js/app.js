@@ -1,56 +1,49 @@
 /**
- * Awesome LLM Technical Reports - LMSYS Org & Arena Controller
+ * Awesome LLM Technical Reports - LMSYS Exact Architecture & Controller
  */
 
 window.App = (function() {
   let dataset = { metadata: {}, stats: {}, models: [] };
   let state = {
-    category: "all",
-    searchQuery: "",
-    camp: "all",
-    year: "all",
-    onlyMilestones: false,
-    view: "timeline", // timeline | table | grid | analytics
-    currentModel: null,
-    isDark: false
+    archiveCategory: "all",
+    archiveQuery: "",
+    currentModel: null
   };
 
-  let charts = {};
-
-  const ORG_EMOJIS = {
-    "OpenAI": "🟢",
-    "Anthropic": "🟠",
-    "Google": "🔵",
-    "DeepSeek": "🐳",
-    "Alibaba": "🟠",
-    "Zhipu AI": "🟣",
-    "Meituan": "🟡",
-    "Tencent": "🐧",
-    "ByteDance": "🔴",
-    "MiniMax": "🚀",
-    "Moonshot AI": "🌙",
-    "Meta": "🔷",
-    "NVIDIA": "🟢",
-    "Microsoft": "🟦",
-    "xAI": "⚫",
-    "StepFun": "⚡",
-    "InternLM": "📘",
-    "OpenBMB": "🐝",
-    "InclusionAI (Ant Group)": "🐜",
-    "Allen AI": "🔬",
-    "Hugging Face": "🤗",
-    "Snowflake": "❄️",
-    "Quark (Alibaba)": "🔍"
+  const LAB_ICONS = {
+    "DeepSeek": { bg: "#0284c7", text: "DS" },
+    "OpenAI": { bg: "#10b981", text: "OA" },
+    "Anthropic": { bg: "#ea580c", text: "AN" },
+    "Google": { bg: "#2563eb", text: "GO" },
+    "Alibaba": { bg: "#ea580c", text: "QW" },
+    "Zhipu AI": { bg: "#9333ea", text: "GLM" },
+    "Meituan": { bg: "#ca8a04", text: "LC" },
+    "Tencent": { bg: "#1d4ed8", text: "HY" },
+    "ByteDance": { bg: "#dc2626", text: "BD" },
+    "MiniMax": { bg: "#db2777", text: "MM" },
+    "Moonshot AI": { bg: "#4f46e5", text: "KM" },
+    "Meta": { bg: "#2563eb", text: "LL" },
+    "NVIDIA": { bg: "#65a30d", text: "NV" },
+    "Microsoft": { bg: "#0284c7", text: "MS" },
+    "StepFun": { bg: "#d97706", text: "ST" },
+    "InternLM": { bg: "#0d9488", text: "IN" },
+    "OpenBMB": { bg: "#f59e0b", text: "BMB" },
+    "InclusionAI (Ant Group)": { bg: "#0284c7", text: "ANT" },
+    "Allen AI": { bg: "#475569", text: "AI2" },
+    "Hugging Face": { bg: "#d97706", text: "HF" },
+    "Snowflake": { bg: "#0284c7", text: "SF" },
+    "xAI": { bg: "#0f172a", text: "xAI" },
+    "Quark (Alibaba)": { bg: "#ea580c", text: "QK" }
   };
 
   async function init() {
-    setupTheme();
     setupEventListeners();
     await loadData();
-    parseUrlParams();
-    renderHeroStats();
-    renderCategoryTabs();
-    applyFiltersAndRender();
+    renderTimeline();
+    renderCatalog();
+    renderArchiveFilterTabs();
+    renderArchiveList();
+    renderLeaderboard();
     if (window.ArenaCompare) {
       window.ArenaCompare.init(dataset.models);
     }
@@ -63,210 +56,191 @@ window.App = (function() {
       dataset = await res.json();
     } catch (err) {
       console.error("Error loading models:", err);
-      showToast("Error loading dataset. Please check console.", "error");
-    }
-  }
-
-  function setupTheme() {
-    const savedTheme = localStorage.getItem("lmsys_theme");
-    state.isDark = savedTheme === "dark";
-    updateThemeClass();
-  }
-
-  function toggleTheme() {
-    state.isDark = !state.isDark;
-    localStorage.setItem("lmsys_theme", state.isDark ? "dark" : "light");
-    updateThemeClass();
-    if (state.view === "analytics") {
-      renderAnalytics(getFilteredModels());
-    }
-  }
-
-  function updateThemeClass() {
-    if (state.isDark) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      const icon = document.getElementById("theme-toggle-icon");
-      if (icon) icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>';
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-      const icon = document.getElementById("theme-toggle-icon");
-      if (icon) icon.innerHTML = '<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>';
     }
   }
 
   function setupEventListeners() {
-    const searchInput = document.getElementById("global-search-input");
+    const searchInput = document.getElementById("archive-search-input");
     if (searchInput) {
       let timeout = null;
       searchInput.addEventListener("input", (e) => {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-          state.searchQuery = e.target.value.trim().toLowerCase();
-          applyFiltersAndRender();
+          state.archiveQuery = e.target.value.trim().toLowerCase();
+          renderArchiveList();
         }, 150);
       });
     }
 
-    // Keyboard shortcut (Cmd/Ctrl + K or /)
     window.addEventListener("keydown", (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k" || (e.key === "/" && document.activeElement !== searchInput)) {
-        e.preventDefault();
-        searchInput?.focus();
-      }
       if (e.key === "Escape") {
         closeDrawer();
         if (window.ArenaCompare) window.ArenaCompare.closeCompareModal();
       }
     });
-
-    // Camp filter dropdown
-    const campSelect = document.getElementById("camp-filter-select");
-    if (campSelect) {
-      campSelect.addEventListener("change", (e) => {
-        state.camp = e.target.value;
-        applyFiltersAndRender();
-      });
-    }
-
-    // Year filter dropdown
-    const yearSelect = document.getElementById("year-filter-select");
-    if (yearSelect) {
-      yearSelect.addEventListener("change", (e) => {
-        state.year = e.target.value;
-        applyFiltersAndRender();
-      });
-    }
-
-    // Milestone toggle
-    const milestoneCheckbox = document.getElementById("milestone-filter-checkbox");
-    if (milestoneCheckbox) {
-      milestoneCheckbox.addEventListener("change", (e) => {
-        state.onlyMilestones = e.target.checked;
-        applyFiltersAndRender();
-      });
-    }
   }
 
-  function parseUrlParams() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has("view")) state.view = params.get("view");
-    if (params.has("category")) state.category = params.get("category");
-    if (params.has("search")) {
-      state.searchQuery = params.get("search").toLowerCase();
-      const input = document.getElementById("global-search-input");
-      if (input) input.value = state.searchQuery;
-    }
-    if (params.has("camp")) {
-      state.camp = params.get("camp");
-      const campSelect = document.getElementById("camp-filter-select");
-      if (campSelect) campSelect.value = state.camp;
-    }
-    updateViewButtons();
+  function searchLab(labName) {
+    state.archiveQuery = labName.toLowerCase();
+    const searchInput = document.getElementById("archive-search-input");
+    if (searchInput) searchInput.value = labName;
+    renderArchiveList();
   }
 
-  function updateUrlParams() {
-    const params = new URLSearchParams();
-    if (state.view !== "timeline") params.set("view", state.view);
-    if (state.category !== "all") params.set("category", state.category);
-    if (state.searchQuery) params.set("search", state.searchQuery);
-    if (state.camp !== "all") params.set("camp", state.camp);
-    
-    const newQuery = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
-    window.history.replaceState(null, '', newQuery);
+  function getPdfUrl(filePath) {
+    const base = dataset.metadata?.pdf_base_url || "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/";
+    return base + filePath;
   }
 
-  function renderHeroStats() {
-    const stats = dataset.stats;
-    if (!stats) return;
-
-    const elCount = document.getElementById("stat-total-models");
-    const elOrgs = document.getElementById("stat-total-orgs");
-    const elSpan = document.getElementById("stat-date-span");
-    const elMilestones = document.getElementById("stat-milestones");
-
-    if (elCount) elCount.textContent = `${stats.total_models || 112}+`;
-    if (elOrgs) elOrgs.textContent = `${stats.total_orgs || 23}`;
-    if (elSpan) elSpan.textContent = `19 Mos`;
-    if (elMilestones) elMilestones.textContent = `${stats.milestones_count || 44}★`;
+  function getLabIcon(org) {
+    const info = LAB_ICONS[org] || { bg: "#475569", text: org.slice(0, 2).toUpperCase() };
+    return `
+      <div style="width:100%;height:100%;background:${info.bg};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:-0.02em;font-family:var(--font-inter),sans-serif;">
+        ${info.text}
+      </div>
+    `;
   }
 
-  function renderCategoryTabs() {
-    const container = document.getElementById("category-tabs-container");
+  /* ==========================================================================
+     1. Milestone Alternating Timeline (LMSYS exact .timeline, .tl-row)
+     ========================================================================== */
+  function renderTimeline() {
+    const container = document.getElementById("timeline-flow-container");
     if (!container) return;
 
+    // Filter top milestone models across the timeline
+    const timelineModels = dataset.models.filter(m => m.is_milestone).slice(0, 16);
+
+    let html = '';
+    timelineModels.forEach((m, idx) => {
+      const isLeft = idx % 2 === 0;
+
+      const cardHtml = `
+        <a class="tl-card" onclick="window.App.openDrawer('${m.id}')">
+          <div class="tl-name-row">
+            <span class="tl-name">${m.model}</span>
+            <span class="tl-graduated">${m.date}</span>
+          </div>
+          <p class="tl-desc">${m.highlights}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--ink-lighter);margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
+            <span style="font-weight:600;color:var(--ink);">${m.org}</span>
+            <span style="color:var(--orange);font-weight:500;">View Spec &rarr;</span>
+          </div>
+        </a>
+      `;
+
+      if (isLeft) {
+        html += `
+          <div class="tl-row">
+            <div class="tl-left">${cardHtml}</div>
+            <div class="tl-icon-col">
+              <div class="tl-icon">
+                ${getLabIcon(m.org)}
+              </div>
+            </div>
+            <div class="tl-right"><div class="tl-card tl-card-empty"></div></div>
+          </div>
+        `;
+      } else {
+        html += `
+          <div class="tl-row">
+            <div class="tl-left"><div class="tl-card tl-card-empty"></div></div>
+            <div class="tl-icon-col">
+              <div class="tl-icon">
+                ${getLabIcon(m.org)}
+              </div>
+            </div>
+            <div class="tl-right">${cardHtml}</div>
+          </div>
+        `;
+      }
+    });
+
+    container.innerHTML = html;
+  }
+
+  /* ==========================================================================
+     2. Categorized Catalog (LMSYS /projects exact .projects-grid, .project-card)
+     ========================================================================== */
+  function renderCatalog() {
     const categories = [
-      { id: "all", label: "Overall All", count: dataset.models.length },
-      { id: "Reasoning / CoT", label: "Reasoning / CoT", count: dataset.stats.tag_breakdown?.["Reasoning / CoT"] || 49 },
-      { id: "Agent & Coding", label: "Agent & Coding", count: dataset.stats.tag_breakdown?.["Agent & Coding"] || 47 },
-      { id: "Vision & Multimodal", label: "Vision & Omni", count: dataset.stats.tag_breakdown?.["Vision & Multimodal"] || 51 },
-      { id: "Audio & Speech", label: "Audio & Speech", count: dataset.stats.tag_breakdown?.["Audio & Speech"] || 18 },
-      { id: "Video", label: "Video", count: dataset.stats.tag_breakdown?.["Video"] || 19 },
-      { id: "Medical & Science", label: "Medical & Science", count: dataset.stats.tag_breakdown?.["Medical & Science"] || 33 },
-      { id: "MoE", label: "MoE Architecture", count: dataset.stats.tag_breakdown?.["MoE"] || 19 },
-      { id: "Open Weights", label: "Open Weights", count: dataset.stats.tag_breakdown?.["Open Weights"] || 44 }
+      { id: "catalog-grid-reasoning", tag: "Reasoning / CoT", limit: 6 },
+      { id: "catalog-grid-agent", tag: "Agent & Coding", limit: 6 },
+      { id: "catalog-grid-multimodal", tag: "Vision & Multimodal", limit: 6 },
+      { id: "catalog-grid-medical", tag: "Medical & Science", limit: 6 }
     ];
 
-    container.innerHTML = categories.map(cat => `
-      <button onclick="window.App.setCategory('${cat.id}')" class="category-pill ${state.category === cat.id ? 'active' : ''}">
-        <span>${cat.label}</span>
-        <span class="category-count">${cat.count}</span>
+    categories.forEach(cat => {
+      const container = document.getElementById(cat.id);
+      if (!container) return;
+
+      const models = dataset.models.filter(m => m.tags.includes(cat.tag)).slice(0, cat.limit);
+
+      container.innerHTML = models.map(m => `
+        <a class="project-card" onclick="window.App.openDrawer('${m.id}')">
+          <div class="project-card-top">
+            <div class="project-card-icon">
+              ${getLabIcon(m.org)}
+            </div>
+            <div class="project-card-info">
+              <div class="project-card-name-row">
+                <span class="project-card-name">${m.model}</span>
+                ${m.is_milestone ? '<span class="project-card-badge">★ Milestone</span>' : ''}
+              </div>
+              <p class="project-card-desc">${m.highlights}</p>
+            </div>
+          </div>
+          <div class="project-card-footer">
+            <span class="project-card-model-info">${m.org} · ${m.date}</span>
+          </div>
+        </a>
+      `).join('');
+    });
+  }
+
+  /* ==========================================================================
+     3. Searchable Reports Archive (LMSYS /blog exact .blog-item-full)
+     ========================================================================== */
+  function renderArchiveFilterTabs() {
+    const container = document.getElementById("archive-filter-tabs");
+    if (!container) return;
+
+    const tabs = [
+      { id: "all", label: "All" },
+      { id: "Reasoning / CoT", label: "Reasoning" },
+      { id: "Agent & Coding", label: "Coding & Agent" },
+      { id: "Vision & Multimodal", label: "Multimodal" },
+      { id: "Video", label: "Video" },
+      { id: "Audio & Speech", label: "Audio" },
+      { id: "Medical & Science", label: "Medical" },
+      { id: "Open Weights", label: "Open Weights" }
+    ];
+
+    container.innerHTML = tabs.map(t => `
+      <button onclick="window.App.setArchiveCategory('${t.id}')" class="blog-tab ${state.archiveCategory === t.id ? 'active' : ''}">
+        ${t.label}
       </button>
     `).join('');
   }
 
-  function setCategory(catId) {
-    state.category = catId;
-    renderCategoryTabs();
-    applyFiltersAndRender();
+  function setArchiveCategory(catId) {
+    state.archiveCategory = catId;
+    renderArchiveFilterTabs();
+    renderArchiveList();
   }
 
-  function switchView(viewName) {
-    state.view = viewName;
-    updateViewButtons();
-    applyFiltersAndRender();
-  }
+  function renderArchiveList() {
+    const container = document.getElementById("archive-list-container");
+    if (!container) return;
 
-  function updateViewButtons() {
-    const views = ["timeline", "table", "grid", "analytics"];
-    views.forEach(v => {
-      const btn = document.getElementById(`view-btn-${v}`);
-      if (btn) {
-        if (state.view === v) btn.classList.add("active");
-        else btn.classList.remove("active");
-      }
-    });
-  }
-
-  function filterByOrg(orgName) {
-    state.searchQuery = orgName.toLowerCase();
-    const input = document.getElementById("global-search-input");
-    if (input) input.value = orgName;
-    scrollToArchive();
-    applyFiltersAndRender();
-  }
-
-  function scrollToArchive() {
-    const el = document.getElementById("archive-section");
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function getFilteredModels() {
     let list = [...(dataset.models || [])];
 
-    if (state.category !== "all") {
-      list = list.filter(m => m.tags.includes(state.category));
+    if (state.archiveCategory !== "all") {
+      list = list.filter(m => m.tags.includes(state.archiveCategory));
     }
-    if (state.camp !== "all") {
-      list = list.filter(m => m.camp === state.camp);
-    }
-    if (state.year !== "all") {
-      list = list.filter(m => m.year === parseInt(state.year));
-    }
-    if (state.onlyMilestones) {
-      list = list.filter(m => m.is_milestone);
-    }
-    if (state.searchQuery) {
-      const q = state.searchQuery;
+
+    if (state.archiveQuery) {
+      const q = state.archiveQuery;
       list = list.filter(m =>
         m.model.toLowerCase().includes(q) ||
         m.org.toLowerCase().includes(q) ||
@@ -276,200 +250,29 @@ window.App = (function() {
       );
     }
 
-    list.sort((a, b) => b.date.localeCompare(a.date) || a.model.localeCompare(b.model));
-    return list;
-  }
-
-  function applyFiltersAndRender() {
-    updateUrlParams();
-    const filtered = getFilteredModels();
-
-    const countEl = document.getElementById("filtered-results-count");
-    if (countEl) {
-      countEl.textContent = `${filtered.length} of ${dataset.models.length} reports`;
-    }
-
-    const containers = {
-      timeline: document.getElementById("view-container-timeline"),
-      table: document.getElementById("view-container-table"),
-      grid: document.getElementById("view-container-grid"),
-      analytics: document.getElementById("view-container-analytics")
-    };
-
-    Object.keys(containers).forEach(k => {
-      if (containers[k]) containers[k].style.display = (k === state.view) ? "block" : "none";
-    });
-
-    if (state.view === "timeline") renderTimeline(filtered);
-    else if (state.view === "table") renderTable(filtered);
-    else if (state.view === "grid") renderGrid(filtered);
-    else if (state.view === "analytics") renderAnalytics(filtered);
-  }
-
-  function getOrgEmoji(org) {
-    return ORG_EMOJIS[org] || "📄";
-  }
-
-  function getPdfUrl(filePath) {
-    const base = dataset.metadata?.pdf_base_url || "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/";
-    return base + filePath;
-  }
-
-  /* ==========================================================================
-     Render 1: LMSYS Alternating Timeline (.timeline, .tl-row, .tl-card)
-     ========================================================================== */
-  function renderTimeline(models) {
-    const container = document.getElementById("timeline-flow-container");
-    if (!container) return;
-
-    if (models.length === 0) {
-      container.innerHTML = `<div style="text-align: center; padding: 60px 0; color: var(--ink-lighter);">No technical reports matched your criteria.</div>`;
+    if (list.length === 0) {
+      container.innerHTML = `<div style="text-align:center;padding:48px 0;color:var(--ink-lighter);">No technical reports matched your query.</div>`;
       return;
     }
 
-    const monthGroups = {};
-    models.forEach(m => {
-      if (!monthGroups[m.date]) monthGroups[m.date] = [];
-      monthGroups[m.date].push(m);
-    });
-
-    let html = '';
-    let globalIndex = 0;
-
-    Object.keys(monthGroups).forEach(month => {
-      const monthModels = monthGroups[month];
-      html += `
-        <div class="tl-month-header">
-          <span class="tl-month-tag font-mono">${month} · ${monthModels.length} ${monthModels.length === 1 ? 'Report' : 'Reports'}</span>
-        </div>
-      `;
-
-      monthModels.forEach((m) => {
-        const isLeft = globalIndex % 2 === 0;
-        globalIndex++;
-
-        const cardContent = `
-          <div class="tl-card" onclick="window.App.openDrawer('${m.id}')">
-            <div class="tl-name-row">
-              <span class="tl-name">${m.model}</span>
-              ${m.is_milestone ? '<span class="tl-badge">★ Milestone</span>' : `<span class="tl-badge" style="background: rgba(8,12,38,0.06); color: var(--ink-dim);">${m.org}</span>`}
-            </div>
-            <p class="tl-desc">${m.highlights}</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px;">
-              ${m.tags.map(t => `<span class="table-tag">${t}</span>`).join('')}
-            </div>
-            <div class="tl-footer" onclick="event.stopPropagation()">
-              <span>${m.org} · ${m.date}</span>
-              <div class="tl-actions">
-                <a href="${m.link}" target="_blank" rel="noopener noreferrer" class="tl-link">Paper &rarr;</a>
-                <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color: var(--ink-dim); text-decoration: none;">PDF</a>
-                <button onclick="window.App.copyCitation('${m.id}')" style="background: none; border: none; color: var(--ink-lighter); cursor: pointer; font-size: 12px;">Cite</button>
-              </div>
-            </div>
+    container.innerHTML = list.map(m => `
+      <div class="blog-item-full" onclick="window.App.openDrawer('${m.id}')">
+        <div class="blog-item-info">
+          <div class="blog-item-tag-row">
+            <span class="blog-item-tag ${m.is_milestone ? 'blog-item-tag--news' : 'blog-item-tag--tech'}">
+              ${m.is_milestone ? '★ Milestone' : (m.tags[0] || 'Technical Report')}
+            </span>
           </div>
-        `;
-
-        if (isLeft) {
-          html += `
-            <div class="tl-row">
-              <div class="tl-left">${cardContent}</div>
-              <div class="tl-icon-col">
-                <div class="tl-icon ${m.is_milestone ? 'milestone-icon' : ''}" title="${m.model} (${m.org})">
-                  ${getOrgEmoji(m.org)}
-                </div>
-              </div>
-              <div class="tl-right"><div class="tl-card tl-card-empty"></div></div>
-            </div>
-          `;
-        } else {
-          html += `
-            <div class="tl-row">
-              <div class="tl-left"><div class="tl-card tl-card-empty"></div></div>
-              <div class="tl-icon-col">
-                <div class="tl-icon ${m.is_milestone ? 'milestone-icon' : ''}" title="${m.model} (${m.org})">
-                  ${getOrgEmoji(m.org)}
-                </div>
-              </div>
-              <div class="tl-right">${cardContent}</div>
-            </div>
-          `;
-        }
-      });
-    });
-
-    container.innerHTML = html;
-  }
-
-  /* ==========================================================================
-     Render 2: Leaderboard Table View (LMSYS Arena style)
-     ========================================================================== */
-  function renderTable(models) {
-    const tbody = document.getElementById("arena-table-body");
-    if (!tbody) return;
-
-    if (models.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 48px 0; color: var(--ink-lighter);">No technical reports matched your criteria.</td></tr>`;
-      return;
-    }
-
-    tbody.innerHTML = models.map((m, idx) => `
-      <tr onclick="window.App.openDrawer('${m.id}')">
-        <td class="table-rank">${idx + 1}</td>
-        <td>
-          <div class="table-model-name">
-            <span>${m.model}</span>
-            ${m.is_milestone ? '<span style="color: var(--orange); font-weight: bold;">★</span>' : ''}
-          </div>
-        </td>
-        <td><span class="tl-badge" style="background: rgba(8,12,38,0.06); color: var(--ink);">${m.org}</span></td>
-        <td style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-lighter); white-space: nowrap;">${m.date}</td>
-        <td style="max-width: 380px;">
-          <p style="font-size: 13px; color: var(--ink-dim); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${m.highlights}</p>
-        </td>
-        <td style="max-width: 220px;">
-          <div style="display: flex; flex-wrap: wrap; gap: 3px;">
-            ${m.tags.slice(0, 3).map(t => `<span class="table-tag">${t}</span>`).join('')}
-            ${m.tags.length > 3 ? `<span class="table-tag">+${m.tags.length - 3}</span>` : ''}
-          </div>
-        </td>
-        <td style="text-align: right; white-space: nowrap;" onclick="event.stopPropagation()">
-          <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color: var(--orange); text-decoration: none; font-weight: 500; margin-right: 10px;">Paper</a>
-          <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color: var(--ink-dim); text-decoration: none; margin-right: 10px;">PDF</a>
-          <button onclick="window.App.copyCitation('${m.id}')" style="background: none; border: none; color: var(--ink-lighter); cursor: pointer;">Cite</button>
-        </td>
-      </tr>
-    `).join('');
-  }
-
-  /* ==========================================================================
-     Render 3: Grid Cards View
-     ========================================================================== */
-  function renderGrid(models) {
-    const container = document.getElementById("grid-cards-container");
-    if (!container) return;
-
-    if (models.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 60px 0; color: var(--ink-lighter);">No technical reports matched your criteria.</div>`;
-      return;
-    }
-
-    container.innerHTML = models.map(m => `
-      <div class="hero-blog-card" onclick="window.App.openDrawer('${m.id}')">
-        <div class="hero-blog-card-body">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span class="tl-badge" style="background: rgba(8,12,38,0.06); color: var(--ink);">${m.org}</span>
-            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-lighter);">${m.date}</span>
-          </div>
-          <h3 class="hero-blog-card-title" style="margin-top: 4px;">${m.model} ${m.is_milestone ? '★' : ''}</h3>
-          <p class="hero-blog-card-excerpt">${m.highlights}</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;">
-            ${m.tags.map(t => `<span class="table-tag">${t}</span>`).join('')}
-          </div>
-          <div class="hero-blog-card-meta" onclick="event.stopPropagation()">
-            <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color: var(--orange); text-decoration: none; font-weight: 500;">Paper &rarr;</a>
-            <div style="display: flex; gap: 10px;">
-              <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color: var(--ink-dim); text-decoration: none;">PDF</a>
-              <button onclick="window.App.copyCitation('${m.id}')" style="background: none; border: none; color: var(--ink-lighter); cursor: pointer;">Cite</button>
+          <h3 class="blog-item-title">${m.model}</h3>
+          <p class="blog-item-excerpt" style="font-size:14px;color:var(--ink-dim);line-height:1.6;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+            ${m.highlights}
+          </p>
+          <div class="blog-item-meta" style="font-size:12px;color:var(--ink-lighter);margin-top:10px;display:flex;align-items:center;justify-content:space-between;" onclick="event.stopPropagation()">
+            <span>${m.org} · ${m.date}</span>
+            <div style="display:flex;gap:12px;">
+              <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);font-weight:600;text-decoration:none;">Paper &rarr;</a>
+              <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color:var(--ink);text-decoration:none;">PDF</a>
+              <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
             </div>
           </div>
         </div>
@@ -478,128 +281,47 @@ window.App = (function() {
   }
 
   /* ==========================================================================
-     Render 4: Analytics Dashboard
+     4. Leaderboard Table
      ========================================================================== */
-  function renderAnalytics(models) {
-    if (typeof Chart === 'undefined') return;
+  function renderLeaderboard() {
+    const tbody = document.getElementById("leaderboard-table-body");
+    const countEl = document.getElementById("table-results-count");
+    if (!tbody) return;
 
-    const textColor = state.isDark ? '#e2e8f0' : 'rgb(8,12,38)';
-    const gridColor = state.isDark ? 'rgba(255,255,255,0.08)' : 'rgba(8,12,38,0.06)';
+    if (countEl) countEl.textContent = `${dataset.models.length} Reports`;
 
-    // Monthly Trends
-    const monthlyCtx = document.getElementById("chart-monthly-trends")?.getContext("2d");
-    if (monthlyCtx) {
-      if (charts.monthly) charts.monthly.destroy();
-      const monthCounts = {};
-      models.forEach(m => {
-        monthCounts[m.date] = (monthCounts[m.date] || 0) + 1;
-      });
-      const labels = Object.keys(monthCounts).sort();
-      const data = labels.map(l => monthCounts[l]);
-
-      charts.monthly = new Chart(monthlyCtx, {
-        type: 'bar',
-        data: {
-          labels,
-          datasets: [{
-            label: 'Reports Released',
-            data,
-            backgroundColor: 'rgba(234, 106, 16, 0.85)',
-            borderColor: '#ea6a10',
-            borderWidth: 1,
-            borderRadius: 4
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { grid: { color: gridColor }, ticks: { color: textColor, font: { family: 'Inter' } } },
-            y: { grid: { color: gridColor }, ticks: { color: textColor, precision: 0 } }
-          }
-        }
-      });
-    }
-
-    // Organization Share
-    const orgCtx = document.getElementById("chart-org-share")?.getContext("2d");
-    if (orgCtx) {
-      if (charts.org) charts.org.destroy();
-      const orgCounts = {};
-      models.forEach(m => {
-        orgCounts[m.org] = (orgCounts[m.org] || 0) + 1;
-      });
-      const sortedOrgs = Object.entries(orgCounts).sort((a, b) => b[1] - a[1]);
-      const topOrgs = sortedOrgs.slice(0, 7);
-      const otherCount = sortedOrgs.slice(7).reduce((sum, item) => sum + item[1], 0);
-      if (otherCount > 0) topOrgs.push(["Other Labs", otherCount]);
-
-      charts.org = new Chart(orgCtx, {
-        type: 'doughnut',
-        data: {
-          labels: topOrgs.map(o => o[0]),
-          datasets: [{
-            data: topOrgs.map(o => o[1]),
-            backgroundColor: [
-              '#ea6a10', '#2563eb', '#10b981', '#a855f7', '#ec4899',
-              '#eab308', '#0ea5e9', '#64687a'
-            ],
-            borderWidth: 0
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { position: 'right', labels: { color: textColor, font: { family: 'Inter', size: 12 }, boxWidth: 12 } }
-          }
-        }
-      });
-    }
-
-    // Modality Breakdown
-    const tagCtx = document.getElementById("chart-tag-breakdown")?.getContext("2d");
-    if (tagCtx) {
-      if (charts.tag) charts.tag.destroy();
-      const tagCounts = {};
-      models.forEach(m => {
-        m.tags.forEach(t => {
-          tagCounts[t] = (tagCounts[t] || 0) + 1;
-        });
-      });
-      const labels = Object.keys(tagCounts);
-      const data = labels.map(l => tagCounts[l]);
-
-      charts.tag = new Chart(tagCtx, {
-        type: 'bar',
-        data: {
-          labels,
-          datasets: [{
-            label: 'Models by Capability',
-            data,
-            backgroundColor: 'rgba(37, 99, 235, 0.8)',
-            borderColor: '#2563eb',
-            borderWidth: 1,
-            borderRadius: 4
-          }]
-        },
-        options: {
-          indexAxis: 'y',
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { grid: { color: gridColor }, ticks: { color: textColor, precision: 0 } },
-            y: { grid: { color: gridColor }, ticks: { color: textColor, font: { family: 'Inter' } } }
-          }
-        }
-      });
-    }
+    tbody.innerHTML = dataset.models.map((m, idx) => `
+      <tr onclick="window.App.openDrawer('${m.id}')">
+        <td style="text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);">${idx + 1}</td>
+        <td>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-weight:600;color:var(--ink);">${m.model}</span>
+            ${m.is_milestone ? '<span style="color:var(--orange);font-weight:700;">★</span>' : ''}
+          </div>
+        </td>
+        <td><span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink);">${m.org}</span></td>
+        <td style="font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);white-space:nowrap;">${m.date}</td>
+        <td style="max-width:380px;">
+          <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0;">
+            ${m.highlights}
+          </p>
+        </td>
+        <td style="max-width:200px;">
+          <div style="display:flex;flex-wrap:wrap;gap:4px;">
+            ${m.tags.slice(0, 2).map(t => `<span style="font-size:11px;padding:2px 6px;border-radius:4px;background:rgba(8,12,38,0.05);color:var(--ink-dim);border:1px solid var(--border);">${t}</span>`).join('')}
+          </div>
+        </td>
+        <td style="text-align:right;white-space:nowrap;" onclick="event.stopPropagation()">
+          <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;font-weight:600;margin-right:10px;">Paper</a>
+          <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color:var(--ink-dim);text-decoration:none;margin-right:10px;">PDF</a>
+          <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
+        </td>
+      </tr>
+    `).join('');
   }
 
   /* ==========================================================================
-     Model Detail Drawer (LMSYS Spec Sheet)
+     5. Model Spec Sheet Drawer
      ========================================================================== */
   function openDrawer(modelId) {
     const model = dataset.models.find(m => m.id === modelId);
@@ -620,7 +342,7 @@ window.App = (function() {
     if (orgEl) orgEl.textContent = model.org;
     if (dateEl) dateEl.textContent = model.date;
     if (tagsEl) {
-      tagsEl.innerHTML = model.tags.map(t => `<span class="table-tag">${t}</span>`).join('');
+      tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${t}</span>`).join('');
     }
     if (highlightsEl) highlightsEl.textContent = model.highlights;
     if (officialLinkEl) officialLinkEl.href = model.link;
@@ -654,7 +376,7 @@ window.App = (function() {
     navigator.clipboard.writeText(bibtex).then(() => {
       showToast(`Copied BibTeX citation for ${model.model}!`);
     }).catch(() => {
-      showToast("Failed to copy citation to clipboard.", "error");
+      showToast("Failed to copy citation to clipboard.");
     });
   }
 
@@ -663,7 +385,7 @@ window.App = (function() {
     if (!container) return;
 
     const toast = document.createElement("div");
-    toast.className = "toast-box";
+    toast.className = "lmsys-toast";
     toast.innerHTML = `<span>📑 ${message}</span>`;
 
     container.appendChild(toast);
@@ -675,11 +397,8 @@ window.App = (function() {
 
   return {
     init,
-    setCategory,
-    switchView,
-    toggleTheme,
-    filterByOrg,
-    scrollToArchive,
+    setArchiveCategory,
+    searchLab,
     openDrawer,
     closeDrawer,
     copyCitation,

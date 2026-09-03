@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#0f2b48"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <pattern id="grid1" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="340" fill="url(#bg1)"/>
+  <rect width="600" height="340" fill="url(#grid1)"/>
+  
+  <circle cx="500" cy="80" r="140" fill="#0284c7" opacity="0.18" filter="blur(40px)"/>
+  <circle cx="100" cy="260" r="100" fill="#38bdf8" opacity="0.12" filter="blur(30px)"/>
+  
+  <rect x="40" y="40" width="96" height="26" rx="6" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="1"/>
+  <text x="88" y="57" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">DEEPSEEK</text>
+
+  <text x="40" y="130" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="34" font-weight="800" letter-spacing="-1">DeepSeek-R1</text>
+  <text x="40" y="165" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="500">Incentivizing Reasoning via Pure Reinforcement Learning</text>
+
+  <g transform="translate(40, 210)">
+    <rect x="0" y="0" width="130" height="60" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="16" y="25" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="600" text-transform="uppercase">AIME 2024</text>
+    <text x="16" y="48" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="700">79.8%</text>
+
+    <rect x="145" y="0" width="130" height="60" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="161" y="25" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="600" text-transform="uppercase">MATH-500</text>
+    <text x="161" y="48" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="700">97.3%</text>
+
+    <rect x="290" y="0" width="150" height="60" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+    <text x="306" y="25" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="600" text-transform="uppercase">SWE-BENCH VERIFIED</text>
+    <text x="306" y="48" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="700">49.2%</text>
+  </g>
+
+  <circle cx="510" cy="180" r="52" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"/>
+  <circle cx="510" cy="180" r="38" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.6"/>
+  <text x="510" y="187" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="800" text-anchor="middle">MoE</text>
+</svg>
