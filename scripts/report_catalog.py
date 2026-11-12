@@ -107,6 +107,13 @@ def validate(rows, root=ROOT, pdf_manifest=None, check_files=True):
         parse_release_date(row["released_on"])
         if not https_url(row["release_url"]):
             raise ValueError(f"Invalid release URL for {key}")
+        dates = {row["released_on"]}
+        for event in row.get("release_events", []):
+            day = event["released_on"]
+            parse_release_date(day)
+            if len(day) != 10 or day <= row["released_on"] or day in dates or not https_url(event["release_url"]):
+                raise ValueError(f"Invalid follow-up release for {key}")
+            dates.add(day)
         report = row.get("report")
         if not report:
             continue

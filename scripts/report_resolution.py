@@ -31,9 +31,11 @@ def words(value):
 
 
 def matches_model(model, title):
-    wanted = words(model)
     offered = words(title)
-    return bool(wanted) and any(offered[i : i + len(wanted)] == wanted for i in range(len(offered)))
+    return all(
+        part and any(offered[i : i + len(part)] == part for i in range(len(offered)))
+        for part in map(words, model.split(" / "))
+    )
 
 
 def normalize_model(name, vendor, aliases, settings):
@@ -130,7 +132,7 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
         body = payload.decode("utf-8", errors="replace")
     page = Page(body)
     summary = clean(page.summary)
-    if not matches_model(model, f"{page.title} {path}"):
+    if not matches_model(model, f"{page.heading} {page.title} {path}"):
         return None
     excerpt = technical_excerpt("\n\n".join(page.paragraphs))
     if not explicit and not (TECHNICAL_WORDS.search(summary) or excerpt):
@@ -138,10 +140,10 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
     highlights = summary if TECHNICAL_WORDS.search(summary) else excerpt
     return {
         "id": url,
-        "revision": digest(clean(page.title) + "\n" + highlights),
+        "revision": digest(clean(page.heading or page.title) + "\n" + highlights),
         "rank": 0 if explicit else 2,
         "kind": "system card"
-        if re.search(r"system[- ]card", f"{title} {path}", re.I)
+        if re.search(r"system[- ]card", f"{page.heading} {page.title} {title} {path}", re.I)
         else "official technical page",
         "url": url,
         "published_on": page.date,
@@ -201,19 +203,21 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
     except (URLError, OSError, ValueError) as error:
         errors.append(type(error).__name__)
 
-    fallback = explicit_documents if not hub_page else []
+    fallback = list(dict.fromkeys(explicit_documents))[:4] if not hub_page else []
+    official_url = release.get("official_url", url)
+    if official_body:
+        page = Page(official_body)
+        fallback.append((official_url, page.heading or page.title))
     fallback += [
         (link, label)
         for link, label in links
         if urlsplit(link).hostname in settings["hosts"] and matches_model(model, label + " " + unquote(link))
     ]
-    if official_body:
-        fallback.append((url, release["model"]))
     for link, label in list(dict.fromkeys(fallback))[:6]:
         try:
             explicit = bool(REPORT_WORDS.search(f"{label} {unquote(urlsplit(link).path)}"))
             if report := vendor_document(
-                link, label, model, hosts, explicit=explicit, provided=official_body if link == url else None
+                link, label, model, hosts, explicit=explicit, provided=official_body if link == official_url else None
             ):
                 report["rank"] = 2
                 return report, errors

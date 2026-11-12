@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from urllib.error import HTTPError
 
 import pytest
 
@@ -215,6 +216,105 @@ def test_official_announcements_cover_closed_releases(monkeypatch):
     assert not errors
     assert rows[0]["released_on"] == "2026-11-10"
     assert rows[0]["report"]["kind"] == "official technical page"
+
+
+def test_official_sources_save_dated_cards_when_a_source_or_article_fails(monkeypatch):
+    official = "https://deploymentsafety.openai.com"
+    blocked = "https://openai.com/news/rss.xml"
+    card = official + "/gpt-6-1-terra"
+    cyber = official + "/gpt-6-cyber"
+    config = json.loads(report_watch.SOURCES.read_text())["openai"]
+    config = {**config, "hub": "", "official": [blocked, official]}
+    pages = {
+        official: (
+            '<h1>Deployment safety</h1><a href="/gpt-6-cyber">Nov 05, 2026 <b>GPT‑6 Cyber</b></a>'
+            '<a href="/gpt-6-1-terra"><time>Oct 26, 2026</time><b>GPT‑6.1 Terra</b></a>'
+        ),
+        card: (
+            '<title>Deployment Safety Hub</title><h1>GPT‑6.1 Terra</h1>'
+            '<p>Published October 26, 2026</p><p>The model card records training data, benchmark '
+            'evaluations and limitations across supported modalities and model capabilities.</p>'
+        ),
+    }
+
+    def fetch_page(url, hosts):
+        if url in {blocked, cyber}:
+            raise HTTPError(url, 403, "Forbidden", {}, None)
+        return pages[url]
+
+    monkeypatch.setattr(report_watch, "body_text", fetch_page)
+    with Store(":memory:").lock() as store:
+        rows, logs = report_watch.scan_reports(
+            store, [], {"openai": config}, {}, ["openai"], *DATES, 12, arxiv=ArxivFixture([])
+        )
+        assert logs[0]["error"] == "HTTP 403"
+        assert logs[1]["deferred"] == 1
+        assert store.source(logs[1]["source"])["seen"] == {card: "2026-10-26"}
+    assert [(row["model"], row["released_on"]) for row in rows] == [("GPT-6.1 Terra", "2026-10-26")]
+    assert rows[0]["report"]["url"] == card
+    assert report_watch.official_model(
+        "Addendum to GPT‑6 Astra System Card: GPT‑6.1 Terra", config, "/gpt-6-1-terra"
+    ) == "GPT-6.1 Terra"
+
+
+def test_followup_availability_is_a_separate_dated_event(monkeypatch):
+    home = "https://blog.google/releases/"
+    initial = home + "introducing-gemini-4-carbon/"
+    availability = home + "gemini-4-carbon-now-available/"
+    pages = {
+        home: (
+            f'<a href="{availability}"><time>Nov 10, 2026</time>Gemini 4 Carbon is now available</a>'
+            f'<a href="{initial}"><time>Oct 28, 2026</time>Introducing Gemini 4 Carbon</a>'
+        ),
+        availability: "<h1>Gemini 4 Carbon is now available</h1><p>Published November 10, 2026</p>",
+        initial: "<h1>Introducing Gemini 4 Carbon</h1><time datetime='2026-10-28'>October 28, 2026</time>",
+    }
+    config = {
+        **SETTINGS, "org": "Google", "hub": "", "official": home, "hosts": ["blog.google"],
+        "model_pattern": r"Gemini 4 Carbon",
+    }
+    monkeypatch.setattr(report_watch, "body_text", lambda url, _: pages[url])
+    rows, _, _, _ = report_watch.scan_official(
+        "google", config, {}, {}, {}, *DATES, 12, ArxivFixture([])
+    )
+    rows = report_watch.project(rows, {"google": config})
+    validate(rows, check_files=False)
+    assert len(rows) == 1
+    assert rows[0]["released_on"] == "2026-10-28"
+    assert rows[0]["release_events"] == [{
+        "released_on": "2026-11-10", "release_url": availability, "forms": ["General availability"],
+    }]
+    outputs, _ = build_visuals(rows, {}, "https://example.com")
+    timeline = outputs[Path("docs/timeline.html")]
+    assert initial in timeline and availability in timeline
+    assert timeline.count(">Gemini 4 Carbon</a>") == 2
+
+
+def test_verified_backfill_is_idempotent_without_polling(monkeypatch):
+    def unexpected_fetch(*args):
+        pytest.fail(f"Unexpected source fetch: {args}")
+
+    monkeypatch.setattr(report_watch, "body_text", unexpected_fetch)
+    monkeypatch.setattr(report_watch, "model_pages", unexpected_fetch)
+    vendor = "alibaba_qwen"
+    evidence = {
+        vendor: [{
+            "model": "Qwen4-Max Preview", "released_on": "2026-11-11",
+            "release_url": "https://qwen.ai/blog?qwen4-max",
+            "forms": ["Preview"],
+        }],
+    }
+    settings = {vendor: SETTINGS}
+    with Store(":memory:").lock() as store:
+        rows, first = report_watch.scan_reports(
+            store, [], settings, {}, [vendor], *DATES, 12, backfill=evidence, backfill_only=True
+        )
+        again, second = report_watch.scan_reports(
+            store, [], settings, {}, [vendor], *DATES, 12, backfill=evidence, backfill_only=True
+        )
+    assert first[0]["records"] == 1 and second[0]["records"] == 0
+    assert again == rows and rows[0]["report"] is None
+    assert rows[0]["retry_on"] == DATES[1]
 
 
 def test_public_assets_share_date_and_escape_external_text():
