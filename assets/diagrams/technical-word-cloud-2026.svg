@@ -8,22 +8,22 @@
 <text x="370" y="279" fill="#b6472f" font-size="66" font-weight="700">Reasoning</text>
 <text x="391" y="190" fill="#137f72" font-size="60" font-weight="700">Multimodal</text>
 <text x="291" y="358" fill="#7545b7" font-size="53" font-weight="700">Vision-Language</text>
-<text x="767" y="270" fill="#2555bd" font-size="52" font-weight="700">MoE</text>
-<text x="38" y="190" fill="#946410" font-size="43" font-weight="700">Long Context</text>
+<text x="768" y="270" fill="#2555bd" font-size="51" font-weight="700">MoE</text>
+<text x="42" y="189" fill="#946410" font-size="42" font-weight="700">Long Context</text>
 <text x="117" y="268" fill="#c23966" font-size="45" font-weight="700">Tool Use</text>
-<text x="799" y="189" fill="#086f96" font-size="28" font-weight="700">Agentic Coding</text>
-<text x="817" y="327" fill="#3f7550" font-size="30" font-weight="700">Post-training</text>
+<text x="809" y="204" fill="#086f96" font-size="28" font-weight="700">Agentic Coding</text>
+<text x="821" y="326" fill="#3f7550" font-size="29" font-weight="700">Post-training</text>
 <text x="473" y="399" fill="#b6472f" font-size="20" font-weight="700">Reinforcement Learning</text>
-<text x="83" y="322" fill="#137f72" font-size="32" font-weight="700">Diffusion</text>
-<text x="887" y="256" fill="#7545b7" font-size="26" font-weight="700">Embeddings</text>
+<text x="82" y="321" fill="#137f72" font-size="29" font-weight="700">Embeddings</text>
+<text x="884" y="258" fill="#7545b7" font-size="30" font-weight="700">Diffusion</text>
 <text x="435" y="116" fill="#2555bd" font-size="21" font-weight="700">Image Generation</text>
-<text x="315" y="396" fill="#946410" font-size="17" font-weight="700">Distillation</text>
-<text x="696" y="117" fill="#c23966" font-size="15" font-weight="700">Computer Use</text>
-<text x="207" y="135" fill="#086f96" font-size="15" font-weight="700">Sparse Attention</text>
-<text x="804" y="148" fill="#3f7550" font-size="16" font-weight="700">Quantization</text>
-<text x="819" y="372" fill="#7545b7" font-size="22" font-weight="700">KV Cache</text>
+<text x="816" y="163" fill="#946410" font-size="18" font-weight="700">Computer Use</text>
+<text x="817" y="359" fill="#c23966" font-size="18" font-weight="700">Distillation</text>
+<text x="667" y="117" fill="#086f96" font-size="16" font-weight="700">Safety Evaluation</text>
+<text x="269" y="402" fill="#3f7550" font-size="16" font-weight="700">Sparse Attention</text>
+<text x="271" y="128" fill="#137f72" font-size="19" font-weight="700">KV Cache</text>
 <text x="176" y="355" fill="#2555bd" font-size="16" font-weight="700">Retrieval</text>
-<text x="378" y="116" fill="#3f7550" font-size="16" font-weight="700">MLA</text>
+<text x="773" y="399" fill="#3f7550" font-size="19" font-weight="700">MLA</text>
 <path d="M29 419H1091V419" stroke="#dcd6c8" fill="none"/>
 <text x="30" y="443" fill="#716b60" font-size="12" font-weight="400">One mention per model release. Terms are normalized across reports.</text>
 </svg>

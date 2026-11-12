@@ -6,53 +6,53 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 235,
+    "total_models": 251,
     "total_orgs": 23,
-    "milestones_count": 55,
+    "milestones_count": 56,
     "date_range": {
       "start": "2025-01",
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "Other Global": 42,
-      "China-based Labs": 133,
-      "Anthropic": 12,
-      "Google": 39,
-      "OpenAI": 9
+      "China-based Labs": 135,
+      "Other Global": 44,
+      "Anthropic": 16,
+      "OpenAI": 15,
+      "Google": 41
     },
     "org_breakdown": {
+      "MiniMax": 9,
       "NVIDIA": 14,
       "InclusionAI (Ant Group)": 12,
-      "Anthropic": 12,
-      "MiniMax": 9,
-      "Tencent": 15,
+      "ByteDance": 8,
+      "Meta": 3,
+      "Anthropic": 16,
+      "Tencent": 16,
       "InternLM": 15,
-      "ByteDance": 7,
       "Allen AI": 10,
+      "OpenAI": 15,
       "Meituan": 14,
-      "Moonshot AI": 3,
       "Microsoft": 10,
+      "Google": 41,
       "OpenBMB": 12,
+      "Moonshot AI": 3,
       "DeepSeek": 6,
       "StepFun": 4,
       "Alibaba": 20,
       "xAI": 5,
-      "Google": 39,
       "Zhipu AI": 15,
-      "OpenAI": 9,
       "Snowflake": 1,
       "Hugging Face": 1,
-      "Quark (Alibaba)": 1,
-      "Meta": 1
+      "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Vision & Multimodal": 106,
-      "MoE": 39,
-      "Open Weights": 156,
-      "Agent & Coding": 75,
+      "Vision & Multimodal": 108,
+      "MoE": 37,
+      "Open Weights": 152,
+      "Agent & Coding": 73,
       "Medical & Science": 43,
       "Reasoning / CoT": 69,
-      "Audio & Speech": 29,
+      "Audio & Speech": 28,
       "Video": 34
     },
     "monthly_trend": [
@@ -130,7 +130,7 @@
       },
       {
         "month": "2026-07",
-        "count": 11
+        "count": 13
       },
       {
         "month": "2026-08",
@@ -138,19 +138,37 @@
       },
       {
         "month": "2026-09",
-        "count": 32
+        "count": 38
       },
       {
         "month": "2026-10",
-        "count": 37
+        "count": 42
       },
       {
         "month": "2026-11",
-        "count": 16
+        "count": 19
       }
     ]
   },
   "models": [
+    {
+      "id": "minimax--minimax-h3-image",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "MiniMax",
+      "model": "MiniMax-H3-Image",
+      "highlights": "",
+      "link": "https://www.minimax.io/blog/minimax-h3-image",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-11",
+      "report_kind": "official technical page"
+    },
     {
       "id": "nvidia--kimi-k3-1-pro-nvfp4",
       "date": "2026-11",
@@ -206,6 +224,40 @@
       ],
       "released_on": "2026-11-10",
       "report_kind": "model card"
+    },
+    {
+      "id": "bytedance--seedream-5-5",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "ByteDance",
+      "model": "Seedream 5.5",
+      "highlights": "",
+      "link": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-09",
+      "report_kind": "official technical page"
+    },
+    {
+      "id": "meta--muse-ember",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Meta",
+      "model": "Muse Ember",
+      "highlights": "",
+      "link": "https://research.meta.ai/blog/muse-ember",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-11-09",
+      "report_kind": "official technical page"
     },
     {
       "id": "anthropic--claude-fable-5-2-mythos-5-2",
@@ -361,6 +413,22 @@
       "report_kind": "model card"
     },
     {
+      "id": "openai--gpt-6-cyber",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "OpenAI",
+      "model": "GPT-6 Cyber",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-11-05",
+      "report_kind": "system card"
+    },
+    {
       "id": "bytedance--cross-layer-topk-clt",
       "date": "2026-11",
       "year": 2026,
@@ -421,43 +489,20 @@
       "report_kind": "model card"
     },
     {
-      "id": "minimax--minimax-h3-image",
+      "id": "tencent--hunyuan-hy4",
       "date": "2026-11",
       "year": 2026,
       "month": 11,
-      "org": "MiniMax",
-      "model": "MiniMax-H3-Image",
-      "highlights": "It generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to 6272x2688 (21:9), directly and without an upscaler (see [Sizes](#sizes)). The checkpoint is distilled to 6 sampling steps (6 NFEs) with no classifier-free guidance. Its diffusion transformer (DiT) has the H3 architecture without the audio layers, and it uses the MiniMax-H3 text encoder unchanged.",
-      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/5f90473023975e6271b0ed1dd84c4e88e4bbc6d3/README.md",
+      "org": "Tencent",
+      "model": "Hunyuan Hy4",
+      "highlights": "",
+      "link": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Audio & Speech",
-        "Open Weights"
-      ],
-      "released_on": "2026-11-03",
-      "report_kind": "model card"
-    },
-    {
-      "id": "moonshot--kimi-k3-1-pro",
-      "date": "2026-11",
-      "year": 2026,
-      "month": 11,
-      "org": "Moonshot AI",
-      "model": "Kimi-K3.1-Pro",
-      "highlights": "Architecture Mixture-of-Experts (MoE) Total Parameters 2.8T Activated Parameters 104B Number of Layers 93 Number of Dense Layers 1 Attention-Layer Composition 69 KDA + 24 Gated DSA * Attention Hidden Dimension 7168 Number of Attention Heads 96 DSA Index Head Dimension 128 DSA Index Number of Heads 32 DSA Index Top-K 2048 Latent MoE Dimension 3584 MoE Hidden Dimension (per Expert) 3072 Number of Experts 896 Selected Experts per Token 16 Number of Shared Experts 2 Vocabulary Size 160K Context Length 1048576 Attention Mechanism KDA &amp; Gated DSA Activatio",
-      "link": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-11-02",
-      "report_kind": "model card"
+      "tags": [],
+      "released_on": "2026-11-04",
+      "report_kind": "official technical page"
     },
     {
       "id": "microsoft--mage-vl-cowork",
@@ -498,6 +543,22 @@
       "report_kind": "technical report"
     },
     {
+      "id": "google--gemini-4-carbon",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Google",
+      "model": "Gemini 4 Carbon",
+      "highlights": "",
+      "link": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+      "file": "",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-28",
+      "report_kind": "model card"
+    },
+    {
       "id": "inclusionai--ling-3-1-flash-1019",
       "date": "2026-10",
       "year": 2026,
@@ -535,6 +596,22 @@
       ],
       "released_on": "2026-10-26",
       "report_kind": "model card"
+    },
+    {
+      "id": "openai--gpt-6-1-terra",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "OpenAI",
+      "model": "GPT-6.1 Terra",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-26",
+      "report_kind": "system card"
     },
     {
       "id": "tencent--hy-nomas-diffusers",
@@ -591,6 +668,22 @@
       ],
       "released_on": "2026-10-23",
       "report_kind": "model card"
+    },
+    {
+      "id": "moonshot--kimi-k3-1-pro",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Moonshot AI",
+      "model": "Kimi-K3.1-Pro",
+      "highlights": "",
+      "link": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-23",
+      "report_kind": "official technical page"
     },
     {
       "id": "internlm--atria-dawn",
@@ -728,6 +821,22 @@
       "report_kind": "technical report"
     },
     {
+      "id": "minimax--minimax-m3-1-flash",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "MiniMax",
+      "model": "MiniMax-M3.1-Flash",
+      "highlights": "",
+      "link": "https://www.minimax.io/blog/minimax-m31f",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-19",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "microsoft--sentiment-analysis-7b",
       "date": "2026-10",
       "year": 2026,
@@ -741,26 +850,6 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-17",
-      "report_kind": "model card"
-    },
-    {
-      "id": "minimax--minimax-m3-1-flash",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "MiniMax",
-      "model": "MiniMax-M3.1-Flash",
-      "highlights": "Building on MiniMax-M3, M3.1-Flash improves task performance and inference efficiency with sparse attention throughout the model, quantization-aware training, and DSpark speculative decoding.",
-      "link": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/blob/ce7f4df87d2e05262f5775f373dac4772f134041/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Agent & Coding",
-        "MoE",
         "Open Weights"
       ],
       "released_on": "2026-10-17",
@@ -1005,6 +1094,22 @@
       "report_kind": "technical report"
     },
     {
+      "id": "meta--muse-wonder",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Meta",
+      "model": "Muse Wonder",
+      "highlights": "",
+      "link": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-12",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "allenai--hiro-acev2",
       "date": "2026-10",
       "year": 2026,
@@ -1080,6 +1185,22 @@
       ],
       "released_on": "2026-10-07",
       "report_kind": "model card"
+    },
+    {
+      "id": "anthropic--claude-haiku-5-5",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Anthropic",
+      "model": "Claude Haiku 5.5",
+      "highlights": "",
+      "link": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "file": "",
+      "camp": "Anthropic",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-07",
+      "report_kind": "official technical page"
     },
     {
       "id": "inclusionai--lemondecider",
@@ -1172,6 +1293,38 @@
       ],
       "released_on": "2026-10-01",
       "report_kind": "model card"
+    },
+    {
+      "id": "google--gemini-4-argon",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "Google",
+      "model": "Gemini 4 Argon",
+      "highlights": "",
+      "link": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+      "file": "",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-30",
+      "report_kind": "model card"
+    },
+    {
+      "id": "openai--gpt-6-1-sol",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "OpenAI",
+      "model": "GPT-6.1 Sol",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-29",
+      "report_kind": "system card"
     },
     {
       "id": "microsoft--aescode-8b",
@@ -1305,6 +1458,38 @@
       "report_kind": "model card"
     },
     {
+      "id": "openai--gpt-6-sol",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "OpenAI",
+      "model": "GPT-6 Sol",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-6-astra/sec%3Aappendix-222669",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-22",
+      "report_kind": "system card"
+    },
+    {
+      "id": "anthropic--claude-opus-5-5",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "Anthropic",
+      "model": "Claude Opus 5.5",
+      "highlights": "",
+      "link": "https://www.anthropic.com/claude-opus-5-5",
+      "file": "",
+      "camp": "Anthropic",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-22",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "xai--grok-4-7",
       "date": "2026-09",
       "year": 2026,
@@ -1423,6 +1608,22 @@
       ],
       "released_on": "2026-09-17",
       "report_kind": "model card"
+    },
+    {
+      "id": "anthropic--claude-fable-5-1-mythos-5-1",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "Anthropic",
+      "model": "Claude Fable 5.1 / Mythos 5.1",
+      "highlights": "",
+      "link": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "file": "",
+      "camp": "Anthropic",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-15",
+      "report_kind": "official technical page"
     },
     {
       "id": "internlm--atria-dawn-preview-ascend-w8a8",
@@ -1715,6 +1916,22 @@
       ],
       "released_on": "2026-09-03",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "openai--gpt-6-astra",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "OpenAI",
+      "model": "GPT-6 Astra",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-6-astra",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-09-03",
+      "report_kind": "system card"
     },
     {
       "id": "google--gnm-v3",
@@ -2036,25 +2253,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "zhipu--glm-5-3",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Zhipu AI",
-      "model": "GLM-5.3",
-      "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
-      "link": "https://huggingface.co/zai-org/GLM-5.3/blob/ba32f8c19c8738e2c57c71798c601d477a7bf844/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": true,
-      "tags": [
-        "Agent & Coding",
-        "Open Weights"
-      ],
-      "released_on": "2026-08-25",
-      "report_kind": "model card"
-    },
-    {
       "id": "google--timesfm-3-0-pytorch",
       "date": "2026-08",
       "year": 2026,
@@ -2204,6 +2402,24 @@
       ],
       "released_on": "2026-08-19",
       "report_kind": "model card"
+    },
+    {
+      "id": "zhipu--glm-5-3",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Zhipu AI",
+      "model": "GLM-5.3",
+      "highlights": "",
+      "link": "https://docs.z.ai/guides/llm/glm-5.3",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": true,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-08-18",
+      "report_kind": "official technical page"
     },
     {
       "id": "deepseek--deepseek-v4-pro-0813",
@@ -2414,6 +2630,22 @@
       "report_kind": "model card"
     },
     {
+      "id": "anthropic--claude-opus-5",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "Anthropic",
+      "model": "Claude Opus 5",
+      "highlights": "",
+      "link": "https://www.anthropic.com/news/claude-opus-5",
+      "file": "",
+      "camp": "Anthropic",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-07-24",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "xai--grok-4-5",
       "date": "2026-07",
       "year": 2026,
@@ -2432,6 +2664,22 @@
       ],
       "released_on": "2026-07-16",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "openai--gpt-5-6",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "OpenAI",
+      "model": "GPT-5.6",
+      "highlights": "",
+      "link": "https://deploymentsafety.openai.com/gpt-5-6",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": true,
+      "tags": [],
+      "released_on": "2026-07-09",
+      "report_kind": "system card"
     },
     {
       "id": "nvidia--cosmos3-edge-policy-droid",

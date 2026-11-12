@@ -2793,18 +2793,19 @@
       }
     },
     {
+      "forms": [
+        "Image"
+      ],
       "id": "minimax--minimax-h3-image",
       "key": "minimax/minimax-h3-image",
       "model": "MiniMax-H3-Image",
       "org": "MiniMax",
-      "release_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
-      "released_on": "2026-11-03",
+      "release_url": "https://www.minimax.io/blog/minimax-h3-image",
+      "released_on": "2026-11-11",
       "report": {
-        "highlights": "It generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to 6272x2688 (21:9), directly and without an upscaler (see [Sizes](#sizes)). The checkpoint is distilled to 6 sampling steps (6 NFEs) with no classifier-free guidance. Its diffusion transformer (DiT) has the H3 architecture without the audio layers, and it uses the MiniMax-H3 text encoder unchanged.",
-        "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/README.md",
-        "kind": "model card",
-        "revision": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/5f90473023975e6271b0ed1dd84c4e88e4bbc6d3/README.md"
+        "id": "https://www.minimax.io/blog/minimax-h3-image",
+        "kind": "official technical page",
+        "url": "https://www.minimax.io/blog/minimax-h3-image"
       }
     },
     {
@@ -2842,14 +2843,12 @@
       "key": "minimax/minimax-m3-1-flash",
       "model": "MiniMax-M3.1-Flash",
       "org": "MiniMax",
-      "release_url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
-      "released_on": "2026-10-17",
+      "release_url": "https://www.minimax.io/blog/minimax-m31f",
+      "released_on": "2026-10-19",
       "report": {
-        "highlights": "Building on MiniMax-M3, M3.1-Flash improves task performance and inference efficiency with sparse attention throughout the model, quantization-aware training, and DSpark speculative decoding.",
-        "id": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/README.md",
-        "kind": "model card",
-        "revision": "ce7f4df87d2e05262f5775f373dac4772f134041",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/blob/ce7f4df87d2e05262f5775f373dac4772f134041/README.md"
+        "id": "https://www.minimax.io/blog/minimax-m31f",
+        "kind": "official technical page",
+        "url": "https://www.minimax.io/blog/minimax-m31f"
       }
     },
     {
@@ -2872,14 +2871,21 @@
       "key": "moonshot/kimi-k3-1-pro",
       "model": "Kimi-K3.1-Pro",
       "org": "Moonshot AI",
-      "release_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-      "released_on": "2026-11-02",
+      "release_events": [
+        {
+          "forms": [
+            "Open weights"
+          ],
+          "release_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+          "released_on": "2026-11-05"
+        }
+      ],
+      "release_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "released_on": "2026-10-23",
       "report": {
-        "highlights": "Architecture Mixture-of-Experts (MoE) Total Parameters 2.8T Activated Parameters 104B Number of Layers 93 Number of Dense Layers 1 Attention-Layer Composition 69 KDA + 24 Gated DSA * Attention Hidden Dimension 7168 Number of Attention Heads 96 DSA Index Head Dimension 128 DSA Index Number of Heads 32 DSA Index Top-K 2048 Latent MoE Dimension 3584 MoE Hidden Dimension (per Expert) 3072 Number of Experts 896 Selected Experts per Token 16 Number of Shared Experts 2 Vocabulary Size 160K Context Length 1048576 Attention Mechanism KDA &amp; Gated DSA Activatio",
-        "id": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/README.md",
-        "kind": "model card",
-        "revision": "d9e99b0792a5e93b78ea9bea62a68167e36ddd9e",
-        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md"
+        "id": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "kind": "official technical page",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
       }
     },
     {
@@ -3254,6 +3260,15 @@
       "key": "stepfun/step-5-preview",
       "model": "Step-5-Preview",
       "org": "StepFun",
+      "release_events": [
+        {
+          "forms": [
+            "Open weights"
+          ],
+          "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview/commits/main",
+          "released_on": "2026-10-15"
+        }
+      ],
       "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview",
       "released_on": "2026-09-20",
       "report": {
@@ -3549,14 +3564,283 @@
       "key": "zhipu/glm-5-3",
       "model": "GLM-5.3",
       "org": "Zhipu AI",
-      "release_url": "https://huggingface.co/zai-org/GLM-5.3",
-      "released_on": "2026-08-25",
+      "release_url": "https://docs.z.ai/release-notes/new-released",
+      "released_on": "2026-08-18",
       "report": {
-        "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
-        "id": "https://huggingface.co/zai-org/GLM-5.3/README.md",
+        "id": "https://docs.z.ai/guides/llm/glm-5.3",
+        "kind": "official technical page",
+        "url": "https://docs.z.ai/guides/llm/glm-5.3"
+      }
+    },
+    {
+      "id": "alibaba_qwen--qwen3-8-max",
+      "key": "alibaba_qwen/qwen3-8-max",
+      "model": "Qwen3.8-Max",
+      "org": "Alibaba",
+      "release_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen3-8-max",
+      "released_on": "2026-08-03",
+      "report": null
+    },
+    {
+      "forms": [
+        "Preview"
+      ],
+      "id": "alibaba_qwen--qwen4-max-preview",
+      "key": "alibaba_qwen/qwen4-max-preview",
+      "model": "Qwen4-Max Preview",
+      "org": "Alibaba",
+      "release_url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
+      "released_on": "2026-11-11",
+      "report": null
+    },
+    {
+      "id": "anthropic--claude-opus-5",
+      "key": "anthropic/claude-opus-5",
+      "model": "Claude Opus 5",
+      "org": "Anthropic",
+      "release_url": "https://www.anthropic.com/news/claude-opus-5",
+      "released_on": "2026-07-24",
+      "report": {
+        "id": "https://www.anthropic.com/news/claude-opus-5",
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/news/claude-opus-5"
+      }
+    },
+    {
+      "id": "anthropic--claude-fable-5-1-mythos-5-1",
+      "key": "anthropic/claude-fable-5-1-mythos-5-1",
+      "model": "Claude Fable 5.1 / Mythos 5.1",
+      "org": "Anthropic",
+      "release_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "released_on": "2026-09-15",
+      "report": {
+        "id": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      }
+    },
+    {
+      "id": "anthropic--claude-opus-5-5",
+      "key": "anthropic/claude-opus-5-5",
+      "model": "Claude Opus 5.5",
+      "org": "Anthropic",
+      "release_url": "https://www.anthropic.com/claude-opus-5-5",
+      "released_on": "2026-09-22",
+      "report": {
+        "id": "https://www.anthropic.com/claude-opus-5-5",
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      }
+    },
+    {
+      "id": "anthropic--claude-haiku-5-5",
+      "key": "anthropic/claude-haiku-5-5",
+      "model": "Claude Haiku 5.5",
+      "org": "Anthropic",
+      "release_url": "https://www.anthropic.com/claude-haiku-5-5",
+      "released_on": "2026-10-07",
+      "report": {
+        "id": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+        "kind": "official technical page",
+        "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
+      }
+    },
+    {
+      "forms": [
+        "Preview"
+      ],
+      "id": "baidu--ernie-5-5-flash-preview",
+      "key": "baidu/ernie-5-5-flash-preview",
+      "model": "ERNIE 5.5 Flash Preview",
+      "org": "Baidu",
+      "release_url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+      "released_on": "2026-11-11",
+      "report": null
+    },
+    {
+      "id": "bytedance--doubao-seed-2-1-pro-lite",
+      "key": "bytedance/doubao-seed-2-1-pro-lite",
+      "model": "Doubao Seed 2.1 Pro / Lite",
+      "org": "ByteDance",
+      "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
+      "released_on": "2026-09-15",
+      "report": null
+    },
+    {
+      "forms": [
+        "Image"
+      ],
+      "id": "bytedance--seedream-5-5",
+      "key": "bytedance/seedream-5-5",
+      "model": "Seedream 5.5",
+      "org": "ByteDance",
+      "release_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
+      "released_on": "2026-11-09",
+      "report": {
+        "id": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
+        "kind": "official technical page",
+        "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/"
+      }
+    },
+    {
+      "id": "google--gemini-4-argon",
+      "key": "google/gemini-4-argon",
+      "model": "Gemini 4 Argon",
+      "org": "Google",
+      "release_events": [
+        {
+          "forms": [
+            "General availability"
+          ],
+          "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "released_on": "2026-10-13"
+        }
+      ],
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "released_on": "2026-09-30",
+      "report": {
+        "id": "https://deepmind.google/models/model-cards/gemini-4-argon/",
         "kind": "model card",
-        "revision": "ba32f8c19c8738e2c57c71798c601d477a7bf844",
-        "url": "https://huggingface.co/zai-org/GLM-5.3/blob/ba32f8c19c8738e2c57c71798c601d477a7bf844/README.md"
+        "url": "https://deepmind.google/models/model-cards/gemini-4-argon/"
+      }
+    },
+    {
+      "id": "google--gemini-4-carbon",
+      "key": "google/gemini-4-carbon",
+      "model": "Gemini 4 Carbon",
+      "org": "Google",
+      "release_events": [
+        {
+          "forms": [
+            "General availability"
+          ],
+          "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "released_on": "2026-11-10"
+        }
+      ],
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "released_on": "2026-10-28",
+      "report": {
+        "id": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+        "kind": "model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
+      }
+    },
+    {
+      "id": "meta--muse-wonder",
+      "key": "meta/muse-wonder",
+      "model": "Muse Wonder",
+      "org": "Meta",
+      "release_url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+      "released_on": "2026-10-12",
+      "report": {
+        "id": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+        "kind": "official technical page",
+        "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
+      }
+    },
+    {
+      "id": "meta--muse-ember",
+      "key": "meta/muse-ember",
+      "model": "Muse Ember",
+      "org": "Meta",
+      "release_url": "https://research.meta.ai/blog/muse-ember",
+      "released_on": "2026-11-09",
+      "report": {
+        "id": "https://research.meta.ai/blog/muse-ember",
+        "kind": "official technical page",
+        "url": "https://research.meta.ai/blog/muse-ember"
+      }
+    },
+    {
+      "id": "openai--gpt-5-6",
+      "key": "openai/gpt-5-6",
+      "model": "GPT-5.6",
+      "org": "OpenAI",
+      "release_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "released_on": "2026-07-09",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-5-6",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6"
+      }
+    },
+    {
+      "id": "openai--gpt-6-astra",
+      "key": "openai/gpt-6-astra",
+      "model": "GPT-6 Astra",
+      "org": "OpenAI",
+      "release_url": "https://openai.com/index/gpt-6-astra/",
+      "released_on": "2026-09-03",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-6-astra",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+      }
+    },
+    {
+      "id": "openai--gpt-6-sol",
+      "key": "openai/gpt-6-sol",
+      "model": "GPT-6 Sol",
+      "org": "OpenAI",
+      "release_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "released_on": "2026-09-22",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-6-astra/sec%3Aappendix-222669",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/sec%3Aappendix-222669"
+      }
+    },
+    {
+      "id": "openai--gpt-6-1-sol",
+      "key": "openai/gpt-6-1-sol",
+      "model": "GPT-6.1 Sol",
+      "org": "OpenAI",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "released_on": "2026-09-29",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol"
+      }
+    },
+    {
+      "id": "openai--gpt-6-1-terra",
+      "key": "openai/gpt-6-1-terra",
+      "model": "GPT-6.1 Terra",
+      "org": "OpenAI",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "released_on": "2026-10-26",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-terra"
+      }
+    },
+    {
+      "id": "openai--gpt-6-cyber",
+      "key": "openai/gpt-6-cyber",
+      "model": "GPT-6 Cyber",
+      "org": "OpenAI",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "released_on": "2026-11-05",
+      "report": {
+        "id": "https://deploymentsafety.openai.com/gpt-6-cyber",
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
+      }
+    },
+    {
+      "id": "tencent--hunyuan-hy4",
+      "key": "tencent/hunyuan-hy4",
+      "model": "Hunyuan Hy4",
+      "org": "Tencent",
+      "release_url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
+      "released_on": "2026-11-04",
+      "report": {
+        "id": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
+        "kind": "official technical page",
+        "url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release"
       }
     }
   ],
