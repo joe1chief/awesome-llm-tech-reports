@@ -1,4 +1,4 @@
-# Awesome LLM Technical Reports (2025-01 ~ 2026-07)
+# Awesome LLM Technical Reports (2025-01 ~ 2026-11)
 
 > A curated, structured local archive of frontier LLM / multimodal / medical-vertical model documentation — papers, system cards, model cards, and official blog posts — organized by **year / company**.
 
@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--07-4c1" alt="time range">
-  <img src="https://img.shields.io/badge/Models-112-blue" alt="models">
+  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--11-4c1" alt="time range">
+  <img src="https://img.shields.io/badge/Models-115-blue" alt="models">
   <img src="https://img.shields.io/badge/Local%20PDF-112-success" alt="local pdf">
   <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
   <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
@@ -22,31 +22,30 @@
 
 - [Project Scope](#project-scope)
 - [Release Timeline](#release-timeline)
+- [Technical Word Cloud](#technical-word-cloud)
 - [Company Quick Links](#company-quick-links)
 - [Model Index (Folded by Year)](#model-index-folded-by-year)
 - [Star History](#star-history)
 
 ## Project Scope
 
-- Systematically archives major model releases from **January 2025** to **July 2026** across LLM, multimodal, and medical-vertical domains.
-- Downloads official papers, system cards, model cards as local PDFs; exports web-only blog pages to PDF via headless browser.
-- Provides a single searchable Markdown index sorted in reverse chronological order.
+- Archives model reports from **2025-01** through **2026-11** across LLM, multimodal and medical domains.
+- Links official technical reports, system cards and model cards. Local PDFs are available for mirrored reports.
+- Provides a searchable Markdown index and a [scheduled refresh workflow](REPORT_AUTOMATION.md).
 
 ## Release Timeline
 
-**Legend (Camp Colors):** `OpenAI` · `Anthropic` · `Google` · `China-based Labs` · `Other Global`  
-**Impact Highlight:** nodes with **★** are ecosystem-shaping releases (community discussion, benchmark influence, or deployment adoption).
+[Browse the full timeline and release sources](https://joe1chief.github.io/awesome-llm-tech-reports/timeline.html)
 
-![Release Timeline](assets/diagrams/release-timeline.svg)
+![2026 model releases, January to June](assets/diagrams/release-timeline-2026-h1.svg)
 
-<details>
-<summary><b>Monthly Density Snapshot</b></summary>
+![2026 model releases, July to December](assets/diagrams/release-timeline-2026-h2.svg)
 
-![Monthly Density Snapshot](assets/diagrams/monthly-density.svg)
+## Technical Word Cloud
 
-> Bubble size follows the release count from the model index table.
+![2026 report terms sized by release count](assets/diagrams/technical-word-cloud-2026.svg)
 
-</details>
+[Word frequencies](docs/data/word-cloud.json)
 
 ## Company Quick Links
 
@@ -106,10 +105,13 @@
 ## Model Index (Folded by Year)
 
 <details open>
-<summary><b>2026 (46 models)</b></summary>
+<summary><b>2026 (49 models)</b></summary>
 
 | Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |
 | --- | --- | --- | --- | --- | --- |
+| 2026-11-09 | Anthropic | Claude Fable 5.2 / Mythos 5.2 | The paired release documents agentic coding, software engineering and multi-step work evaluations, alongside the safety testing performed before deployment. | https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card | Official source |
+| 2026-09-28 | Anthropic | Claude Sonnet 5.5 | Anthropic evaluates agentic coding and computer use across effort settings, including how lower inference effort affects task quality and cost. The system card covers evaluation methodology and safety. | https://www.anthropic.com/claude-sonnet-5-5-system-card | Official source |
+| 2026-09-10 | DeepSeek | DeepSeek-V4.1-Flash | A smaller model family introduces native visual understanding and reduces KV cache demand. DeepSeek attributes capability improvements to changes in pretraining and larger-scale reinforcement learning during post-training. | https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf | Official source |
 | 2026-07 | Meituan | LongCat-2.0 | To strengthen the model on long-horizon tasks, we introduce LongCat Sparse Attention and train LongCat-2.0 on hundreds of billions of tokens of 1M-context data Together with dedicated post-training, this gives LongCat-2.0 strong performance on coding and agentic tasks | https://huggingface.co/meituan-longcat/LongCat-2.0 | 2026/meituan/2026-07_longcat-2.0.pdf |
 | 2026-06 | Google | Gemini 3.5 Audio (Live Translate) | Model Data Training Dataset: Gemini 3.5 Live Translate is based on Gemini 3 Pro Gemini 3.5 Live Translate is designed to filter out background noise, but not all background audio may be ignored | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Audio-Model-Card.pdf | 2026/google/2026-06_gemini-3.5-audio-live-translate.pdf |
 | 2026-06 | Google | Gemini 3.1 Flash-Lite Image | Gemini 3.1 Flash-Lite Image can comprehend input from different information sources, including text, images, audio and video 1 Model Data Training Dataset: Gemini 3.1 Flash-Lite Image is based on Gemini 3.1 Flash-Lite | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Image-Model-Card.pdf | 2026/google/2026-06_gemini-3.1-flash-lite-image.pdf |
@@ -140,7 +142,7 @@
 | 2026-03 | NVIDIA | Nemotron 3 Super | We describe the pre-training, post-training, and quantization of Nemotron 3 Super, a 120 billion (active 12 billion) parameter hybrid Mamba-Attention Mixture-of-Experts model Nemotron 3 Super : Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning IFBench (Inst | https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf | 2026/nvidia/2026-03_nemotron-3-super.pdf |
 | 2026-03 | Microsoft | Phi-4-reasoning-vision-15B | Phi-4-reasoning-vision-15B is a compact open-weight multimodal reasoning model that balances reasoning power, efficiency, and training data needs It is a broadly capable model that allows for natural interaction for a wide array of vision-language tasks and excels at math and science reasoning and understanding user interfaces, as shown in Figure 1 | https://arxiv.org/pdf/2603.03975 | 2026/microsoft/2026-03_phi-4-reasoning-vision-15b.pdf |
 | 2026-03 | InternLM | Intern-S1-Pro | Intern- S1 is a multimodal Mixture-of-Experts (MoE) model with 28 billion activated parameters and 241 billion total parameters, continually pre-trained on 5T to- kens, including over 2.5T tokens from scientific domains 2 Intern-S1 Technical Report In the pre-training stage, the key challenge is to prepare large-scale pre-training data for those low-resource but high-value science domains | https://arxiv.org/pdf/2508.15763 | 2026/internlm/2026-03_intern-s1-pro.pdf |
-| 2026-03 | Anthropic | Claude Opus 4.6 | Nico Christie Co-founder & CTO , Shortcut.ai 01 / 20 Evaluating Claude Opus 4.6 Across agentic coding, computer use, tool use, search, and finance , Opus 4.6 is an industry-leading model, often by a wide margin Claude Opus 4.6 is available today on claude.ai , our API, and all major cloud platforms | https://www.anthropic.com/news/claude-opus-4-6 | 2026/anthropic/2026-03_claude-opus-4.6.pdf |
+| 2026-03 | Anthropic | Claude Opus 4.6 | Nico Christie Co-founder &amp; CTO , Shortcut.ai 01 / 20 Evaluating Claude Opus 4.6 Across agentic coding, computer use, tool use, search, and finance , Opus 4.6 is an industry-leading model, often by a wide margin Claude Opus 4.6 is available today on claude.ai , our API, and all major cloud platforms | https://www.anthropic.com/news/claude-opus-4-6 | 2026/anthropic/2026-03_claude-opus-4.6.pdf |
 | 2026-03 | Zhipu AI | GLM-5-Turbo | Meanwhile, the usage of Skills has increased rapidly—from 26% to 45% in a short period of time —highlighting a clear shift toward a more modular and skill-driven agent ecosystem Based on extensive analysis of real Open Claw use cases, we introduce ZClaw Bench , an end-to-end benchmark designed specifically for agent tasks in the Open Claw ecosystem | https://docs.z.ai/guides/llm/glm-5-turbo | 2026/zhipu/2026-03_glm-5-turbo.pdf |
 | 2026-02 | Zhipu AI | GLM-5 | Next-generation foundation model designed for agentic engineering; adopts DSA (DeepSeek Sparse Attention) on top of MoE 744B/40B with async RL to strengthen reasoning, coding, and agent capabilities. | https://docs.z.ai/guides/llm/glm-5 | 2026/zhipu/2026-02_glm-5.pdf |
 | 2026-02 | OpenAI | GPT-5.3-Codex | 29 2 1 Introduction GPT-5.3-Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT-5.2-Codex with the reasoning and professional knowledge capabilities of GPT-5.2 As explained in the GPT-5.1-Codex-Max system card, the model is not intended for conversational use | https://deploymentsafety.openai.com/gpt-5-3-codex/gpt-5-3-codex.pdf | 2026/openai/2026-02_gpt-5.3-codex.pdf |
@@ -159,21 +161,23 @@
 
 </details>
 
+---
+
 <details>
 <summary><b>2025 (66 models)</b></summary>
 
 | Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |
 | --- | --- | --- | --- | --- | --- |
-| 2025-12 | StepFun | Step-DeepResearch | To address this, we introduce Step-Deep Research, a cost-effective, end-to-end Deep Research agent model Kimi-Researcher [3] supports long-horizon multi-turn search reasoning through end-to-end agentic RL training, employing context management mechanisms and asynchronous rollout systems | https://arxiv.org/pdf/2512.20491 | 2025/stepfun/2025-12_step-deepresearch.pdf |
+| 2025-12 | StepFun | Step-DeepResearch | To address this, we introduce Step-Deep Research, a cost-effective, end-to-end Deep Research agent model Kimi-Researcher \[3\] supports long-horizon multi-turn search reasoning through end-to-end agentic RL training, employing context management mechanisms and asynchronous rollout systems | https://arxiv.org/pdf/2512.20491 | 2025/stepfun/2025-12_step-deepresearch.pdf |
 | 2025-12 | Zhipu AI | GLM-4.7 | This reduces the time developers spend on style “fine-tuning.” GLM-4.7 delivers significant upgrades in layout and aesthetics for office creation Multimodal Interaction and Real-Time Application Development In scenarios requiring cameras, real-time input, and interactive controls, GLM-4.7 demonstrates superior system-level comprehension | https://docs.z.ai/guides/llm/glm-4.7 | 2025/zhipu/2025-12_glm-4.7.pdf |
 | 2025-12 | MiniMax | MiniMax M2.1 | 2025.12.23 MiniMax M2.1: Significantly Enhanced Multi-Language Programming, Built for Real-World Complex Tasks Access API Coding Plan Try Agent Now MiniMax has been continuously transforming itself in a more AI-native way Today we are releasing updates to the model component, namely MiniMax M2.1, hoping to help more enterprises and individuals find more AI- native ways of working (and living) sooner | https://www.minimax.io/news/minimax-m21 | 2025/minimax/2025-12_minimax-m2.1.pdf |
 | 2025-12 | Meituan | LongCat-Image | We are releasing not only multiple model versions for text-to-image and image editing, including checkpoints after mid-training and post-training stages, but also the entire toolchain of training procedure Beyond generation, LongCat-Image also excels in image editing, achieving SOTA results on standard benchmarks with superior editing consistency compared to other open-source works | https://arxiv.org/pdf/2512.07584 | 2025/meituan/2025-12_longcat-image.pdf |
 | 2025-12 | Allen AI | OLMo 3 | Our flagship model,Olmo 3.1 Think32B, is the strongest fully-open thinking model released to-date 2.2 Post-training We post-train Olmo 3 Baseinto three model variants: • Olmo 3 Think(Section §4) is trained to perform extended reasoning by generating a structured thinking trace before a final answer | https://arxiv.org/pdf/2512.13961 | 2025/allenai/2025-12_olmo-3.pdf |
-| 2025-12 | Alibaba | Qwen-Image | Based on this insight, we introduce Qwen-Image- Layered, an end-to-end diffusion model that directly de- composes a single RGB image into multiple semantically disentangled RGBA layers • 2) Unlike prior methods that decompose images into fore- ground and background [18, 45], we propose a VLD- MMDi T (Variable Layers Decomposition MMDi T), which supports decomposition into a variable number of layers and is compatible with multi-task training | https://arxiv.org/pdf/2512.15603 | 2025/alibaba_qwen/2025-12_qwen-image.pdf |
+| 2025-12 | Alibaba | Qwen-Image | Based on this insight, we introduce Qwen-Image- Layered, an end-to-end diffusion model that directly de- composes a single RGB image into multiple semantically disentangled RGBA layers • 2) Unlike prior methods that decompose images into fore- ground and background \[18, 45\], we propose a VLD- MMDi T (Variable Layers Decomposition MMDi T), which supports decomposition into a variable number of layers and is compatible with multi-task training | https://arxiv.org/pdf/2512.15603 | 2025/alibaba_qwen/2025-12_qwen-image.pdf |
 | 2025-12 | Google | Gemini 3 Flash | Gemini 3 Flash is built off of the Gemini 3 Pro reasoning foundation with thinking levels to control the mix of quality, cost and latency Model dependencies: Gemini 3 Flash is based on Gemini 3 Pro | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf | 2025/google/2025-12_gemini-3-flash.pdf |
 | 2025-12 | Zhipu AI | GLM-4.6V | GLM-4.6V is equipped with native multimodal tool calling capability: Multimodal Input: Images, screenshots, and document pages can be passed directly as tool parameters without being converted to text descriptions first, minimizing signal loss GLM-4.6V GLM-4.6V-Flash X GLM-4.6V-Flash Positioning High Performance Input Modality Video / Image / Text / File Output Modality Text Context Length 128K Resources API Documentation: Learn how to call the API | https://docs.z.ai/guides/vlm/glm-4.6v | 2025/zhipu/2025-12_glm-4.6v.pdf |
 | 2025-11 | Alibaba | Qwen3-VL | Most capable vision-language model in the Qwen series; natively supports interleaved contexts up to 256K tokens, seamlessly integrating text, images, and video for multimodal reasoning. | https://arxiv.org/pdf/2511.21631 | 2025/alibaba_qwen/2025-11_qwen3-vl.pdf |
-| 2025-11 | NVIDIA | Nemotron 3 Nano 4B | The accuracy shown is the average across all benchmarks: MATH-500, AIME-2024, AIME-2025, GPQA, Live Code Bench v5, and MMLU-Pro.Right: Scaling analysis comparing Nemotron Elastic and Minitron-SSM as model family size grows We validate our approach by training elastic vari- ants of Nemotron Nano V2 12B reasoning model [14], producing both homogeneous and heterogeneous 9B configurations plus a 6B variant, all from a single training run | https://arxiv.org/pdf/2511.16664 | 2025/nvidia/2025-11_nemotron-3-nano-4b.pdf |
+| 2025-11 | NVIDIA | Nemotron 3 Nano 4B | The accuracy shown is the average across all benchmarks: MATH-500, AIME-2024, AIME-2025, GPQA, Live Code Bench v5, and MMLU-Pro.Right: Scaling analysis comparing Nemotron Elastic and Minitron-SSM as model family size grows We validate our approach by training elastic vari- ants of Nemotron Nano V2 12B reasoning model \[14\], producing both homogeneous and heterogeneous 9B configurations plus a 6B variant, all from a single training run | https://arxiv.org/pdf/2511.16664 | 2025/nvidia/2025-11_nemotron-3-nano-4b.pdf |
 | 2025-11 | xAI | Grok 4.1 Fast | November 2025 Copy for LLM View as Markdown Nov 19 Grok 4.1 Fast is available in Enterprise API You can now use Grok 4.1 Fast in the x AI Enterprise API October 2025 Copy for LLM View as Markdown Oct 15 Tools are now generally available New agentic server-side tools including web_search , x_search and code_execution are available | https://docs.x.ai/docs/release-notes | 2025/xai/2025-11_grok-4.1-fast.pdf |
 | 2025-11 | OpenAI | GPT-5.1-Codex-Max | 26 2 1 Introduction GPT-5.1-Codex-Max is our new frontier agentic coding model 3 2 Baseline model safety evaluations 3 2.1 Disallowed content evaluations | https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf | 2025/openai/2025-11_gpt-5.1-codex-max.pdf |
 | 2025-11 | Anthropic | Claude Haiku 4.5 | Guy Gur-Ari Co-Founder Claude Haiku 4.5 is a leap forward for agentic coding , particularly for sub-agent orchestration and computer use tasks Claude Haiku 4.5 is available everywhere today | https://www.anthropic.com/news/claude-haiku-4-5 | 2025/anthropic/2025-11_claude-haiku-4.5.pdf |
@@ -182,10 +186,10 @@
 | 2025-11 | Google | Gemini 3 Pro | Gemini 3 Pro is now Google’s most advanced model for complex tasks, and can comprehend vast datasets and challenging problems from different information sources, including text, audio, images, video, and entire code repositories Gemini 3 Pro is trained using reinforcement learning techniques that can leverage multi-step reasoning, problem-solving and theorem-proving data | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf | 2025/google/2025-11_gemini-3-pro.pdf |
 | 2025-11 | Tencent | HunyuanVideo 1.5 | We present Hunyuan Video 1.5, a lightweight yet powerful open-source video generation model that achieves state-of-the-art visual quality and motion coher- ence with only 8.3 billion parameters, enabling efficient inference on consumer- grade GPUs To address these challenges, we introduce Hunyuan Video 1.5, an open-source 8.3B video generation model designed to achieve state-of-the-art visual quality while maintaining high inference efficiency | https://arxiv.org/pdf/2511.18870 | 2025/tencent/2025-11_hunyuanvideo-1.5.pdf |
 | 2025-10 | Meituan | LongCat-Flash-Omni | Open-source omni-modal 560B model (27B activated) optimized for low-latency real-time audio-visual interaction; uses curriculum-inspired progressive multimodal training with modality-decoupled parallelism sustaining over 90% of text-only training throughput. | https://arxiv.org/pdf/2511.00279 | 2025/meituan/2025-10_longcat-flash-omni.pdf |
-| 2025-10 | MiniMax | MiniMax M2 | 2025.10.27 MiniMax M2 & Agent: Ingenious in Sim plicity Access API Coding Plan Try Agent Now From Day 1 of our founding, we have been committed to the vision of " | https://www.minimax.io/news/minimax-m2 | 2025/minimax/2025-10_minimax-m2.pdf |
+| 2025-10 | MiniMax | MiniMax M2 | 2025.10.27 MiniMax M2 &amp; Agent: Ingenious in Sim plicity Access API Coding Plan Try Agent Now From Day 1 of our founding, we have been committed to the vision of " | https://www.minimax.io/news/minimax-m2 | 2025/minimax/2025-10_minimax-m2.pdf |
 | 2025-10 | Meituan | LongCat-Video | Toward this end, we introduce LongCat-Video, a foundational video generation model with 13.6B parameters, delivering strong performance across multiple video generation tasks In this report, we introduce LongCat-Video, a foundational video generation model with 13.6B parameters that delivers strong performance across general video generation tasks, particularly excelling in efficient, high-quality long video generation | https://arxiv.org/pdf/2510.22200 | 2025/meituan/2025-10_longcat-video.pdf |
 | 2025-10 | InternLM | Intern-S1 | Intern- S1 is a multimodal Mixture-of-Experts (MoE) model with 28 billion activated parameters and 241 billion total parameters, continually pre-trained on 5T to- kens, including over 2.5T tokens from scientific domains 2 Intern-S1 Technical Report In the pre-training stage, the key challenge is to prepare large-scale pre-training data for those low-resource but high-value science domains | https://arxiv.org/pdf/2508.15763 | 2025/internlm/2025-10_intern-s1.pdf |
-| 2025-10 | Google | Gemini 2.5 Computer Use | Ethics and Safety Evaluation Approach: As the Gemini 2.5 Computer Use Model is based off of Gemini 2.5 Pro, we rely on Ethics & Safety evaluations reported for Gemini 2.5 Pro Frontier Safety Assessment: Because model usage is restricted to the Gemini 2.5 Computer Use tool, the scope of capabilities is limited to browser and mobile user interface controls; it is therefore not in scope for a Frontier Safety Framework assessment | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Computer-Use-Model-Card.pdf | 2025/google/2025-10_gemini-2.5-computer-use.pdf |
+| 2025-10 | Google | Gemini 2.5 Computer Use | Ethics and Safety Evaluation Approach: As the Gemini 2.5 Computer Use Model is based off of Gemini 2.5 Pro, we rely on Ethics &amp; Safety evaluations reported for Gemini 2.5 Pro Frontier Safety Assessment: Because model usage is restricted to the Gemini 2.5 Computer Use tool, the scope of capabilities is limited to browser and mobile user interface controls; it is therefore not in scope for a Frontier Safety Framework assessment | https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Computer-Use-Model-Card.pdf | 2025/google/2025-10_gemini-2.5-computer-use.pdf |
 | 2025-10 | Hugging Face | SmolLM3 | It supports dual mode reasoning, 6 languages and long context The model is a decoder-only transformer using GQA and No PE (with 3:1 ratio), it was pretrained on 11.2T tokens with a staged curriculum of web, code, math and reasoning data | https://huggingface.co/HuggingFaceTB/SmolLM3-3B | 2025/huggingface/2025-10_smollm3.pdf |
 | 2025-09 | Meituan | LongCat-Flash | 560B MoE language model designed for computational efficiency and agentic capabilities; introduces Zero-computation Experts and novel routing for scalable inference. | https://arxiv.org/pdf/2509.01322 | 2025/meituan/2025-09_longcat-flash.pdf |
 | 2025-09 | Meituan | LongCat-Flash-Thinking | Efficient 560B MoE reasoning model built on LongCat-Flash; cultivated through long CoT data cold-start and curriculum RL for formal and agentic reasoning. | https://arxiv.org/pdf/2509.18883 | 2025/meituan/2025-09_longcat-flash-thinking.pdf |
@@ -224,7 +228,7 @@
 | 2025-04 | Alibaba | Qwen3 | A key innovation in Qwen3 is the integration of thinking mode (for complex, multi-step reasoning) and non-thinking mode (for rapid, context-driven responses) into a unified framework Meanwhile, due to the advantage of the model architecture, the inference costs and training costs on each trillion tokens of Qwen3-235B-A22B-Base are much cheaper than those of Qwen2.5-72B-Base | https://raw.githubusercontent.com/QwenLM/Qwen3/main/Qwen3_Technical_Report.pdf | 2025/alibaba_qwen/2025-04_qwen3.pdf |
 | 2025-03 | Alibaba | Qwen2.5-Omni | In this report, we present Qwen2.5-Omni, an end-to-end multimodal model designed to perceive diverse modalities, including text, images, audio, and video, while simultane- ously generating text and natural speech responses in a streaming manner Figure 1: Qwen2.5-Omni is a unified end-to-end model capable of processing multiple modalities, such as text, audio, image and video, and generating real-time text or speech response | https://github.com/QwenLM/Qwen2.5-Omni/raw/main/assets/Qwen2.5_Omni.pdf | 2025/alibaba_qwen/2025-03_qwen2.5-omni.pdf |
 | 2025-02 | Google | Gemma 2 | The MoE Architecture (26B A4B): The 26B is a Mixture of Experts model This is why its baseline memory requirement is much closer to a dense 26B model than a 4B model | https://storage.googleapis.com/deepmind-media/gemma/gemma-2-report.pdf | 2025/google/2025-02_gemma-2.pdf |
-| 2025-02 | Google | Gemma 1 | Enhanced Coding & Agentic Capabilities: Achieves notable improvements in coding benchmarks alongside built-in function-calling support, powering highly capable autonomous agents Native System Prompt Support: Gemma 4 introduces built-in support for the system role, enabling more structured and controllable conversations | https://ai.google.dev/gemma/docs/model_card | 2025/google/2025-02_gemma-1.pdf |
+| 2025-02 | Google | Gemma 1 | Enhanced Coding &amp; Agentic Capabilities: Achieves notable improvements in coding benchmarks alongside built-in function-calling support, powering highly capable autonomous agents Native System Prompt Support: Gemma 4 introduces built-in support for the system role, enabling more structured and controllable conversations | https://ai.google.dev/gemma/docs/model_card | 2025/google/2025-02_gemma-1.pdf |
 | 2025-01 | Alibaba | Qwen2.5-1M | Compared to the previous 128K version, the Qwen2.5-1M series have significantly enhanced long-context capabilities through long-context pre- training and post-training Specifically, the Qwen2.5-14B-Instruct-1M model significantly outperforms GPT-4o-mini in long-context tasks and supports contexts eight times longer | https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen2.5-1M/Qwen2_5_1M_Technical_Report.pdf | 2025/alibaba_qwen/2025-01_qwen2.5-1m.pdf |
 | 2025-01 | Alibaba | Qwen2.5-Max | Qwen2.5-Max is available in Qwen Chat, and you can directly chat with the model, or play with artifacts, search, etc The API of Qwen2.5-Max (whose model name is qwen-max-2025-01-25) is available | https://qwen.ai/blog?id=qwen2.5-max | 2025/alibaba_qwen/2025-01_qwen2.5-max.pdf |
 | 2025-01 | Alibaba | Qwen2.5-VL | Being agentic: Qwen2.5-VL directly plays as a visual agent that can reason and dynamically direct tools, which is capable of computer use and phone use Qwen2.5-VL is not only proficient in recognizing common objects such as flowers, birds, fish, and insects, but it is highly capable of analyzing texts, charts, icons, graphics, and layouts within images | https://qwen.ai/blog?id=qwen2.5-vl | 2025/alibaba_qwen/2025-01_qwen2.5-vl.pdf |
@@ -233,6 +237,7 @@
 
 </details>
 
+---
 
 ## Star History
 

@@ -1,0 +1,236 @@
+{
+  "alibaba_qwen": {
+    "org": "Alibaba",
+    "hub": "Qwen",
+    "official": "https://qwenlm.github.io/blog/",
+    "model_pattern": "Qwen(?:[ -]?\\d[\\w.]*)(?:[- ][A-Za-z0-9.]+){0,4}",
+    "hosts": [
+      "github.com",
+      "qianwen-res.oss-cn-beijing.aliyuncs.com",
+      "qwen.ai",
+      "qwenlm.github.io",
+      "raw.githubusercontent.com"
+    ],
+    "group_sizes": true
+  },
+  "allenai": {
+    "org": "Allen AI",
+    "hub": "allenai",
+    "official": "https://allenai.org/blog",
+    "model_pattern": "(?:OLMo|Molmo)[\\w. -]*\\d[\\w. -]*",
+    "hosts": [
+      "allenai.org"
+    ]
+  },
+  "anthropic": {
+    "org": "Anthropic",
+    "hub": "",
+    "official": "https://www.anthropic.com/news",
+    "model_pattern": "Claude[ -](?:Opus|Sonnet|Haiku|Fable|Mythos)[ -]\\d+(?:[.-]\\d+)?",
+    "hosts": [
+      "assets.anthropic.com",
+      "www-cdn.anthropic.com",
+      "www.anthropic.com"
+    ]
+  },
+  "bytedance": {
+    "org": "ByteDance",
+    "hub": "ByteDance-Seed",
+    "official": "https://seed.bytedance.com/en/blog",
+    "model_pattern": "(?:Seed(?:ream|ance)?|Doubao|MedXiaohe)[- ]?\\d[\\w. -]*",
+    "hosts": [
+      "seed.bytedance.com"
+    ]
+  },
+  "deepseek": {
+    "org": "DeepSeek",
+    "hub": "deepseek-ai",
+    "official": "https://www.deepseek.com/en/news/",
+    "model_pattern": "DeepSeek[- ][VR]\\d[\\w. -]*",
+    "hosts": [
+      "api-docs.deepseek.com",
+      "deepseek.com",
+      "github.com",
+      "www.deepseek.com"
+    ]
+  },
+  "google": {
+    "org": "Google",
+    "hub": "google",
+    "official": "https://deepmind.google/models/model-cards/",
+    "model_pattern": "(?:Gemini|Gemma|MedGemma|Veo|Imagen)[- ]\\d[\\w. -]*",
+    "hosts": [
+      "ai.google.dev",
+      "blog.google",
+      "deepmind.google",
+      "developers.googleblog.com",
+      "research.google",
+      "storage.googleapis.com"
+    ],
+    "group_sizes": true
+  },
+  "huggingface": {
+    "org": "Hugging Face",
+    "hub": "HuggingFaceTB",
+    "official": "https://huggingface.co/blog/feed.xml",
+    "model_pattern": "Smol(?:LM|VLM)[- ]?\\d[\\w. -]*",
+    "hosts": [],
+    "group_sizes": true
+  },
+  "inclusionai": {
+    "org": "InclusionAI (Ant Group)",
+    "hub": "inclusionAI",
+    "official": "https://www.inclusionai.com/",
+    "model_pattern": "(?:Ling|Ring)[- ](?:v)?\\d[\\w. -]*",
+    "hosts": [
+      "github.com",
+      "www.inclusionai.com"
+    ]
+  },
+  "internlm": {
+    "org": "InternLM",
+    "hub": "internlm",
+    "official": "https://internlm.readthedocs.io/en/latest/",
+    "model_pattern": "Intern(?:LM|VL|[- ]S)[- ]?\\d[\\w. -]*",
+    "hosts": [
+      "internlm.readthedocs.io"
+    ]
+  },
+  "meituan": {
+    "org": "Meituan",
+    "hub": "meituan-longcat",
+    "official": "https://longcat.chat/",
+    "model_pattern": "LongCat[- ][\\w. -]+",
+    "hosts": [
+      "longcat.ai",
+      "longcat.chat"
+    ],
+    "group_sizes": true
+  },
+  "meta": {
+    "org": "Meta",
+    "hub": "meta-llama",
+    "official": "https://ai.meta.com/blog/",
+    "model_pattern": "Llama[- ]\\d[\\w. -]*",
+    "hosts": [
+      "ai.meta.com"
+    ],
+    "group_sizes": true
+  },
+  "microsoft": {
+    "org": "Microsoft",
+    "hub": "microsoft",
+    "official": "https://www.microsoft.com/en-us/research/feed/",
+    "model_pattern": "Phi[- ]\\d[\\w. -]*",
+    "hosts": [
+      "www.microsoft.com"
+    ]
+  },
+  "minimax": {
+    "org": "MiniMax",
+    "hub": "MiniMaxAI",
+    "official": "https://www.minimax.io/news",
+    "model_pattern": "MiniMax[- ][A-Z]\\d[\\w. -]*",
+    "hosts": [
+      "www.minimax.io",
+      "www.minimaxi.com"
+    ]
+  },
+  "moonshot": {
+    "org": "Moonshot AI",
+    "hub": "moonshotai",
+    "official": "https://www.kimi.com/blog",
+    "model_pattern": "Kimi[- ](?:K\\d[\\w. -]*|Linear|VL)",
+    "hosts": [
+      "github.com",
+      "www.kimi.com"
+    ]
+  },
+  "nvidia": {
+    "org": "NVIDIA",
+    "hub": "nvidia",
+    "official": "https://developer.nvidia.com/blog/feed/",
+    "model_pattern": "(?:Nemotron|Cosmos)[- ](?:[A-Za-z]+[- ])?\\d[\\w. -]*",
+    "hosts": [
+      "developer.nvidia.com",
+      "research.nvidia.com"
+    ]
+  },
+  "openai": {
+    "org": "OpenAI",
+    "hub": "openai",
+    "official": "https://openai.com/news/rss.xml",
+    "model_pattern": "(?:GPT[- ](?:OSS[- ])?\\d+(?:[.-]\\d+)?(?:[- ](?:Codex|mini|nano|Pro|Flash|Thinking))?|o\\d+(?:[- ]mini)?)(?![\\w.])",
+    "hosts": [
+      "cdn.openai.com",
+      "deploymentsafety.openai.com",
+      "openai.com"
+    ]
+  },
+  "openbmb": {
+    "org": "OpenBMB",
+    "hub": "openbmb",
+    "official": "https://www.openbmb.org/",
+    "model_pattern": "MiniCPM[- ][\\w. -]*\\d[\\w. -]*",
+    "hosts": [
+      "www.openbmb.org"
+    ]
+  },
+  "quark": {
+    "org": "Quark (Alibaba)",
+    "hub": "",
+    "official": "https://quark.sm.cn/",
+    "model_pattern": "Quark(?:Med|[- ]Medical)[\\w. -]*",
+    "hosts": [
+      "quark.sm.cn"
+    ]
+  },
+  "snowflake": {
+    "org": "Snowflake",
+    "hub": "Snowflake",
+    "official": "https://www.snowflake.com/en/blog/",
+    "model_pattern": "Arctic[- ][\\w. -]+",
+    "hosts": [
+      "www.snowflake.com"
+    ]
+  },
+  "stepfun": {
+    "org": "StepFun",
+    "hub": "stepfun-ai",
+    "official": "https://www.stepfun.com/",
+    "model_pattern": "Step[- ]?\\d[\\w. -]*",
+    "hosts": [
+      "www.stepfun.com"
+    ]
+  },
+  "tencent": {
+    "org": "Tencent",
+    "hub": "tencent",
+    "official": "https://hunyuan.tencent.com/",
+    "model_pattern": "Hunyuan[\\w. -]*",
+    "hosts": [
+      "github.com",
+      "hunyuan.tencent.com"
+    ]
+  },
+  "xai": {
+    "org": "xAI",
+    "hub": "xai-org",
+    "official": "https://docs.x.ai/docs/release-notes",
+    "model_pattern": "Grok[- ]\\d[\\w. -]*",
+    "hosts": [
+      "data.x.ai",
+      "docs.x.ai",
+      "x.ai"
+    ]
+  },
+  "zhipu": {
+    "org": "Zhipu AI",
+    "hub": "zai-org",
+    "official": "https://docs.z.ai/release-notes/new-released",
+    "model_pattern": "GLM[- ]\\d[\\w. -]*",
+    "hosts": [
+      "docs.z.ai"
+    ]
+  }
+}
