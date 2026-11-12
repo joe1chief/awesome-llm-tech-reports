@@ -15,7 +15,11 @@
       "raw.githubusercontent.com",
       "www.alibabacloud.com"
     ],
-    "group_sizes": true
+    "group_sizes": true,
+    "exclude_models": [
+      "^Qwen[- ]Drive\\b",
+      "^Qwen[- ]Image.*[- ]PE[- ](?:T2I|I2I)\\b"
+    ]
   },
   "allenai": {
     "org": "Allen AI",
@@ -24,6 +28,10 @@
     "model_pattern": "(?:OLMo|Molmo)[\\w. -]*\\d[\\w. -]*",
     "hosts": [
       "allenai.org"
+    ],
+    "exclude_models": [
+      "^(?:SamudrACE|HiRO[- ]ACE|OLMoEarth|ManiFlow)",
+      "^Molmo2.*[- ]tb$"
     ]
   },
   "anthropic": {
@@ -63,6 +71,9 @@
     "hosts": [
       "seed.bytedance.com",
       "console.volcengine.com"
+    ],
+    "exclude_models": [
+      "^Cross[- ]Layer[- ]TopK[- ]CLT\\b"
     ]
   },
   "deepseek": {
@@ -93,7 +104,10 @@
       "research.google",
       "storage.googleapis.com"
     ],
-    "group_sizes": true
+    "group_sizes": true,
+    "exclude_models": [
+      "^(?:EmbeddingGemma|TimesFM|GNM[- ]|TiPSv|TabFM)"
+    ]
   },
   "huggingface": {
     "org": "Hugging Face",
@@ -111,6 +125,9 @@
     "hosts": [
       "github.com",
       "www.inclusionai.com"
+    ],
+    "exclude_models": [
+      "^LemonDecider\\b"
     ]
   },
   "internlm": {
@@ -120,6 +137,9 @@
     "model_pattern": "Intern(?:LM|VL|[- ]S)[- ]?\\d[\\w. -]*",
     "hosts": [
       "internlm.readthedocs.io"
+    ],
+    "exclude_models": [
+      "^(?:Intern[- ]Decision|Sage[- ]SciPerception)(?:[- ]|$)"
     ]
   },
   "meituan": {
@@ -156,6 +176,9 @@
     "model_pattern": "Phi[- ]\\d[\\w. -]*",
     "hosts": [
       "www.microsoft.com"
+    ],
+    "exclude_models": [
+      "^(?:scFM[- ]DataSelection|BioEmu|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
     ]
   },
   "minimax": {
@@ -170,6 +193,9 @@
       "www.minimax.io",
       "www.minimaxi.com",
       "ir.minimax.io"
+    ],
+    "exclude_models": [
+      "^MiniMax[- ]H\\d[- ]Image[- ]PE$"
     ]
   },
   "moonshot": {
@@ -190,6 +216,10 @@
     "hosts": [
       "developer.nvidia.com",
       "research.nvidia.com"
+    ],
+    "exclude_models": [
+      "^(?:Alpamayo|Flora[- ])",
+      "^Cosmos[- ]?\\d+[- ](?:Edge[- ]Policy|Nano[- ](?:Sim[- ]Transfer|Transfer[- ]Auto))(?:[- ]|$)"
     ]
   },
   "openai": {
@@ -213,6 +243,9 @@
     "model_pattern": "MiniCPM[- ][\\w. -]*\\d[\\w. -]*",
     "hosts": [
       "www.openbmb.org"
+    ],
+    "exclude_models": [
+      "^(?:MiniCPM[- ]OCR|Trident[- ]Qwen)(?:[- ]|\\d|$)"
     ]
   },
   "quark": {
@@ -254,6 +287,9 @@
       "github.com",
       "hunyuan.tencent.com",
       "adp.tencent.com"
+    ],
+    "exclude_models": [
+      "^(?:Hy[- ]Nomas|Youtu[- ]Parsing|WeVis(?:Cut|One)|EVIE)(?:[- ]|$)"
     ]
   },
   "xai": {

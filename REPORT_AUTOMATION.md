@@ -18,6 +18,8 @@ Sources are configured in [configs/report-sources.json](configs/report-sources.j
 
 The [verified backfill](configs/report-backfill.json) records dated vendor evidence for historical gaps. A change to the file on `main` imports those releases immediately when auto-refresh is enabled. Dated manual replays also import matching entries. Regular polls continue report lookup for pending releases and publish each documented release phase on the timeline.
 
+The public catalog covers language models, vision-language models, and generative multimodal models. Hub discovery checks the reported task and tags, and uses a known model family when the task is missing. Vendor exclusions cover families with specialized roles, including embedding and classification, simulation, robot control, and standalone draft models. Publishing applies the same exclusions to previously collected entries. Changes to source settings on `main` rebuild the public catalog, timeline, and word cloud when auto-refresh is enabled.
+
 PDFs can be mirrored after the exact download URL has been reviewed for redistribution and added to the vendor's mirror list. Each mirrored PDF is written under its year and vendor and into the existing flat PDF directory.
 
 ## Shared Supabase and GitHub Actions

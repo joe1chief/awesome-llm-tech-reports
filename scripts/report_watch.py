@@ -61,6 +61,41 @@ OFFICIAL_FORMS = (
 REPORT_RANKS = {"system card": 2, "official technical page": 2, "model card": 3}
 
 
+GENERATIVE_HUB_TASKS = {
+    "any-to-any",
+    "audio-text-to-text",
+    "audio-to-audio",
+    "image-text-to-text",
+    "image-to-3d",
+    "image-to-image",
+    "image-to-video",
+    "text-generation",
+    "text2text-generation",
+    "text-to-3d",
+    "text-to-audio",
+    "text-to-image",
+    "text-to-speech",
+    "text-to-video",
+    "translation",
+    "video-text-to-text",
+    "video-to-video",
+}
+AUXILIARY_HUB_TAGS = {"adapter", "draft-model", "lora", "reranker", "reward-model"}
+AUXILIARY_MODEL_NAME = re.compile(
+    r"(?:^|[ ._/-])(?:embeddings?|rerank(?:er|ing)?|diarization|classifier|rewarder|reward[-_ ]model|"
+    r"sae|auto[-_ ]?verifier|draft(?:er)?|dspark|dspine|lora|adapter)(?=$|[ ._/-])",
+    re.I,
+)
+
+
+def model_in_scope(name, settings, task=""):
+    return (
+        (not task or task == "other" or task in GENERATIVE_HUB_TASKS)
+        and not AUXILIARY_MODEL_NAME.search(name)
+        and not any(re.search(pattern, name, re.I) for pattern in settings.get("exclude_models", []))
+    )
+
+
 def report_rank(report):
     return report.get("rank", REPORT_RANKS.get(report["kind"], 1))
 
@@ -192,6 +227,12 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
     for model in models:
         model_id = model["id"]
         name = model_id.split("/", 1)[1]
+        task = model.get("pipeline_tag") or ""
+        tags = set(model.get("tags") or [])
+        if not model_in_scope(name, settings, task) or tags & AUXILIARY_HUB_TAGS:
+            continue
+        if task not in GENERATIVE_HUB_TASKS and not official_model(name, settings):
+            continue
         revision = model.get("sha") or ""
         published = date_value(model.get("createdAt"))
         if not published or published > until or model["modified"] > until or DISTRIBUTION.search(name):
@@ -215,6 +256,8 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
             revision=revision,
             forms=forms,
         )
+        if task in GENERATIVE_HUB_TASKS:
+            row["hub_task"] = task
         known = row["key"] in existing or row["key"] in changed
         if published < since and not known:
             seen[model_id] = revision
@@ -290,7 +333,8 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
         if urlsplit(link).hostname not in hosts or link in eligible or path.lower().endswith(".pdf"):
             continue
         topic = f"{label} {path}"
-        if NOISE.search(topic) or not official_model(topic, settings, path):
+        candidate = official_model(topic, settings, path)
+        if NOISE.search(topic) or not candidate or not model_in_scope(candidate, settings):
             continue
         eligible.add(link)
         hint = entry.get("lastmod") or entry.get("date") or ""
@@ -318,7 +362,11 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
         name = next((model for title in titles if (model := official_model(title, settings, path))), "")
         subject = " ".join([*titles, path.replace("-", " ")])
         bare_title = any(words(name) == words(title) for title in titles) if name else False
-        if name and published and published <= until and (bare_title or MODEL_RELEASE.search(subject)):
+        if (
+            name and published and published <= until
+            and (bare_title or MODEL_RELEASE.search(subject))
+            and model_in_scope(name, settings)
+        ):
             forms = [form for form, pattern in OFFICIAL_FORMS if pattern.search(subject)]
             row = record(
                 vendor, name, published, link, settings, aliases, {**existing, **changed}, forms=forms
@@ -426,7 +474,9 @@ def scan_reports(
     due = [
         row
         for row in rows.values()
-        if row.get("retry_on") and row["retry_on"] <= until and row["key"].split("/")[0] in vendors
+        if row.get("retry_on") and row["retry_on"] <= until
+        and (vendor := row["key"].split("/", 1)[0]) in vendors
+        and model_in_scope(row["model"], settings[vendor], row.get("hub_task", ""))
     ]
     for pending in sorted(due, key=lambda row: row["retry_on"])[:limit]:
         row = pending.copy()
@@ -451,10 +501,14 @@ def scan_reports(
 def project(rows, settings, root=ROOT, mirror=False):
     result = []
     for row in rows:
+        vendor = row["key"].split("/", 1)[0]
+        config = settings.get(vendor, {})
+        if not model_in_scope(row["model"], config, row.get("hub_task", "")):
+            continue
         output = {
             key: row[key] for key in ("id", "key", "model", "org", "released_on", "release_url", "report")
         }
-        for field in ("forms", "release_events"):
+        for field in ("forms", "release_events", "hub_task"):
             if row.get(field):
                 output[field] = row[field]
         if row.get("report"):
@@ -464,8 +518,7 @@ def project(rows, settings, root=ROOT, mirror=False):
                 for key in ("id", "kind", "url", "highlights", "file", "published_on", "revision")
                 if report.get(key)
             }
-            vendor = row["key"].split("/")[0]
-            mirror_urls = settings.get(vendor, {}).get("mirror", [])
+            mirror_urls = config.get("mirror", [])
             if mirror and not public.get("file") and report.get("pdf") in mirror_urls:
                 hosts = COMMON_HOSTS | set(settings[vendor]["hosts"])
                 content = fetch(report["pdf"], hosts | HUB_FILES, MAX_PDF)[0]
@@ -539,7 +592,8 @@ def main():
         original = {row["key"]: row for row in baseline}
         projection = project(rows, settings, mirror=args.publish)
         changed = [row for row in projection if original.get(row["key"]) != row]
-        print(json.dumps({"changes": changed, "sources": summaries}, ensure_ascii=False, indent=2))
+        removed = sorted(original.keys() - {row["key"] for row in projection})
+        print(json.dumps({"changes": changed, "removed": removed, "sources": summaries}, ensure_ascii=False, indent=2))
         if os.environ.get("GITHUB_ACTIONS") == "true":
             for summary in summaries:
                 issue = summary.get("error") or ", ".join(summary.get("warnings", []))

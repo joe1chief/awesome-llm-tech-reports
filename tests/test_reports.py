@@ -126,6 +126,54 @@ def test_arxiv_search_requires_affiliation():
     assert report is None
 
 
+def test_hub_scope_checks_task_and_auxiliary_role_before_fetching_cards(monkeypatch):
+    def card(url, revision, gated):
+        fetched.append(url.rsplit("/", 1)[-1])
+        return "# " + fetched[-1]
+
+    fetched = []
+    monkeypatch.setattr(report_watch, "hf_card", card)
+    monkeypatch.setattr(report_watch, "model_pages", lambda *_: [
+        {**hub_row("Qwen4-Embed"), "pipeline_tag": "feature-extraction"},
+        {**hub_row("Qwen4-Stage1"), "pipeline_tag": "text-generation", "tags": ["draft-model"]},
+        {**hub_row("Qwen4-Embedding"), "pipeline_tag": "text-generation"},
+        hub_row("UnknownExperiment"),
+        hub_row("Qwen4-Max"),
+        {**hub_row("NewImageGenerator"), "pipeline_tag": "text-to-image"},
+    ])
+    rows, _, _, _ = report_watch.scan_hub(
+        "alibaba_qwen", SETTINGS, {}, {}, {}, *DATES, 12, ArxivFixture([])
+    )
+    assert fetched == ["Qwen4-Max", "NewImageGenerator"]
+    assert {row["model"] for row in rows} == set(fetched)
+    assert rows[1]["hub_task"] == "text-to-image"
+
+
+def test_public_projection_applies_scope_to_already_collected_models():
+    settings = json.loads(report_watch.SOURCES.read_text())
+    out_of_scope = {
+        **release("SamudrACE-E3SMv3"),
+        "key": "allenai/samudrace-e3smv3",
+        "id": "allenai--samudrace-e3smv3",
+        "org": "Allen AI",
+        "release_url": "https://huggingface.co/allenai/SamudrACE-E3SMv3",
+        "report": {
+            "id": "samudrace",
+            "kind": "technical report",
+            "url": "https://huggingface.co/allenai/SamudrACE-E3SMv3",
+        },
+    }
+    primary = {
+        **release("Qwen3"),
+        "report": {"id": PAPER["url"], "kind": "technical report", "url": PAPER["url"]},
+    }
+    published = report_watch.project([out_of_scope, primary], settings)
+    assert [row["model"] for row in published] == ["Qwen3"]
+    assert [model["model"] for model in portal_models(published)["models"]] == ["Qwen3"]
+    visuals, _ = build_visuals(published, {}, "https://example.com")
+    assert "SamudrACE" not in visuals[Path("docs/timeline.html")]
+
+
 def test_repeat_poll_dedupes_variants_and_keeps_one_report(monkeypatch):
     vendor = "alibaba_qwen"
     settings = {vendor: {**SETTINGS, "official": ""}}
