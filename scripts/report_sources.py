@@ -112,7 +112,7 @@ def model_pages(owner, earliest):
         ("sort", "lastModified"),
         ("direction", -1),
         ("limit", 100),
-        *[("expand[]", field) for field in ("sha", "createdAt", "lastModified", "gated", "pipeline_tag")],
+        *[("expand[]", field) for field in ("sha", "createdAt", "lastModified", "gated", "pipeline_tag", "tags")],
     ]
     url = HUB + "/api/models?" + urlencode(query)
     visited = set()
