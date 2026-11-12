@@ -23,7 +23,7 @@ PDFs can be mirrored after the exact download URL has been reviewed for redistri
 1. Review and apply [the reports migration](supabase/migrations/202611120001_llm_reports.sql) through the shared project's existing migration process. Provision a login for the reports_runtime role and verify its access to llm_reports and separation from the Radar tables.
 2. Configure the target repository's REPORTS_DATABASE_URL Actions secret with the reports runtime session pooler connection. Leave the hosted connection and raw state out of published assets.
 3. Run the Refresh model technical reports workflow in preview mode. Inspect each source's result. Verify the real Hub API and an official release page, then run a publish to check the Git commit and the Pages deployment reference.
-4. Set REPORTS_AUTO_REFRESH to true to run every four hours. GitHub Actions then writes only changed catalog artifacts. The Pages workflow receives the exact published commit. A failed Pages deploy can be rerun for the same snapshot.
+4. Set REPORTS_AUTO_REFRESH to true to run every eight hours. GitHub Actions then writes only changed catalog artifacts. The Pages workflow receives the exact published commit. A failed Pages deploy can be rerun for the same snapshot.
 
 ## Radar pause and restore
 

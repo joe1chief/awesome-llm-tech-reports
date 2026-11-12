@@ -2,7 +2,7 @@ name: Refresh model technical reports
 
 on:
   schedule:
-    - cron: "23 */4 * * *"
+    - cron: "23 */8 * * *"
   workflow_dispatch:
     inputs:
       mode:
