@@ -317,6 +317,23 @@ def test_verified_backfill_is_idempotent_without_polling(monkeypatch):
     assert rows[0]["retry_on"] == DATES[1]
 
 
+def test_configured_backfill_projects_a_valid_catalog():
+    settings = json.loads(report_watch.SOURCES.read_text())
+    backfill = json.loads(report_watch.SOURCES.with_name("report-backfill.json").read_text())
+    aliases = json.loads(report_watch.ALIASES.read_text())
+    with Store(":memory:").lock() as store:
+        rows, _ = report_watch.scan_reports(
+            store, read_catalog(), settings, aliases, list(settings), *DATES, 12,
+            backfill=backfill, backfill_only=True,
+        )
+    releases = report_watch.project(rows, settings)
+    validate(releases, check_files=False)
+    by_key = {row["key"]: row for row in releases}
+    assert by_key["openai/gpt-6-cyber"]["report"]["kind"] == "system card"
+    assert by_key["google/gemini-4-carbon"]["release_events"][0]["released_on"] == "2026-11-10"
+    assert by_key["stepfun/step-5-preview"]["released_on"] == "2026-09-20"
+
+
 def test_public_assets_share_date_and_escape_external_text():
     row = release("Qwen3 <script> & Test")
     row["report"] = {

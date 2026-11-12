@@ -173,7 +173,7 @@
     {
       "model": "Kimi K3.1 Pro",
       "released_on": "2026-11-05",
-      "release_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/commits/main",
+      "release_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
       "forms": [
         "Open weights"
       ]
