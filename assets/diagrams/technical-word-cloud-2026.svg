@@ -7,22 +7,22 @@
 <path d="M29 94H1091V94" stroke="#dcd6c8" fill="none"/>
 <text x="370" y="279" fill="#b6472f" font-size="66" font-weight="700">Reasoning</text>
 <text x="385" y="190" fill="#137f72" font-size="62" font-weight="700">Multimodal</text>
-<text x="360" y="353" fill="#7545b7" font-size="49" font-weight="700">Agentic Coding</text>
-<text x="262" y="262" fill="#2555bd" font-size="47" font-weight="700">MoE</text>
-<text x="773" y="279" fill="#946410" font-size="47" font-weight="700">Tool Use</text>
-<text x="53" y="188" fill="#c23966" font-size="39" font-weight="700">Computer Use</text>
-<text x="45" y="315" fill="#086f96" font-size="30" font-weight="700">Vision-Language</text>
+<text x="364" y="353" fill="#7545b7" font-size="48" font-weight="700">Agentic Coding</text>
+<text x="263" y="262" fill="#2555bd" font-size="46" font-weight="700">MoE</text>
+<text x="776" y="279" fill="#946410" font-size="46" font-weight="700">Tool Use</text>
+<text x="46" y="333" fill="#c23966" font-size="39" font-weight="700">Computer Use</text>
+<text x="45" y="186" fill="#086f96" font-size="33" font-weight="700">Vision-Language</text>
 <text x="808" y="206" fill="#3f7550" font-size="33" font-weight="700">Long Context</text>
 <text x="467" y="400" fill="#b6472f" font-size="27" font-weight="700">Post-training</text>
-<text x="827" y="323" fill="#137f72" font-size="21" font-weight="700">Safety Evaluation</text>
-<text x="415" y="115" fill="#7545b7" font-size="18" font-weight="700">Reinforcement Learning</text>
-<text x="114" y="356" fill="#2555bd" font-size="21" font-weight="700">Sparse Attention</text>
-<text x="206" y="392" fill="#946410" font-size="19" font-weight="700">Audio Understanding</text>
-<text x="47" y="263" fill="#c23966" font-size="19" font-weight="700">Chain of Thought</text>
-<text x="82" y="231" fill="#086f96" font-size="16" font-weight="700">Image Generation</text>
-<text x="709" y="398" fill="#3f7550" font-size="25" font-weight="700">KV Cache</text>
-<text x="211" y="136" fill="#b6472f" font-size="19" font-weight="700">Quantization</text>
-<text x="802" y="151" fill="#137f72" font-size="22" font-weight="700">Retrieval</text>
+<text x="811" y="324" fill="#137f72" font-size="24" font-weight="700">Safety Evaluation</text>
+<text x="401" y="115" fill="#7545b7" font-size="20" font-weight="700">Reinforcement Learning</text>
+<text x="220" y="393" fill="#2555bd" font-size="20" font-weight="700">Sparse Attention</text>
+<text x="47" y="262" fill="#946410" font-size="16" font-weight="700">Audio Understanding</text>
+<text x="82" y="231" fill="#c23966" font-size="16" font-weight="700">Chain of Thought</text>
+<text x="710" y="398" fill="#086f96" font-size="16" font-weight="700">Image Generation</text>
+<text x="802" y="152" fill="#3f7550" font-size="25" font-weight="700">KV Cache</text>
+<text x="200" y="137" fill="#b6472f" font-size="22" font-weight="700">Quantization</text>
+<text x="823" y="360" fill="#137f72" font-size="22" font-weight="700">Retrieval</text>
 <path d="M29 419H1091V419" stroke="#dcd6c8" fill="none"/>
 <text x="30" y="443" fill="#716b60" font-size="12" font-weight="400">One mention per model release. Terms are normalized across reports.</text>
 </svg>

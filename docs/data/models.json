@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 115,
+    "total_models": 119,
     "total_orgs": 23,
     "milestones_count": 45,
     "date_range": {
@@ -15,14 +15,14 @@
     },
     "camp_breakdown": {
       "Anthropic": 12,
-      "China-based Labs": 56,
+      "China-based Labs": 60,
       "Google": 29,
       "OpenAI": 9,
       "Other Global": 9
     },
     "org_breakdown": {
       "Anthropic": 12,
-      "DeepSeek": 2,
+      "DeepSeek": 6,
       "Meituan": 11,
       "Google": 29,
       "Zhipu AI": 11,
@@ -46,14 +46,14 @@
       "Meta": 1
     },
     "tag_breakdown": {
-      "Agent & Coding": 49,
+      "Agent & Coding": 51,
       "Medical & Science": 34,
-      "Vision & Multimodal": 52,
-      "Open Weights": 45,
+      "Reasoning / CoT": 50,
+      "Vision & Multimodal": 54,
+      "Open Weights": 49,
       "MoE": 19,
       "Audio & Speech": 18,
-      "Video": 19,
-      "Reasoning / CoT": 49
+      "Video": 19
     },
     "monthly_trend": [
       {
@@ -130,11 +130,19 @@
       },
       {
         "month": "2026-07",
-        "count": 1
+        "count": 2
+      },
+      {
+        "month": "2026-08",
+        "count": 2
       },
       {
         "month": "2026-09",
         "count": 2
+      },
+      {
+        "month": "2026-10",
+        "count": 1
       },
       {
         "month": "2026-11",
@@ -161,6 +169,27 @@
       ],
       "released_on": "2026-11-09",
       "report_kind": "system card"
+    },
+    {
+      "id": "deepseek--deepseek-v4-1-flash-1017",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "DeepSeek",
+      "model": "DeepSeek-V4.1-Flash-1017",
+      "highlights": "**DeepSeek-V4.1-Flash-1017** is a minor update to [**DeepSeek-V4.1-Flash**](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash), delivering substantial improvements across reasoning, coding, agentic tasks, and visual benchmarks. Alongside these gains, the model reduces task execution time and output length, enabling users to complete tasks faster and at lower cost and advancing the performance–cost Pareto frontier across multiple agent harnesses.",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/08c8657f02291e11b6f6b63e0e16014f8e748518/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-17",
+      "report_kind": "model card"
     },
     {
       "id": "anthropic--claude-sonnet-5-5",
@@ -198,6 +227,62 @@
       ],
       "released_on": "2026-09-10",
       "report_kind": "technical report"
+    },
+    {
+      "id": "deepseek--deepseek-v4-flash-vision-exp",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "DeepSeek",
+      "model": "DeepSeek-V4-Flash-Vision-Exp",
+      "highlights": "We are excited to introduce **DeepSeek-V4-Flash-Vision-Exp**, our first experimental multimodal model in the DeepSeek-V4 family. It builds on the DeepSeek-V4-Flash architecture by incorporating visual modules and undergoing continued training to unlock visual understanding capabilities.",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp/blob/6821d6ad3681a4b137b066b76094fa82ebd0a380/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-31",
+      "report_kind": "model card"
+    },
+    {
+      "id": "deepseek--deepseek-v4-pro-0813",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "DeepSeek",
+      "model": "DeepSeek-V4-Pro-0813",
+      "highlights": "| Benchmark | DeepSeek-V4-Pro-0813 | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Pro (Preview) | DeepSeek-V4-Flash (Preview) | GLM-5.2 | Kimi K3 | Opus-4.8 | Fable-5 (w/ fallback) | | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | | HLE (wo / w tools) | 42.7 / 60.0 | 37.8 / 51.5 | 37.7 / 48.2 | 34.8 / 45.1 | 40.5 / 54.7 | 43.5 / 56.0 | 49.8 / 57.9 | 53.3 / 63.0 | | Terminal Bench 2.1 | 87.9 | 82.7 | 72.1 | 61.8 | 81.0 | 88.3 | 85.0 | 88.0 | | NL2Repo | 61.5 | 54.2 | 38.5 | 39.4 | 48.9 | - | 69.7 | - | | Cybergym | 83.3 | 76.7 | 52.7 | 38",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813/blob/72e1d3230f6c080a530b0a1d46f8eb4602340597/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-08-13",
+      "report_kind": "model card"
+    },
+    {
+      "id": "deepseek--deepseek-v4-flash-0731",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "DeepSeek",
+      "model": "DeepSeek-V4-Flash-0731",
+      "highlights": "| Benchmark | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Flash (Preview) | DeepSeek-V4-Pro (Preview) | GLM-5.2 | Opus-4.8 | | :--- | :---: | :---: | :---: | :---: | :---: | | Terminal Bench 2.1 | 82.7 | 61.8 | 72.1 | 81.0 | 85.0 | | NL2Repo | 54.2 | 39.4 | 38.5 | 48.9 | 69.7 | | Cybergym | 76.7 | 38.7 | 52.7 | - | 83.1 | | DeepSWE | 54.4 | 7.3 | 12.8 | 46.2 | 58.0 | | Toolathlon-Verified | 70.3 | 49.7 | 55.9 | 59.9 | 76.2 | | Agents' Last Exam | 25.2 | 15.8 | 16.5 | 23.8 | 25.7 | | AutomationBench Public | 25.1 | 10.8 | 12.8 | 12.9 | 27.2 | | DSBench-FullStack",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/blob/7872f01b1d1fe23eabc4c98b48bffcef5a386062/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-31",
+      "report_kind": "model card"
     },
     {
       "id": "2026-07_longcat_2_0",
