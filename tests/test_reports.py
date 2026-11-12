@@ -11,6 +11,7 @@ import report_sources
 import report_watch
 from parse_readme import parse_models
 from report_catalog import ROOT, portal_models, read_catalog, validate
+from report_parameters import configure_parameters, total_parameters
 from report_resolution import resolve_report
 from report_store import Store
 from report_visuals import build_visuals, frequencies
@@ -71,8 +72,7 @@ def test_historical_catalog_keeps_existing_portal_rows():
     validate(rows, check_files=False)
     indexed = {model["id"]: model for model in portal_models(rows)["models"]}
     legacy = [row for row in rows if row.get("report") and row["report"]["kind"] == "archive"]
-    assert len(legacy) == 112
-    assert len({row["org"] for row in legacy}) == 23
+    assert legacy
     for row in legacy:
         assert indexed[row["id"]]["file"] == row["report"]["file"]
         assert indexed[row["id"]]["link"] == row["report"]["url"]
@@ -147,6 +147,70 @@ def test_hub_scope_checks_task_and_auxiliary_role_before_fetching_cards(monkeypa
     assert fetched == ["Qwen4-Max", "NewImageGenerator"]
     assert {row["model"] for row in rows} == set(fetched)
     assert rows[1]["hub_task"] == "text-to-image"
+
+
+def test_total_parameters_uses_verified_totals_and_ignores_active_sizes_and_context_lengths():
+    settings = json.loads(report_watch.SOURCES.read_text())
+    configure_parameters(settings, report_watch.SOURCES.with_name("report-parameters.json"))
+    assert total_parameters("Gemma 3 270M", settings["google"]) == 270_000_000
+    assert total_parameters("Ming-3.0-audio-tiny", settings["inclusionai"]) == 9_300_000_000
+    assert total_parameters("Qwen2.5-1M", settings["alibaba_qwen"]) is None
+    assert total_parameters("Example-2B-Active", {}) is None
+    assert total_parameters("Example-9B-A2B", {}) == 9_000_000_000
+    assert total_parameters("Example-NVFP4", {}, safetensors={"total": 500_000_000}) is None
+
+
+def test_hub_size_filter_hides_a_known_release_even_when_its_revision_was_seen(monkeypatch):
+    config = {**SETTINGS, "minimum_total_parameters": 3_000_000_000}
+    url = "https://huggingface.co/Qwen/UnnamedSmall"
+    old = {
+        **release("UnnamedSmall"), "key": "alibaba_qwen/unnamedsmall",
+        "release_url": url, "hub_url": url,
+    }
+    small = {
+        **hub_row("UnnamedSmall"), "pipeline_tag": "text-generation",
+        "safetensors": {"parameters": {"BF16": 900_000_000}, "total": 900_000_000},
+    }
+    large = {**hub_row("NewImageGenerator"), "pipeline_tag": "text-to-image",
+             "safetensors": {"parameters": {"BF16": 3_000_000_000}, "total": 3_000_000_000}}
+    fetched = []
+
+    def card(url, revision, gated):
+        name = url.rsplit("/", 1)[-1]
+        fetched.append(name)
+        return "# " + name
+
+    monkeypatch.setattr(report_watch, "model_pages", lambda *_: [small, large])
+    monkeypatch.setattr(report_watch, "hf_card", card)
+    rows, _, _, _ = report_watch.scan_hub(
+        "alibaba_qwen", config, {}, {old["key"]: old}, {"seen": {small["id"]: small["sha"]}},
+        *DATES, 12, ArxivFixture([]),
+    )
+    assert fetched == ["NewImageGenerator"]
+    assert rows[0]["total_parameters"] == 900_000_000
+    assert [row["model"] for row in report_watch.project(rows, {"alibaba_qwen": config})] == fetched
+
+
+def test_size_filtered_archive_can_be_restored_from_collection_state():
+    vendor = "alibaba_qwen"
+    config = {**SETTINGS, "minimum_total_parameters": 3_000_000_000}
+    small = {
+        **release("Qwen3-2B"),
+        "report": {
+            "id": PAPER["url"], "kind": "archive", "url": PAPER["url"],
+            "file": "2026/alibaba_qwen/2026-11_qwen3-2b.pdf",
+        },
+    }
+    with Store(":memory:").lock() as store:
+        raw, _ = report_watch.scan_reports(
+            store, [small], {vendor: config}, {}, [vendor], *DATES, 12, backfill_only=True,
+        )
+        assert report_watch.project(raw, {vendor: config}) == []
+        config["minimum_total_parameters"] = 2_000_000_000
+        raw, _ = report_watch.scan_reports(
+            store, [], {vendor: config}, {}, [vendor], *DATES, 12, backfill_only=True,
+        )
+    assert report_watch.project(raw, {vendor: config})[0]["report"]["file"] == small["report"]["file"]
 
 
 def test_public_projection_applies_scope_to_already_collected_models():

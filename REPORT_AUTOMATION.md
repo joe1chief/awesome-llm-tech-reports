@@ -20,6 +20,8 @@ The [verified backfill](configs/report-backfill.json) records dated vendor evide
 
 The public catalog covers language models, vision-language models, and generative multimodal models. Hub discovery checks the reported task and tags, and uses a known model family when the task is missing. Vendor exclusions cover families with specialized roles, including embedding and classification, simulation, robot control, and standalone draft models. Publishing applies the same exclusions to previously collected entries. Changes to source settings on `main` rebuild the public catalog, timeline, and word cloud when auto-refresh is enabled.
 
+[The parameter policy](configs/report-parameters.json) sets a 3-billion total-parameter floor for published models. It uses verified totals, declared model sizes and supported Hub Safetensors metadata. The floor applies to total parameters for MoE models. Models with no reliable total remain eligible. Previously collected entries below the floor are retained in collection state so a lower floor can restore them. Updating the policy on `main` rebuilds the public archive.
+
 PDFs can be mirrored after the exact download URL has been reviewed for redistribution and added to the vendor's mirror list. Each mirrored PDF is written under its year and vendor and into the existing flat PDF directory.
 
 ## Shared Supabase and GitHub Actions
