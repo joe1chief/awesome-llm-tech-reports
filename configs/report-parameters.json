@@ -1,0 +1,25 @@
+{
+  "minimum_total_parameters": 3000000000,
+  "verified_models": {
+    "bytedance/cola2": {
+      "total_parameters": 9000000000,
+      "source": "https://huggingface.co/ByteDance-Seed/Cola2"
+    },
+    "bytedance/par": {
+      "total_parameters": 400000000,
+      "source": "https://huggingface.co/ByteDance-Seed/PAR"
+    },
+    "google/gemma-3-270m": {
+      "total_parameters": 270000000,
+      "source": "https://developers.googleblog.com/en/introducing-gemma-3-270m/"
+    },
+    "huggingface/smollm3": {
+      "total_parameters": 3000000000,
+      "source": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B"
+    },
+    "inclusionai/ming-3-0-audio-tiny": {
+      "total_parameters": 9300000000,
+      "source": "https://huggingface.co/inclusionAI/Ming-3.0-audio-tiny"
+    }
+  }
+}

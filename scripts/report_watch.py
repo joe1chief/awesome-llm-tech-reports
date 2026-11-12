@@ -12,6 +12,7 @@ from urllib.parse import unquote, urldefrag, urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from report_catalog import ROOT, build, read_catalog, save_catalog, slug
+from report_parameters import below_parameter_floor, configure_parameters, total_parameters
 from report_resolution import (
     DISTRIBUTION,
     MAX_PDF,
@@ -93,6 +94,13 @@ def model_in_scope(name, settings, task=""):
         (not task or task == "other" or task in GENERATIVE_HUB_TASKS)
         and not AUXILIARY_MODEL_NAME.search(name)
         and not any(re.search(pattern, name, re.I) for pattern in settings.get("exclude_models", []))
+    )
+
+
+def release_in_scope(row, settings):
+    count = total_parameters(row["model"], settings, stored=row.get("total_parameters"))
+    return model_in_scope(row["model"], settings, row.get("hub_task", "")) and not below_parameter_floor(
+        count, settings
     )
 
 
@@ -239,23 +247,29 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
             continue
         if not re.fullmatch(r"[a-fA-F0-9]{40}", revision):
             raise ValueError("Hub response lacks a pinned revision")
-        if seen.get(model_id) == revision:
+        parameters = total_parameters(name, settings, safetensors=model.get("safetensors"))
+        small = below_parameter_floor(parameters, settings)
+        if seen.get(model_id) == revision and not small:
             continue
         url = f"{HUB}/{model_id}"
         forms = ["Gated"] if model.get("gated") else []
         if "preview" in name.casefold():
             forms.append("Preview")
+        prior_rows = {**existing, **changed}
         row = record(
-            vendor,
-            name,
-            published,
-            url,
-            settings,
-            aliases,
-            {**existing, **changed},
-            revision=revision,
-            forms=forms,
+            vendor, name, published, url, settings, aliases, prior_rows, revision=revision, forms=forms,
         )
+        if small:
+            prior = prior_rows.get(row["key"])
+            if (
+                prior and slug(prior["model"]) == slug(name)
+                and url in (prior.get("hub_url"), prior["release_url"])
+                and prior.get("total_parameters") != parameters
+            ):
+                changed[row["key"]] = {**prior, "total_parameters": parameters}
+            continue
+        if parameters is not None:
+            row["total_parameters"] = max(row.get("total_parameters") or 0, parameters)
         if task in GENERATIVE_HUB_TASKS:
             row["hub_task"] = task
         known = row["key"] in existing or row["key"] in changed
@@ -366,6 +380,7 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
             name and published and published <= until
             and (bare_title or MODEL_RELEASE.search(subject))
             and model_in_scope(name, settings)
+            and not below_parameter_floor(total_parameters(name, settings), settings)
         ):
             forms = [form for form, pattern in OFFICIAL_FORMS if pattern.search(subject)]
             row = record(
@@ -425,6 +440,15 @@ def scan_reports(
             if archived.get("revision") == report.get("revision"):
                 saved["report"] = {**report, "file": archived["file"]}
         rows[saved["key"]] = saved
+    hidden = []
+    for previous in baseline:
+        row = rows[previous["key"]]
+        config = settings.get(row["key"].split("/", 1)[0], {})
+        count = total_parameters(row["model"], config, stored=row.get("total_parameters"))
+        if below_parameter_floor(count, config):
+            hidden.append(row)
+    if hidden:
+        store.save(hidden)
     summaries = []
     for vendor in vendors:
         config = settings[vendor]
@@ -476,7 +500,7 @@ def scan_reports(
         for row in rows.values()
         if row.get("retry_on") and row["retry_on"] <= until
         and (vendor := row["key"].split("/", 1)[0]) in vendors
-        and model_in_scope(row["model"], settings[vendor], row.get("hub_task", ""))
+        and release_in_scope(row, settings[vendor])
     ]
     for pending in sorted(due, key=lambda row: row["retry_on"])[:limit]:
         row = pending.copy()
@@ -503,12 +527,12 @@ def project(rows, settings, root=ROOT, mirror=False):
     for row in rows:
         vendor = row["key"].split("/", 1)[0]
         config = settings.get(vendor, {})
-        if not model_in_scope(row["model"], config, row.get("hub_task", "")):
+        if not release_in_scope(row, config):
             continue
         output = {
             key: row[key] for key in ("id", "key", "model", "org", "released_on", "release_url", "report")
         }
-        for field in ("forms", "release_events", "hub_task"):
+        for field in ("forms", "release_events", "hub_task", "total_parameters"):
             if row.get(field):
                 output[field] = row[field]
         if row.get("report"):
@@ -560,6 +584,7 @@ def main():
     if date.fromisoformat(since) > date.fromisoformat(args.until) or args.limit < 1:
         parser.error("Expected a valid collection window and a positive limit")
     settings = json.loads(SOURCES.read_text())
+    configure_parameters(settings, SOURCES.with_name("report-parameters.json"))
     aliases = json.loads(ALIASES.read_text())
     backfill_file = SOURCES.with_name("report-backfill.json")
     backfill = json.loads(backfill_file.read_text()) if args.since and backfill_file.is_file() else None
