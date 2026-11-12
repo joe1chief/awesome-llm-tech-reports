@@ -1858,127 +1858,6 @@
       }
     },
     {
-      "id": "alibaba_qwen--qwen-image-2-1-pe-i2i",
-      "key": "alibaba_qwen/qwen-image-2-1-pe-i2i",
-      "model": "Qwen-Image-2.1-PE-I2I",
-      "org": "Alibaba",
-      "release_url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-I2I",
-      "released_on": "2026-09-20",
-      "report": {
-        "highlights": "We are excited to open-source **Qwen-Image-2.1**, a unified text-to-image generation and image editing model in the Qwen family. With just **7B parameters in its visual generation component** (32 Single-Stream DiT layers), Qwen-Image-2.1 balances generation quality, inference efficiency, and versatility.",
-        "id": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-I2I/README.md",
-        "kind": "model card",
-        "revision": "72927bc08afc99b7888ceb7d7d51a12db3700bbd",
-        "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-I2I/blob/72927bc08afc99b7888ceb7d7d51a12db3700bbd/README.md"
-      }
-    },
-    {
-      "id": "alibaba_qwen--qwen-image-2-1-pe-t2i",
-      "key": "alibaba_qwen/qwen-image-2-1-pe-t2i",
-      "model": "Qwen-Image-2.1-PE-T2I",
-      "org": "Alibaba",
-      "release_url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-T2I",
-      "released_on": "2026-09-20",
-      "report": {
-        "highlights": "We are excited to open-source **Qwen-Image-2.1**, a unified text-to-image generation and image editing model in the Qwen family. With just **7B parameters in its visual generation component** (32 Single-Stream DiT layers), Qwen-Image-2.1 balances generation quality, inference efficiency, and versatility.",
-        "id": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-T2I/README.md",
-        "kind": "model card",
-        "revision": "f3ed7985c788ad75b3ab7223e0c4c51e2a43545b",
-        "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-T2I/blob/f3ed7985c788ad75b3ab7223e0c4c51e2a43545b/README.md"
-      }
-    },
-    {
-      "id": "alibaba_qwen--qwen-drive-1-0",
-      "key": "alibaba_qwen/qwen-drive-1-0",
-      "model": "Qwen-Drive-1.0",
-      "org": "Alibaba",
-      "release_url": "https://huggingface.co/Qwen/Qwen-Drive-1.0-4B",
-      "released_on": "2026-08-27",
-      "report": {
-        "highlights": "We present Qwen-Drive-1.0, an initial step towards a vision-language foundation model for autonomous driving. Qwen-Drive-1.0 retains the architecture of the pretrained vision-language model (VLM) and integrates 3D perception, visual question answering, and motion planning within a unified framework. An external bird's-eye-view (BEV) perception head jointly performs 3D object detection, semantic occupancy prediction, and BEV map segmentation. It serves as a probe of the 3D information accessible from the shared representations and provides an explicit, in",
-        "id": "arxiv:2609.00111",
-        "kind": "technical report",
-        "published_on": "2026-08-31",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2609.00111v1"
-      }
-    },
-    {
-      "id": "allenai--maniflow-tb",
-      "key": "allenai/maniflow-tb",
-      "model": "maniflow-tb",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/maniflow-tb",
-      "released_on": "2026-11-05",
-      "report": {
-        "highlights": "ManiFlow-tb is the low-level action model for [ToyBlocks](https://allenai.org/blog/toyblocks), a robot block-stacking project. It is trained on simulated Franka arm data for manipulating blocks on a table (pick-and-place and in-place rotation of three blocks). It is trained with the ManiFlow training code at [allenai/maniflow-tb](https://github.com/allenai/maniflow-tb) and evaluated through ToyBlocks' policy server.",
-        "id": "https://huggingface.co/allenai/maniflow-tb/README.md",
-        "kind": "model card",
-        "revision": "1e8385fdb1a28096989309d8c36f51f247ddf0d3",
-        "url": "https://huggingface.co/allenai/maniflow-tb/blob/1e8385fdb1a28096989309d8c36f51f247ddf0d3/README.md"
-      }
-    },
-    {
-      "id": "allenai--molmo2-4b-tb",
-      "key": "allenai/molmo2-4b-tb",
-      "model": "Molmo2-4B-tb",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/Molmo2-4B-tb",
-      "released_on": "2026-11-05",
-      "report": {
-        "highlights": "* **Model type:** vision-language model with about 4.5B parameters, running at about 6 Hz. * **Input:** one 640x360 front-camera image and a text goal. * **Output:** a short plan, then the action and its target as a Molmo2 point. * **Actions:** pick, place (on a block or the table), flip (left, right, forward, backward), rotate (cw, ccw) and done. * **Training:** 6,000 steps at batch size 256 on simulated ToyBlocks three-block stacking episodes. We mix in 25% image-pointing data (PixMo-Points, PixMo-Count, CoSyn-Point) to retain Molmo's general pointing ",
-        "id": "https://huggingface.co/allenai/Molmo2-4B-tb/README.md",
-        "kind": "model card",
-        "revision": "e5c3ef6018c5f6b011a2b3d0b774fddb5aa1f842",
-        "url": "https://huggingface.co/allenai/Molmo2-4B-tb/blob/e5c3ef6018c5f6b011a2b3d0b774fddb5aa1f842/README.md"
-      }
-    },
-    {
-      "id": "allenai--olmoearth-v1-2-ft-lfmc-base",
-      "key": "allenai/olmoearth-v1-2-ft-lfmc-base",
-      "model": "OlmoEarth-v1_2-FT-LFMC-Base",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/OlmoEarth-v1_2-FT-LFMC-Base",
-      "released_on": "2026-10-23",
-      "report": {
-        "highlights": "This model is fine-tuned from [OlmoEarth-v1_2-Base](https://huggingface.co/allenai/OlmoEarth-v1_2-Base) to map live fuel moisture content (LFMC) values for woody vegetation. It follows the same training setup as [OlmoEarth-v1-FT-LFMC-Base](https://huggingface.co/allenai/OlmoEarth-v1-FT-LFMC-Base).",
-        "id": "https://huggingface.co/allenai/OlmoEarth-v1_2-FT-LFMC-Base/README.md",
-        "kind": "model card",
-        "revision": "a3747521ea3e965381c3f43d9f16fb41609375a9",
-        "url": "https://huggingface.co/allenai/OlmoEarth-v1_2-FT-LFMC-Base/blob/a3747521ea3e965381c3f43d9f16fb41609375a9/README.md"
-      }
-    },
-    {
-      "id": "allenai--hiro-acev2",
-      "key": "allenai/hiro-acev2",
-      "model": "HiRO-ACEv2",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/HiRO-ACEv2",
-      "released_on": "2026-10-12",
-      "report": {
-        "highlights": "3. Update paths in the ACE inference config file `ace2s_inference_config_global.yaml`. Specifically, update `experiment_dir`, `checkpoint_path`, `initial_condition.path` and `forcing_loader.dataset.path`.",
-        "id": "https://huggingface.co/allenai/HiRO-ACEv2/README.md",
-        "kind": "model card",
-        "revision": "16bd51b8da79d85c138cc166c93196501616c3bf",
-        "url": "https://huggingface.co/allenai/HiRO-ACEv2/blob/16bd51b8da79d85c138cc166c93196501616c3bf/README.md"
-      }
-    },
-    {
-      "id": "allenai--olmoearth-v1-3-base",
-      "key": "allenai/olmoearth-v1-3-base",
-      "model": "OlmoEarth-v1_3-Base",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base",
-      "released_on": "2026-09-04",
-      "report": {
-        "highlights": "OlmoEarth-v1_3-Base is a ViT-Base (128M parameters) foundation model for remote sensing tasks over Sentinel-1, Sentinel-2, and Landsat images or image time series. It also includes a Perceiver (14.3M parameters) and a linear student which projects the 768 dimensional tokens down to 128 dimensions (0.1M parameters). This model (including the student) is used to generate OlmoEarth's global, annualized embeddings.",
-        "id": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/README.md",
-        "kind": "model card",
-        "revision": "9e9e918a369701c105dde7ef56789b0ff1d47f50",
-        "url": "https://huggingface.co/allenai/OlmoEarth-v1_3-Base/blob/9e9e918a369701c105dde7ef56789b0ff1d47f50/README.md"
-      }
-    },
-    {
       "id": "allenai--astabrief-8b-sft",
       "key": "allenai/astabrief-8b-sft",
       "model": "AstaBrief_8B_SFT",
@@ -1992,15 +1871,6 @@
         "revision": "d2d57580d2255422a4c1e4ca4efb6b169a134351",
         "url": "https://huggingface.co/allenai/AstaBrief_8B_SFT/blob/d2d57580d2255422a4c1e4ca4efb6b169a134351/README.md"
       }
-    },
-    {
-      "id": "allenai--samudrace-e3smv3",
-      "key": "allenai/samudrace-e3smv3",
-      "model": "SamudrACE-E3SMv3",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/SamudrACE-E3SMv3",
-      "released_on": "2026-08-04",
-      "report": null
     },
     {
       "id": "allenai--bwen-8b-stage1",
@@ -2048,36 +1918,6 @@
       }
     },
     {
-      "id": "bytedance--cross-layer-topk-clt",
-      "key": "bytedance/cross-layer-topk-clt",
-      "model": "Cross-Layer-TopK-CLT",
-      "org": "ByteDance",
-      "release_url": "https://huggingface.co/ByteDance-Seed/Cross-Layer-TopK-CLT",
-      "released_on": "2026-11-05",
-      "report": {
-        "highlights": "A cross-layer transcoder (CLT) for [Qwen3-8B-Base](https://huggingface.co/Qwen/Qwen3-8B-Base): 36 layers × 32,768 latents. Each layer's latents read the residual stream right before that layer's MLP (`resid_mid`) and write to the MLP outputs (`mlp_out`) of that layer and every later layer. 94.2B parameters, fp32, 377 GB in total.",
-        "id": "https://huggingface.co/ByteDance-Seed/Cross-Layer-TopK-CLT/README.md",
-        "kind": "model card",
-        "revision": "0b2f254a3f44c7e97984ca3d2d826d3f6df5879e",
-        "url": "https://huggingface.co/ByteDance-Seed/Cross-Layer-TopK-CLT/blob/0b2f254a3f44c7e97984ca3d2d826d3f6df5879e/README.md"
-      }
-    },
-    {
-      "id": "bytedance--qwen3-30b-a3b-moe-sae",
-      "key": "bytedance/qwen3-30b-a3b-moe-sae",
-      "model": "Qwen3-30B-A3B-MoE-SAE",
-      "org": "ByteDance",
-      "release_url": "https://huggingface.co/ByteDance-Seed/Qwen3-30B-A3B-MoE-SAE",
-      "released_on": "2026-11-05",
-      "report": {
-        "highlights": "Each SAE was trained independently on MoE block outputs collected from the Olmo 3 training corpus: 5/8 Dolma 3 pretraining data, 1/4 Dolci-Think-SFT (reasoning chains of thought) and 1/8 Dolci-Instruct-SFT (instruction following). Training used a TopK activation with k decaying from 1000 to 100 over the first 10,000 steps, an auxiliary loss, AdamW and about 3.2B tokens per SAE; the full recipe is given in the appendix \"SAE training details\" of the paper.",
-        "id": "https://huggingface.co/ByteDance-Seed/Qwen3-30B-A3B-MoE-SAE/README.md",
-        "kind": "model card",
-        "revision": "ae59df340950f82641114eacd9db3ae360d11794",
-        "url": "https://huggingface.co/ByteDance-Seed/Qwen3-30B-A3B-MoE-SAE/blob/ae59df340950f82641114eacd9db3ae360d11794/README.md"
-      }
-    },
-    {
       "id": "bytedance--cola2",
       "key": "bytedance/cola2",
       "model": "Cola2",
@@ -2122,172 +1962,6 @@
         "kind": "model card",
         "revision": "7fb609346f5d9a2baa76add1f387aee1bdb8874b",
         "url": "https://huggingface.co/ByteDance-Seed/PAR/blob/7fb609346f5d9a2baa76add1f387aee1bdb8874b/README.md"
-      }
-    },
-    {
-      "id": "google--embeddinggemma-2",
-      "key": "google/embeddinggemma-2",
-      "model": "embeddinggemma-2",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/embeddinggemma-2",
-      "released_on": "2026-09-14",
-      "report": {
-        "highlights": "We present EmbeddingGemma 2, an open multimodal embedding model which natively represents text, images, audio, video, and combinations thereof in a unified space. Our approach introduces improvements such as simplified per-layer embeddings and a multi-stage curriculum with modality and objective progression which ensure strong quality across unimodal, cross-modal, and mixed-modal evaluations. Notably, in comprehensive embedding benchmarks across all modalities, EmbeddingGemma 2 establishes a new Pareto frontier, outperforming both specialist models and m",
-        "id": "arxiv:2610.37364",
-        "kind": "technical report",
-        "published_on": "2026-10-27",
-        "revision": "2",
-        "url": "https://arxiv.org/abs/2610.37364v2"
-      }
-    },
-    {
-      "id": "google--timesfm-3-0-pytorch",
-      "key": "google/timesfm-3-0-pytorch",
-      "model": "timesfm-3.0-pytorch",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/timesfm-3.0-pytorch",
-      "released_on": "2026-08-24",
-      "report": {
-        "highlights": "## Model Details - **Architecture**: Stacked Mixing Transformer with Variate Attention and CPM Iterative RevIN. - **Context Patch Length**: 32 - **Forecast Horizon Patch Length**: 64 - **Layers**: 20 transformer layers (model dim: 1280, heads: 16) - **Quantiles**: (median at index 4)",
-        "id": "https://huggingface.co/google/timesfm-3.0-pytorch/README.md",
-        "kind": "model card",
-        "revision": "43046b85ec22d584a13f8098c2ed39c889e129c2",
-        "url": "https://huggingface.co/google/timesfm-3.0-pytorch/blob/43046b85ec22d584a13f8098c2ed39c889e129c2/README.md"
-      }
-    },
-    {
-      "id": "google--gnm-v3",
-      "key": "google/gnm-v3",
-      "model": "gnm-v3",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/gnm-v3",
-      "released_on": "2026-09-01",
-      "report": {
-        "highlights": "# Zero parameters produce the neutral template face mesh identity = np.zeros(gnm.identity_dim) expression = np.zeros(gnm.expression_dim) rotations = np.zeros((gnm.num_joints, 3)) # Axis-angle rotations (neck, eyes) translation = np.zeros((3,))",
-        "id": "https://huggingface.co/google/gnm-v3/README.md",
-        "kind": "model card",
-        "revision": "c01e90d298d82301f9fd18f54806be751775cb7c",
-        "url": "https://huggingface.co/google/gnm-v3/blob/c01e90d298d82301f9fd18f54806be751775cb7c/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-g14",
-      "key": "google/tipsv1-g14",
-      "model": "tipsv1-g14",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-g14",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) g/14 release with 1.1B vision params and 389M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-g14/README.md",
-        "kind": "model card",
-        "revision": "79a0b1548c1d6da931ba4c9ef5fd9251744ca4b9",
-        "url": "https://huggingface.co/google/tipsv1-g14/blob/79a0b1548c1d6da931ba4c9ef5fd9251744ca4b9/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-g14-lowres",
-      "key": "google/tipsv1-g14-lowres",
-      "model": "tipsv1-g14-lowres",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-g14-lowres",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) g/14 low-res release with 1.1B vision params and 389M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-g14-lowres/README.md",
-        "kind": "model card",
-        "revision": "a8c59ff3ac1b229c7178e8d7f626036d812358a4",
-        "url": "https://huggingface.co/google/tipsv1-g14-lowres/blob/a8c59ff3ac1b229c7178e8d7f626036d812358a4/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-l14",
-      "key": "google/tipsv1-l14",
-      "model": "tipsv1-l14",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-l14",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) L/14 release with 304M vision params and 184M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-l14/README.md",
-        "kind": "model card",
-        "revision": "05c1dd400ade562d318d00d63c5474f21dfe2a72",
-        "url": "https://huggingface.co/google/tipsv1-l14/blob/05c1dd400ade562d318d00d63c5474f21dfe2a72/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-so400m14",
-      "key": "google/tipsv1-so400m14",
-      "model": "tipsv1-so400m14",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-so400m14",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) So400m/14 release with 413M vision params and 448M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-so400m14/README.md",
-        "kind": "model card",
-        "revision": "9bf0d1426d430e0ce9b19fc84692d9b3d74b3355",
-        "url": "https://huggingface.co/google/tipsv1-so400m14/blob/9bf0d1426d430e0ce9b19fc84692d9b3d74b3355/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-s14",
-      "key": "google/tipsv1-s14",
-      "model": "tipsv1-s14",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-s14",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) S/14 release with 22M vision params and 34M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-s14/README.md",
-        "kind": "model card",
-        "revision": "109d6693a2a0263be13309c193eb7427ce13a386",
-        "url": "https://huggingface.co/google/tipsv1-s14/blob/109d6693a2a0263be13309c193eb7427ce13a386/README.md"
-      }
-    },
-    {
-      "id": "google--tipsv1-b14",
-      "key": "google/tipsv1-b14",
-      "model": "tipsv1-b14",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tipsv1-b14",
-      "released_on": "2026-08-19",
-      "report": {
-        "highlights": "TIPS (Text-Image Pre-training with Spatial awareness, ICLR 2025) is a family of contrastive vision-language models that produce spatially rich image features aligned with text embeddings. This is the original (v1) B/14 release with 86M vision params and 110M text params, converted from the [official checkpoints](https://github.com/google-deepmind/tips).",
-        "id": "https://huggingface.co/google/tipsv1-b14/README.md",
-        "kind": "model card",
-        "revision": "424f5e0ee56557079d99419c729a655e2cbcc7b1",
-        "url": "https://huggingface.co/google/tipsv1-b14/blob/424f5e0ee56557079d99419c729a655e2cbcc7b1/README.md"
-      }
-    },
-    {
-      "id": "google--tabfm-1-1-0-pytorch",
-      "key": "google/tabfm-1-1-0-pytorch",
-      "model": "tabfm-1.1.0-pytorch",
-      "org": "Google",
-      "release_url": "https://huggingface.co/google/tabfm-1.1.0-pytorch",
-      "released_on": "2026-07-31",
-      "report": {
-        "highlights": "TabFM is a zero-shot tabular foundation model from Google Research. It supports classification and regression on structured/tabular data with mixed numerical and categorical columns, requiring no fine-tuning or hyperparameter search - training examples are passed as context and predictions are made in a single forward pass.",
-        "id": "https://huggingface.co/google/tabfm-1.1.0-pytorch/README.md",
-        "kind": "model card",
-        "revision": "d7cfd3b8d184d7c8fed4210aeba9e1c967d45f2a",
-        "url": "https://huggingface.co/google/tabfm-1.1.0-pytorch/blob/d7cfd3b8d184d7c8fed4210aeba9e1c967d45f2a/README.md"
-      }
-    },
-    {
-      "id": "inclusionai--lemondecider",
-      "key": "inclusionai/lemondecider",
-      "model": "LemonDecider",
-      "org": "InclusionAI (Ant Group)",
-      "release_url": "https://huggingface.co/inclusionAI/LemonDecider",
-      "released_on": "2026-10-05",
-      "report": {
-        "highlights": "| Property | Value | |---|---| | Architecture | Qwen3.5-4B hybrid backbone with a 255-option decision readout | | Loader | `modeling_lemondecider.LemonDeciderForDecisionClassification`, `trust_remote_code=True` | | Model type / protocol | `lemondecider_decision` / `lemondecider-v1` | | Attention | Noncausal periodic full-attention layers; hybrid recurrent layers; SDPA | | Readout | Native inline joint-question readout (`joint_readout.predict_joint`) | | Temperature | 1.0026751894886363, inherited from the parent checkpoint; not refit | | Capacity | 8192 ",
-        "id": "https://huggingface.co/inclusionAI/LemonDecider/README.md",
-        "kind": "model card",
-        "revision": "05ec18fa0994b7369cb25ac76c19ed0865c776fd",
-        "url": "https://huggingface.co/inclusionAI/LemonDecider/blob/05ec18fa0994b7369cb25ac76c19ed0865c776fd/README.md"
       }
     },
     {
@@ -2441,21 +2115,6 @@
       }
     },
     {
-      "id": "internlm--sage-sciperception",
-      "key": "internlm/sage-sciperception",
-      "model": "Sage-SciPerception",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/Sage-SciPerception",
-      "released_on": "2026-11-06",
-      "report": {
-        "highlights": "Projectors are organized by modality, task, and language-model version. Start with the available checkpoints below, or use the [inference guide](#inference) to connect projected scientific inputs to a serving workflow. Each checkpoint records its matching language model and input representation in `config.json`.",
-        "id": "https://huggingface.co/internlm/Sage-SciPerception/README.md",
-        "kind": "model card",
-        "revision": "7c228fc03394027fed19bda1ff26388394b0031a",
-        "url": "https://huggingface.co/internlm/Sage-SciPerception/blob/7c228fc03394027fed19bda1ff26388394b0031a/README.md"
-      }
-    },
-    {
       "id": "internlm--internlumina-u2",
       "key": "internlm/internlumina-u2",
       "model": "InternLumina-U2",
@@ -2484,66 +2143,6 @@
         "published_on": "2026-09-14",
         "revision": "2",
         "url": "https://arxiv.org/abs/2609.15818v2"
-      }
-    },
-    {
-      "id": "internlm--intern-decision-4b",
-      "key": "internlm/intern-decision-4b",
-      "model": "Intern-Decision-4B",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/Intern-Decision-4B",
-      "released_on": "2026-09-26",
-      "report": {
-        "highlights": "This API performs structured candidate scoring. It does not call `generate()` or sample free-form text. A request can contain multiple fields; no gold answers are inserted into the prompt. The inference compiler uses only `state`, `questions`, and optional `images`.",
-        "id": "https://huggingface.co/internlm/Intern-Decision-4B/README.md",
-        "kind": "model card",
-        "revision": "38c9dafbbef52dd04bae943c0c6ac918419adfd5",
-        "url": "https://huggingface.co/internlm/Intern-Decision-4B/blob/38c9dafbbef52dd04bae943c0c6ac918419adfd5/README.md"
-      }
-    },
-    {
-      "id": "internlm--intern-decision-2b",
-      "key": "internlm/intern-decision-2b",
-      "model": "Intern-Decision-2B",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/Intern-Decision-2B",
-      "released_on": "2026-09-26",
-      "report": {
-        "highlights": "This API performs structured candidate scoring. It does not call `generate()` or sample free-form text. A request can contain multiple fields; no gold answers are inserted into the prompt. The inference compiler uses only `state`, `questions`, and optional `images`.",
-        "id": "https://huggingface.co/internlm/Intern-Decision-2B/README.md",
-        "kind": "model card",
-        "revision": "85c5657708a09884ff9fd8d7f57789b410a97b33",
-        "url": "https://huggingface.co/internlm/Intern-Decision-2B/blob/85c5657708a09884ff9fd8d7f57789b410a97b33/README.md"
-      }
-    },
-    {
-      "id": "internlm--intern-decision-0-8b",
-      "key": "internlm/intern-decision-0-8b",
-      "model": "Intern-Decision-0.8B",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/Intern-Decision-0.8B",
-      "released_on": "2026-09-26",
-      "report": {
-        "highlights": "This API performs structured candidate scoring. It does not call `generate()` or sample free-form text. A request can contain multiple fields; no gold answers are inserted into the prompt. The inference compiler uses only `state`, `questions`, and optional `images`.",
-        "id": "https://huggingface.co/internlm/Intern-Decision-0.8B/README.md",
-        "kind": "model card",
-        "revision": "42457fafd13d10d0b0d9be46cb30a23caa409994",
-        "url": "https://huggingface.co/internlm/Intern-Decision-0.8B/blob/42457fafd13d10d0b0d9be46cb30a23caa409994/README.md"
-      }
-    },
-    {
-      "id": "internlm--advancedmathbench-autoverifier",
-      "key": "internlm/advancedmathbench-autoverifier",
-      "model": "AdvancedMathBench-AutoVerifier",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/AdvancedMathBench-AutoVerifier",
-      "released_on": "2026-09-29",
-      "report": {
-        "highlights": "- Architecture: `Qwen3_5MoeForConditionalGeneration`. - Tokenizer: bundled `InternS1Tokenizer`; requires `sentencepiece` and `trust_remote_code=True` after reviewing the tokenizer code. - Weights: 40 safetensors shards, approximately 68 GiB.",
-        "id": "https://huggingface.co/internlm/AdvancedMathBench-AutoVerifier/README.md",
-        "kind": "model card",
-        "revision": "7fc819b608f1ba6abf26c9e4d3831e744e3dc7cd",
-        "url": "https://huggingface.co/internlm/AdvancedMathBench-AutoVerifier/blob/7fc819b608f1ba6abf26c9e4d3831e744e3dc7cd/README.md"
       }
     },
     {
@@ -2673,51 +2272,6 @@
       }
     },
     {
-      "id": "microsoft--sentiment-analysis-7b",
-      "key": "microsoft/sentiment-analysis-7b",
-      "model": "Sentiment-Analysis-7B",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/Sentiment-Analysis-7B",
-      "released_on": "2026-10-17",
-      "report": {
-        "highlights": "**Sentiment-Analysis-7B** is a 7B-parameter autoregressive language model fine-tuned for sentiment classification of user messages directed at a service, product, or agent (the \"Target\"). It is built on top of [*mistralai/Mistral-7B-Instruct-v0.2*](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) and was fine-tuned with reinforcement learning, using an LLM as a judge, on a small internal training set of ~300 examples. No pre-defined labels were used for training.",
-        "id": "https://huggingface.co/microsoft/Sentiment-Analysis-7B/README.md",
-        "kind": "model card",
-        "revision": "ac3324057c2bfeeb2ab56c7a7c786316538552b1",
-        "url": "https://huggingface.co/microsoft/Sentiment-Analysis-7B/blob/ac3324057c2bfeeb2ab56c7a7c786316538552b1/README.md"
-      }
-    },
-    {
-      "id": "microsoft--scfm-dataselection",
-      "key": "microsoft/scfm-dataselection",
-      "model": "scFM-dataselection",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/scFM-dataselection",
-      "released_on": "2026-10-16",
-      "report": {
-        "highlights": "--- license: mit tags: - single-cell - biology - geneformer - scvi - self-supervised-learning - scimilarity - pca - safetensors inference: false ---",
-        "id": "https://huggingface.co/microsoft/scFM-dataselection/README.md",
-        "kind": "model card",
-        "revision": "e697bd27466463882a185028e911e2b7ae729a34",
-        "url": "https://huggingface.co/microsoft/scFM-dataselection/blob/e697bd27466463882a185028e911e2b7ae729a34/README.md"
-      }
-    },
-    {
-      "id": "microsoft--bioemu2",
-      "key": "microsoft/bioemu2",
-      "model": "bioemu2",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/bioemu2",
-      "released_on": "2026-08-27",
-      "report": {
-        "highlights": "| **Field** | **Value** | |----|----| | Developer | Microsoft Research | | Model architecture | Diffusion-based all-atom score model. | | Parameters | Approximately 500M parameters | | Inputs | Biomolecular sequence(s) plus an optional multiple sequence alignment (MSA), contact conditioning, and method conditioning. | | Outputs | A generative ensemble of all-atom 3D biomolecular structures in Cartesian coordinates, sampled by reverse diffusion. | | Training dates | August–September 2026 | | Release date | October 2026 | | License | MIT | | Related assets",
-        "id": "https://huggingface.co/microsoft/bioemu2/README.md",
-        "kind": "model card",
-        "revision": "dd4b0c1b69984b68edcb6200a544213be4d75242",
-        "url": "https://huggingface.co/microsoft/bioemu2/blob/dd4b0c1b69984b68edcb6200a544213be4d75242/README.md"
-      }
-    },
-    {
       "id": "microsoft--userrepgen-4b",
       "key": "microsoft/userrepgen-4b",
       "model": "UserRepGen-4B",
@@ -2806,21 +2360,6 @@
         "id": "https://www.minimax.io/blog/minimax-h3-image",
         "kind": "official technical page",
         "url": "https://www.minimax.io/blog/minimax-h3-image"
-      }
-    },
-    {
-      "id": "minimax--minimax-h3-image-pe",
-      "key": "minimax/minimax-h3-image-pe",
-      "model": "MiniMax-H3-Image-PE",
-      "org": "MiniMax",
-      "release_url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE",
-      "released_on": "2026-11-08",
-      "report": {
-        "highlights": "```bash sglang serve \\ --model-path MiniMaxAI/MiniMax-H3-Image-PE \\ --served-model-name MiniMax-H3-Image-PE \\ --model-type llm \\ --reasoning-parser qwen3 \\ --grammar-backend xgrammar \\ --constrained-json-disable-any-whitespace \\ --host 0.0.0.0 \\ --port 30000 ```",
-        "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE/README.md",
-        "kind": "model card",
-        "revision": "35603d4b63949afa12cb098227fffefedf081afa",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE/blob/35603d4b63949afa12cb098227fffefedf081afa/README.md"
       }
     },
     {
@@ -2919,52 +2458,6 @@
       }
     },
     {
-      "id": "nvidia--nemotron-3-diarization",
-      "key": "nvidia/nemotron-3-diarization",
-      "model": "Nemotron-3-Diarization",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Nemotron-3-Diarization",
-      "released_on": "2026-09-01",
-      "report": {
-        "highlights": "Streaming Sortformer introduced an arrival-order speaker cache to maintain speaker identities across chunks in end-to-end streaming speaker diarization, with a single model supporting configurable latency profiles spanning offline operation to ultra-low-latency streaming. Nemotron 3 Diarization addresses the original model's four-speaker limitation by extending support to eight speakers while improving both accuracy and computational efficiency. The previous FastConformer-Transformer stack is streamlined into a pure Transformer encoder. A learned upsampl",
-        "id": "arxiv:2611.12246",
-        "kind": "technical report",
-        "published_on": "2026-11-09",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2611.12246v1"
-      }
-    },
-    {
-      "id": "nvidia--alpamayo2-edge",
-      "key": "nvidia/alpamayo2-edge",
-      "model": "Alpamayo2-Edge",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Alpamayo2-Edge",
-      "released_on": "2026-08-12",
-      "report": {
-        "highlights": "NVIDIA Alpamayo 2 Edge is a 2B-parameter reasoning vision-language-action model that uses adaptive reasoning to generate driving trajectories and causal explanations. Built on the Nemotron-based backbone of NVIDIA Cosmos 3 Edge, it supports fine-tuning and efficient in-vehicle deployment on NVIDIA DRIVE AGX Thor.",
-        "id": "https://huggingface.co/nvidia/Alpamayo2-Edge/README.md",
-        "kind": "model card",
-        "revision": "b92b6aa326bd3e2235db28f248ad5a30b5890e64",
-        "url": "https://huggingface.co/nvidia/Alpamayo2-Edge/blob/b92b6aa326bd3e2235db28f248ad5a30b5890e64/README.md"
-      }
-    },
-    {
-      "id": "nvidia--cosmos3-edge-policy-droid",
-      "key": "nvidia/cosmos3-edge-policy-droid",
-      "model": "Cosmos3-Edge-Policy-DROID",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID",
-      "released_on": "2026-07-09",
-      "report": {
-        "highlights": "2026-6-22 Cosmos 3: Omnimodal World Models for Physical AI NVIDIA1 Abstract WeintroduceCosmos3,afamilyofomnimodalworldmodelsdesignedtojointlyprocessandgeneratelan- guage, image, video, audio, and action sequences within a unified mixture-of-transformers architecture. By supporting highly flexible input-output configurations, Cosmos 3 seamlessly unifies critical modalities for Physical AI—effectively subsuming vision-language models, video generators, world simulators, and world-action models into a single framework. Our evaluation demonstrates that Cosmo",
-        "id": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf",
-        "kind": "technical report",
-        "revision": "d8f554d76b37d8c2ba504c628d7814176d7b0383c6c3bfa9f8389decda228d6e",
-        "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf"
-      }
-    },
-    {
       "id": "nvidia--cosmos3-super-image2video-4step",
       "key": "nvidia/cosmos3-super-image2video-4step",
       "model": "Cosmos3-Super-Image2Video-4Step",
@@ -2992,96 +2485,6 @@
         "kind": "technical report",
         "revision": "d8f554d76b37d8c2ba504c628d7814176d7b0383c6c3bfa9f8389decda228d6e",
         "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf"
-      }
-    },
-    {
-      "id": "nvidia--flora-rewarder",
-      "key": "nvidia/flora-rewarder",
-      "model": "Flora-Rewarder",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Flora-Rewarder",
-      "released_on": "2026-10-02",
-      "report": {
-        "highlights": "Flora-rewarder-27B produces outcome rewards (an episode-level success score), used for monitoring real-world deployments, and process rewards (dense action-quality scores over short time steps), used during reinforcement learning-based post-training. Flora was developed by NVIDIA as the data engine used for training GR00T-2, and is released to help researchers scale up custom robot datasets.",
-        "id": "https://huggingface.co/nvidia/Flora-Rewarder/README.md",
-        "kind": "model card",
-        "revision": "a58b675874982043ba3e6c2e9d006bc74a7efce4",
-        "url": "https://huggingface.co/nvidia/Flora-Rewarder/blob/a58b675874982043ba3e6c2e9d006bc74a7efce4/README.md"
-      }
-    },
-    {
-      "id": "nvidia--flora-tempseg",
-      "key": "nvidia/flora-tempseg",
-      "model": "Flora-TempSeg",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Flora-TempSeg",
-      "released_on": "2026-10-01",
-      "report": {
-        "highlights": "Flora-segmenter-9B localizes operations in robot and human manipulation videos. For each input window, it predicts local interval coordinates and flags indicating whether an operation continues beyond the visible window. The Flora data engine projects these fragments onto the source clock and stitches them into episode-level events; the separate Flora captioner generates their action instructions. Flora was developed by NVIDIA as the data engine used for training GR00T-2, and is released to help researchers scale up custom robot datasets.",
-        "id": "https://huggingface.co/nvidia/Flora-TempSeg/README.md",
-        "kind": "model card",
-        "revision": "b6fa34c285da54b9c3e6550d93796a705e6faaf2",
-        "url": "https://huggingface.co/nvidia/Flora-TempSeg/blob/b6fa34c285da54b9c3e6550d93796a705e6faaf2/README.md"
-      }
-    },
-    {
-      "id": "nvidia--flora-captioner",
-      "key": "nvidia/flora-captioner",
-      "model": "Flora-Captioner",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Flora-Captioner",
-      "released_on": "2026-10-01",
-      "report": {
-        "highlights": "Flora-captioner-27B generates one action instruction for a supplied target interval in a robot or human manipulation video. It uses neighboring video context to disambiguate the intended local operation. In the Flora data engine, target intervals come from temporal segmentation and stitching; the captioner supplies the text used for balancing the pretraining data distribution. Flora was developed by NVIDIA as the data engine used for training GR00T-2, and is released to help researchers scale up custom robot datasets.",
-        "id": "https://huggingface.co/nvidia/Flora-Captioner/README.md",
-        "kind": "model card",
-        "revision": "669b3f4924b29212da609b292babddfef690f579",
-        "url": "https://huggingface.co/nvidia/Flora-Captioner/blob/669b3f4924b29212da609b292babddfef690f579/README.md"
-      }
-    },
-    {
-      "id": "nvidia--cosmos3-nano-transfer-auto",
-      "key": "nvidia/cosmos3-nano-transfer-auto",
-      "model": "Cosmos3-Nano-Transfer-Auto",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Cosmos3-Nano-Transfer-Auto",
-      "released_on": "2026-08-31",
-      "report": {
-        "highlights": "Interactive World Simulation with Cosmos for Physical AI Contents 1 Introduction 4 2 Model Architecture 5 2.1 Cosmos 3 Backbone . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2.2 Multimodal Token Arrangement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.3 Temporal-causal Attention . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 3 Post-training Recipe 10 3.1 Bidirectional Adaptation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ",
-        "id": "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf",
-        "kind": "technical report",
-        "revision": "b3d73f530196f65ebc6fb33b13609d78b1f855e6b89cee64dd22635833d2086c",
-        "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf"
-      }
-    },
-    {
-      "id": "nvidia--cosmos3-nano-sim-transfer",
-      "key": "nvidia/cosmos3-nano-sim-transfer",
-      "model": "Cosmos3-Nano-Sim-Transfer",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Cosmos3-Nano-Sim-Transfer",
-      "released_on": "2026-08-31",
-      "report": {
-        "highlights": "Interactive World Simulation with Cosmos for Physical AI Contents 1 Introduction 4 2 Model Architecture 5 2.1 Cosmos 3 Backbone . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 2.2 Multimodal Token Arrangement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2.3 Temporal-causal Attention . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 3 Post-training Recipe 10 3.1 Bidirectional Adaptation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ",
-        "id": "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf",
-        "kind": "technical report",
-        "revision": "b3d73f530196f65ebc6fb33b13609d78b1f855e6b89cee64dd22635833d2086c",
-        "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/technical-report.pdf"
-      }
-    },
-    {
-      "id": "openbmb--minicpm-ocr-1-0-dspark",
-      "key": "openbmb/minicpm-ocr-1-0-dspark",
-      "model": "MiniCPM-OCR-1.0-DSpark",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-DSpark",
-      "released_on": "2026-10-26",
-      "report": {
-        "highlights": "| Property | Value | | :--- | :--- | | Target model | MiniCPM-OCR 1.0 (1.3B) | | Draft parameters | 296,837,889 | | Draft layers | 5 | | Draft tokens per forward pass | 15 | | Target hidden-state layers | `[3, 7, 11, 15, 19]` | | Checkpoint precision | BF16 | | Input vocabulary | 248,100 | | Draft output vocabulary | 114,688 |",
-        "id": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-DSpark/README.md",
-        "kind": "model card",
-        "revision": "cb24ab4f593389832024a688216e05bf3803950e",
-        "url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0-DSpark/blob/cb24ab4f593389832024a688216e05bf3803950e/README.md"
       }
     },
     {
@@ -3130,21 +2533,6 @@
       }
     },
     {
-      "id": "openbmb--minicpm5-2b-dspark",
-      "key": "openbmb/minicpm5-2b-dspark",
-      "model": "MiniCPM5-2B-DSpark",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM5-2B-DSpark",
-      "released_on": "2026-09-06",
-      "report": {
-        "highlights": "| Property | Value | |---|---| | Target model | [MiniCPM5-2B](https://huggingface.co/openbmb/MiniCPM5-2B) | | Draft layers | 5 | | Draft parameters | 323,776,001 | | Draft tokens per forward pass | 7 | | Target hidden-state layers | `[1, 10, 20, 30, 39]` | | Checkpoint precision | BF16 |",
-        "id": "https://huggingface.co/openbmb/MiniCPM5-2B-DSpark/README.md",
-        "kind": "model card",
-        "revision": "a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd",
-        "url": "https://huggingface.co/openbmb/MiniCPM5-2B-DSpark/blob/a63eb96b9bba7e999639d3fe3b6d70a0ea38eabd/README.md"
-      }
-    },
-    {
       "id": "openbmb--minicpm5-2b-base",
       "key": "openbmb/minicpm5-2b-base",
       "model": "MiniCPM5-2B-Base",
@@ -3160,21 +2548,6 @@
       }
     },
     {
-      "id": "openbmb--minicpm-ocr-1-0",
-      "key": "openbmb/minicpm-ocr-1-0",
-      "model": "MiniCPM-OCR-1.0",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0",
-      "released_on": "2026-10-21",
-      "report": {
-        "highlights": "- 🏆 **SOTA document parsing**: **93.68 on Real5-OmniDocBench**, a benchmark for real-world document parsing, with leading results on OmniDocBench v1.6, Wild-OmniDocBench, and olmOCR-Bench. Handles Chinese and English documents and PDFs, including scans, curved pages, photographs, skewed pages, and recaptured documents. - ⚡ **Efficient inference.** With DSpark decoding acceleration ([BF16](https://huggingface.co/openbmb/MiniCPM-OCR-1.0-DSpark), [GGUF](https://huggingface.co/openbmb/MiniCPM-OCR-1.0-DSpark-gguf)) end-to-end processing efficiency improves by",
-        "id": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0/README.md",
-        "kind": "model card",
-        "revision": "883ca368d17335b9ce5aa6fef4d000ef0684fcaa",
-        "url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0/blob/883ca368d17335b9ce5aa6fef4d000ef0684fcaa/README.md"
-      }
-    },
-    {
       "id": "openbmb--minicpm-v-4-7-35b-a3b",
       "key": "openbmb/minicpm-v-4-7-35b-a3b",
       "model": "MiniCPM-V-4.7-35B-A3B",
@@ -3187,51 +2560,6 @@
         "kind": "model card",
         "revision": "98e79ba972b586ac6146d3505771ce1467e199ba",
         "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B/blob/98e79ba972b586ac6146d3505771ce1467e199ba/README.md"
-      }
-    },
-    {
-      "id": "openbmb--minicpm-ocr-jev",
-      "key": "openbmb/minicpm-ocr-jev",
-      "model": "MiniCPM-OCR-Jev",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM-OCR-Jev",
-      "released_on": "2026-10-23",
-      "report": {
-        "highlights": "- 🛡️ **A small model that beats larger ones**: at only 2B parameters, decision AUROC (×100) on [JevOCRBench](https://huggingface.co/datasets/openbmb/JevOCRBench) is **93.6**, above JEV-35B-A3B (90.1) and close to Qwen3.5-397B-A17B (93.8). - 🧩 **Stable generalization**: on parses from MiniCPM-OCR 1.0, GLM-OCR, PaddleOCR-VL-1.6, and Xiaomi-OCR-0, AUROC (×100) stays in **91.9–93.4**.",
-        "id": "https://huggingface.co/openbmb/MiniCPM-OCR-Jev/README.md",
-        "kind": "model card",
-        "revision": "a0ed278eb6aa1f333a711665ab610055a4a816ab",
-        "url": "https://huggingface.co/openbmb/MiniCPM-OCR-Jev/blob/a0ed278eb6aa1f333a711665ab610055a4a816ab/README.md"
-      }
-    },
-    {
-      "id": "openbmb--ultradata-code-l2-classifier",
-      "key": "openbmb/ultradata-code-l2-classifier",
-      "model": "UltraData-Code-L2-Classifier",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/UltraData-Code-L2-Classifier",
-      "released_on": "2026-09-06",
-      "report": {
-        "highlights": "> **Abstract:** Code generation has become a core capability of large language models (LLMs), and code data is central to the pre-training process that develops it. As obtaining public code of sufficient quality becomes more difficult, further progress cannot rely on corpus expansion alone. Tiered data management instead applies increasingly targeted processing to smaller data pools, producing data states suited to different training objectives. Following this perspective, we present **UltraData-Code** as four connected data states spanning repository ar",
-        "id": "https://huggingface.co/openbmb/UltraData-Code-L2-Classifier/README.md",
-        "kind": "model card",
-        "revision": "f7b94ab98a647eac3136bf6e654c34b2aaa76f3a",
-        "url": "https://huggingface.co/openbmb/UltraData-Code-L2-Classifier/blob/f7b94ab98a647eac3136bf6e654c34b2aaa76f3a/README.md"
-      }
-    },
-    {
-      "id": "openbmb--trident-qwen3vl-2b",
-      "key": "openbmb/trident-qwen3vl-2b",
-      "model": "Trident-Qwen3VL-2B",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/Trident-Qwen3VL-2B",
-      "released_on": "2026-10-12",
-      "report": {
-        "highlights": "Each input is a dict with an optional `text` string and an `images` list of local image paths. Use `text` only, `images` only, or both for fused inputs. Queries and documents use different default instructions, which are part of the training format.",
-        "id": "https://huggingface.co/openbmb/Trident-Qwen3VL-2B/README.md",
-        "kind": "model card",
-        "revision": "ed4ff93bd1ed814a8479681b2d8edb1d5eaf3e0c",
-        "url": "https://huggingface.co/openbmb/Trident-Qwen3VL-2B/blob/ed4ff93bd1ed814a8479681b2d8edb1d5eaf3e0c/README.md"
       }
     },
     {
@@ -3298,84 +2626,6 @@
       }
     },
     {
-      "id": "tencent--qwen3-8-27b-dspine-b16",
-      "key": "tencent/qwen3-8-27b-dspine-b16",
-      "model": "Qwen3.8-27B-DSpine-b16",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
-      "released_on": "2026-11-07",
-      "report": {
-        "highlights": "--- license: apache-2.0 base_model: - Qwen/Qwen3.8-27B pipeline_tag: text-generation inference: false tags: - dspine - speculative-decoding - draft-model - sglang ---",
-        "id": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/README.md",
-        "kind": "model card",
-        "revision": "5f54174d301dbca65d9aa4448dc47e56732d9a12",
-        "url": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16/blob/5f54174d301dbca65d9aa4448dc47e56732d9a12/README.md"
-      }
-    },
-    {
-      "id": "tencent--hy-nomas",
-      "key": "tencent/hy-nomas",
-      "model": "Hy-Nomas",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/Hy-Nomas",
-      "released_on": "2026-10-21",
-      "report": {
-        "highlights": "Interactive world generation requires models to follow successive commands while preserving relevant history and action consequences. We present Hy-Nomas, a video world model with an 8B diffusion backbone that supports free-form text instructions and continuous camera control across multiple interaction turns. It generates variable-length segments conditioned on current inputs and cached history. Our central design aligns structured video captions with action-aware causal attention: descriptive context remains accessible across segments, while action ins",
-        "id": "arxiv:2610.36729",
-        "kind": "technical report",
-        "published_on": "2026-10-27",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2610.36729v1"
-      }
-    },
-    {
-      "id": "tencent--youtu-parsing-omni",
-      "key": "tencent/youtu-parsing-omni",
-      "model": "Youtu-Parsing-Omni",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/Youtu-Parsing-Omni",
-      "released_on": "2026-10-09",
-      "report": {
-        "highlights": "We present Youtu-Parsing-Omni, an omni-modal parser that converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that read, locate, and cite evidence across modalities. Its design rests on one encoder for every modality and one schema for every task. Youtu-Omni-Encoder, initialized from a pre-trained language model to strengthen text reading, encodes all modalities with shared weights in a unified space-time coordinate system, and a few fusion layers let video frames attend ",
-        "id": "arxiv:2610.39301",
-        "kind": "technical report",
-        "published_on": "2026-10-29",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2610.39301v1"
-      }
-    },
-    {
-      "id": "tencent--weviscut",
-      "key": "tencent/weviscut",
-      "model": "WeVisCut",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/WeVisCut",
-      "released_on": "2026-09-09",
-      "report": {
-        "highlights": "Producing long-form videos from narration requires interdependent decisions that remain coherent across shots. Existing agentic editors often use multi-stage workflows driven by general models, leaving the quality-cost trade-off of compact, task-adapted policies unclear. We address this gap with WeVisCut, a long-form script-to-video system that connects tool execution with policy learning. Its agent harness maintains shared production state so that tool feedback informs subsequent decisions and repairs. Because finished videos do not expose these decisio",
-        "id": "arxiv:2610.38352",
-        "kind": "technical report",
-        "published_on": "2026-10-28",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2610.38352v1"
-      }
-    },
-    {
-      "id": "tencent--wevisone-vl-2b",
-      "key": "tencent/wevisone-vl-2b",
-      "model": "WeVisOne-VL-2B",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/WeVisOne-VL-2B",
-      "released_on": "2026-10-22",
-      "report": {
-        "highlights": "The attached `mask_decoder.pt` (9,609,764 parameters) is a required core component that combines: - A **Visual Feature Adapter** over multi-level Qwen3-VL pre-merging ViT features; - A **Box-Guided Query Decoder** with 6 deformable cross-attention blocks initialized from the ` ` hidden state and Fourier-encoded box prior; - An **Instance-Conditioned Dense Prediction Head** with `FullCanvasAlphaCascadeHead` (refining predictions across S/4, S/2, and S/1 to output full-resolution continuous alpha mattes at stride 1).",
-        "id": "https://huggingface.co/tencent/WeVisOne-VL-2B/README.md",
-        "kind": "model card",
-        "revision": "fcf8c8ca7fa481b514005ef591c8b72bed39618a",
-        "url": "https://huggingface.co/tencent/WeVisOne-VL-2B/blob/fcf8c8ca7fa481b514005ef591c8b72bed39618a/README.md"
-      }
-    },
-    {
       "id": "tencent--hy-simulmt-30b-a3b-interleave",
       "key": "tencent/hy-simulmt-30b-a3b-interleave",
       "model": "Hy-SimulMT-30B-A3B-Interleave",
@@ -3406,36 +2656,6 @@
       }
     },
     {
-      "id": "tencent--wevisone-vl-4b",
-      "key": "tencent/wevisone-vl-4b",
-      "model": "WeVisOne-VL-4B",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/WeVisOne-VL-4B",
-      "released_on": "2026-10-22",
-      "report": {
-        "highlights": "The attached `mask_decoder.pt` (9,609,764 parameters) is a required core component that combines: - A **Visual Feature Adapter** over multi-level Qwen3-VL pre-merging ViT features; - A **Box-Guided Query Decoder** with 6 deformable cross-attention blocks initialized from the ` ` hidden state and Fourier-encoded box prior; - An **Instance-Conditioned Dense Prediction Head** with `FullCanvasAlphaCascadeHead` (refining predictions across S/4, S/2, and S/1 to output full-resolution continuous alpha mattes at stride 1).",
-        "id": "https://huggingface.co/tencent/WeVisOne-VL-4B/README.md",
-        "kind": "model card",
-        "revision": "6b44a45873b4bbc7dca383922504430dc60eca23",
-        "url": "https://huggingface.co/tencent/WeVisOne-VL-4B/blob/6b44a45873b4bbc7dca383922504430dc60eca23/README.md"
-      }
-    },
-    {
-      "id": "tencent--hy-nomas-diffusers",
-      "key": "tencent/hy-nomas-diffusers",
-      "model": "Hy-Nomas-Diffusers",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/Hy-Nomas-Diffusers",
-      "released_on": "2026-10-24",
-      "report": {
-        "highlights": "- **Free-form interaction:** Guide successive segments with instructions about subjects, actions, appearance, style, and environment. - **Camera control:** Supply camera trajectories alongside text to control viewpoint and movement. - **Continuous generation:** Reuse earlier context through a KV cache when extending the same world. - **Distilled inference:** Generate each segment with 4 DiT denoising steps in the example below and decode its latents with a fine-tuned PixelUMM decoder. - **Diffusers integration:** Load the bundled transformer, text encode",
-        "id": "https://huggingface.co/tencent/Hy-Nomas-Diffusers/README.md",
-        "kind": "model card",
-        "revision": "a1ae04d11ae4ea176d1f76de634c115944f9882d",
-        "url": "https://huggingface.co/tencent/Hy-Nomas-Diffusers/blob/a1ae04d11ae4ea176d1f76de634c115944f9882d/README.md"
-      }
-    },
-    {
       "id": "tencent--hy-memory-30b-a3b",
       "key": "tencent/hy-memory-30b-a3b",
       "model": "Hy-Memory-30B-A3B",
@@ -3449,21 +2669,6 @@
         "published_on": "2026-10-15",
         "revision": "1",
         "url": "https://arxiv.org/abs/2610.22196v1"
-      }
-    },
-    {
-      "id": "tencent--evie-8b",
-      "key": "tencent/evie-8b",
-      "model": "EVIE-8B",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/EVIE-8B",
-      "released_on": "2026-09-04",
-      "report": {
-        "highlights": "> 📢 **Release Announcement**: All model weights, inference pipelines, and evaluation suites have been fully open-sourced. The technical report is available on arXiv: [EVIE: Evidence-Vector-Informed Embeddings for Visual Document Retrieval](https://arxiv.org/abs/2610.11553). Training code and distillation recipes are available in the [Tencent/EVIE](https://github.com/Tencent/EVIE) repository.",
-        "id": "https://huggingface.co/tencent/EVIE-8B/README.md",
-        "kind": "model card",
-        "revision": "cdc8f60e56d168591354cf919bb5a50a5d1f617b",
-        "url": "https://huggingface.co/tencent/EVIE-8B/blob/cdc8f60e56d168591354cf919bb5a50a5d1f617b/README.md"
       }
     },
     {
