@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="328" viewBox="0 0 1120 328" role="img">
+<title>2026 model releases</title><desc>Monthly model release timeline for Jul–Dec 2026</desc>
+<style>text:not([font-family]){font-family:Inter,system-ui,sans-serif}</style>
+<rect width="1120" height="328" fill="#f8f7f2"/>
+<text x="29" y="37" fill="#716b60" font-size="12" font-weight="600">MODEL RELEASE TIMELINE</text>
+<text font-family="Georgia,serif" x="28" y="88" fill="#201f1b" font-size="46" font-weight="400">2026  Model releases</text>
+<text x="30" y="117" fill="#716b60" font-size="13" font-weight="400">Jul–Dec  /  Dates from the catalog</text>
+<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">49</text>
+<text x="664" y="87" fill="#716b60" font-size="11" font-weight="400">Releases</text>
+<text font-family="Georgia,serif" x="771" y="64" fill="#201f1b" font-size="27" font-weight="400">16</text>
+<text x="771" y="87" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
+<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">4.5</text>
+<text x="878" y="87" fill="#716b60" font-size="11" font-weight="400">Per month</text>
+<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">3</text>
+<text x="985" y="87" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
+<path d="M28 135H1092V135" stroke="#dcd6c8" fill="none"/>
+<text font-family="Georgia,serif" x="29" y="159" fill="#201f1b" font-size="22" font-weight="400">07</text>
+<text x="66" y="158" fill="#716b60" font-size="10" font-weight="400">1 releases</text>
+<path d="M32 184H32V210" stroke="#dcd6c8" fill="none"/>
+<circle cx="32" cy="184" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="42" y="188" fill="#946410" font-size="10" font-weight="650">07  Meituan</text>
+<text x="42" y="208" fill="#201f1b" font-size="14" font-weight="600">LongCat-2.0</text>
+<text font-family="Georgia,serif" x="206" y="159" fill="#201f1b" font-size="22" font-weight="400">08</text>
+<text x="243" y="158" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
+<text x="206" y="190" fill="#716b60" font-size="11" font-weight="400">No catalog entries</text>
+<text font-family="Georgia,serif" x="383" y="159" fill="#201f1b" font-size="22" font-weight="400">09</text>
+<text x="420" y="158" fill="#716b60" font-size="10" font-weight="400">2 releases</text>
+<path d="M386 184H386V256" stroke="#dcd6c8" fill="none"/>
+<circle cx="386" cy="184" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="188" fill="#086f96" font-size="10" font-weight="650">09.10  DeepSeek</text>
+<text x="396" y="208" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash</text>
+<circle cx="386" cy="230" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="234" fill="#b6472f" font-size="10" font-weight="650">09.28  Anthropic</text>
+<text x="396" y="254" fill="#201f1b" font-size="14" font-weight="600">Claude Sonnet 5.5</text>
+<text font-family="Georgia,serif" x="560" y="159" fill="#201f1b" font-size="22" font-weight="400">10</text>
+<text x="597" y="158" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
+<text x="560" y="190" fill="#716b60" font-size="11" font-weight="400">No catalog entries</text>
+<text font-family="Georgia,serif" x="737" y="159" fill="#201f1b" font-size="22" font-weight="400">11</text>
+<text x="774" y="158" fill="#716b60" font-size="10" font-weight="400">1 releases</text>
+<path d="M740 184H740V227" stroke="#dcd6c8" fill="none"/>
+<circle cx="740" cy="184" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="750" y="188" fill="#b6472f" font-size="10" font-weight="650">11.09  Anthropic</text>
+<text x="750" y="208" fill="#201f1b" font-size="14" font-weight="600">Claude Fable 5.2 /</text>
+<text x="750" y="224" fill="#201f1b" font-size="14" font-weight="600">Mythos 5.2</text>
+<text font-family="Georgia,serif" x="914" y="159" fill="#201f1b" font-size="22" font-weight="400">12</text>
+<text x="951" y="158" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
+<text x="914" y="190" fill="#716b60" font-size="11" font-weight="400">No catalog entries</text>
+<path d="M29 290H1092V290" stroke="#dcd6c8" fill="none"/>
+<text x="30" y="311" fill="#716b60" font-size="11" font-weight="400">Two-digit dates indicate month precision. The 72-day count uses day-level dates only.</text>
+</svg>

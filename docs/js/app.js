@@ -54,6 +54,7 @@ window.App = (function() {
       const res = await fetch("data/models.json");
       if (!res.ok) throw new Error("Failed to load models.json");
       dataset = await res.json();
+      dataset.models = dataset.models.filter(model => /^[a-z0-9_-]+$/i.test(model.id));
     } catch (err) {
       console.error("Error loading models:", err);
     }
@@ -87,16 +88,30 @@ window.App = (function() {
     renderArchiveList();
   }
 
+  function escapeHtml(value) {
+    const entities = {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"};
+    return String(value ?? "").replace(/[&<>"']/g, character => entities[character]);
+  }
+
+  function officialUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && !url.username && !url.password ? url.href : "";
+    } catch {
+      return "";
+    }
+  }
+
   function getPdfUrl(filePath) {
-    const base = dataset.metadata?.pdf_base_url || "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/";
-    return base + filePath;
+    if (!/^20\d{2}\/[a-z0-9_]+\/[A-Za-z0-9_.()-]+\.pdf$/.test(filePath)) return "";
+    return "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/" + filePath;
   }
 
   function getLabIcon(org) {
     const info = LAB_ICONS[org] || { bg: "#475569", text: org.slice(0, 2).toUpperCase() };
     return `
       <div style="width:100%;height:100%;background:${info.bg};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:-0.02em;font-family:var(--font-inter),sans-serif;">
-        ${info.text}
+        ${escapeHtml(info.text)}
       </div>
     `;
   }
@@ -118,12 +133,12 @@ window.App = (function() {
       const cardHtml = `
         <a class="tl-card" onclick="window.App.openDrawer('${m.id}')">
           <div class="tl-name-row">
-            <span class="tl-name">${m.model}</span>
-            <span class="tl-graduated">${m.date}</span>
+            <span class="tl-name">${escapeHtml(m.model)}</span>
+            <span class="tl-graduated">${escapeHtml(m.date)}</span>
           </div>
-          <p class="tl-desc">${m.highlights}</p>
+          <p class="tl-desc">${escapeHtml(m.highlights)}</p>
           <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--ink-lighter);margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
-            <span style="font-weight:600;color:var(--ink);">${m.org}</span>
+            <span style="font-weight:600;color:var(--ink);">${escapeHtml(m.org)}</span>
             <span style="color:var(--orange);font-weight:500;">View Spec &rarr;</span>
           </div>
         </a>
@@ -184,14 +199,14 @@ window.App = (function() {
             </div>
             <div class="project-card-info">
               <div class="project-card-name-row">
-                <span class="project-card-name">${m.model}</span>
+                <span class="project-card-name">${escapeHtml(m.model)}</span>
                 ${m.is_milestone ? '<span class="project-card-badge">★ Milestone</span>' : ''}
               </div>
-              <p class="project-card-desc">${m.highlights}</p>
+              <p class="project-card-desc">${escapeHtml(m.highlights)}</p>
             </div>
           </div>
           <div class="project-card-footer">
-            <span class="project-card-model-info">${m.org} · ${m.date}</span>
+            <span class="project-card-model-info">${escapeHtml(m.org)} · ${escapeHtml(m.date)}</span>
           </div>
         </a>
       `).join('');
@@ -260,18 +275,18 @@ window.App = (function() {
         <div class="blog-item-info">
           <div class="blog-item-tag-row">
             <span class="blog-item-tag ${m.is_milestone ? 'blog-item-tag--news' : 'blog-item-tag--tech'}">
-              ${m.is_milestone ? '★ Milestone' : (m.tags[0] || 'Technical Report')}
+              ${m.is_milestone ? '★ Milestone' : escapeHtml(m.tags[0] || 'Technical Report')}
             </span>
           </div>
-          <h3 class="blog-item-title">${m.model}</h3>
+          <h3 class="blog-item-title">${escapeHtml(m.model)}</h3>
           <p class="blog-item-excerpt" style="font-size:14px;color:var(--ink-dim);line-height:1.6;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
-            ${m.highlights}
+            ${escapeHtml(m.highlights)}
           </p>
           <div class="blog-item-meta" style="font-size:12px;color:var(--ink-lighter);margin-top:10px;display:flex;align-items:center;justify-content:space-between;" onclick="event.stopPropagation()">
-            <span>${m.org} · ${m.date}</span>
+            <span>${escapeHtml(m.org)} · ${escapeHtml(m.date)}</span>
             <div style="display:flex;gap:12px;">
-              <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);font-weight:600;text-decoration:none;">Paper &rarr;</a>
-              <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color:var(--ink);text-decoration:none;">PDF</a>
+              <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);font-weight:600;text-decoration:none;">Paper &rarr;</a>
+              <a href="${getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="color:var(--ink);text-decoration:none;">PDF</a>
               <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
             </div>
           </div>
@@ -295,25 +310,25 @@ window.App = (function() {
         <td style="text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);">${idx + 1}</td>
         <td>
           <div style="display:flex;align-items:center;gap:6px;">
-            <span style="font-weight:600;color:var(--ink);">${m.model}</span>
+            <span style="font-weight:600;color:var(--ink);">${escapeHtml(m.model)}</span>
             ${m.is_milestone ? '<span style="color:var(--orange);font-weight:700;">★</span>' : ''}
           </div>
         </td>
-        <td><span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink);">${m.org}</span></td>
-        <td style="font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);white-space:nowrap;">${m.date}</td>
+        <td><span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink);">${escapeHtml(m.org)}</span></td>
+        <td style="font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);white-space:nowrap;">${escapeHtml(m.date)}</td>
         <td style="max-width:380px;">
           <p style="font-size:13px;color:var(--ink-dim);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0;">
-            ${m.highlights}
+            ${escapeHtml(m.highlights)}
           </p>
         </td>
         <td style="max-width:200px;">
           <div style="display:flex;flex-wrap:wrap;gap:4px;">
-            ${m.tags.slice(0, 2).map(t => `<span style="font-size:11px;padding:2px 6px;border-radius:4px;background:rgba(8,12,38,0.05);color:var(--ink-dim);border:1px solid var(--border);">${t}</span>`).join('')}
+            ${m.tags.slice(0, 2).map(t => `<span style="font-size:11px;padding:2px 6px;border-radius:4px;background:rgba(8,12,38,0.05);color:var(--ink-dim);border:1px solid var(--border);">${escapeHtml(t)}</span>`).join('')}
           </div>
         </td>
         <td style="text-align:right;white-space:nowrap;" onclick="event.stopPropagation()">
-          <a href="${m.link}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;font-weight:600;margin-right:10px;">Paper</a>
-          <a href="${getPdfUrl(m.file)}" target="_blank" rel="noopener noreferrer" style="color:var(--ink-dim);text-decoration:none;margin-right:10px;">PDF</a>
+          <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;font-weight:600;margin-right:10px;">Paper</a>
+          <a href="${getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="color:var(--ink-dim);text-decoration:none;margin-right:10px;">PDF</a>
           <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
         </td>
       </tr>
@@ -342,11 +357,16 @@ window.App = (function() {
     if (orgEl) orgEl.textContent = model.org;
     if (dateEl) dateEl.textContent = model.date;
     if (tagsEl) {
-      tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${t}</span>`).join('');
+      tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${escapeHtml(t)}</span>`).join('');
     }
     if (highlightsEl) highlightsEl.textContent = model.highlights;
-    if (officialLinkEl) officialLinkEl.href = model.link;
-    if (pdfLinkEl) pdfLinkEl.href = getPdfUrl(model.file);
+    if (officialLinkEl) officialLinkEl.href = officialUrl(model.link);
+    if (pdfLinkEl) {
+      const pdf = getPdfUrl(model.file);
+      pdfLinkEl.href = pdf;
+      pdfLinkEl.hidden = !pdf;
+      pdfLinkEl.style.display = pdf ? "" : "none";
+    }
     if (bibtexEl) bibtexEl.textContent = generateBibtex(model);
 
     if (drawer) drawer.style.display = "flex";
@@ -386,7 +406,7 @@ window.App = (function() {
 
     const toast = document.createElement("div");
     toast.className = "lmsys-toast";
-    toast.innerHTML = `<span>📑 ${message}</span>`;
+    toast.textContent = `📑 ${message}`;
 
     container.appendChild(toast);
     setTimeout(() => {
@@ -403,6 +423,8 @@ window.App = (function() {
     closeDrawer,
     copyCitation,
     getPdfUrl,
+    officialUrl,
+    escapeHtml,
     showToast
   };
 })();

@@ -129,6 +129,11 @@
     ],
     "Claude Sonnet 4.6": [
       "Claude Sonnet 4.6 System Card"
+    ],
+    "Claude Fable 5.2 / Mythos 5.2": [
+      "Claude Fable 5.2",
+      "Claude Mythos 5.2",
+      "Claude Fable 5.2 and Claude Mythos 5.2"
     ]
   },
   "meituan": {

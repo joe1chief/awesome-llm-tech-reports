@@ -1,0 +1,23 @@
+{
+  "year": 2026,
+  "terms": {
+    "Reasoning": 19,
+    "Multimodal": 16,
+    "Agentic Coding": 8,
+    "MoE": 7,
+    "Tool Use": 7,
+    "Computer Use": 4,
+    "Vision-Language": 4,
+    "Long Context": 3,
+    "Post-training": 3,
+    "Safety Evaluation": 3,
+    "Reinforcement Learning": 2,
+    "Sparse Attention": 2,
+    "Audio Understanding": 1,
+    "Chain of Thought": 1,
+    "Image Generation": 1,
+    "KV Cache": 1,
+    "Quantization": 1,
+    "Retrieval": 1
+  }
+}

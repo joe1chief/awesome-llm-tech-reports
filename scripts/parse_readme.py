@@ -5,7 +5,6 @@ Parses README.md tables and outputs enriched, structured JSON data for the web U
 """
 
 import json
-import os
 import re
 from pathlib import Path
 
@@ -91,7 +90,7 @@ def extract_tags(model_name: str, highlights: str, link: str) -> list:
     return list(dict.fromkeys(tags))
 
 
-def parse_readme(readme_path: Path):
+def parse_models(readme_path: Path):
     if not readme_path.exists():
         raise FileNotFoundError(f"README not found at {readme_path}")
 
@@ -113,7 +112,7 @@ def parse_readme(readme_path: Path):
             line = line.strip()
             if not line or not line.startswith("|"):
                 continue
-            cells = [c.strip() for c in line.split("|")[1:-1]]
+            cells = [c.strip().replace(r"\|", "|") for c in re.split(r"(?<!\\)\|", line)[1:-1]]
             if len(cells) < 6:
                 continue
 
@@ -123,6 +122,8 @@ def parse_readme(readme_path: Path):
             milestone = is_milestone(model_name, highlights)
             tags = extract_tags(model_name, highlights, link)
 
+            release_date = date
+            date = release_date[:7]
             year, month = date.split("-") if "-" in date else (date, "01")
 
             models.append({
@@ -139,9 +140,18 @@ def parse_readme(readme_path: Path):
                 "is_milestone": milestone,
                 "tags": tags
             })
+            if len(release_date) == 10:
+                models[-1]["released_on"] = release_date
 
-    # Sort descending by date, then model name
-    models.sort(key=lambda m: (m["date"], m["model"]), reverse=True)
+    return models
+
+
+def parse_readme(readme_path: Path):
+    return build_dataset(parse_models(readme_path))
+
+
+def build_dataset(models):
+    models = sorted(models, key=lambda model: (model.get("released_on", model["date"]), model["model"]), reverse=True)
 
     # Compute overall statistics
     org_counts = {}
@@ -173,7 +183,7 @@ def parse_readme(readme_path: Path):
     return {
         "metadata": {
             "title": "Awesome LLM Technical Reports",
-            "description": "Curated Archive of Frontier LLM, Multimodal & Reasoning Technical Reports (2025-01 to 2026-07)",
+            "description": "Curated archive of frontier LLM, multimodal and reasoning technical reports",
             "repo_url": "https://github.com/joe1chief/awesome-llm-tech-reports",
             "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
         },
@@ -183,6 +193,11 @@ def parse_readme(readme_path: Path):
 
 
 def main():
+    if (REPO_ROOT / "data" / "catalog.json").exists():
+        from report_catalog import build
+
+        build()
+        return
     print(f"Reading README from: {README_PATH}")
     data = parse_readme(README_PATH)
     
