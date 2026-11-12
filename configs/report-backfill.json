@@ -1,0 +1,270 @@
+{
+  "alibaba_qwen": [
+    {
+      "model": "Qwen3.8-Max",
+      "released_on": "2026-08-03",
+      "release_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen3-8-max"
+    },
+    {
+      "model": "Qwen4-Max Preview",
+      "released_on": "2026-11-11",
+      "release_url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
+      "forms": [
+        "Preview"
+      ]
+    }
+  ],
+  "anthropic": [
+    {
+      "model": "Claude Opus 5",
+      "released_on": "2026-07-24",
+      "release_url": "https://www.anthropic.com/news/claude-opus-5",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/news/claude-opus-5"
+      }
+    },
+    {
+      "model": "Claude Fable 5.1 / Mythos 5.1",
+      "released_on": "2026-09-15",
+      "release_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      }
+    },
+    {
+      "model": "Claude Opus 5.5",
+      "released_on": "2026-09-22",
+      "release_url": "https://www.anthropic.com/claude-opus-5-5",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      }
+    },
+    {
+      "model": "Claude Haiku 5.5",
+      "released_on": "2026-10-07",
+      "release_url": "https://www.anthropic.com/claude-haiku-5-5",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
+      }
+    }
+  ],
+  "baidu": [
+    {
+      "model": "ERNIE 5.5 Flash Preview",
+      "released_on": "2026-11-11",
+      "release_url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+      "forms": [
+        "Preview"
+      ]
+    }
+  ],
+  "bytedance": [
+    {
+      "model": "Doubao Seed 2.1 Pro / Lite",
+      "released_on": "2026-09-15",
+      "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement"
+    },
+    {
+      "model": "Seedream 5.5",
+      "released_on": "2026-11-09",
+      "release_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
+      "forms": [
+        "Image"
+      ],
+      "report": {
+        "kind": "official technical page",
+        "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/"
+      }
+    }
+  ],
+  "google": [
+    {
+      "model": "Gemini 4 Argon",
+      "released_on": "2026-09-30",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+    },
+    {
+      "model": "Gemini 4 Argon",
+      "released_on": "2026-10-13",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "forms": [
+        "General availability"
+      ],
+      "report": {
+        "kind": "model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-argon/"
+      }
+    },
+    {
+      "model": "Gemini 4 Carbon",
+      "released_on": "2026-10-28",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+    },
+    {
+      "model": "Gemini 4 Carbon",
+      "released_on": "2026-11-10",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "forms": [
+        "General availability"
+      ],
+      "report": {
+        "kind": "model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
+      }
+    }
+  ],
+  "meta": [
+    {
+      "model": "Muse Wonder",
+      "released_on": "2026-10-12",
+      "release_url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/"
+      }
+    },
+    {
+      "model": "Muse Ember",
+      "released_on": "2026-11-09",
+      "release_url": "https://research.meta.ai/blog/muse-ember",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://research.meta.ai/blog/muse-ember"
+      }
+    }
+  ],
+  "minimax": [
+    {
+      "model": "MiniMax M3.1 Flash",
+      "released_on": "2026-10-19",
+      "release_url": "https://www.minimax.io/blog/minimax-m31f",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.minimax.io/blog/minimax-m31f"
+      }
+    },
+    {
+      "model": "MiniMax H3-Image",
+      "released_on": "2026-11-11",
+      "release_url": "https://www.minimax.io/blog/minimax-h3-image",
+      "forms": [
+        "Image"
+      ],
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.minimax.io/blog/minimax-h3-image"
+      }
+    }
+  ],
+  "moonshot": [
+    {
+      "model": "Kimi K3.1 Pro",
+      "released_on": "2026-10-23",
+      "release_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
+      }
+    },
+    {
+      "model": "Kimi K3.1 Pro",
+      "released_on": "2026-11-05",
+      "release_url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "forms": [
+        "Open weights"
+      ]
+    }
+  ],
+  "openai": [
+    {
+      "model": "GPT-5.6",
+      "released_on": "2026-07-09",
+      "release_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-5-6"
+      }
+    },
+    {
+      "model": "GPT-6 Astra",
+      "released_on": "2026-09-03",
+      "release_url": "https://openai.com/index/gpt-6-astra/",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra"
+      }
+    },
+    {
+      "model": "GPT-6 Sol",
+      "released_on": "2026-09-22",
+      "release_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-astra/sec%3Aappendix-222669"
+      }
+    },
+    {
+      "model": "GPT-6.1 Sol",
+      "released_on": "2026-09-29",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol"
+      }
+    },
+    {
+      "model": "GPT-6.1 Terra",
+      "released_on": "2026-10-26",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-terra"
+      }
+    },
+    {
+      "model": "GPT-6 Cyber",
+      "released_on": "2026-11-05",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
+      "report": {
+        "kind": "system card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
+      }
+    }
+  ],
+  "stepfun": [
+    {
+      "model": "Step 5 Preview",
+      "released_on": "2026-10-15",
+      "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview/commits/main",
+      "forms": [
+        "Open weights"
+      ]
+    }
+  ],
+  "tencent": [
+    {
+      "model": "Hunyuan Hy4",
+      "released_on": "2026-11-04",
+      "release_url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release"
+      }
+    }
+  ],
+  "zhipu": [
+    {
+      "model": "GLM-5.3",
+      "released_on": "2026-08-18",
+      "release_url": "https://docs.z.ai/release-notes/new-released",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://docs.z.ai/guides/llm/glm-5.3"
+      }
+    }
+  ]
+}

@@ -2,14 +2,18 @@
   "alibaba_qwen": {
     "org": "Alibaba",
     "hub": "Qwen",
-    "official": "https://qwenlm.github.io/blog/",
-    "model_pattern": "Qwen(?:[ -]?\\d[\\w.]*)(?:[- ][A-Za-z0-9.]+){0,4}",
+    "official": [
+      "https://qwenlm.github.io/blog/",
+      "https://www.alibabacloud.com/help/en/model-studio/model-release-notes"
+    ],
+    "model_pattern": "Qwen[ -]?\\d+(?:[.-]\\d+)?(?:[- ](?:Max|Plus|Flash|Turbo|Next|Preview|Thinking|Instruct|Coder|Omni|VL|Audio|Base|Embedding|Reranker|Math|[0-9]+[BM])){0,5}",
     "hosts": [
       "github.com",
       "qianwen-res.oss-cn-beijing.aliyuncs.com",
       "qwen.ai",
       "qwenlm.github.io",
-      "raw.githubusercontent.com"
+      "raw.githubusercontent.com",
+      "www.alibabacloud.com"
     ],
     "group_sizes": true
   },
@@ -25,21 +29,40 @@
   "anthropic": {
     "org": "Anthropic",
     "hub": "",
-    "official": "https://www.anthropic.com/news",
-    "model_pattern": "Claude[ -](?:Opus|Sonnet|Haiku|Fable|Mythos)[ -]\\d+(?:[.-]\\d+)?",
+    "official": [
+      "https://www.anthropic.com/news/models",
+      "https://www.anthropic.com/system-cards"
+    ],
+    "model_pattern": "(?:Claude[- ](?:Opus|Sonnet|Haiku)|(?:Claude[- ])?(?:Fable|Mythos))[- ]\\d+(?:[.-]\\d+)?",
     "hosts": [
       "assets.anthropic.com",
       "www-cdn.anthropic.com",
-      "www.anthropic.com"
+      "www.anthropic.com",
+      "platform.claude.com",
+      "anthropic.com"
+    ]
+  },
+  "baidu": {
+    "org": "Baidu",
+    "hub": "baidu",
+    "official": "https://ernie.baidu.com/zh/",
+    "model_pattern": "(?:ERNIE|文心)[- ]?\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Lite|Turbo|Pro|Base|Thinking|Preview|VL)){0,4}",
+    "hosts": [
+      "ernie.baidu.com",
+      "github.com"
     ]
   },
   "bytedance": {
     "org": "ByteDance",
     "hub": "ByteDance-Seed",
-    "official": "https://seed.bytedance.com/en/blog",
-    "model_pattern": "(?:Seed(?:ream|ance)?|Doubao|MedXiaohe)[- ]?\\d[\\w. -]*",
+    "official": [
+      "https://seed.bytedance.com/en/",
+      "https://seed.bytedance.com/en/blog_list/visual"
+    ],
+    "model_pattern": "(?:(?:Doubao[- ]|豆包\\s*)?Seed(?:ream|ance)?|Doubao|MedXiaohe)[- ]?\\d+(?:[.-]\\d+)?(?:[- ](?:Pro(?:\\s*/\\s*Lite)?|Lite|Thinking|Flash|Vision|Omni|Realtime)){0,3}",
     "hosts": [
-      "seed.bytedance.com"
+      "seed.bytedance.com",
+      "console.volcengine.com"
     ]
   },
   "deepseek": {
@@ -57,8 +80,11 @@
   "google": {
     "org": "Google",
     "hub": "google",
-    "official": "https://deepmind.google/models/model-cards/",
-    "model_pattern": "(?:Gemini|Gemma|MedGemma|Veo|Imagen)[- ]\\d[\\w. -]*",
+    "official": [
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/rss/",
+      "https://deepmind.google/models/model-cards/"
+    ],
+    "model_pattern": "Gemini[- ]4[- ](?:Argon|Carbon)|Gemini[- ]\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Pro|Ultra|Nano|Live|Thinking|Lite|Image|TTS)){0,4}|(?:Gemma|MedGemma|Veo|Imagen)[- ]\\d[\\w. -]*",
     "hosts": [
       "ai.google.dev",
       "blog.google",
@@ -110,10 +136,16 @@
   "meta": {
     "org": "Meta",
     "hub": "meta-llama",
-    "official": "https://ai.meta.com/blog/",
-    "model_pattern": "Llama[- ]\\d[\\w. -]*",
+    "official": [
+      "https://research.meta.ai/",
+      "https://about.fb.com/news/",
+      "https://ai.meta.com/blog/"
+    ],
+    "model_pattern": "Muse[- ](?:Spark|Wonder(?:[- ]Full)?|Ember)|Llama[- ]\\d[\\w. -]*",
     "hosts": [
-      "ai.meta.com"
+      "ai.meta.com",
+      "about.fb.com",
+      "research.meta.ai"
     ],
     "group_sizes": true
   },
@@ -129,17 +161,21 @@
   "minimax": {
     "org": "MiniMax",
     "hub": "MiniMaxAI",
-    "official": "https://www.minimax.io/news",
-    "model_pattern": "MiniMax[- ][A-Z]\\d[\\w. -]*",
+    "official": [
+      "https://ir.minimax.io/news-events/new-releases",
+      "https://www.minimax.io/news"
+    ],
+    "model_pattern": "MiniMax[- ][A-Z]\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Image|PE|Preview)){0,3}",
     "hosts": [
       "www.minimax.io",
-      "www.minimaxi.com"
+      "www.minimaxi.com",
+      "ir.minimax.io"
     ]
   },
   "moonshot": {
     "org": "Moonshot AI",
     "hub": "moonshotai",
-    "official": "https://www.kimi.com/blog",
+    "official": "https://www.kimi.com/en/blog/",
     "model_pattern": "Kimi[- ](?:K\\d[\\w. -]*|Linear|VL)",
     "hosts": [
       "github.com",
@@ -159,8 +195,11 @@
   "openai": {
     "org": "OpenAI",
     "hub": "openai",
-    "official": "https://openai.com/news/rss.xml",
-    "model_pattern": "(?:GPT[- ](?:OSS[- ])?\\d+(?:[.-]\\d+)?(?:[- ](?:Codex|mini|nano|Pro|Flash|Thinking))?|o\\d+(?:[- ]mini)?)(?![\\w.])",
+    "official": [
+      "https://deploymentsafety.openai.com/",
+      "https://openai.com/news/rss.xml"
+    ],
+    "model_pattern": "(?:GPT[- ](?:OSS[- ])?\\d+(?:[.-]\\d+)?(?:[- ](?:Codex|mini|nano|Pro|Flash|Thinking|Instant|Astra|Terra|Sol|Luna|Cyber))?|o\\d+(?:[- ]mini)?)(?![\\w.])",
     "hosts": [
       "cdn.openai.com",
       "deploymentsafety.openai.com",
@@ -206,11 +245,15 @@
   "tencent": {
     "org": "Tencent",
     "hub": "tencent",
-    "official": "https://hunyuan.tencent.com/",
-    "model_pattern": "Hunyuan[\\w. -]*",
+    "official": [
+      "https://hunyuan.tencent.com/",
+      "https://adp.tencent.com/zh/blog"
+    ],
+    "model_pattern": "(?:(?:Hunyuan|混元)[- ]+)?Hy[- ]?\\d+(?:\\.\\d+)?(?:[- ]Preview)?|Hunyuan[\\w. -]*",
     "hosts": [
       "github.com",
-      "hunyuan.tencent.com"
+      "hunyuan.tencent.com",
+      "adp.tencent.com"
     ]
   },
   "xai": {

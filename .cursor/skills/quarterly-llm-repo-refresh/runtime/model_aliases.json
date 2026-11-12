@@ -133,7 +133,15 @@
     "Claude Fable 5.2 / Mythos 5.2": [
       "Claude Fable 5.2",
       "Claude Mythos 5.2",
-      "Claude Fable 5.2 and Claude Mythos 5.2"
+      "Claude Fable 5.2 and Claude Mythos 5.2",
+      "Fable 5.2",
+      "Mythos 5.2"
+    ],
+    "Claude Fable 5.1 / Mythos 5.1": [
+      "Claude Fable 5.1",
+      "Claude Mythos 5.1",
+      "Fable 5.1",
+      "Mythos 5.1"
     ]
   },
   "meituan": {
@@ -223,6 +231,11 @@
     "HunyuanVideo 1.5": [
       "HunyuanVideo-1.5",
       "Hunyuan Video 1.5"
+    ],
+    "Hunyuan Hy4": [
+      "Hy4",
+      "混元 Hy4",
+      "Hunyuan-Hy4"
     ]
   },
   "minimax": {

@@ -5,7 +5,7 @@ import json
 import re
 import time
 import xml.etree.ElementTree as ET
-from datetime import date
+from datetime import date, datetime
 from email.utils import parsedate_to_datetime
 from html.parser import HTMLParser
 from urllib.error import HTTPError
@@ -69,16 +69,41 @@ def digest(value):
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
+DATE_TEXT = re.compile(
+    r"(?<!\d)20\d{2}(?:[./-]\d{1,2}[./-]\d{1,2}|年\s*\d{1,2}月\s*\d{1,2}日)"
+    r"|\b(?:[a-z]{3,9}\.?\s+\d{1,2},?|\d{1,2}\s+[a-z]{3,9}\.?)\s+20\d{2}\b",
+    re.I,
+)
+
+
 def date_value(value):
     if not isinstance(value, str) or not value:
         return ""
+    value = value.strip()
     try:
         return date.fromisoformat(value[:10]).isoformat()
     except ValueError:
+        pass
+    parts = re.fullmatch(r"(\d{4})[年./-]\s*(\d{1,2})[月./-]\s*(\d{1,2})日?", value)
+    if parts:
         try:
-            return parsedate_to_datetime(value).date().isoformat()
-        except (ValueError, TypeError):
+            return date(*map(int, parts.groups())).isoformat()
+        except ValueError:
             return ""
+    plain = value.replace(".", "").replace(",", "")
+    for pattern in ("%B %d %Y", "%b %d %Y", "%d %B %Y", "%d %b %Y"):
+        try:
+            return datetime.strptime(plain, pattern).date().isoformat()
+        except ValueError:
+            continue
+    try:
+        return parsedate_to_datetime(value).date().isoformat()
+    except (ValueError, TypeError):
+        return ""
+
+
+def date_in(text):
+    return next((value for found in DATE_TEXT.finditer(text) if (value := date_value(found[0]))), "")
 
 
 def model_pages(owner, earliest):
@@ -126,6 +151,7 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__(convert_charrefs=True)
         self.title = ""
+        self.heading = ""
         self.date = ""
         self.summary = ""
         self.links = []
@@ -133,10 +159,15 @@ class Page(HTMLParser):
         self.paragraph = None
         self.current = None
         self.in_title = False
+        self.in_heading = False
+        self.ignored = False
+        self.heading_label = ""
+        self.heading_context = None
+        self.visible_date = ""
         self.feed(text)
         if not self.date:
             found = re.search(r'"datePublished"\s*:\s*"([^"]+)"', text)
-            self.date = date_value(found.group(1)) if found else ""
+            self.date = (date_value(found[1]) if found else "") or self.visible_date
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
@@ -149,14 +180,36 @@ class Page(HTMLParser):
             self.current = [attrs.get("href", ""), ""]
         if tag == "title":
             self.in_title = True
+        if tag == "h1" and not self.heading:
+            self.in_heading = True
+            self.heading_label = attrs.get("aria-label", "")
+        if tag in {"script", "style"}:
+            self.ignored = True
+        if tag == "time" and prop == "datePublished":
+            self.date = self.date or date_value(attrs.get("datetime"))
+        if tag == "time" and self.heading_context is not None:
+            if not re.search(r"updated|modified", attrs.get("class", ""), re.I):
+                self.visible_date = self.visible_date or date_value(attrs.get("datetime"))
         if tag == "p":
             self.paragraph = []
 
     def handle_data(self, data):
+        if self.ignored:
+            return
         if self.current:
-            self.current[1] += data
+            self.current[1] += " " + data
         if self.in_title:
             self.title += data
+        if self.in_heading:
+            self.heading += data
+        if self.heading_context is not None and not self.visible_date:
+            self.heading_context += len(data.strip())
+            if self.heading_context <= 350 and len(data.strip()) <= 100:
+                self.visible_date = date_in(data)
+            if self.heading_context > 350:
+                self.heading_context = None
+        if not self.visible_date and re.match(r"\s*(?:Published\b|发布日期)", data, re.I):
+            self.visible_date = date_in(data)
         if self.paragraph is not None:
             self.paragraph.append(data)
 
@@ -166,6 +219,12 @@ class Page(HTMLParser):
             self.current = None
         if tag == "title":
             self.in_title = False
+        if tag == "h1" and self.in_heading:
+            self.heading = self.heading.strip() or self.heading_label
+            self.in_heading = False
+            self.heading_context = 0
+        if tag in {"script", "style"}:
+            self.ignored = False
         if tag == "p" and self.paragraph is not None:
             self.paragraphs.append("".join(self.paragraph))
             self.paragraph = None

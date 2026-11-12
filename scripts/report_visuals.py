@@ -254,7 +254,7 @@ article a{font-weight:650;overflow-wrap:anywhere}
             parts.append(f'<section class="month"><h3>{MONTHS[month - 1]} <small>{len(group)}</small></h3>')
             for row in group:
                 report = row.get("report")
-                url = report["url"] if report else row["release_url"]
+                url = report["url"] if report and not row.get("follow_up") else row["release_url"]
                 color = brand_color(row["org"])
                 parts.append(
                     f'<article style="--brand:{color}"><span class="kicker">'
@@ -270,11 +270,12 @@ article a{font-weight:650;overflow-wrap:anywhere}
 
 
 def build_visuals(rows, glossary, portal):
-    years = sorted({row["released_on"][:4] for row in rows}, reverse=True)
-    by_year = {year: [row for row in rows if row["released_on"].startswith(year)] for year in years}
+    events = [*rows, *({**row, **event, "follow_up": True} for row in rows for event in row.get("release_events", []))]
+    years = sorted({row["released_on"][:4] for row in events}, reverse=True)
+    by_year = {year: [row for row in events if row["released_on"].startswith(year)] for year in years}
     year = years[0]
     latest = by_year[year]
-    counts = frequencies(latest, glossary)
+    counts = frequencies([row for row in rows if row["released_on"].startswith(year)], glossary)
     diagrams = Path("assets/diagrams")
     h1, h2 = (diagrams / f"release-timeline-{year}-{half}.svg" for half in ("h1", "h2"))
     cloud = diagrams / f"technical-word-cloud-{year}.svg"
