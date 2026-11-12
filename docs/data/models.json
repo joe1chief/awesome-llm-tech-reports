@@ -6,54 +6,55 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 192,
-    "total_orgs": 23,
-    "milestones_count": 53,
+    "total_models": 245,
+    "total_orgs": 24,
+    "milestones_count": 55,
     "date_range": {
       "start": "2025-01",
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 104,
-      "Other Global": 27,
+      "Google": 32,
+      "China-based Labs": 137,
+      "Other Global": 44,
       "Anthropic": 16,
-      "OpenAI": 15,
-      "Google": 30
+      "OpenAI": 16
     },
     "org_breakdown": {
+      "Google": 32,
+      "Alibaba": 19,
+      "NVIDIA": 18,
+      "InclusionAI (Ant Group)": 22,
       "MiniMax": 8,
-      "NVIDIA": 6,
-      "InclusionAI (Ant Group)": 11,
-      "ByteDance": 5,
-      "Meta": 3,
+      "ByteDance": 6,
+      "Meta": 4,
       "Anthropic": 16,
-      "OpenAI": 15,
+      "OpenAI": 16,
+      "Baidu": 4,
       "Meituan": 14,
-      "Tencent": 8,
-      "Microsoft": 7,
-      "Google": 30,
+      "Tencent": 20,
+      "Microsoft": 10,
       "Moonshot AI": 3,
-      "InternLM": 10,
+      "InternLM": 11,
       "DeepSeek": 6,
       "StepFun": 4,
-      "Alibaba": 17,
-      "OpenBMB": 2,
+      "OpenBMB": 4,
       "xAI": 5,
-      "Allen AI": 4,
+      "Allen AI": 5,
       "Zhipu AI": 15,
       "Snowflake": 1,
       "Hugging Face": 1,
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Vision & Multimodal": 80,
-      "MoE": 33,
-      "Open Weights": 97,
-      "Agent & Coding": 68,
-      "Medical & Science": 39,
-      "Audio & Speech": 25,
-      "Reasoning / CoT": 66,
-      "Video": 25
+      "Medical & Science": 46,
+      "Reasoning / CoT": 94,
+      "Vision & Multimodal": 105,
+      "MoE": 46,
+      "Open Weights": 141,
+      "Agent & Coding": 89,
+      "Audio & Speech": 29,
+      "Video": 30
     },
     "monthly_trend": [
       {
@@ -118,7 +119,7 @@
       },
       {
         "month": "2026-04",
-        "count": 9
+        "count": 10
       },
       {
         "month": "2026-05",
@@ -130,40 +131,59 @@
       },
       {
         "month": "2026-07",
-        "count": 10
+        "count": 19
       },
       {
         "month": "2026-08",
-        "count": 13
+        "count": 27
       },
       {
         "month": "2026-09",
-        "count": 22
+        "count": 35
       },
       {
         "month": "2026-10",
-        "count": 25
+        "count": 38
       },
       {
         "month": "2026-11",
-        "count": 12
+        "count": 15
       }
     ]
   },
   "models": [
     {
-      "id": "minimax--minimax-h3-image",
+      "id": "google--gemini-4",
       "date": "2026-11",
       "year": 2026,
       "month": 11,
-      "org": "MiniMax",
-      "model": "MiniMax-H3-Image",
+      "org": "Google",
+      "model": "Gemini 4",
       "highlights": "",
-      "link": "https://www.minimax.io/blog/minimax-h3-image",
+      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf",
+      "file": "",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [
+        "Medical & Science"
+      ],
+      "released_on": "2026-11-12",
+      "report_kind": "technical report"
+    },
+    {
+      "id": "alibaba_qwen--qwen4-max-preview",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Alibaba",
+      "model": "Qwen4-Max Preview",
+      "highlights": "qwen4-max-preview,Alibaba Cloud Model Studio:Explore Qwen4-Max-Preview's multimodal understanding, deep reasoning, tool calling, and Token Plan access",
+      "link": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
+        "Reasoning / CoT",
         "Vision & Multimodal"
       ],
       "released_on": "2026-11-11",
@@ -226,6 +246,24 @@
       "report_kind": "model card"
     },
     {
+      "id": "minimax--minimax-h3-image",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "MiniMax",
+      "model": "MiniMax-H3-Image",
+      "highlights": "Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization.",
+      "link": "https://www.minimax.io/blog/minimax-h3-image",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-10",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "bytedance--seedream-5-5",
       "date": "2026-11",
       "year": 2026,
@@ -250,12 +288,15 @@
       "month": 11,
       "org": "Meta",
       "model": "Muse Ember",
-      "highlights": "",
+      "highlights": "Muse Ember is our smallest and most efficient model, designed for complex reasoning execution and the work agents repeat all day.",
       "link": "https://research.meta.ai/blog/muse-ember",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding"
+      ],
       "released_on": "2026-11-09",
       "report_kind": "official technical page"
     },
@@ -303,7 +344,7 @@
       "month": 11,
       "org": "OpenAI",
       "model": "GPT-6 Cyber",
-      "highlights": "",
+      "highlights": "GPT-6 Cyber is a cyber-specialized variant of GPT-6 Astra designed for authorized security work, including tasks such as vulnerability discovery, exploit development, and web pentesting. The model has specialized post-training that aims to improve cybersecurity capabilities and reduce cyber refusals. The goal is to expand the security work the model can perform while keeping it within the user’s authorized scope and preserving refusals outside cybersecurity. In our evaluations, GPT-6 Cyber shows substantially stronger cybersecurity capabilities and impro",
       "link": "https://deploymentsafety.openai.com/gpt-6-cyber",
       "file": "",
       "camp": "OpenAI",
@@ -311,6 +352,22 @@
       "tags": [],
       "released_on": "2026-11-05",
       "report_kind": "system card"
+    },
+    {
+      "id": "baidu--ernie-5-5",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Baidu",
+      "model": "ERNIE 5.5",
+      "highlights": "ERNIE-5.5-Flash-Base 在各类能力维度上均取得了不错的效果，其中推理、代码与综合类 Benchmark 尤为突出。长上下文方面，尽管 43 层中有 37 层在 128 倍压缩后的序列上做注意力，仅 6 层 MLA-DSA 即可保证长上下文效果，ERNIE-5.5-Flash-Base 在 6 项长上下文 Benchmark 上均取得了不错的效果。",
+      "link": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-11-05",
+      "report_kind": "official technical page"
     },
     {
       "id": "meituan--longcat-2-5-w4a4",
@@ -391,6 +448,26 @@
       "report_kind": "model card"
     },
     {
+      "id": "nvidia--deepseek-v4-1-flash-1017-nvfp4",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "DeepSeek-V4.1-Flash-1017-NVFP4",
+      "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash-1017 NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash-1017 model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash-1017 is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017). The",
+      "link": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-1017-NVFP4/blob/3ae9c0d3fbbea5370bd06e679d22044db15883f1/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-30",
+      "report_kind": "model card"
+    },
+    {
       "id": "bytedance--genfirst",
       "date": "2026-10",
       "year": 2026,
@@ -407,6 +484,22 @@
       ],
       "released_on": "2026-10-29",
       "report_kind": "technical report"
+    },
+    {
+      "id": "openai--gpt-6-luna",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "OpenAI",
+      "model": "GPT-6 Luna",
+      "highlights": "GPT-6 Luna (October 29) uses the same types of data and training as GPT-6 Luna (October 7), described in the GPT-6 Luna (October 7) card.",
+      "link": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-10-29",
+      "report_kind": "system card"
     },
     {
       "id": "google--gemini-4-carbon",
@@ -446,6 +539,43 @@
       "report_kind": "model card"
     },
     {
+      "id": "baidu--unlimited-ocr-2",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Baidu",
+      "model": "Unlimited-OCR-2",
+      "highlights": "## Release - [2026/11/02] 📄 The paper of **Unlimited OCR 2** is now available on [arXiv](https://arxiv.org/abs/2610.39308). - [2026/10/27] 📊 We release [**MarathonDocBench**](https://huggingface.co/datasets/baidu/MarathonDocBench), a new benchmark for ultra-long document parsing. - [2026/10/27] 🤝 Thanks to the [ModelScope community](https://github.com/modelscope) for their support. Our model is now available at [ModelScope](https://modelscope.cn/models/PaddlePaddle/Unlimited-OCR-2). - [2026/10/27] 🤝 Thanks to the Baidu Cloud team for their support. Our m",
+      "link": "https://huggingface.co/baidu/Unlimited-OCR-2/blob/0480966938291445591f69f08a13b041c073a96a/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-10-26",
+      "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--lbs-27b",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "InclusionAI (Ant Group)",
+      "model": "LBS-27B",
+      "highlights": "Training uses **only synthetic GUI grounding data**, with no general-domain data or VQA questions: approximately **10K cold-start SFT examples**, followed by **80 GRPO steps** with a batch size of **64** and **8 rollouts per prompt**.",
+      "link": "https://huggingface.co/inclusionAI/LBS-27B/blob/e6ab883fa2b1d2579bf2616d38b6989b4af0333d/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-26",
+      "report_kind": "model card"
+    },
+    {
       "id": "openai--gpt-6-1-terra",
       "date": "2026-10",
       "year": 2026,
@@ -460,6 +590,25 @@
       "tags": [],
       "released_on": "2026-10-26",
       "report_kind": "system card"
+    },
+    {
+      "id": "inclusionai--ling-3-1-flash-base",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.1-flash-base",
+      "highlights": "We introduce **Ling-3.1-flash-base**, the base checkpoint of [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), released to support research and community-driven innovation. With **560B total parameters** and **25B active parameters per token**, the model provides a foundation for continued pretraining, domain adaptation, and post-training research.",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.1-flash-base/blob/c2cad79e46fcb7b46d96f9cf876ce1f2418b6e64/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-25",
+      "report_kind": "model card"
     },
     {
       "id": "moonshot--kimi-k3-1-pro",
@@ -536,20 +685,85 @@
       "report_kind": "model card"
     },
     {
+      "id": "baidu--ernie-5-5-flash-base-bf16",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Baidu",
+      "model": "ERNIE-5.5-Flash-Base-BF16",
+      "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
+      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16/blob/dfab899dadcff8f4d08af24b75a26c6d4d2e0b09/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-21",
+      "report_kind": "model card"
+    },
+    {
+      "id": "baidu--ernie-5-5-flash-base",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Baidu",
+      "model": "ERNIE-5.5-Flash-Base",
+      "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
+      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/028544b2ffceea189b2d8768ed2b9d09b06f2343/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-21",
+      "report_kind": "model card"
+    },
+    {
       "id": "minimax--minimax-m3-1-flash",
       "date": "2026-10",
       "year": 2026,
       "month": 10,
       "org": "MiniMax",
       "model": "MiniMax-M3.1-Flash",
-      "highlights": "",
+      "highlights": "Today, we officially roll out MiniMax M3.1 Flash. As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%.",
       "link": "https://www.minimax.io/blog/minimax-m31f",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Agent & Coding"
+      ],
       "released_on": "2026-10-19",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "inclusionai--ling-3-0-flash-sante",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-flash-Sante",
+      "highlights": "With **124B total parameters** and **5.1B active parameters per token**, Sante is designed for **medical reasoning, healthcare research, deep research, and tool-assisted workflows** while retaining the general capabilities of Ling-3.0-flash. Model weights are available on [Hugging Face](https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante) and [ModelScope](https://www.modelscope.cn/models/inclusionAI/Ling-3.0-flash-Sante).",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Sante/blob/f74bd27bd26ffc71a50dd847805f8f7666ff0b43/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Medical & Science",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-19",
+      "report_kind": "model card"
     },
     {
       "id": "deepseek--deepseek-v4-1-flash-1017",
@@ -606,6 +820,80 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-16",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-nvfp4",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
+      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
+      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4/blob/64b4039a3468bef85c6744c1e24d5a80801fe965/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-10-16",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-mxfp8",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8",
+      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
+      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8/blob/acb538da38032a1daba9c411d2380d3812eab0a2/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-10-16",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-bf16",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
+      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
+      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16/blob/f6c832e6963ddb74f62c75813a3e8c74b1af67b1/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-10-16",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--muse-spark-open-816b-a42b-dflash2",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "Muse-Spark-Open-816B-A42B-DFlash2",
+      "highlights": "### Use Case: Muse-Spark-Open-816B-A42B is intended for evaluation and development of long-context multimodal and agentic text-generation workflows, including tool-assisted coding. This DFlash2 release is intended for DFlash 2–assisted serving of Muse-Spark-Open-816B-A42B rather than as a standalone target model checkpoint.",
+      "link": "https://huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2/blob/22e2669e4c60689f9bff0749a34d9d8e59ce7cd6/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
         "Vision & Multimodal",
         "Open Weights"
       ],
@@ -692,25 +980,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "inclusionai--ling-3-0-flash-ubtree",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "InclusionAI (Ant Group)",
-      "model": "Ling-3.0-flash-UBTree",
-      "highlights": "The paper also introduces tree-native training with renormalized KL supervision on high-temperature target traces, encouraging plausible alternative branches. See the [paper](https://arxiv.org/abs/2609.39972) for the method and experiments.",
-      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-UBTree/blob/8e4f4b110839cb73e0b670b2f3fcae388475b114/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-14",
-      "report_kind": "model card"
-    },
-    {
       "id": "inclusionai--ling-3-1-flash",
       "date": "2026-10",
       "year": 2026,
@@ -787,6 +1056,26 @@
       "report_kind": "model card"
     },
     {
+      "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB",
+      "highlights": "15 October 2026 Nemotron 3.5 Bolt 74B-A9B 24GB: A Hybrid Vision-Language Model for Local AI NVIDIA Abstract.We introduce Nemotron 3.5 Bolt 74B-A9B 24GB, a hybrid Mamba–Transformer vision-language model that optimizes speed and intelligence per GB of memory used for local agentic workloads. Derived from the Nemotron 3.5 Super VL 120B-A12B model family, Nemotron 3.5 Bolt 74B-A9B 24GB combines Star Elastic compression with 2-bit Quantization-Aware Distillation for memory-constrained deployment. The model is optimized for reasoning, agentic tool use, and web",
+      "link": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-Technical-Report.pdf",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-10-07",
+      "report_kind": "technical report"
+    },
+    {
       "id": "openbmb--minicpm-v-4-7-35b-a3b",
       "date": "2026-10",
       "year": 2026,
@@ -819,6 +1108,26 @@
       "tags": [],
       "released_on": "2026-10-07",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "nvidia--nld-uni",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NLD-Uni",
+      "highlights": "For image understanding, NLD-Uni encodes images into continuous visual features and generates text responses. For image generation, it models discrete visual tokens through iterative diffusion and decodes those tokens into RGB images. The architecture supports autoregressive and blockwise diffusion decoding for text, as well as image-conditioned generation and editing when enabled by the checkpoint and inference implementation.",
+      "link": "https://huggingface.co/nvidia/NLD-Uni/blob/5db755a2eb0ab84654e3dcf80c7d0245bfe36a50/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-10-05",
+      "report_kind": "model card"
     },
     {
       "id": "microsoft--userlm-2-0",
@@ -861,7 +1170,7 @@
       "month": 9,
       "org": "OpenAI",
       "model": "GPT-6.1 Sol",
-      "highlights": "",
+      "highlights": "GPT-6.1 Sol delivers capabilities comparable to those of our most powerful model, GPT-6 Astra, with an unmatched combination of speed and affordability. This system card addendum provides updates on the baseline safety metrics and evaluation results for GPT-6.1 Sol.1",
       "link": "https://deploymentsafety.openai.com/gpt-6-1-sol",
       "file": "",
       "camp": "OpenAI",
@@ -926,6 +1235,46 @@
       "report_kind": "system card"
     },
     {
+      "id": "google--gemini-3-8-live",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "Google",
+      "model": "Gemini 3.8 Live",
+      "highlights": "Beyond visual presence, the feature is backed by Gemini’s advanced reasoning. With asynchronous tool calling, Live Avatar can trigger tool calls and fetch data in the background while continuing active dialogue, handling complex tasks while ensuring an uninterrupted conversational flow.",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+      "file": "",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Video"
+      ],
+      "released_on": "2026-09-24",
+      "report_kind": "official technical page"
+    },
+    {
+      "id": "inclusionai--ming-3-0-tts-tiny",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ming-3.0-tts-tiny",
+      "highlights": "This repository contains **Ming-3.0-tts-tiny**, the Ming-3.0-tts mixture-of-experts checkpoint built on Ling V3. Its Ling V3 backbone has 7.9B total parameters and activates about 1.3B parameters per token. The repository includes sharded weights, supporting model code, audio tokenizer, speaker encoder and text tokenizer.",
+      "link": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/blob/4715ef5a2f02901f75687d538b6920fd0dd11e6b/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Audio & Speech",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-22",
+      "report_kind": "model card"
+    },
+    {
       "id": "openai--gpt-6-sol",
       "date": "2026-09",
       "year": 2026,
@@ -948,7 +1297,7 @@
       "month": 9,
       "org": "Anthropic",
       "model": "Claude Opus 5.5",
-      "highlights": "",
+      "highlights": "Safety. Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the ",
       "link": "https://www.anthropic.com/claude-opus-5-5",
       "file": "",
       "camp": "Anthropic",
@@ -1020,6 +1369,46 @@
       "report_kind": "model card"
     },
     {
+      "id": "nvidia--nvidia-nemotronlabs-ai-for-media-sports-basketball",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "NVIDIA-NemotronLabs-AI-for-Media-Sports-Basketball",
+      "highlights": "--- base_model: nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16 base_model_relation: finetune library_name: transformers license: other license_name: openmdw-1.1 license_link: >- https://openmdw.ai/license/1-1/ pipeline_tag: any-to-any tags: - nvidia - pytorch - multimodal track_downloads: true ---",
+      "link": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Basketball/blob/632ddf0d709b0d3d550e2567a5745c067d8ee08f/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Medical & Science",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-17",
+      "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--ming-image-0-1-design",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ming-Image-0.1-Design",
+      "highlights": "--- license: mit library_name: custom pipeline_tag: text-to-image inference: false tags: - text-to-image - image-generation - graphic-design - text-rendering - rgba ---",
+      "link": "https://huggingface.co/inclusionAI/Ming-Image-0.1-Design/blob/c57c49689d12ef7d4e24a170014f1dc43d3ce258/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-17",
+      "report_kind": "model card"
+    },
+    {
       "id": "microsoft--frognano-4b-2609",
       "date": "2026-09",
       "year": 2026,
@@ -1038,6 +1427,27 @@
       ],
       "released_on": "2026-09-17",
       "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--realtime-venus",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Realtime-Venus",
+      "highlights": "Natural interaction in digital and physical environments requires continuous perception and timely responses. Spoken dialogue relies on acoustic and linguistic cues, while video interaction also requires grounding the conversation in evolving visual context. We present Realtime-Venus, a proactive full-duplex interaction system with two separately trained 9B models: Realtime-Venus-Omni for audio-visual interaction and Realtime-Venus-Audio for spoken interaction. Each model serves as a complete conversational frontend, integrating continuous perception, co",
+      "link": "https://arxiv.org/abs/2609.13814v3",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-16",
+      "report_kind": "technical report"
     },
     {
       "id": "anthropic--claude-fable-5-1-mythos-5-1",
@@ -1073,6 +1483,25 @@
       ],
       "released_on": "2026-09-15",
       "report_kind": "model card"
+    },
+    {
+      "id": "tencent--simple-attention-sparsification",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "Tencent",
+      "model": "Simple-Attention-Sparsification",
+      "highlights": "SAS currently provides training recipes for the Qwen3-4B, Qwen3-8B, and Qwen3-14B models. Download the desired base model and the OpenR1-Math-220k training dataset before launching.",
+      "link": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-14",
+      "report_kind": "official technical page"
     },
     {
       "id": "alibaba_qwen--qwen-image-2-1",
@@ -1172,6 +1601,86 @@
       "report_kind": "model card"
     },
     {
+      "id": "openbmb--justrl-ii-base-model",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "OpenBMB",
+      "model": "JustRL-II-base-model",
+      "highlights": "--- library_name: transformers pipeline_tag: text-generation language: - en - zh tags: - reasoning - long-cot - math - reinforcement-learning - grpo - justrl ---",
+      "link": "https://huggingface.co/openbmb/JustRL-II-base-model/blob/b558bbc71d9433e7c5869effcbac07d4c7f2c5b4/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-07",
+      "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--llada2-2-mini",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "LLaDA2.2-mini",
+      "highlights": "**LLaDA2.2-mini** is the lightweight variant of the agentic diffusion language model in the LLaDA2 series. Built upon the LLaDA2.0-mini architecture, it inherits the core innovations of the LLaDA2.2 series — **Levenshtein Editing** (introducing `DELETE` and `INSERT` control tokens) — enabling long-context tool calling, multi-turn interaction, and robust error correction, while maintaining a smaller parameter footprint and lower inference cost. For more details, please refer to our [technical report](https://github.com/inclusionAI/LLaDA2.X/blob/main/LLaDA",
+      "link": "https://huggingface.co/inclusionAI/LLaDA2.2-mini/blob/e4f77d25ab5ca86f2223c6cdc6a72b887e20c8a5/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-05",
+      "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--ling-3-0-flash-vl",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-flash-VL",
+      "highlights": "# Introduction We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with ex",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL/blob/c22bf252f15b66d18ca00a15989ac7ed46b7f09e/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Video",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-04",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nemotron-3-5-parse",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "Nemotron-3.5-Parse",
+      "highlights": "- **Leading ParseBench accuracy:** **75.20** with triple-pass parsing, the highest overall score among the systems in our [reported comparison](#parsebench). - **Broad multilingual OCR:** evaluated across **163 language/script entries in 26 script groups**, plus 10 Indic languages. See [language results](#multilingual-ocr). - **Small and fast:** **0.631B parameters**, with an optional **89.3M-parameter DFlash2 drafter**. See [throughput measurements](#new-dflash2-speculative-decoding) for the hardware, concurrency, and parsing mode behind each result.",
+      "link": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/72ad4d71dd827135ee581502363e14748008900a/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-03",
+      "report_kind": "model card"
+    },
+    {
       "id": "inclusionai--ming-3-0-audio-tiny",
       "date": "2026-09",
       "year": 2026,
@@ -1213,6 +1722,24 @@
       "report_kind": "official technical page"
     },
     {
+      "id": "inclusionai--ling-3-0-flash-fin",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-flash-Fin",
+      "highlights": "## Introduction Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/blob/a5b4afb48f526175991724472c179e5a065604de/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-09-03",
+      "report_kind": "model card"
+    },
+    {
       "id": "openai--gpt-6-astra",
       "date": "2026-09",
       "year": 2026,
@@ -1227,6 +1754,49 @@
       "tags": [],
       "released_on": "2026-09-03",
       "report_kind": "system card"
+    },
+    {
+      "id": "nvidia--glm-5-3-flash-nvfp4",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "GLM-5.3-Flash-NVFP4",
+      "highlights": "## Description: The NVIDIA GLM-5.3-Flash NVFP4 model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-Flash",
+      "link": "https://huggingface.co/nvidia/GLM-5.3-Flash-NVFP4/blob/1d00738646cbb0c6d0a9eb403dac5f366f1473a7/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": true,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-02",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nvidia-nemotronlabs-ai-for-media-sports-tennis",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "NVIDIA-NemotronLabs-AI-for-Media-Sports-Tennis",
+      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: >- https://openmdw.ai/license/1-1/ base_model: nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16 base_model_relation: finetune pipeline_tag: any-to-any tags: - nvidia - pytorch - multimodal track_downloads: true ---",
+      "link": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Tennis/blob/45f95d0da098aeefe5e16603714ccfe24c334488/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Medical & Science",
+        "Open Weights"
+      ],
+      "released_on": "2026-09-01",
+      "report_kind": "model card"
     },
     {
       "id": "internlm--internlumina-u2",
@@ -1269,6 +1839,85 @@
       "report_kind": "model card"
     },
     {
+      "id": "tencent--hy4-preview",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "Hy4-preview",
+      "highlights": "Hy4 preview is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team. The model comprises 770B total parameters, of which 49B are activated per token. The backbone consists of 78 layers, where the first layer uses a standard dense FFN and the remaining 77 layers replace it with MoE, each containing 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, 1 native MTP layer (10B total parameters, 0.7B activated) is built in for spec",
+      "link": "https://github.com/Tencent-Hunyuan/Hy4-preview",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-27",
+      "report_kind": "official technical page"
+    },
+    {
+      "id": "tencent--contextpilot-e4b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "ContextPilot-E4B",
+      "highlights": "ContextPilot-E4B is the Gemma4-E4B checkpoint of **ContextPilot**, a proactive context-management framework for long-horizon language-model agents. It teaches agents to plan, maintain long-term memory, and offload less useful context while they continue reasoning and using tools. For more details, see our [paper](https://arxiv.org/abs/2608.28476) and [code repository](https://github.com/Tencent/ContextPilot).",
+      "link": "https://huggingface.co/tencent/ContextPilot-E4B/blob/a7ba41c18ddcd334f23f63ef7a608ca46bfe3aa4/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-27",
+      "report_kind": "model card"
+    },
+    {
+      "id": "tencent--contextpilot-8b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "ContextPilot-8B",
+      "highlights": "ContextPilot-8B is the Qwen3-8B checkpoint of **ContextPilot**, a proactive context-management framework for long-horizon language-model agents. It teaches agents to plan, maintain long-term memory, and offload less useful context while they continue reasoning and using tools. For more details, see our [paper](https://arxiv.org/abs/2608.28476) and [code repository](https://github.com/Tencent/ContextPilot).",
+      "link": "https://huggingface.co/tencent/ContextPilot-8B/blob/595abeaed72e4a4d9da94d04917f0618989a5553/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-27",
+      "report_kind": "model card"
+    },
+    {
+      "id": "tencent--contextpilot-14b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "ContextPilot-14B",
+      "highlights": "ContextPilot-14B is the Qwen3-14B checkpoint of **ContextPilot**, a proactive context-management framework for long-horizon language-model agents. It teaches agents to plan, maintain long-term memory, and offload less useful context while they continue reasoning and using tools. For more details, see our [paper](https://arxiv.org/abs/2608.28476) and [code repository](https://github.com/Tencent/ContextPilot).",
+      "link": "https://huggingface.co/tencent/ContextPilot-14B/blob/8eafd8356c5c5e713e92e623c8f1d346de6d0f95/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-27",
+      "report_kind": "model card"
+    },
+    {
       "id": "allenai--bwen-8b-stage1",
       "date": "2026-08",
       "year": 2026,
@@ -1277,6 +1926,24 @@
       "model": "Bwen-8B-Stage1",
       "highlights": "Qwen3 8B Base retrofitted to operate over bytes instead of tokens via *byteification* through a short additional training procedure. **This checkpoint contains Stage 1 training only - inner model parameters are unchanged.**",
       "link": "https://huggingface.co/allenai/Bwen-8B-Stage1/blob/854da622962867062be79bc750172cd0a3f6c2a8/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Open Weights"
+      ],
+      "released_on": "2026-08-26",
+      "report_kind": "model card"
+    },
+    {
+      "id": "allenai--bwen-8b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Allen AI",
+      "model": "Bwen-8B",
+      "highlights": "Qwen3 8B Base retrofitted to operate over bytes instead of tokens via *byteification* through a short additional training procedure.",
+      "link": "https://huggingface.co/allenai/Bwen-8B/blob/b2644f7827c21c3276d70cb82e6558aa03b9670e/README.md",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
@@ -1384,6 +2051,26 @@
       "report_kind": "model card"
     },
     {
+      "id": "tencent--auk-flash",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "AuK-Flash",
+      "highlights": "--- license: mit language: - zh - en pipeline_tag: text-to-speech tags: - speech - text-to-speech - zero-shot-tts - voice-cloning - speech-generation - speech-editing - speech-enhancement - source-separation - speech-separation - instruction-guided - diffusion - distillation - few-step-inference base_model: tencent/AuK ---",
+      "link": "https://huggingface.co/tencent/AuK-Flash/blob/575b92f0895f75180bf2cbd35f2e176c5732b8ed/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-21",
+      "report_kind": "model card"
+    },
+    {
       "id": "zhipu--glm-5-3",
       "date": "2026-08",
       "year": 2026,
@@ -1400,6 +2087,105 @@
       ],
       "released_on": "2026-08-18",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "tencent--auk",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "AuK",
+      "highlights": "We introduce AuK, an open-source foundational model that unifies speech generation and editing through a common interface of natural-language instructions and audio context. To support this broad capability set, we construct approximately 3.03 billion instruction--audio instances and 1.95 million hours of effective supervision across five task families: speech generation, content editing, enhancement and separation, paralinguistic editing, and acoustic editing. AuK combines a multimodal large language model for semantic conditioning, an VAE jointly train",
+      "link": "https://arxiv.org/abs/2609.08936v1",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-18",
+      "report_kind": "technical report"
+    },
+    {
+      "id": "tencent--ui-mate-democua-27b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "UI-Mate-democua-27B",
+      "highlights": "- **Parameters:** 27B - **Base model:** [Qwen3.6-27B](https://huggingface.co/Qwen/Qwen3.6-27B) - **Input:** task instruction, screenshots, interaction history, and an optional demonstration workflow - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, subtask completion, and task completion - **Training:** supervised fine-tuning, online reinforcement learning in executable GUI environments, then supervised fine-tuning on mixed general and d",
+      "link": "https://huggingface.co/tencent/UI-Mate-democua-27B/blob/a76300b510ee8c9b509cdd933ff5e31a994a3400/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-14",
+      "report_kind": "model card"
+    },
+    {
+      "id": "tencent--ui-mate-9b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "UI-Mate-9B",
+      "highlights": "- **Parameters:** 9B - **Base model:** [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B) - **Input:** task instruction, screenshots, and interaction history - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, and task completion - **Training:** supervised fine-tuning followed by online reinforcement learning in executable GUI environments - **License:** Apache-2.0",
+      "link": "https://huggingface.co/tencent/UI-Mate-9B/blob/05dd5f2975195a5bb03d4363e8767f12158c8421/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-14",
+      "report_kind": "model card"
+    },
+    {
+      "id": "tencent--ui-mate-27b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Tencent",
+      "model": "UI-Mate-27B",
+      "highlights": "- **Parameters:** 27B - **Base model:** [Qwen3.6-27B](https://huggingface.co/Qwen/Qwen3.6-27B) - **Input:** task instruction, screenshots, and interaction history - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, and task completion - **Training:** supervised fine-tuning followed by online reinforcement learning in executable GUI environments - **License:** Apache-2.0",
+      "link": "https://huggingface.co/tencent/UI-Mate-27B/blob/3ade2378fc84032d5017c1a9c93c4eaa77d65e57/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-14",
+      "report_kind": "model card"
+    },
+    {
+      "id": "openbmb--mathform-8b",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "OpenBMB",
+      "model": "MathForm-8B",
+      "highlights": "--- license: apache-2.0 language: - en base_model: - Qwen/Qwen3-8B datasets: - openbmb/FormalVerse pipeline_tag: text-generation library_name: transformers tags: - arxiv:2608.14221 - lean4 - autoformalization - mathematics - formal-verification - reasoning ---",
+      "link": "https://huggingface.co/openbmb/MathForm-8B/blob/8f6d09e66bd5821d985a2150ba3f09ba42e028ba/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-14",
+      "report_kind": "model card"
     },
     {
       "id": "deepseek--deepseek-v4-pro-0813",
@@ -1434,6 +2220,27 @@
       "tags": [],
       "released_on": "2026-08-12",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "inclusionai--ling-3-0-tiny",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-tiny",
+      "highlights": "# Introduction We are introducing **Ling-3.0-tiny**, a lightweight hybrid reasoning MoE model with **7.9B** total parameters and only **1.3B** activated parameters per token. It is designed to deliver strong reasoning and agentic capabilities at low inference cost, making advanced model capabilities more accessible for local and resource-constrained deployment. BF16, FP8, and INT4 weights are provided for a wide range of hardware and deployment settings.",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-tiny/blob/9a98e35fe1c9ee255f78dd64771c7ae15a799481/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-10",
+      "report_kind": "model card"
     },
     {
       "id": "alibaba_qwen--qwen3-8-2-4t-a95b",
@@ -1490,6 +2297,83 @@
       ],
       "released_on": "2026-08-05",
       "report_kind": "model card"
+    },
+    {
+      "id": "alibaba_qwen--qwen3-8-max",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "Alibaba",
+      "model": "Qwen3.8-Max",
+      "highlights": "Alibaba unveils Qwen3.8-Max, its most powerful model with 2.4 trillion parameters, excelling in coding, research, and visual intelligence.",
+      "link": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen3-8-max",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": true,
+      "tags": [
+        "Agent & Coding",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-08-03",
+      "report_kind": "official technical page"
+    },
+    {
+      "id": "inclusionai--ling-3-0-flash",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-flash",
+      "highlights": "## Introduction We're introducing Ling-3.0-flash, our next-generation native hybrid reasoning model. Operating with **124B** total and **5.1B** active parameters (~12.4% and ~8.1% of our previous 1T-class flagship Ring-2.6-1T), Ling-3.0-flash matches or outperforms its predecessor across key benchmarks.",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash/blob/fcc60a52b34c69c6271d0ac8a8cb0815020b6a43/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-08-02",
+      "report_kind": "model card"
+    },
+    {
+      "id": "bytedance--seedance-2-5",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "ByteDance",
+      "model": "Seedance 2.5",
+      "highlights": "Today, we are officially launching Seedance 2.5, the new-generation video creation model. Since the release of Seedance 2.0, we have noticed a shift in what users expect from video creation models: from merely generating a clip to completing a creative work. Building on the unified multimodal audio-video joint-generation architecture of Seedance 2.0, Seedance 2.5 centers on foundational generation and reference-based generation, delivering major breakthroughs in long-form storytelling, multimodal reference, and editing. Grounded in real-world use cases, ",
+      "link": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video"
+      ],
+      "released_on": "2026-07-31",
+      "report_kind": "official technical page"
+    },
+    {
+      "id": "minimax--minimax-h3",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "MiniMax",
+      "model": "MiniMax-H3",
+      "highlights": "These siloed tasks, capabilities, and modalities constrained creative freedom in practice. And, on the training side, capped the model's ability to generalize. Both point to major room for change, in application paradigm and training paradigm alike. So the first principle guiding H3's development was unifying and generalizing across tasks.",
+      "link": "https://www.minimax.io/blog/minimax-h3",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-07-31",
+      "report_kind": "official technical page"
     },
     {
       "id": "meituan--longcat-flash-lite-sparse",
@@ -1551,25 +2435,27 @@
       "report_kind": "model card"
     },
     {
-      "id": "minimax--minimax-h3",
+      "id": "microsoft--mage-vl",
       "date": "2026-07",
       "year": 2026,
       "month": 7,
-      "org": "MiniMax",
-      "model": "MiniMax-H3",
-      "highlights": "## System Overview MiniMax H3 is a general-purpose, omni-modal generative system. It supports unified understanding of multimodal contexts composed of text, images, video, and audio, and can generate video with native stereo audio at resolutions up to 2K and durations of up to 15 seconds. Thanks to its task-generalization-oriented system design, H3 already possesses broad multimodal context understanding and generation capabilities at the pre-training stage, enabling outstanding performance in following complex multimodal instructions.",
-      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/0919fb684102ef115126612f3fbb84d1027e7317/README.md",
+      "org": "Microsoft",
+      "model": "Mage-VL",
+      "highlights": "Standard vision-language models (VLMs) suffer from Moravec's paradox: they excel at complex offline visual reasoning but struggle with simple streaming perception tasks and process them inefficiently. We present Mage-VL, an efficient codec-native streaming foundation model for real-time multimodal understanding and interaction. At its core, our custom tokenizer, Mage-ViT, replaces uniform frame sampling by selectively encoding dynamic, entropy-rich regions using motion vectors and residual energy across sparse anchor (I) and predicted (P) frames. Operati",
+      "link": "https://arxiv.org/abs/2607.24904v1",
       "file": "",
-      "camp": "China-based Labs",
+      "camp": "Other Global",
       "is_milestone": false,
       "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
         "Vision & Multimodal",
-        "Audio & Speech",
         "Video",
+        "MoE",
         "Open Weights"
       ],
-      "released_on": "2026-07-28",
-      "report_kind": "model card"
+      "released_on": "2026-07-25",
+      "report_kind": "technical report"
     },
     {
       "id": "anthropic--claude-opus-5",
@@ -1578,14 +2464,118 @@
       "month": 7,
       "org": "Anthropic",
       "model": "Claude Opus 5",
-      "highlights": "",
+      "highlights": "Opus 5 is a meaningful improvement over Opus 4.8 for scientific research. It shows better performance than Opus 4.8 on every one of our life sciences evaluations, which cover topics including structural biology, organic chemistry, and bioinformatics. Its improvements are most notable on organic chemistry tasks, like inferring molecular structures from spectroscopy data (it scores 10.2 percentage points higher than Opus 4.8 on our internal benchmark), and on protein-related tasks like predicting how variations in a protein’s sequence affect how it functio",
       "link": "https://www.anthropic.com/news/claude-opus-5",
       "file": "",
       "camp": "Anthropic",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Medical & Science"
+      ],
       "released_on": "2026-07-24",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "nvidia--cosmos-h-dreams",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "NVIDIA",
+      "model": "Cosmos-H-Dreams",
+      "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos-Predict2.5-2B - nvidia/Cosmos-H-Surgical-Simulator datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
+      "link": "https://huggingface.co/nvidia/Cosmos-H-Dreams/blob/cd02fd05d56edf0470140a21420dffabef415309/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Video",
+        "Medical & Science",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-21",
+      "report_kind": "model card"
+    },
+    {
+      "id": "microsoft--fara1-5-4b",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "Microsoft",
+      "model": "Fara1.5-4B",
+      "highlights": "The model is vision-only at perception time: it sees the browser through screenshots, not the DOM or accessibility tree. Internal reasoning and trajectory history are tracked as text. Given the latest screenshot and prior actions, it predicts the next action with grounded arguments (e.g., pixel coordinates for a click).",
+      "link": "https://huggingface.co/microsoft/Fara1.5-4B/blob/776a33ae5b2ad503796a97ae20fdc66f61d2feea/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-17",
+      "report_kind": "model card"
+    },
+    {
+      "id": "microsoft--fara1-5-27b",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "Microsoft",
+      "model": "Fara1.5-27B",
+      "highlights": "The model is vision-only at perception time: it sees the browser through screenshots, not the DOM or accessibility tree. Internal reasoning and trajectory history are tracked as text. Given the latest screenshot and prior actions, it predicts the next action with grounded arguments (e.g., pixel coordinates for a click).",
+      "link": "https://huggingface.co/microsoft/Fara1.5-27B/blob/299c8406a6c6256d45ec200d1ac12b34c5599d9b/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-17",
+      "report_kind": "model card"
+    },
+    {
+      "id": "inclusionai--llada2-2-flash",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "InclusionAI (Ant Group)",
+      "model": "LLaDA2.2-flash",
+      "highlights": "## 📊 Benchmarks The following tables compare **LLaDA2.2-flash** and **Ling-2.6-flash** in terms of agentic benchmark scores and throughput (TPS).",
+      "link": "https://huggingface.co/inclusionAI/LLaDA2.2-flash/blob/9b78da3f9149f1e239fb6d15f20a326fde574b9f/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-16",
+      "report_kind": "model card"
+    },
+    {
+      "id": "internlm--intern-s2-preview-397b",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "InternLM",
+      "model": "Intern-S2-Preview-397B",
+      "highlights": "We introduce **Intern-S2-Preview-397B**, our most capable multimodal foundation model for scientific intelligence and long-horizon agents. Intern-S2-Preview-397B scales along three critical dimensions: pre-training, reinforcement-learning task coverage, and interactive agent environments. By combining a new vision-language pre-training paradigm with large-scale multi-task reinforcement learning and long-horizon agent reinforcement learning, Intern-S2-Preview-397B delivers a step change in general reasoning, scientific problem solving, and agentic capabil",
+      "link": "https://huggingface.co/internlm/Intern-S2-Preview-397B/blob/f4ed28782e23ad9fb4e4895b9069dcd889f5e2a1/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Medical & Science",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-16",
+      "report_kind": "model card"
     },
     {
       "id": "xai--grok-4-5",
@@ -1606,6 +2596,25 @@
       ],
       "released_on": "2026-07-16",
       "report_kind": "official technical page"
+    },
+    {
+      "id": "tencent--hils-attention-7b",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "Tencent",
+      "model": "HiLS-Attention-7B",
+      "highlights": "**HiLS-Attention** is a chunk-wise sparse attention mechanism that learns chunk selection end-to-end under the language-modeling loss, enabling native sparse training for efficient long-context modeling. This repository hosts the **7B** checkpoint continued-trained on top of an OLMo3-style backbone.",
+      "link": "https://huggingface.co/tencent/HiLS-Attention-7B/blob/837293e2aa5ae551439ebbd05783bddb92401853/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-09",
+      "report_kind": "model card"
     },
     {
       "id": "openai--gpt-5-6",
@@ -1664,6 +2673,26 @@
       "report_kind": "technical report"
     },
     {
+      "id": "tencent--hy3",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "Tencent",
+      "model": "Hy3",
+      "highlights": "Hy3 (295B A21B), a leading reasoning and agent model in its size, with great cost efficiency. - Tencent-Hunyuan/Hy3",
+      "link": "https://github.com/Tencent-Hunyuan/Hy3",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-02",
+      "report_kind": "official technical page"
+    },
+    {
       "id": "2026-07_longcat_2_0",
       "date": "2026-07",
       "year": 2026,
@@ -1680,6 +2709,25 @@
         "MoE",
         "Open Weights"
       ]
+    },
+    {
+      "id": "2026-06_claude_sonnet_5",
+      "date": "2026-06",
+      "year": 2026,
+      "month": 6,
+      "org": "Anthropic",
+      "model": "Claude Sonnet 5",
+      "highlights": "Across a broad suite of internal and third-party benchmarks, Sonnet 5 shows clear gains over Claude Sonnet 4.6 in coding, agentic search, multimodal reasoning, and professional-task performance Sonnet 5 is not a model optimized for cyber capabilities; any cyber-relevant skill it demonstrates likely emerges from its general capabilities, rather than targeted training",
+      "link": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+      "file": "2026/anthropic/2026-06_claude-sonnet-5.pdf",
+      "camp": "Anthropic",
+      "is_milestone": true,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-06-30"
     },
     {
       "id": "2026-06_gemini_3_5_audio__live_translate",
@@ -1736,24 +2784,6 @@
       ]
     },
     {
-      "id": "2026-06_claude_sonnet_5",
-      "date": "2026-06",
-      "year": 2026,
-      "month": 6,
-      "org": "Anthropic",
-      "model": "Claude Sonnet 5",
-      "highlights": "Across a broad suite of internal and third-party benchmarks, Sonnet 5 shows clear gains over Claude Sonnet 4.6 in coding, agentic search, multimodal reasoning, and professional-task performance Sonnet 5 is not a model optimized for cyber capabilities; any cyber-relevant skill it demonstrates likely emerges from its general capabilities, rather than targeted training",
-      "link": "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
-      "file": "2026/anthropic/2026-06_claude-sonnet-5.pdf",
-      "camp": "Anthropic",
-      "is_milestone": true,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal"
-      ]
-    },
-    {
       "id": "2026-06_claude_fable_5___mythos_5",
       "date": "2026-06",
       "year": 2026,
@@ -1766,6 +2796,23 @@
       "camp": "Anthropic",
       "is_milestone": false,
       "tags": []
+    },
+    {
+      "id": "2026-05_claude_opus_4_8",
+      "date": "2026-05",
+      "year": 2026,
+      "month": 5,
+      "org": "Anthropic",
+      "model": "Claude Opus 4.8",
+      "highlights": "System card for Claude Opus 4.8 with capability, agentic coding, and safety evaluations for the Opus 4 series update.",
+      "link": "https://www-cdn.anthropic.com/0f0c97ad20d8005706296bd92aa1c27c6b2f4f61/Claude%20Opus%204.8%20System%20Card.pdf",
+      "file": "2026/anthropic/2026-05_claude-opus-4.8.pdf",
+      "camp": "Anthropic",
+      "is_milestone": true,
+      "tags": [
+        "Agent & Coding"
+      ],
+      "released_on": "2026-05-28"
     },
     {
       "id": "2026-05_longcat_video_avatar_1_5",
@@ -1840,20 +2887,42 @@
       ]
     },
     {
-      "id": "2026-05_claude_opus_4_8",
-      "date": "2026-05",
+      "id": "2026-04_claude_opus_4_7",
+      "date": "2026-04",
       "year": 2026,
-      "month": 5,
+      "month": 4,
       "org": "Anthropic",
-      "model": "Claude Opus 4.8",
-      "highlights": "System card for Claude Opus 4.8 with capability, agentic coding, and safety evaluations for the Opus 4 series update.",
-      "link": "https://www-cdn.anthropic.com/0f0c97ad20d8005706296bd92aa1c27c6b2f4f61/Claude%20Opus%204.8%20System%20Card.pdf",
-      "file": "2026/anthropic/2026-05_claude-opus-4.8.pdf",
+      "model": "Claude Opus 4.7",
+      "highlights": "System card for Claude Opus 4.7 covering coding, tool-use, alignment, and safety evaluations for the model update.",
+      "link": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf",
+      "file": "2026/anthropic/2026-04_claude-opus-4.7.pdf",
       "camp": "Anthropic",
       "is_milestone": true,
       "tags": [
         "Agent & Coding"
-      ]
+      ],
+      "released_on": "2026-04-16"
+    },
+    {
+      "id": "meta--muse-spark",
+      "date": "2026-04",
+      "year": 2026,
+      "month": 4,
+      "org": "Meta",
+      "model": "Muse Spark",
+      "highlights": "Today, we’re releasing the weights for Muse Spark Open, the most capable US open-weight model to date. Muse Spark Open is a natively multimodal model with 816B total parameters (42B active) and a 1M-token context window. Built for coding and agentic work, it excels at long-horizon tasks, complex software engineering, and multi-step reasoning.",
+      "link": "https://research.meta.ai/blog/muse-spark-open",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-04-08",
+      "report_kind": "official technical page"
     },
     {
       "id": "2026-04_minicpm_o_4_5",
@@ -1996,20 +3065,21 @@
       ]
     },
     {
-      "id": "2026-04_claude_opus_4_7",
-      "date": "2026-04",
+      "id": "2026-03_minimax_m2_7",
+      "date": "2026-03",
       "year": 2026,
-      "month": 4,
-      "org": "Anthropic",
-      "model": "Claude Opus 4.7",
-      "highlights": "System card for Claude Opus 4.7 covering coding, tool-use, alignment, and safety evaluations for the model update.",
-      "link": "https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf",
-      "file": "2026/anthropic/2026-04_claude-opus-4.7.pdf",
-      "camp": "Anthropic",
-      "is_milestone": true,
+      "month": 3,
+      "org": "MiniMax",
+      "model": "MiniMax M2.7",
+      "highlights": "M2.7 is our first model deeply participating in its own evolution M2.7 is capable of building complex agent harnesses and completing highly elaborate productivity tasks, leveraging capabilities such as Agent Teams, complex Skills, and dynamic tool search",
+      "link": "https://www.minimax.io/news/minimax-m27-en",
+      "file": "2026/minimax/2026-03_minimax-m2.7.pdf",
+      "camp": "China-based Labs",
+      "is_milestone": false,
       "tags": [
         "Agent & Coding"
-      ]
+      ],
+      "released_on": "2026-03-18"
     },
     {
       "id": "2026-03_phi_4_reasoning_vision_15b",
@@ -2046,22 +3116,6 @@
         "Reasoning / CoT",
         "Agent & Coding",
         "MoE"
-      ]
-    },
-    {
-      "id": "2026-03_minimax_m2_7",
-      "date": "2026-03",
-      "year": 2026,
-      "month": 3,
-      "org": "MiniMax",
-      "model": "MiniMax M2.7",
-      "highlights": "M2.7 is our first model deeply participating in its own evolution M2.7 is capable of building complex agent harnesses and completing highly elaborate productivity tasks, leveraging capabilities such as Agent Teams, complex Skills, and dynamic tool search",
-      "link": "https://www.minimax.io/news/minimax-m27-en",
-      "file": "2026/minimax/2026-03_minimax-m2.7.pdf",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Agent & Coding"
       ]
     },
     {
@@ -2223,6 +3277,26 @@
       ]
     },
     {
+      "id": "2026-02_claude_sonnet_4_6",
+      "date": "2026-02",
+      "year": 2026,
+      "month": 2,
+      "org": "Anthropic",
+      "model": "Claude Sonnet 4.6",
+      "highlights": "Claude Sonnet 4.6 is the latest large language model from Anthropic We evaluate the model for its coding, agentic, reasoning, multimodal, computer use, mathematical, and many other abilities, and assess its skills in specific areas such as finance, cybersecurity, and life sciences",
+      "link": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf",
+      "file": "2026/anthropic/2026-02_claude-sonnet-4.6.pdf",
+      "camp": "Anthropic",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Medical & Science"
+      ],
+      "released_on": "2026-02-17"
+    },
+    {
       "id": "2026-02_minimax_m2_5",
       "date": "2026-02",
       "year": 2026,
@@ -2236,7 +3310,8 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding"
-      ]
+      ],
+      "released_on": "2026-02-12"
     },
     {
       "id": "2026-02_medxiaohe__a_comprehensive_recipe_for_building_medical_mllms",
@@ -2348,25 +3423,6 @@
         "Agent & Coding",
         "Vision & Multimodal",
         "MoE"
-      ]
-    },
-    {
-      "id": "2026-02_claude_sonnet_4_6",
-      "date": "2026-02",
-      "year": 2026,
-      "month": 2,
-      "org": "Anthropic",
-      "model": "Claude Sonnet 4.6",
-      "highlights": "Claude Sonnet 4.6 is the latest large language model from Anthropic We evaluate the model for its coding, agentic, reasoning, multimodal, computer use, mathematical, and many other abilities, and assess its skills in specific areas such as finance, cybersecurity, and life sciences",
-      "link": "https://www-cdn.anthropic.com/bbd8ef16d70b7a1665f14f306ee88b53f686aa75/Claude%20Sonnet%204.6%20System%20Card.pdf",
-      "file": "2026/anthropic/2026-02_claude-sonnet-4.6.pdf",
-      "camp": "Anthropic",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Medical & Science"
       ]
     },
     {
