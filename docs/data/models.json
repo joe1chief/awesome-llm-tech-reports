@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 199,
+    "total_models": 192,
     "total_orgs": 23,
     "milestones_count": 53,
     "date_range": {
@@ -14,32 +14,32 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 109,
-      "Other Global": 28,
+      "China-based Labs": 104,
+      "Other Global": 27,
       "Anthropic": 16,
       "OpenAI": 15,
-      "Google": 31
+      "Google": 30
     },
     "org_breakdown": {
       "MiniMax": 8,
       "NVIDIA": 6,
       "InclusionAI (Ant Group)": 11,
-      "ByteDance": 6,
+      "ByteDance": 5,
       "Meta": 3,
       "Anthropic": 16,
       "OpenAI": 15,
       "Meituan": 14,
       "Tencent": 8,
       "Microsoft": 7,
-      "Google": 31,
+      "Google": 30,
       "Moonshot AI": 3,
       "InternLM": 10,
       "DeepSeek": 6,
       "StepFun": 4,
       "Alibaba": 17,
-      "OpenBMB": 6,
+      "OpenBMB": 2,
       "xAI": 5,
-      "Allen AI": 5,
+      "Allen AI": 4,
       "Zhipu AI": 15,
       "Snowflake": 1,
       "Hugging Face": 1,
@@ -48,12 +48,12 @@
     "tag_breakdown": {
       "Vision & Multimodal": 80,
       "MoE": 33,
-      "Open Weights": 103,
+      "Open Weights": 97,
       "Agent & Coding": 68,
       "Medical & Science": 39,
       "Audio & Speech": 25,
       "Reasoning / CoT": 66,
-      "Video": 26
+      "Video": 25
     },
     "monthly_trend": [
       {
@@ -86,7 +86,7 @@
       },
       {
         "month": "2025-08",
-        "count": 10
+        "count": 9
       },
       {
         "month": "2025-09",
@@ -130,15 +130,15 @@
       },
       {
         "month": "2026-07",
-        "count": 11
+        "count": 10
       },
       {
         "month": "2026-08",
-        "count": 16
+        "count": 13
       },
       {
         "month": "2026-09",
-        "count": 24
+        "count": 22
       },
       {
         "month": "2026-10",
@@ -1172,24 +1172,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "openbmb--minicpm5-2b",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "OpenBMB",
-      "model": "MiniCPM5-2B",
-      "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-      "link": "https://huggingface.co/openbmb/MiniCPM5-2B/blob/42433e90dad95123ab87729fd7011e7110629556/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-09-06",
-      "report_kind": "model card"
-    },
-    {
       "id": "inclusionai--ming-3-0-audio-tiny",
       "date": "2026-09",
       "year": 2026,
@@ -1247,24 +1229,6 @@
       "report_kind": "system card"
     },
     {
-      "id": "openbmb--minicpm5-2b-midtrain",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "OpenBMB",
-      "model": "MiniCPM5-2B-Midtrain",
-      "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-      "link": "https://huggingface.co/openbmb/MiniCPM5-2B-Midtrain/blob/cceb0a157ba55ad5feb380dab1ce1909a76abf68/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-09-01",
-      "report_kind": "model card"
-    },
-    {
       "id": "internlm--internlumina-u2",
       "date": "2026-09",
       "year": 2026,
@@ -1305,42 +1269,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "openbmb--minicpm5-2b-sft",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "OpenBMB",
-      "model": "MiniCPM5-2B-SFT",
-      "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-      "link": "https://huggingface.co/openbmb/MiniCPM5-2B-SFT/blob/9db063584f59cda95a5bef6bb7a4b4eda1ebd33e/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-08-27",
-      "report_kind": "model card"
-    },
-    {
-      "id": "openbmb--minicpm5-2b-base",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "OpenBMB",
-      "model": "MiniCPM5-2B-Base",
-      "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-      "link": "https://huggingface.co/openbmb/MiniCPM5-2B-Base/blob/e09861095569642c3cf632d80e3200ee1d30b547/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-08-27",
-      "report_kind": "model card"
-    },
-    {
       "id": "allenai--bwen-8b-stage1",
       "date": "2026-08",
       "year": 2026,
@@ -1367,24 +1295,6 @@
       "model": "Bolmo-7B-Stage1",
       "highlights": "Olmo 3 7B retrofitted to operate over bytes instead of tokens via *byteification* through a short additional training procedure. **This checkpoint contains Stage 1 training only - inner model parameters are unchanged.**",
       "link": "https://huggingface.co/allenai/Bolmo-7B-Stage1/blob/36da45293c742c597728e2d0f3498ac10667188b/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-08-26",
-      "report_kind": "model card"
-    },
-    {
-      "id": "allenai--bolmo-1b-stage1",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Allen AI",
-      "model": "Bolmo-1B-Stage1",
-      "highlights": "OLMo 2 1B retrofitted to operate over bytes instead of tokens via *byteification* through a short additional training procedure. **This checkpoint contains Stage 1 training only - inner model parameters are unchanged.**",
-      "link": "https://huggingface.co/allenai/Bolmo-1B-Stage1/blob/c5ac3c1b61f925518a1e5dbb4ea4ee67f38f1050/README.md",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
@@ -1752,24 +1662,6 @@
       ],
       "released_on": "2026-07-07",
       "report_kind": "technical report"
-    },
-    {
-      "id": "bytedance--par",
-      "date": "2026-07",
-      "year": 2026,
-      "month": 7,
-      "org": "ByteDance",
-      "model": "PAR",
-      "highlights": "| Checkpoint | Description | |------------|-------------| | `3scale_400M` | 3-scale 400M PAR model used in the main benchmark table. | | `3scale_400M_pdb` | 3-scale 400M PAR model fine-tuned on the PDB dataset. | | `3scale_by_ratio_60M` | 3-scale 60M PAR model used for zero-shot motif scaffolding. |",
-      "link": "https://huggingface.co/ByteDance-Seed/PAR/blob/7fb609346f5d9a2baa76add1f387aee1bdb8874b/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-07-03",
-      "report_kind": "model card"
     },
     {
       "id": "2026-07_longcat_2_0",
@@ -3231,22 +3123,6 @@
         "Vision & Multimodal",
         "Medical & Science",
         "Open Weights"
-      ]
-    },
-    {
-      "id": "2025-08_gemma_3_270m",
-      "date": "2025-08",
-      "year": 2025,
-      "month": 8,
-      "org": "Google",
-      "model": "Gemma 3 270M",
-      "highlights": "Gemma 3 270M is its low power consumption For example, check out this Bedtime Story Generator web app : Link to Youtube Video (visible only when JS is disabled) Gemma 3 270M used to power a Bedtime Story Generator web app using Transformers.js",
-      "link": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
-      "file": "2025/google/2025-08_gemma-3-270m.pdf",
-      "camp": "Google",
-      "is_milestone": false,
-      "tags": [
-        "Video"
       ]
     },
     {

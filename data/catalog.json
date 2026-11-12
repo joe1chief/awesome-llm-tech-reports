@@ -1231,21 +1231,6 @@
       }
     },
     {
-      "id": "2025-08_gemma_3_270m",
-      "key": "google/gemma-3-270m",
-      "model": "Gemma 3 270M",
-      "org": "Google",
-      "release_url": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
-      "released_on": "2025-08",
-      "report": {
-        "file": "2025/google/2025-08_gemma-3-270m.pdf",
-        "highlights": "Gemma 3 270M is its low power consumption For example, check out this Bedtime Story Generator web app : Link to Youtube Video (visible only when JS is disabled) Gemma 3 270M used to power a Bedtime Story Generator web app using Transformers.js",
-        "id": "https://developers.googleblog.com/en/introducing-gemma-3-270m/",
-        "kind": "archive",
-        "url": "https://developers.googleblog.com/en/introducing-gemma-3-270m/"
-      }
-    },
-    {
       "id": "2025-08_intern_s1_mini",
       "key": "internlm/intern-s1-mini",
       "model": "Intern-S1-mini",
@@ -1903,21 +1888,6 @@
       }
     },
     {
-      "id": "allenai--bolmo-1b-stage1",
-      "key": "allenai/bolmo-1b-stage1",
-      "model": "Bolmo-1B-Stage1",
-      "org": "Allen AI",
-      "release_url": "https://huggingface.co/allenai/Bolmo-1B-Stage1",
-      "released_on": "2026-08-26",
-      "report": {
-        "highlights": "OLMo 2 1B retrofitted to operate over bytes instead of tokens via *byteification* through a short additional training procedure. **This checkpoint contains Stage 1 training only - inner model parameters are unchanged.**",
-        "id": "https://huggingface.co/allenai/Bolmo-1B-Stage1/README.md",
-        "kind": "model card",
-        "revision": "c5ac3c1b61f925518a1e5dbb4ea4ee67f38f1050",
-        "url": "https://huggingface.co/allenai/Bolmo-1B-Stage1/blob/c5ac3c1b61f925518a1e5dbb4ea4ee67f38f1050/README.md"
-      }
-    },
-    {
       "id": "bytedance--cola2",
       "key": "bytedance/cola2",
       "model": "Cola2",
@@ -1947,21 +1917,6 @@
         "published_on": "2026-08-29",
         "revision": "1",
         "url": "https://arxiv.org/abs/2608.29335v1"
-      }
-    },
-    {
-      "id": "bytedance--par",
-      "key": "bytedance/par",
-      "model": "PAR",
-      "org": "ByteDance",
-      "release_url": "https://huggingface.co/ByteDance-Seed/PAR",
-      "released_on": "2026-07-03",
-      "report": {
-        "highlights": "| Checkpoint | Description | |------------|-------------| | `3scale_400M` | 3-scale 400M PAR model used in the main benchmark table. | | `3scale_400M_pdb` | 3-scale 400M PAR model fine-tuned on the PDB dataset. | | `3scale_by_ratio_60M` | 3-scale 60M PAR model used for zero-shot motif scaffolding. |",
-        "id": "https://huggingface.co/ByteDance-Seed/PAR/README.md",
-        "kind": "model card",
-        "revision": "7fb609346f5d9a2baa76add1f387aee1bdb8874b",
-        "url": "https://huggingface.co/ByteDance-Seed/PAR/blob/7fb609346f5d9a2baa76add1f387aee1bdb8874b/README.md"
       }
     },
     {
@@ -2485,66 +2440,6 @@
         "kind": "technical report",
         "revision": "d8f554d76b37d8c2ba504c628d7814176d7b0383c6c3bfa9f8389decda228d6e",
         "url": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/technical-report.pdf"
-      }
-    },
-    {
-      "id": "openbmb--minicpm5-2b",
-      "key": "openbmb/minicpm5-2b",
-      "model": "MiniCPM5-2B",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM5-2B",
-      "released_on": "2026-09-06",
-      "report": {
-        "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-        "id": "https://huggingface.co/openbmb/MiniCPM5-2B/README.md",
-        "kind": "model card",
-        "revision": "42433e90dad95123ab87729fd7011e7110629556",
-        "url": "https://huggingface.co/openbmb/MiniCPM5-2B/blob/42433e90dad95123ab87729fd7011e7110629556/README.md"
-      }
-    },
-    {
-      "id": "openbmb--minicpm5-2b-sft",
-      "key": "openbmb/minicpm5-2b-sft",
-      "model": "MiniCPM5-2B-SFT",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM5-2B-SFT",
-      "released_on": "2026-08-27",
-      "report": {
-        "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-        "id": "https://huggingface.co/openbmb/MiniCPM5-2B-SFT/README.md",
-        "kind": "model card",
-        "revision": "9db063584f59cda95a5bef6bb7a4b4eda1ebd33e",
-        "url": "https://huggingface.co/openbmb/MiniCPM5-2B-SFT/blob/9db063584f59cda95a5bef6bb7a4b4eda1ebd33e/README.md"
-      }
-    },
-    {
-      "id": "openbmb--minicpm5-2b-midtrain",
-      "key": "openbmb/minicpm5-2b-midtrain",
-      "model": "MiniCPM5-2B-Midtrain",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM5-2B-Midtrain",
-      "released_on": "2026-09-01",
-      "report": {
-        "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-        "id": "https://huggingface.co/openbmb/MiniCPM5-2B-Midtrain/README.md",
-        "kind": "model card",
-        "revision": "cceb0a157ba55ad5feb380dab1ce1909a76abf68",
-        "url": "https://huggingface.co/openbmb/MiniCPM5-2B-Midtrain/blob/cceb0a157ba55ad5feb380dab1ce1909a76abf68/README.md"
-      }
-    },
-    {
-      "id": "openbmb--minicpm5-2b-base",
-      "key": "openbmb/minicpm5-2b-base",
-      "model": "MiniCPM5-2B-Base",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/MiniCPM5-2B-Base",
-      "released_on": "2026-08-27",
-      "report": {
-        "highlights": "We are releasing **MiniCPM5-2B**, the second model in the **MiniCPM5** series, following [MiniCPM5-1B](https://huggingface.co/openbmb/MiniCPM5-1B). It is a dense 2B Transformer that scales up the same training recipe, built for on-device, local deployment, and resource-constrained scenarios, reaching 2B-class open-source SOTA.",
-        "id": "https://huggingface.co/openbmb/MiniCPM5-2B-Base/README.md",
-        "kind": "model card",
-        "revision": "e09861095569642c3cf632d80e3200ee1d30b547",
-        "url": "https://huggingface.co/openbmb/MiniCPM5-2B-Base/blob/e09861095569642c3cf632d80e3200ee1d30b547/README.md"
       }
     },
     {
