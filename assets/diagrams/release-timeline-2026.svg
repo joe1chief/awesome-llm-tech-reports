@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="766" viewBox="0 0 2000 766" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="762" viewBox="0 0 2000 762" role="img">
 <title>2026 model releases</title><desc>Annual overview with up to ten releases per month.</desc>
-<rect width="2000" height="766" fill="#f8f7f2"/>
+<rect width="2000" height="762" fill="#f8f7f2"/>
 <text font-family="Inter,Arial,sans-serif" x="50" y="42" fill="#716b60" font-size="12" font-weight="600">AI MODEL RELEASE TIMELINE  /  2026</text>
 <text font-family="Georgia,serif" x="50" y="99" fill="#201f1b" font-size="53" font-weight="400">2026  Model releases</text>
 <text font-family="Inter,Arial,sans-serif" x="50" y="130" fill="#716b60" font-size="13" font-weight="400">January–December  ·  One dot per release event  ·  Color by organization</text>
@@ -27,14 +27,14 @@
 <text font-family="Inter,Arial,sans-serif" x="1015" y="176" fill="#201f1b" font-size="11" font-weight="400">Alibaba  7</text>
 <circle cx="1091" cy="172" r="3.5" fill="#946410"/>
 <text font-family="Inter,Arial,sans-serif" x="1102" y="176" fill="#201f1b" font-size="11" font-weight="400">InternLM  7</text>
-<circle cx="1185" cy="172" r="3.5" fill="#1984bf"/>
-<text font-family="Inter,Arial,sans-serif" x="1196" y="176" fill="#201f1b" font-size="11" font-weight="400">ByteDance  6</text>
-<circle cx="1286" cy="172" r="3.5" fill="#453eb4"/>
-<text font-family="Inter,Arial,sans-serif" x="1297" y="176" fill="#201f1b" font-size="11" font-weight="400">Baidu  5</text>
-<circle cx="1359" cy="172" r="3.5" fill="#086f96"/>
-<text font-family="Inter,Arial,sans-serif" x="1370" y="176" fill="#201f1b" font-size="11" font-weight="400">DeepSeek  5</text>
-<circle cx="1453" cy="172" r="3.5" fill="#c23966"/>
-<text font-family="Inter,Arial,sans-serif" x="1464" y="176" fill="#201f1b" font-size="11" font-weight="400">MiniMax  5</text>
+<circle cx="1185" cy="172" r="3.5" fill="#c23966"/>
+<text font-family="Inter,Arial,sans-serif" x="1196" y="176" fill="#201f1b" font-size="11" font-weight="400">MiniMax  7</text>
+<circle cx="1272" cy="172" r="3.5" fill="#1984bf"/>
+<text font-family="Inter,Arial,sans-serif" x="1283" y="176" fill="#201f1b" font-size="11" font-weight="400">ByteDance  6</text>
+<circle cx="1373" cy="172" r="3.5" fill="#453eb4"/>
+<text font-family="Inter,Arial,sans-serif" x="1384" y="176" fill="#201f1b" font-size="11" font-weight="400">Baidu  5</text>
+<circle cx="1446" cy="172" r="3.5" fill="#086f96"/>
+<text font-family="Inter,Arial,sans-serif" x="1457" y="176" fill="#201f1b" font-size="11" font-weight="400">DeepSeek  5</text>
 <circle cx="1540" cy="172" r="3.5" fill="#137f72"/>
 <text font-family="Inter,Arial,sans-serif" x="1551" y="176" fill="#201f1b" font-size="11" font-weight="400">Allen AI  4</text>
 <circle cx="1634" cy="172" r="3.5" fill="#7545b7"/>
@@ -253,7 +253,7 @@
 <text font-family="Inter,Arial,sans-serif" x="855" y="427" fill="#201f1b" font-size="13" font-weight="600">Gemini 3.1 Flash-Lite</text>
 <text font-family="Inter,Arial,sans-serif" x="855" y="440" fill="#201f1b" font-size="13" font-weight="600">Image</text>
 <text font-family="Georgia,serif" x="1000" y="239" fill="#201f1b" font-size="23" font-weight="400">07</text>
-<text font-family="Inter,Arial,sans-serif" x="1035" y="238" fill="#716b60" font-size="10" font-weight="400">21 releases</text>
+<text font-family="Inter,Arial,sans-serif" x="1035" y="238" fill="#716b60" font-size="10" font-weight="400">22 releases</text>
 <path d="M1003 268H1003V294" stroke="#dcd6c8" fill="none"/>
 <circle cx="1003" cy="268" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="271" fill="#946410" font-size="9" font-weight="600">07  Meituan</text>
@@ -291,61 +291,62 @@
 <text font-family="Inter,Arial,sans-serif" x="1013" y="522" fill="#086f96" font-size="9" font-weight="600">07.31  DeepSeek</text>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="536" fill="#201f1b" font-size="13" font-weight="600">DeepSeek-V4-Flash-</text>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="549" fill="#201f1b" font-size="13" font-weight="600">0731</text>
-<path d="M1003 561H1003V600" stroke="#dcd6c8" fill="none"/>
-<circle cx="1003" cy="561" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="564" fill="#946410" font-size="9" font-weight="600">07.31  Meituan</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="578" fill="#201f1b" font-size="13" font-weight="600">LongCat-Flash-Lite-</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="591" fill="#201f1b" font-size="13" font-weight="600">Sparse</text>
-<path d="M1003 603H1003V629" stroke="#dcd6c8" fill="none"/>
-<circle cx="1003" cy="603" r="3.5" fill="#1984bf" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="606" fill="#1984bf" font-size="9" font-weight="600">07.31  ByteDance</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="620" fill="#201f1b" font-size="13" font-weight="600">Seedance 2.5</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="636" fill="#716b60" font-size="9" font-weight="400">+11 on the full timeline</text>
+<path d="M1003 561H1003V587" stroke="#dcd6c8" fill="none"/>
+<circle cx="1003" cy="561" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="564" fill="#c23966" font-size="9" font-weight="600">07.31  MiniMax</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="578" fill="#201f1b" font-size="13" font-weight="600">MiniMax H3</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="589" fill="#716b60" font-size="8" font-weight="400">General availability</text>
+<path d="M1003 599H1003V625" stroke="#dcd6c8" fill="none"/>
+<circle cx="1003" cy="599" r="3.5" fill="#1984bf" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="602" fill="#1984bf" font-size="9" font-weight="600">07.31  ByteDance</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="616" fill="#201f1b" font-size="13" font-weight="600">Seedance 2.5</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="632" fill="#716b60" font-size="9" font-weight="400">+12 on the full timeline</text>
 <text font-family="Georgia,serif" x="1158" y="239" fill="#201f1b" font-size="23" font-weight="400">08</text>
-<text font-family="Inter,Arial,sans-serif" x="1193" y="238" fill="#716b60" font-size="10" font-weight="400">33 releases</text>
+<text font-family="Inter,Arial,sans-serif" x="1193" y="238" fill="#716b60" font-size="10" font-weight="400">34 releases</text>
 <path d="M1161 268H1161V294" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="268" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="271" fill="#c35216" font-size="9" font-weight="600">08.03  Alibaba</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="285" fill="#201f1b" font-size="13" font-weight="600">Qwen3.8-Max</text>
-<path d="M1161 297H1161V323" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="297" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="300" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="314" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
-<path d="M1161 326H1161V352" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="326" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="329" fill="#137f72" font-size="9" font-weight="600">08.26  Allen AI</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="343" fill="#201f1b" font-size="13" font-weight="600">Bolmo-7B-Stage1</text>
-<path d="M1161 355H1161V381" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="355" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="358" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="372" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-14B</text>
-<path d="M1161 384H1161V410" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="384" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="387" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="401" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-8B</text>
-<path d="M1161 413H1161V439" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="413" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="416" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="430" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-E4B</text>
-<path d="M1161 442H1161V468" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="442" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="445" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="459" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="470" fill="#716b60" font-size="8" font-weight="400">Preview</text>
-<path d="M1161 480H1161V506" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="480" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="483" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="497" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
-<path d="M1161 509H1161V535" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="509" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="512" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="526" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image-Turbo</text>
-<path d="M1161 538H1161V577" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="538" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="541" fill="#086f96" font-size="9" font-weight="600">08.31  DeepSeek</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="555" fill="#201f1b" font-size="13" font-weight="600">DeepSeek-V4-Flash-</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="568" fill="#201f1b" font-size="13" font-weight="600">Vision-Exp</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="584" fill="#716b60" font-size="9" font-weight="400">+23 on the full timeline</text>
+<circle cx="1161" cy="268" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="271" fill="#c23966" font-size="9" font-weight="600">08.03  MiniMax</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="285" fill="#201f1b" font-size="13" font-weight="600">MiniMax H3</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="296" fill="#716b60" font-size="8" font-weight="400">Open weights</text>
+<path d="M1161 306H1161V332" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="306" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="309" fill="#c35216" font-size="9" font-weight="600">08.03  Alibaba</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="323" fill="#201f1b" font-size="13" font-weight="600">Qwen3.8-Max</text>
+<path d="M1161 335H1161V361" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="335" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="338" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="352" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
+<path d="M1161 364H1161V390" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="364" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="367" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="381" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-14B</text>
+<path d="M1161 393H1161V419" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="393" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="396" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="410" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-8B</text>
+<path d="M1161 422H1161V448" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="422" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="425" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="439" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-E4B</text>
+<path d="M1161 451H1161V477" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="451" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="454" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="468" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="479" fill="#716b60" font-size="8" font-weight="400">Preview</text>
+<path d="M1161 489H1161V515" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="489" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="492" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="506" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
+<path d="M1161 518H1161V544" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="518" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="521" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="535" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image-Turbo</text>
+<path d="M1161 547H1161V586" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="547" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="550" fill="#086f96" font-size="9" font-weight="600">08.31  DeepSeek</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="564" fill="#201f1b" font-size="13" font-weight="600">DeepSeek-V4-Flash-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="577" fill="#201f1b" font-size="13" font-weight="600">Vision-Exp</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="593" fill="#716b60" font-size="9" font-weight="400">+24 on the full timeline</text>
 <text font-family="Georgia,serif" x="1317" y="239" fill="#201f1b" font-size="23" font-weight="400">09</text>
 <text font-family="Inter,Arial,sans-serif" x="1352" y="238" fill="#716b60" font-size="10" font-weight="400">34 releases</text>
 <path d="M1320 268H1320V294" stroke="#dcd6c8" fill="none"/>
@@ -491,18 +492,18 @@
 <text font-family="Georgia,serif" x="1792" y="239" fill="#201f1b" font-size="23" font-weight="400">12</text>
 <text font-family="Inter,Arial,sans-serif" x="1827" y="238" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
 <text font-family="Inter,Arial,sans-serif" x="1792" y="273" fill="#716b60" font-size="10" font-weight="400">No releases</text>
-<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">189</text>
+<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">191</text>
 <text font-family="Inter,Arial,sans-serif" x="1430" y="101" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="1561" y="78" fill="#201f1b" font-size="32" font-weight="400">22</text>
 <text font-family="Inter,Arial,sans-serif" x="1561" y="101" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
-<text font-family="Georgia,serif" x="1692" y="78" fill="#201f1b" font-size="32" font-weight="400">17.2</text>
+<text font-family="Georgia,serif" x="1692" y="78" fill="#201f1b" font-size="32" font-weight="400">17.4</text>
 <text font-family="Inter,Arial,sans-serif" x="1692" y="101" fill="#716b60" font-size="11" font-weight="400">Per month</text>
 <text font-family="Georgia,serif" x="1823" y="78" fill="#201f1b" font-size="32" font-weight="400">87</text>
 <text font-family="Inter,Arial,sans-serif" x="1823" y="101" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
-<path d="M50 677H1950V677" stroke="#dcd6c8" fill="none"/>
-<text font-family="Inter,Arial,sans-serif" x="50" y="698" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="719" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Oct (37 releases)</text>
-<text font-family="Inter,Arial,sans-serif" x="570" y="719" fill="#201f1b" font-size="13" font-weight="600">0 release events awaiting documentation</text>
-<text font-family="Inter,Arial,sans-serif" x="1060" y="719" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="744" fill="#716b60" font-size="11" font-weight="400">Each month shows up to 10 events. Counts cover the complete catalog. Month-only dates are shown as MM.</text>
+<path d="M50 673H1950V673" stroke="#dcd6c8" fill="none"/>
+<text font-family="Inter,Arial,sans-serif" x="50" y="694" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="715" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Oct (37 releases)</text>
+<text font-family="Inter,Arial,sans-serif" x="570" y="715" fill="#201f1b" font-size="13" font-weight="600">0 release events awaiting documentation</text>
+<text font-family="Inter,Arial,sans-serif" x="1060" y="715" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="740" fill="#716b60" font-size="11" font-weight="400">Each month shows up to 10 events. Counts cover the complete catalog. Month-only dates are shown as MM.</text>
 </svg>

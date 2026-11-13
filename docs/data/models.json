@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 249,
+    "total_models": 250,
     "total_orgs": 24,
     "milestones_count": 55,
     "date_range": {
@@ -15,7 +15,7 @@
     },
     "camp_breakdown": {
       "Google": 38,
-      "China-based Labs": 139,
+      "China-based Labs": 140,
       "Other Global": 40,
       "Anthropic": 16,
       "OpenAI": 16
@@ -25,7 +25,7 @@
       "Alibaba": 20,
       "Baidu": 4,
       "InclusionAI (Ant Group)": 32,
-      "MiniMax": 6,
+      "MiniMax": 7,
       "ByteDance": 7,
       "Meta": 4,
       "Anthropic": 16,
@@ -48,13 +48,13 @@
     },
     "tag_breakdown": {
       "Reasoning / CoT": 100,
-      "Vision & Multimodal": 107,
+      "Vision & Multimodal": 108,
       "Agent & Coding": 96,
       "MoE": 42,
-      "Open Weights": 8,
+      "Open Weights": 9,
       "Medical & Science": 44,
-      "Audio & Speech": 30,
-      "Video": 29
+      "Audio & Speech": 31,
+      "Video": 30
     },
     "monthly_trend": [
       {
@@ -131,7 +131,7 @@
       },
       {
         "month": "2026-07",
-        "count": 21
+        "count": 22
       },
       {
         "month": "2026-08",
@@ -2332,6 +2332,27 @@
       "released_on": "2026-07-31",
       "report_kind": "official technical page",
       "document_published_on": "2026-07-31"
+    },
+    {
+      "id": "minimax--minimax-h3",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "MiniMax",
+      "model": "MiniMax H3",
+      "highlights": "H3 generates synchronized video and stereo audio from multimodal input. Its model card covers the contextual representation, base model and 2K regeneration architecture.",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video",
+        "Open Weights"
+      ],
+      "released_on": "2026-07-31",
+      "report_kind": "model card"
     },
     {
       "id": "meituan--longcat-flash-lite-sparse",

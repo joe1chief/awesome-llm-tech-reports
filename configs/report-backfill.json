@@ -194,6 +194,27 @@
   ],
   "minimax": [
     {
+      "model": "MiniMax H3",
+      "released_on": "2026-07-31",
+      "release_url": "https://www.minimax.io/blog/minimax-h3",
+      "forms": [
+        "General availability"
+      ],
+      "report": {
+        "kind": "model card",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+        "highlights": "H3 generates synchronized video and stereo audio from multimodal input. Its model card covers the contextual representation, base model and 2K regeneration architecture."
+      }
+    },
+    {
+      "model": "MiniMax H3",
+      "released_on": "2026-08-03",
+      "release_url": "https://www.minimax.io/news/minimax-h3-open-source",
+      "forms": [
+        "Open weights"
+      ]
+    },
+    {
       "model": "MiniMax M3.1 Flash",
       "released_on": "2026-10-19",
       "release_url": "https://www.minimax.io/blog/minimax-m31f",

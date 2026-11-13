@@ -3950,6 +3950,32 @@
         "url": "https://github.com/Tencent-Hunyuan/HY-Embodied/blob/master/Hy-Embodied-VLM-1.0/inference/vllm/README.md"
       },
       "total_parameters": 30526584176
+    },
+    {
+      "forms": [
+        "General availability"
+      ],
+      "id": "minimax--minimax-h3",
+      "key": "minimax/minimax-h3",
+      "model": "MiniMax H3",
+      "org": "MiniMax",
+      "release_events": [
+        {
+          "forms": [
+            "Open weights"
+          ],
+          "release_url": "https://www.minimax.io/news/minimax-h3-open-source",
+          "released_on": "2026-08-03"
+        }
+      ],
+      "release_url": "https://www.minimax.io/blog/minimax-h3",
+      "released_on": "2026-07-31",
+      "report": {
+        "highlights": "H3 generates synchronized video and stereo audio from multimodal input. Its model card covers the contextual representation, base model and 2K regeneration architecture.",
+        "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+        "kind": "model card",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+      }
     }
   ],
   "version": 1
