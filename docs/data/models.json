@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 245,
+    "total_models": 240,
     "total_orgs": 24,
     "milestones_count": 55,
     "date_range": {
@@ -15,15 +15,15 @@
     },
     "camp_breakdown": {
       "Google": 32,
-      "China-based Labs": 137,
-      "Other Global": 44,
+      "China-based Labs": 133,
+      "Other Global": 43,
       "Anthropic": 16,
       "OpenAI": 16
     },
     "org_breakdown": {
       "Google": 32,
       "Alibaba": 19,
-      "NVIDIA": 18,
+      "NVIDIA": 17,
       "InclusionAI (Ant Group)": 22,
       "MiniMax": 8,
       "ByteDance": 6,
@@ -32,13 +32,13 @@
       "OpenAI": 16,
       "Baidu": 4,
       "Meituan": 14,
-      "Tencent": 20,
+      "Tencent": 17,
       "Microsoft": 10,
       "Moonshot AI": 3,
       "InternLM": 11,
       "DeepSeek": 6,
       "StepFun": 4,
-      "OpenBMB": 4,
+      "OpenBMB": 3,
       "xAI": 5,
       "Allen AI": 5,
       "Zhipu AI": 15,
@@ -47,13 +47,13 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Medical & Science": 46,
-      "Reasoning / CoT": 94,
-      "Vision & Multimodal": 105,
+      "Reasoning / CoT": 92,
+      "Vision & Multimodal": 102,
       "MoE": 46,
-      "Open Weights": 141,
-      "Agent & Coding": 89,
-      "Audio & Speech": 29,
+      "Open Weights": 136,
+      "Agent & Coding": 88,
+      "Medical & Science": 45,
+      "Audio & Speech": 27,
       "Video": 30
     },
     "monthly_trend": [
@@ -135,15 +135,15 @@
       },
       {
         "month": "2026-08",
-        "count": 27
+        "count": 25
       },
       {
         "month": "2026-09",
-        "count": 35
+        "count": 33
       },
       {
         "month": "2026-10",
-        "count": 38
+        "count": 37
       },
       {
         "month": "2026-11",
@@ -153,22 +153,20 @@
   },
   "models": [
     {
-      "id": "google--gemini-4",
+      "id": "google--gemini-4-hydrogen",
       "date": "2026-11",
       "year": 2026,
       "month": 11,
       "org": "Google",
-      "model": "Gemini 4",
+      "model": "Gemini 4 Hydrogen",
       "highlights": "",
-      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf",
+      "link": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
       "file": "",
       "camp": "Google",
       "is_milestone": false,
-      "tags": [
-        "Medical & Science"
-      ],
+      "tags": [],
       "released_on": "2026-11-12",
-      "report_kind": "technical report"
+      "report_kind": "model card"
     },
     {
       "id": "alibaba_qwen--qwen4-max-preview",
@@ -881,26 +879,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "nvidia--muse-spark-open-816b-a42b-dflash2",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "Muse-Spark-Open-816B-A42B-DFlash2",
-      "highlights": "### Use Case: Muse-Spark-Open-816B-A42B is intended for evaluation and development of long-context multimodal and agentic text-generation workflows, including tool-assisted coding. This DFlash2 release is intended for DFlash 2–assisted serving of Muse-Spark-Open-816B-A42B rather than as a standalone target model checkpoint.",
-      "link": "https://huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2/blob/22e2669e4c60689f9bff0749a34d9d8e59ce7cd6/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-16",
-      "report_kind": "model card"
-    },
-    {
       "id": "inclusionai--zwz2-4b",
       "date": "2026-10",
       "year": 2026,
@@ -1485,25 +1463,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "tencent--simple-attention-sparsification",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "Tencent",
-      "model": "Simple-Attention-Sparsification",
-      "highlights": "SAS currently provides training recipes for the Qwen3-4B, Qwen3-8B, and Qwen3-14B models. Download the desired base model and the OpenR1-Math-220k training dataset before launching.",
-      "link": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-14",
-      "report_kind": "official technical page"
-    },
-    {
       "id": "alibaba_qwen--qwen-image-2-1",
       "date": "2026-09",
       "year": 2026,
@@ -1598,25 +1557,6 @@
         "Open Weights"
       ],
       "released_on": "2026-09-10",
-      "report_kind": "model card"
-    },
-    {
-      "id": "openbmb--justrl-ii-base-model",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "OpenBMB",
-      "model": "JustRL-II-base-model",
-      "highlights": "--- library_name: transformers pipeline_tag: text-generation language: - en - zh tags: - reasoning - long-cot - math - reinforcement-learning - grpo - justrl ---",
-      "link": "https://huggingface.co/openbmb/JustRL-II-base-model/blob/b558bbc71d9433e7c5869effcbac07d4c7f2c5b4/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-07",
       "report_kind": "model card"
     },
     {
@@ -2051,26 +1991,6 @@
       "report_kind": "model card"
     },
     {
-      "id": "tencent--auk-flash",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Tencent",
-      "model": "AuK-Flash",
-      "highlights": "--- license: mit language: - zh - en pipeline_tag: text-to-speech tags: - speech - text-to-speech - zero-shot-tts - voice-cloning - speech-generation - speech-editing - speech-enhancement - source-separation - speech-separation - instruction-guided - diffusion - distillation - few-step-inference base_model: tencent/AuK ---",
-      "link": "https://huggingface.co/tencent/AuK-Flash/blob/575b92f0895f75180bf2cbd35f2e176c5732b8ed/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Audio & Speech",
-        "Open Weights"
-      ],
-      "released_on": "2026-08-21",
-      "report_kind": "model card"
-    },
-    {
       "id": "zhipu--glm-5-3",
       "date": "2026-08",
       "year": 2026,
@@ -2087,26 +2007,6 @@
       ],
       "released_on": "2026-08-18",
       "report_kind": "official technical page"
-    },
-    {
-      "id": "tencent--auk",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Tencent",
-      "model": "AuK",
-      "highlights": "We introduce AuK, an open-source foundational model that unifies speech generation and editing through a common interface of natural-language instructions and audio context. To support this broad capability set, we construct approximately 3.03 billion instruction--audio instances and 1.95 million hours of effective supervision across five task families: speech generation, content editing, enhancement and separation, paralinguistic editing, and acoustic editing. AuK combines a multimodal large language model for semantic conditioning, an VAE jointly train",
-      "link": "https://arxiv.org/abs/2609.08936v1",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Audio & Speech",
-        "Open Weights"
-      ],
-      "released_on": "2026-08-18",
-      "report_kind": "technical report"
     },
     {
       "id": "tencent--ui-mate-democua-27b",

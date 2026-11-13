@@ -3081,20 +3081,6 @@
       }
     },
     {
-      "id": "google--gemini-4",
-      "key": "google/gemini-4",
-      "model": "Gemini 4",
-      "org": "Google",
-      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
-      "released_on": "2026-11-12",
-      "report": {
-        "id": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf",
-        "kind": "technical report",
-        "revision": "5b985d4e06c8881317bdadcbee5656c96b84a9d3278f043b20b396707b9f3c20",
-        "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf"
-      }
-    },
-    {
       "id": "google--gemini-3-8-live",
       "key": "google/gemini-3-8-live",
       "model": "Gemini 3.8 Live",
@@ -3591,23 +3577,6 @@
       }
     },
     {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--muse-spark-open-816b-a42b-dflash2",
-      "key": "nvidia/muse-spark-open-816b-a42b-dflash2",
-      "model": "Muse-Spark-Open-816B-A42B-DFlash2",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2",
-      "released_on": "2026-10-16",
-      "report": {
-        "highlights": "### Use Case: Muse-Spark-Open-816B-A42B is intended for evaluation and development of long-context multimodal and agentic text-generation workflows, including tool-assisted coding. This DFlash2 release is intended for DFlash 2–assisted serving of Muse-Spark-Open-816B-A42B rather than as a standalone target model checkpoint.",
-        "id": "https://huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2/README.md",
-        "kind": "model card",
-        "revision": "22e2669e4c60689f9bff0749a34d9d8e59ce7cd6",
-        "url": "https://huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2/blob/22e2669e4c60689f9bff0749a34d9d8e59ce7cd6/README.md"
-      },
-      "total_parameters": 816000000000
-    },
-    {
       "hub_task": "image-to-video",
       "id": "nvidia--cosmos-h-dreams",
       "key": "nvidia/cosmos-h-dreams",
@@ -3641,22 +3610,6 @@
     },
     {
       "hub_task": "text-generation",
-      "id": "openbmb--justrl-ii-base-model",
-      "key": "openbmb/justrl-ii-base-model",
-      "model": "JustRL-II-base-model",
-      "org": "OpenBMB",
-      "release_url": "https://huggingface.co/openbmb/JustRL-II-base-model",
-      "released_on": "2026-09-07",
-      "report": {
-        "highlights": "--- library_name: transformers pipeline_tag: text-generation language: - en - zh tags: - reasoning - long-cot - math - reinforcement-learning - grpo - justrl ---",
-        "id": "https://huggingface.co/openbmb/JustRL-II-base-model/README.md",
-        "kind": "model card",
-        "revision": "b558bbc71d9433e7c5869effcbac07d4c7f2c5b4",
-        "url": "https://huggingface.co/openbmb/JustRL-II-base-model/blob/b558bbc71d9433e7c5869effcbac07d4c7f2c5b4/README.md"
-      }
-    },
-    {
-      "hub_task": "text-generation",
       "id": "openbmb--mathform-8b",
       "key": "openbmb/mathform-8b",
       "model": "MathForm-8B",
@@ -3671,55 +3624,6 @@
         "url": "https://huggingface.co/openbmb/MathForm-8B/blob/8f6d09e66bd5821d985a2150ba3f09ba42e028ba/README.md"
       },
       "total_parameters": 8000000000
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "tencent--simple-attention-sparsification",
-      "key": "tencent/simple-attention-sparsification",
-      "model": "Simple-Attention-Sparsification",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/Simple-Attention-Sparsification",
-      "released_on": "2026-09-14",
-      "report": {
-        "highlights": "SAS currently provides training recipes for the Qwen3-4B, Qwen3-8B, and Qwen3-14B models. Download the desired base model and the OpenR1-Math-220k training dataset before launching.",
-        "id": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification",
-        "kind": "official technical page",
-        "revision": "0217785111b6898af339ec629e696cc15cf3d7a8b9dc2506d89c804fe5a7dc2e",
-        "url": "https://github.com/Tencent-Hunyuan/Simple-Attention-Sparsification"
-      }
-    },
-    {
-      "hub_task": "text-to-speech",
-      "id": "tencent--auk",
-      "key": "tencent/auk",
-      "model": "AuK",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/AuK",
-      "released_on": "2026-08-18",
-      "report": {
-        "highlights": "We introduce AuK, an open-source foundational model that unifies speech generation and editing through a common interface of natural-language instructions and audio context. To support this broad capability set, we construct approximately 3.03 billion instruction--audio instances and 1.95 million hours of effective supervision across five task families: speech generation, content editing, enhancement and separation, paralinguistic editing, and acoustic editing. AuK combines a multimodal large language model for semantic conditioning, an VAE jointly train",
-        "id": "arxiv:2609.08936",
-        "kind": "technical report",
-        "published_on": "2026-09-08",
-        "revision": "1",
-        "url": "https://arxiv.org/abs/2609.08936v1"
-      }
-    },
-    {
-      "hub_task": "text-to-speech",
-      "id": "tencent--auk-flash",
-      "key": "tencent/auk-flash",
-      "model": "AuK-Flash",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/AuK-Flash",
-      "released_on": "2026-08-21",
-      "report": {
-        "highlights": "--- license: mit language: - zh - en pipeline_tag: text-to-speech tags: - speech - text-to-speech - zero-shot-tts - voice-cloning - speech-generation - speech-editing - speech-enhancement - source-separation - speech-separation - instruction-guided - diffusion - distillation - few-step-inference base_model: tencent/AuK ---",
-        "id": "https://huggingface.co/tencent/AuK-Flash/README.md",
-        "kind": "model card",
-        "revision": "575b92f0895f75180bf2cbd35f2e176c5732b8ed",
-        "url": "https://huggingface.co/tencent/AuK-Flash/blob/575b92f0895f75180bf2cbd35f2e176c5732b8ed/README.md"
-      }
     },
     {
       "hub_task": "text-generation",
@@ -3876,6 +3780,19 @@
         "url": "https://github.com/Tencent-Hunyuan/Hy3"
       },
       "total_parameters": 298786155776
+    },
+    {
+      "id": "google--gemini-4-hydrogen",
+      "key": "google/gemini-4-hydrogen",
+      "model": "Gemini 4 Hydrogen",
+      "org": "Google",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "released_on": "2026-11-12",
+      "report": {
+        "id": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+        "kind": "model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+      }
     }
   ],
   "version": 1

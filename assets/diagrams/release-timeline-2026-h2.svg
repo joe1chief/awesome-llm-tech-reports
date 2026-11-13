@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="2306" viewBox="0 0 1120 2306" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="2243" viewBox="0 0 1120 2243" role="img">
 <title>2026 model releases</title><desc>Monthly model release timeline for Jul–Dec 2026</desc>
 <style>text:not([font-family]){font-family:Inter,system-ui,sans-serif}</style>
-<rect width="1120" height="2306" fill="#f8f7f2"/>
+<rect width="1120" height="2243" fill="#f8f7f2"/>
 <text x="29" y="37" fill="#716b60" font-size="12" font-weight="600">MODEL RELEASE TIMELINE</text>
 <text font-family="Georgia,serif" x="28" y="88" fill="#201f1b" font-size="46" font-weight="400">2026  Model releases</text>
 <text x="30" y="117" fill="#716b60" font-size="13" font-weight="400">Jul–Dec  /  Dates from the catalog</text>
-<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">190</text>
+<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">185</text>
 <text x="664" y="87" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="771" y="64" fill="#201f1b" font-size="27" font-weight="400">22</text>
 <text x="771" y="87" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
-<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">17.3</text>
+<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">16.8</text>
 <text x="878" y="87" fill="#716b60" font-size="11" font-weight="400">Per month</text>
-<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">94</text>
+<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">91</text>
 <text x="985" y="87" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
 <path d="M28 135H1092V135" stroke="#dcd6c8" fill="none"/>
 <text font-family="Georgia,serif" x="29" y="159" fill="#201f1b" font-size="22" font-weight="400">07</text>
@@ -91,8 +91,8 @@
 <text x="42" y="1227" fill="#946410" font-size="10" font-weight="650">07  Meituan</text>
 <text x="42" y="1247" fill="#201f1b" font-size="14" font-weight="600">LongCat-2.0</text>
 <text font-family="Georgia,serif" x="206" y="159" fill="#201f1b" font-size="22" font-weight="400">08</text>
-<text x="243" y="158" fill="#716b60" font-size="10" font-weight="400">27 releases</text>
-<path d="M209 184H209V1423" stroke="#dcd6c8" fill="none"/>
+<text x="243" y="158" fill="#716b60" font-size="10" font-weight="400">25 releases</text>
+<path d="M209 184H209V1331" stroke="#dcd6c8" fill="none"/>
 <circle cx="209" cy="184" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="188" fill="#137f72" font-size="10" font-weight="650">08.02  InclusionAI (Ant Group)</text>
 <text x="219" y="208" fill="#201f1b" font-size="14" font-weight="600">Ling-3.0-flash</text>
@@ -129,56 +129,50 @@
 <circle cx="209" cy="690" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="694" fill="#247553" font-size="10" font-weight="650">08.14  Tencent</text>
 <text x="219" y="714" fill="#201f1b" font-size="14" font-weight="600">UI-Mate-democua-27B</text>
-<circle cx="209" cy="736" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="740" fill="#247553" font-size="10" font-weight="650">08.18  Tencent</text>
-<text x="219" y="760" fill="#201f1b" font-size="14" font-weight="600">AuK</text>
-<circle cx="209" cy="782" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="786" fill="#893fbd" font-size="10" font-weight="650">08.18  Zhipu AI</text>
-<text x="219" y="806" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3</text>
-<circle cx="209" cy="828" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="832" fill="#247553" font-size="10" font-weight="650">08.21  Tencent</text>
-<text x="219" y="852" fill="#201f1b" font-size="14" font-weight="600">AuK-Flash</text>
-<circle cx="209" cy="874" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="878" fill="#c35216" font-size="10" font-weight="650">08.24  Alibaba</text>
-<text x="219" y="898" fill="#201f1b" font-size="14" font-weight="600">Qwen3.8-Flash-Next</text>
+<circle cx="209" cy="736" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="740" fill="#893fbd" font-size="10" font-weight="650">08.18  Zhipu AI</text>
+<text x="219" y="760" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3</text>
+<circle cx="209" cy="782" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="786" fill="#c35216" font-size="10" font-weight="650">08.24  Alibaba</text>
+<text x="219" y="806" fill="#201f1b" font-size="14" font-weight="600">Qwen3.8-Flash-Next</text>
+<circle cx="209" cy="828" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="832" fill="#893fbd" font-size="10" font-weight="650">08.25  Zhipu AI</text>
+<text x="219" y="852" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-BF16</text>
+<circle cx="209" cy="874" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="878" fill="#893fbd" font-size="10" font-weight="650">08.25  Zhipu AI</text>
+<text x="219" y="898" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-Flash</text>
 <circle cx="209" cy="920" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="924" fill="#893fbd" font-size="10" font-weight="650">08.25  Zhipu AI</text>
-<text x="219" y="944" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-BF16</text>
-<circle cx="209" cy="966" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="970" fill="#893fbd" font-size="10" font-weight="650">08.25  Zhipu AI</text>
-<text x="219" y="990" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-Flash</text>
-<circle cx="209" cy="1012" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1016" fill="#893fbd" font-size="10" font-weight="650">08.25  Zhipu AI</text>
-<text x="219" y="1036" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-Flash-BF16</text>
+<text x="219" y="944" fill="#201f1b" font-size="14" font-weight="600">GLM-5.3-Flash-BF16</text>
+<circle cx="209" cy="966" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="970" fill="#137f72" font-size="10" font-weight="650">08.26  Allen AI</text>
+<text x="219" y="990" fill="#201f1b" font-size="14" font-weight="600">Bolmo-7B-Stage1</text>
+<circle cx="209" cy="1012" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="1016" fill="#137f72" font-size="10" font-weight="650">08.26  Allen AI</text>
+<text x="219" y="1036" fill="#201f1b" font-size="14" font-weight="600">Bwen-8B</text>
 <circle cx="209" cy="1058" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="1062" fill="#137f72" font-size="10" font-weight="650">08.26  Allen AI</text>
-<text x="219" y="1082" fill="#201f1b" font-size="14" font-weight="600">Bolmo-7B-Stage1</text>
-<circle cx="209" cy="1104" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1108" fill="#137f72" font-size="10" font-weight="650">08.26  Allen AI</text>
-<text x="219" y="1128" fill="#201f1b" font-size="14" font-weight="600">Bwen-8B</text>
-<circle cx="209" cy="1150" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1154" fill="#137f72" font-size="10" font-weight="650">08.26  Allen AI</text>
-<text x="219" y="1174" fill="#201f1b" font-size="14" font-weight="600">Bwen-8B-Stage1</text>
+<text x="219" y="1082" fill="#201f1b" font-size="14" font-weight="600">Bwen-8B-Stage1</text>
+<circle cx="209" cy="1104" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="1108" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
+<text x="219" y="1128" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-14B</text>
+<circle cx="209" cy="1150" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="1154" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
+<text x="219" y="1174" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-8B</text>
 <circle cx="209" cy="1196" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="1200" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
-<text x="219" y="1220" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-14B</text>
+<text x="219" y="1220" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-E4B</text>
 <circle cx="209" cy="1242" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="1246" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
-<text x="219" y="1266" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-8B</text>
-<circle cx="209" cy="1288" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1292" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
-<text x="219" y="1312" fill="#201f1b" font-size="14" font-weight="600">ContextPilot-E4B</text>
-<circle cx="209" cy="1334" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1338" fill="#247553" font-size="10" font-weight="650">08.27  Tencent</text>
-<text x="219" y="1358" fill="#201f1b" font-size="14" font-weight="600">Hy4-preview</text>
-<text x="219" y="1371" fill="#716b60" font-size="9" font-weight="400">Preview</text>
-<circle cx="209" cy="1380" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="1384" fill="#086f96" font-size="10" font-weight="650">08.31  DeepSeek</text>
-<text x="219" y="1404" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4-Flash-</text>
-<text x="219" y="1420" fill="#201f1b" font-size="14" font-weight="600">Vision-Exp</text>
+<text x="219" y="1266" fill="#201f1b" font-size="14" font-weight="600">Hy4-preview</text>
+<text x="219" y="1279" fill="#716b60" font-size="9" font-weight="400">Preview</text>
+<circle cx="209" cy="1288" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="1292" fill="#086f96" font-size="10" font-weight="650">08.31  DeepSeek</text>
+<text x="219" y="1312" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4-Flash-</text>
+<text x="219" y="1328" fill="#201f1b" font-size="14" font-weight="600">Vision-Exp</text>
 <text font-family="Georgia,serif" x="383" y="159" fill="#201f1b" font-size="22" font-weight="400">09</text>
-<text x="420" y="158" fill="#716b60" font-size="10" font-weight="400">36 releases</text>
-<path d="M386 184H386V1973" stroke="#dcd6c8" fill="none"/>
+<text x="420" y="158" fill="#716b60" font-size="10" font-weight="400">34 releases</text>
+<path d="M386 184H386V1864" stroke="#dcd6c8" fill="none"/>
 <circle cx="386" cy="184" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="396" y="188" fill="#946410" font-size="10" font-weight="650">09.01  InternLM</text>
 <text x="396" y="208" fill="#201f1b" font-size="14" font-weight="600">InternLumina-U2</text>
@@ -211,99 +205,92 @@
 <circle cx="386" cy="632" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="396" y="636" fill="#137f72" font-size="10" font-weight="650">09.05  InclusionAI (Ant Group)</text>
 <text x="396" y="656" fill="#201f1b" font-size="14" font-weight="600">LLaDA2.2-mini</text>
-<circle cx="386" cy="678" r="3.5" fill="#7545b7" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="682" fill="#7545b7" font-size="10" font-weight="650">09.07  OpenBMB</text>
-<text x="396" y="702" fill="#201f1b" font-size="14" font-weight="600">JustRL-II-base-model</text>
-<circle cx="386" cy="724" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="728" fill="#137f72" font-size="10" font-weight="650">09.10  Allen AI</text>
-<text x="396" y="748" fill="#201f1b" font-size="14" font-weight="600">AstaBrief_8B_SFT</text>
-<circle cx="386" cy="770" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="774" fill="#086f96" font-size="10" font-weight="650">09.10  DeepSeek</text>
-<text x="396" y="794" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash</text>
+<circle cx="386" cy="678" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="682" fill="#137f72" font-size="10" font-weight="650">09.10  Allen AI</text>
+<text x="396" y="702" fill="#201f1b" font-size="14" font-weight="600">AstaBrief_8B_SFT</text>
+<circle cx="386" cy="724" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="728" fill="#086f96" font-size="10" font-weight="650">09.10  DeepSeek</text>
+<text x="396" y="748" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash</text>
+<circle cx="386" cy="770" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="774" fill="#946410" font-size="10" font-weight="650">09.11  InternLM</text>
+<text x="396" y="794" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn-Preview</text>
+<text x="396" y="807" fill="#716b60" font-size="9" font-weight="400">Preview</text>
 <circle cx="386" cy="816" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="820" fill="#946410" font-size="10" font-weight="650">09.11  InternLM</text>
-<text x="396" y="840" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn-Preview</text>
-<text x="396" y="853" fill="#716b60" font-size="9" font-weight="400">Preview</text>
-<circle cx="386" cy="862" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="866" fill="#946410" font-size="10" font-weight="650">09.13  InternLM</text>
-<text x="396" y="886" fill="#201f1b" font-size="14" font-weight="600">Intern-S2-397B</text>
-<circle cx="386" cy="908" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="912" fill="#c35216" font-size="10" font-weight="650">09.14  Alibaba</text>
-<text x="396" y="932" fill="#201f1b" font-size="14" font-weight="600">Qwen-Image-2.1</text>
-<circle cx="386" cy="954" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="958" fill="#247553" font-size="10" font-weight="650">09.14  Tencent</text>
-<text x="396" y="978" fill="#201f1b" font-size="14" font-weight="600">Simple-Attention-</text>
-<text x="396" y="994" fill="#201f1b" font-size="14" font-weight="600">Sparsification</text>
-<circle cx="386" cy="1017" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1021" fill="#b6472f" font-size="10" font-weight="650">09.15  Anthropic</text>
-<text x="396" y="1041" fill="#201f1b" font-size="14" font-weight="600">Claude Fable 5.1 /</text>
-<text x="396" y="1057" fill="#201f1b" font-size="14" font-weight="600">Mythos 5.1</text>
-<circle cx="386" cy="1080" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1084" fill="#b6472f" font-size="10" font-weight="650">09.15  ByteDance</text>
-<text x="396" y="1104" fill="#201f1b" font-size="14" font-weight="600">Doubao Seed 2.1 Pro</text>
-<text x="396" y="1120" fill="#201f1b" font-size="14" font-weight="600">/ Lite</text>
-<text x="396" y="1134" fill="#716b60" font-size="9" font-weight="400">Report pending</text>
-<circle cx="386" cy="1143" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1147" fill="#946410" font-size="10" font-weight="650">09.15  InternLM</text>
-<text x="396" y="1167" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn-Preview-</text>
-<text x="396" y="1183" fill="#201f1b" font-size="14" font-weight="600">Ascend-w8a8</text>
-<text x="396" y="1197" fill="#716b60" font-size="9" font-weight="400">Preview</text>
-<circle cx="386" cy="1206" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1210" fill="#137f72" font-size="10" font-weight="650">09.16  InclusionAI (Ant Group)</text>
-<text x="396" y="1230" fill="#201f1b" font-size="14" font-weight="600">Realtime-Venus</text>
-<circle cx="386" cy="1252" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1256" fill="#137f72" font-size="10" font-weight="650">09.17  InclusionAI (Ant Group)</text>
-<text x="396" y="1276" fill="#201f1b" font-size="14" font-weight="600">Ming-</text>
-<text x="396" y="1292" fill="#201f1b" font-size="14" font-weight="600">Image-0.1-Design</text>
-<circle cx="386" cy="1315" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1319" fill="#3f7550" font-size="10" font-weight="650">09.17  Microsoft</text>
-<text x="396" y="1339" fill="#201f1b" font-size="14" font-weight="600">FrogNano-4B-2609</text>
-<circle cx="386" cy="1361" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1365" fill="#b6472f" font-size="10" font-weight="650">09.17  NVIDIA</text>
-<text x="396" y="1385" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-NemotronLabs-</text>
-<text x="396" y="1401" fill="#201f1b" font-size="14" font-weight="600">AI-for-Media-Sports-</text>
-<text x="396" y="1417" fill="#201f1b" font-size="14" font-weight="600">Basketball</text>
-<circle cx="386" cy="1441" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1445" fill="#2555bd" font-size="10" font-weight="650">09.20  StepFun</text>
-<text x="396" y="1465" fill="#201f1b" font-size="14" font-weight="600">Step-5-Preview</text>
-<text x="396" y="1478" fill="#716b60" font-size="9" font-weight="400">Preview</text>
-<circle cx="386" cy="1487" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1491" fill="#2555bd" font-size="10" font-weight="650">09.20  StepFun</text>
-<text x="396" y="1511" fill="#201f1b" font-size="14" font-weight="600">Step-5-Preview-BF16</text>
-<text x="396" y="1524" fill="#716b60" font-size="9" font-weight="400">Preview</text>
-<circle cx="386" cy="1533" r="3.5" fill="#20212b" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1537" fill="#20212b" font-size="10" font-weight="650">09.21  xAI</text>
-<text x="396" y="1557" fill="#201f1b" font-size="14" font-weight="600">Grok 4.7</text>
-<circle cx="386" cy="1579" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1583" fill="#b6472f" font-size="10" font-weight="650">09.22  Anthropic</text>
-<text x="396" y="1603" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 5.5</text>
-<circle cx="386" cy="1625" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1629" fill="#137f72" font-size="10" font-weight="650">09.22  InclusionAI (Ant Group)</text>
-<text x="396" y="1649" fill="#201f1b" font-size="14" font-weight="600">Ming-3.0-tts-tiny</text>
-<circle cx="386" cy="1671" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1675" fill="#137f72" font-size="10" font-weight="650">09.22  OpenAI</text>
-<text x="396" y="1695" fill="#201f1b" font-size="14" font-weight="600">GPT-6 Sol</text>
-<circle cx="386" cy="1717" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1721" fill="#2555bd" font-size="10" font-weight="650">09.24  Google</text>
-<text x="396" y="1741" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.8 Live</text>
-<circle cx="386" cy="1763" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1767" fill="#b6472f" font-size="10" font-weight="650">09.28  Anthropic</text>
-<text x="396" y="1787" fill="#201f1b" font-size="14" font-weight="600">Claude Sonnet 5.5</text>
-<circle cx="386" cy="1809" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1813" fill="#3f7550" font-size="10" font-weight="650">09.29  Microsoft</text>
-<text x="396" y="1833" fill="#201f1b" font-size="14" font-weight="600">AesCode-32B</text>
-<circle cx="386" cy="1855" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1859" fill="#3f7550" font-size="10" font-weight="650">09.29  Microsoft</text>
-<text x="396" y="1879" fill="#201f1b" font-size="14" font-weight="600">AesCode-8B</text>
-<circle cx="386" cy="1901" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1905" fill="#137f72" font-size="10" font-weight="650">09.29  OpenAI</text>
-<text x="396" y="1925" fill="#201f1b" font-size="14" font-weight="600">GPT-6.1 Sol</text>
-<circle cx="386" cy="1947" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="1951" fill="#2555bd" font-size="10" font-weight="650">09.30  Google</text>
-<text x="396" y="1971" fill="#201f1b" font-size="14" font-weight="600">Gemini 4 Argon</text>
+<text x="396" y="820" fill="#946410" font-size="10" font-weight="650">09.13  InternLM</text>
+<text x="396" y="840" fill="#201f1b" font-size="14" font-weight="600">Intern-S2-397B</text>
+<circle cx="386" cy="862" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="866" fill="#c35216" font-size="10" font-weight="650">09.14  Alibaba</text>
+<text x="396" y="886" fill="#201f1b" font-size="14" font-weight="600">Qwen-Image-2.1</text>
+<circle cx="386" cy="908" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="912" fill="#b6472f" font-size="10" font-weight="650">09.15  Anthropic</text>
+<text x="396" y="932" fill="#201f1b" font-size="14" font-weight="600">Claude Fable 5.1 /</text>
+<text x="396" y="948" fill="#201f1b" font-size="14" font-weight="600">Mythos 5.1</text>
+<circle cx="386" cy="971" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="975" fill="#b6472f" font-size="10" font-weight="650">09.15  ByteDance</text>
+<text x="396" y="995" fill="#201f1b" font-size="14" font-weight="600">Doubao Seed 2.1 Pro</text>
+<text x="396" y="1011" fill="#201f1b" font-size="14" font-weight="600">/ Lite</text>
+<text x="396" y="1025" fill="#716b60" font-size="9" font-weight="400">Report pending</text>
+<circle cx="386" cy="1034" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1038" fill="#946410" font-size="10" font-weight="650">09.15  InternLM</text>
+<text x="396" y="1058" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn-Preview-</text>
+<text x="396" y="1074" fill="#201f1b" font-size="14" font-weight="600">Ascend-w8a8</text>
+<text x="396" y="1088" fill="#716b60" font-size="9" font-weight="400">Preview</text>
+<circle cx="386" cy="1097" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1101" fill="#137f72" font-size="10" font-weight="650">09.16  InclusionAI (Ant Group)</text>
+<text x="396" y="1121" fill="#201f1b" font-size="14" font-weight="600">Realtime-Venus</text>
+<circle cx="386" cy="1143" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1147" fill="#137f72" font-size="10" font-weight="650">09.17  InclusionAI (Ant Group)</text>
+<text x="396" y="1167" fill="#201f1b" font-size="14" font-weight="600">Ming-</text>
+<text x="396" y="1183" fill="#201f1b" font-size="14" font-weight="600">Image-0.1-Design</text>
+<circle cx="386" cy="1206" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1210" fill="#3f7550" font-size="10" font-weight="650">09.17  Microsoft</text>
+<text x="396" y="1230" fill="#201f1b" font-size="14" font-weight="600">FrogNano-4B-2609</text>
+<circle cx="386" cy="1252" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1256" fill="#b6472f" font-size="10" font-weight="650">09.17  NVIDIA</text>
+<text x="396" y="1276" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-NemotronLabs-</text>
+<text x="396" y="1292" fill="#201f1b" font-size="14" font-weight="600">AI-for-Media-Sports-</text>
+<text x="396" y="1308" fill="#201f1b" font-size="14" font-weight="600">Basketball</text>
+<circle cx="386" cy="1332" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1336" fill="#2555bd" font-size="10" font-weight="650">09.20  StepFun</text>
+<text x="396" y="1356" fill="#201f1b" font-size="14" font-weight="600">Step-5-Preview</text>
+<text x="396" y="1369" fill="#716b60" font-size="9" font-weight="400">Preview</text>
+<circle cx="386" cy="1378" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1382" fill="#2555bd" font-size="10" font-weight="650">09.20  StepFun</text>
+<text x="396" y="1402" fill="#201f1b" font-size="14" font-weight="600">Step-5-Preview-BF16</text>
+<text x="396" y="1415" fill="#716b60" font-size="9" font-weight="400">Preview</text>
+<circle cx="386" cy="1424" r="3.5" fill="#20212b" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1428" fill="#20212b" font-size="10" font-weight="650">09.21  xAI</text>
+<text x="396" y="1448" fill="#201f1b" font-size="14" font-weight="600">Grok 4.7</text>
+<circle cx="386" cy="1470" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1474" fill="#b6472f" font-size="10" font-weight="650">09.22  Anthropic</text>
+<text x="396" y="1494" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 5.5</text>
+<circle cx="386" cy="1516" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1520" fill="#137f72" font-size="10" font-weight="650">09.22  InclusionAI (Ant Group)</text>
+<text x="396" y="1540" fill="#201f1b" font-size="14" font-weight="600">Ming-3.0-tts-tiny</text>
+<circle cx="386" cy="1562" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1566" fill="#137f72" font-size="10" font-weight="650">09.22  OpenAI</text>
+<text x="396" y="1586" fill="#201f1b" font-size="14" font-weight="600">GPT-6 Sol</text>
+<circle cx="386" cy="1608" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1612" fill="#2555bd" font-size="10" font-weight="650">09.24  Google</text>
+<text x="396" y="1632" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.8 Live</text>
+<circle cx="386" cy="1654" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1658" fill="#b6472f" font-size="10" font-weight="650">09.28  Anthropic</text>
+<text x="396" y="1678" fill="#201f1b" font-size="14" font-weight="600">Claude Sonnet 5.5</text>
+<circle cx="386" cy="1700" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1704" fill="#3f7550" font-size="10" font-weight="650">09.29  Microsoft</text>
+<text x="396" y="1724" fill="#201f1b" font-size="14" font-weight="600">AesCode-32B</text>
+<circle cx="386" cy="1746" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1750" fill="#3f7550" font-size="10" font-weight="650">09.29  Microsoft</text>
+<text x="396" y="1770" fill="#201f1b" font-size="14" font-weight="600">AesCode-8B</text>
+<circle cx="386" cy="1792" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1796" fill="#137f72" font-size="10" font-weight="650">09.29  OpenAI</text>
+<text x="396" y="1816" fill="#201f1b" font-size="14" font-weight="600">GPT-6.1 Sol</text>
+<circle cx="386" cy="1838" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="1842" fill="#2555bd" font-size="10" font-weight="650">09.30  Google</text>
+<text x="396" y="1862" fill="#201f1b" font-size="14" font-weight="600">Gemini 4 Argon</text>
 <text font-family="Georgia,serif" x="560" y="159" fill="#201f1b" font-size="22" font-weight="400">10</text>
-<text x="597" y="158" fill="#716b60" font-size="10" font-weight="400">40 releases</text>
-<path d="M563 184H563V2242" stroke="#dcd6c8" fill="none"/>
+<text x="597" y="158" fill="#716b60" font-size="10" font-weight="400">39 releases</text>
+<path d="M563 184H563V2179" stroke="#dcd6c8" fill="none"/>
 <circle cx="563" cy="184" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="573" y="188" fill="#3f7550" font-size="10" font-weight="650">10.01  Microsoft</text>
 <text x="573" y="208" fill="#201f1b" font-size="14" font-weight="600">UserLM-2.0</text>
@@ -364,83 +351,79 @@
 <text x="573" y="1012" fill="#201f1b" font-size="14" font-weight="600">ZwZ2-9B</text>
 <circle cx="563" cy="1034" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="573" y="1038" fill="#b6472f" font-size="10" font-weight="650">10.16  NVIDIA</text>
-<text x="573" y="1058" fill="#201f1b" font-size="14" font-weight="600">Muse-Spark-Open-</text>
-<text x="573" y="1074" fill="#201f1b" font-size="14" font-weight="600">816B-A42B-DFlash2</text>
+<text x="573" y="1058" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-Nemotron-</text>
+<text x="573" y="1074" fill="#201f1b" font-size="14" font-weight="600">Labs-Dory1.0-4B-BF16</text>
 <circle cx="563" cy="1097" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="573" y="1101" fill="#b6472f" font-size="10" font-weight="650">10.16  NVIDIA</text>
 <text x="573" y="1121" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-Nemotron-</text>
-<text x="573" y="1137" fill="#201f1b" font-size="14" font-weight="600">Labs-Dory1.0-4B-BF16</text>
-<circle cx="563" cy="1160" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1164" fill="#b6472f" font-size="10" font-weight="650">10.16  NVIDIA</text>
-<text x="573" y="1184" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-Nemotron-</text>
-<text x="573" y="1200" fill="#201f1b" font-size="14" font-weight="600">Labs-</text>
-<text x="573" y="1216" fill="#201f1b" font-size="14" font-weight="600">Dory1.0-4B-MXFP8</text>
-<circle cx="563" cy="1240" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1244" fill="#b6472f" font-size="10" font-weight="650">10.16  NVIDIA</text>
-<text x="573" y="1264" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-Nemotron-</text>
-<text x="573" y="1280" fill="#201f1b" font-size="14" font-weight="600">Labs-</text>
-<text x="573" y="1296" fill="#201f1b" font-size="14" font-weight="600">Dory1.0-4B-NVFP4</text>
-<circle cx="563" cy="1320" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1324" fill="#086f96" font-size="10" font-weight="650">10.17  DeepSeek</text>
-<text x="573" y="1344" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash-</text>
-<text x="573" y="1360" fill="#201f1b" font-size="14" font-weight="600">1017</text>
-<circle cx="563" cy="1383" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1387" fill="#137f72" font-size="10" font-weight="650">10.19  InclusionAI (Ant Group)</text>
-<text x="573" y="1407" fill="#201f1b" font-size="14" font-weight="600">Ling-3.0-flash-Sante</text>
-<circle cx="563" cy="1429" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1433" fill="#c23966" font-size="10" font-weight="650">10.19  MiniMax</text>
-<text x="573" y="1453" fill="#201f1b" font-size="14" font-weight="600">MiniMax-M3.1-Flash</text>
-<circle cx="563" cy="1475" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1479" fill="#137f72" font-size="10" font-weight="650">10.21  Baidu</text>
-<text x="573" y="1499" fill="#201f1b" font-size="14" font-weight="600">ERNIE-5.5-Flash-Base</text>
-<circle cx="563" cy="1521" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1525" fill="#137f72" font-size="10" font-weight="650">10.21  Baidu</text>
-<text x="573" y="1545" fill="#201f1b" font-size="14" font-weight="600">ERNIE-5.5-Flash-</text>
-<text x="573" y="1561" fill="#201f1b" font-size="14" font-weight="600">Base-BF16</text>
-<circle cx="563" cy="1584" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1588" fill="#247553" font-size="10" font-weight="650">10.22  Tencent</text>
-<text x="573" y="1608" fill="#201f1b" font-size="14" font-weight="600">Hy-SimulMT-30B-A3B</text>
-<circle cx="563" cy="1630" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1634" fill="#247553" font-size="10" font-weight="650">10.22  Tencent</text>
-<text x="573" y="1654" fill="#201f1b" font-size="14" font-weight="600">Hy-SimulMT-30B-A3B-</text>
-<text x="573" y="1670" fill="#201f1b" font-size="14" font-weight="600">Interleave</text>
-<circle cx="563" cy="1693" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1697" fill="#946410" font-size="10" font-weight="650">10.23  InternLM</text>
-<text x="573" y="1717" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn</text>
-<circle cx="563" cy="1739" r="3.5" fill="#a130a1" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1743" fill="#a130a1" font-size="10" font-weight="650">10.23  Moonshot AI</text>
-<text x="573" y="1763" fill="#201f1b" font-size="14" font-weight="600">Kimi-K3.1-Pro</text>
-<circle cx="563" cy="1785" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1789" fill="#137f72" font-size="10" font-weight="650">10.25  InclusionAI (Ant Group)</text>
-<text x="573" y="1809" fill="#201f1b" font-size="14" font-weight="600">Ling-3.1-flash-base</text>
-<circle cx="563" cy="1831" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1835" fill="#137f72" font-size="10" font-weight="650">10.26  Baidu</text>
-<text x="573" y="1855" fill="#201f1b" font-size="14" font-weight="600">Unlimited-OCR-2</text>
-<circle cx="563" cy="1877" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1881" fill="#137f72" font-size="10" font-weight="650">10.26  InclusionAI (Ant Group)</text>
-<text x="573" y="1901" fill="#201f1b" font-size="14" font-weight="600">LBS-27B</text>
-<circle cx="563" cy="1923" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1927" fill="#137f72" font-size="10" font-weight="650">10.26  OpenAI</text>
-<text x="573" y="1947" fill="#201f1b" font-size="14" font-weight="600">GPT-6.1 Terra</text>
-<circle cx="563" cy="1969" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="1973" fill="#137f72" font-size="10" font-weight="650">10.27  InclusionAI (Ant Group)</text>
-<text x="573" y="1993" fill="#201f1b" font-size="14" font-weight="600">Ling-3.1-flash-1019</text>
-<circle cx="563" cy="2015" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="2019" fill="#2555bd" font-size="10" font-weight="650">10.28  Google</text>
-<text x="573" y="2039" fill="#201f1b" font-size="14" font-weight="600">Gemini 4 Carbon</text>
-<circle cx="563" cy="2061" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="2065" fill="#b6472f" font-size="10" font-weight="650">10.29  ByteDance</text>
-<text x="573" y="2085" fill="#201f1b" font-size="14" font-weight="600">GenFirst</text>
-<circle cx="563" cy="2107" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="2111" fill="#137f72" font-size="10" font-weight="650">10.29  OpenAI</text>
-<text x="573" y="2131" fill="#201f1b" font-size="14" font-weight="600">GPT-6 Luna</text>
-<circle cx="563" cy="2153" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="2157" fill="#3f7550" font-size="10" font-weight="650">10.30  Microsoft</text>
-<text x="573" y="2177" fill="#201f1b" font-size="14" font-weight="600">Mage-VL-Cowork</text>
-<circle cx="563" cy="2199" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="573" y="2203" fill="#b6472f" font-size="10" font-weight="650">10.30  NVIDIA</text>
-<text x="573" y="2223" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash-</text>
-<text x="573" y="2239" fill="#201f1b" font-size="14" font-weight="600">1017-NVFP4</text>
+<text x="573" y="1137" fill="#201f1b" font-size="14" font-weight="600">Labs-</text>
+<text x="573" y="1153" fill="#201f1b" font-size="14" font-weight="600">Dory1.0-4B-MXFP8</text>
+<circle cx="563" cy="1177" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1181" fill="#b6472f" font-size="10" font-weight="650">10.16  NVIDIA</text>
+<text x="573" y="1201" fill="#201f1b" font-size="14" font-weight="600">NVIDIA-Nemotron-</text>
+<text x="573" y="1217" fill="#201f1b" font-size="14" font-weight="600">Labs-</text>
+<text x="573" y="1233" fill="#201f1b" font-size="14" font-weight="600">Dory1.0-4B-NVFP4</text>
+<circle cx="563" cy="1257" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1261" fill="#086f96" font-size="10" font-weight="650">10.17  DeepSeek</text>
+<text x="573" y="1281" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash-</text>
+<text x="573" y="1297" fill="#201f1b" font-size="14" font-weight="600">1017</text>
+<circle cx="563" cy="1320" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1324" fill="#137f72" font-size="10" font-weight="650">10.19  InclusionAI (Ant Group)</text>
+<text x="573" y="1344" fill="#201f1b" font-size="14" font-weight="600">Ling-3.0-flash-Sante</text>
+<circle cx="563" cy="1366" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1370" fill="#c23966" font-size="10" font-weight="650">10.19  MiniMax</text>
+<text x="573" y="1390" fill="#201f1b" font-size="14" font-weight="600">MiniMax-M3.1-Flash</text>
+<circle cx="563" cy="1412" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1416" fill="#137f72" font-size="10" font-weight="650">10.21  Baidu</text>
+<text x="573" y="1436" fill="#201f1b" font-size="14" font-weight="600">ERNIE-5.5-Flash-Base</text>
+<circle cx="563" cy="1458" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1462" fill="#137f72" font-size="10" font-weight="650">10.21  Baidu</text>
+<text x="573" y="1482" fill="#201f1b" font-size="14" font-weight="600">ERNIE-5.5-Flash-</text>
+<text x="573" y="1498" fill="#201f1b" font-size="14" font-weight="600">Base-BF16</text>
+<circle cx="563" cy="1521" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1525" fill="#247553" font-size="10" font-weight="650">10.22  Tencent</text>
+<text x="573" y="1545" fill="#201f1b" font-size="14" font-weight="600">Hy-SimulMT-30B-A3B</text>
+<circle cx="563" cy="1567" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1571" fill="#247553" font-size="10" font-weight="650">10.22  Tencent</text>
+<text x="573" y="1591" fill="#201f1b" font-size="14" font-weight="600">Hy-SimulMT-30B-A3B-</text>
+<text x="573" y="1607" fill="#201f1b" font-size="14" font-weight="600">Interleave</text>
+<circle cx="563" cy="1630" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1634" fill="#946410" font-size="10" font-weight="650">10.23  InternLM</text>
+<text x="573" y="1654" fill="#201f1b" font-size="14" font-weight="600">Atria-Dawn</text>
+<circle cx="563" cy="1676" r="3.5" fill="#a130a1" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1680" fill="#a130a1" font-size="10" font-weight="650">10.23  Moonshot AI</text>
+<text x="573" y="1700" fill="#201f1b" font-size="14" font-weight="600">Kimi-K3.1-Pro</text>
+<circle cx="563" cy="1722" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1726" fill="#137f72" font-size="10" font-weight="650">10.25  InclusionAI (Ant Group)</text>
+<text x="573" y="1746" fill="#201f1b" font-size="14" font-weight="600">Ling-3.1-flash-base</text>
+<circle cx="563" cy="1768" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1772" fill="#137f72" font-size="10" font-weight="650">10.26  Baidu</text>
+<text x="573" y="1792" fill="#201f1b" font-size="14" font-weight="600">Unlimited-OCR-2</text>
+<circle cx="563" cy="1814" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1818" fill="#137f72" font-size="10" font-weight="650">10.26  InclusionAI (Ant Group)</text>
+<text x="573" y="1838" fill="#201f1b" font-size="14" font-weight="600">LBS-27B</text>
+<circle cx="563" cy="1860" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1864" fill="#137f72" font-size="10" font-weight="650">10.26  OpenAI</text>
+<text x="573" y="1884" fill="#201f1b" font-size="14" font-weight="600">GPT-6.1 Terra</text>
+<circle cx="563" cy="1906" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1910" fill="#137f72" font-size="10" font-weight="650">10.27  InclusionAI (Ant Group)</text>
+<text x="573" y="1930" fill="#201f1b" font-size="14" font-weight="600">Ling-3.1-flash-1019</text>
+<circle cx="563" cy="1952" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="1956" fill="#2555bd" font-size="10" font-weight="650">10.28  Google</text>
+<text x="573" y="1976" fill="#201f1b" font-size="14" font-weight="600">Gemini 4 Carbon</text>
+<circle cx="563" cy="1998" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="2002" fill="#b6472f" font-size="10" font-weight="650">10.29  ByteDance</text>
+<text x="573" y="2022" fill="#201f1b" font-size="14" font-weight="600">GenFirst</text>
+<circle cx="563" cy="2044" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="2048" fill="#137f72" font-size="10" font-weight="650">10.29  OpenAI</text>
+<text x="573" y="2068" fill="#201f1b" font-size="14" font-weight="600">GPT-6 Luna</text>
+<circle cx="563" cy="2090" r="3.5" fill="#3f7550" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="2094" fill="#3f7550" font-size="10" font-weight="650">10.30  Microsoft</text>
+<text x="573" y="2114" fill="#201f1b" font-size="14" font-weight="600">Mage-VL-Cowork</text>
+<circle cx="563" cy="2136" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="573" y="2140" fill="#b6472f" font-size="10" font-weight="650">10.30  NVIDIA</text>
+<text x="573" y="2160" fill="#201f1b" font-size="14" font-weight="600">DeepSeek-V4.1-Flash-</text>
+<text x="573" y="2176" fill="#201f1b" font-size="14" font-weight="600">1017-NVFP4</text>
 <text font-family="Georgia,serif" x="737" y="159" fill="#201f1b" font-size="22" font-weight="400">11</text>
 <text x="774" y="158" fill="#716b60" font-size="10" font-weight="400">20 releases</text>
 <path d="M740 184H740V1118" stroke="#dcd6c8" fill="none"/>
@@ -512,10 +495,10 @@
 <text x="750" y="1070" fill="#201f1b" font-size="14" font-weight="600">Kimi-K3.1-Pro-NVFP4</text>
 <circle cx="740" cy="1092" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="750" y="1096" fill="#2555bd" font-size="10" font-weight="650">11.12  Google</text>
-<text x="750" y="1116" fill="#201f1b" font-size="14" font-weight="600">Gemini 4</text>
+<text x="750" y="1116" fill="#201f1b" font-size="14" font-weight="600">Gemini 4 Hydrogen</text>
 <text font-family="Georgia,serif" x="914" y="159" fill="#201f1b" font-size="22" font-weight="400">12</text>
 <text x="951" y="158" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
 <text x="914" y="190" fill="#716b60" font-size="11" font-weight="400">No catalog entries</text>
-<path d="M29 2268H1092V2268" stroke="#dcd6c8" fill="none"/>
-<text x="30" y="2289" fill="#716b60" font-size="11" font-weight="400">Two-digit dates indicate month precision. The 72-day count uses day-level dates only.</text>
+<path d="M29 2205H1092V2205" stroke="#dcd6c8" fill="none"/>
+<text x="30" y="2226" fill="#716b60" font-size="11" font-weight="400">Two-digit dates indicate month precision. The 72-day count uses day-level dates only.</text>
 </svg>
