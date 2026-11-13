@@ -295,6 +295,18 @@
         "Vision-Language"
       ]
     },
+    "166aee8d48f20d2c36c63392d6b45c68e37f6078098e8c31fb049426404bcb70": {
+      "check_on": "2036-11-10",
+      "revision": "1751446dad05e67b519483024e53902d0dee89e37b487b2da65f03ff4d13cf4a",
+      "source": "model card",
+      "terms": [
+        "Long Context",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning"
+      ]
+    },
     "178145e70c8c40be1efc4f5de338aa166099f09d939f7389595598197e006616": {
       "check_on": "2026-11-20",
       "revision": "53314259e587c9085ddc346ea8f03a8c89409c2b951b1ea3ee5938cdc8d7335a"
@@ -643,6 +655,22 @@
         "Text Cross Attention",
         "Training Data",
         "Video Generation"
+      ]
+    },
+    "33acecc99535e7cb0bea5823511b075db9dc1a0c8fe65852ac6a07cde9fa840f": {
+      "check_on": "2036-11-10",
+      "revision": "0e90f91b39f5398dbdc77f33875468b634e48d7d7ae1a6bbeb228f437947f411",
+      "source": "model card",
+      "terms": [
+        "Image Generation",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Sparse Attention"
       ]
     },
     "33f0c5541761f14ea7a96e44554bc07090db45e9107328374207e3eebe5348f7": {
@@ -1612,6 +1640,16 @@
       "check_on": "2026-11-20",
       "revision": "cf25df53a4f01f51e420c2aabb21498692d0419962fe8d2f531f0c17e51b7179"
     },
+    "738c010e08696ce004958b1ca65064348d1b06bd0f5a17f0cbb915f46b840853": {
+      "check_on": "2036-11-10",
+      "revision": "844b15eaf76d766b6e2fa915cf79d5b66f3d8c35954bf229a27ed77483b444a9",
+      "source": "model card",
+      "terms": [
+        "Long Context",
+        "Post-training",
+        "Reasoning"
+      ]
+    },
     "73e5969d23ae23be63c05b67aba924850f7835f875ae4273d936591d53da0bae": {
       "check_on": "2026-12-13",
       "revision": "4a9179a534ee4f09dd842fa93ae1ff3ddd35944a2877bf90e9d699e025d7419a",
@@ -1758,19 +1796,6 @@
     "7d653e98ddfa60f99ec3a05c7f814a9cad20a584c0a8fda74845f9f4efcc1c17": {
       "check_on": "2026-11-20",
       "revision": "74147efbabab817c0c0f98db8c93228fe84c656ecbbce47c1304e02b3e6a1b59"
-    },
-    "7e6c3dd9add107ae3dca31678b2ff9790818fc85d306012b8564673f1834ddb9": {
-      "check_on": "2026-12-13",
-      "revision": "bb7588215a74d96ac81bbc4dced52181c52fdced6d67f437af13125ef7cbf35c",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Function Calling",
-        "Long Context",
-        "Post-training",
-        "Reasoning",
-        "Tool Use"
-      ]
     },
     "837d7cc54c3493c462aa025c9847993f63a068ec167c00f9b02d8596ce6718a8": {
       "check_on": "2036-11-10",
@@ -2953,6 +2978,22 @@
         "Vision-Language"
       ]
     },
+    "d8f71219a5b1835dae7ba6fd9d7764cc51d1b7666596b3f15e6bb687653dca3f": {
+      "check_on": "2036-11-10",
+      "revision": "6c6b1c0d18c6261cd0410ed8a98f2d462fccee14b5d9d729f7d6b24fa844a874",
+      "source": "model card",
+      "terms": [
+        "Autoregressive Text Generation",
+        "Image Training",
+        "Multimodal",
+        "Reasoning",
+        "Synthetic Data",
+        "Text Generation",
+        "Text Training",
+        "Training Data",
+        "Vision-Language"
+      ]
+    },
     "d99b34e16c5474d7a639cb6bd716d53cc639cb430d07a4daf29be93a762a64ad": {
       "check_on": "2036-11-10",
       "revision": "2311acb3f606d807eee5633fea6d0203de7721583617ed1bd35ccfce29421ff6",
@@ -3058,6 +3099,23 @@
         "Training Data"
       ]
     },
+    "dcbde06766d1ff54eb80db9d116858442805e91e9c46da9867ea0fea2172dfe8": {
+      "check_on": "2036-11-10",
+      "revision": "10f4208cbf2c9a9591ba94cfbb1da34c2d0fdcbd29767018509fbcda8ff89962",
+      "source": "model card",
+      "terms": [
+        "Diffusion",
+        "Distillation",
+        "Fine-tuning",
+        "Flow Matching",
+        "Image Generation",
+        "Image Training",
+        "LoRA",
+        "Multimodal",
+        "Text Training",
+        "Training Data"
+      ]
+    },
     "dd588eae04d1cebef232ef2b507218aacfad3ba5078f195276b1bd01bf9347ac": {
       "check_on": "2026-12-13",
       "revision": "bb72f9b0145e452c2fe45c68e22e4c43decee46ba3b5dbc8222871244338ce86",
@@ -3153,7 +3211,7 @@
     },
     "e7232d52f37fd859a2ad633164226f1c2f18c7af5a6da4e5e7f23ccb8f0263e9": {
       "check_on": "2026-12-13",
-      "revision": "29d982a0b35194b6f4acb0aa0590e5a1447e0ea31a2457540657a90413905d16",
+      "revision": "66fc8945af04f96014ef3b1fd059e0158e6aca1c56b1ba0a114adda803d79155",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -3261,28 +3319,6 @@
         "Supervised Fine-tuning",
         "Training Data",
         "Vision-Language"
-      ]
-    },
-    "ef4497dcc2f95d726ac49b135d5f37bd1efa0b8076991686b3aadf2048db4ef8": {
-      "check_on": "2026-12-13",
-      "revision": "868f73b8212a4f8450ab7de61580d2f65313abcc3007b103307642cee6415ab9",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Code Generation",
-        "Context Inference",
-        "Context Inference Training",
-        "Image Generation",
-        "Inference Training",
-        "Long Context",
-        "Long Context Inference",
-        "Multimodal",
-        "Post-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Retrieval",
-        "Tool Use",
-        "Training Data"
       ]
     },
     "ef8acf6fd46913adb0c0e9ba47879aa48f66ad082c2a39c2eca634bb66f235b8": {

@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 262,
+    "total_models": 265,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -16,7 +16,7 @@
     "camp_breakdown": {
       "Google": 38,
       "China-based Labs": 144,
-      "Other Global": 47,
+      "Other Global": 50,
       "Anthropic": 17,
       "OpenAI": 16
     },
@@ -36,7 +36,7 @@
       "Moonshot AI": 3,
       "InternLM": 10,
       "DeepSeek": 6,
-      "NVIDIA": 23,
+      "NVIDIA": 26,
       "OpenBMB": 3,
       "xAI": 5,
       "StepFun": 3,
@@ -47,11 +47,11 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Reasoning / CoT": 107,
-      "Vision & Multimodal": 113,
+      "Reasoning / CoT": 108,
+      "Vision & Multimodal": 115,
       "Open Weights": 11,
-      "Agent & Coding": 102,
-      "MoE": 45,
+      "Agent & Coding": 104,
+      "MoE": 47,
       "Medical & Science": 46,
       "Audio & Speech": 31,
       "Video": 30
@@ -131,11 +131,11 @@
       },
       {
         "month": "2026-07",
-        "count": 23
+        "count": 24
       },
       {
         "month": "2026-08",
-        "count": 36
+        "count": 38
       },
       {
         "month": "2026-09",
@@ -578,16 +578,17 @@
       "month": 10,
       "org": "Moonshot AI",
       "model": "Kimi-K3.1-Pro",
-      "highlights": "",
-      "link": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "highlights": "Architecture Mixture-of-Experts (MoE) Total Parameters 2.8T Activated Parameters 104B Number of Layers 93 Number of Dense Layers 1 Attention-Layer Composition 69 KDA + 24 Gated DSA * Attention Hidden Dimension 7168 Number of Attention Heads 96 DSA Index Head Dimension 128 DSA Index Number of Heads 32 DSA Index Top-K 2048 Latent MoE Dimension 3584 MoE Hidden Dimension (per Expert) 3072 Number of Experts 896 Selected Experts per Token 16 Number of Shared Experts 2 Vocabulary Size 160K Context Length 1048576 Attention Mechanism KDA &amp; Gated DSA Activatio",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
+        "MoE",
         "Open Weights"
       ],
       "released_on": "2026-10-23",
-      "report_kind": "official technical page"
+      "report_kind": "model card"
     },
     {
       "id": "internlm--atria-dawn",
@@ -1218,7 +1219,8 @@
         "Open Weights"
       ],
       "released_on": "2026-09-20",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 600000000000
     },
     {
       "id": "nvidia--nvidia-nemotronlabs-ai-for-media-sports-basketball",
@@ -1267,14 +1269,15 @@
       "month": 9,
       "org": "Microsoft",
       "model": "FrogNano-4B-2609",
-      "highlights": "|Field | Value | --- | --- | | Developer | Microsoft Corporation | | Description | FrogNano is a compact repository-level coding agent derived from Qwen/Qwen3.5-4B. It is post-trained exclusively with reinforcement learning on approximately 1,500 synthetic software-engineering tasks generated, validated, and calibrated against the evolving policy using TaskPilot. FrogNano operates through the lightweight five-tool Leaf harness. Its agent-specific post-training uses no stronger-model solution trajectories, actions, reasoning traces, or patch targets. | | ",
+      "highlights": "FrogNano is derived from Qwen/Qwen3.5-4B, a general-purpose post-trained model designed for language, reasoning, coding, agentic, and multimodal tasks. FrogNano inherits Qwen3.5-4B's dense 32-layer hybrid Gated DeltaNet and gated-attention architecture, but its additional post-training is text-only and focused on repository-level software engineering. The model is further trained using reinforcement learning on approximately 1,500 synthetic SWE task environments generated and calibrated against the evolving policy using TaskPilot. Training uses the five-",
       "link": "https://huggingface.co/microsoft/FrogNano-4B-2609/blob/b90468c11a913c1916b4542b4b7a530ec42024a4/README.md",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding"
+        "Agent & Coding",
+        "Vision & Multimodal"
       ],
       "released_on": "2026-09-17",
       "report_kind": "model card"
@@ -1367,7 +1370,7 @@
       "month": 9,
       "org": "Anthropic",
       "model": "Claude Fable 5.1 / Mythos 5.1",
-      "highlights": "",
+      "highlights": "“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”",
       "link": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
       "file": "",
       "camp": "Anthropic",
@@ -1880,6 +1883,22 @@
       "total_parameters": 779960992733
     },
     {
+      "id": "nvidia--fastgen-ayf",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "NVIDIA",
+      "model": "FastGen-AYF",
+      "highlights": "Install [FastGen](https://github.com/NVlabs/fastgen) and run its inference script with a checkpoint from this repository:",
+      "link": "https://huggingface.co/nvidia/FastGen-AYF/blob/98a11f69056ce73ff5773e6ca46d15e96466d0ac/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-08-27",
+      "report_kind": "model card"
+    },
+    {
       "id": "tencent--contextpilot-e4b",
       "date": "2026-08",
       "year": 2026,
@@ -2092,16 +2111,16 @@
       "month": 8,
       "org": "Zhipu AI",
       "model": "GLM-5.3",
-      "highlights": "",
-      "link": "https://docs.z.ai/guides/llm/glm-5.3",
+      "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
+      "link": "https://huggingface.co/zai-org/GLM-5.3/blob/ba32f8c19c8738e2c57c71798c601d477a7bf844/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": true,
       "tags": [
-        "Vision & Multimodal"
+        "Agent & Coding"
       ],
       "released_on": "2026-08-18",
-      "report_kind": "official technical page"
+      "report_kind": "model card"
     },
     {
       "id": "tencent--ui-mate-democua-27b",
@@ -2181,6 +2200,27 @@
       "released_on": "2026-08-14",
       "report_kind": "model card",
       "total_parameters": 8000000000
+    },
+    {
+      "id": "nvidia--kimi-k3-nvfp4",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "NVIDIA",
+      "model": "Kimi-K3-NVFP4",
+      "highlights": "The NVIDIA Kimi-K3-NVFP4 model is the quantized version of Moonshot AI's Kimi-K3 model, which is an auto-regressive language model that uses an optimized transformer architecture. Kimi-K3 is a flagship, natively multimodal Mixture-of-Experts (MoE) model designed for long-horizon coding, end-to-end knowledge work, game development, deep reasoning, and visual-agent use cases. It has 2.8 trillion total parameters and a native 1,048,576-token context window.For more information, please check [here](https://huggingface.co/moonshotai/Kimi-K3). The NVIDIA Kimi-",
+      "link": "https://huggingface.co/nvidia/Kimi-K3-NVFP4/blob/b2428a0b83a8b712ff2e1a8448a103d4175341f1/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "MoE"
+      ],
+      "released_on": "2026-08-13",
+      "report_kind": "model card"
     },
     {
       "id": "google--gemini-3-7-flash",
@@ -2777,6 +2817,25 @@
       "released_on": "2026-07-14",
       "report_kind": "official technical page",
       "total_parameters": 6208221232
+    },
+    {
+      "id": "nvidia--ising-calibration-1-5-31b-bf16",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "NVIDIA",
+      "model": "Ising-Calibration-1.5-31B-BF16",
+      "highlights": "[Gemma](https://ai.google.dev/gemma) [QCalEval Benchmark](https://huggingface.co/datasets/nvidia/QCalEval) [QCalEval: Benchmarking Vision-Language Models for Quantum Calibration Plot Understanding](https://arxiv.org/abs/2604.25884)",
+      "link": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16/blob/b9b4f513ce36a3455d8717c74dc99912c8e15290/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-07-13",
+      "report_kind": "model card",
+      "total_parameters": 31273088876
     },
     {
       "id": "inclusionai--singguard-nsfa-9b",
@@ -3437,7 +3496,8 @@
         "Reasoning / CoT",
         "Agent & Coding",
         "MoE"
-      ]
+      ],
+      "total_parameters": 123611012096
     },
     {
       "id": "2026-03_longcat_next",

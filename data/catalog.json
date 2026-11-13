@@ -412,6 +412,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2026-03_nemotron_3_super",
       "key": "nvidia/nemotron-3-super",
       "model": "Nemotron 3 Super",
@@ -424,7 +425,8 @@
         "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf",
         "kind": "archive",
         "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf"
-      }
+      },
+      "total_parameters": 123611012096
     },
     {
       "hub_task": "image-text-to-text",
@@ -2263,7 +2265,7 @@
       "release_url": "https://huggingface.co/microsoft/FrogNano-4B-2609",
       "released_on": "2026-09-17",
       "report": {
-        "highlights": "|Field | Value | --- | --- | | Developer | Microsoft Corporation | | Description | FrogNano is a compact repository-level coding agent derived from Qwen/Qwen3.5-4B. It is post-trained exclusively with reinforcement learning on approximately 1,500 synthetic software-engineering tasks generated, validated, and calibrated against the evolving policy using TaskPilot. FrogNano operates through the lightweight five-tool Leaf harness. Its agent-specific post-training uses no stronger-model solution trajectories, actions, reasoning traces, or patch targets. | | ",
+        "highlights": "FrogNano is derived from Qwen/Qwen3.5-4B, a general-purpose post-trained model designed for language, reasoning, coding, agentic, and multimodal tasks. FrogNano inherits Qwen3.5-4B's dense 32-layer hybrid Gated DeltaNet and gated-attention architecture, but its additional post-training is text-only and focused on repository-level software engineering. The model is further trained using reinforcement learning on approximately 1,500 synthetic SWE task environments generated and calibrated against the evolving policy using TaskPilot. Training uses the five-",
         "id": "https://huggingface.co/microsoft/FrogNano-4B-2609/README.md",
         "kind": "model card",
         "revision": "b90468c11a913c1916b4542b4b7a530ec42024a4",
@@ -2322,9 +2324,11 @@
       "release_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
       "released_on": "2026-10-23",
       "report": {
-        "id": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
-        "kind": "official technical page",
-        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
+        "highlights": "Architecture Mixture-of-Experts (MoE) Total Parameters 2.8T Activated Parameters 104B Number of Layers 93 Number of Dense Layers 1 Attention-Layer Composition 69 KDA + 24 Gated DSA * Attention Hidden Dimension 7168 Number of Attention Heads 96 DSA Index Head Dimension 128 DSA Index Number of Heads 32 DSA Index Top-K 2048 Latent MoE Dimension 3584 MoE Hidden Dimension (per Expert) 3072 Number of Experts 896 Selected Experts per Token 16 Number of Shared Experts 2 Vocabulary Size 160K Context Length 1048576 Attention Mechanism KDA &amp; Gated DSA Activatio",
+        "id": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/README.md",
+        "kind": "model card",
+        "revision": "d9e99b0792a5e93b78ea9bea62a68167e36ddd9e",
+        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md"
       }
     },
     {
@@ -2400,7 +2404,8 @@
         "kind": "model card",
         "revision": "364b3b03fed2477aa0953fe855a2c4c8c48ee3cc",
         "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/blob/364b3b03fed2477aa0953fe855a2c4c8c48ee3cc/README.md"
-      }
+      },
+      "total_parameters": 600000000000
     },
     {
       "hub_task": "translation",
@@ -2524,9 +2529,11 @@
       "release_url": "https://docs.z.ai/release-notes/new-released",
       "released_on": "2026-08-18",
       "report": {
-        "id": "https://docs.z.ai/guides/llm/glm-5.3",
-        "kind": "official technical page",
-        "url": "https://docs.z.ai/guides/llm/glm-5.3"
+        "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
+        "id": "https://huggingface.co/zai-org/GLM-5.3/README.md",
+        "kind": "model card",
+        "revision": "ba32f8c19c8738e2c57c71798c601d477a7bf844",
+        "url": "https://huggingface.co/zai-org/GLM-5.3/blob/ba32f8c19c8738e2c57c71798c601d477a7bf844/README.md"
       }
     },
     {
@@ -2586,8 +2593,10 @@
       "release_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
       "released_on": "2026-09-15",
       "report": {
+        "highlights": "“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”",
         "id": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
         "kind": "official technical page",
+        "revision": "f72697d88c97008b43fdf741f0b3b1ec2d9e4a6d896b4b3b79ac39de7c3923bf",
         "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
       }
     },
@@ -3516,6 +3525,15 @@
       "key": "alibaba_qwen/qwen3-coder-plus",
       "model": "Qwen3-Coder-Plus",
       "org": "Alibaba",
+      "release_events": [
+        {
+          "forms": [
+            "General availability"
+          ],
+          "release_url": "https://www.alibabacloud.com/notice/detail?_p_lc=1&id=1425",
+          "released_on": "2026-08-18"
+        }
+      ],
       "release_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
       "released_on": "2025-07-23",
       "report": {
@@ -4170,6 +4188,56 @@
         "kind": "model card",
         "url": "https://huggingface.co/stepfun-ai/Step-3.7-Flash"
       }
+    },
+    {
+      "base_model": "moonshotai/kimi-k3",
+      "hub_task": "text-generation",
+      "id": "nvidia--kimi-k3-nvfp4",
+      "key": "nvidia/kimi-k3-nvfp4",
+      "model": "Kimi-K3-NVFP4",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Kimi-K3-NVFP4",
+      "released_on": "2026-08-13",
+      "report": {
+        "highlights": "The NVIDIA Kimi-K3-NVFP4 model is the quantized version of Moonshot AI's Kimi-K3 model, which is an auto-regressive language model that uses an optimized transformer architecture. Kimi-K3 is a flagship, natively multimodal Mixture-of-Experts (MoE) model designed for long-horizon coding, end-to-end knowledge work, game development, deep reasoning, and visual-agent use cases. It has 2.8 trillion total parameters and a native 1,048,576-token context window.For more information, please check [here](https://huggingface.co/moonshotai/Kimi-K3). The NVIDIA Kimi-",
+        "id": "https://huggingface.co/nvidia/Kimi-K3-NVFP4/README.md",
+        "kind": "model card",
+        "revision": "b2428a0b83a8b712ff2e1a8448a103d4175341f1",
+        "url": "https://huggingface.co/nvidia/Kimi-K3-NVFP4/blob/b2428a0b83a8b712ff2e1a8448a103d4175341f1/README.md"
+      }
+    },
+    {
+      "hub_task": "text-to-image",
+      "id": "nvidia--fastgen-ayf",
+      "key": "nvidia/fastgen-ayf",
+      "model": "FastGen-AYF",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/FastGen-AYF",
+      "released_on": "2026-08-27",
+      "report": {
+        "highlights": "Install [FastGen](https://github.com/NVlabs/fastgen) and run its inference script with a checkpoint from this repository:",
+        "id": "https://huggingface.co/nvidia/FastGen-AYF/README.md",
+        "kind": "model card",
+        "revision": "98a11f69056ce73ff5773e6ca46d15e96466d0ac",
+        "url": "https://huggingface.co/nvidia/FastGen-AYF/blob/98a11f69056ce73ff5773e6ca46d15e96466d0ac/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--ising-calibration-1-5-31b-bf16",
+      "key": "nvidia/ising-calibration-1-5-31b-bf16",
+      "model": "Ising-Calibration-1.5-31B-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16",
+      "released_on": "2026-07-13",
+      "report": {
+        "highlights": "[Gemma](https://ai.google.dev/gemma) [QCalEval Benchmark](https://huggingface.co/datasets/nvidia/QCalEval) [QCalEval: Benchmarking Vision-Language Models for Quantum Calibration Plot Understanding](https://arxiv.org/abs/2604.25884)",
+        "id": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16/README.md",
+        "kind": "model card",
+        "revision": "b9b4f513ce36a3455d8717c74dc99912c8e15290",
+        "url": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16/blob/b9b4f513ce36a3455d8717c74dc99912c8e15290/README.md"
+      },
+      "total_parameters": 31273088876
     }
   ],
   "version": 1
