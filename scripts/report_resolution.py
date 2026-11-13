@@ -24,6 +24,7 @@ MAX_PDF = 99 * 1024 * 1024
 SIZE_VARIANT = re.compile(r"[- ]\d+(?:\.\d+)?[BM](?=[- ]|$)", re.I)
 CARD_KIND = re.compile(r"\b(system|model)[-_ ]+card\b", re.I)
 PAPER_CITATION = re.compile(r"\b(?:paper|report)\s+(?:of|for|on)\s+|(?:技术报告|论文)\s*[：:]", re.I)
+DIRECT_REPORT_LINK = re.compile(r"^\s*(?:read|see|view)\s+(?:the |our )?(?:technical report|system card)\s*:", re.I)
 STRUCTURAL_EXCERPT = re.compile(r"^(?:---|\||!\[|[0-9]+\.\s|[+-]\s|\x60\x60\x60)")
 ACCESS_CHALLENGE = re.compile(
     r"verif(?:y|ies|ying) you are (?:not a bot|human)|checking your browser|access denied|just a moment", re.I
@@ -74,7 +75,7 @@ def report_from_arxiv(entry, model, org, priority, affiliated, *, direct=False):
         "id": "arxiv:" + identifier,
         "revision": str(version),
         "rank": priority,
-        "kind": "technical report",
+        "kind": f"{card_kind[1].lower()} card" if (card_kind := CARD_KIND.search(title)) else "technical report",
         "url": f"https://arxiv.org/abs/{identifier}v{version}",
         "pdf": f"https://arxiv.org/pdf/{identifier}v{version}",
         "published_on": entry.get("date", ""),
@@ -189,18 +190,20 @@ def cited_papers(model, card, official_body):
     name = " ".join(words(model))
     for rank, body in enumerate((card, official_body)):
         for line in re.split(r"\n|</(?:p|li)>", body or "", flags=re.I):
-            matches = ARXIV.findall(line)
+            matches = list(dict.fromkeys(identifier for identifier, _ in ARXIV.findall(line)))
             if not matches:
                 continue
             text = " ".join(words(clean(line, 800)))
+            lead = clean(line, 240).lstrip("> -*📄")
             direct = len(matches) == 1 and name and (
                 bool(re.search(rf"(?<!\w){re.escape(name)} (?:technical report|system card|paper)\b", text))
                 or any(
                     " ".join(words(clean(line[match.end():], 120))).startswith(name + " ")
                     for match in PAPER_CITATION.finditer(line)
                 )
+                or (rank == 0 and DIRECT_REPORT_LINK.search(lead))
             )
-            for identifier, _ in matches:
+            for identifier in matches:
                 evidence = (not direct, rank)
                 citations[identifier] = min(citations.get(identifier, evidence), evidence)
     return dict(sorted(citations.items(), key=lambda item: item[1])[:12])

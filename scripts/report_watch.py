@@ -554,7 +554,7 @@ def verified_releases(vendor, settings, aliases, rows, entries, since, until):
     for evidence in entries:
         published, url = evidence["released_on"], evidence["release_url"]
         correction = evidence.get("correction", False)
-        if published > until or (published < since and not correction):
+        if published > until or (published < since and not (correction or evidence.get("historical"))):
             continue
         if date.fromisoformat(published).isoformat() != published:
             raise ValueError("Invalid verified release date")
@@ -616,6 +616,13 @@ def scan_reports(
     summaries = []
     for vendor in vendors:
         config = settings[vendor]
+        entries = (backfill or {}).get(vendor, [])
+        backfilled = 0
+        if entries:
+            collected = verified_releases(vendor, config, aliases, rows, entries, since, until)
+            store.save(collected)
+            rows.update((row["key"], row) for row in collected)
+            backfilled += len(collected)
         scans = []
         if config.get("hub") and not backfill_only:
             scans.append(("hub", scan_hub, {**config, "release_since": since}))
@@ -651,11 +658,12 @@ def scan_reports(
                     **({"warnings": list(dict.fromkeys(warnings))} if warnings else {}),
                 }
             )
-        if backfill and (entries := backfill.get(vendor)):
-            collected = verified_releases(vendor, config, aliases, rows, entries, since, until)
+        if entries:
+            corrections = [entry for entry in entries if entry.get("correction")]
+            collected = [] if backfill_only else verified_releases(vendor, config, aliases, rows, corrections, since, until)
             store.save(collected)
             rows.update((row["key"], row) for row in collected)
-            summaries.append({"source": f"{vendor}/verified-backfill", "records": len(collected)})
+            summaries.append({"source": f"{vendor}/verified-backfill", "records": backfilled + len(collected)})
     visible = {row["key"] for row in publishable_releases(rows.values(), settings)}
     hidden = [rows[row["key"]] for row in baseline if row["key"] not in visible]
     if hidden:
