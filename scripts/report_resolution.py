@@ -24,6 +24,7 @@ SIZE_VARIANT = re.compile(r"[- ]\d+(?:\.\d+)?[BM](?=[- ]|$)", re.I)
 DISTRIBUTION = re.compile(
     r"(?:^|[._-])(GGUF|AWQ|GPTQ|MLX|EXL2|INT[48]|FP8|4bit|8bit|lora|adapter)(?:[._-]|$)", re.I
 )
+CARD_KIND = re.compile(r"\b(system|model)[-_ ]+card\b", re.I)
 
 
 def words(value):
@@ -116,13 +117,12 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
             return None
         payload, _ = fetch(url, hosts, MAX_PDF if explicit else 2_000_000)
         if payload.startswith(b"%PDF-"):
+            card = CARD_KIND.search(f"{title} {path}")
             return {
                 "id": url,
                 "revision": hashlib.sha256(payload).hexdigest(),
                 "rank": 0,
-                "kind": "system card"
-                if re.search(r"system[-_ ]card", f"{title} {path}", re.I)
-                else "technical report",
+                "kind": f"{card[1].lower()} card" if card else "technical report",
                 "url": url,
                 "pdf": url,
                 "highlights": pdf_excerpt(payload),

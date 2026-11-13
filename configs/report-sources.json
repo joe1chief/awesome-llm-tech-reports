@@ -95,7 +95,7 @@
       "https://blog.google/innovation-and-ai/models-and-research/gemini-models/rss/",
       "https://deepmind.google/models/model-cards/"
     ],
-    "model_pattern": "Gemini[- ]4[- ](?:Argon|Carbon)|Gemini[- ]\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Pro|Ultra|Nano|Live|Thinking|Lite|Image|TTS)){0,4}|(?:Gemma|MedGemma|Veo|Imagen)[- ]\\d[\\w. -]*",
+    "model_pattern": "Gemini[- ]4[- ](?:Argon|Carbon|Hydrogen)|Gemini[- ]\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Pro|Ultra|Nano|Live|Thinking|Lite|Image|TTS)){0,4}|(?:Gemma|MedGemma|Veo|Imagen)[- ]\\d[\\w. -]*",
     "hosts": [
       "ai.google.dev",
       "blog.google",
@@ -106,7 +106,8 @@
     ],
     "group_sizes": true,
     "exclude_models": [
-      "^(?:EmbeddingGemma|TimesFM|GNM[- ]|TiPSv|TabFM)"
+      "^(?:EmbeddingGemma|TimesFM|GNM[- ]|TiPSv|TabFM)",
+      "^Gemini[- ]4$"
     ]
   },
   "huggingface": {
@@ -289,7 +290,8 @@
       "adp.tencent.com"
     ],
     "exclude_models": [
-      "^(?:Hy[- ]Nomas|Youtu[- ]Parsing|WeVis(?:Cut|One)|EVIE)(?:[- ]|$)"
+      "^(?:Hy[- ]Nomas|Youtu[- ]Parsing|WeVis(?:Cut|One)|EVIE)(?:[- ]|$)",
+      "^Simple[- ]Attention[- ]Sparsification$"
     ]
   },
   "xai": {

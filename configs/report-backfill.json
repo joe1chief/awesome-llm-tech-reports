@@ -115,6 +115,15 @@
         "kind": "model card",
         "url": "https://deepmind.google/models/model-cards/gemini-4-carbon/"
       }
+    },
+    {
+      "model": "Gemini 4 Hydrogen",
+      "released_on": "2026-11-12",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "report": {
+        "kind": "model card",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+      }
     }
   ],
   "meta": [

@@ -11,7 +11,7 @@ import report_sources
 import report_watch
 from parse_readme import parse_models
 from report_catalog import ROOT, portal_models, read_catalog, validate
-from report_parameters import configure_parameters, total_parameters
+from report_parameters import configure_parameters, declared_total, total_parameters
 from report_resolution import resolve_report
 from report_store import Store
 from report_visuals import build_visuals, frequencies
@@ -155,9 +155,99 @@ def test_total_parameters_uses_verified_totals_and_ignores_active_sizes_and_cont
     assert total_parameters("Gemma 3 270M", settings["google"]) == 270_000_000
     assert total_parameters("Ming-3.0-audio-tiny", settings["inclusionai"]) == 9_300_000_000
     assert total_parameters("Qwen2.5-1M", settings["alibaba_qwen"]) is None
+    assert total_parameters("Example-600M", {}) == 600_000_000
+    assert total_parameters("Example-128M-context", {}) is None
     assert total_parameters("Example-2B-Active", {}) is None
     assert total_parameters("Example-9B-A2B", {}) == 9_000_000_000
     assert total_parameters("Example-NVFP4", {}, safetensors={"total": 500_000_000}) is None
+    assert total_parameters("JustRL-II-base-model", settings["openbmb"]) == 2_000_000_000
+
+
+@pytest.mark.parametrize(
+    ("description", "expected"),
+    [
+        ("**VoiceFlow** is a 1.5B foundation model for speech generation.", 1_500_000_000),
+        ("| Parameters | 9.3B total parameters, 2.7B activated per step |", 9_300_000_000),
+        ("| Total Parameters | 9.3B |", 9_300_000_000),
+        ("**Total Parameters:** 3B\n**Active Parameters:** 400M", 3_000_000_000),
+        ("Total Parameters: 4.38B; the shared embedding is excluded.", 4_380_000_000),
+        ("VoiceFlow is a 600M-parameter model.", 600_000_000),
+        ("VoiceFlow is a 128K context model trained on 1.5B tokens.", None),
+        ("The related model TinySpeech is a 1.5B foundation model.", None),
+        ("VoiceFlow uses a 300M-parameter audio encoder.", None),
+        ("VoiceFlow has 300M parameters in the audio encoder.", None),
+        ("| Total parameters | 2B | 8B |", None),
+        ("| Prior architecture | Denoiser (~675M parameters) |", None),
+        ("Total parameters: 2B\nTotal parameters: 8B", None),
+    ],
+)
+def test_card_parameter_count_requires_a_model_total(description, expected):
+    assert declared_total("VoiceFlow", description) == expected
+
+
+def test_hub_scan_rejects_unnamed_small_models_and_drafts_before_report_lookup(monkeypatch):
+    config = {**SETTINGS, "minimum_total_parameters": 3_000_000_000}
+    repo_names = ("VoiceFlow", "BigModel-50B-A2B-DFlash2", "AudioMoE")
+    cards = {
+        "VoiceFlow": "**VoiceFlow** is a 1.5B foundation model for speech generation.",
+        "AudioMoE": "# AudioMoE\n\n| Parameters | 9.3B total parameters, 2.7B activated per step |",
+    }
+    fetched = []
+
+    def card(url, revision, gated):
+        name = url.rsplit("/", 1)[-1]
+        fetched.append(name)
+        return cards[name]
+
+    monkeypatch.setattr(report_watch, "hf_card", card)
+    monkeypatch.setattr(
+        report_watch, "model_pages",
+        lambda *_: [{**hub_row(name), "pipeline_tag": "text-to-speech"} for name in repo_names],
+    )
+    arxiv = ArxivFixture([])
+    rows, _, errors, _ = report_watch.scan_hub("alibaba_qwen", config, {}, {}, {}, *DATES, 12, arxiv)
+    assert fetched == ["VoiceFlow", "AudioMoE"]
+    assert [row["model"] for row in rows] == ["AudioMoE"]
+    assert rows[0]["total_parameters"] == 9_300_000_000
+    assert len(arxiv.calls) == 1 and not errors
+
+
+def test_official_release_recognizes_hydrogen_and_classifies_the_pdf_as_a_model_card(monkeypatch):
+    import report_resolution
+
+    google = json.loads(report_watch.SOURCES.read_text())["google"]
+    title = "Introducing Gemini 4 Hydrogen for Agentic Workflows"
+    link = "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+    card = "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Hydrogen-Model-Card.pdf"
+    assert report_watch.official_model(title, google, link) == "Gemini 4 Hydrogen"
+    assert not report_watch.model_in_scope("Gemini 4", google)
+    monkeypatch.setattr(report_resolution, "fetch", lambda *_: (b"%PDF-1.7\n%%EOF", {}))
+    report = report_resolution.vendor_document(card, "Model Card", "Gemini 4 Hydrogen", set(google["hosts"]), explicit=True)
+    assert report["kind"] == "model card"
+
+
+def test_official_only_release_retries_apply_new_parameter_evidence(monkeypatch):
+    vendor = "alibaba_qwen"
+    config = {**SETTINGS, "hub": "", "official": "", "minimum_total_parameters": 3_000_000_000}
+    link = "https://qwen.ai/releases/voiceflow"
+    pending = {
+        **release("VoiceFlow"),
+        "release_url": link,
+        "official_url": link,
+        "retry_on": DATES[1],
+    }
+    monkeypatch.setattr(
+        report_watch, "body_text",
+        lambda *_: "<p>VoiceFlow is a 1.5B foundation model for speech generation.</p>",
+    )
+    arxiv = ArxivFixture([])
+    with Store(":memory:").lock() as store:
+        rows, _ = report_watch.scan_reports(
+            store, [pending], {vendor: config}, {}, [vendor], *DATES, 12, arxiv=arxiv,
+        )
+    assert rows[0]["total_parameters"] == 1_500_000_000
+    assert report_watch.project(rows, {vendor: config}) == []
+    assert arxiv.calls == []
 
 
 def test_hub_size_filter_hides_a_known_release_even_when_its_revision_was_seen(monkeypatch):

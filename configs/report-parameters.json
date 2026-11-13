@@ -20,6 +20,18 @@
     "inclusionai/ming-3-0-audio-tiny": {
       "total_parameters": 9300000000,
       "source": "https://huggingface.co/inclusionAI/Ming-3.0-audio-tiny"
+    },
+    "openbmb/justrl-ii-base-model": {
+      "total_parameters": 2000000000,
+      "source": "https://panhaoxuan.notion.site/justrl-ii-scaling-small-llms-to-128k-reasoning-with-a-critic"
+    },
+    "tencent/auk": {
+      "total_parameters": 1500000000,
+      "source": "https://huggingface.co/tencent/AuK"
+    },
+    "tencent/auk-flash": {
+      "total_parameters": 1500000000,
+      "source": "https://huggingface.co/tencent/AuK-Flash"
     }
   }
 }
