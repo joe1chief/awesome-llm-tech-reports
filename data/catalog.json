@@ -2596,7 +2596,6 @@
         "highlights": "“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”",
         "id": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
         "kind": "official technical page",
-        "revision": "f72697d88c97008b43fdf741f0b3b1ec2d9e4a6d896b4b3b79ac39de7c3923bf",
         "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
       }
     },
@@ -3525,15 +3524,6 @@
       "key": "alibaba_qwen/qwen3-coder-plus",
       "model": "Qwen3-Coder-Plus",
       "org": "Alibaba",
-      "release_events": [
-        {
-          "forms": [
-            "General availability"
-          ],
-          "release_url": "https://www.alibabacloud.com/notice/detail?_p_lc=1&id=1425",
-          "released_on": "2026-08-18"
-        }
-      ],
       "release_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
       "released_on": "2025-07-23",
       "report": {
