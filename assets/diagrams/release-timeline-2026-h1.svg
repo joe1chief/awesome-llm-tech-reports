@@ -5,13 +5,13 @@
 <text x="29" y="37" fill="#716b60" font-size="12" font-weight="600">MODEL RELEASE TIMELINE</text>
 <text font-family="Georgia,serif" x="28" y="88" fill="#201f1b" font-size="46" font-weight="400">2026  Model releases</text>
 <text x="30" y="117" fill="#716b60" font-size="13" font-weight="400">Jan–Jun  /  Dates from the catalog</text>
-<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">216</text>
+<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">231</text>
 <text x="664" y="87" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="771" y="64" fill="#201f1b" font-size="27" font-weight="400">22</text>
 <text x="771" y="87" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
-<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">19.6</text>
+<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">21.0</text>
 <text x="878" y="87" fill="#716b60" font-size="11" font-weight="400">Per month</text>
-<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">108</text>
+<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">116</text>
 <text x="985" y="87" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
 <path d="M28 135H1092V135" stroke="#dcd6c8" fill="none"/>
 <text font-family="Georgia,serif" x="29" y="159" fill="#201f1b" font-size="22" font-weight="400">01</text>
@@ -42,19 +42,19 @@
 <circle cx="209" cy="230" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="234" fill="#b6472f" font-size="10" font-weight="650">02.17  Anthropic</text>
 <text x="219" y="254" fill="#201f1b" font-size="14" font-weight="600">Claude Sonnet 4.6</text>
-<circle cx="209" cy="276" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="280" fill="#b6472f" font-size="10" font-weight="650">02  ByteDance</text>
-<text x="219" y="300" fill="#201f1b" font-size="14" font-weight="600">MedXIAOHE: A</text>
-<text x="219" y="316" fill="#201f1b" font-size="14" font-weight="600">Comprehensive Recipe</text>
-<text x="219" y="332" fill="#201f1b" font-size="14" font-weight="600">for Building Medical</text>
-<text x="219" y="348" fill="#201f1b" font-size="14" font-weight="600">MLLMs</text>
-<circle cx="209" cy="373" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="377" fill="#2555bd" font-size="10" font-weight="650">02  Google</text>
-<text x="219" y="397" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash</text>
-<text x="219" y="413" fill="#201f1b" font-size="14" font-weight="600">Image</text>
-<circle cx="209" cy="436" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="219" y="440" fill="#2555bd" font-size="10" font-weight="650">02  Google</text>
-<text x="219" y="460" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Pro</text>
+<circle cx="209" cy="276" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="280" fill="#2555bd" font-size="10" font-weight="650">02.19  Google</text>
+<text x="219" y="300" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Pro</text>
+<circle cx="209" cy="322" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="326" fill="#2555bd" font-size="10" font-weight="650">02.26  Google</text>
+<text x="219" y="346" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash</text>
+<text x="219" y="362" fill="#201f1b" font-size="14" font-weight="600">Image</text>
+<circle cx="209" cy="385" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="219" y="389" fill="#b6472f" font-size="10" font-weight="650">02  ByteDance</text>
+<text x="219" y="409" fill="#201f1b" font-size="14" font-weight="600">MedXIAOHE: A</text>
+<text x="219" y="425" fill="#201f1b" font-size="14" font-weight="600">Comprehensive Recipe</text>
+<text x="219" y="441" fill="#201f1b" font-size="14" font-weight="600">for Building Medical</text>
+<text x="219" y="457" fill="#201f1b" font-size="14" font-weight="600">MLLMs</text>
 <circle cx="209" cy="482" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="219" y="486" fill="#137f72" font-size="10" font-weight="650">02  InclusionAI (Ant Group)</text>
 <text x="219" y="506" fill="#201f1b" font-size="14" font-weight="600">Ling 2.5</text>
@@ -70,20 +70,20 @@
 <text font-family="Georgia,serif" x="383" y="159" fill="#201f1b" font-size="22" font-weight="400">03</text>
 <text x="420" y="158" fill="#716b60" font-size="10" font-weight="400">12 releases</text>
 <path d="M386 184H386V767" stroke="#dcd6c8" fill="none"/>
-<circle cx="386" cy="184" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="188" fill="#c23966" font-size="10" font-weight="650">03.18  MiniMax</text>
-<text x="396" y="208" fill="#201f1b" font-size="14" font-weight="600">MiniMax M2.7</text>
-<circle cx="386" cy="230" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="234" fill="#b6472f" font-size="10" font-weight="650">03  Anthropic</text>
-<text x="396" y="254" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 4.6</text>
-<circle cx="386" cy="276" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="396" y="280" fill="#2555bd" font-size="10" font-weight="650">03  Google</text>
-<text x="396" y="300" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash</text>
-<text x="396" y="316" fill="#201f1b" font-size="14" font-weight="600">Live</text>
+<circle cx="386" cy="184" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="188" fill="#2555bd" font-size="10" font-weight="650">03.03  Google</text>
+<text x="396" y="208" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash-</text>
+<text x="396" y="224" fill="#201f1b" font-size="14" font-weight="600">Lite</text>
+<circle cx="386" cy="247" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="251" fill="#c23966" font-size="10" font-weight="650">03.18  MiniMax</text>
+<text x="396" y="271" fill="#201f1b" font-size="14" font-weight="600">MiniMax M2.7</text>
+<circle cx="386" cy="293" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="396" y="297" fill="#b6472f" font-size="10" font-weight="650">03  Anthropic</text>
+<text x="396" y="317" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 4.6</text>
 <circle cx="386" cy="339" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="396" y="343" fill="#2555bd" font-size="10" font-weight="650">03  Google</text>
-<text x="396" y="363" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash-</text>
-<text x="396" y="379" fill="#201f1b" font-size="14" font-weight="600">Lite</text>
+<text x="396" y="363" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash</text>
+<text x="396" y="379" fill="#201f1b" font-size="14" font-weight="600">Live</text>
 <circle cx="386" cy="402" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="396" y="406" fill="#946410" font-size="10" font-weight="650">03  InternLM</text>
 <text x="396" y="426" fill="#201f1b" font-size="14" font-weight="600">Intern-S1-Pro</text>
