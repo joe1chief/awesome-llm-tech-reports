@@ -24,13 +24,14 @@ def test_scope_state_survives_publish_and_recovers(monkeypatch, tmp_path, metada
     path = str(tmp_path / 'state.db')
     with Store(path).lock() as store:
         store.save([old], vendor + '/hub', {'seen': {model['id']: model['sha']}})
-        rows, _ = report_watch.scan_reports(store, [old], settings, {}, [vendor], *DATES, 12)
+        rows, _ = report_watch.scan_reports(store, [old], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert report_watch.project(rows, settings) == []
     with Store(path).lock() as store:
-        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12)
+        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert report_watch.project(rows, settings) == []
         model.update(pipeline_tag='text-generation', tags=[])
-        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12)
+        monkeypatch.setattr(report_watch, 'body_text', lambda *_: '{}')
+        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert [r['model'] for r in report_watch.project(rows, settings)] == [old['model']]
 
 
@@ -94,9 +95,10 @@ def test_publish_removes_rejected_from_all_generated_outputs(monkeypatch, tmp_pa
     monkeypatch.setattr(report_watch, 'SOURCES', sources)
     monkeypatch.setattr(report_watch, 'ALIASES', aliases)
     monkeypatch.setattr(report_watch, 'read_catalog', lambda: report_catalog.read_catalog(tmp_path))
-    monkeypatch.setattr(report_watch, 'save_catalog', lambda rows: report_catalog.save_catalog(rows, tmp_path))
     monkeypatch.setattr(report_watch, 'build', lambda **kw: report_catalog.build(tmp_path, **kw))
     monkeypatch.setattr(report_watch, 'model_pages', lambda *_: [model])
+    monkeypatch.setattr(report_watch, 'Arxiv', lambda: ArxivFixture([]))
+    monkeypatch.setattr(report_watch, 'body_text', lambda *_: '{}')
     monkeypatch.delenv('REPORTS_DATABASE_URL', raising=False)
     monkeypatch.setattr(sys, 'argv', ['report_watch', '--publish', '--sqlite', str(tmp_path / 'state.db'), '--until', DATES[1]])
     assert report_watch.main() == 0
@@ -144,3 +146,19 @@ def test_exact_small_official_release_is_still_hidden(monkeypatch, separate_laun
     rows, *_ = report_watch.scan_official('alibaba_qwen', config, {}, {old['key']: old}, {}, *DATES, 12, None)
     assert rows[0]['total_parameters'] == 1_500_000_000
     assert report_watch.project(rows, {'alibaba_qwen': config}) == []
+
+
+def test_image_text_to_video_remains_in_generative_scope(monkeypatch):
+    config = {**SETTINGS, 'minimum_total_parameters': 3_000_000_000}
+    model = {**hub_row('MiniMax-H3'), 'pipeline_tag': 'image-text-to-video',
+             'safetensors': {'parameters': {'BF16': 33_122_992_896}, 'total': 33_122_992_896}}
+    old = {**release('MiniMax-H3'), 'key': 'alibaba_qwen/minimax-h3',
+           'release_url': 'https://huggingface.co/' + model['id'],
+           'hub_task': 'image-text-to-video', 'total_parameters': 33_122_992_896}
+    assert report_watch.release_in_scope(old, config)
+    monkeypatch.setattr(report_watch, 'model_pages', lambda *_: [model])
+    monkeypatch.setattr(report_watch, 'hf_card', lambda *_: '# MiniMax-H3')
+    monkeypatch.setattr(report_watch, 'try_report', lambda *a, **kw: [])
+    rows, *_ = report_watch.scan_hub('alibaba_qwen', config, {}, {}, {}, *DATES, 12, None)
+    assert rows[0]['hub_task'] == 'image-text-to-video'
+    assert report_watch.project(rows, {'alibaba_qwen': config})

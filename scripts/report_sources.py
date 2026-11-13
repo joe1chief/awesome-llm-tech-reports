@@ -16,7 +16,7 @@ from report_catalog import https_url
 
 HUB = "https://huggingface.co"
 ARXIV_API = "https://export.arxiv.org/api/query"
-ARXIV = re.compile(r"(?:arxiv\.org/(?:abs|pdf|html)/|arxiv:)(\d{4}\.\d{4,5})(?:v(\d+))?", re.I)
+ARXIV = re.compile(r"(?:arxiv\.org/(?:abs|pdf|html)/|arxiv:\s*)(\d{4}\.\d{4,5})(?:v(\d+))?", re.I)
 COMMON_HOSTS = {"huggingface.co", "arxiv.org", "export.arxiv.org"}
 HUB_FILES = {"cdn-lfs.huggingface.co", "cdn-lfs-us-1.hf.co", "cdn-lfs-eu-1.hf.co", "cas-bridge.xethub.hf.co"}
 MAX_BODY = 2_000_000
@@ -251,23 +251,33 @@ class Page(HTMLParser):
 
 
 def document_links(text, base):
-    if re.search(r"<(?:html|a|meta)\b", text, re.I):
-        links = Page(text).links
-    else:
-        links = [(url, title) for title, url in re.findall(r"\[([^\]\n]+)\]\(([^)\s]+)\)", text)]
-    known = {url for url, _ in links}
-    links.extend((url, "") for url in re.findall(r"https://[^\s<>\]\"')]+", text) if url not in known)
-    return [(urljoin(base, url.rstrip(".,")), label) for url, label in links if url]
+    links = [(url, title) for title, url in re.findall(r"\[([^\]\n]+)\]\(([^)\s]+)\)", text)]
+    if re.search(r"<a\b", text, re.I):
+        links.extend(Page(text).links)
+    links.extend((url, "") for url in re.findall(r"https://[^\s<>\]\"')]+", text))
+    unique = {}
+    for url, label in links:
+        if url:
+            url = urljoin(base, url.rstrip(".,"))
+            unique[url] = unique.get(url) or label
+    return list(unique.items())
 
 
 def xml_entries(text):
-    root = ET.fromstring(text)
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError as error:
+        raise ValueError("Source returned malformed XML") from error
     for item in root.iter():
         kind = item.tag.split("}")[-1]
         if kind not in {"entry", "item", "url"}:
             continue
         fields = {child.tag.split("}")[-1]: child for child in item}
-        link = fields.get("link")
+        link = next(
+            (node for node in item if node.tag.split("}")[-1] == "link"
+             and node.get("rel", "alternate") == "alternate"),
+            fields.get("link"),
+        )
         url = fields["loc"].text if "loc" in fields else ""
         if link is not None:
             url = link.get("href") or link.text or url
@@ -293,10 +303,16 @@ def arxiv_key(url):
 class Arxiv:
     def __init__(self):
         self.last_query = 0.0
+        self.results = {}
 
     def query(self, **parameters):
+        query = urlencode(parameters)
+        if query in self.results:
+            return self.results[query]
         wait = 3 - (time.monotonic() - self.last_query)
         if wait > 0:
             time.sleep(wait)
         self.last_query = time.monotonic()
-        return list(xml_entries(body_text(ARXIV_API + "?" + urlencode(parameters))))
+        results = list(xml_entries(body_text(ARXIV_API + "?" + query)))
+        self.results[query] = results
+        return results

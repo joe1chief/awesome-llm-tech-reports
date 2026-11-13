@@ -6,9 +6,17 @@ on:
   push:
     branches: [main]
     paths:
-      - configs/report-backfill.json
-      - configs/report-sources.json
-      - configs/report-parameters.json
+      - configs/**
+      - scripts/report_*.py
+      - scripts/parse_readme.py
+      - docs/index.html
+      - docs/js/**
+      - docs/css/**
+      - docs/assets/**
+      - docs/data/**
+      - data/catalog.json
+      - .github/workflows/refresh-reports.yml
+      - .github/workflows/deploy.yml
   workflow_dispatch:
     inputs:
       mode:
@@ -54,6 +62,8 @@ jobs:
         with:
           python-version: "3.12"
       - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff
+      - if: github.event_name == 'push'
+        run: uv run python scripts/report_catalog.py build
       - run: make check
 
   refresh:
@@ -96,12 +106,13 @@ jobs:
         id: publish
         run: |
           uv run --no-sync python scripts/report_catalog.py check
-          git add -- README.md data/catalog.json assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
-          if git diff --cached --quiet; then exit 0; fi
-          git -c user.name='github-actions[bot]' \
-              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit -m 'Refresh model technical reports'
-          git push
+          git add -- README.md data/catalog.json assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html docs/assets/diagrams/technical-word-cloud.svg ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' \
+                -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+                commit -m 'Refresh model technical reports'
+            git push
+          fi
           printf 'ref=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   deploy:

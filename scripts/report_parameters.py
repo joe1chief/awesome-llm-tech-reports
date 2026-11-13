@@ -89,15 +89,15 @@ def total_parameters(name, settings, *, stored=None, safetensors=None, descripti
         int(Decimal(size[:-1]) * PARAMETER_UNITS[size[-1].upper()])
         for size in TOTAL_IN_NAME.findall(name)
     ]
-    if sizes:
-        return max(sizes)
     if not isinstance(safetensors, dict) or PACKED_WEIGHTS.search(name):
-        return None
+        return max(sizes, default=None)
     dtypes = safetensors.get("parameters") or {}
-    if not isinstance(dtypes, dict) or dtypes.keys() - FLOAT_DTYPES:
-        return None
+    if not isinstance(dtypes, dict) or not dtypes or dtypes.keys() - FLOAT_DTYPES:
+        return max(sizes, default=None)
     count = safetensors.get("total")
-    return count if type(count) is int and count > 0 else None
+    if type(count) is int and count > 0:
+        return count
+    return max(sizes, default=None)
 
 
 def below_parameter_floor(count, settings):

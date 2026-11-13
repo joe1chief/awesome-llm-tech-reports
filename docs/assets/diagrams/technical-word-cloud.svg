@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="460" viewBox="0 0 1120 460" role="img">
+<title>2026 technical word cloud</title><desc>Word size reflects the number of releases mentioning a technical term.</desc>
+<rect width="1120" height="460" fill="#f8f7f2"/>
+<text font-family="Inter,Arial,sans-serif" x="30" y="42" fill="#716b60" font-size="12" font-weight="600">TECHNICAL WORD CLOUD  /  2026</text>
+<text font-family="Georgia,serif" x="29" y="79" fill="#201f1b" font-size="32" font-weight="400">Terms across model reports</text>
+<path d="M29 94H1091V94" stroke="#dcd6c8" fill="none"/>
+<text font-family="Inter,Arial,sans-serif" x="370" y="279" fill="#b6472f" font-size="66" font-weight="700">Reasoning</text>
+<text font-family="Inter,Arial,sans-serif" x="379" y="357" fill="#137f72" font-size="52" font-weight="700">Multimodal</text>
+<text font-family="Inter,Arial,sans-serif" x="526" y="191" fill="#7545b7" font-size="43" font-weight="700">MoE</text>
+<text font-family="Inter,Arial,sans-serif" x="180" y="188" fill="#2555bd" font-size="41" font-weight="700">Long Context</text>
+<text font-family="Inter,Arial,sans-serif" x="635" y="189" fill="#946410" font-size="41" font-weight="700">Vision-Language</text>
+<text font-family="Inter,Arial,sans-serif" x="771" y="279" fill="#c23966" font-size="39" font-weight="700">Tool Use</text>
+<text font-family="Inter,Arial,sans-serif" x="327" y="128" fill="#086f96" font-size="32" font-weight="700">Reinforcement Learning</text>
+<text font-family="Inter,Arial,sans-serif" x="737" y="342" fill="#3f7550" font-size="36" font-weight="700">Agentic Coding</text>
+<text font-family="Inter,Arial,sans-serif" x="77" y="268" fill="#b6472f" font-size="35" font-weight="700">Computer Use</text>
+<text font-family="Inter,Arial,sans-serif" x="67" y="325" fill="#137f72" font-size="34" font-weight="700">Post-training</text>
+<text font-family="Inter,Arial,sans-serif" x="122" y="375" fill="#7545b7" font-size="31" font-weight="700">Distillation</text>
+<text font-family="Inter,Arial,sans-serif" x="501" y="400" fill="#2555bd" font-size="22" font-weight="700">Image Generation</text>
+<text font-family="Inter,Arial,sans-serif" x="759" y="382" fill="#946410" font-size="22" font-weight="700">Quantization</text>
+<text font-family="Inter,Arial,sans-serif" x="821" y="225" fill="#c23966" font-size="18" font-weight="700">Diffusion</text>
+<text font-family="Inter,Arial,sans-serif" x="394" y="396" fill="#2555bd" font-size="17" font-weight="700">KV Cache</text>
+<text font-family="Inter,Arial,sans-serif" x="772" y="225" fill="#946410" font-size="17" font-weight="700">MLA</text>
+<path d="M29 419H1091V419" stroke="#dcd6c8" fill="none"/>
+<text font-family="Inter,Arial,sans-serif" x="30" y="443" fill="#716b60" font-size="12" font-weight="400">One mention per model release. Terms are normalized across reports.</text>
+</svg>

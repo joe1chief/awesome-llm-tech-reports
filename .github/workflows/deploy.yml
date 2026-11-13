@@ -1,16 +1,6 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'README.md'
-      - 'scripts/**'
-      - 'docs/**'
-      - 'assets/diagrams/**'
-      - 'data/catalog.json'
-      - '.github/workflows/deploy.yml'
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -25,10 +15,11 @@ permissions:
 
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
+    if: github.ref_name == github.event.repository.default_branch
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

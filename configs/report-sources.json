@@ -54,10 +54,13 @@
     "org": "Baidu",
     "hub": "baidu",
     "official": "https://ernie.baidu.com/zh/",
-    "model_pattern": "(?:ERNIE|文心)[- ]?\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Lite|Turbo|Pro|Base|Thinking|Preview|VL)){0,4}",
+    "model_pattern": "(?:ERNIE|文心)[- ]?\\d+(?:[.-]\\d+)?(?:[- ]?(?:Flash|Lite|Turbo|Pro|Base|Thinking|Preview|VL)){0,4}(?![\\w-]|\\.\\w)",
     "hosts": [
       "ernie.baidu.com",
       "github.com"
+    ],
+    "exclude_models": [
+      "^ERNIE[- ]5\\.5$"
     ]
   },
   "bytedance": {
@@ -179,7 +182,7 @@
       "www.microsoft.com"
     ],
     "exclude_models": [
-      "^(?:scFM[- ]DataSelection|BioEmu|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
+      "^(?:scFM[- ]DataSelection|BioEmu|HARC|UserLM|UserRepGen|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
     ]
   },
   "minimax": {
@@ -219,7 +222,7 @@
       "research.nvidia.com"
     ],
     "exclude_models": [
-      "^(?:Alpamayo|Flora[- ])",
+      "^(?:Alpamayo|Flora[- ]|Cosmos\\d*[- ]H[- ](?:Dreams|Surgical[- ]Simulator))",
       "^Cosmos[- ]?\\d+[- ](?:Edge[- ]Policy|Nano[- ](?:Sim[- ]Transfer|Transfer[- ]Auto))(?:[- ]|$)"
     ]
   },

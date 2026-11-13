@@ -1,6 +1,18 @@
 {
   "alibaba_qwen": [
     {
+      "model": "Qwen3-Coder-Plus",
+      "released_on": "2025-07-23",
+      "correction": true,
+      "invalid_event_dates": ["2026-08-18"],
+      "release_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+        "highlights": "The Qwen3-based coding model supports agentic programming and tool calling while retaining general language capability."
+      }
+    },
+    {
       "model": "Qwen3.8-Max",
       "released_on": "2026-08-03",
       "release_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen3-8-max"
@@ -15,6 +27,17 @@
     }
   ],
   "anthropic": [
+    {
+      "model": "Claude Opus 4.1",
+      "released_on": "2025-08-05",
+      "correction": true,
+      "release_url": "https://www.anthropic.com/news/claude-opus-4-1",
+      "report": {
+        "kind": "system card",
+        "url": "https://www-cdn.anthropic.com/9fa30625273bafdf5af82c93719d7ca606485a16.pdf",
+        "highlights": "Opus 4.1 improves on Opus 4 in agentic tasks, reasoning and software engineering. Anthropic reports 74.5% on SWE-bench Verified and documents evaluations in a system card addendum."
+      }
+    },
     {
       "model": "Claude Opus 5",
       "released_on": "2026-07-24",
@@ -54,19 +77,57 @@
   ],
   "baidu": [
     {
+      "model": "ERNIE 5.5 Flash Base",
+      "released_on": "2026-11-05",
+      "correction": true,
+      "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+      "forms": [
+        "Open weights"
+      ],
+      "report": {
+        "kind": "official technical page",
+        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+        "published_on": "2026-11-05",
+        "highlights": "Baidu documents the hybrid sparse-attention architecture, latent MoE, training infrastructure and evaluations for the 280B base model. It was pre-trained on 33.5T tokens and activates 14B parameters per token."
+      }
+    },
+    {
+      "model": "Unlimited-OCR-2",
+      "released_on": "2026-10-27",
+      "release_url": "https://github.com/baidu/Unlimited-OCR",
+      "report": {
+        "kind": "technical report",
+        "url": "https://arxiv.org/abs/2610.39308v2",
+        "published_on": "2026-10-29",
+        "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench."
+      }
+    },
+    {
       "model": "ERNIE 5.5 Flash Preview",
       "released_on": "2026-11-11",
-      "release_url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+      "correction": true,
+      "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "forms": [
         "Preview"
-      ]
+      ],
+      "report": {
+        "kind": "official technical page",
+        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
+        "published_on": "2026-11-11",
+        "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation."
+      }
     }
   ],
   "bytedance": [
     {
       "model": "Doubao Seed 2.1 Pro / Lite",
       "released_on": "2026-09-15",
-      "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement"
+      "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
+      "report": {
+        "kind": "official technical page",
+        "url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
+        "highlights": "Lite supports native text, visual and audio understanding with a one-million-token context. Pro focuses on coding, multimodal agents and long-horizon execution."
+      }
     },
     {
       "model": "Seedream 5.5",
@@ -148,6 +209,27 @@
   ],
   "minimax": [
     {
+      "model": "MiniMax H3",
+      "released_on": "2026-07-31",
+      "release_url": "https://www.minimax.io/blog/minimax-h3",
+      "forms": [
+        "General availability"
+      ],
+      "report": {
+        "kind": "model card",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+        "highlights": "H3 generates synchronized video and stereo audio from multimodal input. Its model card covers the contextual representation, base model and 2K regeneration architecture."
+      }
+    },
+    {
+      "model": "MiniMax H3",
+      "released_on": "2026-08-03",
+      "release_url": "https://www.minimax.io/news/minimax-h3-open-source",
+      "forms": [
+        "Open weights"
+      ]
+    },
+    {
       "model": "MiniMax M3.1 Flash",
       "released_on": "2026-10-19",
       "release_url": "https://www.minimax.io/blog/minimax-m31f",
@@ -159,9 +241,12 @@
     {
       "model": "MiniMax H3-Image",
       "released_on": "2026-11-11",
+      "correction": true,
+      "invalid_event_dates": ["2026-11-10"],
       "release_url": "https://www.minimax.io/blog/minimax-h3-image",
       "forms": [
-        "Image"
+        "Image",
+        "Open weights"
       ],
       "report": {
         "kind": "official technical page",

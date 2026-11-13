@@ -1,6 +1,14 @@
 {
   "minimum_total_parameters": 3000000000,
   "verified_models": {
+    "baidu/ernie-5-5-flash-base": {
+      "total_parameters": 280000000000,
+      "source": "https://ernie.baidu.com/release/ernie-5-5-flash-base/"
+    },
+    "baidu/ernie-5-5-flash-preview": {
+      "total_parameters": 280000000000,
+      "source": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"
+    },
     "bytedance/cola2": {
       "total_parameters": 9000000000,
       "source": "https://huggingface.co/ByteDance-Seed/Cola2"

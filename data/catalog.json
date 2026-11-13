@@ -1046,7 +1046,8 @@
         "id": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B",
         "kind": "archive",
         "url": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B"
-      }
+      },
+      "total_parameters": 3000000000
     },
     {
       "id": "2025-09_longcat_flash",
@@ -1327,7 +1328,7 @@
       "released_on": "2025-08-05",
       "report": {
         "file": "2025/anthropic/2025-08_claude-opus-4.1.pdf",
-        "highlights": "This page is displayed while the website verifies you are not a bot Check your network settings: 1",
+        "highlights": "Opus 4.1 improves on Opus 4 in agentic tasks, reasoning and software engineering. Anthropic reports 74.5% on SWE-bench Verified and documents evaluations in a system card addendum.",
         "id": "https://www.anthropic.com/news/claude-opus-4-1",
         "kind": "archive",
         "url": "https://www.anthropic.com/news/claude-opus-4-1"
@@ -1928,7 +1929,8 @@
         "published_on": "2026-10-22",
         "revision": "1",
         "url": "https://arxiv.org/abs/2610.31305v1"
-      }
+      },
+      "total_parameters": 9000000000
     },
     {
       "hub_task": "text-to-image",
@@ -2158,24 +2160,6 @@
       }
     },
     {
-      "forms": [
-        "Preview"
-      ],
-      "id": "internlm--atria-dawn-preview-ascend-w8a8",
-      "key": "internlm/atria-dawn-preview-ascend-w8a8",
-      "model": "Atria-Dawn-Preview-Ascend-w8a8",
-      "org": "InternLM",
-      "release_url": "https://huggingface.co/internlm/Atria-Dawn-Preview-Ascend-w8a8",
-      "released_on": "2026-09-15",
-      "report": {
-        "highlights": "We conducted a comprehensive evaluation of Atria Dawn Preview across search, coding, tool use, productivity, and security benchmarks.",
-        "id": "https://huggingface.co/internlm/Atria-Dawn-Preview-Ascend-w8a8/README.md",
-        "kind": "model card",
-        "revision": "849ab55ca65c3d36d87c1fc2e8ebf679276f8682",
-        "url": "https://huggingface.co/internlm/Atria-Dawn-Preview-Ascend-w8a8/blob/849ab55ca65c3d36d87c1fc2e8ebf679276f8682/README.md"
-      }
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "internlm--intern-s2-mobius",
       "key": "internlm/intern-s2-mobius",
@@ -2189,22 +2173,6 @@
         "kind": "model card",
         "revision": "1b23c974ac860b182c61732299ae4fc432a8cf54",
         "url": "https://huggingface.co/internlm/Intern-S2-Mobius/blob/1b23c974ac860b182c61732299ae4fc432a8cf54/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "meituan--longcat-2-5-w4a4",
-      "key": "meituan/longcat-2-5-w4a4",
-      "model": "LongCat-2.5-W4A4",
-      "org": "Meituan",
-      "release_url": "https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4",
-      "released_on": "2026-11-04",
-      "report": {
-        "highlights": "LongCat-2.5 is a native multimodal MoE model for long-horizon agentic tasks, with **1.6 trillion total parameters** and approximately **48 billion activated per token**. Building on LongCat-2.0, it combines visual understanding with agentic coding for complex codebase development, full-project builds, creative design, and 3D tasks. Long-sequence training, large-scale RL, multi-teacher learning, and infrastructure optimizations on domestic AI accelerators underpin these capabilities.",
-        "id": "https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4/README.md",
-        "kind": "model card",
-        "revision": "bafc909a5f7308d0663c23f4b05fd32dc2200de8",
-        "url": "https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4/blob/bafc909a5f7308d0663c23f4b05fd32dc2200de8/README.md"
       }
     },
     {
@@ -2256,22 +2224,6 @@
       }
     },
     {
-      "hub_task": "text-generation",
-      "id": "microsoft--userrepgen-4b",
-      "key": "microsoft/userrepgen-4b",
-      "model": "UserRepGen-4B",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/UserRepGen-4B",
-      "released_on": "2026-10-14",
-      "report": {
-        "highlights": "The model was trained with online supervised fine-tuning through hindsight distillation, using feedback obtained by comparing simulated and original user behavior. At inference time, it generates a representation directly from the source conversation without requiring simulation rollouts or hindsight feedback.",
-        "id": "https://huggingface.co/microsoft/UserRepGen-4B/README.md",
-        "kind": "model card",
-        "revision": "bfc905b249365cab00e94ba308f2cea5b23bbc6e",
-        "url": "https://huggingface.co/microsoft/UserRepGen-4B/blob/bfc905b249365cab00e94ba308f2cea5b23bbc6e/README.md"
-      }
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "microsoft--aescode-32b",
       "key": "microsoft/aescode-32b",
@@ -2319,45 +2271,21 @@
       }
     },
     {
-      "hub_task": "text-generation",
-      "id": "microsoft--userlm-2-0",
-      "key": "microsoft/userlm-2-0",
-      "model": "UserLM-2.0",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/UserLM-2.0",
-      "released_on": "2026-10-01",
-      "report": {
-        "highlights": "The model is intended to support research on realistic user simulation and the development and evaluation of more robust assistant models.",
-        "id": "https://huggingface.co/microsoft/UserLM-2.0/README.md",
-        "kind": "model card",
-        "revision": "dcb646115d9c3be6d335c2289c05b94a6f52ed97",
-        "url": "https://huggingface.co/microsoft/UserLM-2.0/blob/dcb646115d9c3be6d335c2289c05b94a6f52ed97/README.md"
-      }
-    },
-    {
+      "forms": [
+        "Image",
+        "Open weights"
+      ],
       "hub_task": "text-to-image",
       "id": "minimax--minimax-h3-image",
       "key": "minimax/minimax-h3-image",
       "model": "MiniMax-H3-Image",
       "org": "MiniMax",
-      "release_events": [
-        {
-          "forms": [
-            "Image",
-            "Open weights"
-          ],
-          "release_url": "https://www.minimax.io/blog/minimax-h3-image",
-          "released_on": "2026-11-11"
-        }
-      ],
       "release_url": "https://www.minimax.io/blog/minimax-h3-image",
-      "released_on": "2026-11-10",
+      "released_on": "2026-11-11",
       "report": {
         "highlights": "Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization.",
         "id": "https://www.minimax.io/blog/minimax-h3-image",
         "kind": "official technical page",
-        "published_on": "2026-11-10",
-        "revision": "6547e3dd1c44a374266546e782b67799ba456acc16a3c236b3c4c747c790ebb9",
         "url": "https://www.minimax.io/blog/minimax-h3-image"
       }
     },
@@ -2373,8 +2301,6 @@
         "highlights": "Today, we officially roll out MiniMax M3.1 Flash. As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%.",
         "id": "https://www.minimax.io/blog/minimax-m31f",
         "kind": "official technical page",
-        "published_on": "2026-10-19",
-        "revision": "809efd033893a387df395180eec0b8df5512e36703a8faefe39ab7172a1d5ef5",
         "url": "https://www.minimax.io/blog/minimax-m31f"
       }
     },
@@ -2399,38 +2325,6 @@
         "id": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
         "kind": "official technical page",
         "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--kimi-k3-1-pro-nvfp4",
-      "key": "nvidia/kimi-k3-1-pro-nvfp4",
-      "model": "Kimi-K3.1-Pro-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Kimi-K3.1-Pro-NVFP4",
-      "released_on": "2026-11-11",
-      "report": {
-        "highlights": "## Description: The NVIDIA Kimi-K3.1-Pro NVFP4 model is the quantized version of Moonshot AI's Kimi-K3.1-Pro model, which is an auto-regressive language model that uses an optimized transformer architecture. Kimi-K3.1-Pro is a natively multimodal Mixture-of-Experts model post-trained from Kimi K3, with 2.8T total parameters, 104B activated parameters, and a 1,048,576-token context window. For more information, please check [here](https://huggingface.co/moonshotai/Kimi-K3.1-Pro). The NVIDIA Kimi-K3.1-Pro NVFP4 model is quantized with [Model Optimizer](htt",
-        "id": "https://huggingface.co/nvidia/Kimi-K3.1-Pro-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "3af0462972c9cc07e5ba6e0867b44f961ce95e9b",
-        "url": "https://huggingface.co/nvidia/Kimi-K3.1-Pro-NVFP4/blob/3af0462972c9cc07e5ba6e0867b44f961ce95e9b/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
-      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
-      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
-      "released_on": "2026-10-12",
-      "report": {
-        "highlights": "2026-10-27 Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI NVIDIA Abstract. We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, lon",
-        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
-        "kind": "technical report",
-        "revision": "6ce6f95fb154935eed1a2f6149715cde6849b1459d32bab185085eb9bd4ea045",
-        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf"
       }
     },
     {
@@ -2485,24 +2379,6 @@
       "forms": [
         "Preview"
       ],
-      "id": "stepfun--step-5-preview-bf16",
-      "key": "stepfun/step-5-preview-bf16",
-      "model": "Step-5-Preview-BF16",
-      "org": "StepFun",
-      "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16",
-      "released_on": "2026-09-20",
-      "report": {
-        "highlights": "Step 5 Preview is a sparse Mixture-of-Experts (MoE) model with 600B total parameters and 27B active parameters. It supports up to 1 million tokens of context and accepts text, images, and video, enabling sustained reasoning and tool use across complex tasks.",
-        "id": "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16/README.md",
-        "kind": "model card",
-        "revision": "7734b7ffac118d70d8398bfa3eb0fab007eb45b1",
-        "url": "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16/blob/7734b7ffac118d70d8398bfa3eb0fab007eb45b1/README.md"
-      }
-    },
-    {
-      "forms": [
-        "Preview"
-      ],
       "id": "stepfun--step-5-preview",
       "key": "stepfun/step-5-preview",
       "model": "Step-5-Preview",
@@ -2524,24 +2400,6 @@
         "kind": "model card",
         "revision": "364b3b03fed2477aa0953fe855a2c4c8c48ee3cc",
         "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/blob/364b3b03fed2477aa0953fe855a2c4c8c48ee3cc/README.md"
-      }
-    },
-    {
-      "forms": [
-        "Preview"
-      ],
-      "id": "stepfun--step-5-preview-nvfp4",
-      "key": "stepfun/step-5-preview-nvfp4",
-      "model": "Step-5-Preview-NVFP4",
-      "org": "StepFun",
-      "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview-NVFP4",
-      "released_on": "2026-10-14",
-      "report": {
-        "highlights": "Step 5 Preview is a sparse Mixture-of-Experts (MoE) model with 600B total parameters and 27B active parameters. It supports up to 1 million tokens of context and accepts text, images, and video, enabling sustained reasoning and tool use across complex tasks.",
-        "id": "https://huggingface.co/stepfun-ai/Step-5-Preview-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "bc246cc2848e17b37f377eda8fd825c5b3018d1f",
-        "url": "https://huggingface.co/stepfun-ai/Step-5-Preview-NVFP4/blob/bc246cc2848e17b37f377eda8fd825c5b3018d1f/README.md"
       }
     },
     {
@@ -2643,38 +2501,6 @@
     },
     {
       "hub_task": "image-text-to-text",
-      "id": "zhipu--glm-5-3-flash-bf16",
-      "key": "zhipu/glm-5-3-flash-bf16",
-      "model": "GLM-5.3-Flash-BF16",
-      "org": "Zhipu AI",
-      "release_url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
-      "released_on": "2026-08-25",
-      "report": {
-        "highlights": "We introduce GLM-5.3-Flash, the first natively multimodal model in the GLM-5 series. With 320B total parameters and just 18B active parameters, it outperforms GLM-5.2 across benchmarks and real-world workloads at one-tenth the price, while approaching Claude Opus 4.8 on coding and agentic benchmarks.",
-        "id": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/README.md",
-        "kind": "model card",
-        "revision": "f9fed3bbc82291073373d67452e9f25317ef7577",
-        "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/blob/f9fed3bbc82291073373d67452e9f25317ef7577/README.md"
-      }
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "zhipu--glm-5-3-bf16",
-      "key": "zhipu/glm-5-3-bf16",
-      "model": "GLM-5.3-BF16",
-      "org": "Zhipu AI",
-      "release_url": "https://huggingface.co/zai-org/GLM-5.3-BF16",
-      "released_on": "2026-08-25",
-      "report": {
-        "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
-        "id": "https://huggingface.co/zai-org/GLM-5.3-BF16/README.md",
-        "kind": "model card",
-        "revision": "abf42e6c0e53bc29a875511301e7b7fcd220315b",
-        "url": "https://huggingface.co/zai-org/GLM-5.3-BF16/blob/abf42e6c0e53bc29a875511301e7b7fcd220315b/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
       "id": "zhipu--glm-5-3-flash",
       "key": "zhipu/glm-5-3-flash",
       "model": "GLM-5.3-Flash",
@@ -2749,8 +2575,6 @@
         "highlights": "Opus 5 is a meaningful improvement over Opus 4.8 for scientific research. It shows better performance than Opus 4.8 on every one of our life sciences evaluations, which cover topics including structural biology, organic chemistry, and bioinformatics. Its improvements are most notable on organic chemistry tasks, like inferring molecular structures from spectroscopy data (it scores 10.2 percentage points higher than Opus 4.8 on our internal benchmark), and on protein-related tasks like predicting how variations in a protein’s sequence affect how it functio",
         "id": "https://www.anthropic.com/news/claude-opus-5",
         "kind": "official technical page",
-        "published_on": "2026-07-24",
-        "revision": "dd85d0c46f4b45e7dfed36c473ab7b54cd37ee3f12fdae6de237e2b255f7b2d4",
         "url": "https://www.anthropic.com/news/claude-opus-5"
       }
     },
@@ -2778,8 +2602,6 @@
         "highlights": "Safety. Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the ",
         "id": "https://www.anthropic.com/claude-opus-5-5",
         "kind": "official technical page",
-        "published_on": "2026-09-22",
-        "revision": "9acbd9c3300b691d4623efaacccc60b55892a71d7cf9345852a16835e4c50d75",
         "url": "https://www.anthropic.com/claude-opus-5-5"
       }
     },
@@ -2804,9 +2626,16 @@
       "key": "baidu/ernie-5-5-flash-preview",
       "model": "ERNIE 5.5 Flash Preview",
       "org": "Baidu",
-      "release_url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/",
+      "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "released_on": "2026-11-11",
-      "report": null
+      "report": {
+        "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+        "id": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
+        "kind": "official technical page",
+        "published_on": "2026-11-11",
+        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"
+      },
+      "total_parameters": 280000000000
     },
     {
       "id": "bytedance--doubao-seed-2-1-pro-lite",
@@ -2815,7 +2644,12 @@
       "org": "ByteDance",
       "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
       "released_on": "2026-09-15",
-      "report": null
+      "report": {
+        "highlights": "Lite supports native text, visual and audio understanding with a one-million-token context. Pro focuses on coding, multimodal agents and long-horizon execution.",
+        "id": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
+        "kind": "official technical page",
+        "url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement"
+      }
     },
     {
       "forms": [
@@ -2901,8 +2735,6 @@
         "highlights": "Muse Ember is our smallest and most efficient model, designed for complex reasoning execution and the work agents repeat all day.",
         "id": "https://research.meta.ai/blog/muse-ember",
         "kind": "official technical page",
-        "published_on": "2026-11-09",
-        "revision": "c62688aa116f16bb69fa186b8e95c3fb217e7243bea99ea9ecfa6bd397b32c33",
         "url": "https://research.meta.ai/blog/muse-ember"
       }
     },
@@ -2956,8 +2788,6 @@
         "highlights": "GPT-6.1 Sol delivers capabilities comparable to those of our most powerful model, GPT-6 Astra, with an unmatched combination of speed and affordability. This system card addendum provides updates on the baseline safety metrics and evaluation results for GPT-6.1 Sol.1",
         "id": "https://deploymentsafety.openai.com/gpt-6-1-sol",
         "kind": "system card",
-        "published_on": "2026-09-29",
-        "revision": "dde99916f8b0719294c7e896ef44789a73952067b8f9880f9d9b4443c34be11d",
         "url": "https://deploymentsafety.openai.com/gpt-6-1-sol"
       }
     },
@@ -2985,8 +2815,6 @@
         "highlights": "GPT-6 Cyber is a cyber-specialized variant of GPT-6 Astra designed for authorized security work, including tasks such as vulnerability discovery, exploit development, and web pentesting. The model has specialized post-training that aims to improve cybersecurity capabilities and reduce cyber refusals. The goal is to expand the security work the model can perform while keeping it within the user’s authorized scope and preserving refusals outside cybersecurity. In our evaluations, GPT-6 Cyber shows substantially stronger cybersecurity capabilities and impro",
         "id": "https://deploymentsafety.openai.com/gpt-6-cyber",
         "kind": "system card",
-        "published_on": "2026-11-05",
-        "revision": "d7f889a41c011ca13b247daa7dbf5913e2d437a50e725cfa6b892c41a62753d5",
         "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
       }
     },
@@ -3021,30 +2849,16 @@
       "total_parameters": 8000000000
     },
     {
-      "hub_task": "text-generation",
-      "id": "baidu--ernie-5-5-flash-base-bf16",
-      "key": "baidu/ernie-5-5-flash-base-bf16",
-      "model": "ERNIE-5.5-Flash-Base-BF16",
-      "org": "Baidu",
-      "release_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16",
-      "released_on": "2026-10-21",
-      "report": {
-        "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
-        "id": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16/README.md",
-        "kind": "model card",
-        "revision": "dfab899dadcff8f4d08af24b75a26c6d4d2e0b09",
-        "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16/blob/dfab899dadcff8f4d08af24b75a26c6d4d2e0b09/README.md"
-      },
-      "total_parameters": 286245622106
-    },
-    {
+      "forms": [
+        "Open weights"
+      ],
       "hub_task": "text-generation",
       "id": "baidu--ernie-5-5-flash-base",
       "key": "baidu/ernie-5-5-flash-base",
       "model": "ERNIE-5.5-Flash-Base",
       "org": "Baidu",
-      "release_url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
-      "released_on": "2026-10-21",
+      "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+      "released_on": "2026-11-05",
       "report": {
         "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
         "id": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/README.md",
@@ -3052,7 +2866,7 @@
         "revision": "028544b2ffceea189b2d8768ed2b9d09b06f2343",
         "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/028544b2ffceea189b2d8768ed2b9d09b06f2343/README.md"
       },
-      "total_parameters": 286245697882
+      "total_parameters": 280000000000
     },
     {
       "hub_task": "image-text-to-text",
@@ -3060,38 +2874,15 @@
       "key": "baidu/unlimited-ocr-2",
       "model": "Unlimited-OCR-2",
       "org": "Baidu",
-      "release_url": "https://huggingface.co/baidu/Unlimited-OCR-2",
-      "released_on": "2026-10-26",
+      "release_url": "https://github.com/baidu/Unlimited-OCR",
+      "released_on": "2026-10-27",
       "report": {
-        "highlights": "## Release - [2026/11/02] 📄 The paper of **Unlimited OCR 2** is now available on [arXiv](https://arxiv.org/abs/2610.39308). - [2026/10/27] 📊 We release [**MarathonDocBench**](https://huggingface.co/datasets/baidu/MarathonDocBench), a new benchmark for ultra-long document parsing. - [2026/10/27] 🤝 Thanks to the [ModelScope community](https://github.com/modelscope) for their support. Our model is now available at [ModelScope](https://modelscope.cn/models/PaddlePaddle/Unlimited-OCR-2). - [2026/10/27] 🤝 Thanks to the Baidu Cloud team for their support. Our m",
-        "id": "https://huggingface.co/baidu/Unlimited-OCR-2/README.md",
-        "kind": "model card",
-        "revision": "0480966938291445591f69f08a13b041c073a96a",
-        "url": "https://huggingface.co/baidu/Unlimited-OCR-2/blob/0480966938291445591f69f08a13b041c073a96a/README.md"
-      }
-    },
-    {
-      "id": "baidu--ernie-5-5",
-      "key": "baidu/ernie-5-5",
-      "model": "ERNIE 5.5",
-      "org": "Baidu",
-      "release_events": [
-        {
-          "forms": [
-            "Preview"
-          ],
-          "release_url": "https://ernie.baidu.com/zh/",
-          "released_on": "2026-11-11"
-        }
-      ],
-      "release_url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/",
-      "released_on": "2026-11-05",
-      "report": {
-        "highlights": "ERNIE-5.5-Flash-Base 在各类能力维度上均取得了不错的效果，其中推理、代码与综合类 Benchmark 尤为突出。长上下文方面，尽管 43 层中有 37 层在 128 倍压缩后的序列上做注意力，仅 6 层 MLA-DSA 即可保证长上下文效果，ERNIE-5.5-Flash-Base 在 6 项长上下文 Benchmark 上均取得了不错的效果。",
-        "id": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/",
-        "kind": "official technical page",
-        "revision": "77cbd840c7134d35f47cf6e43d9d9db85be583497282a46f7fd78b21140f8722",
-        "url": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/"
+        "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench.",
+        "id": "arxiv:2610.39308",
+        "kind": "technical report",
+        "published_on": "2026-10-29",
+        "revision": "2",
+        "url": "https://arxiv.org/abs/2610.39308v2"
       }
     },
     {
@@ -3419,28 +3210,6 @@
       "total_parameters": 4000000000
     },
     {
-      "hub_task": "text-generation",
-      "id": "microsoft--harc-qwen2-5-7b-instruct",
-      "key": "microsoft/harc-qwen2-5-7b-instruct",
-      "model": "HARC-Qwen2.5-7B-Instruct",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct",
-      "released_on": "2026-07-02",
-      "report": null,
-      "total_parameters": 7000000000
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "microsoft--harc-llama-3-1-8b-instruct",
-      "key": "microsoft/harc-llama-3-1-8b-instruct",
-      "model": "HARC-Llama-3.1-8B-Instruct",
-      "org": "Microsoft",
-      "release_url": "https://huggingface.co/microsoft/HARC-Llama-3.1-8B-Instruct",
-      "released_on": "2026-07-02",
-      "report": null,
-      "total_parameters": 8000000000
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb",
       "key": "nvidia/nvidia-nemotron-3-5-bolt-74b-a9b-24gb",
@@ -3471,22 +3240,6 @@
         "kind": "model card",
         "revision": "72ad4d71dd827135ee581502363e14748008900a",
         "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/72ad4d71dd827135ee581502363e14748008900a/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--deepseek-v4-1-flash-1017-nvfp4",
-      "key": "nvidia/deepseek-v4-1-flash-1017-nvfp4",
-      "model": "DeepSeek-V4.1-Flash-1017-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-1017-NVFP4",
-      "released_on": "2026-10-30",
-      "report": {
-        "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash-1017 NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash-1017 model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash-1017 is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017). The",
-        "id": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-1017-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "3ae9c0d3fbbea5370bd06e679d22044db15883f1",
-        "url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-1017-NVFP4/blob/3ae9c0d3fbbea5370bd06e679d22044db15883f1/README.md"
       }
     },
     {
@@ -3525,40 +3278,6 @@
     },
     {
       "hub_task": "text-generation",
-      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-nvfp4",
-      "key": "nvidia/nvidia-nemotron-labs-dory1-0-4b-nvfp4",
-      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
-      "released_on": "2026-10-16",
-      "report": {
-        "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
-        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "64b4039a3468bef85c6744c1e24d5a80801fe965",
-        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4/blob/64b4039a3468bef85c6744c1e24d5a80801fe965/README.md"
-      },
-      "total_parameters": 4000000000
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-mxfp8",
-      "key": "nvidia/nvidia-nemotron-labs-dory1-0-4b-mxfp8",
-      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8",
-      "released_on": "2026-10-16",
-      "report": {
-        "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
-        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8/README.md",
-        "kind": "model card",
-        "revision": "acb538da38032a1daba9c411d2380d3812eab0a2",
-        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8/blob/acb538da38032a1daba9c411d2380d3812eab0a2/README.md"
-      },
-      "total_parameters": 4000000000
-    },
-    {
-      "hub_task": "text-generation",
       "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-bf16",
       "key": "nvidia/nvidia-nemotron-labs-dory1-0-4b-bf16",
       "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
@@ -3575,22 +3294,6 @@
       "total_parameters": 4000000000
     },
     {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--glm-5-3-flash-nvfp4",
-      "key": "nvidia/glm-5-3-flash-nvfp4",
-      "model": "GLM-5.3-Flash-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/GLM-5.3-Flash-NVFP4",
-      "released_on": "2026-09-02",
-      "report": {
-        "highlights": "## Description: The NVIDIA GLM-5.3-Flash NVFP4 model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-Flash",
-        "id": "https://huggingface.co/nvidia/GLM-5.3-Flash-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "1d00738646cbb0c6d0a9eb403dac5f366f1473a7",
-        "url": "https://huggingface.co/nvidia/GLM-5.3-Flash-NVFP4/blob/1d00738646cbb0c6d0a9eb403dac5f366f1473a7/README.md"
-      }
-    },
-    {
       "hub_task": "any-to-any",
       "id": "nvidia--nld-uni",
       "key": "nvidia/nld-uni",
@@ -3604,22 +3307,6 @@
         "kind": "model card",
         "revision": "5db755a2eb0ab84654e3dcf80c7d0245bfe36a50",
         "url": "https://huggingface.co/nvidia/NLD-Uni/blob/5db755a2eb0ab84654e3dcf80c7d0245bfe36a50/README.md"
-      }
-    },
-    {
-      "hub_task": "image-to-video",
-      "id": "nvidia--cosmos-h-dreams",
-      "key": "nvidia/cosmos-h-dreams",
-      "model": "Cosmos-H-Dreams",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Cosmos-H-Dreams",
-      "released_on": "2026-07-21",
-      "report": {
-        "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos-Predict2.5-2B - nvidia/Cosmos-H-Surgical-Simulator datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
-        "id": "https://huggingface.co/nvidia/Cosmos-H-Dreams/README.md",
-        "kind": "model card",
-        "revision": "cd02fd05d56edf0470140a21420dffabef415309",
-        "url": "https://huggingface.co/nvidia/Cosmos-H-Dreams/blob/cd02fd05d56edf0470140a21420dffabef415309/README.md"
       }
     },
     {
@@ -3825,16 +3512,18 @@
       }
     },
     {
-      "forms": [
-        "General availability"
-      ],
       "id": "alibaba_qwen--qwen3-coder-plus",
       "key": "alibaba_qwen/qwen3-coder-plus",
       "model": "Qwen3-Coder-Plus",
       "org": "Alibaba",
-      "release_url": "https://www.alibabacloud.com/notice/detail?spm=a3c0i.35801494.J_TlTAa0s_LXHOq4tuiO-gv.5.5ce47c5brRScm3&_p_lc=1&id=1425",
-      "released_on": "2026-08-18",
-      "report": null
+      "release_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+      "released_on": "2025-07-23",
+      "report": {
+        "highlights": "The Qwen3-based coding model supports agentic programming and tool calling while retaining general language capability.",
+        "id": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+        "kind": "official technical page",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models"
+      }
     },
     {
       "id": "google--gemini-3-8-flash",
@@ -3949,38 +3638,6 @@
         "url": "https://arxiv.org/abs/2609.13287v1"
       },
       "total_parameters": 16924344064
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "inclusionai--ling-3-0-flash-fin-fp4",
-      "key": "inclusionai/ling-3-0-flash-fin-fp4",
-      "model": "Ling-3.0-flash-Fin-fp4",
-      "org": "InclusionAI (Ant Group)",
-      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4",
-      "released_on": "2026-09-10",
-      "report": {
-        "highlights": "## Introduction Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
-        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4/README.md",
-        "kind": "model card",
-        "revision": "7748601ef3dd9032a36b1ff0e4f3db451b824964",
-        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4/blob/7748601ef3dd9032a36b1ff0e4f3db451b824964/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "inclusionai--ling-3-0-flash-vl-fp4",
-      "key": "inclusionai/ling-3-0-flash-vl-fp4",
-      "model": "Ling-3.0-flash-VL-fp4",
-      "org": "InclusionAI (Ant Group)",
-      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4",
-      "released_on": "2026-09-08",
-      "report": {
-        "highlights": "# Introduction We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with ex",
-        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4/README.md",
-        "kind": "model card",
-        "revision": "8dca6a0d4dde1ddc79cfe79506173bbf375393ac",
-        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4/blob/8dca6a0d4dde1ddc79cfe79506173bbf375393ac/README.md"
-      }
     },
     {
       "hub_task": "text-to-image",
@@ -4219,88 +3876,6 @@
       "total_parameters": 120000000000
     },
     {
-      "hub_task": "image-to-video",
-      "id": "nvidia--cosmos3-h-dreams",
-      "key": "nvidia/cosmos3-h-dreams",
-      "model": "Cosmos3-H-Dreams",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Cosmos3-H-Dreams",
-      "released_on": "2026-10-19",
-      "report": {
-        "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos3-Nano - nvidia/Cosmos3-H-Embodied-Nano datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
-        "id": "https://huggingface.co/nvidia/Cosmos3-H-Dreams/README.md",
-        "kind": "model card",
-        "revision": "fd87afe3fd97e9b352b09d9ada88c944f5621eb9",
-        "url": "https://huggingface.co/nvidia/Cosmos3-H-Dreams/blob/fd87afe3fd97e9b352b09d9ada88c944f5621eb9/README.md"
-      }
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb-lilicorr",
-      "key": "nvidia/nvidia-nemotron-3-5-bolt-74b-a9b-24gb-lilicorr",
-      "model": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
-      "released_on": "2026-10-12",
-      "report": {
-        "highlights": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr is the LiLiCorr speculative-decoding checkpoint for the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB). The compatible target is a hybrid LatentMoE vision-language model for reasoning, chat, and agent workflows. For more information, see the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB) target card.",
-        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr/README.md",
-        "kind": "model card",
-        "revision": "449d24140160b8e51871bfc0f0a7338abf640aa1",
-        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr/blob/449d24140160b8e51871bfc0f0a7338abf640aa1/README.md"
-      },
-      "total_parameters": 74000000000
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4-lilicorr",
-      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4-lilicorr",
-      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
-      "released_on": "2026-10-11",
-      "report": {
-        "highlights": "The NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr model is the LiLiCorr speculative decoding checkpoint for NVIDIA's Nemotron-3.5-Super-VL-120B-A12B model family, which is a hybrid LatentMoE vision-language model designed for reasoning, chat, visual understanding, and agentic workflows. For details about the target model, see the [BF16](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16) and [NVFP4](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4) model cards. The NVIDIA-Nemotron-3.5-Super-VL-120B",
-        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr/README.md",
-        "kind": "model card",
-        "revision": "292bf1efc06ba39567da7351f2ad7a522afa3959",
-        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr/blob/292bf1efc06ba39567da7351f2ad7a522afa3959/README.md"
-      },
-      "total_parameters": 120000000000
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--glm-5-3-flash-fp4-local",
-      "key": "nvidia/glm-5-3-flash-fp4-local",
-      "model": "GLM-5.3-Flash-FP4-Local",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local",
-      "released_on": "2026-10-08",
-      "report": {
-        "highlights": "## Description: The NVIDIA GLM-5.3-Flash-FP4-Local model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-F",
-        "id": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local/README.md",
-        "kind": "model card",
-        "revision": "76348ddb2be2e35e39ecfc00e75dc07703f4f3d5",
-        "url": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local/blob/76348ddb2be2e35e39ecfc00e75dc07703f4f3d5/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--qwen3-8-flash-next-fp4-local",
-      "key": "nvidia/qwen3-8-flash-next-fp4-local",
-      "model": "Qwen3.8-Flash-Next-FP4-Local",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local",
-      "released_on": "2026-10-08",
-      "report": {
-        "highlights": "## Description: The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is the quantized version of Alibaba's Qwen3.8-Flash-Next model, which is an auto-regressive language model that uses an optimized transformer architecture. Qwen3.8-Flash-Next is a causal language model with a vision encoder, hybrid attention (Gated DeltaNet and Qwen Sparse Attention), Mixture-of-Experts, gated residual streams, and n-gram embeddings. For more information, please check [here](https://huggingface.co/Qwen/Qwen3.8-Flash-Next). The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is quant",
-        "id": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local/README.md",
-        "kind": "model card",
-        "revision": "b9ce18a6887e18c089fdea8509a33e63429a3300",
-        "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local/blob/b9ce18a6887e18c089fdea8509a33e63429a3300/README.md"
-      }
-    },
-    {
       "hub_task": "any-to-any",
       "id": "nvidia--pixelumm",
       "key": "nvidia/pixelumm",
@@ -4314,22 +3889,6 @@
         "kind": "model card",
         "revision": "4bb3ce9a112e7e1c7d375b1c5bd64f54d259ecc8",
         "url": "https://huggingface.co/nvidia/PixelUMM/blob/4bb3ce9a112e7e1c7d375b1c5bd64f54d259ecc8/README.md"
-      }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--deepseek-v4-1-flash-nvfp4",
-      "key": "nvidia/deepseek-v4-1-flash-nvfp4",
-      "model": "DeepSeek-V4.1-Flash-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4",
-      "released_on": "2026-09-16",
-      "report": {
-        "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash). The NVIDIA DeepSeek-V4.",
-        "id": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "c48dca0146b56d64c8116dbb6fcace8b7cc835f8",
-        "url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4/blob/c48dca0146b56d64c8116dbb6fcace8b7cc835f8/README.md"
       }
     },
     {
@@ -4383,22 +3942,6 @@
       "total_parameters": 8209997600
     },
     {
-      "hub_task": "text-generation",
-      "id": "inclusionai--ling-3-0-flash-fp4",
-      "key": "inclusionai/ling-3-0-flash-fp4",
-      "model": "Ling-3.0-flash-fp4",
-      "org": "InclusionAI (Ant Group)",
-      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-fp4",
-      "released_on": "2026-08-04",
-      "report": {
-        "highlights": "## Introduction We're introducing Ling-3.0-flash, our next-generation native hybrid reasoning model. Operating with **124B** total and **5.1B** active parameters (~12.4% and ~8.1% of our previous 1T-class flagship Ring-2.6-1T), Ling-3.0-flash matches or outperforms its predecessor across key benchmarks.",
-        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-fp4/README.md",
-        "kind": "model card",
-        "revision": "3bae1cf4011b48475b2cc038fff283af49053ebc",
-        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-fp4/blob/3bae1cf4011b48475b2cc038fff283af49053ebc/README.md"
-      }
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "inclusionai--singguard-nsfa-9b",
       "key": "inclusionai/singguard-nsfa-9b",
@@ -4416,22 +3959,6 @@
       "total_parameters": 9000000000
     },
     {
-      "hub_task": "text-to-image",
-      "id": "nvidia--qwen-image-nvfp4",
-      "key": "nvidia/qwen-image-nvfp4",
-      "model": "Qwen-Image-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Qwen-Image-NVFP4",
-      "released_on": "2026-10-09",
-      "report": {
-        "highlights": "## Model Architecture: **Architecture Type:** Diffusion Transformer (MMDiT) **Network Architecture:** `QwenImageTransformer2DModel` in a `QwenImagePipeline` **This model was developed based on:** [Qwen/Qwen-Image](https://huggingface.co/Qwen/Qwen-Image) **Number of Model Parameters:** 20.43B parameters in the denoising transformer; 28.85B learned parameters in the full pipeline when the text encoder and VAE are included.",
-        "id": "https://huggingface.co/nvidia/Qwen-Image-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "4928c00477453b3570521e70a32e34b54c3a6624",
-        "url": "https://huggingface.co/nvidia/Qwen-Image-NVFP4/blob/4928c00477453b3570521e70a32e34b54c3a6624/README.md"
-      }
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "nvidia--nv-reason-ct",
       "key": "nvidia/nv-reason-ct",
@@ -4447,22 +3974,6 @@
         "url": "https://huggingface.co/nvidia/NV-Reason-CT/blob/386b93e034983f6c1fc841a43833a1b6a0cd9c13/README.md"
       },
       "total_parameters": 5322014624
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "nvidia--glm-5-3-nvfp4",
-      "key": "nvidia/glm-5-3-nvfp4",
-      "model": "GLM-5.3-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/GLM-5.3-NVFP4",
-      "released_on": "2026-09-14",
-      "report": {
-        "highlights": "## Description: The NVIDIA GLM-5.3 NVFP4 model is the quantized version of ZAI's GLM-5.3 model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3 is a Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses the same base model as GLM-5.2, with gains from post-training, and uses sparse attention (with an IndexShare indexer) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3). The NVIDIA GLM-5.3 NVFP4 model is quantized with [",
-        "id": "https://huggingface.co/nvidia/GLM-5.3-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "e3b8f9f2fad29727dfa95e766c5cac18ea1414bf",
-        "url": "https://huggingface.co/nvidia/GLM-5.3-NVFP4/blob/e3b8f9f2fad29727dfa95e766c5cac18ea1414bf/README.md"
-      }
     },
     {
       "hub_task": "text-generation",
@@ -4567,53 +4078,30 @@
       "total_parameters": 30000000000
     },
     {
-      "hub_task": "text-generation",
-      "id": "nvidia--deepseek-v4-pro-0813-nvfp4",
-      "key": "nvidia/deepseek-v4-pro-0813-nvfp4",
-      "model": "DeepSeek-V4-Pro-0813-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/DeepSeek-V4-Pro-0813-NVFP4",
-      "released_on": "2026-08-27",
+      "forms": [
+        "General availability"
+      ],
+      "id": "minimax--minimax-h3",
+      "key": "minimax/minimax-h3",
+      "model": "MiniMax H3",
+      "org": "MiniMax",
+      "release_events": [
+        {
+          "forms": [
+            "Open weights"
+          ],
+          "release_url": "https://www.minimax.io/news/minimax-h3-open-source",
+          "released_on": "2026-08-03"
+        }
+      ],
+      "release_url": "https://www.minimax.io/blog/minimax-h3",
+      "released_on": "2026-07-31",
       "report": {
-        "highlights": "## Description: The NVIDIA DeepSeek-V4-Pro-0813-NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4-Pro-0813 model, an autoregressive Mixture-of-Experts language model that uses an optimized Transformer architecture with hybrid attention (Compressed Sparse Attention and Heavily Compressed Attention) and Manifold-Constrained Hyper-Connections. DeepSeek-V4-Pro-0813 is the official DeepSeek-V4-Pro release with enhanced agentic capabilities, and includes DeepSeek's DSpark speculative decoding module in the same checkpoint. For more information,",
-        "id": "https://huggingface.co/nvidia/DeepSeek-V4-Pro-0813-NVFP4/README.md",
+        "highlights": "H3 generates synchronized video and stereo audio from multimodal input. Its model card covers the contextual representation, base model and 2K regeneration architecture.",
+        "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
         "kind": "model card",
-        "revision": "949138637e8e8fe190335be2396af62187dc8a83",
-        "url": "https://huggingface.co/nvidia/DeepSeek-V4-Pro-0813-NVFP4/blob/949138637e8e8fe190335be2396af62187dc8a83/README.md"
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
       }
-    },
-    {
-      "hub_task": "image-text-to-text",
-      "id": "nvidia--qwen3-8-flash-next-nvfp4",
-      "key": "nvidia/qwen3-8-flash-next-nvfp4",
-      "model": "Qwen3.8-Flash-Next-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4",
-      "released_on": "2026-09-02",
-      "report": {
-        "highlights": "## Description: The NVIDIA Qwen3.8-Flash-Next NVFP4 model is the quantized version of Alibaba's Qwen3.8-Flash-Next model, which is an auto-regressive language model that uses an optimized transformer architecture. Qwen3.8-Flash-Next is a causal language model with a vision encoder, hybrid attention (Gated DeltaNet and Qwen Sparse Attention), Mixture-of-Experts, gated residual streams, and n-gram embeddings. For more information, please check [here](https://huggingface.co/Qwen/Qwen3.8-Flash-Next). The NVIDIA Qwen3.8-Flash-Next NVFP4 model is quantized wit",
-        "id": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "fc694b54fb0174e0913e6adf86691ef85a4ead47",
-        "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4/blob/fc694b54fb0174e0913e6adf86691ef85a4ead47/README.md"
-      }
-    },
-    {
-      "hub_task": "text-generation",
-      "id": "nvidia--qwen3-8-2-4t-a95b-nvfp4",
-      "key": "nvidia/qwen3-8-2-4t-a95b-nvfp4",
-      "model": "Qwen3.8-2.4T-A95B-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/Qwen3.8-2.4T-A95B-NVFP4",
-      "released_on": "2026-08-25",
-      "report": {
-        "highlights": "## Model Architecture: **Architecture Type:** Transformers **Network Architecture:** Mixture-of-Experts (MoE) with Hybrid Attention and fine-grained MoE blocks **Number of Model Parameters:** 2.4T in total and 95B activated ## Input: **Input Type(s):** Text **Input Format(s):** String **Input Parameters:** One-Dimensional (1D) **Other Properties Related to Input:** ** Context length up to 1 million tokens",
-        "id": "https://huggingface.co/nvidia/Qwen3.8-2.4T-A95B-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "74eb734297318ecf7c48016a4ac8ce1b47cc74a9",
-        "url": "https://huggingface.co/nvidia/Qwen3.8-2.4T-A95B-NVFP4/blob/74eb734297318ecf7c48016a4ac8ce1b47cc74a9/README.md"
-      },
-      "total_parameters": 2400000000000
     }
   ],
   "version": 1

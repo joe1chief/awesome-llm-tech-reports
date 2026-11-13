@@ -347,7 +347,9 @@ def test_repeat_poll_dedupes_variants_and_keeps_one_report(monkeypatch):
         initial, logs = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=arxiv)
         repeated, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=arxiv)
         reports = store.execute("SELECT count(*) FROM report_versions").fetchone()[0]
-        assert len(initial) == len(repeated) == reports == 1
+        assert len(initial) == len(repeated) == 2
+        assert reports == 1
+        assert len(report_watch.project(initial, settings)) == 1
         assert initial[0]["key"] == "alibaba_qwen/qwen3"
         assert initial == repeated
         assert logs[0]["report_lookup_errors"] == 0
@@ -451,7 +453,9 @@ def test_official_sources_save_dated_cards_when_a_source_or_article_fails(monkey
         )
         assert logs[0]["error"] == "HTTP 403"
         assert logs[1]["deferred"] == 1
-        assert store.source(logs[1]["source"])["seen"] == {card: "2026-10-26"}
+        assert store.source(logs[1]["source"])["seen"] == {
+            card: "2026-10-26", cyber: {"stamp": "2026-11-05", "retry_on": "2026-11-13"},
+        }
     assert [(row["model"], row["released_on"]) for row in rows] == [("GPT-6.1 Terra", "2026-10-26")]
     assert rows[0]["report"]["url"] == card
     assert report_watch.official_model(
@@ -570,12 +574,159 @@ def test_hub_pdf_uses_pinned_resolve_url(monkeypatch):
         return b"%PDF-1.7\n%%EOF", {}
 
     monkeypatch.setattr(report_resolution, "fetch", fetch_pdf)
-    card = "[Technical Report](https://huggingface.co/Qwen/Qwen3-8B/blob/main/Qwen_Tech_Report.pdf)"
+    card = '<a href="https://qwen.ai">Home</a>\n[Technical Report](Qwen_Tech_Report.pdf)'
     report, errors = resolve_report(release(), card, SETTINGS, ArxivFixture([]))
     assert not errors
     assert requested == [expected]
     assert report["pdf"] == expected
     assert "/blob/" + "a" * 40 in report["url"]
+
+
+def test_own_arxiv_citation_can_have_a_different_title():
+    model = "Unlimited-OCR-2"
+    row = {**release(model), "release_url": "https://huggingface.co/baidu/Unlimited-OCR-2"}
+    original = {**PAPER, "url": "https://arxiv.org/abs/2606.23050", "title": "Unlimited OCR Works"}
+    paper = {**PAPER, "url": "https://arxiv.org/abs/2610.39308v2", "title": "Unlimited OCR Works 2"}
+    body = (
+        "The paper of **Unlimited OCR 2** is now available on [arXiv](https://arxiv.org/abs/2610.39308).\n"
+        "Unlimited OCR 2 builds on the paper of [Unlimited OCR](https://arxiv.org/abs/2606.23050)."
+    )
+    arxiv = ArxivFixture([original, paper])
+    report, _ = resolve_report(row, body, SETTINGS, arxiv)
+    assert report["id"] == "arxiv:2610.39308"
+    arxiv.entries = [original]
+    report, _ = resolve_report(row, body, SETTINGS, arxiv)
+    assert report is None
+
+
+def test_atom_keeps_alternate_link_and_malformed_xml_is_recoverable():
+    atom = (
+        '<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>Qwen3 Technical Report</title>'
+        '<link href="https://arxiv.org/abs/2505.09388v2" rel="alternate"/>'
+        '<link href="https://arxiv.org/pdf/2505.09388" rel="related"/>'
+        '</entry></feed>'
+    )
+    entry, = report_sources.xml_entries(atom)
+    assert entry["url"] == PAPER["url"]
+    with pytest.raises(ValueError, match="malformed XML"):
+        list(report_sources.xml_entries("<feed>"))
+
+
+def test_vendor_lifecycle_notices_are_not_new_releases(monkeypatch):
+    source = "https://qwen.ai/notice?id=1425"
+    monkeypatch.setattr(report_watch, "official_entries", lambda *_: [
+        {"url": source + "&spm=foo#top", "title": "Qwen3-8B announcement", "date": "2026-11-10"},
+        {"url": source + "&utm_source=index", "title": "Qwen3-8B announcement", "date": "2026-11-10"},
+    ])
+    fetched = []
+
+    def article(url, *_):
+        fetched.append(url)
+        return "<h1>Qwen3-8B service discontinuation announcement</h1>"
+
+    monkeypatch.setattr(report_watch, "body_text", article)
+    rows, _, _, _ = report_watch.scan_official(
+        "alibaba_qwen", SETTINGS, {}, {}, {}, *DATES, 12, ArxivFixture([]),
+    )
+    assert rows == [] and fetched == [source]
+
+
+def test_http_success_with_an_access_challenge_does_not_yield_a_document():
+    source = "https://qwen.ai/qwen3"
+    row = {**release(), "release_url": source}
+    body = '<title>Just a moment</title><h1>Qwen3</h1><meta name="description" content="Training benchmarks">'
+    report, errors = resolve_report(row, None, SETTINGS, ArxivFixture([]), official_body=body)
+    assert report is None and errors == ["Source returned an access challenge"]
+
+
+def test_vendor_listing_and_combined_html_heading_do_not_create_phantom_events(monkeypatch):
+    settings = json.loads(report_watch.SOURCES.read_text())["baidu"]
+    heading = "ERNIE 5.5 FlashPreview"
+    assert report_watch.official_model(heading, settings).replace("FlashPreview", "Flash Preview") == (
+        "ERNIE 5.5 Flash Preview"
+    )
+    monkeypatch.setattr(report_watch, "body_text", lambda *_:
+        f'<h1>{heading}</h1><time datetime="2026-11-11">November 11, 2026</time>'
+        '<a href="/release/ernie-5-5-flash-preview/">ERNIE 5.5 Flash Preview</a>')
+    entries = report_watch.official_entries(settings["official"], set(settings["hosts"]))
+    assert [entry["url"] for entry in entries] == ["https://ernie.baidu.com/release/ernie-5-5-flash-preview/"]
+    article = {**entries[0], "date": DATES[1], "body": f"<h1>{heading}</h1><title>ERNIE 5.5 Flash Preview</title>"}
+    monkeypatch.setattr(report_watch, "official_entries", lambda *_: [article])
+    rows, *_ = report_watch.scan_official("baidu", settings, {}, {}, {}, *DATES, 12, ArxivFixture([]))
+    assert [row["model"] for row in rows] == ["ERNIE 5.5 Flash Preview"]
+
+
+def test_hub_card_failure_does_not_block_the_next_repo(monkeypatch):
+    blocked, good = hub_row("Qwen3-8B"), hub_row("Qwen4-8B")
+    good.update(createdAt="2026-08-05", pipeline_tag="text-generation")
+    calls = []
+
+    def card(url, *_):
+        calls.append(url)
+        if url.endswith("Qwen3-8B"):
+            raise HTTPError(url, 403, "Forbidden", None, None)
+        return "# Qwen4"
+
+    monkeypatch.setattr(report_watch, "model_pages", lambda *_: [blocked, good])
+    monkeypatch.setattr(report_watch, "hf_card", card)
+    settings = {**SETTINGS, "release_since": DATES[0]}
+    rows, seen, errors, deferred = report_watch.scan_hub(
+        "alibaba_qwen", settings, {}, {}, {}, "2026-11-10", DATES[1], 2, ArxivFixture([]),
+    )
+    assert [(row["model"], row["released_on"]) for row in rows] == [("Qwen4", "2026-08-05")]
+    assert errors == ["HTTP 403"] and deferred == 1
+    assert seen[blocked["id"]]["retry_on"] == "2026-11-13"
+    rows, _, errors, deferred = report_watch.scan_hub(
+        "alibaba_qwen", settings, {}, {}, {"seen": seen}, *DATES, 2, ArxivFixture([]),
+    )
+    assert len(calls) == 2 and not rows and not errors and deferred == 1
+
+
+def test_scope_uses_primary_role_without_rejecting_models_that_discuss_drafters():
+    rows = [
+        {**release("Target-8B"), "key": "alibaba_qwen/target-8b", "report": {
+            "kind": "model card", "highlights": "Target-8B is a reasoning model with speculative decoding support."
+        }},
+        {**release("Companion-8B"), "key": "alibaba_qwen/companion-8b", "report": {
+            "kind": "model card", "highlights": "Companion-8B is the Echo speculative decoding checkpoint for Target-8B."
+        }},
+    ]
+    assert report_watch.publishable_releases(rows, {}) == rows[:1]
+
+
+def test_weight_packages_share_one_release_and_keep_better_report():
+    canonical = {**release("Example-27B"), "key": "example/example-27b",
+                 "release_url": "https://huggingface.co/example/Example-27B"}
+    quantized = {**canonical, "key": "other/example-27b-nvfp4", "model": "Example-27B-NVFP4",
+                 "base_model": "example/example-27b"}
+    report = {"kind": "technical report", "id": PAPER["url"], "url": PAPER["url"]}
+    quantized["report"] = report
+    bf16 = {**canonical, "key": "example/example-27b-bf16", "model": "Example-27B-BF16"}
+    rows = report_watch.publishable_releases([bf16, quantized, canonical], {})
+    assert rows == [{**canonical, "report": report}]
+    assert report_watch.publishable_releases([quantized], {}) == [quantized]
+    local = {**quantized, "model": "Example-27B-FP4-Local", "base_model": None}
+    assert report_watch.publishable_releases([local, canonical], {}) == [{**canonical, "report": report}]
+
+
+def test_float_parameter_count_takes_precedence_over_nominal_name():
+    tensors = {"total": 2_800_000_000, "parameters": {"BF16": 2_800_000_000}}
+    assert total_parameters("Example-3B", {}, safetensors=tensors) == 2_800_000_000
+    assert total_parameters("Example-3B-NVFP4", {}, safetensors=tensors) == 3_000_000_000
+    assert total_parameters("Example-3B", {}, safetensors={"total": 2_800_000_000}) == 3_000_000_000
+
+
+def test_monthly_overview_caps_display_without_dropping_events():
+    rows = [{**release(f"Example {day}"), "released_on": f"2026-11-{day:02d}"} for day in range(1, 12)]
+    outputs, section = build_visuals(rows, {}, "https://example.com")
+    svg = outputs[Path("assets/diagrams/release-timeline-2026.svg")]
+    full = outputs[Path("docs/timeline.html")]
+    assert section.count("model release overview") == 1
+    assert "+1 on the full timeline" in svg
+    assert full.count('class="month"') == 12 and full.count("<article ") == 11
+    assert outputs[Path("docs/assets/diagrams/technical-word-cloud.svg")] == outputs[
+        Path("assets/diagrams/technical-word-cloud-2026.svg")
+    ]
 
 
 def test_official_system_card_can_redirect_to_pdf(monkeypatch):
@@ -614,7 +765,6 @@ def test_cli_refresh_rebuilds_all_outputs_and_replays_idempotently(monkeypatch, 
     sources.write_text(json.dumps({vendor: {**SETTINGS, "official": ""}}))
     monkeypatch.setattr(report_watch, "SOURCES", sources)
     monkeypatch.setattr(report_watch, "read_catalog", lambda: read_catalog(tmp_path))
-    monkeypatch.setattr(report_watch, "save_catalog", lambda rows: save_catalog(rows, tmp_path))
     monkeypatch.setattr(report_watch, "build", lambda **kwargs: build(tmp_path, **kwargs))
     monkeypatch.setattr(report_watch, "Arxiv", lambda: ArxivFixture([PAPER]))
     monkeypatch.setattr(report_watch, "model_pages", lambda *_: [hub_row("Qwen3-8B")])
