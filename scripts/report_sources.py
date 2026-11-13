@@ -164,6 +164,8 @@ class Page(HTMLParser):
         self.heading_label = ""
         self.heading_context = None
         self.visible_date = ""
+        self.date_context = []
+        self.time_date = ""
         self.feed(text)
         if not self.date:
             found = re.search(r'"datePublished"\s*:\s*"([^"]+)"', text)
@@ -172,6 +174,11 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
         prop = attrs.get("property") or attrs.get("name") or attrs.get("itemprop")
+        excluded_date = bool(re.search(
+            r"updated|modified|更新|修改", " ".join((prop or "", attrs.get("class", ""))), re.I
+        ))
+        if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
+            self.date_context.append([tag, excluded_date])
         if tag == "meta" and prop in {"article:published_time", "datePublished", "pubdate", "date"}:
             self.date = self.date or date_value(attrs.get("content"))
         if tag == "meta" and prop in {"description", "og:description"}:
@@ -188,14 +195,19 @@ class Page(HTMLParser):
         if tag == "time" and prop == "datePublished":
             self.date = self.date or date_value(attrs.get("datetime"))
         if tag == "time" and self.heading_context is not None:
-            if not re.search(r"updated|modified", attrs.get("class", ""), re.I):
-                self.visible_date = self.visible_date or date_value(attrs.get("datetime"))
+            self.time_date = date_value(attrs.get("datetime"))
         if tag == "p":
             self.paragraph = []
 
     def handle_data(self, data):
         if self.ignored:
             return
+        if re.search(r"\b(?:updated|modified)\b|更新|修改", data, re.I) and self.date_context:
+            self.date_context[-1][1] = True
+        excluded_date = any(excluded for _, excluded in self.date_context)
+        in_time = any(tag == "time" for tag, _ in self.date_context)
+        if in_time and not excluded_date:
+            self.time_date = self.time_date or date_in(data)
         if self.current:
             self.current[1] += " " + data
         if self.in_title:
@@ -204,7 +216,7 @@ class Page(HTMLParser):
             self.heading += data
         if self.heading_context is not None and not self.visible_date:
             self.heading_context += len(data.strip())
-            if self.heading_context <= 350 and len(data.strip()) <= 100:
+            if not excluded_date and not in_time and self.heading_context <= 350 and len(data.strip()) <= 100:
                 self.visible_date = date_in(data)
             if self.heading_context > 350:
                 self.heading_context = None
@@ -214,6 +226,14 @@ class Page(HTMLParser):
             self.paragraph.append(data)
 
     def handle_endtag(self, tag):
+        if tag == "time":
+            if self.heading_context is not None and not any(excluded for _, excluded in self.date_context):
+                self.visible_date = self.visible_date or self.time_date
+            self.time_date = ""
+        for index in range(len(self.date_context) - 1, -1, -1):
+            if self.date_context[index][0] == tag:
+                del self.date_context[index:]
+                break
         if tag == "a" and self.current:
             self.links.append(tuple(self.current))
             self.current = None

@@ -6,7 +6,7 @@
       "https://qwenlm.github.io/blog/",
       "https://www.alibabacloud.com/help/en/model-studio/model-release-notes"
     ],
-    "model_pattern": "Qwen[ -]?\\d+(?:[.-]\\d+)?(?:[- ](?:Max|Plus|Flash|Turbo|Next|Preview|Thinking|Instruct|Coder|Omni|VL|Audio|Base|Embedding|Reranker|Math|[0-9]+[BM])){0,5}",
+    "model_pattern": "Qwen[ -]?\\d+(?:\\.\\d+|[-]\\d+(?![\\dA-Za-z]))?(?:[- ](?:Max|Plus|Flash|Turbo|Next|Preview|Thinking|Instruct|Coder|Omni|VL|Audio|Base|Embedding|Reranker|Math|Image|Stage\\d+|A?\\d+(?:\\.\\d+)?[BMT]|\\d{4})){0,8}(?![\\w-]|\\.\\w)",
     "hosts": [
       "github.com",
       "qianwen-res.oss-cn-beijing.aliyuncs.com",

@@ -99,7 +99,10 @@ def model_in_scope(name, settings, task=""):
 
 def release_in_scope(row, settings):
     count = total_parameters(row["model"], settings, stored=row.get("total_parameters"))
-    return model_in_scope(row["model"], settings, row.get("hub_task", "")) and not below_parameter_floor(
+    return (
+        model_in_scope(row["model"], settings, row.get("hub_task", ""))
+        and not set(row.get("hub_tags", [])) & AUXILIARY_HUB_TAGS
+    ) and not below_parameter_floor(
         count, settings
     )
 
@@ -237,6 +240,15 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         name = model_id.split("/", 1)[1]
         task = model.get("pipeline_tag") or ""
         tags = set(model.get("tags") or [])
+        url = f"{HUB}/{model_id}"
+        # Tags can change without a card revision. Reconcile only the exact
+        # source, never a sibling normalized to the same family release key.
+        if model["modified"] <= until:
+            for key, prior in {**existing, **changed}.items():
+                if key.startswith(vendor + "/") and url in (prior.get("hub_url"), prior["release_url"]):
+                    updated = {**prior, "hub_task": task, "hub_tags": sorted(tags & AUXILIARY_HUB_TAGS)}
+                    if updated != prior:
+                        changed[key] = updated
         if not model_in_scope(name, settings, task) or tags & AUXILIARY_HUB_TAGS:
             continue
         if task not in GENERATIVE_HUB_TASKS and not official_model(name, settings):
@@ -250,7 +262,10 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         parameters = total_parameters(name, settings, safetensors=model.get("safetensors"))
         small = below_parameter_floor(parameters, settings)
         rejected_revision = f"{revision}:below-{settings.get('minimum_total_parameters', 0)}"
-        if seen.get(model_id) in (revision, rejected_revision) and not small:
+        cached = seen.get(model_id)
+        # A rejection is not a successful observation. Reconsider it when
+        # reliable parameter evidence is now available (notably verified totals).
+        if (cached == revision or (cached == rejected_revision and parameters is None)) and not small:
             continue
         url = f"{HUB}/{model_id}"
         forms = ["Gated"] if model.get("gated") else []
@@ -263,8 +278,8 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         if small:
             save_small_variant(changed, prior_rows.get(row["key"]), name, url, parameters)
             continue
-        if task in GENERATIVE_HUB_TASKS:
-            row["hub_task"] = task
+        row["hub_task"] = task
+        row["hub_tags"] = sorted(tags & AUXILIARY_HUB_TAGS)
         known = row["key"] in existing or row["key"] in changed
         if published < since and not known:
             seen[model_id] = revision
@@ -298,7 +313,7 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
 def save_small_variant(changed, prior, name, url, parameters):
     if (
         prior and slug(prior["model"]) == slug(name)
-        and url in (prior.get("hub_url"), prior["release_url"])
+        and url in (prior.get("hub_url"), prior.get("official_url"), prior["release_url"])
         and prior.get("total_parameters") != parameters
     ):
         changed[prior["key"]] = {**prior, "total_parameters": parameters}
@@ -395,10 +410,17 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
             description = "\n".join([page.summary, *page.paragraphs])
             parameters = total_parameters(name, settings, description=description)
             forms = [form for form, pattern in OFFICIAL_FORMS if pattern.search(subject)]
+            prior_rows = {**existing, **changed}
             row = record(
-                vendor, name, published, link, settings, aliases, {**existing, **changed}, forms=forms
+                vendor, name, published, link, settings, aliases, prior_rows, forms=forms
             )
+            if below_parameter_floor(parameters, settings):
+                save_small_variant(changed, prior_rows.get(row["key"]), name, link, parameters)
+                seen[link] = stamp
+                continue
             if parameters is not None:
+                if slug(name) != slug(row["model"]):
+                    parameters = max(row.get("total_parameters") or 0, parameters)
                 row["total_parameters"] = parameters
             if not release_in_scope(row, settings):
                 if row["key"] in existing or row["key"] in changed:
