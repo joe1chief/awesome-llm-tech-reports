@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Awesome LLM Technical Reports",
-    "description": "Curated archive of frontier LLM, multimodal and reasoning technical reports",
+    "description": "Model releases, technical reports, system cards, and model cards for large language and multimodal models.",
     "repo_url": "https://github.com/joe1chief/awesome-llm-tech-reports",
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },

@@ -93,7 +93,7 @@ def month_rows(rows, month):
 def form_label(row):
     badges = list(row.get("forms", []))
     if not row.get("report"):
-        badges.append("Report pending")
+        badges.append("Documentation pending")
     return " · ".join(badges)
 
 
@@ -163,7 +163,7 @@ def timeline_svg(year, rows):
 
     notes_y = max(max_bottom + 29, 573)
     height = notes_y + 89
-    parts = svg_start(width, height, f"{year} model releases", "Annual overview with up to ten releases per month.")
+    parts = svg_start(width, height, f"{year} model releases", f"Up to {PREVIEW_LIMIT} releases per month.")
     parts.extend([
         svg_text(left, 42, f"AI MODEL RELEASE TIMELINE  /  {year}", 12, MUTED, weight=600),
         svg_text(left, 99, f"{year}  Model releases", 53, serif=True),
@@ -182,10 +182,10 @@ def timeline_svg(year, rows):
         svg_line(left, notes_y, right, notes_y),
         svg_text(left, notes_y + 21, f"{year} RELEASE NOTES", 10, MUTED, weight=600),
         svg_text(left, notes_y + 42, f"Busiest month: {MONTHS[busiest]} ({len(groups[busiest])} releases)", 13, weight=600),
-        svg_text(570, notes_y + 42, f"{pending} release events awaiting documentation", 13, weight=600),
+        svg_text(570, notes_y + 42, f"{pending} releases awaiting documentation", 13, weight=600),
         svg_text(1060, notes_y + 42, "Preview · Open weights · General availability", 12, MUTED),
         svg_text(left, notes_y + 67,
-                 "Each month shows up to 10 events. Counts cover the complete catalog. Month-only dates are shown as MM.",
+                 f"Up to {PREVIEW_LIMIT} events shown per month. Counts include all events for {year}. Month-only dates appear as MM.",
                  11, MUTED),
     ])
     return "\n".join([*parts, "</svg>", ""])
@@ -254,7 +254,7 @@ def wordcloud_svg(year, counts, coverage):
         displayed.append(term)
         parts.append(svg_text(x + 6, y + size, term, size, PALETTE[index % len(PALETTE)], weight=700))
     if not displayed:
-        parts.append(svg_text(30, 160, "Terms appear when verified reports are added.", 15, MUTED))
+        parts.append(svg_text(30, 160, "No terms available for this year yet.", 15, MUTED))
     parts.append(svg_line(29, height - 41, 1091, height - 41))
     parts.append(
         svg_text(30, height - 17, (
@@ -271,7 +271,8 @@ def timeline_html(by_year):
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Model release timeline</title>
+<title>Model Release Timeline | Awesome LLM Technical Reports</title>
+<meta name="description" content="Browse cataloged model releases by month with links to official announcements and technical documentation.">
 <style>
 :root{color:#201f1b;background:#f8f7f2;font:15px/1.5 Inter,system-ui,sans-serif}
 body{max-width:1680px;margin:0 auto;padding:clamp(18px,4vw,52px)}
@@ -291,7 +292,8 @@ article a{font-weight:650;overflow-wrap:anywhere}
 @media(max-width:650px){.months{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.month{border-top:1px solid #dcd6c8}}
 </style>
 <header><a href="./">Technical reports</a><h1>Model release timeline</h1>
-<p class="note">Dates reflect the precision available in the catalog. The 72-day count uses day-level dates.</p></header>
+<p class="note">Browse releases by month. The timeline includes distinct release stages and releases awaiting documentation.</p>
+<p class="note">The 72-day count uses day-level dates and appears when the latest release in the year has a known day.</p></header>
 <main>"""
     ]
     for year, rows in by_year.items():
@@ -348,15 +350,19 @@ def build_visuals(rows, glossary, portal, *, featured=(), text_index=None):
         [
             "## Release Timeline",
             "",
+            f"The preview shows up to {PREVIEW_LIMIT} events per month for {year}. The full timeline lists every cataloged release event and links to its source.",
+            "",
             f"[Browse the full timeline and release sources]({portal}/timeline.html)",
             "",
             f"![{year} model release overview]({overview})",
             "",
             "## Technical Word Cloud",
             "",
+            f"Terms from {year} report PDFs, model cards, and official technical pages. The catalog excerpt is used when source text is unavailable. Each term counts once per distinct document.",
+            "",
             f"![{year} technical terms sized by document frequency]({cloud})",
             "",
-            f"[Word frequencies]({terms})",
+            f"[Term counts and source coverage]({terms})",
         ]
     )
     return outputs, sections

@@ -45,6 +45,7 @@ window.App = (function() {
     renderArchiveFilterTabs();
     renderArchiveList();
     renderLeaderboard();
+    renderOrganizations();
     if (window.ArenaCompare) {
       window.ArenaCompare.init(dataset.models);
     }
@@ -85,7 +86,7 @@ window.App = (function() {
     const values = {
       "summary-documents": dataset.models.length,
       "summary-organizations": stats.total_orgs,
-      "summary-coverage": months + " mo.",
+      "summary-coverage": months,
       "summary-milestones": stats.milestones_count
     };
     for (const [id, value] of Object.entries(values)) {
@@ -140,6 +141,20 @@ window.App = (function() {
     const searchInput = document.getElementById("archive-search-input");
     if (searchInput) searchInput.value = labName;
     renderArchiveList();
+  }
+
+  function renderOrganizations() {
+    const container = document.getElementById("catalog-organizations");
+    if (!container) return;
+    const names = Object.keys(dataset.stats.org_breakdown).sort((left, right) => left.localeCompare(right));
+    for (const [index, name] of names.entries()) {
+      if (index) container.append(" · ");
+      const link = document.createElement("a");
+      link.href = "#archive";
+      link.textContent = name;
+      link.addEventListener("click", () => searchLab(name));
+      container.append(link);
+    }
   }
 
   function escapeHtml(value) {
@@ -329,7 +344,7 @@ window.App = (function() {
         <div class="blog-item-info">
           <div class="blog-item-tag-row">
             <span class="blog-item-tag ${m.is_milestone ? 'blog-item-tag--news' : 'blog-item-tag--tech'}">
-              ${m.is_milestone ? '★ Milestone' : escapeHtml(m.tags[0] || 'Technical Report')}
+              ${m.is_milestone ? '★ Milestone' : documentLabel(m)}
             </span>
           </div>
           <h3 class="blog-item-title">${escapeHtml(m.model)}</h3>
@@ -357,11 +372,10 @@ window.App = (function() {
     const countEl = document.getElementById("table-results-count");
     if (!tbody) return;
 
-    if (countEl) countEl.textContent = `${dataset.models.length} Reports`;
+    if (countEl) countEl.textContent = `${dataset.models.length} documented models`;
 
-    tbody.innerHTML = dataset.models.map((m, idx) => `
+    tbody.innerHTML = dataset.models.map(m => `
       <tr onclick="window.App.openDrawer('${m.id}')">
-        <td style="text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--ink-lighter);">${idx + 1}</td>
         <td>
           <div style="display:flex;align-items:center;gap:6px;">
             <span style="font-weight:600;color:var(--ink);">${escapeHtml(m.model)}</span>
@@ -413,7 +427,7 @@ window.App = (function() {
     if (tagsEl) {
       tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${escapeHtml(t)}</span>`).join('');
     }
-    if (highlightsEl) highlightsEl.textContent = model.highlights;
+    if (highlightsEl) highlightsEl.textContent = model.highlights || "No catalog excerpt available. See the source document.";
     if (officialLinkEl) {
       officialLinkEl.href = officialUrl(model.link);
       officialLinkEl.textContent = documentLabel(model) + " →";

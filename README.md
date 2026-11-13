@@ -1,39 +1,20 @@
-# Awesome LLM Technical Reports (2025-01 ~ 2026-11)
+# Awesome LLM Technical Reports
 
-> A curated, structured local archive of frontier LLM / multimodal / medical-vertical model documentation — papers, system cards, model cards, and official blog posts — organized by **year / company**.
+Release dates and technical documentation for large language and multimodal models. The catalog links to technical reports, system cards, model cards, and official technical pages. Archived PDFs are available for selected documents.
 
-<p align="center">
-  <a href="https://joe1chief.github.io/awesome-llm-tech-reports/"><img src="https://img.shields.io/badge/🌐%20Interactive%20Portal-Live%20Demo-6366f1?style=for-the-badge" alt="Interactive Portal"></a>
-</p>
+[Search the catalog](https://joe1chief.github.io/awesome-llm-tech-reports/#archive) · [Full timeline](https://joe1chief.github.io/awesome-llm-tech-reports/timeline.html) · [Technical word cloud](#technical-word-cloud) · [PDF archives](#company-quick-links) · [Model index](#model-index-folded-by-year)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Time%20Range-2025--01%20to%202026--11-4c1" alt="time range">
-  <img src="https://img.shields.io/badge/Models-265-blue" alt="models">
-  <img src="https://img.shields.io/badge/Local%20PDF-111-success" alt="local pdf">
-  <img src="https://img.shields.io/badge/Status-Continuously%20Maintained-orange" alt="status">
-  <img src="https://img.shields.io/github/stars/joe1chief/awesome-llm-tech-reports?style=flat" alt="stars">
-</p>
-
-> 🚀 **Interactive Web Experience**: Visit our [LMSYS-style Interactive Web Portal](https://joe1chief.github.io/awesome-llm-tech-reports/) for instant multi-category filtering, alternating evolution timeline, Head-to-Head model technical diff arena, full-text search, and one-click BibTeX citations!
-
----
-
-## Table of Contents
-
-- [Project Scope](#project-scope)
-- [Release Timeline](#release-timeline)
-- [Technical Word Cloud](#technical-word-cloud)
-- [Company Quick Links](#company-quick-links)
-- [Model Index (Folded by Year)](#model-index-folded-by-year)
-- [Star History](#star-history)
+**Catalog coverage** · 2025-01 to 2026-11 · 265 documented models · 111 archived PDFs
 
 ## Project Scope
 
-- Archives model reports from **2025-01** through **2026-11** across LLM, multimodal and medical domains.
-- Links official technical reports, system cards and model cards. Local PDFs are available for mirrored reports.
-- Provides a searchable Markdown index and a [scheduled refresh workflow](REPORT_AUTOMATION.md).
+GitHub Actions checks configured Hugging Face organizations and vendor release sources every eight hours. The resolver follows report links in Hugging Face model cards, then looks for a matching arXiv paper and official vendor documentation. Releases awaiting a document can appear on the timeline.
+
+The catalog covers language and generative multimodal models, including domain-specific releases. Models with a reliable total parameter count below the configured floor are excluded. See the [scope and refresh guide](REPORT_AUTOMATION.md) for the eligibility rules and publication workflow.
 
 ## Release Timeline
+
+The preview shows up to 10 events per month for 2026. The full timeline lists every cataloged release event and links to its source.
 
 [Browse the full timeline and release sources](https://joe1chief.github.io/awesome-llm-tech-reports/timeline.html)
 
@@ -41,71 +22,46 @@
 
 ## Technical Word Cloud
 
+Terms from 2026 report PDFs, model cards, and official technical pages. The catalog excerpt is used when source text is unavailable. Each term counts once per distinct document.
+
 ![2026 technical terms sized by document frequency](assets/diagrams/technical-word-cloud-2026.svg)
 
-[Word frequencies](docs/data/word-cloud.json)
+[Term counts and source coverage](docs/data/word-cloud.json)
 
 ## Company Quick Links
 
-`2026`: [`Meituan`](#company-meituan) · [`Google`](#company-google) · [`Zhipu AI`](#company-zhipu) · [`Anthropic`](#company-anthropic) · [`OpenAI`](#company-openai) · [`OpenBMB`](#company-openbmb) · [`Tencent`](#company-tencent) · [`MiniMax`](#company-minimax) · [`NVIDIA`](#company-nvidia) · [`Microsoft`](#company-microsoft) · [`InternLM`](#company-internlm) · [`InclusionAI (Ant Group)`](#company-inclusionai) · [`Snowflake`](#company-snowflake) · [`ByteDance`](#company-bytedance) · [`Moonshot AI`](#company-moonshot)
+Archived PDFs by organization and year. The [flat PDF archive](pdf/) contains the same files.
 
-`2025`: [`StepFun`](#company-stepfun) · [`Zhipu AI`](#company-zhipu) · [`MiniMax`](#company-minimax) · [`Meituan`](#company-meituan) · [`Allen AI`](#company-allenai) · [`Alibaba`](#company-alibaba_qwen) · [`Google`](#company-google) · [`NVIDIA`](#company-nvidia) · [`xAI`](#company-xai) · [`OpenAI`](#company-openai) · [`Anthropic`](#company-anthropic) · [`Tencent`](#company-tencent) · [`InternLM`](#company-internlm) · [`Hugging Face`](#company-huggingface) · [`Quark`](#company-quark) · [`Moonshot AI`](#company-moonshot) · [`ByteDance`](#company-bytedance) · [`Meta`](#company-meta) · [`DeepSeek`](#company-deepseek)
-
-### Company Directory Index
-
-<a id="company-alibaba_qwen"></a>
-- **Alibaba / Qwen**: `2025/alibaba_qwen/`
-<a id="company-allenai"></a>
-- **Allen AI**: `2025/allenai/`
-<a id="company-anthropic"></a>
-- **Anthropic**: `2025/anthropic/`, `2026/anthropic/`
-<a id="company-bytedance"></a>
-- **ByteDance**: `2025/bytedance/`, `2026/bytedance/`
-<a id="company-deepseek"></a>
-- **DeepSeek**: `2025/deepseek/`
-<a id="company-google"></a>
-- **Google**: `2025/google/`, `2026/google/`
-<a id="company-huggingface"></a>
-- **Hugging Face**: `2025/huggingface/`
-<a id="company-inclusionai"></a>
-- **InclusionAI (Ant Group)**: `2026/inclusionai/`
-<a id="company-internlm"></a>
-- **InternLM**: `2025/internlm/`, `2026/internlm/`
-<a id="company-meituan"></a>
-- **Meituan**: `2025/meituan/`, `2026/meituan/`
-<a id="company-meta"></a>
-- **Meta**: `2025/meta/`
-<a id="company-microsoft"></a>
-- **Microsoft**: `2026/microsoft/`
-<a id="company-minimax"></a>
-- **MiniMax**: `2025/minimax/`, `2026/minimax/`
-<a id="company-moonshot"></a>
-- **Moonshot AI**: `2025/moonshot/`, `2026/moonshot/`
-<a id="company-nvidia"></a>
-- **NVIDIA**: `2025/nvidia/`, `2026/nvidia/`
-<a id="company-openai"></a>
-- **OpenAI**: `2025/openai/`, `2026/openai/`
-<a id="company-openbmb"></a>
-- **OpenBMB**: `2026/openbmb/`
-<a id="company-quark"></a>
-- **Quark (Alibaba)**: `2025/quark/`
-<a id="company-snowflake"></a>
-- **Snowflake**: `2026/snowflake/`
-<a id="company-stepfun"></a>
-- **StepFun**: `2025/stepfun/`
-<a id="company-tencent"></a>
-- **Tencent**: `2025/tencent/`, `2026/tencent/`
-<a id="company-zhipu"></a>
-- **Zhipu AI**: `2025/zhipu/`, `2026/zhipu/`
-<a id="company-xai"></a>
-- **xAI**: `2025/xai/`
+- <a id="company-alibaba_qwen"></a> **Alibaba** · [2025](2025/alibaba_qwen/)
+- <a id="company-allenai"></a> **Allen AI** · [2025](2025/allenai/)
+- <a id="company-anthropic"></a> **Anthropic** · [2026](2026/anthropic/) · [2025](2025/anthropic/)
+- <a id="company-bytedance"></a> **ByteDance** · [2026](2026/bytedance/) · [2025](2025/bytedance/)
+- <a id="company-deepseek"></a> **DeepSeek** · [2025](2025/deepseek/)
+- <a id="company-google"></a> **Google** · [2026](2026/google/) · [2025](2025/google/)
+- <a id="company-huggingface"></a> **Hugging Face** · [2025](2025/huggingface/)
+- <a id="company-inclusionai"></a> **InclusionAI (Ant Group)** · [2026](2026/inclusionai/)
+- <a id="company-internlm"></a> **InternLM** · [2026](2026/internlm/) · [2025](2025/internlm/)
+- <a id="company-meituan"></a> **Meituan** · [2026](2026/meituan/) · [2025](2025/meituan/)
+- <a id="company-meta"></a> **Meta** · [2025](2025/meta/)
+- <a id="company-microsoft"></a> **Microsoft** · [2026](2026/microsoft/)
+- <a id="company-minimax"></a> **MiniMax** · [2026](2026/minimax/) · [2025](2025/minimax/)
+- <a id="company-moonshot"></a> **Moonshot AI** · [2026](2026/moonshot/) · [2025](2025/moonshot/)
+- <a id="company-nvidia"></a> **NVIDIA** · [2026](2026/nvidia/) · [2025](2025/nvidia/)
+- <a id="company-openai"></a> **OpenAI** · [2026](2026/openai/) · [2025](2025/openai/)
+- <a id="company-openbmb"></a> **OpenBMB** · [2026](2026/openbmb/)
+- <a id="company-quark"></a> **Quark (Alibaba)** · [2025](2025/quark/)
+- <a id="company-snowflake"></a> **Snowflake** · [2026](2026/snowflake/)
+- <a id="company-stepfun"></a> **StepFun** · [2025](2025/stepfun/)
+- <a id="company-tencent"></a> **Tencent** · [2026](2026/tencent/) · [2025](2025/tencent/)
+- <a id="company-xai"></a> **xAI** · [2025](2025/xai/)
+- <a id="company-zhipu"></a> **Zhipu AI** · [2026](2026/zhipu/) · [2025](2025/zhipu/)
 
 ## Model Index (Folded by Year)
 
 <details open>
 <summary><b>2026 (199 models)</b></summary>
 
-| Release Date | Organization | Model | Core Highlights | Official Link | Local File |
+| Release Date | Organization | Model | Highlights | Source | Archived PDF or Document Type |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-12 | Google | Gemini 4 Hydrogen |  | https://deepmind.google/models/model-cards/gemini-4-hydrogen/ | Model card |
 | 2026-11-11 | MiniMax | MiniMax-H3-Image | Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization. | https://www.minimax.io/blog/minimax-h3-image | Official technical page |
@@ -314,7 +270,7 @@
 <details>
 <summary><b>2025 (66 models)</b></summary>
 
-| Release Date | Organization | Model | Core Highlights | Official Link | Local File |
+| Release Date | Organization | Model | Highlights | Source | Archived PDF or Document Type |
 | --- | --- | --- | --- | --- | --- |
 | 2025-12 | StepFun | Step-DeepResearch | To address this, we introduce Step-Deep Research, a cost-effective, end-to-end Deep Research agent model Kimi-Researcher \[3\] supports long-horizon multi-turn search reasoning through end-to-end agentic RL training, employing context management mechanisms and asynchronous rollout systems | https://arxiv.org/pdf/2512.20491 | 2025/stepfun/2025-12\_step-deepresearch.pdf |
 | 2025-12 | Zhipu AI | GLM-4.7 | This reduces the time developers spend on style “fine-tuning.” GLM-4.7 delivers significant upgrades in layout and aesthetics for office creation Multimodal Interaction and Real-Time Application Development In scenarios requiring cameras, real-time input, and interactive controls, GLM-4.7 demonstrates superior system-level comprehension | https://docs.z.ai/guides/llm/glm-4.7 | 2025/zhipu/2025-12\_glm-4.7.pdf |

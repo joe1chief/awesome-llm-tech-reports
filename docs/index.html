@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Awesome LLM Technical Reports — Large Model Technical Documentation Archive</title>
-  <meta name="description" content="A curated, structured archive of frontier LLM, multimodal, reasoning, and vertical model technical reports (2025-2026)."/>
+  <title>Awesome LLM Technical Reports</title>
+  <meta name="description" content="Track large language and multimodal model releases, browse technical reports and model cards, and explore terms extracted from source documents."/>
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/style.css"/>
 
 </head>
-<body>
+<body id="top">
 
   <!-- Navigation Bar (LMSYS exact) -->
   <nav>
@@ -27,17 +27,17 @@
       </a>
 
       <ul class="nav-links-group">
-        <li><a href="#featured">Featured</a></li>
+        <li><a href="#featured">Recent</a></li>
         <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#catalog">Catalog</a></li>
-        <li><a href="#archive">Archive</a></li>
-        <li><a href="#leaderboard">Leaderboard</a></li>
-        <li><a href="#labs">Labs</a></li>
+        <li><a href="#word-cloud">Word cloud</a></li>
+        <li><a href="#catalog">Topics</a></li>
+        <li><a href="#archive">Search</a></li>
+        <li><a href="#leaderboard">Index</a></li>
       </ul>
 
       <div class="nav-icons">
         <button onclick="window.ArenaCompare && window.ArenaCompare.openCompareModal()" style="display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;color:#fff;background:var(--ink);border:none;cursor:pointer;margin-right:8px;">
-          ⚔️ Arena Diff
+          Compare
         </button>
         <a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" rel="noopener noreferrer" class="nav-icon" title="GitHub">
           <svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
@@ -49,26 +49,26 @@
   <main>
     <!-- Hero Section (LMSYS exact wordmark & typography) -->
     <div class="hero">
-      <div class="hero-wordmark">
-        <span class="hero-lmsys">AWESOME</span><span class="hero-org">REPORTS</span>
-      </div>
+      <h1 class="hero-wordmark" aria-label="Awesome LLM Technical Reports">
+        <span class="hero-lmsys">LLM</span><span class="hero-org">REPORTS</span>
+      </h1>
       <p class="hero-desc">
-        A curated archive of frontier LLM, multimodal, reasoning, and vertical model technical reports — papers, system cards, model cards, and technical notes organized by year and lab.
+        Track large language and multimodal model releases and find their technical reports, system cards, and model cards. The catalog checks for updates every eight hours.
       </p>
 
       <!-- LMSYS Exact Stats Row -->
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-value" id="summary-documents">—</span>
-          <span class="hero-stat-label">Documents</span>
+          <span class="hero-stat-label">Documented models</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-value" id="summary-organizations">—</span>
-          <span class="hero-stat-label">AI organizations</span>
+          <span class="hero-stat-label">Organizations</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-value" id="summary-coverage">—</span>
-          <span class="hero-stat-label">Coverage</span>
+          <span class="hero-stat-label">Months covered</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-value" id="summary-milestones">—</span>
@@ -79,8 +79,8 @@
       <!-- Featured Milestone Reports ("Latest Blog" on LMSYS homepage) -->
       <section class="hero-latest-blog" id="featured">
         <div class="hero-section-header">
-          <h2 class="hero-section-title">Latest Model Documents</h2>
-          <a class="see-all-btn" href="#archive">See all reports</a>
+          <h2 class="hero-section-title">Recent Model Documents</h2>
+          <a class="see-all-btn" href="#archive">Search the catalog</a>
         </div>
 
         <div class="hero-blog-cards" id="latest-documents" aria-live="polite"></div>
@@ -92,7 +92,7 @@
     <!-- Projects Section: LMSYS Alternating Timeline -->
     <section class="projects-section" id="timeline">
       <div class="hero-section-header" style="max-width:960px;margin:0 auto 32px">
-        <h2 class="hero-section-title">Milestone Evolution Timeline</h2>
+        <h2 class="hero-section-title">Release Milestones</h2>
         <a class="see-all-btn" href="timeline.html">View full release timeline</a>
       </div>
 
@@ -113,19 +113,18 @@
     <!-- Projects Page Section: Categorized Catalog (LMSYS /projects exact layout) -->
     <section class="projects-page" id="catalog" style="padding-top: 40px;">
       <div class="projects-page-header">
-        <h1 style="font-family:var(--font-inter),sans-serif;font-size:clamp(28px,4vw,36px);font-weight:700;letter-spacing:-.025em;color:var(--ink);margin-bottom:8px">Categorized Catalog</h1>
-        <p style="font-family:var(--font-inter),sans-serif;font-size:16px;color:var(--ink-dim);line-height:1.625">Technical reports categorized by core capability, architectural paradigm, and vertical focus.</p>
+        <h2 style="font-family:var(--font-inter),sans-serif;font-size:clamp(28px,4vw,36px);font-weight:700;letter-spacing:-.025em;color:var(--ink);margin-bottom:8px">Browse by Topic</h2>
       </div>
 
       <!-- Category 1: Reasoning & CoT -->
       <div class="projects-category">
-        <div class="projects-category-title">Reasoning &amp; Chain-of-Thought (CoT)</div>
+        <div class="projects-category-title">Reasoning</div>
         <div class="projects-grid" id="catalog-grid-reasoning"></div>
       </div>
 
       <!-- Category 2: Agentic & Coding -->
       <div class="projects-category">
-        <div class="projects-category-title">Agentic &amp; Software Engineering</div>
+        <div class="projects-category-title">Agents &amp; Coding</div>
         <div class="projects-grid" id="catalog-grid-agent"></div>
       </div>
 
@@ -137,7 +136,7 @@
 
       <!-- Category 4: Medical & Science -->
       <div class="projects-category">
-        <div class="projects-category-title">Medical &amp; Scientific Verticals</div>
+        <div class="projects-category-title">Medicine &amp; Science</div>
         <div class="projects-grid" id="catalog-grid-medical"></div>
       </div>
     </section>
@@ -145,10 +144,10 @@
     <!-- Searchable Archive Section (LMSYS /blog exact layout) -->
     <section class="blog-page" id="archive" style="padding-top: 40px;">
       <div class="blog-header">
-        <h1 class="blog-title" style="color: var(--ink);">Model Document Archive</h1>
+        <h2 class="blog-title" style="color: var(--ink);">Search Model Documents</h2>
         <div style="position:relative">
           <svg style="position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:none;stroke:var(--ink-lighter);stroke-width:2;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input id="archive-search-input" class="blog-search-input" type="text" placeholder="Search any reports..."/>
+          <input id="archive-search-input" class="blog-search-input" type="search" aria-label="Search model documents" placeholder="Search names, labs, or highlights"/>
         </div>
       </div>
 
@@ -166,7 +165,7 @@
     <!-- Leaderboard Table Section (Arena Table) -->
     <section class="blog-page" id="leaderboard" style="padding-top: 20px;">
       <div class="hero-section-header">
-        <h2 class="hero-section-title">Reports Leaderboard Matrix</h2>
+        <h2 class="hero-section-title">Model Index</h2>
         <span id="table-results-count" style="font-size:13px;color:var(--ink-lighter);font-family:var(--font-mono);"></span>
       </div>
 
@@ -174,13 +173,12 @@
         <table class="lmsys-leaderboard-table">
           <thead>
             <tr>
-              <th style="width: 50px; text-align: center;">#</th>
-              <th>Model Name</th>
+              <th>Model</th>
               <th>Organization</th>
               <th>Release Date</th>
-              <th>Core Technical Highlights</th>
-              <th>Modalities &amp; Tags</th>
-              <th style="text-align: right;">Links</th>
+              <th>Highlights</th>
+              <th>Topics</th>
+              <th style="text-align: right;">Sources</th>
             </tr>
           </thead>
           <tbody id="leaderboard-table-body">
@@ -192,32 +190,8 @@
 
     <!-- Labs & Organizations Tracked (LMSYS "Our Sponsors & Partners" exact style) -->
     <section class="home-sponsors" id="labs">
-      <h2 class="hero-section-title">Labs &amp; Organizations Tracked</h2>
-      <p class="hero-sponsors-subtitle">Curating primary technical documentation from the world's leading AI research institutions.</p>
-      <p class="sponsors-text">
-        <a href="#archive" onclick="window.App.searchLab('OpenAI')">OpenAI</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Anthropic')">Anthropic</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Google')">Google DeepMind</a>, 
-        <a href="#archive" onclick="window.App.searchLab('DeepSeek')">DeepSeek</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Alibaba')">Alibaba (Qwen)</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Zhipu AI')">Zhipu AI</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Moonshot AI')">Moonshot AI (Kimi)</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Tencent')">Tencent Hunyuan</a>, 
-        <a href="#archive" onclick="window.App.searchLab('ByteDance')">ByteDance</a>, 
-        <a href="#archive" onclick="window.App.searchLab('MiniMax')">MiniMax</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Meituan')">Meituan (LongCat)</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Meta')">Meta AI</a>, 
-        <a href="#archive" onclick="window.App.searchLab('NVIDIA')">NVIDIA</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Microsoft')">Microsoft</a>, 
-        <a href="#archive" onclick="window.App.searchLab('StepFun')">StepFun</a>, 
-        <a href="#archive" onclick="window.App.searchLab('InternLM')">InternLM</a>, 
-        <a href="#archive" onclick="window.App.searchLab('OpenBMB')">OpenBMB</a>, 
-        <a href="#archive" onclick="window.App.searchLab('InclusionAI (Ant Group)')">InclusionAI (Ant Group)</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Allen AI')">Allen AI</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Hugging Face')">Hugging Face</a>, 
-        <a href="#archive" onclick="window.App.searchLab('Snowflake')">Snowflake</a>, 
-        <a href="#archive" onclick="window.App.searchLab('xAI')">xAI</a>.
-      </p>
+      <h2 class="hero-section-title">Browse by Organization</h2>
+      <p class="sponsors-text" id="catalog-organizations"></p>
       <div style="display:flex;justify-content:center">
         <a class="sponsor-cta-btn" href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
       </div>
@@ -228,14 +202,8 @@
   <div id="arena-compare-modal" class="lmsys-modal-overlay" style="display: none;">
     <div class="lmsys-modal">
       <div class="lmsys-modal-header">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 20px;">⚔️</span>
-          <div>
-            <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin: 0;">Model Arena Technical Diff</h3>
-            <p style="font-size: 13px; color: var(--ink-dim); margin: 2px 0 0 0;">Side-by-side technical report specification comparison</p>
-          </div>
-        </div>
-        <button onclick="window.ArenaCompare.closeCompareModal()" style="background: none; border: none; font-size: 22px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--ink); margin: 0;">Compare Model Documents</h3>
+        <button onclick="window.ArenaCompare.closeCompareModal()" aria-label="Close comparison" style="background: none; border: none; font-size: 22px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
       </div>
 
       <div style="padding: 12px 28px; border-bottom: 1px solid var(--border); background: rgba(8, 12, 38, 0.02); display: flex; align-items: center; gap: 8px; overflow-x: auto;">
@@ -245,11 +213,11 @@
 
       <div style="padding: 18px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-bottom: 1px solid var(--border);">
         <div>
-          <label style="display: block; font-size: 12px; font-weight: 600; color: var(--orange); text-transform: uppercase; margin-bottom: 6px;">Model A</label>
+          <label for="compare-select-a" style="display: block; font-size: 12px; font-weight: 600; color: var(--orange); text-transform: uppercase; margin-bottom: 6px;">Model A</label>
           <select id="compare-select-a" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13.5px;"></select>
         </div>
         <div>
-          <label style="display: block; font-size: 12px; font-weight: 600; color: #2563eb; text-transform: uppercase; margin-bottom: 6px;">Model B</label>
+          <label for="compare-select-b" style="display: block; font-size: 12px; font-weight: 600; color: #2563eb; text-transform: uppercase; margin-bottom: 6px;">Model B</label>
           <select id="compare-select-b" style="width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--ink); font-size: 13.5px;"></select>
         </div>
       </div>
@@ -271,12 +239,12 @@
           </div>
           <h3 id="drawer-title" style="font-size: 22px; font-weight: 700; color: var(--ink); margin: 0;">Model Name</h3>
         </div>
-        <button onclick="window.App.closeDrawer()" style="background: none; border: none; font-size: 22px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
+        <button onclick="window.App.closeDrawer()" aria-label="Close document" style="background: none; border: none; font-size: 22px; color: var(--ink-lighter); cursor: pointer; padding: 4px 8px;">✕</button>
       </div>
 
       <div class="lmsys-modal-body" style="display: flex; flex-direction: column; gap: 20px;">
         <div>
-          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Capabilities &amp; Modalities</h4>
+          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Topics</h4>
           <div id="drawer-tags" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
         </div>
 
@@ -290,13 +258,13 @@
             Official document &rarr;
           </a>
           <a id="drawer-pdf-link" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; padding: 12px 18px; border-radius: 8px; background: #fff; border: 1px solid var(--border); color: var(--ink); font-size: 13.5px; font-weight: 600; text-align: center; text-decoration: none;">
-            View Local PDF 📥
+            Archived PDF
           </a>
         </div>
 
         <div>
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-            <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin: 0;">BibTeX Academic Citation</h4>
+            <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin: 0;">BibTeX</h4>
             <button onclick="window.App.copyCitation()" style="background: none; border: none; color: var(--orange); font-size: 12px; font-weight: 600; cursor: pointer;">Copy BibTeX</button>
           </div>
           <pre id="drawer-bibtex" style="padding: 14px; border-radius: 8px; background: rgba(8, 12, 38, 0.02); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 12px; color: var(--ink); overflow-x: auto; line-height: 1.5; margin: 0;"></pre>
@@ -311,11 +279,12 @@
   <!-- Footer (LMSYS exact) -->
   <footer>
     <div style="font-size:14px;color:var(--ink-lighter);">
-      © 2026 Awesome LLM Technical Reports. Inspired by LMSYS Org.
+      Awesome LLM Technical Reports
     </div>
     <ul class="foot-links">
       <li><a href="https://github.com/joe1chief/awesome-llm-tech-reports" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://www.lmsys.org" target="_blank" rel="noopener noreferrer">LMSYS Org</a></li>
+      <li><a href="https://github.com/joe1chief/awesome-llm-tech-reports/blob/main/REPORT_AUTOMATION.md">How the catalog updates</a></li>
+      <li><a href="https://www.lmsys.org" target="_blank" rel="noopener noreferrer">Design inspiration</a></li>
       <li><a href="#top">Back to top ↑</a></li>
     </ul>
   </footer>
