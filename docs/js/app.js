@@ -55,7 +55,7 @@ window.App = (function() {
       const res = await fetch("data/models.json");
       if (!res.ok) throw new Error("Failed to load models.json");
       const loaded = await res.json();
-      if (!Array.isArray(loaded.models) || !loaded.stats) throw new Error("Invalid catalog");
+      if (!Array.isArray(loaded.models) || !loaded.stats?.date_range) throw new Error("Invalid catalog");
       loaded.models = loaded.models.filter(model => /^[a-z0-9_-]+$/i.test(model.id));
       dataset = loaded;
       return true;
@@ -96,13 +96,15 @@ window.App = (function() {
     if (status) status.hidden = true;
     const container = document.getElementById("latest-documents");
     if (container) {
-      container.innerHTML = dataset.models.slice(0, 3).map(model => `
+      const documentDate = model => model.document_published_on || model.released_on || model.date;
+      const latest = [...dataset.models].sort((left, right) => documentDate(right).localeCompare(documentDate(left)));
+      container.innerHTML = latest.slice(0, 3).map(model => `
         <button class="hero-blog-card report-preview" type="button" data-model-id="${model.id}">
           <span class="hero-blog-card-body">
             <span class="hero-blog-card-tag hero-blog-card-tag--tech">${documentLabel(model)}</span>
             <span class="hero-blog-card-title">${escapeHtml(model.model)}</span>
             <span class="hero-blog-card-excerpt">${escapeHtml(model.highlights)}</span>
-            <span class="hero-blog-card-meta">${escapeHtml(model.org)} · ${escapeHtml(model.released_on || model.date)}</span>
+            <span class="hero-blog-card-meta">${escapeHtml(model.org)} · ${escapeHtml(documentDate(model))}</span>
           </span>
         </button>
       `).join("");
@@ -407,7 +409,7 @@ window.App = (function() {
 
     if (titleEl) titleEl.textContent = model.model + (model.is_milestone ? " ★" : "");
     if (orgEl) orgEl.textContent = model.org;
-    if (dateEl) dateEl.textContent = model.date;
+    if (dateEl) dateEl.textContent = model.released_on || model.date;
     if (tagsEl) {
       tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${escapeHtml(t)}</span>`).join('');
     }
@@ -435,11 +437,12 @@ window.App = (function() {
   function generateBibtex(model) {
     const citeKey = `${model.org.replace(/[^a-zA-Z]/g, '').toLowerCase()}${model.year}${model.model.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
     const type = model.report_kind === "technical report" ? "techreport" : "misc";
+    const published = (model.document_published_on || model.date).split("-");
     return `@${type}{${citeKey},
   title={${model.model} — ${documentLabel(model)}},
   author={${model.org}},
-  year={${model.year}},
-  month={${model.month}},
+  year={${published[0]}},
+  month={${Number(published[1])}},
   url={${model.link}}
 }`;
   }

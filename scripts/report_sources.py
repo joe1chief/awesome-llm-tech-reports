@@ -16,7 +16,7 @@ from report_catalog import https_url
 
 HUB = "https://huggingface.co"
 ARXIV_API = "https://export.arxiv.org/api/query"
-ARXIV = re.compile(r"(?:arxiv\.org/(?:abs|pdf|html)/|arxiv:)(\d{4}\.\d{4,5})(?:v(\d+))?", re.I)
+ARXIV = re.compile(r"(?:arxiv\.org/(?:abs|pdf|html)/|arxiv:\s*)(\d{4}\.\d{4,5})(?:v(\d+))?", re.I)
 COMMON_HOSTS = {"huggingface.co", "arxiv.org", "export.arxiv.org"}
 HUB_FILES = {"cdn-lfs.huggingface.co", "cdn-lfs-us-1.hf.co", "cdn-lfs-eu-1.hf.co", "cas-bridge.xethub.hf.co"}
 MAX_BODY = 2_000_000
@@ -303,10 +303,16 @@ def arxiv_key(url):
 class Arxiv:
     def __init__(self):
         self.last_query = 0.0
+        self.results = {}
 
     def query(self, **parameters):
+        query = urlencode(parameters)
+        if query in self.results:
+            return self.results[query]
         wait = 3 - (time.monotonic() - self.last_query)
         if wait > 0:
             time.sleep(wait)
         self.last_query = time.monotonic()
-        return list(xml_entries(body_text(ARXIV_API + "?" + urlencode(parameters))))
+        results = list(xml_entries(body_text(ARXIV_API + "?" + query)))
+        self.results[query] = results
+        return results

@@ -13,6 +13,9 @@ on:
       - docs/js/**
       - docs/css/**
       - docs/assets/**
+      - docs/data/**
+      - data/catalog.json
+      - .github/workflows/refresh-reports.yml
       - .github/workflows/deploy.yml
   workflow_dispatch:
     inputs:
@@ -103,7 +106,7 @@ jobs:
         id: publish
         run: |
           uv run --no-sync python scripts/report_catalog.py check
-          git add -- README.md data/catalog.json assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
+          git add -- README.md data/catalog.json assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html docs/assets/diagrams/technical-word-cloud.svg ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
           if ! git diff --cached --quiet; then
             git -c user.name='github-actions[bot]' \
                 -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \

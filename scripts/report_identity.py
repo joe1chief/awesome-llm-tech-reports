@@ -79,7 +79,7 @@ def collapse_distributions(rows):
                 bool(QUANTIZED.search(row["model"])), row["released_on"], row["key"],
             ))
         chosen = canonical.copy()
-        for variant in variants:
+        for variant in sorted(variants, key=lambda row: row["key"]):
             report = variant.get("report")
             if report and report["kind"] in {"technical report", "system card"}:
                 if document_priority(report) < document_priority(chosen.get("report")):

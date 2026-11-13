@@ -23,6 +23,7 @@ from report_sources import (
 MAX_PDF = 99 * 1024 * 1024
 SIZE_VARIANT = re.compile(r"[- ]\d+(?:\.\d+)?[BM](?=[- ]|$)", re.I)
 CARD_KIND = re.compile(r"\b(system|model)[-_ ]+card\b", re.I)
+PAPER_CITATION = re.compile(r"\b(?:paper|report)\s+(?:of|for|on)\s+|(?:技术报告|论文)\s*[：:]", re.I)
 STRUCTURAL_EXCERPT = re.compile(r"^(?:---|\||!\[|[0-9]+\.\s|[+-]\s|\x60\x60\x60)")
 
 
@@ -53,15 +54,15 @@ def clean(value, limit=560):
     return " ".join(re.sub(r"<[^>]{0,300}>", " ", value or "").split())[:limit]
 
 
-def report_from_arxiv(entry, model, org, priority, affiliated):
+def report_from_arxiv(entry, model, org, priority, affiliated, *, direct=False):
     identity = arxiv_key(entry["url"])
     title = entry["title"]
-    if not identity or not matches_model(model, title):
+    if not identity or (not direct and not matches_model(model, title)):
         return None
     affiliations = entry.get("affiliations", "").casefold()
     brand = org.casefold().split(" (")[0]
     report_title = REPORT_WORDS.search(title)
-    if not report_title and not words(title)[: len(words(model))] == words(model):
+    if not direct and not report_title and words(title)[: len(words(model))] != words(model):
         return None
     if affiliated and not (report_title and len(brand) > 2 and brand in affiliations):
         return None
@@ -172,8 +173,32 @@ def report_links(links, model, hosts, hub_url=""):
         if host == "huggingface.co" and (not hub_url or not link.startswith(hub_url + "/") or not pdf):
             continue
         if explicit or named:
-            result.append((link, label, explicit))
-    return sorted(result, key=lambda item: not item[2])
+            result.append((link, label, explicit, named))
+    return [(link, label, explicit) for link, label, explicit, _ in sorted(
+        result, key=lambda item: (not item[2], not item[3])
+    )]
+
+
+def cited_papers(model, card, official_body):
+    citations = {}
+    name = " ".join(words(model))
+    for rank, body in enumerate((card, official_body)):
+        for line in re.split(r"\n|</(?:p|li)>", body or "", flags=re.I):
+            matches = ARXIV.findall(line)
+            if not matches:
+                continue
+            text = " ".join(words(clean(line, 800)))
+            direct = len(matches) == 1 and name and (
+                bool(re.search(rf"(?<!\w){re.escape(name)} (?:technical report|system card|paper)\b", text))
+                or any(
+                    " ".join(words(clean(line[match.end():], 120))).startswith(name + " ")
+                    for match in PAPER_CITATION.finditer(line)
+                )
+            )
+            for identifier, _ in matches:
+                evidence = (not direct, rank)
+                citations[identifier] = min(citations.get(identifier, evidence), evidence)
+    return dict(sorted(citations.items(), key=lambda item: item[1])[:12])
 
 
 def linked_report(candidates, release, hosts, errors, *, hub_url="", rank=0, provided=None):
@@ -212,6 +237,8 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
     model, org = release["model"], release["org"]
     hosts = COMMON_HOSTS | set(settings["hosts"])
     hub_url = release.get("hub_url") or (url if urlsplit(url).hostname == "huggingface.co" else "")
+    if not release.get("hub_revision"):
+        hub_url = ""
     official_url = release.get("official_url", url)
     hub_links = document_links(card or "", hub_url + "/") if hub_url else []
     official_links = document_links(official_body or "", official_url)
@@ -222,13 +249,19 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
         best["highlights"] = best["highlights"] or technical_excerpt(card or "")
         return best, errors
 
-    body = "\n".join((card or "", official_body or ""))
-    identifiers = list(dict.fromkeys(match[1] for match in ARXIV.finditer(body)))[:12]
-    if identifiers:
+    citations = cited_papers(model, card, official_body)
+    if citations:
         try:
-            for entry in arxiv.query(id_list=",".join(identifiers), max_results=len(identifiers)):
-                if report := report_from_arxiv(entry, model, org, 0 if card else 1, affiliated=False):
-                    return report, errors
+            entries = {
+                identity[0]: entry
+                for entry in arxiv.query(id_list=",".join(citations), max_results=len(citations))
+                if (identity := arxiv_key(entry["url"]))
+            }
+            for identifier, (implicit, rank) in citations.items():
+                if identifier in entries:
+                    report = report_from_arxiv(entries[identifier], model, org, rank, affiliated=False, direct=not implicit)
+                    if report:
+                        return report, errors
         except (URLError, OSError, ValueError) as error:
             errors.append(type(error).__name__)
 

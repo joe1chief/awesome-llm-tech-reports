@@ -24,6 +24,12 @@
   color: var(--ink-dim);
 }
 
+#word-cloud img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ==========================================================================
    Awesome LLM Technical Reports - LMSYS Exact Style Extensions
    ========================================================================== */

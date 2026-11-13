@@ -325,9 +325,11 @@ def build_visuals(rows, glossary, portal, *, featured=()):
     overview = diagrams / f"release-timeline-{year}.svg"
     cloud = diagrams / f"technical-word-cloud-{year}.svg"
     terms = Path("docs/data/word-cloud.json")
+    cloud_svg = wordcloud_svg(year, counts)
     outputs = {
         overview: timeline_svg(year, latest),
-        cloud: wordcloud_svg(year, counts),
+        cloud: cloud_svg,
+        Path("docs/assets/diagrams/technical-word-cloud.svg"): cloud_svg,
         terms: json.dumps({"year": int(year), "terms": dict(counts)}, indent=2) + "\n",
         Path("docs/timeline.html"): timeline_html(by_year),
     }

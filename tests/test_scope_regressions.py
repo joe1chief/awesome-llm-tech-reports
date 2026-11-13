@@ -94,9 +94,10 @@ def test_publish_removes_rejected_from_all_generated_outputs(monkeypatch, tmp_pa
     monkeypatch.setattr(report_watch, 'SOURCES', sources)
     monkeypatch.setattr(report_watch, 'ALIASES', aliases)
     monkeypatch.setattr(report_watch, 'read_catalog', lambda: report_catalog.read_catalog(tmp_path))
-    monkeypatch.setattr(report_watch, 'save_catalog', lambda rows: report_catalog.save_catalog(rows, tmp_path))
     monkeypatch.setattr(report_watch, 'build', lambda **kw: report_catalog.build(tmp_path, **kw))
     monkeypatch.setattr(report_watch, 'model_pages', lambda *_: [model])
+    monkeypatch.setattr(report_watch, 'Arxiv', lambda: ArxivFixture([]))
+    monkeypatch.setattr(report_watch, 'body_text', lambda *_: '{}')
     monkeypatch.delenv('REPORTS_DATABASE_URL', raising=False)
     monkeypatch.setattr(sys, 'argv', ['report_watch', '--publish', '--sqlite', str(tmp_path / 'state.db'), '--until', DATES[1]])
     assert report_watch.main() == 0

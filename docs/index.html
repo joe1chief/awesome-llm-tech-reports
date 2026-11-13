@@ -16,8 +16,6 @@
   <!-- Extension Stylesheet -->
   <link rel="stylesheet" href="css/style.css"/>
 
-  <!-- Chart.js for analytics -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -104,6 +102,14 @@
       </div>
     </section>
 
+    <section class="projects-section" id="word-cloud">
+      <div class="hero-section-header">
+        <h2 class="hero-section-title">Technical Word Cloud</h2>
+        <a class="see-all-btn" href="data/word-cloud.json">Word frequencies</a>
+      </div>
+      <img src="assets/diagrams/technical-word-cloud.svg" alt="Technical terms sized by the number of model reports mentioning them" width="1120" height="460" loading="lazy"/>
+    </section>
+
     <!-- Projects Page Section: Categorized Catalog (LMSYS /projects exact layout) -->
     <section class="projects-page" id="catalog" style="padding-top: 40px;">
       <div class="projects-page-header">
@@ -161,7 +167,7 @@
     <section class="blog-page" id="leaderboard" style="padding-top: 20px;">
       <div class="hero-section-header">
         <h2 class="hero-section-title">Reports Leaderboard Matrix</h2>
-        <span id="table-results-count" style="font-size:13px;color:var(--ink-lighter);font-family:var(--font-mono);">112 Reports</span>
+        <span id="table-results-count" style="font-size:13px;color:var(--ink-lighter);font-family:var(--font-mono);"></span>
       </div>
 
       <div class="leaderboard-table-wrapper">

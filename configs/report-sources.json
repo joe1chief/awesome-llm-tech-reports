@@ -179,7 +179,7 @@
       "www.microsoft.com"
     ],
     "exclude_models": [
-      "^(?:scFM[- ]DataSelection|BioEmu|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
+      "^(?:scFM[- ]DataSelection|BioEmu|HARC|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
     ]
   },
   "minimax": {

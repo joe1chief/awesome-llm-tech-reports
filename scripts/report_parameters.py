@@ -92,7 +92,7 @@ def total_parameters(name, settings, *, stored=None, safetensors=None, descripti
     if not isinstance(safetensors, dict) or PACKED_WEIGHTS.search(name):
         return max(sizes, default=None)
     dtypes = safetensors.get("parameters") or {}
-    if not isinstance(dtypes, dict) or dtypes.keys() - FLOAT_DTYPES:
+    if not isinstance(dtypes, dict) or not dtypes or dtypes.keys() - FLOAT_DTYPES:
         return max(sizes, default=None)
     count = safetensors.get("total")
     if type(count) is int and count > 0:

@@ -574,12 +574,101 @@ def test_hub_pdf_uses_pinned_resolve_url(monkeypatch):
         return b"%PDF-1.7\n%%EOF", {}
 
     monkeypatch.setattr(report_resolution, "fetch", fetch_pdf)
-    card = "[Technical Report](https://huggingface.co/Qwen/Qwen3-8B/blob/main/Qwen_Tech_Report.pdf)"
+    card = '<a href="https://qwen.ai">Home</a>\n[Technical Report](Qwen_Tech_Report.pdf)'
     report, errors = resolve_report(release(), card, SETTINGS, ArxivFixture([]))
     assert not errors
     assert requested == [expected]
     assert report["pdf"] == expected
     assert "/blob/" + "a" * 40 in report["url"]
+
+
+def test_own_arxiv_citation_can_have_a_different_title():
+    model = "Unlimited-OCR-2"
+    row = {**release(model), "release_url": "https://huggingface.co/baidu/Unlimited-OCR-2"}
+    original = {**PAPER, "url": "https://arxiv.org/abs/2606.23050", "title": "Unlimited OCR Works"}
+    paper = {**PAPER, "url": "https://arxiv.org/abs/2610.39308v2", "title": "Unlimited OCR Works 2"}
+    body = (
+        "The paper of **Unlimited OCR 2** is now available on [arXiv](https://arxiv.org/abs/2610.39308).\n"
+        "Unlimited OCR 2 builds on the paper of [Unlimited OCR](https://arxiv.org/abs/2606.23050)."
+    )
+    arxiv = ArxivFixture([original, paper])
+    report, _ = resolve_report(row, body, SETTINGS, arxiv)
+    assert report["id"] == "arxiv:2610.39308"
+    arxiv.entries = [original]
+    report, _ = resolve_report(row, body, SETTINGS, arxiv)
+    assert report is None
+
+
+def test_atom_keeps_alternate_link_and_malformed_xml_is_recoverable():
+    atom = (
+        '<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>Qwen3 Technical Report</title>'
+        '<link href="https://arxiv.org/abs/2505.09388v2" rel="alternate"/>'
+        '<link href="https://arxiv.org/pdf/2505.09388" rel="related"/>'
+        '</entry></feed>'
+    )
+    entry, = report_sources.xml_entries(atom)
+    assert entry["url"] == PAPER["url"]
+    with pytest.raises(ValueError, match="malformed XML"):
+        list(report_sources.xml_entries("<feed>"))
+
+
+def test_hub_card_failure_does_not_block_the_next_repo(monkeypatch):
+    blocked, good = hub_row("Qwen3-8B"), hub_row("Qwen4-8B")
+    good.update(createdAt="2026-08-05", pipeline_tag="text-generation")
+    calls = []
+
+    def card(url, *_):
+        calls.append(url)
+        if url.endswith("Qwen3-8B"):
+            raise HTTPError(url, 403, "Forbidden", None, None)
+        return "# Qwen4"
+
+    monkeypatch.setattr(report_watch, "model_pages", lambda *_: [blocked, good])
+    monkeypatch.setattr(report_watch, "hf_card", card)
+    settings = {**SETTINGS, "release_since": DATES[0]}
+    rows, seen, errors, deferred = report_watch.scan_hub(
+        "alibaba_qwen", settings, {}, {}, {}, "2026-11-10", DATES[1], 2, ArxivFixture([]),
+    )
+    assert [(row["model"], row["released_on"]) for row in rows] == [("Qwen4", "2026-08-05")]
+    assert errors == ["HTTP 403"] and deferred == 1
+    assert seen[blocked["id"]]["retry_on"] == "2026-11-13"
+    rows, _, errors, deferred = report_watch.scan_hub(
+        "alibaba_qwen", settings, {}, {}, {"seen": seen}, *DATES, 2, ArxivFixture([]),
+    )
+    assert len(calls) == 2 and not rows and not errors and deferred == 1
+
+
+def test_weight_packages_share_one_release_and_keep_better_report():
+    canonical = {**release("Example-27B"), "key": "example/example-27b",
+                 "release_url": "https://huggingface.co/example/Example-27B"}
+    quantized = {**canonical, "key": "other/example-27b-nvfp4", "model": "Example-27B-NVFP4",
+                 "base_model": "example/example-27b"}
+    report = {"kind": "technical report", "id": PAPER["url"], "url": PAPER["url"]}
+    quantized["report"] = report
+    bf16 = {**canonical, "key": "example/example-27b-bf16", "model": "Example-27B-BF16"}
+    rows = report_watch.publishable_releases([bf16, quantized, canonical], {})
+    assert rows == [{**canonical, "report": report}]
+    assert report_watch.publishable_releases([quantized], {}) == [quantized]
+
+
+def test_float_parameter_count_takes_precedence_over_nominal_name():
+    tensors = {"total": 2_800_000_000, "parameters": {"BF16": 2_800_000_000}}
+    assert total_parameters("Example-3B", {}, safetensors=tensors) == 2_800_000_000
+    assert total_parameters("Example-3B-NVFP4", {}, safetensors=tensors) == 3_000_000_000
+    assert total_parameters("Example-3B", {}, safetensors={"total": 2_800_000_000}) == 3_000_000_000
+
+
+def test_monthly_overview_caps_display_without_dropping_events():
+    rows = [{**release(f"Example {day}"), "released_on": f"2026-11-{day:02d}"} for day in range(1, 12)]
+    outputs, section = build_visuals(rows, {}, "https://example.com")
+    svg = outputs[Path("assets/diagrams/release-timeline-2026.svg")]
+    full = outputs[Path("docs/timeline.html")]
+    assert section.count("model release overview") == 1
+    assert "+1 on the full timeline" in svg
+    assert full.count('class="month"') == 12 and full.count("<article ") == 11
+    assert outputs[Path("docs/assets/diagrams/technical-word-cloud.svg")] == outputs[
+        Path("assets/diagrams/technical-word-cloud-2026.svg")
+    ]
 
 
 def test_official_system_card_can_redirect_to_pdf(monkeypatch):

@@ -28,6 +28,7 @@ from report_sources import (
     HUB,
     Arxiv,
     Page,
+    arxiv_key,
     body_text,
     date_in,
     date_value,
@@ -42,6 +43,7 @@ SOURCES = ROOT / "configs/report-sources.json"
 ALIASES = ROOT / ".cursor/skills/quarterly-llm-repo-refresh/runtime/model_aliases.json"
 BASELINE = "2026-07-01"
 OVERLAP_DAYS = 3
+REPORT_RETRY_DAYS = 90
 MODEL_RELEASE = re.compile(
     r"\b(?:introduc\w*|announc\w*|releas\w*|launch\w*|unveil\w*|available|availability|"
     r"preview|system.card|model.card|technical.report)\b|发布|上线|正式版|开放",
@@ -51,6 +53,7 @@ NOISE = re.compile(
     r"\b(?:pricing|deprecat\w*|incident|outage|benchmarking|cookbook|migration|tutorial)\b", re.I
 )
 MODEL_DASHES = str.maketrans({char: "-" for char in "‐‑‒–—−"})
+HUB_REVISION = re.compile(r"[a-fA-F0-9]{40}")
 OFFICIAL_FORMS = (
     ("Preview", re.compile(r"\bpreview\b|预览", re.I)),
     ("Open weights", re.compile(r"\bopen[- ]weights?\b|权重开源|开放权重", re.I)),
@@ -212,9 +215,10 @@ def try_report(row, settings, arxiv, until, *, card=None, official_body=None):
     row["report"] = newer_report(previous, report)
     report = row["report"]
     row.setdefault("first_seen", until)
-    expiry = date.fromisoformat(row["first_seen"]) + timedelta(days=30)
-    if (not report or report_rank(report) >= 2 or errors) and date.fromisoformat(until) <= expiry:
-        row["retry_on"] = (date.fromisoformat(until) + timedelta(days=1)).isoformat()
+    row["report_checked_on"] = until
+    age = (date.fromisoformat(until) - date.fromisoformat(row["first_seen"])).days
+    if (not report or report["kind"] in {"model card", "official technical page"} or errors) and age < REPORT_RETRY_DAYS:
+        row["retry_on"] = (date.fromisoformat(until) + timedelta(days=1 if age < 30 else 7)).isoformat()
     else:
         row.pop("retry_on", None)
     return errors
@@ -244,30 +248,37 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
     seen = cursor.get("seen", {}).copy()
     changed, errors = {}, []
     processed, deferred = 0, 0
+    source_keys = {}
+    for key, row in existing.items():
+        if key.startswith(vendor + "/"):
+            for source in {row.get("hub_url"), row["release_url"]} - {None}:
+                source_keys.setdefault(source, set()).add(key)
     for model in models:
         model_id = model["id"]
         name = model_id.split("/", 1)[1]
         task = model.get("pipeline_tag") or ""
         tags = set(model.get("tags") or [])
+        relation, base_model = hub_relation(tags)
+        auxiliary = tags & AUXILIARY_HUB_TAGS
+        if relation == "adapter":
+            auxiliary.add(relation)
         url = f"{HUB}/{model_id}"
         # Tags can change without a card revision. Reconcile only the exact
         # source, never a sibling normalized to the same family release key.
         if model["modified"] <= until:
-            for key, prior in {**existing, **changed}.items():
-                if key.startswith(vendor + "/") and url in (prior.get("hub_url"), prior["release_url"]):
-                    updated = {**prior, "hub_task": task, "hub_tags": sorted(tags & AUXILIARY_HUB_TAGS)}
+            for key in sorted(source_keys.get(url, ())):
+                prior = changed.get(key, existing[key])
+                if url in (prior.get("hub_url"), prior["release_url"]):
+                    updated = {**prior, "hub_task": task, "hub_tags": sorted(auxiliary)}
                     if updated != prior:
                         changed[key] = updated
-        if not model_in_scope(name, settings, task) or tags & AUXILIARY_HUB_TAGS:
+        if not model_in_scope(name, settings, task) or auxiliary:
             continue
         if task not in GENERATIVE_HUB_TASKS and not official_model(name, settings):
             continue
         revision = model.get("sha") or ""
         published = date_value(model.get("createdAt"))
         if not published or published > until or model["modified"] > until:
-            continue
-        relation, base_model = hub_relation(tags)
-        if relation == "adapter":
             continue
         parameters = total_parameters(name, settings, safetensors=model.get("safetensors"))
         small = below_parameter_floor(parameters, settings)
@@ -277,14 +288,13 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         # reliable parameter evidence is now available (notably verified totals).
         if (cached == revision or (cached == rejected_revision and parameters is None)) and not small:
             continue
-        if not re.fullmatch(r"[a-fA-F0-9]{40}", revision):
+        if not isinstance(revision, str) or not HUB_REVISION.fullmatch(revision):
             errors.append("Missing Hub revision")
             deferred += 1
             continue
         if not small and waiting_for_retry(seen, model_id, revision, until):
             deferred += 1
             continue
-        url = f"{HUB}/{model_id}"
         forms = ["Gated"] if model.get("gated") else []
         if "preview" in name.casefold():
             forms.append("Preview")
@@ -294,12 +304,17 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         )
         if relation == "quantized":
             row["base_model"] = base_model
+        elif row.get("hub_url") == url and name == row["model"]:
+            row.pop("base_model", None)
         if small:
             save_small_variant(changed, prior_rows.get(row["key"]), name, url, parameters)
             continue
         row["hub_task"] = task
-        row["hub_tags"] = sorted(tags & AUXILIARY_HUB_TAGS)
+        row["hub_tags"] = []
         known = row["key"] in existing or row["key"] in changed
+        if published < settings.get("release_since", since) and not known:
+            seen[model_id] = revision
+            continue
         if processed >= limit:
             deferred += 1
             continue
@@ -317,7 +332,7 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
                     row.setdefault("total_parameters", parameters)
                 row.setdefault("first_seen", until)
                 if not row.get("report"):
-                    row.setdefault("retry_on", until)
+                    row.setdefault("retry_on", (date.fromisoformat(until) + timedelta(days=1)).isoformat())
                 changed[row["key"]] = row
                 seen[model_id] = revision
             else:
@@ -458,7 +473,7 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
             )
             if below_parameter_floor(parameters, settings):
                 save_small_variant(changed, prior_rows.get(row["key"]), name, link, parameters)
-                seen[link] = stamp
+                seen[link] = rejected_stamp
                 continue
             if parameters is not None:
                 if slug(name) != slug(row["model"]):
@@ -500,9 +515,11 @@ def verified_releases(vendor, settings, aliases, rows, entries, since, until):
             require_host(document["url"], hosts)
             if document["kind"] not in {"system card", "technical report", "official technical page", "model card"}:
                 raise ValueError("Invalid verified document kind")
-            current = row.get("report")
-            if not current or report_rank(current) > 2:
-                row["report"] = {**document, "id": document["url"], "rank": 2}
+            identity = arxiv_key(document["url"])
+            report = {**document, "id": document["url"], "rank": 2}
+            if identity:
+                report.update(id=f"arxiv:{identity[0]}", revision=str(identity[1]))
+            row["report"] = newer_report(row.get("report"), report)
         if not row.get("report") and not row.get("first_seen"):
             row.update(first_seen=until, retry_on=until)
         changed[row["key"]] = row
@@ -519,8 +536,10 @@ def scan_reports(
         prior = rows.get(saved["key"])
         report = saved.get("report")
         archived = prior.get("report") if prior else None
-        if archived and archived.get("file") and report and archived["id"] == report["id"]:
-            if archived.get("revision") == report.get("revision"):
+        if archived and archived.get("file"):
+            if archived["kind"] == "archive":
+                saved["report"] = archived
+            elif report and archived["id"] == report["id"] and archived.get("revision") == report.get("revision"):
                 saved["report"] = {**report, "file": archived["file"]}
         rows[saved["key"]] = saved
     summaries = []
@@ -528,7 +547,7 @@ def scan_reports(
         config = settings[vendor]
         scans = []
         if config.get("hub") and not backfill_only:
-            scans.append(("hub", scan_hub, config))
+            scans.append(("hub", scan_hub, {**config, "release_since": since}))
         official = [] if backfill_only else config.get("official") or []
         if isinstance(official, str):
             official = [official]
@@ -572,33 +591,45 @@ def scan_reports(
         store.save(hidden)
     if backfill_only:
         return list(rows.values()), summaries
-    due = [
-        row
-        for row in rows.values()
-        if row.get("retry_on") and row["retry_on"] <= until
-        and row["key"].split("/", 1)[0] in vendors
-        and row["key"] in visible
-    ]
+    due = []
+    recent = (date.fromisoformat(until) - timedelta(days=REPORT_RETRY_DAYS)).isoformat()
+    for row in rows.values():
+        if row["key"] not in visible or row["key"].split("/", 1)[0] not in vendors:
+            continue
+        retry = row.get("retry_on")
+        if not retry and not row.get("report_checked_on") and row["released_on"] >= recent and (
+            (row.get("report") or {}).get("kind") in {None, "model card", "official technical page"}
+        ):
+            retry = row["released_on"]
+        if retry and retry <= until:
+            due.append((retry, row))
     deferred_retries = max(0, len(due) - limit)
-    for pending in sorted(due, key=lambda row: (row["retry_on"], bool(row.get("report")), row["key"]))[:limit]:
+    for _, pending in sorted(due, key=lambda item: (item[0], bool(item[1].get("report")), item[1]["key"]))[:limit]:
         row = pending.copy()
         config = settings[row["key"].split("/")[0]]
         card = official_body = None
         try:
-            if row.get("hub_url") and row.get("hub_revision"):
+            if row.get("hub_url") and HUB_REVISION.fullmatch(row.get("hub_revision", "")):
                 card = hf_card(row["hub_url"], row["hub_revision"], True)
             elif (
-                (repo := hub_repository(row["release_url"], casefold=False))
-                and urlsplit(row["release_url"]).path.strip("/") == repo
+                (url := row.get("hub_url") or row["release_url"])
+                and (repo := hub_repository(url, casefold=False))
+                and urlsplit(url).path.strip("/") == repo
             ):
-                card = hf_card(f"{HUB}/{repo}", "main", True)
-                if card:
-                    row.update(hub_url=f"{HUB}/{repo}", hub_revision="main")
-        except (URLError, OSError, ValueError):
+                document = row.get("report") or {}
+                revision = document.get("revision", "") if hub_repository(document.get("url")) == repo.casefold() else ""
+                if not HUB_REVISION.fullmatch(revision):
+                    info = json.loads(body_text(f"{HUB}/api/models/{repo}?expand%5B%5D=sha", {"huggingface.co"}))
+                    revision = info.get("sha") or ""
+                if HUB_REVISION.fullmatch(revision):
+                    card = hf_card(url, revision, True)
+                    row.update(hub_url=url, hub_revision=revision)
+        except (URLError, OSError, ValueError, TypeError):
             summaries.append({"source": row["key"], "error": "Hub card unavailable for report retry"})
         try:
-            if row.get("official_url"):
-                official_body = body_text(row["official_url"], COMMON_HOSTS | set(config["hosts"]))
+            official_url = row.get("official_url") or row["release_url"]
+            if urlsplit(official_url).hostname != "huggingface.co":
+                official_body = body_text(official_url, COMMON_HOSTS | set(config["hosts"]))
         except (URLError, OSError, ValueError):
             summaries.append({"source": row["key"], "error": "Official page unavailable for report retry"})
         declared = declared_total(row["model"], card or "")
@@ -740,11 +771,14 @@ def main():
                     f"- Public models: {len(projection)}\n"
                     f"- Updated: {len(changed)}\n"
                     f"- Removed from the index: {len(removed)}\n"
+                    f"- Releases awaiting documentation: {sum(not row['report'] for row in projection)}\n"
                     f"- Source or retry errors: {errors}\n"
                     f"- Deferred items: {deferred}\n"
                     f"- Document lookup warnings: {lookups}\n"
                 )
-        if not args.backfill_only and (not summaries or all(item.get("error") for item in summaries)):
+        if not args.backfill_only and not any(
+            "records" in item and "report_lookup_errors" in item for item in summaries
+        ):
             return 1
         if args.strict and any(
             item.get("error") or item.get("deferred") or item.get("report_lookup_errors")
