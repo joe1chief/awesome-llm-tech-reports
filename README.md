@@ -41,7 +41,7 @@
 
 ## Technical Word Cloud
 
-![2026 report terms sized by release count](assets/diagrams/technical-word-cloud-2026.svg)
+![2026 technical terms sized by document frequency](assets/diagrams/technical-word-cloud-2026.svg)
 
 [Word frequencies](docs/data/word-cloud.json)
 

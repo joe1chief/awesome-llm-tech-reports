@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from parse_readme import build_dataset, classify_camp, extract_tags, is_milestone, parse_models
+from report_terms import term_index
 from report_visuals import build_visuals
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -260,7 +261,7 @@ def build(root=ROOT, check=False, pdf_manifest=None, *, rows=None):
             (f"{vendor}/{slug(item['model'])}", item["released_on"])
             for vendor, items in backfill.items() for item in items
         }
-    visuals, readme_sections = build_visuals(rows, terms, PORTAL, featured=featured)
+    visuals, readme_sections = build_visuals(rows, terms, PORTAL, featured=featured, text_index=term_index(root, terms))
     outputs = {MODELS: json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", **visuals}
     outputs[README] = update_readme(
         (root / README).read_text(encoding="utf-8"), dataset, readme_sections, rows

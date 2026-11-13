@@ -4,17 +4,20 @@ import hashlib
 import html
 import json
 import math
-import re
 import textwrap
 from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
+
+from report_terms import BODY_SOURCES, word_cloud_data
 
 PAPER = "#f8f7f2"
 INK = "#201f1b"
 MUTED = "#716b60"
 RULE = "#dcd6c8"
 PREVIEW_LIMIT = 10
+CLOUD_LIMIT = 64
+CLOUD_WIDTH, CLOUD_HEIGHT = 1120, 600
 PALETTE = ["#b6472f", "#137f72", "#7545b7", "#2555bd", "#946410", "#c23966", "#086f96", "#3f7550"]
 BRANDS = {
     "Anthropic": "#b6472f",
@@ -190,69 +193,65 @@ def timeline_svg(year, rows):
 
 
 def frequencies(rows, glossary):
-    counts = Counter()
-    for row in rows:
-        if not row.get("report"):
-            continue
-        body = row["report"].get("highlights", "").casefold()
-        for term, aliases in glossary.items():
-            if any(
-                re.search(r"(?<![a-z0-9])" + re.escape(alias.casefold()) + r"(?![a-z0-9])", body)
-                for alias in aliases
-            ):
-                counts[term] += 1
-    return sorted(counts.items(), key=lambda item: (-item[1], item[0].casefold()))
+    return word_cloud_data(rows, glossary, {})[0] if rows else []
 
 
-def position_word(term, size, placed, width, height):
-    word_width = len(term) * size * 0.64 + 16
-    word_height = size * 1.24 + 8
-    for step in range(900):
-        angle = step * 0.43
-        radius = 5.6 * math.sqrt(step)
-        x = round(width / 2 + math.cos(angle) * radius * 2.5 - word_width / 2)
-        y = round(258 + math.sin(angle) * radius - word_height / 2)
-        bounds = (x, y, x + word_width, y + word_height)
-        if x < 28 or y < 95 or bounds[2] > width - 28 or bounds[3] > height - 45:
-            continue
-        if all(
-            bounds[2] <= left or right <= x or bounds[3] <= top or bottom <= y
-            for left, top, right, bottom in placed
-        ):
-            return bounds
+def cloud_position(term, size, placed):
+    width, height = CLOUD_WIDTH, CLOUD_HEIGHT
+    word_width = round(sum(0.9 if c in "MWmw" else 0.43 if c in "Iiljt- " else 0.65 for c in term) * size) + 13
+    word_height = math.ceil(size * 1.16) + 7
+    x_positions = range(28, width - 27 - word_width, 6)
+    y_positions = range(108, height - 44 - word_height, 6)
+    positions = sorted(
+        ((x, y) for y in y_positions for x in x_positions),
+        key=lambda point: (
+            ((point[0] + word_width / 2 - width / 2) / 2.2) ** 2
+            + (point[1] + word_height / 2 - (height + 57) / 2) ** 2
+        ),
+    )
+    for x, y in positions:
+        right, bottom = x + word_width, y + word_height
+        if all(right <= a or b <= x or bottom <= c or d <= y for a, c, b, d in placed):
+            return x, y, right, bottom
     return None
 
 
-def wordcloud_svg(year, counts):
-    width, height = 1120, 460
+def wordcloud_svg(year, counts, coverage):
+    width, height = CLOUD_WIDTH, CLOUD_HEIGHT
+    body_count = sum(coverage.get(source, 0) for source in BODY_SOURCES)
+    document_count = sum(coverage.values())
     parts = svg_start(
         width,
         height,
         f"{year} technical word cloud",
-        "Word size reflects the number of releases mentioning a technical term.",
+        "Word size reflects the number of distinct documents mentioning a technical term.",
     )
     parts.append(svg_text(30, 42, f"TECHNICAL WORD CLOUD  /  {year}", 12, MUTED, weight=600))
     parts.append(svg_text(29, 79, "Terms across model reports", 32, serif=True))
     parts.append(svg_line(29, 94, 1091, 94))
     placed = []
-    for index, (term, count) in enumerate(counts[:25]):
-        size = round(17 + 49 * math.sqrt(count / counts[0][1]))
-        while size >= 15:
-            if bounds := position_word(term, size, placed, width, height):
+    displayed = []
+    for index, (term, count) in enumerate(counts[:CLOUD_LIMIT]):
+        size = round(14 + 35 * math.sqrt(count / counts[0][1]))
+        size = max(14, min(size, 48 - round(32 * index / (CLOUD_LIMIT - 1))))
+        for candidate in range(size, 13, -2):
+            if bounds := cloud_position(term, candidate, placed):
                 placed.append(bounds)
+                displayed.append(term)
                 color = PALETTE[index % len(PALETTE)]
-                parts.append(svg_text(bounds[0] + 8, bounds[1] + size, term, size, color, weight=700))
+                parts.append(svg_text(bounds[0] + 6, bounds[1] + candidate, term, candidate, color, weight=700))
                 break
             size -= 3
     if not placed:
         parts.append(svg_text(30, 160, "Terms appear when verified reports are added.", 15, MUTED))
     parts.append(svg_line(29, height - 41, 1091, height - 41))
     parts.append(
-        svg_text(
-            30, height - 17, "One mention per model release. Terms are normalized across reports.", 12, MUTED
-        )
+        svg_text(30, height - 17, (
+            f"{body_count} of {document_count} documents with source text  ·  "
+            f"{len(displayed)} terms shown  ·  One count per document"
+        ), 12, MUTED)
     )
-    return "\n".join([*parts, "</svg>", ""])
+    return "\n".join([*parts, "</svg>", ""]), displayed
 
 
 def timeline_html(by_year):
@@ -309,7 +308,7 @@ article a{font-weight:650;overflow-wrap:anywhere}
     return "\n".join([*parts, "</main>", "</html>", ""])
 
 
-def build_visuals(rows, glossary, portal, *, featured=()):
+def build_visuals(rows, glossary, portal, *, featured=(), text_index=None):
     events = [*rows, *({**row, **event, "follow_up": True} for row in rows for event in row.get("release_events", []))]
     events = [
         {**row, "featured": (row.get("key"), row["released_on"]) in featured}
@@ -319,17 +318,19 @@ def build_visuals(rows, glossary, portal, *, featured=()):
     by_year = {year: [row for row in events if row["released_on"].startswith(year)] for year in years}
     year = years[0]
     latest = by_year[year]
-    counts = frequencies([row for row in rows if row["released_on"].startswith(year)], glossary)
+    counts, coverage = word_cloud_data(rows, glossary, text_index or {})
     diagrams = Path("assets/diagrams")
     overview = diagrams / f"release-timeline-{year}.svg"
     cloud = diagrams / f"technical-word-cloud-{year}.svg"
     terms = Path("docs/data/word-cloud.json")
-    cloud_svg = wordcloud_svg(year, counts)
+    cloud_svg, displayed = wordcloud_svg(year, counts, coverage)
     outputs = {
         overview: timeline_svg(year, latest),
         cloud: cloud_svg,
         Path("docs/assets/diagrams/technical-word-cloud.svg"): cloud_svg,
-        terms: json.dumps({"year": int(year), "terms": dict(counts)}, indent=2) + "\n",
+        terms: json.dumps({
+            "year": int(year), "coverage": coverage, "displayed_terms": displayed, "terms": dict(counts),
+        }, indent=2) + "\n",
         Path("docs/timeline.html"): timeline_html(by_year),
     }
     sections = "\n".join(
@@ -342,7 +343,7 @@ def build_visuals(rows, glossary, portal, *, featured=()):
             "",
             "## Technical Word Cloud",
             "",
-            f"![{year} report terms sized by release count]({cloud})",
+            f"![{year} technical terms sized by document frequency]({cloud})",
             "",
             f"[Word frequencies]({terms})",
         ]
