@@ -1,6 +1,7 @@
 {
   "releases": [
     {
+      "hub_task": "text-generation",
       "id": "2026-07_longcat_2_0",
       "key": "meituan/longcat-2-0",
       "model": "LongCat-2.0",
@@ -35,8 +36,8 @@
       "key": "google/gemini-3-1-flash-lite-image",
       "model": "Gemini 3.1 Flash-Lite Image",
       "org": "Google",
-      "release_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Image-Model-Card.pdf",
-      "released_on": "2026-06",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite-image/",
+      "released_on": "2026-06-30",
       "report": {
         "file": "2026/google/2026-06_gemini-3.1-flash-lite-image.pdf",
         "highlights": "Gemini 3.1 Flash-Lite Image can comprehend input from different information sources, including text, images, audio and video 1 Model Data Training Dataset: Gemini 3.1 Flash-Lite Image is based on Gemini 3.1 Flash-Lite",
@@ -46,6 +47,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2026-06_glm_5_2",
       "key": "zhipu/glm-5-2",
       "model": "GLM-5.2",
@@ -140,8 +142,8 @@
       "key": "google/gemini-3-5-flash",
       "model": "Gemini 3.5 Flash",
       "org": "Google",
-      "release_url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
-      "released_on": "2026-05",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+      "released_on": "2026-05-19",
       "report": {
         "file": "2026/google/2026-05_gemini-3.5-flash.pdf",
         "highlights": "3 Evaluation Approach : Gemini 3.5 Flash was evaluated across a range of benchmarks, including reasoning, coding, agentic tool use, multimodal capabilities, multi-lingual performance, and long-context Gemini 3.5 Flash is based on the Gemini 3 Flash reasoning foundation with thinking levels to control the mix of quality, cost and latency",
@@ -181,6 +183,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "2026-04_gemma_4",
       "key": "google/gemma-4",
       "model": "Gemma 4",
@@ -196,6 +199,7 @@
       }
     },
     {
+      "hub_task": "any-to-any",
       "id": "2026-04_minicpm_o_4_5",
       "key": "openbmb/minicpm-o-4-5",
       "model": "MiniCPM-o 4.5",
@@ -361,6 +365,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2026-03_minimax_m2_7",
       "key": "minimax/minimax-m2-7",
       "model": "MiniMax M2.7",
@@ -376,6 +381,7 @@
       }
     },
     {
+      "hub_task": "any-to-any",
       "id": "2026-03_longcat_next",
       "key": "meituan/longcat-next",
       "model": "LongCat-Next",
@@ -438,6 +444,7 @@
       "total_parameters": 15000000000
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "2026-03_intern_s1_pro",
       "key": "internlm/intern-s1-pro",
       "model": "Intern-S1-Pro",
@@ -483,6 +490,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2026-02_glm_5",
       "key": "zhipu/glm-5",
       "model": "GLM-5",
@@ -513,6 +521,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2026-02_minimax_m2_5",
       "key": "minimax/minimax-m2-5",
       "model": "MiniMax M2.5",
@@ -723,6 +732,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2025-12_minimax_m2_1",
       "key": "minimax/minimax-m2-1",
       "model": "MiniMax M2.1",
@@ -963,6 +973,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "2025-10_minimax_m2",
       "key": "minimax/minimax-m2",
       "model": "MiniMax M2",
@@ -1313,7 +1324,7 @@
       "model": "Claude Opus 4.1",
       "org": "Anthropic",
       "release_url": "https://www.anthropic.com/news/claude-opus-4-1",
-      "released_on": "2025-08",
+      "released_on": "2025-08-05",
       "report": {
         "file": "2025/anthropic/2025-08_claude-opus-4.1.pdf",
         "highlights": "This page is displayed while the website verifies you are not a bot Check your network settings: 1",
@@ -1668,6 +1679,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "deepseek--deepseek-v4-1-flash",
       "key": "deepseek/deepseek-v4-1-flash",
       "model": "DeepSeek-V4.1-Flash",
@@ -1710,6 +1722,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "deepseek--deepseek-v4-1-flash-1017",
       "key": "deepseek/deepseek-v4-1-flash-1017",
       "model": "DeepSeek-V4.1-Flash-1017",
@@ -1725,6 +1738,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "deepseek--deepseek-v4-flash-vision-exp",
       "key": "deepseek/deepseek-v4-flash-vision-exp",
       "model": "DeepSeek-V4-Flash-Vision-Exp",
@@ -1740,6 +1754,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "deepseek--deepseek-v4-pro-0813",
       "key": "deepseek/deepseek-v4-pro-0813",
       "model": "DeepSeek-V4-Pro-0813",
@@ -1755,6 +1770,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "deepseek--deepseek-v4-flash-0731",
       "key": "deepseek/deepseek-v4-flash-0731",
       "model": "DeepSeek-V4-Flash-0731",
@@ -1770,6 +1786,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "alibaba_qwen--qwen3-8-2-4t-a95b",
       "key": "alibaba_qwen/qwen3-8-2-4t-a95b",
       "model": "Qwen3.8-2.4T-A95B",
@@ -1785,6 +1802,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "alibaba_qwen--qwen3-8-flash-next",
       "key": "alibaba_qwen/qwen3-8-flash-next",
       "model": "Qwen3.8-Flash-Next",
@@ -1800,6 +1818,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "alibaba_qwen--qwen3-8",
       "key": "alibaba_qwen/qwen3-8",
       "model": "Qwen3.8",
@@ -1815,6 +1834,7 @@
       }
     },
     {
+      "hub_task": "text-to-image",
       "id": "alibaba_qwen--qwen-image-2-1-turbo",
       "key": "alibaba_qwen/qwen-image-2-1-turbo",
       "model": "Qwen-Image-2.1-Turbo",
@@ -1830,6 +1850,7 @@
       }
     },
     {
+      "hub_task": "text-to-image",
       "id": "alibaba_qwen--qwen-image-2-1",
       "key": "alibaba_qwen/qwen-image-2-1",
       "model": "Qwen-Image-2.1",
@@ -1845,6 +1866,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "allenai--astabrief-8b-sft",
       "key": "allenai/astabrief-8b-sft",
       "model": "AstaBrief_8B_SFT",
@@ -1860,6 +1882,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "allenai--bwen-8b-stage1",
       "key": "allenai/bwen-8b-stage1",
       "model": "Bwen-8B-Stage1",
@@ -1875,6 +1898,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "allenai--bolmo-7b-stage1",
       "key": "allenai/bolmo-7b-stage1",
       "model": "Bolmo-7B-Stage1",
@@ -1890,6 +1914,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "bytedance--cola2",
       "key": "bytedance/cola2",
       "model": "Cola2",
@@ -1906,6 +1931,7 @@
       }
     },
     {
+      "hub_task": "text-to-image",
       "id": "bytedance--genfirst",
       "key": "bytedance/genfirst",
       "model": "GenFirst",
@@ -1952,6 +1978,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "inclusionai--ling-3-1-flash-1019",
       "key": "inclusionai/ling-3-1-flash-1019",
       "model": "Ling-3.1-flash-1019",
@@ -1967,6 +1994,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "inclusionai--ling-3-1-flash",
       "key": "inclusionai/ling-3-1-flash",
       "model": "Ling-3.1-flash",
@@ -1982,6 +2010,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "inclusionai--zwz2-27b",
       "key": "inclusionai/zwz2-27b",
       "model": "ZwZ2-27B",
@@ -1997,6 +2026,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "inclusionai--zwz2-9b",
       "key": "inclusionai/zwz2-9b",
       "model": "ZwZ2-9B",
@@ -2012,6 +2042,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "inclusionai--zwz2-4b",
       "key": "inclusionai/zwz2-4b",
       "model": "ZwZ2-4B",
@@ -2027,6 +2058,7 @@
       }
     },
     {
+      "hub_task": "audio-to-audio",
       "id": "inclusionai--ming-3-0-audio-tiny",
       "key": "inclusionai/ming-3-0-audio-tiny",
       "model": "Ming-3.0-audio-tiny",
@@ -2039,9 +2071,11 @@
         "kind": "model card",
         "revision": "401b1abc63de0862dfbc9cd2a40895019d742d09",
         "url": "https://huggingface.co/inclusionAI/Ming-3.0-audio-tiny/blob/401b1abc63de0862dfbc9cd2a40895019d742d09/README.md"
-      }
+      },
+      "total_parameters": 9300000000
     },
     {
+      "hub_task": "audio-to-audio",
       "id": "inclusionai--ming-3-0-audio-flash",
       "key": "inclusionai/ming-3-0-audio-flash",
       "model": "Ming-3.0-audio-flash",
@@ -2057,6 +2091,7 @@
       }
     },
     {
+      "hub_task": "any-to-any",
       "id": "internlm--internlumina-u2",
       "key": "internlm/internlumina-u2",
       "model": "InternLumina-U2",
@@ -2088,6 +2123,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "internlm--intern-s2-397b",
       "key": "internlm/intern-s2-397b",
       "model": "Intern-S2-397B",
@@ -2139,6 +2175,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "internlm--intern-s2-mobius",
       "key": "internlm/intern-s2-mobius",
       "model": "Intern-S2-Mobius",
@@ -2154,6 +2191,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "meituan--longcat-2-5-w4a4",
       "key": "meituan/longcat-2-5-w4a4",
       "model": "LongCat-2.5-W4A4",
@@ -2169,6 +2207,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "meituan--longcat-2-5",
       "key": "meituan/longcat-2-5",
       "model": "LongCat-2.5",
@@ -2184,6 +2223,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "meituan--longcat-flash-lite-sparse",
       "key": "meituan/longcat-flash-lite-sparse",
       "model": "LongCat-Flash-Lite-Sparse",
@@ -2199,6 +2239,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "microsoft--mage-vl-cowork",
       "key": "microsoft/mage-vl-cowork",
       "model": "Mage-VL-Cowork",
@@ -2214,6 +2255,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "microsoft--userrepgen-4b",
       "key": "microsoft/userrepgen-4b",
       "model": "UserRepGen-4B",
@@ -2229,6 +2271,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "microsoft--aescode-32b",
       "key": "microsoft/aescode-32b",
       "model": "AesCode-32B",
@@ -2244,6 +2287,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "microsoft--aescode-8b",
       "key": "microsoft/aescode-8b",
       "model": "AesCode-8B",
@@ -2274,6 +2318,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "microsoft--userlm-2-0",
       "key": "microsoft/userlm-2-0",
       "model": "UserLM-2.0",
@@ -2289,6 +2334,7 @@
       }
     },
     {
+      "hub_task": "text-to-image",
       "id": "minimax--minimax-h3-image",
       "key": "minimax/minimax-h3-image",
       "model": "MiniMax-H3-Image",
@@ -2315,22 +2361,7 @@
       }
     },
     {
-      "id": "minimax--minimax-h3",
-      "key": "minimax/minimax-h3",
-      "model": "MiniMax-H3",
-      "org": "MiniMax",
-      "release_url": "https://www.minimax.io/blog/minimax-h3",
-      "released_on": "2026-07-31",
-      "report": {
-        "highlights": "These siloed tasks, capabilities, and modalities constrained creative freedom in practice. And, on the training side, capped the model's ability to generalize. Both point to major room for change, in application paradigm and training paradigm alike. So the first principle guiding H3's development was unifying and generalizing across tasks.",
-        "id": "https://www.minimax.io/blog/minimax-h3",
-        "kind": "official technical page",
-        "published_on": "2026-07-31",
-        "revision": "2013b578b58869335eae3db9f3f867adde91d10916352f0373058609df9b352b",
-        "url": "https://www.minimax.io/blog/minimax-h3"
-      }
-    },
-    {
+      "hub_task": "image-text-to-text",
       "id": "minimax--minimax-m3-1-flash",
       "key": "minimax/minimax-m3-1-flash",
       "model": "MiniMax-M3.1-Flash",
@@ -2347,21 +2378,7 @@
       }
     },
     {
-      "id": "minimax--minimax-music3",
-      "key": "minimax/minimax-music3",
-      "model": "MiniMax-Music3",
-      "org": "MiniMax",
-      "release_url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3",
-      "released_on": "2026-08-07",
-      "report": {
-        "highlights": "MiniMax Music 3 uses a hierarchical autoregressive architecture that separates global musical modeling from local acoustic modeling.",
-        "id": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/README.md",
-        "kind": "model card",
-        "revision": "1b525ccb685ae809f33027c51c351eeb5833cf72",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/blob/1b525ccb685ae809f33027c51c351eeb5833cf72/README.md"
-      }
-    },
-    {
+      "hub_task": "image-text-to-text",
       "id": "moonshot--kimi-k3-1-pro",
       "key": "moonshot/kimi-k3-1-pro",
       "model": "Kimi-K3.1-Pro",
@@ -2384,6 +2401,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "nvidia--kimi-k3-1-pro-nvfp4",
       "key": "nvidia/kimi-k3-1-pro-nvfp4",
       "model": "Kimi-K3.1-Pro-NVFP4",
@@ -2399,6 +2417,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
       "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
       "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
@@ -2414,6 +2433,7 @@
       }
     },
     {
+      "hub_task": "image-to-video",
       "id": "nvidia--cosmos3-super-image2video-4step",
       "key": "nvidia/cosmos3-super-image2video-4step",
       "model": "Cosmos3-Super-Image2Video-4Step",
@@ -2429,6 +2449,7 @@
       }
     },
     {
+      "hub_task": "text-to-image",
       "id": "nvidia--cosmos3-super-text2image-4step",
       "key": "nvidia/cosmos3-super-text2image-4step",
       "model": "Cosmos3-Super-Text2Image-4Step",
@@ -2444,6 +2465,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "openbmb--minicpm-v-4-7-35b-a3b",
       "key": "openbmb/minicpm-v-4-7-35b-a3b",
       "model": "MiniCPM-V-4.7-35B-A3B",
@@ -2522,6 +2544,7 @@
       }
     },
     {
+      "hub_task": "translation",
       "id": "tencent--hy-simulmt-30b-a3b-interleave",
       "key": "tencent/hy-simulmt-30b-a3b-interleave",
       "model": "Hy-SimulMT-30B-A3B-Interleave",
@@ -2537,6 +2560,7 @@
       }
     },
     {
+      "hub_task": "translation",
       "id": "tencent--hy-simulmt-30b-a3b",
       "key": "tencent/hy-simulmt-30b-a3b",
       "model": "Hy-SimulMT-30B-A3B",
@@ -2552,6 +2576,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "tencent--hy-memory-30b-a3b",
       "key": "tencent/hy-memory-30b-a3b",
       "model": "Hy-Memory-30B-A3B",
@@ -2616,6 +2641,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "zhipu--glm-5-3-flash-bf16",
       "key": "zhipu/glm-5-3-flash-bf16",
       "model": "GLM-5.3-Flash-BF16",
@@ -2631,6 +2657,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "zhipu--glm-5-3-bf16",
       "key": "zhipu/glm-5-3-bf16",
       "model": "GLM-5.3-BF16",
@@ -2646,6 +2673,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "zhipu--glm-5-3-flash",
       "key": "zhipu/glm-5-3-flash",
       "model": "GLM-5.3-Flash",
@@ -2661,6 +2689,7 @@
       }
     },
     {
+      "hub_task": "text-generation",
       "id": "zhipu--glm-5-3",
       "key": "zhipu/glm-5-3",
       "model": "GLM-5.3",
@@ -3085,8 +3114,8 @@
       "key": "google/gemini-3-8-live",
       "model": "Gemini 3.8 Live",
       "org": "Google",
-      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
-      "released_on": "2026-09-24",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+      "released_on": "2026-09-15",
       "report": {
         "highlights": "Beyond visual presence, the feature is backed by Gemini’s advanced reasoning. With asynchronous tool calling, Live Avatar can trigger tool calls and fetch data in the background while continuing active dialogue, handling complex tasks while ensuring an uninterrupted conversational flow.",
         "id": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
@@ -3793,6 +3822,548 @@
         "kind": "model card",
         "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
       }
+    },
+    {
+      "forms": [
+        "General availability"
+      ],
+      "id": "alibaba_qwen--qwen3-coder-plus",
+      "key": "alibaba_qwen/qwen3-coder-plus",
+      "model": "Qwen3-Coder-Plus",
+      "org": "Alibaba",
+      "release_url": "https://www.alibabacloud.com/notice/detail?spm=a3c0i.35801494.J_TlTAa0s_LXHOq4tuiO-gv.5.5ce47c5brRScm3&_p_lc=1&id=1425",
+      "released_on": "2026-08-18",
+      "report": null
+    },
+    {
+      "id": "google--gemini-3-8-flash",
+      "key": "google/gemini-3-8-flash",
+      "model": "Gemini 3.8 Flash",
+      "org": "Google",
+      "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "released_on": "2026-09-02",
+      "report": {
+        "highlights": "Building on the momentum of 3.7 Flash from three weeks ago and marking our third Flash release in only six weeks, today we’re introducing Gemini 3.8, our best reasoning and coding model yet, at the same speed and low cost of 3.7. Gemini 3.8 introduces 2 variants:",
+        "id": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "kind": "official technical page",
+        "published_on": "2026-09-02",
+        "revision": "ca9a3c73b7ba9ff94fc055b4b734897026ff358bb199b5cce08871d600888e04",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/"
+      }
+    },
+    {
+      "id": "google--gemini-3-8",
+      "key": "google/gemini-3-8",
+      "model": "Gemini 3.8",
+      "org": "Google",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/",
+      "released_on": "2026-09-15",
+      "report": {
+        "highlights": "Gemini 3.8 Audio models are based on Gemini 3 Pro. For more information about the model architecture, see the Gemini 3 Pro model card.",
+        "id": "https://deepmind.google/models/model-cards/gemini-3-8-audio/#page-content",
+        "kind": "official technical page",
+        "published_on": "2026-09-15",
+        "revision": "2a04ffdd16176db82c928b435fa795df37f2c5483c66208593f084c028c102b9",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/#page-content"
+      }
+    },
+    {
+      "id": "google--gemini-3-5",
+      "key": "google/gemini-3-5",
+      "model": "Gemini 3.5",
+      "org": "Google",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-5-audio/",
+      "released_on": "2026-08-26",
+      "report": {
+        "highlights": "Gemini 3.5 Audio (Live Translate, Transcribe, Transcribe Live) is an addition to the Gemini 3 series of highly-capable, natively multimodal, reasoning models. The models are cost-efficient and fast, optimized for high-volume, latency-sensitive tasks like dialogue and translation. This model card describes the native audio capabilities as additional outputs of Gemini. Information specific to these modalities is specified in-line and referred to as Gemini 3.5 Live Translate, Gemini 3.5 Transcribe, and Gemini 3.5 Transcribe Live referred to collectively as ",
+        "id": "https://deepmind.google/models/model-cards/gemini-3-5-audio/#page-content",
+        "kind": "official technical page",
+        "published_on": "2026-08-26",
+        "revision": "48423a58d4b8dc8ebc378ab8c707bd81db7520e3adf2566d1e73dcb374ba408e",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-5-audio/#page-content"
+      }
+    },
+    {
+      "id": "google--gemini-3-7-flash",
+      "key": "google/gemini-3-7-flash",
+      "model": "Gemini 3.7 Flash",
+      "org": "Google",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-7-flash/",
+      "released_on": "2026-08-13",
+      "report": {
+        "highlights": "Gemini 3.7 Flash is the next iteration in the Gemini 3 model family, featuring algorithmic improvements to its core reasoning foundation and support for agentic video understanding. It supports customizable thinking configurations to control the mix of quality, cost and latency.",
+        "id": "https://deepmind.google/models/model-cards/gemini-3-7-flash/#page-content",
+        "kind": "official technical page",
+        "published_on": "2026-08-13",
+        "revision": "c5c40a6db9c1961356c4884034c245a54c584d8fd5c05098d898170639d3df2d",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-7-flash/#page-content"
+      }
+    },
+    {
+      "id": "google--gemini-3-6-flash",
+      "key": "google/gemini-3-6-flash",
+      "model": "Gemini 3.6 Flash",
+      "org": "Google",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "released_on": "2026-07-21",
+      "report": {
+        "highlights": "Gemini 3.6 Flash is an addition to the Gemini 3 series of highly-capable, natively multimodal, reasoning models. Gemini 3.6 Flash is our workhorse model that delivers better coding, knowledge work, and multimodal performance, while providing better token-efficiency than Gemini 3.5 Flash.",
+        "id": "https://deepmind.google/models/model-cards/gemini-3-6-flash/#page-content",
+        "kind": "official technical page",
+        "published_on": "2026-07-21",
+        "revision": "5d9a241ed83ea42c64c3da289534d292e9e51efd6ca0562274dd440fadc81ce9",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/#page-content"
+      }
+    },
+    {
+      "id": "google--gemini-3-5-flash-lite",
+      "key": "google/gemini-3-5-flash-lite",
+      "model": "Gemini 3.5 Flash-Lite",
+      "org": "Google",
+      "release_url": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/",
+      "released_on": "2026-07-21",
+      "report": {
+        "highlights": "Gemini 3.5 Flash-Lite is an addition to the Gemini 3 series of highly-capable, natively multimodal, reasoning models. The model is cost-efficient and fast, optimized for high-volume, latency-sensitive tasks like translation and classification as well as supporting agentic workflows.",
+        "id": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/#page-content",
+        "kind": "official technical page",
+        "published_on": "2026-07-21",
+        "revision": "97ac31802f19ff7b822f0095d8709b8a71badc0aecab66fe81289b4fdb49b7ef",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/#page-content"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--llada-ui",
+      "key": "inclusionai/llada-ui",
+      "model": "LLaDA-UI",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/LLaDA-UI",
+      "released_on": "2026-09-06",
+      "report": {
+        "highlights": "Diffusion large language models (dLLMs) achieve high decoding efficiency through block-parallel, arbitrary-order generation, making them attractive for latency-sensitive applications. GUI agents represent a natural testbed for this paradigm, as they must repeatedly perceive screen states and emit structured, spatially grounded actions in real time. However, whether dLLMs can be extended into capable multimodal GUI agents while preserving their parallel decoding advantage remains an open question. We present LLaDA-UI, a 16.7B-parameter MoE-based, block-wi",
+        "id": "arxiv:2609.13287",
+        "kind": "technical report",
+        "published_on": "2026-09-09",
+        "revision": "1",
+        "url": "https://arxiv.org/abs/2609.13287v1"
+      },
+      "total_parameters": 16924344064
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "inclusionai--ling-3-0-flash-fin-fp4",
+      "key": "inclusionai/ling-3-0-flash-fin-fp4",
+      "model": "Ling-3.0-flash-Fin-fp4",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4",
+      "released_on": "2026-09-10",
+      "report": {
+        "highlights": "## Introduction Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4/README.md",
+        "kind": "model card",
+        "revision": "7748601ef3dd9032a36b1ff0e4f3db451b824964",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4/blob/7748601ef3dd9032a36b1ff0e4f3db451b824964/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--ling-3-0-flash-vl-fp4",
+      "key": "inclusionai/ling-3-0-flash-vl-fp4",
+      "model": "Ling-3.0-flash-VL-fp4",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4",
+      "released_on": "2026-09-08",
+      "report": {
+        "highlights": "# Introduction We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with ex",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4/README.md",
+        "kind": "model card",
+        "revision": "8dca6a0d4dde1ddc79cfe79506173bbf375393ac",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4/blob/8dca6a0d4dde1ddc79cfe79506173bbf375393ac/README.md"
+      }
+    },
+    {
+      "hub_task": "text-to-image",
+      "id": "inclusionai--llada-image",
+      "key": "inclusionai/llada-image",
+      "model": "LLaDA-Image",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/LLaDA-Image",
+      "released_on": "2026-08-28",
+      "report": {
+        "highlights": "We introduce LLaDA-Image, a unified framework that pairs a 6B Diffusion Transformer (DiT) trained from scratch with a frozen vision-language understanding module built on the LLaDA2.0-Mini diffusion language model backbone. Instead of relying heavily on paired image-text data from the beginning, we first build a strong visual generative prior through image-only pre-training and mid-training. The generation pipeline comprises 220M samples, 98 of which are real images. For efficient and scalable optimization, we use parameter-free RMSNorm throughout the Di",
+        "id": "arxiv:2609.03796",
+        "kind": "technical report",
+        "published_on": "2026-09-03",
+        "revision": "1",
+        "url": "https://arxiv.org/abs/2609.03796v1"
+      },
+      "total_parameters": 6540230016
+    },
+    {
+      "hub_task": "text-to-image",
+      "id": "inclusionai--llada-image-turbo",
+      "key": "inclusionai/llada-image-turbo",
+      "model": "LLaDA-Image-Turbo",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/LLaDA-Image-Turbo",
+      "released_on": "2026-08-28",
+      "report": {
+        "highlights": "This repository provides the checkpoints and Diffusers-based inference code for the LLaDA-Image model family.",
+        "id": "https://huggingface.co/inclusionAI/LLaDA-Image-Turbo/README.md",
+        "kind": "model card",
+        "revision": "f4afc52d925bbac4e22a1c947111fc1f127e37e5",
+        "url": "https://huggingface.co/inclusionAI/LLaDA-Image-Turbo/blob/f4afc52d925bbac4e22a1c947111fc1f127e37e5/README.md"
+      },
+      "total_parameters": 6540230016
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--ui-venus-2-9b",
+      "key": "inclusionai/ui-venus-2-9b",
+      "model": "UI-Venus-2-9B",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/UI-Venus-2-9B",
+      "released_on": "2026-08-26",
+      "report": {
+        "highlights": "**UI-Venus-2** is a general-purpose foundation GUI agent designed to operate across **mobile applications, web platforms, and desktop operating systems** through a unified closed-loop reasoning–action framework: the agent observes the current interface, reasons about the task state, executes an action, and incorporates environmental feedback into its next decision.",
+        "id": "https://huggingface.co/inclusionAI/UI-Venus-2-9B/README.md",
+        "kind": "model card",
+        "revision": "90d6dfe13ece735f82793635b69bcc10c710e2ab",
+        "url": "https://huggingface.co/inclusionAI/UI-Venus-2-9B/blob/90d6dfe13ece735f82793635b69bcc10c710e2ab/README.md"
+      },
+      "total_parameters": 9000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--armorocr",
+      "key": "inclusionai/armorocr",
+      "model": "ArmorOCR",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/ArmorOCR",
+      "released_on": "2026-08-20",
+      "report": {
+        "highlights": "This is the official inference code of ArmorOCR, a two-stage framework for grounded adversarial OCR perception via observation-transferred self-distillation and reward-driven refinement. ArmorOCR is built on Qwen3-VL-8B-Instruct and enables single-pass inference on the original image, without any inference-time visual transformations or tool assistance.",
+        "id": "https://github.com/ant-research/ArmorOCR",
+        "kind": "official technical page",
+        "revision": "c518e028606c4627262e9d2aa483c88b1cc5db359f0a0ad2e17fc962361f4fde",
+        "url": "https://github.com/ant-research/ArmorOCR"
+      },
+      "total_parameters": 8767123696
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "inclusionai--ling-3-0-flash-base-midtrain",
+      "key": "inclusionai/ling-3-0-flash-base-midtrain",
+      "model": "Ling-3.0-flash-base-midtrain",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-midtrain",
+      "released_on": "2026-08-11",
+      "report": {
+        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-midtrain/README.md",
+        "kind": "model card",
+        "revision": "34f7c1ed096bdb3118ec1474132ad21794d4510a",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-midtrain/blob/34f7c1ed096bdb3118ec1474132ad21794d4510a/README.md"
+      },
+      "total_parameters": 127486405600
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "inclusionai--ling-3-0-flash-base-30t",
+      "key": "inclusionai/ling-3-0-flash-base-30t",
+      "model": "Ling-3.0-flash-base-30T",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-30T",
+      "released_on": "2026-08-11",
+      "report": {
+        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-30T/README.md",
+        "kind": "model card",
+        "revision": "4c7a67683c9e7ea9fad199b58e7b54cd835b63c2",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-30T/blob/4c7a67683c9e7ea9fad199b58e7b54cd835b63c2/README.md"
+      },
+      "total_parameters": 30000000000000
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "inclusionai--ling-3-0-flash-base",
+      "key": "inclusionai/ling-3-0-flash-base",
+      "model": "Ling-3.0-flash-base",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base",
+      "released_on": "2026-08-11",
+      "report": {
+        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base/README.md",
+        "kind": "model card",
+        "revision": "0a96b0a3c68f93e5565d6f2d56c98557bded74fb",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base/blob/0a96b0a3c68f93e5565d6f2d56c98557bded74fb/README.md"
+      },
+      "total_parameters": 127486405600
+    },
+    {
+      "id": "inclusionai--ling-3-0-tiny-base-30t",
+      "key": "inclusionai/ling-3-0-tiny-base-30t",
+      "model": "Ling-3.0-tiny-base-30T",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-30T",
+      "released_on": "2026-08-11",
+      "report": {
+        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-30T/README.md",
+        "kind": "model card",
+        "revision": "5ffd60dad2cd5df60fb916ab431682c563290797",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-30T/blob/5ffd60dad2cd5df60fb916ab431682c563290797/README.md"
+      },
+      "total_parameters": 30000000000000
+    },
+    {
+      "id": "inclusionai--ling-3-0-tiny-base-midtrain",
+      "key": "inclusionai/ling-3-0-tiny-base-midtrain",
+      "model": "Ling-3.0-tiny-base-midtrain",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-midtrain",
+      "released_on": "2026-08-11",
+      "report": {
+        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-midtrain/README.md",
+        "kind": "model card",
+        "revision": "2c07d29ee370592bd804a0a865db5503d8a4bfa2",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-midtrain/blob/2c07d29ee370592bd804a0a865db5503d8a4bfa2/README.md"
+      },
+      "total_parameters": 8209997600
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-bolt-e4b-4gb",
+      "key": "nvidia/nvidia-nemotron-3-5-bolt-e4b-4gb",
+      "model": "NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Nemotron 3.5 Bolt E4B 4GB: Technical Report multiple turns, and make sense of conversation history, application state, and tool results. For local deployment, they must also respond quickly and fit within limited memory. We introduce Nemotron 3.5 Bolt E4B 4GB, an open small language model designed for fast conversational agents with a target memory footprint of approximately 4 GB. Nemotron 3.5 Bolt E4B 4GB supports reasoning and non-reasoning modes. The model can also generate concise conversational responses by enabling conversational_mode. Nemotron 3.5",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "48d42fa7658dee79adea43c2f4fe2a7a0caaa453ca7e4d0625cfcb239e11435f",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-Technical-Report.pdf"
+      }
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-bolt-e4b-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-bolt-e4b-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Bolt-E4B-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Nemotron 3.5 Bolt E4B 4GB: Technical Report multiple turns, and make sense of conversation history, application state, and tool results. For local deployment, they must also respond quickly and fit within limited memory. We introduce Nemotron 3.5 Bolt E4B 4GB, an open small language model designed for fast conversational agents with a target memory footprint of approximately 4 GB. Nemotron 3.5 Bolt E4B 4GB supports reasoning and non-reasoning modes. The model can also generate concise conversational responses by enabling conversational_mode. Nemotron 3.5",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "48d42fa7658dee79adea43c2f4fe2a7a0caaa453ca7e4d0625cfcb239e11435f",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-Technical-Report.pdf"
+      },
+      "total_parameters": 7996156490
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-bolt-74b-a9b-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+      "released_on": "2026-10-09",
+      "report": {
+        "highlights": "15 October 2026 Nemotron 3.5 Bolt 74B-A9B 24GB: A Hybrid Vision-Language Model for Local AI NVIDIA Abstract.We introduce Nemotron 3.5 Bolt 74B-A9B 24GB, a hybrid Mamba–Transformer vision-language model that optimizes speed and intelligence per GB of memory used for local agentic workloads. Derived from the Nemotron 3.5 Super VL 120B-A12B model family, Nemotron 3.5 Bolt 74B-A9B 24GB combines Star Elastic compression with 2-bit Quantization-Aware Distillation for memory-constrained deployment. The model is optimized for reasoning, agentic tool use, and web",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "2dfd2fe1c5c55f0e5292584d2a7e960d591ade027f8e8af936b4d6e1defde65c",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-Technical-Report.pdf"
+      },
+      "total_parameters": 74000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+      "released_on": "2026-10-12",
+      "report": {
+        "highlights": "2026-10-27 Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI NVIDIA Abstract. We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, lon",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "6ce6f95fb154935eed1a2f6149715cde6849b1459d32bab185085eb9bd4ea045",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf"
+      },
+      "total_parameters": 120000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-base-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-base-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Base-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Base-BF16",
+      "released_on": "2026-10-12",
+      "report": {
+        "highlights": "2026-10-27 Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI NVIDIA Abstract. We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, lon",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "6ce6f95fb154935eed1a2f6149715cde6849b1459d32bab185085eb9bd4ea045",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf"
+      },
+      "total_parameters": 120000000000
+    },
+    {
+      "hub_task": "image-to-video",
+      "id": "nvidia--cosmos3-h-dreams",
+      "key": "nvidia/cosmos3-h-dreams",
+      "model": "Cosmos3-H-Dreams",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Cosmos3-H-Dreams",
+      "released_on": "2026-10-19",
+      "report": {
+        "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos3-Nano - nvidia/Cosmos3-H-Embodied-Nano datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
+        "id": "https://huggingface.co/nvidia/Cosmos3-H-Dreams/README.md",
+        "kind": "model card",
+        "revision": "fd87afe3fd97e9b352b09d9ada88c944f5621eb9",
+        "url": "https://huggingface.co/nvidia/Cosmos3-H-Dreams/blob/fd87afe3fd97e9b352b09d9ada88c944f5621eb9/README.md"
+      }
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb-lilicorr",
+      "key": "nvidia/nvidia-nemotron-3-5-bolt-74b-a9b-24gb-lilicorr",
+      "model": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
+      "released_on": "2026-10-12",
+      "report": {
+        "highlights": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr is the LiLiCorr speculative-decoding checkpoint for the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB). The compatible target is a hybrid LatentMoE vision-language model for reasoning, chat, and agent workflows. For more information, see the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB) target card.",
+        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr/README.md",
+        "kind": "model card",
+        "revision": "449d24140160b8e51871bfc0f0a7338abf640aa1",
+        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr/blob/449d24140160b8e51871bfc0f0a7338abf640aa1/README.md"
+      },
+      "total_parameters": 74000000000
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4-lilicorr",
+      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4-lilicorr",
+      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
+      "released_on": "2026-10-11",
+      "report": {
+        "highlights": "The NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr model is the LiLiCorr speculative decoding checkpoint for NVIDIA's Nemotron-3.5-Super-VL-120B-A12B model family, which is a hybrid LatentMoE vision-language model designed for reasoning, chat, visual understanding, and agentic workflows. For details about the target model, see the [BF16](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16) and [NVFP4](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4) model cards. The NVIDIA-Nemotron-3.5-Super-VL-120B",
+        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr/README.md",
+        "kind": "model card",
+        "revision": "292bf1efc06ba39567da7351f2ad7a522afa3959",
+        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr/blob/292bf1efc06ba39567da7351f2ad7a522afa3959/README.md"
+      },
+      "total_parameters": 120000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--glm-5-3-flash-fp4-local",
+      "key": "nvidia/glm-5-3-flash-fp4-local",
+      "model": "GLM-5.3-Flash-FP4-Local",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local",
+      "released_on": "2026-10-08",
+      "report": {
+        "highlights": "## Description: The NVIDIA GLM-5.3-Flash-FP4-Local model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-F",
+        "id": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local/README.md",
+        "kind": "model card",
+        "revision": "76348ddb2be2e35e39ecfc00e75dc07703f4f3d5",
+        "url": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local/blob/76348ddb2be2e35e39ecfc00e75dc07703f4f3d5/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--qwen3-8-flash-next-fp4-local",
+      "key": "nvidia/qwen3-8-flash-next-fp4-local",
+      "model": "Qwen3.8-Flash-Next-FP4-Local",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local",
+      "released_on": "2026-10-08",
+      "report": {
+        "highlights": "## Description: The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is the quantized version of Alibaba's Qwen3.8-Flash-Next model, which is an auto-regressive language model that uses an optimized transformer architecture. Qwen3.8-Flash-Next is a causal language model with a vision encoder, hybrid attention (Gated DeltaNet and Qwen Sparse Attention), Mixture-of-Experts, gated residual streams, and n-gram embeddings. For more information, please check [here](https://huggingface.co/Qwen/Qwen3.8-Flash-Next). The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is quant",
+        "id": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local/README.md",
+        "kind": "model card",
+        "revision": "b9ce18a6887e18c089fdea8509a33e63429a3300",
+        "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local/blob/b9ce18a6887e18c089fdea8509a33e63429a3300/README.md"
+      }
+    },
+    {
+      "hub_task": "any-to-any",
+      "id": "nvidia--pixelumm",
+      "key": "nvidia/pixelumm",
+      "model": "PixelUMM",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/PixelUMM",
+      "released_on": "2026-10-01",
+      "report": {
+        "highlights": "- **Architecture:** Decoder-only Transformer with raw-pixel patch embeddings and an iterative pixel-generation head. - **Language backbone:** [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), revision `b968826d9c46dd6066d109eabc6255188de91218`. - **Image representation:** RGB images divided into 16-by-16 pixel patches. - **Generation:** Iterative denoising for image and video generation. - **Parameters:** 15,199,672,064.",
+        "id": "https://huggingface.co/nvidia/PixelUMM/README.md",
+        "kind": "model card",
+        "revision": "4bb3ce9a112e7e1c7d375b1c5bd64f54d259ecc8",
+        "url": "https://huggingface.co/nvidia/PixelUMM/blob/4bb3ce9a112e7e1c7d375b1c5bd64f54d259ecc8/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--deepseek-v4-1-flash-nvfp4",
+      "key": "nvidia/deepseek-v4-1-flash-nvfp4",
+      "model": "DeepSeek-V4.1-Flash-NVFP4",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4",
+      "released_on": "2026-09-16",
+      "report": {
+        "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash). The NVIDIA DeepSeek-V4.",
+        "id": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4/README.md",
+        "kind": "model card",
+        "revision": "c48dca0146b56d64c8116dbb6fcace8b7cc835f8",
+        "url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4/blob/c48dca0146b56d64c8116dbb6fcace8b7cc835f8/README.md"
+      }
+    },
+    {
+      "hub_task": "any-to-any",
+      "id": "tencent--hy-embodied-rxbrain-1-0",
+      "key": "tencent/hy-embodied-rxbrain-1-0",
+      "model": "Hy-Embodied-RxBrain-1.0",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy-Embodied-RxBrain-1.0",
+      "released_on": "2026-07-14",
+      "report": {
+        "highlights": "RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination - Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0",
+        "id": "https://github.com/Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0",
+        "kind": "official technical page",
+        "revision": "17d1cc407909a673b09563cd318b6d0912b843f519c9a70eb44205d2f1d7b177",
+        "url": "https://github.com/Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0"
+      },
+      "total_parameters": 6208221232
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--hy-embodied-vlm-1-0",
+      "key": "tencent/hy-embodied-vlm-1-0",
+      "model": "Hy-Embodied-VLM-1.0",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0",
+      "released_on": "2026-07-14",
+      "report": {
+        "highlights": "HY-Embodied: Embodied Foundation Models for Real-World Agents - HY-Embodied/Hy-Embodied-VLM-1.0/inference/vllm/README.md at master · Tencent-Hunyuan/HY-Embodied",
+        "id": "https://github.com/Tencent-Hunyuan/HY-Embodied/blob/master/Hy-Embodied-VLM-1.0/inference/vllm/README.md",
+        "kind": "official technical page",
+        "revision": "353c74dfa723309d77af36708f900b60cb9886d389fa5c82dab450609a8bd6dd",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Embodied/blob/master/Hy-Embodied-VLM-1.0/inference/vllm/README.md"
+      },
+      "total_parameters": 30526584176
     }
   ],
   "version": 1

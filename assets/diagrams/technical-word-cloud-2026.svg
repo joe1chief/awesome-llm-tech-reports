@@ -9,18 +9,18 @@
 <text x="372" y="358" fill="#137f72" font-size="54" font-weight="700">Multimodal</text>
 <text x="521" y="193" fill="#7545b7" font-size="48" font-weight="700">MoE</text>
 <text x="173" y="189" fill="#2555bd" font-size="43" font-weight="700">Long Context</text>
-<text x="638" y="190" fill="#946410" font-size="42" font-weight="700">Tool Use</text>
-<text x="735" y="342" fill="#c23966" font-size="34" font-weight="700">Vision-Language</text>
+<text x="635" y="189" fill="#946410" font-size="41" font-weight="700">Vision-Language</text>
+<text x="769" y="279" fill="#c23966" font-size="40" font-weight="700">Tool Use</text>
 <text x="334" y="128" fill="#086f96" font-size="31" font-weight="700">Reinforcement Learning</text>
-<text x="767" y="271" fill="#3f7550" font-size="33" font-weight="700">Agentic Coding</text>
+<text x="737" y="342" fill="#3f7550" font-size="36" font-weight="700">Agentic Coding</text>
 <text x="50" y="258" fill="#b6472f" font-size="36" font-weight="700">Post-training</text>
 <text x="69" y="311" fill="#137f72" font-size="35" font-weight="700">Computer Use</text>
-<text x="89" y="358" fill="#7545b7" font-size="26" font-weight="700">Image Generation</text>
-<text x="755" y="382" fill="#2555bd" font-size="23" font-weight="700">Quantization</text>
-<text x="425" y="398" fill="#946410" font-size="19" font-weight="700">Sparse Attention</text>
-<text x="874" y="214" fill="#c23966" font-size="28" font-weight="700">Diffusion</text>
-<text x="791" y="133" fill="#137f72" font-size="23" font-weight="700">MLA</text>
-<text x="640" y="397" fill="#2555bd" font-size="17" font-weight="700">KV Cache</text>
+<text x="99" y="361" fill="#7545b7" font-size="32" font-weight="700">Quantization</text>
+<text x="755" y="382" fill="#2555bd" font-size="23" font-weight="700">Distillation</text>
+<text x="511" y="399" fill="#946410" font-size="20" font-weight="700">Sparse Attention</text>
+<text x="776" y="226" fill="#c23966" font-size="19" font-weight="700">Image Generation</text>
+<text x="389" y="396" fill="#086f96" font-size="17" font-weight="700">Diffusion</text>
+<text x="789" y="134" fill="#137f72" font-size="25" font-weight="700">MLA</text>
 <path d="M29 419H1091V419" stroke="#dcd6c8" fill="none"/>
 <text x="30" y="443" fill="#716b60" font-size="12" font-weight="400">One mention per model release. Terms are normalized across reports.</text>
 </svg>

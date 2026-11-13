@@ -5,13 +5,13 @@
 <text x="29" y="37" fill="#716b60" font-size="12" font-weight="600">MODEL RELEASE TIMELINE</text>
 <text font-family="Georgia,serif" x="28" y="88" fill="#201f1b" font-size="46" font-weight="400">2026  Model releases</text>
 <text x="30" y="117" fill="#716b60" font-size="13" font-weight="400">Jan–Jun  /  Dates from the catalog</text>
-<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">185</text>
+<text font-family="Georgia,serif" x="664" y="64" fill="#201f1b" font-size="27" font-weight="400">216</text>
 <text x="664" y="87" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="771" y="64" fill="#201f1b" font-size="27" font-weight="400">22</text>
 <text x="771" y="87" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
-<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">16.8</text>
+<text font-family="Georgia,serif" x="878" y="64" fill="#201f1b" font-size="27" font-weight="400">19.6</text>
 <text x="878" y="87" fill="#716b60" font-size="11" font-weight="400">Per month</text>
-<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">91</text>
+<text font-family="Georgia,serif" x="985" y="64" fill="#201f1b" font-size="27" font-weight="400">108</text>
 <text x="985" y="87" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
 <path d="M28 135H1092V135" stroke="#dcd6c8" fill="none"/>
 <text font-family="Georgia,serif" x="29" y="159" fill="#201f1b" font-size="22" font-weight="400">01</text>
@@ -148,12 +148,12 @@
 <text font-family="Georgia,serif" x="737" y="159" fill="#201f1b" font-size="22" font-weight="400">05</text>
 <text x="774" y="158" fill="#716b60" font-size="10" font-weight="400">5 releases</text>
 <path d="M740 184H740V411" stroke="#dcd6c8" fill="none"/>
-<circle cx="740" cy="184" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="750" y="188" fill="#b6472f" font-size="10" font-weight="650">05.28  Anthropic</text>
-<text x="750" y="208" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 4.8</text>
-<circle cx="740" cy="230" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="750" y="234" fill="#2555bd" font-size="10" font-weight="650">05  Google</text>
-<text x="750" y="254" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.5 Flash</text>
+<circle cx="740" cy="184" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="750" y="188" fill="#2555bd" font-size="10" font-weight="650">05.19  Google</text>
+<text x="750" y="208" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.5 Flash</text>
+<circle cx="740" cy="230" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="750" y="234" fill="#b6472f" font-size="10" font-weight="650">05.28  Anthropic</text>
+<text x="750" y="254" fill="#201f1b" font-size="14" font-weight="600">Claude Opus 4.8</text>
 <circle cx="740" cy="276" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="750" y="280" fill="#2555bd" font-size="10" font-weight="650">05  Google</text>
 <text x="750" y="300" fill="#201f1b" font-size="14" font-weight="600">Gemini Omni Flash</text>
@@ -170,14 +170,14 @@
 <circle cx="917" cy="184" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="927" y="188" fill="#b6472f" font-size="10" font-weight="650">06.30  Anthropic</text>
 <text x="927" y="208" fill="#201f1b" font-size="14" font-weight="600">Claude Sonnet 5</text>
-<circle cx="917" cy="230" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="927" y="234" fill="#b6472f" font-size="10" font-weight="650">06  Anthropic</text>
-<text x="927" y="254" fill="#201f1b" font-size="14" font-weight="600">Claude Fable 5 /</text>
-<text x="927" y="270" fill="#201f1b" font-size="14" font-weight="600">Mythos 5</text>
-<circle cx="917" cy="293" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
-<text x="927" y="297" fill="#2555bd" font-size="10" font-weight="650">06  Google</text>
-<text x="927" y="317" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash-</text>
-<text x="927" y="333" fill="#201f1b" font-size="14" font-weight="600">Lite Image</text>
+<circle cx="917" cy="230" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="927" y="234" fill="#2555bd" font-size="10" font-weight="650">06.30  Google</text>
+<text x="927" y="254" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.1 Flash-</text>
+<text x="927" y="270" fill="#201f1b" font-size="14" font-weight="600">Lite Image</text>
+<circle cx="917" cy="293" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1.5"/>
+<text x="927" y="297" fill="#b6472f" font-size="10" font-weight="650">06  Anthropic</text>
+<text x="927" y="317" fill="#201f1b" font-size="14" font-weight="600">Claude Fable 5 /</text>
+<text x="927" y="333" fill="#201f1b" font-size="14" font-weight="600">Mythos 5</text>
 <circle cx="917" cy="356" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1.5"/>
 <text x="927" y="360" fill="#2555bd" font-size="10" font-weight="650">06  Google</text>
 <text x="927" y="380" fill="#201f1b" font-size="14" font-weight="600">Gemini 3.5 Audio</text>
