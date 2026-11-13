@@ -5,48 +5,47 @@
 <text font-family="Georgia,serif" x="29" y="79" fill="#201f1b" font-size="32" font-weight="400">Terms across model reports</text>
 <path d="M29 94H1091V94" stroke="#dcd6c8" fill="none"/>
 <text font-family="Inter,Arial,sans-serif" x="424" y="342" fill="#b6472f" font-size="48" font-weight="700">Reasoning</text>
-<text font-family="Inter,Arial,sans-serif" x="436" y="400" fill="#137f72" font-size="40" font-weight="700">Multimodal</text>
-<text font-family="Inter,Arial,sans-serif" x="424" y="278" fill="#7545b7" font-size="38" font-weight="700">Long Context</text>
-<text font-family="Inter,Arial,sans-serif" x="322" y="449" fill="#2555bd" font-size="35" font-weight="700">Reinforcement Learning</text>
-<text font-family="Inter,Arial,sans-serif" x="430" y="226" fill="#946410" font-size="34" font-weight="700">Training Data</text>
-<text font-family="Inter,Arial,sans-serif" x="712" y="340" fill="#c23966" font-size="34" font-weight="700">Tool Use</text>
-<text font-family="Inter,Arial,sans-serif" x="130" y="340" fill="#086f96" font-size="34" font-weight="700">Agentic Coding</text>
-<text font-family="Inter,Arial,sans-serif" x="694" y="394" fill="#3f7550" font-size="34" font-weight="700">Pre-training</text>
-<text font-family="Inter,Arial,sans-serif" x="214" y="393" fill="#b6472f" font-size="33" font-weight="700">Fine-tuning</text>
-<text font-family="Inter,Arial,sans-serif" x="712" y="291" fill="#137f72" font-size="33" font-weight="700">Vision-Language</text>
-<text font-family="Inter,Arial,sans-serif" x="172" y="290" fill="#7545b7" font-size="32" font-weight="700">Post-training</text>
-<text font-family="Inter,Arial,sans-serif" x="340" y="241" fill="#2555bd" font-size="31" font-weight="700">MoE</text>
-<text font-family="Inter,Arial,sans-serif" x="406" y="493" fill="#946410" font-size="31" font-weight="700">Safety Evaluation</text>
-<text font-family="Inter,Arial,sans-serif" x="358" y="175" fill="#c23966" font-size="31" font-weight="700">Supervised Fine-tuning</text>
-<text font-family="Inter,Arial,sans-serif" x="712" y="246" fill="#086f96" font-size="30" font-weight="700">Instruction Tuning</text>
-<text font-family="Inter,Arial,sans-serif" x="106" y="245" fill="#3f7550" font-size="29" font-weight="700">Computer Use</text>
-<text font-family="Inter,Arial,sans-serif" x="424" y="538" fill="#b6472f" font-size="28" font-weight="700">Image Generation</text>
-<text font-family="Inter,Arial,sans-serif" x="160" y="436" fill="#137f72" font-size="28" font-weight="700">Retrieval</text>
-<text font-family="Inter,Arial,sans-serif" x="100" y="489" fill="#7545b7" font-size="27" font-weight="700">Speech Recognition</text>
-<text font-family="Inter,Arial,sans-serif" x="814" y="435" fill="#2555bd" font-size="27" font-weight="700">Synthetic Data</text>
-<text font-family="Inter,Arial,sans-serif" x="730" y="489" fill="#946410" font-size="27" font-weight="700">Chain of Thought</text>
-<text font-family="Inter,Arial,sans-serif" x="892" y="333" fill="#c23966" font-size="27" font-weight="700">Distillation</text>
-<text font-family="Inter,Arial,sans-serif" x="778" y="200" fill="#086f96" font-size="26" font-weight="700">GRPO</text>
-<text font-family="Inter,Arial,sans-serif" x="160" y="194" fill="#3f7550" font-size="26" font-weight="700">Quantization</text>
-<text font-family="Inter,Arial,sans-serif" x="478" y="133" fill="#b6472f" font-size="25" font-weight="700">Embeddings</text>
-<text font-family="Inter,Arial,sans-serif" x="238" y="133" fill="#137f72" font-size="25" font-weight="700">Function Calling</text>
-<text font-family="Inter,Arial,sans-serif" x="658" y="133" fill="#7545b7" font-size="25" font-weight="700">Code Generation</text>
-<text font-family="Inter,Arial,sans-serif" x="64" y="379" fill="#2555bd" font-size="25" font-weight="700">Diffusion</text>
-<text font-family="Inter,Arial,sans-serif" x="88" y="529" fill="#946410" font-size="25" font-weight="700">Multimodal Reasoning</text>
-<text font-family="Inter,Arial,sans-serif" x="730" y="529" fill="#c23966" font-size="25" font-weight="700">Video Generation</text>
-<text font-family="Inter,Arial,sans-serif" x="862" y="200" fill="#086f96" font-size="20" font-weight="700">Policy Optimization</text>
-<text font-family="Inter,Arial,sans-serif" x="862" y="165" fill="#3f7550" font-size="21" font-weight="700">Agentic Reasoning</text>
-<text font-family="Inter,Arial,sans-serif" x="52" y="153" fill="#b6472f" font-size="15" font-weight="700">Audio Understanding</text>
-<text font-family="Inter,Arial,sans-serif" x="898" y="129" fill="#137f72" font-size="21" font-weight="700">Text Generation</text>
-<text font-family="Inter,Arial,sans-serif" x="946" y="371" fill="#7545b7" font-size="23" font-weight="700">Tokenizer</text>
-<text font-family="Inter,Arial,sans-serif" x="82" y="126" fill="#2555bd" font-size="18" font-weight="700">Reward Model</text>
-<text font-family="Inter,Arial,sans-serif" x="946" y="398" fill="#946410" font-size="14" font-weight="700">Sparse Attention</text>
-<text font-family="Inter,Arial,sans-serif" x="118" y="291" fill="#b6472f" font-size="21" font-weight="700">FP8</text>
-<text font-family="Inter,Arial,sans-serif" x="40" y="411" fill="#137f72" font-size="21" font-weight="700">KV Cache</text>
-<text font-family="Inter,Arial,sans-serif" x="40" y="332" fill="#c23966" font-size="20" font-weight="700">AdamW</text>
-<text font-family="Inter,Arial,sans-serif" x="34" y="440" fill="#b6472f" font-size="14" font-weight="700">Flow Matching</text>
-<text font-family="Inter,Arial,sans-serif" x="58" y="296" fill="#7545b7" font-size="20" font-weight="700">MLA</text>
-<text font-family="Inter,Arial,sans-serif" x="1030" y="290" fill="#946410" font-size="20" font-weight="700">RLHF</text>
+<text font-family="Inter,Arial,sans-serif" x="436" y="401" fill="#137f72" font-size="41" font-weight="700">Multimodal</text>
+<text font-family="Inter,Arial,sans-serif" x="418" y="280" fill="#7545b7" font-size="40" font-weight="700">Long Context</text>
+<text font-family="Inter,Arial,sans-serif" x="418" y="457" fill="#2555bd" font-size="37" font-weight="700">Training Data</text>
+<text font-family="Inter,Arial,sans-serif" x="316" y="222" fill="#946410" font-size="36" font-weight="700">Reinforcement Learning</text>
+<text font-family="Inter,Arial,sans-serif" x="238" y="342" fill="#c23966" font-size="36" font-weight="700">Tool Use</text>
+<text font-family="Inter,Arial,sans-serif" x="712" y="341" fill="#086f96" font-size="35" font-weight="700">Pre-training</text>
+<text font-family="Inter,Arial,sans-serif" x="202" y="395" fill="#3f7550" font-size="35" font-weight="700">Fine-tuning</text>
+<text font-family="Inter,Arial,sans-serif" x="700" y="394" fill="#b6472f" font-size="34" font-weight="700">Agentic Coding</text>
+<text font-family="Inter,Arial,sans-serif" x="154" y="292" fill="#137f72" font-size="34" font-weight="700">Post-training</text>
+<text font-family="Inter,Arial,sans-serif" x="718" y="291" fill="#7545b7" font-size="33" font-weight="700">Vision-Language</text>
+<text font-family="Inter,Arial,sans-serif" x="352" y="170" fill="#2555bd" font-size="32" font-weight="700">Supervised Fine-tuning</text>
+<text font-family="Inter,Arial,sans-serif" x="394" y="506" fill="#946410" font-size="32" font-weight="700">Instruction Tuning</text>
+<text font-family="Inter,Arial,sans-serif" x="712" y="440" fill="#c23966" font-size="32" font-weight="700">MoE</text>
+<text font-family="Inter,Arial,sans-serif" x="244" y="439" fill="#086f96" font-size="31" font-weight="700">Retrieval</text>
+<text font-family="Inter,Arial,sans-serif" x="70" y="487" fill="#3f7550" font-size="31" font-weight="700">Safety Evaluation</text>
+<text font-family="Inter,Arial,sans-serif" x="796" y="438" fill="#b6472f" font-size="30" font-weight="700">Computer Use</text>
+<text font-family="Inter,Arial,sans-serif" x="742" y="485" fill="#137f72" font-size="29" font-weight="700">Chain of Thought</text>
+<text font-family="Inter,Arial,sans-serif" x="124" y="244" fill="#7545b7" font-size="28" font-weight="700">Distillation</text>
+<text font-family="Inter,Arial,sans-serif" x="826" y="244" fill="#2555bd" font-size="28" font-weight="700">GRPO</text>
+<text font-family="Inter,Arial,sans-serif" x="64" y="172" fill="#946410" font-size="28" font-weight="700">Image Generation</text>
+<text font-family="Inter,Arial,sans-serif" x="742" y="526" fill="#c23966" font-size="28" font-weight="700">Speech Recognition</text>
+<text font-family="Inter,Arial,sans-serif" x="826" y="202" fill="#086f96" font-size="28" font-weight="700">Synthetic Data</text>
+<text font-family="Inter,Arial,sans-serif" x="34" y="436" fill="#3f7550" font-size="28" font-weight="700">Quantization</text>
+<text font-family="Inter,Arial,sans-serif" x="46" y="333" fill="#b6472f" font-size="27" font-weight="700">Embeddings</text>
+<text font-family="Inter,Arial,sans-serif" x="784" y="159" fill="#137f72" font-size="27" font-weight="700">Function Calling</text>
+<text font-family="Inter,Arial,sans-serif" x="76" y="529" fill="#7545b7" font-size="25" font-weight="700">Multimodal Reasoning</text>
+<text font-family="Inter,Arial,sans-serif" x="64" y="133" fill="#2555bd" font-size="25" font-weight="700">Policy Optimization</text>
+<text font-family="Inter,Arial,sans-serif" x="460" y="543" fill="#946410" font-size="21" font-weight="700">Token Prediction</text>
+<text font-family="Inter,Arial,sans-serif" x="46" y="373" fill="#c23966" font-size="25" font-weight="700">Tokenizer</text>
+<text font-family="Inter,Arial,sans-serif" x="118" y="205" fill="#086f96" font-size="19" font-weight="700">Video Generation</text>
+<text font-family="Inter,Arial,sans-serif" x="454" y="126" fill="#3f7550" font-size="18" font-weight="700">Audio Understanding</text>
+<text font-family="Inter,Arial,sans-serif" x="916" y="246" fill="#b6472f" font-size="18" font-weight="700">Code Generation</text>
+<text font-family="Inter,Arial,sans-serif" x="970" y="332" fill="#137f72" font-size="20" font-weight="700">Diffusion</text>
+<text font-family="Inter,Arial,sans-serif" x="94" y="293" fill="#2555bd" font-size="23" font-weight="700">FP8</text>
+<text font-family="Inter,Arial,sans-serif" x="676" y="127" fill="#946410" font-size="19" font-weight="700">KV Cache</text>
+<text font-family="Inter,Arial,sans-serif" x="40" y="398" fill="#7545b7" font-size="14" font-weight="700">Expert Parallelism</text>
+<text font-family="Inter,Arial,sans-serif" x="994" y="370" fill="#2555bd" font-size="22" font-weight="700">MLA</text>
+<text font-family="Inter,Arial,sans-serif" x="52" y="256" fill="#946410" font-size="22" font-weight="700">RLHF</text>
+<text font-family="Inter,Arial,sans-serif" x="784" y="122" fill="#c23966" font-size="14" font-weight="700">Video Understanding</text>
+<text font-family="Inter,Arial,sans-serif" x="370" y="126" fill="#2555bd" font-size="18" font-weight="700">AdamW</text>
+<text font-family="Inter,Arial,sans-serif" x="958" y="122" fill="#c23966" font-size="14" font-weight="700">Expert Routing</text>
 <path d="M29 559H1091V559" stroke="#dcd6c8" fill="none"/>
-<text font-family="Inter,Arial,sans-serif" x="30" y="583" fill="#716b60" font-size="12" font-weight="400">46 of 192 documents with source text  ·  43 terms shown  ·  One count per document</text>
+<text font-family="Inter,Arial,sans-serif" x="30" y="583" fill="#716b60" font-size="12" font-weight="400">75 of 192 documents with source text  ·  42 terms shown  ·  One count per document</text>
 </svg>
