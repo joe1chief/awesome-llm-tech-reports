@@ -24,6 +24,12 @@ The public catalog covers language models, vision-language models, and generativ
 
 PDFs can be mirrored after the exact download URL has been reviewed for redistribution and added to the vendor's mirror list. Each mirrored PDF is written under its year and vendor and into the existing flat PDF directory.
 
+## Technical word cloud
+
+The word cloud reads the latest year's archived PDFs, source PDFs, Hugging Face model cards and official technical pages. It extracts terms from readable text, drops references and site navigation where possible, and falls back to the catalog excerpt when the source is unavailable. It counts each term once per distinct document. The glossary normalizes English and Chinese aliases, and recurring technical phrases can enter the cloud without a glossary entry.
+
+The refresh workflow reads up to 30 new or due sources per run. To backfill the whole year, run the workflow with `mode=publish` and `word_cloud_only=true`. For an offline local build, run `uv run python scripts/report_wordcloud.py --local-only --limit 250` followed by `uv run python scripts/report_catalog.py build`. Git tracks term lists and source coverage in `data/report-text-terms.json`. The workflow publishes the coverage and the terms actually displayed in [word-cloud.json](docs/data/word-cloud.json).
+
 ## Shared Supabase and GitHub Actions
 
 1. Review and apply [the reports migration](supabase/migrations/202611120001_llm_reports.sql) through the shared project's existing migration process. Provision a login for the reports_runtime role and verify its access to llm_reports and separation from the Radar tables.

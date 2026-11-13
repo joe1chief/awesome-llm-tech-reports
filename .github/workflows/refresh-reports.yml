@@ -15,6 +15,7 @@ on:
       - docs/assets/**
       - docs/data/**
       - data/catalog.json
+      - data/report-text-terms.json
       - .github/workflows/refresh-reports.yml
       - .github/workflows/deploy.yml
   workflow_dispatch:
@@ -29,6 +30,10 @@ on:
       vendor:
         description: Vendor slug, or leave blank for all
         type: string
+      word_cloud_only:
+        description: Read the existing catalog sources and refresh the word cloud
+        type: boolean
+        default: false
   pull_request:
     paths:
       - .github/workflows/refresh-reports.yml
@@ -37,6 +42,7 @@ on:
       - configs/**
       - tests/**
       - data/catalog.json
+      - data/report-text-terms.json
       - docs/**
       - assets/diagrams/**
       - README.md
@@ -88,6 +94,7 @@ jobs:
       - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
       - run: uv sync --extra postgres
       - name: Collect and resolve reports
+        if: github.event_name != 'workflow_dispatch' || !inputs.word_cloud_only
         env:
           MODE: ${{ github.event_name != 'workflow_dispatch' && 'publish' || inputs.mode }}
           SINCE: ${{ github.event_name == 'push' && '2026-07-01' || inputs.since }}
@@ -101,12 +108,23 @@ jobs:
           if [ "$MODE" = publish ]; then args+=(--publish); fi
           if [ "$BACKFILL_ONLY" = true ]; then args+=(--backfill-only); fi
           uv run --no-sync python scripts/report_watch.py "${args[@]}"
+      - name: Read source text for the word cloud
+        if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish' || inputs.word_cloud_only
+        timeout-minutes: 6
+        continue-on-error: true
+        env:
+          WORD_CLOUD_ONLY: ${{ inputs.word_cloud_only }}
+        run: |
+          limit=30
+          if [ "$WORD_CLOUD_ONLY" = true ]; then limit=250; fi
+          uv run --no-sync python scripts/report_wordcloud.py --limit "$limit"
       - name: Publish verified changes
         if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
         id: publish
         run: |
+          uv run --no-sync python scripts/report_catalog.py build
           uv run --no-sync python scripts/report_catalog.py check
-          git add -- README.md data/catalog.json assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html docs/assets/diagrams/technical-word-cloud.svg ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
+          git add -- README.md data assets/diagrams docs/data/models.json docs/data/word-cloud.json docs/timeline.html docs/assets/diagrams/technical-word-cloud.svg ':(glob)20*/**/*.pdf' ':(glob)pdf/*.pdf'
           if ! git diff --cached --quiet; then
             git -c user.name='github-actions[bot]' \
                 -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
