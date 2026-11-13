@@ -6,26 +6,26 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 250,
+    "total_models": 258,
     "total_orgs": 24,
-    "milestones_count": 55,
+    "milestones_count": 56,
     "date_range": {
       "start": "2025-01",
       "end": "2026-11"
     },
     "camp_breakdown": {
       "Google": 38,
-      "China-based Labs": 140,
-      "Other Global": 40,
+      "China-based Labs": 141,
+      "Other Global": 47,
       "Anthropic": 16,
       "OpenAI": 16
     },
     "org_breakdown": {
       "Google": 38,
       "Alibaba": 20,
-      "Baidu": 4,
-      "InclusionAI (Ant Group)": 32,
       "MiniMax": 7,
+      "Baidu": 3,
+      "InclusionAI (Ant Group)": 34,
       "ByteDance": 7,
       "Meta": 4,
       "Anthropic": 16,
@@ -36,7 +36,7 @@
       "Moonshot AI": 3,
       "InternLM": 10,
       "DeepSeek": 6,
-      "NVIDIA": 16,
+      "NVIDIA": 23,
       "OpenBMB": 3,
       "xAI": 5,
       "StepFun": 2,
@@ -47,12 +47,12 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Reasoning / CoT": 100,
-      "Vision & Multimodal": 108,
-      "Agent & Coding": 96,
-      "MoE": 42,
-      "Open Weights": 9,
-      "Medical & Science": 44,
+      "Reasoning / CoT": 106,
+      "Vision & Multimodal": 110,
+      "Open Weights": 10,
+      "Agent & Coding": 100,
+      "MoE": 44,
+      "Medical & Science": 46,
       "Audio & Speech": 31,
       "Video": 30
     },
@@ -131,19 +131,19 @@
       },
       {
         "month": "2026-07",
-        "count": 22
+        "count": 23
       },
       {
         "month": "2026-08",
-        "count": 33
+        "count": 36
       },
       {
         "month": "2026-09",
-        "count": 34
+        "count": 39
       },
       {
         "month": "2026-10",
-        "count": 35
+        "count": 34
       },
       {
         "month": "2026-11",
@@ -187,6 +187,25 @@
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
       "document_published_on": "2026-11-11"
+    },
+    {
+      "id": "minimax--minimax-h3-image",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "MiniMax",
+      "model": "MiniMax-H3-Image",
+      "highlights": "Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization.",
+      "link": "https://www.minimax.io/blog/minimax-h3-image",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-11-11",
+      "report_kind": "official technical page"
     },
     {
       "id": "baidu--ernie-5-5-flash-preview",
@@ -240,25 +259,6 @@
       "tags": [],
       "released_on": "2026-11-10",
       "report_kind": "model card"
-    },
-    {
-      "id": "minimax--minimax-h3-image",
-      "date": "2026-11",
-      "year": 2026,
-      "month": 11,
-      "org": "MiniMax",
-      "model": "MiniMax-H3-Image",
-      "highlights": "Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization.",
-      "link": "https://www.minimax.io/blog/minimax-h3-image",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
-      ],
-      "released_on": "2026-11-10",
-      "report_kind": "official technical page"
     },
     {
       "id": "bytedance--seedream-5-5",
@@ -351,20 +351,26 @@
       "report_kind": "system card"
     },
     {
-      "id": "baidu--ernie-5-5",
+      "id": "baidu--ernie-5-5-flash-base",
       "date": "2026-11",
       "year": 2026,
       "month": 11,
       "org": "Baidu",
-      "model": "ERNIE 5.5",
-      "highlights": "ERNIE-5.5-Flash-Base 在各类能力维度上均取得了不错的效果，其中推理、代码与综合类 Benchmark 尤为突出。长上下文方面，尽管 43 层中有 37 层在 128 倍压缩后的序列上做注意力，仅 6 层 MLA-DSA 即可保证长上下文效果，ERNIE-5.5-Flash-Base 在 6 项长上下文 Benchmark 上均取得了不错的效果。",
-      "link": "https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/",
+      "model": "ERNIE-5.5-Flash-Base",
+      "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
+      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/028544b2ffceea189b2d8768ed2b9d09b06f2343/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE",
+        "Open Weights"
+      ],
       "released_on": "2026-11-05",
-      "report_kind": "official technical page"
+      "report_kind": "model card",
+      "total_parameters": 280000000000
     },
     {
       "id": "meituan--longcat-2-5",
@@ -638,27 +644,6 @@
       ],
       "released_on": "2026-10-22",
       "report_kind": "model card"
-    },
-    {
-      "id": "baidu--ernie-5-5-flash-base",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "Baidu",
-      "model": "ERNIE-5.5-Flash-Base",
-      "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
-      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base/blob/028544b2ffceea189b2d8768ed2b9d09b06f2343/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "MoE"
-      ],
-      "released_on": "2026-10-21",
-      "report_kind": "model card",
-      "total_parameters": 286245697882
     },
     {
       "id": "minimax--minimax-m3-1-flash",
@@ -1483,6 +1468,26 @@
       "report_kind": "model card"
     },
     {
+      "id": "nvidia--nv-reason-ct",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "NV-Reason-CT",
+      "highlights": "NV-Reason-CT is a 3D vision-language model (VLM) for CT image analysis. It combines a native 3D vision encoder (3D ViT) with a language model and is designed for radiology report generation, general question answering, and multi-step reasoning across chest and abdominal CT volumes.",
+      "link": "https://huggingface.co/nvidia/NV-Reason-CT/blob/386b93e034983f6c1fc841a43833a1b6a0cd9c13/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-09-08",
+      "report_kind": "model card",
+      "total_parameters": 5322014624
+    },
+    {
       "id": "inclusionai--llada-ui",
       "date": "2026-09",
       "year": 2026,
@@ -1522,6 +1527,44 @@
       "released_on": "2026-09-05",
       "report_kind": "model card",
       "total_parameters": 16255643392
+    },
+    {
+      "id": "nvidia--qwen3-8-27b-nvfp4",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "Qwen3.8-27B-NVFP4",
+      "highlights": "## Description: The NVIDIA Qwen3.8-27B NVFP4 model is a quantized version of Alibaba's Qwen3.8-27B model, which is an auto-regressive language model that uses an optimized transformer architecture. For more information on the model, please check [here](https://huggingface.co/Qwen/Qwen3.8-27B). The model is quantized with [Model Optimizer](https://github.com/NVIDIA/Model-Optimizer).",
+      "link": "https://huggingface.co/nvidia/Qwen3.8-27B-NVFP4/blob/482ca0f3832238542f8f5295dde86b5f22711d80/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": true,
+      "tags": [],
+      "released_on": "2026-09-04",
+      "report_kind": "model card",
+      "total_parameters": 27000000000
+    },
+    {
+      "id": "nvidia--nvidia-nemotron-labs-3-competitive-coding-550b-a55b-nvfp4",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-Labs-3-Competitive-Coding-550B-A55B-NVFP4",
+      "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+      "link": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE"
+      ],
+      "released_on": "2026-09-04",
+      "report_kind": "technical report",
+      "total_parameters": 550000000000
     },
     {
       "id": "inclusionai--ling-3-0-flash-vl",
@@ -1602,7 +1645,8 @@
         "Audio & Speech"
       ],
       "released_on": "2026-09-03",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 126000000000
     },
     {
       "id": "inclusionai--ling-3-0-flash-fin",
@@ -1636,6 +1680,46 @@
       "tags": [],
       "released_on": "2026-09-03",
       "report_kind": "system card"
+    },
+    {
+      "id": "nvidia--nemotron-3-labs-ultra-math-sft",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "Nemotron-3-Labs-Ultra-Math-SFT",
+      "highlights": "Nemotron-3-Labs-Ultra-Math-SFT is a decoder-only transformer language model specialized for mathematical reasoning, trained to solve difficult mathematical problems and identify mistakes in proofs, and deployed as part of an ensemble system that achieved a gold-medal level score at the International Mathematical Olympiad 2026.",
+      "link": "https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-SFT/blob/c6337c397cc7ea2cf7b594e0b880bc874558e20d/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Medical & Science"
+      ],
+      "released_on": "2026-09-02",
+      "report_kind": "model card",
+      "total_parameters": 560524603904
+    },
+    {
+      "id": "nvidia--nemotron-3-labs-ultra-math-rl",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "NVIDIA",
+      "model": "Nemotron-3-Labs-Ultra-Math-RL",
+      "highlights": "Nemotron-3-Labs-Ultra-Math-RL is a decoder-only transformer language model specialized for mathematical reasoning, trained to solve difficult mathematical problems and identify mistakes in proofs, and deployed as part of an ensemble system that achieved a gold-medal level score at the International Mathematical Olympiad 2026.",
+      "link": "https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL/blob/6849d3ecccbd63f3527d56072a3e9717ec4738c9/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Medical & Science"
+      ],
+      "released_on": "2026-09-02",
+      "report_kind": "model card",
+      "total_parameters": 560524578816
     },
     {
       "id": "google--gemini-3-8-flash",
@@ -1754,6 +1838,27 @@
       "report_kind": "technical report",
       "total_parameters": 6540230016,
       "document_published_on": "2026-09-03"
+    },
+    {
+      "id": "nvidia--muse-glimmer-30b-nvfp4",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "NVIDIA",
+      "model": "Muse-Glimmer-30B-NVFP4",
+      "highlights": "## Description: The NVIDIA Muse-Glimmer-30B NVFP4 model is the quantized version of Meta Superintelligence Lab's Muse-Glimmer-30B model, which is an auto-regressive language model that uses an optimized transformer architecture. Muse Glimmer is a dense causal transformer with a dedicated perception encoder for interleaved text and image input, purpose-built for local agentic tasks including multi-step reasoning, tool use, and multimodal understanding. For more information, please check [here](https://huggingface.co/meta-models/Muse-Glimmer-30B). The NVID",
+      "link": "https://huggingface.co/nvidia/Muse-Glimmer-30B-NVFP4/blob/47818374517751c48c55cde2621594926b1888b6/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-08-27",
+      "report_kind": "model card",
+      "total_parameters": 30000000000
     },
     {
       "id": "tencent--hy4-preview",
@@ -2166,6 +2271,23 @@
       "total_parameters": 30000000000000
     },
     {
+      "id": "inclusionai--ling-3-0-tiny-base",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.0-tiny-base",
+      "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base/blob/bab7297fa02713af237e378bf21107718b8e0e1a/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-08-11",
+      "report_kind": "model card",
+      "total_parameters": 8209997600
+    },
+    {
       "id": "inclusionai--ling-3-0-flash-base-midtrain",
       "date": "2026-08",
       "year": 2026,
@@ -2271,6 +2393,26 @@
       "tags": [],
       "released_on": "2026-08-05",
       "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
+      "date": "2026-08",
+      "year": 2026,
+      "month": 8,
+      "org": "NVIDIA",
+      "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "highlights": "| | | |:---|:---| | **Total Parameters** | 30B (3B active) | | **Architecture** | MoE - Mamba-2 + MoE + Attention hybrid | | **Context Length** | Up to 1M tokens | | **Single-GPU Deployment** | 1× DGX Spark (GB10) or 1× H100 | | **Supported Hardware** | NVIDIA Blackwell (DGX Spark / GB10, GB200, GeForce RTX 5090); NVIDIA Hopper (H100, H200); NVIDIA Ampere via W4A16 | | **Supported Languages** | English (and coding languages), Spanish, French, German, Italian, Japanese | | **Speculative Decoding** | DSpark for low-concurrency Data Centre and DGX Spark Wor",
+      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4/blob/bee7596271d1495f6992ae224aefde4410e816b8/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "MoE"
+      ],
+      "released_on": "2026-08-04",
+      "report_kind": "model card",
+      "total_parameters": 30000000000
     },
     {
       "id": "alibaba_qwen--qwen3-8-max",
@@ -2635,6 +2777,26 @@
       "released_on": "2026-07-14",
       "report_kind": "official technical page",
       "total_parameters": 6208221232
+    },
+    {
+      "id": "inclusionai--singguard-nsfa-9b",
+      "date": "2026-07",
+      "year": 2026,
+      "month": 7,
+      "org": "InclusionAI (Ant Group)",
+      "model": "SingGuard-NSFA-9B",
+      "highlights": "# SingGuard-NSFA: Extensible Guardrails for Agentic AI via Generative Reasoning and Real-Time Classification",
+      "link": "https://huggingface.co/inclusionAI/SingGuard-NSFA-9B/blob/69d1e631e9ff34f4b990855dd2b1e60572d8829c/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding"
+      ],
+      "released_on": "2026-07-10",
+      "report_kind": "model card",
+      "total_parameters": 9000000000
     },
     {
       "id": "tencent--hils-attention-7b",
@@ -3119,6 +3281,26 @@
       "released_on": "2026-03-18"
     },
     {
+      "id": "2026-03_gemini_3_1_flash_lite",
+      "date": "2026-03",
+      "year": 2026,
+      "month": 3,
+      "org": "Google",
+      "model": "Gemini 3.1 Flash-Lite",
+      "highlights": "Evaluation Approach : Gemini 3.1 Flash-Lite was evaluated across a range of benchmarks, including speed, reasoning, multimodal capabilities, factuality, agentic tool use, multi-lingual performance, coding, and long-context Model dependencies: Gemini 3.1 Flash-Lite is based on Gemini 3 Pro",
+      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf",
+      "file": "2026/google/2026-03_gemini-3.1-flash-lite.pdf",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Medical & Science"
+      ],
+      "released_on": "2026-03-03"
+    },
+    {
       "id": "2026-03_phi_4_reasoning_vision_15b",
       "date": "2026-03",
       "year": 2026,
@@ -3210,25 +3392,6 @@
       ]
     },
     {
-      "id": "2026-03_gemini_3_1_flash_lite",
-      "date": "2026-03",
-      "year": 2026,
-      "month": 3,
-      "org": "Google",
-      "model": "Gemini 3.1 Flash-Lite",
-      "highlights": "Evaluation Approach : Gemini 3.1 Flash-Lite was evaluated across a range of benchmarks, including speed, reasoning, multimodal capabilities, factuality, agentic tool use, multi-lingual performance, coding, and long-context Model dependencies: Gemini 3.1 Flash-Lite is based on Gemini 3 Pro",
-      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf",
-      "file": "2026/google/2026-03_gemini-3.1-flash-lite.pdf",
-      "camp": "Google",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Medical & Science"
-      ]
-    },
-    {
       "id": "2026-03_gemini_3_1_flash_live",
       "date": "2026-03",
       "year": 2026,
@@ -3312,6 +3475,47 @@
       ]
     },
     {
+      "id": "2026-02_gemini_3_1_flash_image",
+      "date": "2026-02",
+      "year": 2026,
+      "month": 2,
+      "org": "Google",
+      "model": "Gemini 3.1 Flash Image",
+      "highlights": "Gemini 3.1 Flash Image can comprehend input from different information sources, including text, images, audio and video 1 Model Data Training Dataset: Gemini 3.1 Flash Image is based on Gemini 3 Flash",
+      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf",
+      "file": "2026/google/2026-02_gemini-3.1-flash-image.pdf",
+      "camp": "Google",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video",
+        "Medical & Science"
+      ],
+      "released_on": "2026-02-26"
+    },
+    {
+      "id": "2026-02_gemini_3_1_pro",
+      "date": "2026-02",
+      "year": 2026,
+      "month": 2,
+      "org": "Google",
+      "model": "Gemini 3.1 Pro",
+      "highlights": "Advanced sparse-MoE multimodal reasoning model with 1M context, stronger agentic coding and long-context performance than Gemini 3 Pro, and published safety assessments under Google DeepMind's Frontier Safety Framework.",
+      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
+      "file": "2026/google/2026-02_gemini-3.1-pro.pdf",
+      "camp": "Google",
+      "is_milestone": true,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "Vision & Multimodal",
+        "Medical & Science",
+        "MoE"
+      ],
+      "released_on": "2026-02-19"
+    },
+    {
       "id": "2026-02_claude_sonnet_4_6",
       "date": "2026-02",
       "year": 2026,
@@ -3381,45 +3585,6 @@
       "tags": [
         "Agent & Coding",
         "MoE"
-      ]
-    },
-    {
-      "id": "2026-02_gemini_3_1_pro",
-      "date": "2026-02",
-      "year": 2026,
-      "month": 2,
-      "org": "Google",
-      "model": "Gemini 3.1 Pro",
-      "highlights": "Advanced sparse-MoE multimodal reasoning model with 1M context, stronger agentic coding and long-context performance than Gemini 3 Pro, and published safety assessments under Google DeepMind's Frontier Safety Framework.",
-      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
-      "file": "2026/google/2026-02_gemini-3.1-pro.pdf",
-      "camp": "Google",
-      "is_milestone": true,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Medical & Science",
-        "MoE"
-      ]
-    },
-    {
-      "id": "2026-02_gemini_3_1_flash_image",
-      "date": "2026-02",
-      "year": 2026,
-      "month": 2,
-      "org": "Google",
-      "model": "Gemini 3.1 Flash Image",
-      "highlights": "Gemini 3.1 Flash Image can comprehend input from different information sources, including text, images, audio and video 1 Model Data Training Dataset: Gemini 3.1 Flash Image is based on Gemini 3 Flash",
-      "link": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf",
-      "file": "2026/google/2026-02_gemini-3.1-flash-image.pdf",
-      "camp": "Google",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Audio & Speech",
-        "Video",
-        "Medical & Science"
       ]
     },
     {
