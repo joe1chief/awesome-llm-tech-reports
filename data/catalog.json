@@ -4081,9 +4081,10 @@
       "forms": [
         "General availability"
       ],
+      "hub_task": "image-text-to-video",
       "id": "minimax--minimax-h3",
       "key": "minimax/minimax-h3",
-      "model": "MiniMax H3",
+      "model": "MiniMax-H3",
       "org": "MiniMax",
       "release_events": [
         {

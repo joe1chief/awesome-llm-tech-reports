@@ -294,7 +294,7 @@
 <path d="M1003 561H1003V587" stroke="#dcd6c8" fill="none"/>
 <circle cx="1003" cy="561" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="564" fill="#c23966" font-size="9" font-weight="600">07.31  MiniMax</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="578" fill="#201f1b" font-size="13" font-weight="600">MiniMax H3</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="578" fill="#201f1b" font-size="13" font-weight="600">MiniMax-H3</text>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="589" fill="#716b60" font-size="8" font-weight="400">General availability</text>
 <path d="M1003 599H1003V625" stroke="#dcd6c8" fill="none"/>
 <circle cx="1003" cy="599" r="3.5" fill="#1984bf" stroke="#f8f7f2" stroke-width="1"/>
@@ -306,7 +306,7 @@
 <path d="M1161 268H1161V294" stroke="#dcd6c8" fill="none"/>
 <circle cx="1161" cy="268" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="271" fill="#c23966" font-size="9" font-weight="600">08.03  MiniMax</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="285" fill="#201f1b" font-size="13" font-weight="600">MiniMax H3</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="285" fill="#201f1b" font-size="13" font-weight="600">MiniMax-H3</text>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="296" fill="#716b60" font-size="8" font-weight="400">Open weights</text>
 <path d="M1161 306H1161V332" stroke="#dcd6c8" fill="none"/>
 <circle cx="1161" cy="306" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1"/>
