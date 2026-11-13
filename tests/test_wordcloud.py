@@ -96,7 +96,7 @@ def test_revisions_deduplicate_documents_and_retry_with_excerpt(monkeypatch, tmp
 def test_cloud_displays_more_than_the_old_layout_limit():
     counts = [(f"Technical phrase {index}", CLOUD_LIMIT - index) for index in range(CLOUD_LIMIT)]
     svg, displayed = wordcloud_svg("2026", counts, {"archive PDF": 20, "catalog excerpt": 3})
-    assert len(displayed) > 25
+    assert len(displayed) == CLOUD_LIMIT
     assert displayed == wordcloud_svg("2026", counts, {"archive PDF": 20, "catalog excerpt": 3})[1]
     texts = {element.text for element in ET.fromstring(svg).iter("{http://www.w3.org/2000/svg}text")}
     assert set(displayed) <= texts
