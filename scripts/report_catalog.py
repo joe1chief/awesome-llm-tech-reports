@@ -8,7 +8,7 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from parse_readme import build_dataset, classify_camp, extract_tags, is_milestone, parse_models
+from parse_readme import README_TABLE_HEADER, build_dataset, classify_camp, extract_tags, is_milestone, parse_models
 from report_terms import term_index
 from report_visuals import build_visuals
 
@@ -190,31 +190,32 @@ def update_readme(text, dataset, visual_sections, rows):
     )
     date_range = dataset["stats"]["date_range"]
     first, last = date_range["start"], date_range["end"]
+    archives = {}
+    files = set()
+    for model in models:
+        if not (file := model["report"].get("file")):
+            continue
+        files.add(file)
+        path = Path(file).parent
+        if len(path.parts) == 2:
+            _, years = archives.setdefault(path.name, (model["org"], set()))
+            years.add(path.parent.name)
     text = re.sub(
-        r"(?m)^# Awesome LLM Technical Reports.*$",
-        f"# Awesome LLM Technical Reports ({first} ~ {last})",
+        r"(?m)^\*\*Catalog coverage\*\*.*$",
+        f"**Catalog coverage** · {first} to {last} · {len(models)} documented models · {len(files)} archived PDFs",
         text,
         count=1,
     )
-    time_badge = f"Time%20Range-{first.replace('-', '--')}%20to%20{last.replace('-', '--')}-4c1"
-    text = re.sub(r"Time%20Range-[^\" ]+", time_badge, text, count=1)
-    text = re.sub(r"Models-\d+-blue", f"Models-{len(models)}-blue", text, count=1)
-    pdf_count = sum(bool(model["report"].get("file")) for model in models)
-    text = re.sub(r"Local%20PDF-\d+-success", f"Local%20PDF-{pdf_count}-success", text, count=1)
-    text = re.sub(
-        r"(?m)^- (?:Systematically archives major model releases from|Archives model reports from) .*$",
-        f"- Archives model reports from **{first}** through **{last}** across LLM, multimodal and medical domains.",
-        text,
-        count=1,
-    )
-    toc = "- [Release Timeline](#release-timeline)\n"
-    word_cloud = "- [Technical Word Cloud](#technical-word-cloud)\n"
-    if word_cloud not in text:
-        text = text.replace(toc, toc + word_cloud, 1)
-    start, stop = text.index("## Release Timeline\n"), text.index("## Company Quick Links\n")
-    text = text[:start] + visual_sections + "\n\n" + text[stop:]
-    start, stop = text.index("## Model Index (Folded by Year)\n"), text.index("## Star History\n")
-    sections = ["## Model Index (Folded by Year)", ""]
+    start, stop = text.index("## Release Timeline\n"), text.index("## Star History\n")
+    sections = [
+        visual_sections, "",
+        "## Company Quick Links", "",
+        "Archived PDFs by organization and year. The [flat PDF archive](pdf/) contains the same files.", "",
+    ]
+    for vendor, (org, archive_years) in sorted(archives.items(), key=lambda item: item[1][0].casefold()):
+        links = " · ".join(f"[{year}]({year}/{vendor}/)" for year in sorted(archive_years, reverse=True))
+        sections.append(f'- <a id="company-{vendor}"></a> **{md_cell(org)}** · {links}')
+    sections.extend(["", "## Model Index (Folded by Year)", ""])
     years = sorted({m["released_on"][:4] for m in models}, reverse=True)
     for index, year in enumerate(years):
         year_models = [m for m in models if m["released_on"].startswith(year)]
@@ -223,7 +224,7 @@ def update_readme(text, dataset, visual_sections, rows):
                 "<details open>" if index == 0 else "<details>",
                 f"<summary><b>{year} ({len(year_models)} models)</b></summary>",
                 "",
-                "| Release Date | Organization | Model | Core Highlights | Official Link | Local File |",
+                README_TABLE_HEADER,
                 "| --- | --- | --- | --- | --- | --- |",
             ]
         )

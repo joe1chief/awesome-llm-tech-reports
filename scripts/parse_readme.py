@@ -11,6 +11,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 README_PATH = REPO_ROOT / "README.md"
 OUTPUT_PATH = REPO_ROOT / "docs" / "data" / "models.json"
+README_TABLE_HEADER = "| Release Date | Organization | Model | Highlights | Source | Archived PDF or Document Type |"
 
 CHINA_LABS = {
     "alibaba", "deepseek", "zhipu", "moonshot", "tencent", "bytedance",
@@ -97,10 +98,13 @@ def parse_models(readme_path: Path):
         content = f.read()
 
     # Find table blocks
-    table_pattern = re.compile(
+    legacy_header = (
         r"\| Release Date \| Organization \| Model \| Core Highlights(?: \(from PDF\))?"
-        r" \| Official Link \| Local File \|\s*\n\|(?: --- \|)+\s*\n((?:\|[^\n]+\n)+)",
-        re.MULTILINE
+        r" \| Official Link \| Local File \|"
+    )
+    table_pattern = re.compile(
+        rf"(?:{re.escape(README_TABLE_HEADER)}|{legacy_header})\s*\n\|(?: --- \|)+\s*\n((?:\|[^\n]+\n)+)",
+        re.MULTILINE,
     )
 
     matches = table_pattern.findall(content)
@@ -183,7 +187,7 @@ def build_dataset(models):
     return {
         "metadata": {
             "title": "Awesome LLM Technical Reports",
-            "description": "Curated archive of frontier LLM, multimodal and reasoning technical reports",
+            "description": "Model releases, technical reports, system cards, and model cards for large language and multimodal models.",
             "repo_url": "https://github.com/joe1chief/awesome-llm-tech-reports",
             "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
         },

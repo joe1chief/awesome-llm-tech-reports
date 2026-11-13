@@ -8,11 +8,11 @@ window.ArenaCompare = (function() {
   let modelB = null;
 
   const PRESETS = [
-    { name: "DeepSeek-R1 vs Claude Sonnet 4.5", a: "DeepSeek-R1", b: "Claude Sonnet 4.5" },
-    { name: "GPT-5.4 Thinking vs Gemini 3 Pro", a: "GPT-5.4 Thinking", b: "Gemini 3 Pro" },
-    { name: "GLM-5 vs Qwen3-Max", a: "GLM-5", b: "Qwen3-Max" },
-    { name: "LongCat-2.0 vs Kimi K2.5", a: "LongCat-2.0", b: "Kimi K2.5" },
-    { name: "MiniMax M2.5 vs GPT-5.3-Codex", a: "MiniMax M2.5", b: "GPT-5.3-Codex" }
+    ["DeepSeek-R1", "Claude Sonnet 4.5"],
+    ["GPT-5.4 Thinking", "Gemini 3 Pro"],
+    ["GLM-5", "Qwen3-Max"],
+    ["LongCat-2.0", "Kimi K2.5"],
+    ["MiniMax M2.5", "GPT-5.3-Codex"]
   ];
 
   function init(models) {
@@ -27,8 +27,8 @@ window.ArenaCompare = (function() {
 
     if (!selectA || !selectB) return;
 
-    selectA.innerHTML = '<option value="">-- Select Model A --</option>';
-    selectB.innerHTML = '<option value="">-- Select Model B --</option>';
+    selectA.innerHTML = '<option value="">Select a model</option>';
+    selectB.innerHTML = '<option value="">Select a model</option>';
 
     allModels.forEach(m => {
       const optA = document.createElement("option");
@@ -44,11 +44,14 @@ window.ArenaCompare = (function() {
 
     if (presetsContainer) {
       presetsContainer.innerHTML = "";
-      PRESETS.forEach(p => {
+      PRESETS.forEach(([nameA, nameB]) => {
+        const left = allModels.find(model => model.model.toLowerCase() === nameA.toLowerCase());
+        const right = allModels.find(model => model.model.toLowerCase() === nameB.toLowerCase());
+        if (!left || !right) return;
         const btn = document.createElement("button");
         btn.style.cssText = "padding: 4px 12px; font-size: 12px; border-radius: 100px; background: rgba(234, 106, 16, 0.08); color: var(--orange); border: 1px solid rgba(234, 106, 16, 0.25); cursor: pointer; white-space: nowrap; font-weight: 500;";
-        btn.textContent = p.name;
-        btn.onclick = () => loadPreset(p.a, p.b);
+        btn.textContent = `${left.model} vs ${right.model}`;
+        btn.onclick = () => openCompareModal(left.id, right.id);
         presetsContainer.appendChild(btn);
       });
     }
@@ -62,15 +65,6 @@ window.ArenaCompare = (function() {
       modelB = allModels.find(m => m.id === e.target.value) || null;
       renderComparison();
     };
-  }
-
-  function loadPreset(nameA, nameB) {
-    const mA = allModels.find(m => m.model.toLowerCase().includes(nameA.toLowerCase()));
-    const mB = allModels.find(m => m.model.toLowerCase().includes(nameB.toLowerCase()));
-
-    if (mA && mB) {
-      openCompareModal(mA.id, mB.id);
-    }
   }
 
   function openCompareModal(idA, idB) {
@@ -113,7 +107,7 @@ window.ArenaCompare = (function() {
     if (!modelA || !modelB) {
       container.innerHTML = `
         <div style="text-align: center; padding: 48px 0; color: var(--ink-lighter);">
-          <p style="font-size: 15px; font-weight: 500;">Select both Model A and Model B above to compare their technical specifications.</p>
+          <p style="font-size: 15px; font-weight: 500;">Select two models to compare their highlights and sources.</p>
         </div>
       `;
       return;
@@ -136,15 +130,15 @@ window.ArenaCompare = (function() {
         </div>
 
         <div>
-          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Capabilities</h5>
+          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Topics</h5>
           <div style="display: flex; flex-wrap: wrap; gap: 4px;">
             ${m.tags.map(t => `<span class="table-tag">${escapeHtml(t)}</span>`).join('')}
           </div>
         </div>
 
         <div>
-          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Key Highlights</h5>
-          <p style="font-size: 13.5px; color: var(--ink-dim); line-height: 1.6; background: var(--card-hover-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border);">${escapeHtml(m.highlights)}</p>
+          <h5 style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--ink-lighter); letter-spacing: 0.05em; margin-bottom: 6px;">Highlights</h5>
+          <p style="font-size: 13.5px; color: var(--ink-dim); line-height: 1.6; background: var(--card-hover-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border);">${escapeHtml(m.highlights || "No catalog excerpt available.")}</p>
         </div>
 
         <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 10px;">
@@ -152,7 +146,7 @@ window.ArenaCompare = (function() {
             ${window.App.documentLabel(m)} &rarr;
           </a>
           <a href="${window.App.getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: var(--card-hover-bg); border: 1px solid var(--border); color: var(--ink); text-decoration: none;">
-            View PDF
+            Archived PDF
           </a>
           <button onclick="window.App && window.App.copyCitation('${m.id}')" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: none; border: 1px solid var(--border); color: var(--ink-dim); cursor: pointer;">
             Cite
@@ -172,7 +166,6 @@ window.ArenaCompare = (function() {
   return {
     init,
     openCompareModal,
-    closeCompareModal,
-    loadPreset
+    closeCompareModal
   };
 })();

@@ -1,42 +1,48 @@
-# Model report refresh
+# Model catalog maintenance
 
-The versioned public snapshot is [data/catalog.json](data/catalog.json). The catalog builder updates the README, timeline, technical word cloud and Pages JSON from that snapshot. Releases may appear on the timeline while their reports are being located. The report index lists entries with verified technical documentation.
+[data/catalog.json](data/catalog.json) is the public snapshot. The catalog builder generates the README index, the Pages catalog, the release timeline, and the technical word cloud. The timeline includes dated releases awaiting documentation. The README and website indexes list models with a source document.
 
-## Local development
+## Discovery and inclusion
 
-Use Python 3.11 or later, Node.js and uv.
+The refresh scans the Hugging Face organizations and vendor indexes in [configs/report-sources.json](configs/report-sources.json). Each source has its own cursor. Failed or deferred items can be retried without discarding work from other sources.
 
-~~~sh
+The resolver checks report links in revision-pinned Hugging Face model cards, then matches arXiv papers and checks official vendor sources. A model card or official technical page can serve as the source when a standalone report is unavailable. Releases that still need a stronger source are checked daily for their first 30 days and weekly through day 90.
+
+The public catalog covers language, vision-language, and generative multimodal models. Task metadata, tags, and known model families help exclude releases such as embeddings, classifiers, robot controllers, and standalone draft models. Quantized packages are grouped with the base model when their relationship is known.
+
+The [parameter policy](configs/report-parameters.json) currently requires at least 3 billion total parameters when the count can be established. MoE models use total parameters. Models with an unknown count remain eligible. The same rules apply when previously collected releases are published again.
+
+Use [configs/report-backfill.json](configs/report-backfill.json) to add dated official evidence for missed releases or correct existing entries. Set `historical` to import an older release outside the replay window, or use `correction` to replace an incorrect date, source, or excerpt. Review redistribution rights before adding an exact PDF URL to a vendor's mirror list. Approved PDFs are stored under the release year and organization and in the flat `pdf/` archive.
+
+## Local commands
+
+Use Python 3.11 or later, Node.js, and uv. Run these commands from the repository root.
+
+```sh
 make check
-uv run python scripts/report_watch.py --vendor meituan --vendor zhipu --vendor alibaba_qwen --since 2026-07-01 --strict
+uv run python scripts/report_watch.py --vendor meituan --strict
 uv run python scripts/report_catalog.py build
-~~~
+```
 
-A watch run prints a preview by default. With a full checkout, add --publish --sqlite .report-state/watch.sqlite3 to save a local refresh for inspection. The state file is ignored by Git. For a sparse checkout, pass --pdf-manifest with the output of git ls-tree -r --name-only HEAD to the catalog checker.
+The watcher previews changes by default. Pass `--since YYYY-MM-DD` to replay from a specific date. Use `--strict` to get a nonzero exit status for source errors, deferred items, or document lookup warnings. To inspect a local publication, use a full checkout with `REPORTS_DATABASE_URL` unset and pass `--publish --sqlite .report-state/watch.sqlite3`. Reuse the SQLite path when repeating a replay so completed work can be skipped.
 
-Sources are configured in [configs/report-sources.json](configs/report-sources.json). Each index has its own cursor. If an individual model card or article fails, the refresh continues through that index and retries the item the next day. A dated vendor index can still establish a pending release. The report resolver follows revision-pinned Hugging Face model card links, then checks arXiv and official vendor sources. A release with only a model card, a technical page, or no document gets daily follow-up for its first 30 days and weekly follow-up through day 90. The --strict option returns nonzero for source failures, deferred entries, or report lookup errors. Repeat a dated backfill with persistent state to work through deferred records.
+For a sparse checkout, use a Git file manifest to validate the PDF paths.
 
-The [verified backfill](configs/report-backfill.json) records dated vendor evidence for historical gaps. A change to the file on `main` imports those releases immediately when auto-refresh is enabled. Dated manual replays also import matching entries. Mark an older release as historical to import it outside the replay window. Use a correction to replace an incorrect date, source or summary. Regular polls continue report lookup for pending releases and publish each documented release phase on the timeline.
-
-The public catalog covers language models, vision-language models, and generative multimodal models. Hub discovery checks the reported task and tags, and uses a known model family when the task is missing. Vendor exclusions cover families with specialized roles, including embedding and classification, simulation, robot control, and standalone draft models. Precision and quantization packages are grouped with their base release where the relationship is known. Publishing applies the same rules to previously collected entries. Changes to source settings on `main` rebuild the public catalog, timeline, and word cloud when auto-refresh is enabled. The README shows up to ten release events per month, and the Pages timeline lists every published event.
-
-[The parameter policy](configs/report-parameters.json) sets a 3-billion total-parameter floor for published models. It uses verified totals, explicit size declarations in model cards or official announcements, floating-point Hub Safetensors counts, and sizes in repository names. The floor applies to total parameters for MoE models. Models with no reliable total remain eligible. Previously collected entries below the floor are retained in collection state so a lower floor can restore them. Updating the policy on `main` rebuilds the public archive.
-
-PDFs can be mirrored after the exact download URL has been reviewed for redistribution and added to the vendor's mirror list. Each mirrored PDF is written under its year and vendor and into the existing flat PDF directory.
+```sh
+git ls-tree -r --name-only HEAD > /tmp/llm-report-files.txt
+make check CATALOG_CHECK_ARGS='--pdf-manifest /tmp/llm-report-files.txt'
+```
 
 ## Technical word cloud
 
-The word cloud reads the latest year's archived PDFs, source PDFs, Hugging Face model cards and official technical pages. It extracts terms from readable text, drops references and site navigation where possible, and falls back to the catalog excerpt when the source is unavailable. It counts each term once per distinct document. The glossary normalizes English and Chinese aliases, and recurring technical phrases can enter the cloud without a glossary entry.
+The word cloud uses documents from the latest catalog year. The extractor reads archived PDFs, source PDFs, model cards, and official technical pages. It skips references and navigation where possible and uses the catalog excerpt when it cannot extract readable source text. Terms count once per distinct document. The glossary in [configs/report-terms.json](configs/report-terms.json) normalizes English and Chinese aliases, and the extractor also recognizes recurring technical phrases.
 
-The refresh workflow reads up to 30 new or due sources per run. To backfill the whole year, run the workflow with `mode=publish` and `word_cloud_only=true`. For an offline local build, run `uv run python scripts/report_wordcloud.py --local-only --limit 250` followed by `uv run python scripts/report_catalog.py build`. Git tracks term lists and source coverage in `data/report-text-terms.json`. The workflow publishes the coverage and the terms actually displayed in [word-cloud.json](docs/data/word-cloud.json).
+Each scheduled run processes up to 30 new or due sources. To process a larger batch, dispatch the refresh workflow with `mode=publish` and `word_cloud_only=true`. For a local run using archived PDFs, run `uv run python scripts/report_wordcloud.py --local-only --limit 250` and rebuild the catalog. The repository stores extracted terms in [data/report-text-terms.json](data/report-text-terms.json). The site publishes [term counts, source coverage, and the displayed terms](docs/data/word-cloud.json).
 
-## Shared Supabase and GitHub Actions
+## GitHub Actions and Supabase
 
-1. Review and apply [the reports migration](supabase/migrations/202611120001_llm_reports.sql) through the shared project's existing migration process. Provision a login for the reports_runtime role and verify its access to llm_reports and separation from the Radar tables.
-2. Configure the target repository's REPORTS_DATABASE_URL Actions secret with the reports runtime session pooler connection. Leave the hosted connection and raw state out of published assets.
-3. Run the Refresh model technical reports workflow in preview mode. Inspect each source's result. Verify the real Hub API and an official release page, then run a publish to check the Git commit and the Pages deployment reference.
-4. Set REPORTS_AUTO_REFRESH to true to run every eight hours. GitHub Actions then writes only changed catalog artifacts. The Pages workflow receives the exact published commit. A failed Pages deploy can be rerun for the same snapshot.
+[Refresh model technical reports](.github/workflows/refresh-reports.yml) runs every eight hours when the `REPORTS_AUTO_REFRESH` repository variable is `true`. Pushes to `main` on configured paths rebuild the snapshot from stored and verified evidence and deploy it. Use the workflow's `preview` mode to inspect source results, or `publish` to save and deploy a refresh. A failed Pages deployment can be rerun for the same published commit.
 
-## Radar pause and restore
+For a new deployment, apply the [Supabase migration](supabase/migrations/202611120001_llm_reports.sql) and provision a login for `reports_runtime` with access to the `llm_reports` schema. Store the session pooler connection in the `REPORTS_DATABASE_URL` Actions secret. Run a preview to confirm discovery, then publish and check the Pages deployment before enabling the schedule.
 
-The six production workflows are collect-alert.yml, paper-sweep.yml, daily-digest.yml, delivery-reconcile.yml, maintenance.yml and pages.yml. GitHub can re-enable those workflows individually. Check AgentMail's existing scheduled drafts before restoring live delivery. Resume collection in shadow mode when replaying the pause window.
+If the shared `ai-research-radar` repository is resumed, review its workflow states and existing delivery drafts there before enabling live delivery.

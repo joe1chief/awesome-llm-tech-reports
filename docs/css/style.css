@@ -30,6 +30,11 @@
   height: auto;
 }
 
+.hero-wordmark > span {
+  font-size: clamp(32px, 10vw, 144px);
+  font-weight: 300;
+}
+
 /* ==========================================================================
    Awesome LLM Technical Reports - LMSYS Exact Style Extensions
    ========================================================================== */
