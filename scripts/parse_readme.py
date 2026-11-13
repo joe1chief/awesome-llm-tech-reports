@@ -82,8 +82,7 @@ def extract_tags(model_name: str, highlights: str, link: str) -> list:
     if any(k in combined for k in ["moe", "mixture-of-experts", "mixture of experts", "sparse", "active parameter", "activated parameter"]):
         tags.append("MoE")
 
-    # Open Weights / Open Source
-    if any(k in combined for k in ["open-source", "open source", "open-weight", "open weight", "apache", "github.com", "huggingface.co", "arxiv.org", "weights"]):
+    if re.search(r"\b(?:open[- ]weights?|weights (?:are|have been) (?:public|available))\b", combined):
         tags.append("Open Weights")
 
     # Deduplicate while preserving order
@@ -99,7 +98,8 @@ def parse_models(readme_path: Path):
 
     # Find table blocks
     table_pattern = re.compile(
-        r"\| Release Date \| Organization \| Model \| Core Highlights \(from PDF\) \| Official Link \| Local File \|\s*\n\|(?: --- \|)+\s*\n((?:\|[^\n]+\n)+)",
+        r"\| Release Date \| Organization \| Model \| Core Highlights(?: \(from PDF\))?"
+        r" \| Official Link \| Local File \|\s*\n\|(?: --- \|)+\s*\n((?:\|[^\n]+\n)+)",
         re.MULTILINE
     )
 

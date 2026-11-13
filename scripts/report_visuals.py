@@ -14,6 +14,7 @@ PAPER = "#f8f7f2"
 INK = "#201f1b"
 MUTED = "#716b60"
 RULE = "#dcd6c8"
+PREVIEW_LIMIT = 10
 PALETTE = ["#b6472f", "#137f72", "#7545b7", "#2555bd", "#946410", "#c23966", "#086f96", "#3f7550"]
 BRANDS = {
     "Anthropic": "#b6472f",
@@ -28,6 +29,9 @@ BRANDS = {
     "Moonshot AI": "#a130a1",
     "xAI": "#20212b",
     "Tencent": "#247553",
+    "ByteDance": "#1984bf",
+    "StepFun": "#a8720a",
+    "Baidu": "#453eb4",
 }
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -91,60 +95,99 @@ def form_label(row):
     return " · ".join(badges)
 
 
-def timeline_svg(year, rows, first, last):
-    width = 1120
-    groups = [month_rows(rows, month) for month in range(first, last + 1)]
-    top = 170
-    row_heights = []
-    for group in groups:
-        row_heights.append(sum(29 + 17 * len(textwrap.wrap(row["model"], width=20)) for row in group))
-    height = top + max(max(row_heights), 100) + 58
-    desc = f"Monthly model release timeline for {MONTHS[first - 1]}–{MONTHS[last - 1]} {year}"
-    parts = svg_start(width, height, f"{year} model releases", desc)
-    parts.append(svg_text(29, 37, "MODEL RELEASE TIMELINE", 12, MUTED, weight=600))
-    parts.append(svg_text(28, 88, f"{year}  Model releases", 46, serif=True))
-    parts.append(
-        svg_text(30, 117, f"{MONTHS[first - 1]}–{MONTHS[last - 1]}  /  Dates from the catalog", 13, MUTED)
-    )
-    for index, (value, label) in enumerate(year_stats(rows)):
-        x = 664 + index * 107
-        parts.extend([svg_text(x, 64, value, 27, serif=True), svg_text(x, 87, label, 11, MUTED)])
-    parts.append(svg_line(28, 135, 1092, 135))
+def preview_events(rows):
+    def priority(row):
+        report = row.get("report") or {}
+        return (
+            not row.get("featured"),
+            row.get("follow_up", False),
+            not any(notice in row.get("forms", []) for notice in ("Preview", "General availability", "Open weights")),
+            report.get("kind") not in {"technical report", "system card", "archive"},
+        )
+
+    return sorted(sorted(rows, key=lambda row: row["released_on"], reverse=True), key=priority)[:PREVIEW_LIMIT]
+
+
+def timeline_svg(year, rows):
+    width, left, right = 2000, 50, 1950
+    columns = (right - left) / 12
+    groups = [month_rows(rows, month) for month in range(1, 13)]
+    vendors = Counter(row["org"] for row in rows)
+    legend = sorted(vendors, key=lambda org: (-vendors[org], org))
+    legend_y = 176
+    legend_x = left
+    legend_items = []
+    for org in legend:
+        span = max(60, len(org) * 7 + len(str(vendors[org])) * 7 + 31)
+        if legend_x + span > right:
+            legend_x, legend_y = left, legend_y + 20
+        legend_items.append(f'<circle cx="{legend_x + 3}" cy="{legend_y - 4}" r="3.5" fill="{brand_color(org)}"/>')
+        legend_items.append(svg_text(legend_x + 14, legend_y, f"{org}  {vendors[org]}", 11))
+        legend_x += span
+
+    month_y = legend_y + 43
+    content_top = month_y + 29
+    max_bottom = content_top
+    body = []
     for index, group in enumerate(groups):
-        month = first + index
-        x = 29 + index * 177
-        parts.append(svg_text(x, 159, f"{month:02d}", 22, serif=True))
-        parts.append(svg_text(x + 37, 158, f"{len(group)} releases", 10, MUTED))
-        y = top + 14
-        if group:
-            parts.append(svg_line(x + 3, y, x + 3, top + row_heights[index] - 6))
-        else:
-            parts.append(svg_text(x, y + 6, "No catalog entries", 11, MUTED))
-        for row in group:
+        x = round(left + index * columns)
+        shown = sorted(preview_events(group), key=lambda row: (row["released_on"], row["model"]))
+        body.append(svg_text(x, month_y, f"{index + 1:02d}", 23, serif=True))
+        body.append(svg_text(x + 35, month_y - 1, f"{len(group)} releases", 10, MUTED))
+        y = content_top
+        if not group:
+            body.append(svg_text(x, y + 5, "No releases", 10, MUTED))
+            continue
+        for row in shown:
             color = brand_color(row["org"])
             published = row["released_on"]
-            label = published[5:].replace("-", ".") if len(published) == 10 else published[5:7]
-            parts.append(
-                f'<circle cx="{x + 3}" cy="{y}" r="3.5" fill="{color}" stroke="{PAPER}" stroke-width="1.5"/>'
-            )
-            parts.append(svg_text(x + 13, y + 4, f"{label}  {row['org']}", 10, color, weight=650))
-            name_lines = textwrap.wrap(row["model"], width=20)
+            day = published[5:].replace("-", ".") if len(published) == 10 else published[5:7]
+            name_lines = textwrap.wrap(row["model"], width=21)
+            body.append(svg_line(x + 3, y, x + 3, y + 26 + 13 * (len(name_lines) - 1)))
+            body.append(f'<circle cx="{x + 3}" cy="{y}" r="3.5" fill="{color}" stroke="{PAPER}" stroke-width="1"/>')
+            org = textwrap.shorten(row["org"], width=19, placeholder="…")
+            badge = next((item for item in row.get("forms", []) if item), "")
+            body.append(svg_text(x + 13, y + 3, f"{day}  {org}", 9, color, weight=600))
             for line_index, line in enumerate(name_lines):
-                parts.append(svg_text(x + 13, y + 24 + line_index * 16, line, 14, weight=600))
-            if badge := form_label(row):
-                parts.append(svg_text(x + 13, y + 20 + len(name_lines) * 17, badge[:27], 9, MUTED))
-            y += 29 + 17 * len(name_lines)
-    parts.append(svg_line(29, height - 38, 1092, height - 38))
-    parts.append(
-        svg_text(
-            30,
-            height - 17,
-            "Two-digit dates indicate month precision. The 72-day count uses day-level dates only.",
-            11,
-            MUTED,
-        )
-    )
+                body.append(svg_text(x + 13, y + 17 + line_index * 13, line, 13, weight=600))
+            y += 29 + (len(name_lines) - 1) * 13
+            if badge:
+                body.append(svg_text(x + 13, y - 1, badge, 8, MUTED))
+                y += 9
+        if extra := len(group) - len(shown):
+            body.append(svg_text(x + 13, y + 4, f"+{extra} on the full timeline", 9, MUTED))
+            y += 16
+        max_bottom = max(max_bottom, y)
+
+    notes_y = max(max_bottom + 29, 573)
+    height = notes_y + 89
+    parts = svg_start(width, height, f"{year} model releases", "Annual overview with up to ten releases per month.")
+    parts.extend([
+        svg_text(left, 42, f"AI MODEL RELEASE TIMELINE  /  {year}", 12, MUTED, weight=600),
+        svg_text(left, 99, f"{year}  Model releases", 53, serif=True),
+        svg_text(left, 130, "January–December  ·  One dot per release event  ·  Color by organization", 13, MUTED),
+        svg_line(left, 153, right, 153),
+        *legend_items,
+        svg_line(left, month_y + 12, right, month_y + 12),
+        *body,
+    ])
+    for index, (value, label) in enumerate(year_stats(rows)):
+        x = 1430 + index * 131
+        parts.extend([svg_text(x, 78, value, 32, serif=True), svg_text(x, 101, label, 11, MUTED)])
+    busiest = max(range(12), key=lambda index: len(groups[index]))
+    pending = sum(not row.get("report") for row in rows)
+    parts.extend([
+        svg_line(left, notes_y, right, notes_y),
+        svg_text(left, notes_y + 21, f"{year} RELEASE NOTES", 10, MUTED, weight=600),
+        svg_text(left, notes_y + 42, f"Busiest month: {MONTHS[busiest]} ({len(groups[busiest])} releases)", 13, weight=600),
+        svg_text(570, notes_y + 42, f"{pending} release events awaiting documentation", 13, weight=600),
+        svg_text(1060, notes_y + 42, "Preview · Open weights · General availability", 12, MUTED),
+        svg_text(left, notes_y + 67,
+                 "Each month shows up to 10 events. Counts cover the complete catalog. Month-only dates are shown as MM.",
+                 11, MUTED),
+    ])
     return "\n".join([*parts, "</svg>", ""])
+
 
 
 def frequencies(rows, glossary):
@@ -249,8 +292,6 @@ article a{font-weight:650;overflow-wrap:anywhere}
         parts.append('</div><div class="months">')
         for month in range(1, 13):
             group = month_rows(rows, month)
-            if not group:
-                continue
             parts.append(f'<section class="month"><h3>{MONTHS[month - 1]} <small>{len(group)}</small></h3>')
             for row in group:
                 report = row.get("report")
@@ -269,20 +310,23 @@ article a{font-weight:650;overflow-wrap:anywhere}
     return "\n".join([*parts, "</main>", "</html>", ""])
 
 
-def build_visuals(rows, glossary, portal):
+def build_visuals(rows, glossary, portal, *, featured=()):
     events = [*rows, *({**row, **event, "follow_up": True} for row in rows for event in row.get("release_events", []))]
+    events = [
+        {**row, "featured": (row.get("key"), row["released_on"]) in featured}
+        for row in events
+    ]
     years = sorted({row["released_on"][:4] for row in events}, reverse=True)
     by_year = {year: [row for row in events if row["released_on"].startswith(year)] for year in years}
     year = years[0]
     latest = by_year[year]
     counts = frequencies([row for row in rows if row["released_on"].startswith(year)], glossary)
     diagrams = Path("assets/diagrams")
-    h1, h2 = (diagrams / f"release-timeline-{year}-{half}.svg" for half in ("h1", "h2"))
+    overview = diagrams / f"release-timeline-{year}.svg"
     cloud = diagrams / f"technical-word-cloud-{year}.svg"
     terms = Path("docs/data/word-cloud.json")
     outputs = {
-        h1: timeline_svg(year, latest, 1, 6),
-        h2: timeline_svg(year, latest, 7, 12),
+        overview: timeline_svg(year, latest),
         cloud: wordcloud_svg(year, counts),
         terms: json.dumps({"year": int(year), "terms": dict(counts)}, indent=2) + "\n",
         Path("docs/timeline.html"): timeline_html(by_year),
@@ -293,9 +337,7 @@ def build_visuals(rows, glossary, portal):
             "",
             f"[Browse the full timeline and release sources]({portal}/timeline.html)",
             "",
-            f"![{year} model releases, January to June]({h1})",
-            "",
-            f"![{year} model releases, July to December]({h2})",
+            f"![{year} model release overview]({overview})",
             "",
             "## Technical Word Cloud",
             "",

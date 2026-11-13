@@ -6,6 +6,7 @@ from io import BytesIO
 from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlsplit
 
+from report_identity import document_priority
 from report_sources import (
     ARXIV,
     COMMON_HOSTS,
@@ -21,10 +22,8 @@ from report_sources import (
 
 MAX_PDF = 99 * 1024 * 1024
 SIZE_VARIANT = re.compile(r"[- ]\d+(?:\.\d+)?[BM](?=[- ]|$)", re.I)
-DISTRIBUTION = re.compile(
-    r"(?:^|[._-])(GGUF|AWQ|GPTQ|MLX|EXL2|INT[48]|FP8|4bit|8bit|lora|adapter)(?:[._-]|$)", re.I
-)
 CARD_KIND = re.compile(r"\b(system|model)[-_ ]+card\b", re.I)
+STRUCTURAL_EXCERPT = re.compile(r"^(?:---|\||!\[|[0-9]+\.\s|[+-]\s|\x60\x60\x60)")
 
 
 def words(value):
@@ -80,7 +79,12 @@ def report_from_arxiv(entry, model, org, priority, affiliated):
 
 
 def technical_excerpt(body):
+    body = re.sub(r"\A\s*---[^\n]*\n.*?\n---[^\n]*(?:\n|$)", "", body, count=1, flags=re.S)
+    body = re.sub(r"(?ms)^(\x60{3,}|~{3,})[^\n]*\n.*?^\1[ \t]*$", "", body)
     for paragraph in re.split(r"\n\s*\n", body):
+        paragraph = re.sub(r"(?m)^#{1,6}[ \t]+[^\n]*\n?", "", paragraph)
+        if STRUCTURAL_EXCERPT.match(paragraph.lstrip()):
+            continue
         sample = clean(paragraph)
         if len(sample) >= 100 and TECHNICAL_WORDS.search(sample):
             return sample
@@ -118,6 +122,8 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
         payload, _ = fetch(url, hosts, MAX_PDF if explicit else 2_000_000)
         if payload.startswith(b"%PDF-"):
             card = CARD_KIND.search(f"{title} {path}")
+            if b"%%EOF" not in payload[-4096:]:
+                raise ValueError("Source returned an incomplete PDF")
             return {
                 "id": url,
                 "revision": hashlib.sha256(payload).hexdigest(),
@@ -138,60 +144,90 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
     if not explicit and not (TECHNICAL_WORDS.search(summary) or excerpt):
         return None
     highlights = summary if TECHNICAL_WORDS.search(summary) else excerpt
+    card = CARD_KIND.search(f"{page.heading} {page.title} {title} {path}")
     return {
         "id": url,
         "revision": digest(clean(page.heading or page.title) + "\n" + highlights),
         "rank": 0 if explicit else 2,
-        "kind": "system card"
-        if re.search(r"system[- ]card", f"{page.heading} {page.title} {title} {path}", re.I)
-        else "official technical page",
+        "kind": f"{card[1].lower()} card" if card else "official technical page",
         "url": url,
         "published_on": page.date,
         "highlights": highlights,
     }
 
 
+def report_links(links, model, hosts, hub_url=""):
+    result = []
+    for link, label in links:
+        path = unquote(urlsplit(link).path)
+        host = urlsplit(link).hostname
+        if not link.startswith("https://") or host not in hosts or arxiv_key(link):
+            continue
+        label_and_path = f"{label} {path}"
+        pdf = path.lower().endswith(".pdf")
+        named = matches_model(model, label_and_path)
+        explicit = bool(REPORT_WORDS.search(label_and_path)) or (
+            pdf and (named or label.strip().casefold() in {"paper", "report", "read the paper"})
+        )
+        if host == "huggingface.co" and (not hub_url or not link.startswith(hub_url + "/") or not pdf):
+            continue
+        if explicit or named:
+            result.append((link, label, explicit))
+    return sorted(result, key=lambda item: not item[2])
+
+
+def linked_report(candidates, release, hosts, errors, *, hub_url="", rank=0, provided=None):
+    best = None
+    for link, label, explicit in candidates:
+        target = link
+        suffix = ""
+        if hub_url and urlsplit(link).hostname == "huggingface.co":
+            suffix = urlsplit(link).path[len(urlsplit(hub_url).path) + 1 :]
+            suffix = re.sub(r"^(?:blob|raw|resolve)/[^/]+/", "", suffix)
+            if ".." in unquote(suffix).split("/"):
+                continue
+            target = f"{hub_url}/resolve/{release['hub_revision']}/{suffix}"
+        try:
+            report = vendor_document(
+                target, label, release["model"], hosts, explicit=explicit, provided=(provided or {}).get(target)
+            )
+        except (URLError, OSError, ValueError) as error:
+            errors.append(f"HTTP {error.code}" if isinstance(error, HTTPError) else type(error).__name__)
+            continue
+        if not report:
+            continue
+        report["rank"] = rank
+        if suffix:
+            report["id"] = f"{hub_url}/{suffix}"
+            report["url"] = f"{hub_url}/blob/{release['hub_revision']}/{suffix}"
+        if not best or document_priority(report) < document_priority(best):
+            best = report
+        if report["kind"] == "technical report":
+            break
+    return best
+
+
 def resolve_report(release, card, settings, arxiv, official_body=None):
     url = release["release_url"]
     model, org = release["model"], release["org"]
     hosts = COMMON_HOSTS | set(settings["hosts"])
-    body = card or official_body or ""
-    hub_page = urlsplit(url).hostname == "huggingface.co"
-    links = document_links(body, url + "/" if hub_page else url)
-
-    identifiers = list(dict.fromkeys(match[1] for match in ARXIV.finditer(body)))[:12]
-    explicit_documents = []
-    for link, label in links:
-        if not arxiv_key(link) and REPORT_WORDS.search(f"{label} {unquote(urlsplit(link).path)}"):
-            if urlsplit(link).hostname == "huggingface.co" and not link.startswith(url + "/"):
-                continue
-            if link.startswith("https://") and urlsplit(link).hostname in hosts:
-                explicit_documents.append((link, label))
-
+    hub_url = release.get("hub_url") or (url if urlsplit(url).hostname == "huggingface.co" else "")
+    official_url = release.get("official_url", url)
+    hub_links = document_links(card or "", hub_url + "/") if hub_url else []
+    official_links = document_links(official_body or "", official_url)
+    candidates = report_links(hub_links, model, hosts, hub_url)
     errors = []
-    if hub_page:
-        for link, label in list(dict.fromkeys(explicit_documents))[:4]:
-            try:
-                target = link
-                if urlsplit(link).hostname == "huggingface.co":
-                    suffix = urlsplit(link).path[len(urlsplit(url).path) + 1 :]
-                    suffix = re.sub(r"^(?:blob|raw|resolve)/[^/]+/", "", suffix)
-                    if not suffix.lower().endswith(".pdf") or ".." in unquote(suffix).split("/"):
-                        continue
-                    target = f"{url}/resolve/{release['hub_revision']}/{suffix}"
-                if report := vendor_document(target, label, model, hosts | HUB_FILES, explicit=True):
-                    if target != link:
-                        report["id"] = f"{url}/{suffix}"
-                        report["url"] = f"{url}/blob/{release['hub_revision']}/{suffix}"
-                    report["highlights"] = report["highlights"] or technical_excerpt(body)
-                    return report, errors
-            except (URLError, OSError, ValueError) as error:
-                errors.append(type(error).__name__)
+    best = linked_report([item for item in candidates if item[2]][:4], release, hosts | HUB_FILES, errors, hub_url=hub_url)
+    if best and best["kind"] == "technical report":
+        best["highlights"] = best["highlights"] or technical_excerpt(card or "")
+        return best, errors
 
+    body = "\n".join((card or "", official_body or ""))
+    identifiers = list(dict.fromkeys(match[1] for match in ARXIV.finditer(body)))[:12]
     if identifiers:
         try:
             for entry in arxiv.query(id_list=",".join(identifiers), max_results=len(identifiers)):
-                if report := report_from_arxiv(entry, model, org, 0 if hub_page else 1, affiliated=False):
+                if report := report_from_arxiv(entry, model, org, 0 if card else 1, affiliated=False):
                     return report, errors
         except (URLError, OSError, ValueError) as error:
             errors.append(type(error).__name__)
@@ -203,38 +239,26 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
     except (URLError, OSError, ValueError) as error:
         errors.append(type(error).__name__)
 
-    fallback = list(dict.fromkeys(explicit_documents))[:4] if not hub_page else []
-    official_url = release.get("official_url", url)
+    fallback = report_links(official_links, model, hosts)
+    fallback.extend(item for item in candidates if not item[2])
+    linked = linked_report(
+        list(dict.fromkeys(fallback))[:6], release, hosts | HUB_FILES, errors, rank=2,
+        provided={official_url: official_body},
+    )
+    choices = [report for report in (best, linked) if report]
     if official_body:
         page = Page(official_body)
-        fallback.append((official_url, page.heading or page.title))
-    fallback += [
-        (link, label)
-        for link, label in links
-        if urlsplit(link).hostname in settings["hosts"] and matches_model(model, label + " " + unquote(link))
-    ]
-    for link, label in list(dict.fromkeys(fallback))[:6]:
-        try:
-            explicit = bool(REPORT_WORDS.search(f"{label} {unquote(urlsplit(link).path)}"))
-            if report := vendor_document(
-                link, label, model, hosts, explicit=explicit, provided=official_body if link == official_url else None
-            ):
-                report["rank"] = 2
-                return report, errors
-        except HTTPError as error:
-            if error.code not in {403, 404}:
-                errors.append(f"HTTP {error.code}")
-        except (URLError, OSError, ValueError) as error:
-            errors.append(type(error).__name__)
+        if report := vendor_document(official_url, page.heading or page.title, model, hosts, provided=official_body):
+            choices.append(report)
 
-    if hub_page and (excerpt := technical_excerpt(card or "")):
+    if card and hub_url and (excerpt := technical_excerpt(card)):
         revision = release["hub_revision"]
-        return {
-            "id": url + "/README.md",
+        choices.append({
+            "id": hub_url + "/README.md",
             "revision": revision,
             "rank": 3,
             "kind": "model card",
-            "url": f"{url}/blob/{revision}/README.md",
+            "url": f"{hub_url}/blob/{revision}/README.md",
             "highlights": excerpt,
-        }, errors
-    return None, errors
+        })
+    return min(choices, key=lambda report: (document_priority(report), report["rank"]), default=None), errors

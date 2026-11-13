@@ -1,16 +1,6 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'README.md'
-      - 'scripts/**'
-      - 'docs/**'
-      - 'assets/diagrams/**'
-      - 'data/catalog.json'
-      - '.github/workflows/deploy.yml'
   workflow_dispatch:
   workflow_call:
     inputs:

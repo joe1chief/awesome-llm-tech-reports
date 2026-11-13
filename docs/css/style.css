@@ -1,3 +1,29 @@
+.report-preview {
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+}
+
+.report-preview .hero-blog-card-body,
+.report-preview .hero-blog-card-title,
+.report-preview .hero-blog-card-excerpt,
+.report-preview .hero-blog-card-meta {
+  display: block;
+}
+
+.report-preview .hero-blog-card-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+#catalog-status {
+  text-align: center;
+  color: var(--ink-dim);
+}
+
 /* ==========================================================================
    Awesome LLM Technical Reports - LMSYS Exact Style Extensions
    ========================================================================== */

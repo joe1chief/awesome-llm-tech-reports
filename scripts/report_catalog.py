@@ -18,7 +18,8 @@ MODELS = Path("docs/data/models.json")
 PORTAL = "https://joe1chief.github.io/awesome-llm-tech-reports"
 MONTH = re.compile(r"\d{4}-\d{2}")
 PDF_PATH = re.compile(r"(?:20\d{2}/[a-z0-9_]+|pdf)/[A-Za-z0-9_.()-]+\.pdf")
-MARKDOWN_CELL = re.compile(r"([\\|\[\]])")
+MARKDOWN_CELL = re.compile(r"([\\|\[\]_*])")
+REPORT_KINDS = {"archive", "technical report", "system card", "model card", "official technical page"}
 
 
 def json_text(data):
@@ -100,6 +101,10 @@ def validate(rows, root=ROOT, pdf_manifest=None, check_files=True):
     ids, keys = set(), set()
     for row in rows:
         key = row["key"]
+        if not re.fullmatch(r"[a-z0-9_]+/[a-z0-9]+(?:-[a-z0-9]+)*", key):
+            raise ValueError(f"Invalid release key {key}")
+        if not re.fullmatch(r"[a-zA-Z0-9_-]+", row["id"]):
+            raise ValueError(f"Invalid model ID for {key}")
         if key in keys or row["id"] in ids:
             raise ValueError(f"Duplicate release identity {key}")
         keys.add(key)
@@ -107,6 +112,8 @@ def validate(rows, root=ROOT, pdf_manifest=None, check_files=True):
         parse_release_date(row["released_on"])
         if not https_url(row["release_url"]):
             raise ValueError(f"Invalid release URL for {key}")
+        if "total_parameters" in row and (type(row["total_parameters"]) is not int or row["total_parameters"] <= 0):
+            raise ValueError(f"Invalid total parameters for {key}")
         dates = {row["released_on"]}
         for event in row.get("release_events", []):
             day = event["released_on"]
@@ -115,8 +122,10 @@ def validate(rows, root=ROOT, pdf_manifest=None, check_files=True):
                 raise ValueError(f"Invalid follow-up release for {key}")
             dates.add(day)
         report = row.get("report")
-        if not report:
+        if report is None:
             continue
+        if report["kind"] not in REPORT_KINDS:
+            raise ValueError(f"Invalid report type for {key}")
         if not https_url(report["url"]):
             raise ValueError(f"Invalid report URL for {key}")
         file = report.get("file")
@@ -139,6 +148,10 @@ def portal_models(rows):
             continue
         released = row["released_on"]
         highlights = report.get("highlights", "")
+        tags = extract_tags(row["model"], highlights, report["url"])
+        has_weights = any("Open weights" in event.get("forms", []) for event in [row, *row.get("release_events", [])])
+        if has_weights and "Open Weights" not in tags:
+            tags.append("Open Weights")
         model = {
             "id": row["id"],
             "date": released[:7],
@@ -151,12 +164,16 @@ def portal_models(rows):
             "file": report.get("file", ""),
             "camp": classify_camp(row["org"]),
             "is_milestone": is_milestone(row["model"], highlights),
-            "tags": extract_tags(row["model"], highlights, report["url"]),
+            "tags": tags,
         }
         if len(released) == 10:
             model["released_on"] = released
         if report["kind"] != "archive":
             model["report_kind"] = report["kind"]
+        if row.get("total_parameters"):
+            model["total_parameters"] = row["total_parameters"]
+        if report.get("published_on"):
+            model["document_published_on"] = report["published_on"]
         models.append(model)
     return build_dataset(models)
 
@@ -205,19 +222,20 @@ def update_readme(text, dataset, visual_sections, rows):
                 "<details open>" if index == 0 else "<details>",
                 f"<summary><b>{year} ({len(year_models)} models)</b></summary>",
                 "",
-                "| Release Date | Organization | Model | Core Highlights (from PDF) | Official Link | Local File |",
+                "| Release Date | Organization | Model | Core Highlights | Official Link | Local File |",
                 "| --- | --- | --- | --- | --- | --- |",
             ]
         )
         for model in year_models:
             report = model["report"]
+            source = report["url"]
             cells = (
                 model["released_on"],
                 model["org"],
                 model["model"],
                 report.get("highlights", ""),
-                report["url"],
-                report.get("file") or "Official source",
+                source.replace("|", "%7C"),
+                report.get("file") or report["kind"].capitalize(),
             )
             safe = [cell if i == 4 else md_cell(cell) for i, cell in enumerate(cells)]
             sections.append("| " + " | ".join(safe) + " |")
@@ -225,16 +243,30 @@ def update_readme(text, dataset, visual_sections, rows):
     return text[:start] + "\n".join(sections) + "\n" + text[stop:]
 
 
-def build(root=ROOT, check=False, pdf_manifest=None):
-    rows = read_catalog(root)
+def build(root=ROOT, check=False, pdf_manifest=None, *, rows=None):
+    publishing = rows is not None
+    if rows is None:
+        rows = read_catalog(root)
+    if not rows:
+        raise ValueError("The model catalog is empty")
     validate(rows, root, pdf_manifest=pdf_manifest)
     dataset = portal_models(rows)
     terms = json.loads((root / "configs/report-terms.json").read_text(encoding="utf-8"))
-    visuals, readme_sections = build_visuals(rows, terms, PORTAL)
+    backfill_path = root / "configs/report-backfill.json"
+    featured = set()
+    if backfill_path.is_file():
+        backfill = json.loads(backfill_path.read_text(encoding="utf-8"))
+        featured = {
+            (f"{vendor}/{slug(item['model'])}", item["released_on"])
+            for vendor, items in backfill.items() for item in items
+        }
+    visuals, readme_sections = build_visuals(rows, terms, PORTAL, featured=featured)
     outputs = {MODELS: json.dumps(dataset, ensure_ascii=False, indent=2) + "\n", **visuals}
     outputs[README] = update_readme(
         (root / README).read_text(encoding="utf-8"), dataset, readme_sections, rows
     )
+    if publishing:
+        outputs[CATALOG] = json_text({"version": 1, "releases": rows})
     mismatches = []
     for file, content in outputs.items():
         path = root / file

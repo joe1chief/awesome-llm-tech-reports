@@ -55,25 +55,25 @@
         <span class="hero-lmsys">AWESOME</span><span class="hero-org">REPORTS</span>
       </div>
       <p class="hero-desc">
-        A curated archive of frontier LLM, multimodal, reasoning, and vertical model technical reports — papers, system cards, and official documentations organized by year and lab.
+        A curated archive of frontier LLM, multimodal, reasoning, and vertical model technical reports — papers, system cards, model cards, and technical notes organized by year and lab.
       </p>
 
       <!-- LMSYS Exact Stats Row -->
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-value">112+</span>
-          <span class="hero-stat-label">Technical Reports</span>
+          <span class="hero-stat-value" id="summary-documents">—</span>
+          <span class="hero-stat-label">Documents</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-value">23</span>
-          <span class="hero-stat-label">AI Organizations</span>
+          <span class="hero-stat-value" id="summary-organizations">—</span>
+          <span class="hero-stat-label">AI organizations</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-value">19 Mos</span>
-          <span class="hero-stat-label">Coverage (2025–2026)</span>
+          <span class="hero-stat-value" id="summary-coverage">—</span>
+          <span class="hero-stat-label">Coverage</span>
         </div>
         <div class="hero-stat">
-          <span class="hero-stat-value">44★</span>
+          <span class="hero-stat-value" id="summary-milestones">—</span>
           <span class="hero-stat-label">Milestones</span>
         </div>
       </div>
@@ -81,50 +81,13 @@
       <!-- Featured Milestone Reports ("Latest Blog" on LMSYS homepage) -->
       <section class="hero-latest-blog" id="featured">
         <div class="hero-section-header">
-          <h2 class="hero-section-title">Latest Technical Reports</h2>
+          <h2 class="hero-section-title">Latest Model Documents</h2>
           <a class="see-all-btn" href="#archive">See all reports</a>
         </div>
 
-        <div class="hero-blog-cards">
-          <!-- Featured 1: DeepSeek-R1 -->
-          <div class="hero-blog-card" onclick="window.App.openDrawer('2025-01_deepseek_r1')">
-            <img src="assets/covers/deepseek_r1.svg" alt="DeepSeek-R1" class="hero-blog-card-img"/>
-            <div class="hero-blog-card-body">
-              <span class="hero-blog-card-tag hero-blog-card-tag--tech">Reasoning · Open Weights</span>
-              <h3 class="hero-blog-card-title">DeepSeek-R1: Incentivizing Reasoning in LLMs via Reinforcement Learning</h3>
-              <p class="hero-blog-card-excerpt">
-                Demonstrates remarkable reasoning capabilities via large-scale reinforcement learning without supervised fine-tuning as a preliminary step.
-              </p>
-              <span class="hero-blog-card-meta">DeepSeek · January 2025</span>
-            </div>
-          </div>
-
-          <!-- Featured 2: Claude Sonnet 5 -->
-          <div class="hero-blog-card" onclick="window.App.openDrawer('2026-06_claude_sonnet_5')">
-            <img src="assets/covers/claude_sonnet_5.svg" alt="Claude Sonnet 5" class="hero-blog-card-img"/>
-            <div class="hero-blog-card-body">
-              <span class="hero-blog-card-tag hero-blog-card-tag--news">Coding · Agentic</span>
-              <h3 class="hero-blog-card-title">Claude Sonnet 5: System Card &amp; Frontier Evaluation</h3>
-              <p class="hero-blog-card-excerpt">
-                Clear gains over Claude Sonnet 4.6 in coding, agentic search, multimodal reasoning, and professional-task performance across benchmarks.
-              </p>
-              <span class="hero-blog-card-meta">Anthropic · June 2026</span>
-            </div>
-          </div>
-
-          <!-- Featured 3: GPT-5.4 Thinking -->
-          <div class="hero-blog-card" onclick="window.App.openDrawer('2026-03_gpt_5_4_thinking')">
-            <img src="assets/covers/gpt_5_4.svg" alt="GPT-5.4 Thinking" class="hero-blog-card-img"/>
-            <div class="hero-blog-card-body">
-              <span class="hero-blog-card-tag hero-blog-card-tag--tech">Frontier Reasoning</span>
-              <h3 class="hero-blog-card-title">GPT-5.4 Thinking: Frontier Reasoning &amp; Deep Research</h3>
-              <p class="hero-blog-card-excerpt">
-                Unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations.
-              </p>
-              <span class="hero-blog-card-meta">OpenAI · March 2026</span>
-            </div>
-          </div>
-        </div>
+        <div class="hero-blog-cards" id="latest-documents" aria-live="polite"></div>
+        <p id="catalog-status" role="status">Loading model documents…</p>
+        <noscript><p><a href="timeline.html">Browse the release timeline</a></p></noscript>
       </section>
     </div>
 
@@ -176,7 +139,7 @@
     <!-- Searchable Archive Section (LMSYS /blog exact layout) -->
     <section class="blog-page" id="archive" style="padding-top: 40px;">
       <div class="blog-header">
-        <h1 class="blog-title" style="color: var(--ink);">Technical Reports Archive</h1>
+        <h1 class="blog-title" style="color: var(--ink);">Model Document Archive</h1>
         <div style="position:relative">
           <svg style="position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;fill:none;stroke:var(--ink-lighter);stroke-width:2;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input id="archive-search-input" class="blog-search-input" type="text" placeholder="Search any reports..."/>
@@ -312,13 +275,13 @@
         </div>
 
         <div>
-          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Technical Report Highlights</h4>
+          <h4 style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-lighter); margin-bottom: 8px;">Document Highlights</h4>
           <p id="drawer-highlights" style="font-size: 14.5px; color: var(--ink-dim); line-height: 1.65; background: rgba(8, 12, 38, 0.02); padding: 18px; border-radius: 10px; border: 1px solid var(--border); margin: 0;"></p>
         </div>
 
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a id="drawer-official-link" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; padding: 12px 18px; border-radius: 8px; background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 600; text-align: center; text-decoration: none;">
-            Official Paper &rarr;
+            Official document &rarr;
           </a>
           <a id="drawer-pdf-link" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; padding: 12px 18px; border-radius: 8px; background: #fff; border: 1px solid var(--border); color: var(--ink); font-size: 13.5px; font-weight: 600; text-align: center; text-decoration: none;">
             View Local PDF 📥

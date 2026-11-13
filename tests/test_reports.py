@@ -347,7 +347,9 @@ def test_repeat_poll_dedupes_variants_and_keeps_one_report(monkeypatch):
         initial, logs = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=arxiv)
         repeated, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=arxiv)
         reports = store.execute("SELECT count(*) FROM report_versions").fetchone()[0]
-        assert len(initial) == len(repeated) == reports == 1
+        assert len(initial) == len(repeated) == 2
+        assert reports == 1
+        assert len(report_watch.project(initial, settings)) == 1
         assert initial[0]["key"] == "alibaba_qwen/qwen3"
         assert initial == repeated
         assert logs[0]["report_lookup_errors"] == 0
@@ -451,7 +453,9 @@ def test_official_sources_save_dated_cards_when_a_source_or_article_fails(monkey
         )
         assert logs[0]["error"] == "HTTP 403"
         assert logs[1]["deferred"] == 1
-        assert store.source(logs[1]["source"])["seen"] == {card: "2026-10-26"}
+        assert store.source(logs[1]["source"])["seen"] == {
+            card: "2026-10-26", cyber: {"stamp": "2026-11-05", "retry_on": "2026-11-13"},
+        }
     assert [(row["model"], row["released_on"]) for row in rows] == [("GPT-6.1 Terra", "2026-10-26")]
     assert rows[0]["report"]["url"] == card
     assert report_watch.official_model(
@@ -614,7 +618,6 @@ def test_cli_refresh_rebuilds_all_outputs_and_replays_idempotently(monkeypatch, 
     sources.write_text(json.dumps({vendor: {**SETTINGS, "official": ""}}))
     monkeypatch.setattr(report_watch, "SOURCES", sources)
     monkeypatch.setattr(report_watch, "read_catalog", lambda: read_catalog(tmp_path))
-    monkeypatch.setattr(report_watch, "save_catalog", lambda rows: save_catalog(rows, tmp_path))
     monkeypatch.setattr(report_watch, "build", lambda **kwargs: build(tmp_path, **kwargs))
     monkeypatch.setattr(report_watch, "Arxiv", lambda: ArxivFixture([PAPER]))
     monkeypatch.setattr(report_watch, "model_pages", lambda *_: [hub_row("Qwen3-8B")])

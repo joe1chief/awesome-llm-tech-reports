@@ -38,7 +38,8 @@ window.App = (function() {
 
   async function init() {
     setupEventListeners();
-    await loadData();
+    if (!await loadData()) return;
+    renderOverview();
     renderTimeline();
     renderCatalog();
     renderArchiveFilterTabs();
@@ -53,10 +54,61 @@ window.App = (function() {
     try {
       const res = await fetch("data/models.json");
       if (!res.ok) throw new Error("Failed to load models.json");
-      dataset = await res.json();
-      dataset.models = dataset.models.filter(model => /^[a-z0-9_-]+$/i.test(model.id));
+      const loaded = await res.json();
+      if (!Array.isArray(loaded.models) || !loaded.stats) throw new Error("Invalid catalog");
+      loaded.models = loaded.models.filter(model => /^[a-z0-9_-]+$/i.test(model.id));
+      dataset = loaded;
+      return true;
     } catch (err) {
+      const status = document.getElementById("catalog-status");
+      if (status) status.textContent = "The catalog could not be loaded. Reload the page to try again.";
       console.error("Error loading models:", err);
+      return false;
+    }
+  }
+
+  function documentLabel(model) {
+    return {
+      "technical report": "Technical report",
+      "system card": "System card",
+      "model card": "Model card",
+      "official technical page": "Technical page"
+    }[model.report_kind] || "Archived document";
+  }
+
+  function renderOverview() {
+    const stats = dataset.stats;
+    const { start, end } = stats.date_range;
+    const [firstYear, firstMonth] = start.split("-").map(Number);
+    const [lastYear, lastMonth] = end.split("-").map(Number);
+    const months = (lastYear - firstYear) * 12 + lastMonth - firstMonth + 1;
+    const values = {
+      "summary-documents": dataset.models.length,
+      "summary-organizations": stats.total_orgs,
+      "summary-coverage": months + " mo.",
+      "summary-milestones": stats.milestones_count
+    };
+    for (const [id, value] of Object.entries(values)) {
+      const element = document.getElementById(id);
+      if (element) element.textContent = value;
+    }
+    const status = document.getElementById("catalog-status");
+    if (status) status.hidden = true;
+    const container = document.getElementById("latest-documents");
+    if (container) {
+      container.innerHTML = dataset.models.slice(0, 3).map(model => `
+        <button class="hero-blog-card report-preview" type="button" data-model-id="${model.id}">
+          <span class="hero-blog-card-body">
+            <span class="hero-blog-card-tag hero-blog-card-tag--tech">${documentLabel(model)}</span>
+            <span class="hero-blog-card-title">${escapeHtml(model.model)}</span>
+            <span class="hero-blog-card-excerpt">${escapeHtml(model.highlights)}</span>
+            <span class="hero-blog-card-meta">${escapeHtml(model.org)} · ${escapeHtml(model.released_on || model.date)}</span>
+          </span>
+        </button>
+      `).join("");
+      container.querySelectorAll("[data-model-id]").forEach(button => {
+        button.addEventListener("click", () => openDrawer(button.dataset.modelId));
+      });
     }
   }
 
@@ -266,7 +318,7 @@ window.App = (function() {
     }
 
     if (list.length === 0) {
-      container.innerHTML = `<div style="text-align:center;padding:48px 0;color:var(--ink-lighter);">No technical reports matched your query.</div>`;
+      container.innerHTML = `<div style="text-align:center;padding:48px 0;color:var(--ink-lighter);">No model documents matched your query.</div>`;
       return;
     }
 
@@ -285,7 +337,7 @@ window.App = (function() {
           <div class="blog-item-meta" style="font-size:12px;color:var(--ink-lighter);margin-top:10px;display:flex;align-items:center;justify-content:space-between;" onclick="event.stopPropagation()">
             <span>${escapeHtml(m.org)} · ${escapeHtml(m.date)}</span>
             <div style="display:flex;gap:12px;">
-              <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);font-weight:600;text-decoration:none;">Paper &rarr;</a>
+              <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);font-weight:600;text-decoration:none;">${documentLabel(m)} &rarr;</a>
               <a href="${getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="color:var(--ink);text-decoration:none;">PDF</a>
               <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
             </div>
@@ -327,7 +379,7 @@ window.App = (function() {
           </div>
         </td>
         <td style="text-align:right;white-space:nowrap;" onclick="event.stopPropagation()">
-          <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;font-weight:600;margin-right:10px;">Paper</a>
+          <a href="${escapeHtml(officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="color:var(--orange);text-decoration:none;font-weight:600;margin-right:10px;">${documentLabel(m)}</a>
           <a href="${getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="color:var(--ink-dim);text-decoration:none;margin-right:10px;">PDF</a>
           <button onclick="window.App.copyCitation('${m.id}')" style="background:none;border:none;color:var(--ink-lighter);cursor:pointer;font-size:12px;">Cite</button>
         </td>
@@ -360,7 +412,10 @@ window.App = (function() {
       tagsEl.innerHTML = model.tags.map(t => `<span class="project-card-badge" style="background:rgba(8,12,38,0.06);color:var(--ink-dim);">${escapeHtml(t)}</span>`).join('');
     }
     if (highlightsEl) highlightsEl.textContent = model.highlights;
-    if (officialLinkEl) officialLinkEl.href = officialUrl(model.link);
+    if (officialLinkEl) {
+      officialLinkEl.href = officialUrl(model.link);
+      officialLinkEl.textContent = documentLabel(model) + " →";
+    }
     if (pdfLinkEl) {
       const pdf = getPdfUrl(model.file);
       pdfLinkEl.href = pdf;
@@ -379,8 +434,9 @@ window.App = (function() {
 
   function generateBibtex(model) {
     const citeKey = `${model.org.replace(/[^a-zA-Z]/g, '').toLowerCase()}${model.year}${model.model.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
-    return `@article{${citeKey},
-  title={${model.model} Technical Report},
+    const type = model.report_kind === "technical report" ? "techreport" : "misc";
+    return `@${type}{${citeKey},
+  title={${model.model} — ${documentLabel(model)}},
   author={${model.org}},
   year={${model.year}},
   month={${model.month}},
@@ -424,6 +480,7 @@ window.App = (function() {
     copyCitation,
     getPdfUrl,
     officialUrl,
+    documentLabel,
     escapeHtml,
     showToast
   };

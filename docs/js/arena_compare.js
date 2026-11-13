@@ -33,12 +33,12 @@ window.ArenaCompare = (function() {
     allModels.forEach(m => {
       const optA = document.createElement("option");
       optA.value = m.id;
-      optA.textContent = `[${escapeHtml(m.date)}] ${escapeHtml(m.org)} - ${escapeHtml(m.model)}`;
+      optA.textContent = `[${m.date}] ${m.org} - ${m.model}`;
       selectA.appendChild(optA);
 
       const optB = document.createElement("option");
       optB.value = m.id;
-      optB.textContent = `[${escapeHtml(m.date)}] ${escapeHtml(m.org)} - ${escapeHtml(m.model)}`;
+      optB.textContent = `[${m.date}] ${m.org} - ${m.model}`;
       selectB.appendChild(optB);
     });
 
@@ -149,7 +149,7 @@ window.ArenaCompare = (function() {
 
         <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 10px;">
           <a href="${escapeHtml(window.App.officialUrl(m.link))}" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: var(--orange); color: #fff; text-decoration: none;">
-            Official Paper &rarr;
+            ${window.App.documentLabel(m)} &rarr;
           </a>
           <a href="${window.App.getPdfUrl(m.file)}" ${m.file ? "" : "hidden"} target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; font-size: 12px; font-weight: 600; border-radius: 6px; background: var(--card-hover-bg); border: 1px solid var(--border); color: var(--ink); text-decoration: none;">
             View PDF
