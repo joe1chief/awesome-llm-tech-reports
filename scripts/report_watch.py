@@ -8,7 +8,7 @@ import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import unquote, urldefrag, urljoin, urlsplit
+from urllib.parse import parse_qsl, unquote, urldefrag, urlencode, urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from report_catalog import ROOT, build, read_catalog, slug
@@ -50,7 +50,8 @@ MODEL_RELEASE = re.compile(
     re.I,
 )
 NOISE = re.compile(
-    r"\b(?:pricing|deprecat\w*|incident|outage|benchmarking|cookbook|migration|tutorial)\b", re.I
+    r"\b(?:pricing|deprecat\w*|discontinu\w*|retirement|sunset|incident|outage|benchmarking|cookbook|"
+    r"migration|tutorial|end.of.life)\b|下线|退役|停服", re.I
 )
 MODEL_DASHES = str.maketrans({char: "-" for char in "‐‑‒–—−"})
 HUB_REVISION = re.compile(r"[a-fA-F0-9]{40}")
@@ -85,6 +86,12 @@ GENERATIVE_HUB_TASKS = {
     "video-to-video",
 }
 AUXILIARY_HUB_TAGS = {"adapter", "draft-model", "lora", "reranker", "reward-model"}
+AUXILIARY_TAGS = AUXILIARY_HUB_TAGS | {"robotics-simulator"}
+AUXILIARY_PURPOSES = (
+    ("speculative-draft", re.compile(r"\bspeculative[- ]decoding (?:draft|drafter|checkpoint)\b", re.I)),
+    ("user-simulator", re.compile(r"\buser simulator\b", re.I)),
+    ("robotics-simulator", re.compile(r"\b(?:generative )?surgical world model\b", re.I)),
+)
 AUXILIARY_MODEL_NAME = re.compile(
     r"(?:^|[ ._/-])(?:embeddings?|rerank(?:er|ing)?|diarization|classifier|rewarder|reward[-_ ]model|"
     r"sae|auto[-_ ]?verifier|draft(?:er)?|dflash\d*|dspark|dspine|lora|adapter)(?=$|[ ._/-])",
@@ -100,11 +107,27 @@ def model_in_scope(name, settings, task=""):
     )
 
 
+def auxiliary_purpose(model, description):
+    name = r"[-_\s]+".join(re.escape(part) for part in re.split(r"[-_\s]+", model) if part)
+    declaration = re.compile(
+        rf"(?im)^(?:[>*-]\s+)?(?:the\s+)?{name}(?:\s+model)?\s+"
+        r"(?:is|serves as)\s+([^\n]{1,260})"
+    )
+    for match in declaration.finditer(re.sub(r"[*\x60]", "", description[:10000])):
+        purpose = re.split(r"(?<=[.!?])\s|,\s+which\b", match[1], maxsplit=1)[0]
+        for tag, pattern in AUXILIARY_PURPOSES:
+            if pattern.search(purpose):
+                return tag
+    return ""
+
+
 def release_in_scope(row, settings):
     count = total_parameters(row["model"], settings, stored=row.get("total_parameters"))
     return (
         model_in_scope(row["model"], settings, row.get("hub_task", ""))
-        and not set(row.get("hub_tags", [])) & AUXILIARY_HUB_TAGS
+        and not set(row.get("hub_tags", [])) & AUXILIARY_TAGS
+        and not row.get("hub_role")
+        and not auxiliary_purpose(row["model"], (row.get("report") or {}).get("highlights", ""))
     ) and not below_parameter_floor(
         count, settings
     )
@@ -183,7 +206,9 @@ def record_official_event(row, published, url, forms):
         published > current and bool(forms) and bool(row.get("forms"))
         and set(forms) != set(row["forms"])
     )
-    if (from_hub and not follow_up and not events) or len(current) == 7 or published < current:
+    if (from_hub and not follow_up and not events) or (
+        len(current) == 7 and current == published[:7]
+    ) or published < current:
         if not from_hub and len(current) == 10 and row.get("forms"):
             events[current] = {key: row[key] for key in ("released_on", "release_url", "forms")}
         row["released_on"], row["release_url"] = published, url
@@ -262,6 +287,8 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         auxiliary = tags & AUXILIARY_HUB_TAGS
         if relation == "adapter":
             auxiliary.add(relation)
+        if "simulation" in tags and tags & {"policy-evaluation", "surgical-robotics", "vla-evaluation"}:
+            auxiliary.add("robotics-simulator")
         url = f"{HUB}/{model_id}"
         # Tags can change without a card revision. Reconcile only the exact
         # source, never a sibling normalized to the same family release key.
@@ -342,6 +369,12 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         if not (matches_model(row["model"], card[:18000]) or official_model(name, settings)):
             seen[model_id] = revision
             continue
+        if purpose := auxiliary_purpose(name, card):
+            if known:
+                changed[row["key"]] = {**row, "hub_role": purpose}
+            seen[model_id] = revision
+            continue
+        row.pop("hub_role", None)
         parameters = total_parameters(name, settings, stored=parameters, description=card)
         if below_parameter_floor(parameters, settings):
             save_small_variant(changed, prior_rows.get(row["key"]), name, url, parameters)
@@ -393,6 +426,15 @@ def official_entries(url, hosts):
     return links
 
 
+def official_entry_url(url):
+    parsed = urlsplit(urldefrag(url)[0])
+    query = [
+        (key, value) for key, value in parse_qsl(parsed.query, keep_blank_values=True)
+        if key.casefold() != "spm" and not key.casefold().startswith("utm_")
+    ]
+    return parsed._replace(query=urlencode(query)).geturl()
+
+
 def official_model(text, settings, path=""):
     names = [
         clean(re.split(
@@ -419,7 +461,7 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
     for entry in sorted(
         entries, key=lambda item: item.get("date") or item.get("lastmod") or "", reverse=True
     ):
-        link = urldefrag(entry["url"])[0]
+        link = official_entry_url(entry["url"])
         label = clean(entry["title"], 240)
         path = unquote(urlsplit(link).path)
         if urlsplit(link).hostname not in hosts or link in eligible or path.lower().endswith(".pdf"):
@@ -461,6 +503,7 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
         bare_title = any(words(name) == words(title) for title in titles) if name else False
         if (
             name and published and published <= until
+            and not NOISE.search(" ".join(titles))
             and (bare_title or MODEL_RELEASE.search(subject))
             and model_in_scope(name, settings)
         ):
@@ -500,7 +543,8 @@ def verified_releases(vendor, settings, aliases, rows, entries, since, until):
     changed = {}
     for evidence in entries:
         published, url = evidence["released_on"], evidence["release_url"]
-        if not since <= published <= until:
+        correction = evidence.get("correction", False)
+        if published > until or (published < since and not correction):
             continue
         if date.fromisoformat(published).isoformat() != published:
             raise ValueError("Invalid verified release date")
@@ -509,17 +553,31 @@ def verified_releases(vendor, settings, aliases, rows, entries, since, until):
             vendor, evidence["model"], published, url, settings, aliases, {**rows, **changed},
             forms=evidence.get("forms"),
         )
+        if correction:
+            if row["released_on"] == published:
+                row["release_url"] = url
+            invalid = set(evidence.get("invalid_event_dates", []))
+            if invalid and row.get("release_events"):
+                events = [event for event in row["release_events"] if event["released_on"] not in invalid]
+                if events:
+                    row["release_events"] = events
+                else:
+                    row.pop("release_events")
         if urlsplit(url).hostname == "huggingface.co" and row["release_url"] != url:
             row["official_url"] = row["release_url"]
         if document := evidence.get("report"):
             require_host(document["url"], hosts)
             if document["kind"] not in {"system card", "technical report", "official technical page", "model card"}:
                 raise ValueError("Invalid verified document kind")
-            identity = arxiv_key(document["url"])
-            report = {**document, "id": document["url"], "rank": 2}
-            if identity:
-                report.update(id=f"arxiv:{identity[0]}", revision=str(identity[1]))
-            row["report"] = newer_report(row.get("report"), report)
+            current = row.get("report") or {}
+            if correction and current.get("kind") == "archive":
+                row["report"] = {**current, "highlights": document.get("highlights", current.get("highlights", ""))}
+            else:
+                identity = arxiv_key(document["url"])
+                report = {**document, "id": document["url"], "rank": 2}
+                if identity:
+                    report.update(id=f"arxiv:{identity[0]}", revision=str(identity[1]))
+                row["report"] = newer_report(current, report)
         if not row.get("report") and not row.get("first_seen"):
             row.update(first_seen=until, retry_on=until)
         changed[row["key"]] = row
@@ -667,6 +725,8 @@ def project(rows, settings, root=ROOT, mirror=False):
         for field in ("forms", "release_events", "hub_task", "total_parameters", "base_model"):
             if row.get(field):
                 output[field] = row[field]
+        if count := config.get("verified_total_parameters", {}).get(slug(row["model"])):
+            output["total_parameters"] = count
         if row.get("report"):
             report = row["report"]
             public = {

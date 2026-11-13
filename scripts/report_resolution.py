@@ -25,6 +25,9 @@ SIZE_VARIANT = re.compile(r"[- ]\d+(?:\.\d+)?[BM](?=[- ]|$)", re.I)
 CARD_KIND = re.compile(r"\b(system|model)[-_ ]+card\b", re.I)
 PAPER_CITATION = re.compile(r"\b(?:paper|report)\s+(?:of|for|on)\s+|(?:技术报告|论文)\s*[：:]", re.I)
 STRUCTURAL_EXCERPT = re.compile(r"^(?:---|\||!\[|[0-9]+\.\s|[+-]\s|\x60\x60\x60)")
+ACCESS_CHALLENGE = re.compile(
+    r"verif(?:y|ies|ying) you are (?:not a bot|human)|checking your browser|access denied|just a moment", re.I
+)
 
 
 def words(value):
@@ -138,6 +141,8 @@ def vendor_document(url, title, model, hosts, *, explicit=False, provided=None):
             raise ValueError("Official report did not return a PDF")
         body = payload.decode("utf-8", errors="replace")
     page = Page(body)
+    if ACCESS_CHALLENGE.search(" ".join((page.title, page.heading, page.summary))):
+        raise ValueError("Source returned an access challenge")
     summary = clean(page.summary)
     if not matches_model(model, f"{page.heading} {page.title} {path}"):
         return None
@@ -281,8 +286,11 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
     choices = [report for report in (best, linked) if report]
     if official_body:
         page = Page(official_body)
-        if report := vendor_document(official_url, page.heading or page.title, model, hosts, provided=official_body):
-            choices.append(report)
+        try:
+            if report := vendor_document(official_url, page.heading or page.title, model, hosts, provided=official_body):
+                choices.append(report)
+        except ValueError as error:
+            errors.append(str(error))
 
     if card and hub_url and (excerpt := technical_excerpt(card)):
         revision = release["hub_revision"]

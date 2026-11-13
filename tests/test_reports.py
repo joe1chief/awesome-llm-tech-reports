@@ -612,6 +612,33 @@ def test_atom_keeps_alternate_link_and_malformed_xml_is_recoverable():
         list(report_sources.xml_entries("<feed>"))
 
 
+def test_vendor_lifecycle_notices_are_not_new_releases(monkeypatch):
+    source = "https://qwen.ai/notice?id=1425"
+    monkeypatch.setattr(report_watch, "official_entries", lambda *_: [
+        {"url": source + "&spm=foo#top", "title": "Qwen3-8B announcement", "date": "2026-11-10"},
+        {"url": source + "&utm_source=index", "title": "Qwen3-8B announcement", "date": "2026-11-10"},
+    ])
+    fetched = []
+
+    def article(url, *_):
+        fetched.append(url)
+        return "<h1>Qwen3-8B service discontinuation announcement</h1>"
+
+    monkeypatch.setattr(report_watch, "body_text", article)
+    rows, _, _, _ = report_watch.scan_official(
+        "alibaba_qwen", SETTINGS, {}, {}, {}, *DATES, 12, ArxivFixture([]),
+    )
+    assert rows == [] and fetched == [source]
+
+
+def test_http_success_with_an_access_challenge_does_not_yield_a_document():
+    source = "https://qwen.ai/qwen3"
+    row = {**release(), "release_url": source}
+    body = '<title>Just a moment</title><h1>Qwen3</h1><meta name="description" content="Training benchmarks">'
+    report, errors = resolve_report(row, None, SETTINGS, ArxivFixture([]), official_body=body)
+    assert report is None and errors == ["Source returned an access challenge"]
+
+
 def test_hub_card_failure_does_not_block_the_next_repo(monkeypatch):
     blocked, good = hub_row("Qwen3-8B"), hub_row("Qwen4-8B")
     good.update(createdAt="2026-08-05", pipeline_tag="text-generation")
@@ -638,6 +665,18 @@ def test_hub_card_failure_does_not_block_the_next_repo(monkeypatch):
     assert len(calls) == 2 and not rows and not errors and deferred == 1
 
 
+def test_scope_uses_primary_role_without_rejecting_models_that_discuss_drafters():
+    rows = [
+        {**release("Target-8B"), "key": "alibaba_qwen/target-8b", "report": {
+            "kind": "model card", "highlights": "Target-8B is a reasoning model with speculative decoding support."
+        }},
+        {**release("Companion-8B"), "key": "alibaba_qwen/companion-8b", "report": {
+            "kind": "model card", "highlights": "Companion-8B is the Echo speculative decoding checkpoint for Target-8B."
+        }},
+    ]
+    assert report_watch.publishable_releases(rows, {}) == rows[:1]
+
+
 def test_weight_packages_share_one_release_and_keep_better_report():
     canonical = {**release("Example-27B"), "key": "example/example-27b",
                  "release_url": "https://huggingface.co/example/Example-27B"}
@@ -649,6 +688,8 @@ def test_weight_packages_share_one_release_and_keep_better_report():
     rows = report_watch.publishable_releases([bf16, quantized, canonical], {})
     assert rows == [{**canonical, "report": report}]
     assert report_watch.publishable_releases([quantized], {}) == [quantized]
+    local = {**quantized, "model": "Example-27B-FP4-Local", "base_model": None}
+    assert report_watch.publishable_releases([local, canonical], {}) == [{**canonical, "report": report}]
 
 
 def test_float_parameter_count_takes_precedence_over_nominal_name():

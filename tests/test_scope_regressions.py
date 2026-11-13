@@ -24,13 +24,14 @@ def test_scope_state_survives_publish_and_recovers(monkeypatch, tmp_path, metada
     path = str(tmp_path / 'state.db')
     with Store(path).lock() as store:
         store.save([old], vendor + '/hub', {'seen': {model['id']: model['sha']}})
-        rows, _ = report_watch.scan_reports(store, [old], settings, {}, [vendor], *DATES, 12)
+        rows, _ = report_watch.scan_reports(store, [old], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert report_watch.project(rows, settings) == []
     with Store(path).lock() as store:
-        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12)
+        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert report_watch.project(rows, settings) == []
         model.update(pipeline_tag='text-generation', tags=[])
-        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12)
+        monkeypatch.setattr(report_watch, 'body_text', lambda *_: '{}')
+        rows, _ = report_watch.scan_reports(store, [], settings, {}, [vendor], *DATES, 12, arxiv=ArxivFixture([]))
         assert [r['model'] for r in report_watch.project(rows, settings)] == [old['model']]
 
 

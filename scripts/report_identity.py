@@ -7,8 +7,10 @@ from urllib.parse import urlsplit
 from report_catalog import slug
 
 FORMAT = r"(?:bf16|fp(?:4|8|16|32)(?:[-_]?e[45]m[23])?|nvfp4|mxfp[48]|int[248]|w\d+a\d+|[248]bit|gguf|awq|gptq|mlx|exl2|bnb[48]bit)"
-FORMAT_SUFFIX = re.compile(rf"(?:[-_. ]+(?:ascend[-_. ]+)?{FORMAT})+$", re.I)
-QUANTIZED = re.compile(rf"[-_. ]+(?:ascend[-_. ]+)?(?!bf16\b|fp16\b|fp32\b){FORMAT}$", re.I)
+FORMAT_SUFFIX = re.compile(rf"(?:[-_. ]+(?:ascend[-_. ]+)?{FORMAT})+(?:[-_. ]+local)?$", re.I)
+QUANTIZED = re.compile(
+    rf"[-_. ]+(?:ascend[-_. ]+)?(?!bf16\b|fp16\b|fp32\b){FORMAT}(?:[-_. ]+local)?$", re.I
+)
 BASE_MODEL = re.compile(r"base_model:(adapter|quantized):([\w.-]+/[\w.-]+)$", re.I)
 HUB_REPO = re.compile(r"[\w.-]+/[\w.-]+$", re.ASCII)
 DOCUMENT_ORDER = {

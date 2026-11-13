@@ -6,55 +6,55 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 270,
+    "total_models": 249,
     "total_orgs": 24,
-    "milestones_count": 59,
+    "milestones_count": 55,
     "date_range": {
       "start": "2025-01",
       "end": "2026-11"
     },
     "camp_breakdown": {
       "Google": 38,
-      "China-based Labs": 145,
-      "Other Global": 55,
+      "China-based Labs": 139,
+      "Other Global": 40,
       "Anthropic": 16,
       "OpenAI": 16
     },
     "org_breakdown": {
       "Google": 38,
-      "Alibaba": 19,
-      "NVIDIA": 29,
-      "InclusionAI (Ant Group)": 34,
+      "Alibaba": 20,
+      "Baidu": 4,
+      "InclusionAI (Ant Group)": 32,
       "MiniMax": 6,
-      "ByteDance": 6,
+      "ByteDance": 7,
       "Meta": 4,
       "Anthropic": 16,
       "OpenAI": 16,
-      "Baidu": 4,
-      "Meituan": 14,
+      "Meituan": 13,
       "Tencent": 19,
-      "Microsoft": 10,
+      "Microsoft": 8,
       "Moonshot AI": 3,
-      "InternLM": 11,
+      "InternLM": 10,
       "DeepSeek": 6,
-      "StepFun": 4,
+      "NVIDIA": 16,
       "OpenBMB": 3,
       "xAI": 5,
+      "StepFun": 2,
       "Allen AI": 5,
-      "Zhipu AI": 15,
+      "Zhipu AI": 13,
       "Snowflake": 1,
       "Hugging Face": 1,
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Reasoning / CoT": 108,
-      "Vision & Multimodal": 122,
-      "MoE": 55,
-      "Open Weights": 156,
-      "Agent & Coding": 104,
-      "Medical & Science": 46,
-      "Audio & Speech": 29,
-      "Video": 34
+      "Reasoning / CoT": 100,
+      "Vision & Multimodal": 107,
+      "Agent & Coding": 96,
+      "MoE": 42,
+      "Open Weights": 8,
+      "Medical & Science": 44,
+      "Audio & Speech": 30,
+      "Video": 29
     },
     "monthly_trend": [
       {
@@ -83,7 +83,7 @@
       },
       {
         "month": "2025-07",
-        "count": 5
+        "count": 6
       },
       {
         "month": "2025-08",
@@ -131,23 +131,23 @@
       },
       {
         "month": "2026-07",
-        "count": 22
+        "count": 21
       },
       {
         "month": "2026-08",
-        "count": 35
+        "count": 33
       },
       {
         "month": "2026-09",
-        "count": 39
+        "count": 34
       },
       {
         "month": "2026-10",
-        "count": 48
+        "count": 35
       },
       {
         "month": "2026-11",
-        "count": 15
+        "count": 14
       }
     ]
   },
@@ -185,27 +185,29 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-11-11",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-11-11"
     },
     {
-      "id": "nvidia--kimi-k3-1-pro-nvfp4",
+      "id": "baidu--ernie-5-5-flash-preview",
       "date": "2026-11",
       "year": 2026,
       "month": 11,
-      "org": "NVIDIA",
-      "model": "Kimi-K3.1-Pro-NVFP4",
-      "highlights": "## Description: The NVIDIA Kimi-K3.1-Pro NVFP4 model is the quantized version of Moonshot AI's Kimi-K3.1-Pro model, which is an auto-regressive language model that uses an optimized transformer architecture. Kimi-K3.1-Pro is a natively multimodal Mixture-of-Experts model post-trained from Kimi K3, with 2.8T total parameters, 104B activated parameters, and a 1,048,576-token context window. For more information, please check [here](https://huggingface.co/moonshotai/Kimi-K3.1-Pro). The NVIDIA Kimi-K3.1-Pro NVFP4 model is quantized with [Model Optimizer](htt",
-      "link": "https://huggingface.co/nvidia/Kimi-K3.1-Pro-NVFP4/blob/3af0462972c9cc07e5ba6e0867b44f961ce95e9b/README.md",
+      "org": "Baidu",
+      "model": "ERNIE 5.5 Flash Preview",
+      "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+      "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "file": "",
-      "camp": "Other Global",
+      "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "Agent & Coding",
+        "MoE"
       ],
       "released_on": "2026-11-11",
-      "report_kind": "model card"
+      "report_kind": "official technical page",
+      "total_parameters": 280000000000,
+      "document_published_on": "2026-11-11"
     },
     {
       "id": "inclusionai--zoomgain-9b",
@@ -219,9 +221,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-11-10",
       "report_kind": "model card"
     },
@@ -237,9 +237,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-11-10",
       "report_kind": "model card"
     },
@@ -256,7 +254,8 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal"
+        "Vision & Multimodal",
+        "Open Weights"
       ],
       "released_on": "2026-11-10",
       "report_kind": "official technical page"
@@ -329,11 +328,11 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-11-06",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 9000000000,
+      "document_published_on": "2026-10-22"
     },
     {
       "id": "openai--gpt-6-cyber",
@@ -368,27 +367,6 @@
       "report_kind": "official technical page"
     },
     {
-      "id": "meituan--longcat-2-5-w4a4",
-      "date": "2026-11",
-      "year": 2026,
-      "month": 11,
-      "org": "Meituan",
-      "model": "LongCat-2.5-W4A4",
-      "highlights": "LongCat-2.5 is a native multimodal MoE model for long-horizon agentic tasks, with **1.6 trillion total parameters** and approximately **48 billion activated per token**. Building on LongCat-2.0, it combines visual understanding with agentic coding for complex codebase development, full-project builds, creative design, and 3D tasks. Long-sequence training, large-scale RL, multi-teacher learning, and infrastructure optimizations on domestic AI accelerators underpin these capabilities.",
-      "link": "https://huggingface.co/meituan-longcat/LongCat-2.5-W4A4/blob/bafc909a5f7308d0663c23f4b05fd32dc2200de8/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-11-04",
-      "report_kind": "model card"
-    },
-    {
       "id": "meituan--longcat-2-5",
       "date": "2026-11",
       "year": 2026,
@@ -403,8 +381,7 @@
       "tags": [
         "Agent & Coding",
         "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-11-04",
       "report_kind": "model card"
@@ -439,28 +416,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-30",
-      "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--deepseek-v4-1-flash-1017-nvfp4",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "DeepSeek-V4.1-Flash-1017-NVFP4",
-      "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash-1017 NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash-1017 model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash-1017 is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017). The",
-      "link": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-1017-NVFP4/blob/3ae9c0d3fbbea5370bd06e679d22044db15883f1/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-10-30",
       "report_kind": "model card"
@@ -477,11 +433,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-10-29",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "document_published_on": "2026-08-29"
     },
     {
       "id": "openai--gpt-6-luna",
@@ -497,7 +452,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-10-29",
-      "report_kind": "system card"
+      "report_kind": "system card",
+      "document_published_on": "2026-10-29"
     },
     {
       "id": "google--gemini-4-carbon",
@@ -516,6 +472,26 @@
       "report_kind": "model card"
     },
     {
+      "id": "baidu--unlimited-ocr-2",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "Baidu",
+      "model": "Unlimited-OCR-2",
+      "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench.",
+      "link": "https://arxiv.org/abs/2610.39308v2",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "MoE"
+      ],
+      "released_on": "2026-10-27",
+      "report_kind": "technical report",
+      "document_published_on": "2026-10-29"
+    },
+    {
       "id": "inclusionai--ling-3-1-flash-1019",
       "date": "2026-10",
       "year": 2026,
@@ -530,28 +506,9 @@
       "tags": [
         "Agent & Coding",
         "Medical & Science",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-10-27",
-      "report_kind": "model card"
-    },
-    {
-      "id": "baidu--unlimited-ocr-2",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "Baidu",
-      "model": "Unlimited-OCR-2",
-      "highlights": "## Release - [2026/11/02] 📄 The paper of **Unlimited OCR 2** is now available on [arXiv](https://arxiv.org/abs/2610.39308). - [2026/10/27] 📊 We release [**MarathonDocBench**](https://huggingface.co/datasets/baidu/MarathonDocBench), a new benchmark for ultra-long document parsing. - [2026/10/27] 🤝 Thanks to the [ModelScope community](https://github.com/modelscope) for their support. Our model is now available at [ModelScope](https://modelscope.cn/models/PaddlePaddle/Unlimited-OCR-2). - [2026/10/27] 🤝 Thanks to the Baidu Cloud team for their support. Our m",
-      "link": "https://huggingface.co/baidu/Unlimited-OCR-2/blob/0480966938291445591f69f08a13b041c073a96a/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-10-26",
       "report_kind": "model card"
     },
     {
@@ -567,11 +524,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-26",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 27000000000
     },
     {
       "id": "openai--gpt-6-1-terra",
@@ -602,11 +559,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-10-25",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 572120680768
     },
     {
       "id": "moonshot--kimi-k3-1-pro",
@@ -620,7 +577,9 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Open Weights"
+      ],
       "released_on": "2026-10-23",
       "report_kind": "official technical page"
     },
@@ -638,11 +597,11 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-10-23",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "document_published_on": "2026-09-14"
     },
     {
       "id": "tencent--hy-simulmt-30b-a3b-interleave",
@@ -657,8 +616,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Audio & Speech",
-        "Open Weights"
+        "Audio & Speech"
       ],
       "released_on": "2026-10-22",
       "report_kind": "model card"
@@ -676,31 +634,9 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Audio & Speech",
-        "Open Weights"
+        "Audio & Speech"
       ],
       "released_on": "2026-10-22",
-      "report_kind": "model card"
-    },
-    {
-      "id": "baidu--ernie-5-5-flash-base-bf16",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "Baidu",
-      "model": "ERNIE-5.5-Flash-Base-BF16",
-      "highlights": "**ERNIE 5.5 Flash** is an efficient sparse Mixture-of-Experts (MoE) language model with **280B total parameters and 14B activated per token**, pre-trained from scratch on **33.5T tokens** with a training context of up to **128K**; fine-tuning and inference support a **1M-token** context. Different domains, reasoning tasks and agentic applications call for different data, training objectives and behavioral policies; by releasing the weights at the end of pre-training, we let developers build on the model's general capabilities and choose for themselves wh",
-      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base-BF16/blob/dfab899dadcff8f4d08af24b75a26c6d4d2e0b09/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-21",
       "report_kind": "model card"
     },
     {
@@ -718,11 +654,11 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-10-21",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 286245697882
     },
     {
       "id": "minimax--minimax-m3-1-flash",
@@ -761,28 +697,8 @@
         "Open Weights"
       ],
       "released_on": "2026-10-19",
-      "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--cosmos3-h-dreams",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "Cosmos3-H-Dreams",
-      "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos3-Nano - nvidia/Cosmos3-H-Embodied-Nano datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
-      "link": "https://huggingface.co/nvidia/Cosmos3-H-Dreams/blob/fd87afe3fd97e9b352b09d9ada88c944f5621eb9/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Video",
-        "Medical & Science",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-19",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 127486405600
     },
     {
       "id": "deepseek--deepseek-v4-1-flash-1017",
@@ -799,8 +715,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-17",
       "report_kind": "model card"
@@ -819,8 +734,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-16",
       "report_kind": "model card"
@@ -839,44 +753,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-16",
-      "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-nvfp4",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4",
-      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
-      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-NVFP4/blob/64b4039a3468bef85c6744c1e24d5a80801fe965/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-10-16",
-      "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--nvidia-nemotron-labs-dory1-0-4b-mxfp8",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8",
-      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
-      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-MXFP8/blob/acb538da38032a1daba9c411d2380d3812eab0a2/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-16",
       "report_kind": "model card"
@@ -893,11 +770,10 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-10-16",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 4000000000
     },
     {
       "id": "inclusionai--zwz2-4b",
@@ -913,8 +789,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-15",
       "report_kind": "model card"
@@ -931,52 +806,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-10-15",
-      "report_kind": "technical report"
-    },
-    {
-      "id": "microsoft--userrepgen-4b",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "Microsoft",
-      "model": "UserRepGen-4B",
-      "highlights": "The model was trained with online supervised fine-tuning through hindsight distillation, using feedback obtained by comparing simulated and original user behavior. At inference time, it generates a representation directly from the source conversation without requiring simulation rollouts or hindsight feedback.",
-      "link": "https://huggingface.co/microsoft/UserRepGen-4B/blob/bfc905b249365cab00e94ba308f2cea5b23bbc6e/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-10-14",
-      "report_kind": "model card"
-    },
-    {
-      "id": "stepfun--step-5-preview-nvfp4",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "StepFun",
-      "model": "Step-5-Preview-NVFP4",
-      "highlights": "Step 5 Preview is a sparse Mixture-of-Experts (MoE) model with 600B total parameters and 27B active parameters. It supports up to 1 million tokens of context and accepts text, images, and video, enabling sustained reasoning and tool use across complex tasks.",
-      "link": "https://huggingface.co/stepfun-ai/Step-5-Preview-NVFP4/blob/bc246cc2848e17b37f377eda8fd825c5b3018d1f/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Video",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-14",
-      "report_kind": "model card"
+      "report_kind": "technical report",
+      "document_published_on": "2026-10-15"
     },
     {
       "id": "inclusionai--ling-3-1-flash",
@@ -992,32 +825,10 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-10-13",
       "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
-      "highlights": "2026-10-27 Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI NVIDIA Abstract. We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, lon",
-      "link": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE"
-      ],
-      "released_on": "2026-10-12",
-      "report_kind": "technical report"
     },
     {
       "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-base-bf16",
@@ -1038,7 +849,8 @@
         "MoE"
       ],
       "released_on": "2026-10-12",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 120000000000
     },
     {
       "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-bf16",
@@ -1059,29 +871,8 @@
         "MoE"
       ],
       "released_on": "2026-10-12",
-      "report_kind": "technical report"
-    },
-    {
-      "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb-lilicorr",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr",
-      "highlights": "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr is the LiLiCorr speculative-decoding checkpoint for the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB). The compatible target is a hybrid LatentMoE vision-language model for reasoning, chat, and agent workflows. For more information, see the [NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB) target card.",
-      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-LiLiCorr/blob/449d24140160b8e51871bfc0f0a7338abf640aa1/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-12",
-      "report_kind": "model card"
+      "report_kind": "technical report",
+      "total_parameters": 120000000000
     },
     {
       "id": "meta--muse-wonder",
@@ -1100,28 +891,6 @@
       "report_kind": "official technical page"
     },
     {
-      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4-lilicorr",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr",
-      "highlights": "The NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr model is the LiLiCorr speculative decoding checkpoint for NVIDIA's Nemotron-3.5-Super-VL-120B-A12B model family, which is a hybrid LatentMoE vision-language model designed for reasoning, chat, visual understanding, and agentic workflows. For details about the target model, see the [BF16](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16) and [NVFP4](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4) model cards. The NVIDIA-Nemotron-3.5-Super-VL-120B",
-      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4-LiLiCorr/blob/292bf1efc06ba39567da7351f2ad7a522afa3959/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-11",
-      "report_kind": "model card"
-    },
-    {
       "id": "alibaba_qwen--qwen-image-2-1-turbo",
       "date": "2026-10",
       "year": 2026,
@@ -1134,8 +903,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-09",
       "report_kind": "model card"
@@ -1158,49 +926,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-10-09",
-      "report_kind": "technical report"
-    },
-    {
-      "id": "nvidia--qwen3-8-flash-next-fp4-local",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "Qwen3.8-Flash-Next-FP4-Local",
-      "highlights": "## Description: The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is the quantized version of Alibaba's Qwen3.8-Flash-Next model, which is an auto-regressive language model that uses an optimized transformer architecture. Qwen3.8-Flash-Next is a causal language model with a vision encoder, hybrid attention (Gated DeltaNet and Qwen Sparse Attention), Mixture-of-Experts, gated residual streams, and n-gram embeddings. For more information, please check [here](https://huggingface.co/Qwen/Qwen3.8-Flash-Next). The NVIDIA Qwen3.8-Flash-Next-FP4-Local model is quant",
-      "link": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local/blob/b9ce18a6887e18c089fdea8509a33e63429a3300/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": true,
-      "tags": [
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-08",
-      "report_kind": "model card"
-    },
-    {
-      "id": "nvidia--glm-5-3-flash-fp4-local",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "NVIDIA",
-      "model": "GLM-5.3-Flash-FP4-Local",
-      "highlights": "## Description: The NVIDIA GLM-5.3-Flash-FP4-Local model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-F",
-      "link": "https://huggingface.co/nvidia/GLM-5.3-Flash-FP4-Local/blob/76348ddb2be2e35e39ecfc00e75dc07703f4f3d5/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": true,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-10-08",
-      "report_kind": "model card"
+      "report_kind": "technical report",
+      "total_parameters": 74000000000
     },
     {
       "id": "nvidia--nvidia-nemotron-3-5-bolt-74b-a9b-24gb",
@@ -1220,7 +947,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-10-07",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 74000000000
     },
     {
       "id": "openbmb--minicpm-v-4-7-35b-a3b",
@@ -1234,9 +962,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-10-07",
       "report_kind": "model card"
     },
@@ -1273,7 +999,8 @@
         "Agent & Coding"
       ],
       "released_on": "2026-10-05",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 7996156490
     },
     {
       "id": "nvidia--nvidia-nemotron-3-5-bolt-e4b-4gb",
@@ -1308,28 +1035,9 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-05",
-      "report_kind": "model card"
-    },
-    {
-      "id": "microsoft--userlm-2-0",
-      "date": "2026-10",
-      "year": 2026,
-      "month": 10,
-      "org": "Microsoft",
-      "model": "UserLM-2.0",
-      "highlights": "The model is intended to support research on realistic user simulation and the development and evaluation of more robust assistant models.",
-      "link": "https://huggingface.co/microsoft/UserLM-2.0/blob/dcb646115d9c3be6d335c2289c05b94a6f52ed97/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-10-01",
       "report_kind": "model card"
     },
     {
@@ -1346,8 +1054,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "Video",
-        "Open Weights"
+        "Video"
       ],
       "released_on": "2026-10-01",
       "report_kind": "model card"
@@ -1397,8 +1104,7 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-09-29",
       "report_kind": "model card"
@@ -1415,9 +1121,7 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-09-29",
       "report_kind": "model card"
     },
@@ -1453,11 +1157,11 @@
       "is_milestone": false,
       "tags": [
         "Audio & Speech",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-09-22",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 8981004468
     },
     {
       "id": "openai--gpt-6-sol",
@@ -1505,30 +1209,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-21",
-      "report_kind": "official technical page"
-    },
-    {
-      "id": "stepfun--step-5-preview-bf16",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "StepFun",
-      "model": "Step-5-Preview-BF16",
-      "highlights": "Step 5 Preview is a sparse Mixture-of-Experts (MoE) model with 600B total parameters and 27B active parameters. It supports up to 1 million tokens of context and accepts text, images, and video, enabling sustained reasoning and tool use across complex tasks.",
-      "link": "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16/blob/7734b7ffac118d70d8398bfa3eb0fab007eb45b1/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Video",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-20",
-      "report_kind": "model card"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-21"
     },
     {
       "id": "stepfun--step-5-preview",
@@ -1568,11 +1250,11 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-09-17",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 33014615872
     },
     {
       "id": "inclusionai--ming-image-0-1-design",
@@ -1587,11 +1269,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-09-17",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 6154901056
     },
     {
       "id": "microsoft--frognano-4b-2609",
@@ -1607,8 +1289,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-09-17",
       "report_kind": "model card"
@@ -1628,31 +1309,11 @@
       "tags": [
         "Vision & Multimodal",
         "Audio & Speech",
-        "Video",
-        "Open Weights"
+        "Video"
       ],
       "released_on": "2026-09-16",
-      "report_kind": "technical report"
-    },
-    {
-      "id": "nvidia--deepseek-v4-1-flash-nvfp4",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "NVIDIA",
-      "model": "DeepSeek-V4.1-Flash-NVFP4",
-      "highlights": "## Description: The NVIDIA DeepSeek-V4.1-Flash NVFP4 model is the quantized version of DeepSeek AI's DeepSeek-V4.1-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. DeepSeek-V4.1-Flash is a natively multimodal Mixture-of-Experts (MoE) model with a Causal Encoder-Decoder (CED) architecture, Compressed Sparse Attention 2 (CSA2), and support for contexts of up to one million tokens. For more information, please check [here](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash). The NVIDIA DeepSeek-V4.",
-      "link": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4/blob/c48dca0146b56d64c8116dbb6fcace8b7cc835f8/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-16",
-      "report_kind": "model card"
+      "report_kind": "technical report",
+      "document_published_on": "2026-09-12"
     },
     {
       "id": "google--gemini-3-8-live",
@@ -1672,7 +1333,8 @@
         "Video"
       ],
       "released_on": "2026-09-15",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-24"
     },
     {
       "id": "google--gemini-3-8",
@@ -1687,6 +1349,27 @@
       "camp": "Google",
       "is_milestone": false,
       "tags": [
+        "Audio & Speech"
+      ],
+      "released_on": "2026-09-15",
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-15"
+    },
+    {
+      "id": "bytedance--doubao-seed-2-1-pro-lite",
+      "date": "2026-09",
+      "year": 2026,
+      "month": 9,
+      "org": "ByteDance",
+      "model": "Doubao Seed 2.1 Pro / Lite",
+      "highlights": "Lite supports native text, visual and audio understanding with a one-million-token context. Pro focuses on coding, multimodal agents and long-horizon execution.",
+      "link": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Agent & Coding",
+        "Vision & Multimodal",
         "Audio & Speech"
       ],
       "released_on": "2026-09-15",
@@ -1709,25 +1392,6 @@
       "report_kind": "official technical page"
     },
     {
-      "id": "internlm--atria-dawn-preview-ascend-w8a8",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "InternLM",
-      "model": "Atria-Dawn-Preview-Ascend-w8a8",
-      "highlights": "We conducted a comprehensive evaluation of Atria Dawn Preview across search, coding, tool use, productivity, and security benchmarks.",
-      "link": "https://huggingface.co/internlm/Atria-Dawn-Preview-Ascend-w8a8/blob/849ab55ca65c3d36d87c1fc2e8ebf679276f8682/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Agent & Coding",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-15",
-      "report_kind": "model card"
-    },
-    {
       "id": "alibaba_qwen--qwen-image-2-1",
       "date": "2026-09",
       "year": 2026,
@@ -1740,8 +1404,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-09-14",
       "report_kind": "official technical page"
@@ -1762,8 +1425,7 @@
         "Reasoning / CoT",
         "Agent & Coding",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-09-13",
       "report_kind": "model card"
@@ -1781,28 +1443,9 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-09-11",
-      "report_kind": "model card"
-    },
-    {
-      "id": "inclusionai--ling-3-0-flash-fin-fp4",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "InclusionAI (Ant Group)",
-      "model": "Ling-3.0-flash-Fin-fp4",
-      "highlights": "## Introduction Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
-      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin-fp4/blob/7748601ef3dd9032a36b1ff0e4f3db451b824964/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
-      "released_on": "2026-09-10",
       "report_kind": "model card"
     },
     {
@@ -1818,8 +1461,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-09-10",
       "report_kind": "technical report"
@@ -1836,33 +1478,8 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-09-10",
-      "report_kind": "model card"
-    },
-    {
-      "id": "inclusionai--ling-3-0-flash-vl-fp4",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "InclusionAI (Ant Group)",
-      "model": "Ling-3.0-flash-VL-fp4",
-      "highlights": "# Introduction We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with ex",
-      "link": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL-fp4/blob/8dca6a0d4dde1ddc79cfe79506173bbf375393ac/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Video",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-08",
       "report_kind": "model card"
     },
     {
@@ -1880,11 +1497,12 @@
       "tags": [
         "Agent & Coding",
         "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-09-06",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 16924344064,
+      "document_published_on": "2026-09-09"
     },
     {
       "id": "inclusionai--llada2-2-mini",
@@ -1899,11 +1517,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-09-05",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 16255643392
     },
     {
       "id": "inclusionai--ling-3-0-flash-vl",
@@ -1922,11 +1540,11 @@
         "Agent & Coding",
         "Vision & Multimodal",
         "Video",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-09-04",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 124848460496
     },
     {
       "id": "nvidia--nemotron-3-5-parse",
@@ -1941,8 +1559,7 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-09-03",
       "report_kind": "model card"
@@ -1962,11 +1579,11 @@
       "tags": [
         "Reasoning / CoT",
         "Audio & Speech",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-09-03",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 9300000000
     },
     {
       "id": "inclusionai--ming-3-0-audio-flash",
@@ -1982,8 +1599,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Audio & Speech",
-        "Open Weights"
+        "Audio & Speech"
       ],
       "released_on": "2026-09-03",
       "report_kind": "official technical page"
@@ -2000,11 +1616,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-09-03",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 127486405600
     },
     {
       "id": "openai--gpt-6-astra",
@@ -2039,29 +1654,8 @@
         "Agent & Coding"
       ],
       "released_on": "2026-09-02",
-      "report_kind": "official technical page"
-    },
-    {
-      "id": "nvidia--glm-5-3-flash-nvfp4",
-      "date": "2026-09",
-      "year": 2026,
-      "month": 9,
-      "org": "NVIDIA",
-      "model": "GLM-5.3-Flash-NVFP4",
-      "highlights": "## Description: The NVIDIA GLM-5.3-Flash NVFP4 model is the quantized version of ZAI's GLM-5.3-Flash model, which is an auto-regressive language model that uses an optimized transformer architecture. GLM-5.3-Flash is a natively multimodal Mixture-of-Experts (MoE) model for reasoning, coding, and agentic tasks; it uses a hybrid sparse and linear attention architecture with Manifold-Constrained Hyper-Connections (mHC) to support a long context. For more information, please check [here](https://huggingface.co/zai-org/GLM-5.3-Flash). The NVIDIA GLM-5.3-Flash",
-      "link": "https://huggingface.co/nvidia/GLM-5.3-Flash-NVFP4/blob/1d00738646cbb0c6d0a9eb403dac5f366f1473a7/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": true,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-09-02",
-      "report_kind": "model card"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-02"
     },
     {
       "id": "nvidia--nvidia-nemotronlabs-ai-for-media-sports-tennis",
@@ -2078,11 +1672,11 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-09-01",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 33015598912
     },
     {
       "id": "internlm--internlumina-u2",
@@ -2099,8 +1693,7 @@
       "tags": [
         "Vision & Multimodal",
         "Video",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-09-01",
       "report_kind": "model card"
@@ -2118,8 +1711,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-31",
       "report_kind": "model card"
@@ -2137,11 +1729,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-28",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 6540230016
     },
     {
       "id": "inclusionai--llada-image",
@@ -2156,11 +1748,12 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-28",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 6540230016,
+      "document_published_on": "2026-09-03"
     },
     {
       "id": "tencent--hy4-preview",
@@ -2175,11 +1768,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-08-27",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 779960992733
     },
     {
       "id": "tencent--contextpilot-e4b",
@@ -2195,11 +1788,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-08-27",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 7941100874
     },
     {
       "id": "tencent--contextpilot-8b",
@@ -2215,11 +1808,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-08-27",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 8000000000
     },
     {
       "id": "tencent--contextpilot-14b",
@@ -2235,11 +1828,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-08-27",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 14000000000
     },
     {
       "id": "inclusionai--ui-venus-2-9b",
@@ -2256,11 +1849,11 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-26",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 9000000000
     },
     {
       "id": "google--gemini-3-5",
@@ -2280,7 +1873,8 @@
         "Audio & Speech"
       ],
       "released_on": "2026-08-26",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-08-26"
     },
     {
       "id": "allenai--bwen-8b-stage1",
@@ -2294,9 +1888,7 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-26",
       "report_kind": "model card"
     },
@@ -2312,11 +1904,10 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-26",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 8000000000
     },
     {
       "id": "allenai--bolmo-7b-stage1",
@@ -2330,31 +1921,8 @@
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-26",
-      "report_kind": "model card"
-    },
-    {
-      "id": "zhipu--glm-5-3-flash-bf16",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Zhipu AI",
-      "model": "GLM-5.3-Flash-BF16",
-      "highlights": "We introduce GLM-5.3-Flash, the first natively multimodal model in the GLM-5 series. With 320B total parameters and just 18B active parameters, it outperforms GLM-5.2 across benchmarks and real-world workloads at one-tenth the price, while approaching Claude Opus 4.8 on coding and agentic benchmarks.",
-      "link": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/blob/f9fed3bbc82291073373d67452e9f25317ef7577/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": true,
-      "tags": [
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-08-25",
       "report_kind": "model card"
     },
     {
@@ -2372,27 +1940,7 @@
       "tags": [
         "Agent & Coding",
         "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-08-25",
-      "report_kind": "model card"
-    },
-    {
-      "id": "zhipu--glm-5-3-bf16",
-      "date": "2026-08",
-      "year": 2026,
-      "month": 8,
-      "org": "Zhipu AI",
-      "model": "GLM-5.3-BF16",
-      "highlights": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training. Compared with GLM-5.2, it is much better at complex coding and long-horizon tasks:",
-      "link": "https://huggingface.co/zai-org/GLM-5.3-BF16/blob/abf42e6c0e53bc29a875511301e7b7fcd220315b/README.md",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": true,
-      "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-08-25",
       "report_kind": "model card"
@@ -2409,9 +1957,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": true,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-24",
       "report_kind": "model card"
     },
@@ -2428,11 +1974,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-20",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 8767123696
     },
     {
       "id": "zhipu--glm-5-3",
@@ -2466,11 +2012,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-14",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 27000000000
     },
     {
       "id": "tencent--ui-mate-9b",
@@ -2486,11 +2032,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-14",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 9000000000
     },
     {
       "id": "tencent--ui-mate-27b",
@@ -2506,11 +2052,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-14",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 27000000000
     },
     {
       "id": "openbmb--mathform-8b",
@@ -2525,11 +2071,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ],
       "released_on": "2026-08-14",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 8000000000
     },
     {
       "id": "google--gemini-3-7-flash",
@@ -2549,7 +2095,8 @@
         "Video"
       ],
       "released_on": "2026-08-13",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-08-13"
     },
     {
       "id": "deepseek--deepseek-v4-pro-0813",
@@ -2563,9 +2110,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-13",
       "report_kind": "model card"
     },
@@ -2583,7 +2128,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-08-12",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-08-12"
     },
     {
       "id": "inclusionai--ling-3-0-tiny-base-midtrain",
@@ -2597,11 +2143,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-11",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 8209997600
     },
     {
       "id": "inclusionai--ling-3-0-tiny-base-30t",
@@ -2615,11 +2160,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-11",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 30000000000000
     },
     {
       "id": "inclusionai--ling-3-0-flash-base-midtrain",
@@ -2633,11 +2177,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-11",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 127486405600
     },
     {
       "id": "inclusionai--ling-3-0-flash-base-30t",
@@ -2651,11 +2194,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-11",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 30000000000000
     },
     {
       "id": "inclusionai--ling-3-0-flash-base",
@@ -2669,11 +2211,10 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-11",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 127486405600
     },
     {
       "id": "inclusionai--ling-3-0-tiny",
@@ -2690,11 +2231,11 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-08-10",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 7893392800
     },
     {
       "id": "alibaba_qwen--qwen3-8-2-4t-a95b",
@@ -2710,8 +2251,7 @@
       "is_milestone": true,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-08-08",
       "report_kind": "model card"
@@ -2728,9 +2268,7 @@
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": true,
-      "tags": [
-        "Open Weights"
-      ],
+      "tags": [],
       "released_on": "2026-08-05",
       "report_kind": "model card"
     },
@@ -2751,7 +2289,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-08-03",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-08-03"
     },
     {
       "id": "inclusionai--ling-3-0-flash",
@@ -2767,11 +2306,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-08-02",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 127486405600
     },
     {
       "id": "bytedance--seedance-2-5",
@@ -2791,7 +2330,8 @@
         "Video"
       ],
       "released_on": "2026-07-31",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-07-31"
     },
     {
       "id": "meituan--longcat-flash-lite-sparse",
@@ -2808,8 +2348,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-07-31",
       "report_kind": "model card"
@@ -2827,8 +2366,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-07-31",
       "report_kind": "model card"
@@ -2846,8 +2384,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ],
       "released_on": "2026-07-29",
       "report_kind": "model card"
@@ -2869,11 +2406,12 @@
         "Agent & Coding",
         "Vision & Multimodal",
         "Video",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-07-25",
-      "report_kind": "technical report"
+      "report_kind": "technical report",
+      "total_parameters": 4741793792,
+      "document_published_on": "2026-07-27"
     },
     {
       "id": "anthropic--claude-opus-5",
@@ -2911,7 +2449,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-07-21",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-07-21"
     },
     {
       "id": "google--gemini-3-5-flash-lite",
@@ -2931,28 +2470,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-07-21",
-      "report_kind": "official technical page"
-    },
-    {
-      "id": "nvidia--cosmos-h-dreams",
-      "date": "2026-07",
-      "year": 2026,
-      "month": 7,
-      "org": "NVIDIA",
-      "model": "Cosmos-H-Dreams",
-      "highlights": "--- license: other license_name: nvidia-open-model-license license_link: >- https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/ pipeline_tag: image-to-video tags: - simulation - surgical-robotics - video-generation - real-time - interactive - autoregressive - policy-evaluation - vla-evaluation - healthcare-robotics - world-model base_model: - nvidia/Cosmos-Predict2.5-2B - nvidia/Cosmos-H-Surgical-Simulator datasets: - nvidia/PhysicalAI-Robotics-Open-H-Embodiment library_name: nv-medtech ---",
-      "link": "https://huggingface.co/nvidia/Cosmos-H-Dreams/blob/cd02fd05d56edf0470140a21420dffabef415309/README.md",
-      "file": "",
-      "camp": "Other Global",
-      "is_milestone": false,
-      "tags": [
-        "Vision & Multimodal",
-        "Video",
-        "Medical & Science",
-        "Open Weights"
-      ],
-      "released_on": "2026-07-21",
-      "report_kind": "model card"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-07-21"
     },
     {
       "id": "microsoft--fara1-5-4b",
@@ -2968,11 +2487,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-07-17",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 4000000000
     },
     {
       "id": "microsoft--fara1-5-27b",
@@ -2988,11 +2507,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-07-17",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 27000000000
     },
     {
       "id": "inclusionai--llada2-2-flash",
@@ -3007,11 +2526,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-07-16",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 102889705216
     },
     {
       "id": "internlm--intern-s2-preview-397b",
@@ -3029,11 +2548,11 @@
         "Reasoning / CoT",
         "Agent & Coding",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ],
       "released_on": "2026-07-16",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 397000000000
     },
     {
       "id": "xai--grok-4-5",
@@ -3053,7 +2572,8 @@
         "Medical & Science"
       ],
       "released_on": "2026-07-16",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-07-16"
     },
     {
       "id": "tencent--hy-embodied-vlm-1-0",
@@ -3069,11 +2589,11 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-07-14",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 30526584176
     },
     {
       "id": "tencent--hy-embodied-rxbrain-1-0",
@@ -3089,11 +2609,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-07-14",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 6208221232
     },
     {
       "id": "tencent--hils-attention-7b",
@@ -3108,11 +2628,11 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "MoE",
-        "Open Weights"
+        "MoE"
       ],
       "released_on": "2026-07-09",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 7000000000
     },
     {
       "id": "openai--gpt-5-6",
@@ -3184,11 +2704,11 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ],
       "released_on": "2026-07-02",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "total_parameters": 298786155776
     },
     {
       "id": "2026-07_longcat_2_0",
@@ -3204,8 +2724,7 @@
       "is_milestone": true,
       "tags": [
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -3278,8 +2797,7 @@
       "is_milestone": true,
       "tags": [
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -3347,8 +2865,7 @@
       "is_milestone": false,
       "tags": [
         "Audio & Speech",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -3422,7 +2939,8 @@
         "Open Weights"
       ],
       "released_on": "2026-04-08",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-10-15"
     },
     {
       "id": "2026-04_minicpm_o_4_5",
@@ -3437,8 +2955,7 @@
       "camp": "China-based Labs",
       "is_milestone": true,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -3454,8 +2971,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ]
     },
     {
@@ -3598,7 +3114,8 @@
         "Vision & Multimodal",
         "Medical & Science",
         "Open Weights"
-      ]
+      ],
+      "total_parameters": 15000000000
     },
     {
       "id": "2026-03_nemotron_3_super",
@@ -3632,8 +3149,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "Audio & Speech",
-        "Open Weights"
+        "Audio & Speech"
       ]
     },
     {
@@ -3651,8 +3167,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -3670,8 +3185,7 @@
       "tags": [
         "Vision & Multimodal",
         "Medical & Science",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -3828,8 +3342,7 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ]
     },
     {
@@ -3846,8 +3359,7 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -3938,8 +3450,7 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ]
     },
     {
@@ -3976,8 +3487,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -3994,8 +3504,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4013,8 +3522,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -4030,8 +3538,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -4048,8 +3555,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Open Weights"
+        "Agent & Coding"
       ]
     },
     {
@@ -4065,8 +3571,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -4082,8 +3587,7 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ]
     },
     {
@@ -4115,8 +3619,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -4184,8 +3687,7 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -4201,8 +3703,7 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ]
     },
     {
@@ -4219,8 +3720,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -4338,9 +3838,9 @@
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
-      ]
+        "Reasoning / CoT"
+      ],
+      "total_parameters": 3000000000
     },
     {
       "id": "2025-10_minimax_m2",
@@ -4372,8 +3872,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -4390,8 +3889,7 @@
       "is_milestone": false,
       "tags": [
         "Vision & Multimodal",
-        "Audio & Speech",
-        "Open Weights"
+        "Audio & Speech"
       ]
     },
     {
@@ -4409,8 +3907,7 @@
       "tags": [
         "Vision & Multimodal",
         "Medical & Science",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4462,8 +3959,7 @@
         "Reasoning / CoT",
         "Vision & Multimodal",
         "Audio & Speech",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -4514,8 +4010,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4532,8 +4027,7 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4550,8 +4044,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ]
     },
     {
@@ -4633,12 +4126,15 @@
       "month": 8,
       "org": "Anthropic",
       "model": "Claude Opus 4.1",
-      "highlights": "This page is displayed while the website verifies you are not a bot Check your network settings: 1",
+      "highlights": "Opus 4.1 improves on Opus 4 in agentic tasks, reasoning and software engineering. Anthropic reports 74.5% on SWE-bench Verified and documents evaluations in a system card addendum.",
       "link": "https://www.anthropic.com/news/claude-opus-4-1",
       "file": "2025/anthropic/2025-08_claude-opus-4.1.pdf",
       "camp": "Anthropic",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding"
+      ],
       "released_on": "2025-08-05"
     },
     {
@@ -4673,8 +4169,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ]
     },
     {
@@ -4692,8 +4187,7 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Medical & Science",
-        "Open Weights"
+        "Medical & Science"
       ]
     },
     {
@@ -4759,8 +4253,7 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -4776,9 +4269,26 @@
       "camp": "Anthropic",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ]
+    },
+    {
+      "id": "alibaba_qwen--qwen3-coder-plus",
+      "date": "2025-07",
+      "year": 2025,
+      "month": 7,
+      "org": "Alibaba",
+      "model": "Qwen3-Coder-Plus",
+      "highlights": "The Qwen3-based coding model supports agentic programming and tool calling while retaining general language capability.",
+      "link": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": true,
+      "tags": [
+        "Agent & Coding"
+      ],
+      "released_on": "2025-07-23",
+      "report_kind": "official technical page"
     },
     {
       "id": "2025-07_qwen3_coder",
@@ -4792,9 +4302,7 @@
       "file": "2025/alibaba_qwen/2025-07_qwen3-coder.pdf",
       "camp": "China-based Labs",
       "is_milestone": true,
-      "tags": [
-        "Open Weights"
-      ]
+      "tags": []
     },
     {
       "id": "2025-07_kimi_k2__open_agentic_intelligence",
@@ -4811,8 +4319,7 @@
       "tags": [
         "Reasoning / CoT",
         "Agent & Coding",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4918,8 +4425,7 @@
       "tags": [
         "Reasoning / CoT",
         "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -4936,8 +4442,7 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "MoE",
-        "Open Weights"
+        "MoE"
       ]
     },
     {
@@ -5041,8 +4546,7 @@
       "tags": [
         "Vision & Multimodal",
         "Audio & Speech",
-        "Video",
-        "Open Weights"
+        "Video"
       ]
     },
     {
@@ -5136,8 +4640,7 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ]
     },
     {
@@ -5153,8 +4656,7 @@
       "camp": "China-based Labs",
       "is_milestone": true,
       "tags": [
-        "Reasoning / CoT",
-        "Open Weights"
+        "Reasoning / CoT"
       ]
     }
   ]

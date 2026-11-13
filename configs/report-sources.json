@@ -179,7 +179,7 @@
       "www.microsoft.com"
     ],
     "exclude_models": [
-      "^(?:scFM[- ]DataSelection|BioEmu|HARC|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
+      "^(?:scFM[- ]DataSelection|BioEmu|HARC|UserLM|UserRepGen|Sentiment[- ]Analysis)(?:[- ]|\\d|$)"
     ]
   },
   "minimax": {
@@ -219,7 +219,7 @@
       "research.nvidia.com"
     ],
     "exclude_models": [
-      "^(?:Alpamayo|Flora[- ])",
+      "^(?:Alpamayo|Flora[- ]|Cosmos\\d*[- ]H[- ](?:Dreams|Surgical[- ]Simulator))",
       "^Cosmos[- ]?\\d+[- ](?:Edge[- ]Policy|Nano[- ](?:Sim[- ]Transfer|Transfer[- ]Auto))(?:[- ]|$)"
     ]
   },

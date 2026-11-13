@@ -49,13 +49,12 @@ def svg_start(width, height, title, description):
     return [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img">',
         f"<title>{escape(title)}</title><desc>{escape(description)}</desc>",
-        "<style>text:not([font-family]){font-family:Inter,system-ui,sans-serif}</style>",
         f'<rect width="{width}" height="{height}" fill="{PAPER}"/>',
     ]
 
 
 def svg_text(x, y, value, size=14, color=INK, *, serif=False, weight=400):
-    family = ' font-family="Georgia,serif"' if serif else ""
+    family = ' font-family="Georgia,serif"' if serif else ' font-family="Inter,Arial,sans-serif"'
     return (
         f'<text{family} x="{x}" y="{y}" fill="{color}" font-size="{size}" '
         f'font-weight="{weight}">{escape(value)}</text>'
