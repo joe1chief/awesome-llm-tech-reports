@@ -77,6 +77,21 @@
   ],
   "baidu": [
     {
+      "model": "ERNIE 5.5 Flash Base",
+      "released_on": "2026-11-05",
+      "correction": true,
+      "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+      "forms": [
+        "Open weights"
+      ],
+      "report": {
+        "kind": "official technical page",
+        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
+        "published_on": "2026-11-05",
+        "highlights": "Baidu documents the hybrid sparse-attention architecture, latent MoE, training infrastructure and evaluations for the 280B base model. It was pre-trained on 33.5T tokens and activates 14B parameters per token."
+      }
+    },
+    {
       "model": "Unlimited-OCR-2",
       "released_on": "2026-10-27",
       "release_url": "https://github.com/baidu/Unlimited-OCR",
@@ -226,9 +241,12 @@
     {
       "model": "MiniMax H3-Image",
       "released_on": "2026-11-11",
+      "correction": true,
+      "invalid_event_dates": ["2026-11-10"],
       "release_url": "https://www.minimax.io/blog/minimax-h3-image",
       "forms": [
-        "Image"
+        "Image",
+        "Open weights"
       ],
       "report": {
         "kind": "official technical page",

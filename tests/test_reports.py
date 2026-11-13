@@ -639,6 +639,23 @@ def test_http_success_with_an_access_challenge_does_not_yield_a_document():
     assert report is None and errors == ["Source returned an access challenge"]
 
 
+def test_vendor_listing_and_combined_html_heading_do_not_create_phantom_events(monkeypatch):
+    settings = json.loads(report_watch.SOURCES.read_text())["baidu"]
+    heading = "ERNIE 5.5 FlashPreview"
+    assert report_watch.official_model(heading, settings).replace("FlashPreview", "Flash Preview") == (
+        "ERNIE 5.5 Flash Preview"
+    )
+    monkeypatch.setattr(report_watch, "body_text", lambda *_:
+        f'<h1>{heading}</h1><time datetime="2026-11-11">November 11, 2026</time>'
+        '<a href="/release/ernie-5-5-flash-preview/">ERNIE 5.5 Flash Preview</a>')
+    entries = report_watch.official_entries(settings["official"], set(settings["hosts"]))
+    assert [entry["url"] for entry in entries] == ["https://ernie.baidu.com/release/ernie-5-5-flash-preview/"]
+    article = {**entries[0], "date": DATES[1], "body": f"<h1>{heading}</h1><title>ERNIE 5.5 Flash Preview</title>"}
+    monkeypatch.setattr(report_watch, "official_entries", lambda *_: [article])
+    rows, *_ = report_watch.scan_official("baidu", settings, {}, {}, {}, *DATES, 12, ArxivFixture([]))
+    assert [row["model"] for row in rows] == ["ERNIE 5.5 Flash Preview"]
+
+
 def test_hub_card_failure_does_not_block_the_next_repo(monkeypatch):
     blocked, good = hub_row("Qwen3-8B"), hub_row("Qwen4-8B")
     good.update(createdAt="2026-08-05", pipeline_tag="text-generation")

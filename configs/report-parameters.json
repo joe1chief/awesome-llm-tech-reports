@@ -1,6 +1,10 @@
 {
   "minimum_total_parameters": 3000000000,
   "verified_models": {
+    "baidu/ernie-5-5-flash-base": {
+      "total_parameters": 280000000000,
+      "source": "https://ernie.baidu.com/release/ernie-5-5-flash-base/"
+    },
     "baidu/ernie-5-5-flash-preview": {
       "total_parameters": 280000000000,
       "source": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"

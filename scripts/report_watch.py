@@ -203,8 +203,11 @@ def record_official_event(row, published, url, forms):
     if archive and current[:7] != published[:7]:
         return
     events = {event["released_on"]: event for event in row.get("release_events", [])}
+    same_source = row["release_url"] == url and (
+        not row.get("forms") or any(form in row["forms"] for form in forms)
+    )
     follow_up = (
-        published > current and bool(forms) and bool(row.get("forms"))
+        not same_source and published > current and bool(forms) and bool(row.get("forms"))
         and set(forms) != set(row["forms"])
     )
     if (from_hub and not follow_up and not events) or (
@@ -225,6 +228,7 @@ def record_official_event(row, published, url, forms):
             "release_url": prior.get("release_url", url),
             "forms": list(dict.fromkeys([*prior.get("forms", []), *forms])),
         }
+    events = {day: event for day, event in events.items() if day > row["released_on"]}
     if events:
         row["release_events"] = [events[day] for day in sorted(events)]
     else:
@@ -422,7 +426,9 @@ def official_entries(url, hosts):
         for link, label in page.links
         if link and not link.startswith("#")
     ]
-    if page.date:
+    path = urlsplit(url).path.strip("/")
+    listing = not path or re.fullmatch(r"[a-z]{2}(?:-[a-z]{2})?", path, re.I)
+    if page.date and not listing:
         links.insert(0, {"url": url, "title": page.heading or page.title, "date": page.date, "body": text})
     return links
 
@@ -499,7 +505,10 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
         page = Page(body)
         published = entry.get("date") or page.date
         titles = [clean(value, 240) for value in (page.heading, page.title, label) if value]
-        name = next((model for title in titles if (model := official_model(title, settings, path))), "")
+        matches = [model for title in titles if (model := official_model(title, settings, path))]
+        path_name = "-" + slug(path) + "-"
+        aligned = [model for model in matches if f"-{slug(model)}-" in path_name]
+        name = max(aligned, key=len) if aligned else next(iter(matches), "")
         subject = " ".join([*titles, path.replace("-", " ")])
         bare_title = any(words(name) == words(title) for title in titles) if name else False
         if (
@@ -555,15 +564,18 @@ def verified_releases(vendor, settings, aliases, rows, entries, since, until):
             forms=evidence.get("forms"),
         )
         if correction:
-            if row["released_on"] == published:
-                row["release_url"] = url
             invalid = set(evidence.get("invalid_event_dates", []))
-            if invalid and row.get("release_events"):
-                events = [event for event in row["release_events"] if event["released_on"] not in invalid]
-                if events:
-                    row["release_events"] = events
-                else:
-                    row.pop("release_events")
+            row.update(released_on=published, release_url=url)
+            if "forms" in evidence:
+                row["forms"] = evidence["forms"]
+            events = [
+                event for event in row.get("release_events", [])
+                if event["released_on"] > published and event["released_on"] not in invalid
+            ]
+            if events:
+                row["release_events"] = events
+            else:
+                row.pop("release_events", None)
         if urlsplit(url).hostname == "huggingface.co" and row["release_url"] != url:
             row["official_url"] = row["release_url"]
         if document := evidence.get("report"):

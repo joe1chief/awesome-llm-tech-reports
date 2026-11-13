@@ -54,10 +54,13 @@
     "org": "Baidu",
     "hub": "baidu",
     "official": "https://ernie.baidu.com/zh/",
-    "model_pattern": "(?:ERNIE|文心)[- ]?\\d+(?:[.-]\\d+)?(?:[- ](?:Flash|Lite|Turbo|Pro|Base|Thinking|Preview|VL)){0,4}",
+    "model_pattern": "(?:ERNIE|文心)[- ]?\\d+(?:[.-]\\d+)?(?:[- ]?(?:Flash|Lite|Turbo|Pro|Base|Thinking|Preview|VL)){0,4}(?![\\w-]|\\.\\w)",
     "hosts": [
       "ernie.baidu.com",
       "github.com"
+    ],
+    "exclude_models": [
+      "^ERNIE[- ]5\\.5$"
     ]
   },
   "bytedance": {
