@@ -71,6 +71,7 @@ GENERATIVE_HUB_TASKS = {
     "audio-text-to-text",
     "audio-to-audio",
     "image-text-to-text",
+    "image-text-to-video",
     "image-to-3d",
     "image-to-image",
     "image-to-video",
