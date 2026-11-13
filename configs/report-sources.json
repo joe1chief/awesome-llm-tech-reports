@@ -41,7 +41,7 @@
       "https://www.anthropic.com/news/models",
       "https://www.anthropic.com/system-cards"
     ],
-    "model_pattern": "(?:Claude[- ](?:Opus|Sonnet|Haiku)|(?:Claude[- ])?(?:Fable|Mythos))[- ]\\d+(?:[.-]\\d+)?",
+    "model_pattern": "(?:(?:Claude[- ])?Mythos[- ]Preview|(?:Claude[- ](?:Opus|Sonnet|Haiku)|(?:Claude[- ])?(?:Fable|Mythos))[- ]\\d+(?:[.-]\\d+)?)",
     "hosts": [
       "assets.anthropic.com",
       "www-cdn.anthropic.com",
@@ -68,12 +68,14 @@
     "hub": "ByteDance-Seed",
     "official": [
       "https://seed.bytedance.com/en/",
-      "https://seed.bytedance.com/en/blog_list/visual"
+      "https://seed.bytedance.com/en/blog_list/visual",
+      "https://seed.bytedance.com/en/seed_model_portfolio"
     ],
     "model_pattern": "(?:(?:Doubao[- ]|豆包\\s*)?Seed(?:ream|ance)?|Doubao|MedXiaohe)[- ]?\\d+(?:[.-]\\d+)?(?:[- ](?:Pro(?:\\s*/\\s*Lite)?|Lite|Thinking|Flash|Vision|Omni|Realtime)){0,3}",
     "hosts": [
       "seed.bytedance.com",
-      "console.volcengine.com"
+      "console.volcengine.com",
+      "lf3-static.bytednsdoc.com"
     ],
     "exclude_models": [
       "^Cross[- ]Layer[- ]TopK[- ]CLT\\b"
@@ -276,7 +278,8 @@
     "official": "https://www.stepfun.com/",
     "model_pattern": "Step[- ]?\\d[\\w. -]*",
     "hosts": [
-      "www.stepfun.com"
+      "www.stepfun.com",
+      "static.stepfun.com"
     ]
   },
   "tencent": {

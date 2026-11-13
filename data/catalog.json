@@ -52,8 +52,8 @@
       "key": "zhipu/glm-5-2",
       "model": "GLM-5.2",
       "org": "Zhipu AI",
-      "release_url": "https://docs.z.ai/guides/llm/glm-5.2",
-      "released_on": "2026-06",
+      "release_url": "https://docs.z.ai/release-notes/new-released",
+      "released_on": "2026-06-16",
       "report": {
         "file": "2026/zhipu/2026-06_glm-5.2.pdf",
         "highlights": "GLM-5.2 delivers a Solid 1M lossless context and has undergone months of specialized training for long-horizon Coding Agent scenarios, covering high-value tasks such as large-scale implementation, automated research, and performance optimization 2 Coding Capabilities Validated by Both Benchmarks and Developers On standard coding benchmarks, GLM-5.2 is the strongest open-source model, improving on GLM-5.1 by a wide margin: 81.0 vs",
@@ -82,8 +82,8 @@
       "key": "anthropic/claude-fable-5-mythos-5",
       "model": "Claude Fable 5 / Mythos 5",
       "org": "Anthropic",
-      "release_url": "https://www-cdn.anthropic.com/2f9323abbcc4abe219577539efe19a623c9ca2bd/Claude%20Fable%205%20%26%20Claude%20Mythos%205%20System%20Card.pdf",
-      "released_on": "2026-06",
+      "release_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "released_on": "2026-06-09",
       "report": {
         "file": "2026/anthropic/2026-06_claude-fable-5-mythos-5.pdf",
         "highlights": "System card covering Claude Fable 5 and Mythos 5 release-specific capability, safety, and deployment evaluations.",
@@ -219,8 +219,8 @@
       "key": "openai/gpt-5-5",
       "model": "GPT-5.5",
       "org": "OpenAI",
-      "release_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
-      "released_on": "2026-04",
+      "release_url": "https://openai.com/index/introducing-gpt-5-5/",
+      "released_on": "2026-04-23",
       "report": {
         "file": "2026/openai/2026-04_gpt-5.5.pdf",
         "highlights": "4 2 Model Data and Training 4 3 Safety 5 3.1 Disallowed Content We generally treat GPT-5.5’s safety results as strong proxies for GPT-5.5 Pro, which is the same underlying model using a setting that makes use of parallel test time compute",
@@ -264,8 +264,8 @@
       "key": "zhipu/glm-5-1",
       "model": "GLM-5.1",
       "org": "Zhipu AI",
-      "release_url": "https://docs.z.ai/guides/llm/glm-5.1",
-      "released_on": "2026-04",
+      "release_url": "https://docs.z.ai/release-notes/new-released",
+      "released_on": "2026-04-07",
       "report": {
         "file": "2026/zhipu/2026-04_glm-5.1.pdf",
         "highlights": "In both general capability and coding performance, GLM-5.1 is overall aligned with Claude Opus 4.6 At the same time, across 12 representative benchmarks covering reasoning, coding, agents, tool use, and browsing, GLM-5.1 demonstrates a broad and well-balanced capability profile",
@@ -309,8 +309,8 @@
       "key": "openai/gpt-5-4-thinking",
       "model": "GPT-5.4 Thinking",
       "org": "OpenAI",
-      "release_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
-      "released_on": "2026-03",
+      "release_url": "https://openai.com/index/introducing-gpt-5-4/",
+      "released_on": "2026-03-05",
       "report": {
         "file": "2026/openai/2026-03_gpt-5.4-thinking.pdf",
         "highlights": "Frontier reasoning model that unifies recent gains in coding, agentic workflows, and deep web research, while adding high-capability cybersecurity mitigations and stronger chain-of-thought monitoring.",
@@ -465,7 +465,7 @@
       "model": "Claude Opus 4.6",
       "org": "Anthropic",
       "release_url": "https://www.anthropic.com/news/claude-opus-4-6",
-      "released_on": "2026-03",
+      "released_on": "2026-02-05",
       "report": {
         "file": "2026/anthropic/2026-03_claude-opus-4.6.pdf",
         "highlights": "Nico Christie Co-founder & CTO , Shortcut.ai 01 / 20 Evaluating Claude Opus 4.6 Across agentic coding, computer use, tool use, search, and finance , Opus 4.6 is an industry-leading model, often by a wide margin Claude Opus 4.6 is available today on claude.ai , our API, and all major cloud platforms",
@@ -510,8 +510,8 @@
       "key": "openai/gpt-5-3-codex",
       "model": "GPT-5.3-Codex",
       "org": "OpenAI",
-      "release_url": "https://deploymentsafety.openai.com/gpt-5-3-codex/gpt-5-3-codex.pdf",
-      "released_on": "2026-02",
+      "release_url": "https://openai.com/index/introducing-gpt-5-3-codex/",
+      "released_on": "2026-02-05",
       "report": {
         "file": "2026/openai/2026-02_gpt-5.3-codex.pdf",
         "highlights": "29 2 1 Introduction GPT-5.3-Codex is the most capable agentic coding model to date, combining the frontier coding performance of GPT-5.2-Codex with the reasoning and professional knowledge capabilities of GPT-5.2 As explained in the GPT-5.1-Codex-Max system card, the model is not intended for conversational use",
@@ -4102,6 +4102,73 @@
         "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
         "kind": "model card",
         "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+      }
+    },
+    {
+      "forms": [
+        "Preview",
+        "Limited access"
+      ],
+      "id": "anthropic--claude-mythos-preview",
+      "key": "anthropic/claude-mythos-preview",
+      "model": "Claude Mythos Preview",
+      "org": "Anthropic",
+      "release_url": "https://www.anthropic.com/glasswing",
+      "released_on": "2026-04-07",
+      "report": {
+        "highlights": "Anthropic documents the model's multimodal input, evaluation results and safeguards for the limited-access preview.",
+        "id": "https://www.anthropic.com/claude-mythos-preview-system-card",
+        "kind": "system card",
+        "published_on": "2026-04-07",
+        "url": "https://www.anthropic.com/claude-mythos-preview-system-card"
+      }
+    },
+    {
+      "id": "bytedance--doubao-seed-2-1",
+      "key": "bytedance/doubao-seed-2-1",
+      "model": "Doubao Seed 2.1",
+      "org": "ByteDance",
+      "release_url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
+      "released_on": "2026-06-23",
+      "report": {
+        "highlights": "The Seed2.1 family is evaluated on cross-tool agent workflows, full-cycle software engineering and multimodal understanding.",
+        "id": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/seed2.1/Seed2_1_Model_Card.pdf",
+        "kind": "model card",
+        "published_on": "2026-06-23",
+        "url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/seed2.1/Seed2_1_Model_Card.pdf"
+      }
+    },
+    {
+      "forms": [
+        "Open weights"
+      ],
+      "id": "minimax--minimax-m3",
+      "key": "minimax/minimax-m3",
+      "model": "MiniMax M3",
+      "org": "MiniMax",
+      "release_url": "https://www.minimax.io/blog/minimax-m3",
+      "released_on": "2026-06-01",
+      "report": {
+        "highlights": "MiniMax Sparse Attention uses group-specific retrieval of key-value blocks for long contexts. The report evaluates quality and attention efficiency and links to the MiniMax M3 checkpoint.",
+        "id": "arxiv:2606.13392",
+        "kind": "technical report",
+        "published_on": "2026-06-11",
+        "revision": "2",
+        "url": "https://arxiv.org/abs/2606.13392v2"
+      }
+    },
+    {
+      "id": "stepfun--step-3-7-flash",
+      "key": "stepfun/step-3-7-flash",
+      "model": "Step 3.7 Flash",
+      "org": "StepFun",
+      "release_url": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "released_on": "2026-05-29",
+      "report": {
+        "highlights": "Step 3.7 Flash combines a 196B language backbone and a 1.8B vision encoder. Its model card documents a 256K context window and evaluates reasoning, coding and agent workflows.",
+        "id": "https://huggingface.co/stepfun-ai/Step-3.7-Flash",
+        "kind": "model card",
+        "url": "https://huggingface.co/stepfun-ai/Step-3.7-Flash"
       }
     }
   ],

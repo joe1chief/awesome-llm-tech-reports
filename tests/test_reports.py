@@ -599,6 +599,14 @@ def test_own_arxiv_citation_can_have_a_different_title():
     assert report is None
 
 
+def test_model_card_explicit_technical_report_link_allows_an_architecture_title():
+    row = {**release("MiniMax M3"), "release_url": "https://huggingface.co/MiniMaxAI/MiniMax-M3"}
+    entry = {**PAPER, "url": "https://arxiv.org/abs/2606.13392v2", "title": "MiniMax Sparse Attention"}
+    card = "> 📄 Read the technical report: [arXiv:2606.13392](https://arxiv.org/abs/2606.13392)"
+    report, _ = resolve_report(row, card, SETTINGS, ArxivFixture([entry]))
+    assert report["id"] == "arxiv:2606.13392" and report["kind"] == "technical report"
+
+
 def test_atom_keeps_alternate_link_and_malformed_xml_is_recoverable():
     atom = (
         '<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>Qwen3 Technical Report</title>'

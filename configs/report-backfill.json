@@ -28,6 +28,31 @@
   ],
   "anthropic": [
     {
+      "model": "Claude Opus 4.6",
+      "released_on": "2026-02-05",
+      "correction": true,
+      "release_url": "https://www.anthropic.com/news/claude-opus-4-6"
+    },
+    {
+      "model": "Claude Mythos Preview",
+      "released_on": "2026-04-07",
+      "historical": true,
+      "release_url": "https://www.anthropic.com/glasswing",
+      "forms": ["Preview", "Limited access"],
+      "report": {
+        "kind": "system card",
+        "url": "https://www.anthropic.com/claude-mythos-preview-system-card",
+        "published_on": "2026-04-07",
+        "highlights": "Anthropic documents the model's multimodal input, evaluation results and safeguards for the limited-access preview."
+      }
+    },
+    {
+      "model": "Claude Fable 5 / Mythos 5",
+      "released_on": "2026-06-09",
+      "correction": true,
+      "release_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+    },
+    {
       "model": "Claude Opus 4.1",
       "released_on": "2025-08-05",
       "correction": true,
@@ -120,6 +145,18 @@
   ],
   "bytedance": [
     {
+      "model": "Doubao Seed 2.1",
+      "released_on": "2026-06-23",
+      "historical": true,
+      "release_url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
+      "report": {
+        "kind": "model card",
+        "url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/seed2.1/Seed2_1_Model_Card.pdf",
+        "published_on": "2026-06-23",
+        "highlights": "The Seed2.1 family is evaluated on cross-tool agent workflows, full-cycle software engineering and multimodal understanding."
+      }
+    },
+    {
       "model": "Doubao Seed 2.1 Pro / Lite",
       "released_on": "2026-09-15",
       "release_url": "https://console.volcengine.com/ark/region%3Acn-beijing/docs/model-release-announcement",
@@ -209,6 +246,19 @@
   ],
   "minimax": [
     {
+      "model": "MiniMax M3",
+      "released_on": "2026-06-01",
+      "historical": true,
+      "release_url": "https://www.minimax.io/blog/minimax-m3",
+      "forms": ["Open weights"],
+      "report": {
+        "kind": "technical report",
+        "url": "https://arxiv.org/abs/2606.13392v2",
+        "published_on": "2026-06-11",
+        "highlights": "MiniMax Sparse Attention uses group-specific retrieval of key-value blocks for long contexts. The report evaluates quality and attention efficiency and links to the MiniMax M3 checkpoint."
+      }
+    },
+    {
       "model": "MiniMax H3",
       "released_on": "2026-07-31",
       "release_url": "https://www.minimax.io/blog/minimax-h3",
@@ -275,6 +325,24 @@
   ],
   "openai": [
     {
+      "model": "GPT-5.3-Codex",
+      "released_on": "2026-02-05",
+      "correction": true,
+      "release_url": "https://openai.com/index/introducing-gpt-5-3-codex/"
+    },
+    {
+      "model": "GPT-5.4 Thinking",
+      "released_on": "2026-03-05",
+      "correction": true,
+      "release_url": "https://openai.com/index/introducing-gpt-5-4/"
+    },
+    {
+      "model": "GPT-5.5",
+      "released_on": "2026-04-23",
+      "correction": true,
+      "release_url": "https://openai.com/index/introducing-gpt-5-5/"
+    },
+    {
       "model": "GPT-5.6",
       "released_on": "2026-07-09",
       "release_url": "https://deploymentsafety.openai.com/gpt-5-6",
@@ -331,6 +399,17 @@
   ],
   "stepfun": [
     {
+      "model": "Step 3.7 Flash",
+      "released_on": "2026-05-29",
+      "historical": true,
+      "release_url": "https://static.stepfun.com/blog/step-3.7-flash/",
+      "report": {
+        "kind": "model card",
+        "url": "https://huggingface.co/stepfun-ai/Step-3.7-Flash",
+        "highlights": "Step 3.7 Flash combines a 196B language backbone and a 1.8B vision encoder. Its model card documents a 256K context window and evaluates reasoning, coding and agent workflows."
+      }
+    },
+    {
       "model": "Step 5 Preview",
       "released_on": "2026-10-15",
       "release_url": "https://huggingface.co/stepfun-ai/Step-5-Preview/commits/main",
@@ -351,6 +430,18 @@
     }
   ],
   "zhipu": [
+    {
+      "model": "GLM-5.1",
+      "released_on": "2026-04-07",
+      "correction": true,
+      "release_url": "https://docs.z.ai/release-notes/new-released"
+    },
+    {
+      "model": "GLM-5.2",
+      "released_on": "2026-06-16",
+      "correction": true,
+      "release_url": "https://docs.z.ai/release-notes/new-released"
+    },
     {
       "model": "GLM-5.3",
       "released_on": "2026-08-18",
