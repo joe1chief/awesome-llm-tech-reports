@@ -12,7 +12,7 @@ from urllib.parse import unquote, urldefrag, urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from report_catalog import ROOT, build, read_catalog, save_catalog, slug
-from report_parameters import below_parameter_floor, configure_parameters, total_parameters
+from report_parameters import below_parameter_floor, configure_parameters, declared_total, total_parameters
 from report_resolution import (
     DISTRIBUTION,
     MAX_PDF,
@@ -84,7 +84,7 @@ GENERATIVE_HUB_TASKS = {
 AUXILIARY_HUB_TAGS = {"adapter", "draft-model", "lora", "reranker", "reward-model"}
 AUXILIARY_MODEL_NAME = re.compile(
     r"(?:^|[ ._/-])(?:embeddings?|rerank(?:er|ing)?|diarization|classifier|rewarder|reward[-_ ]model|"
-    r"sae|auto[-_ ]?verifier|draft(?:er)?|dspark|dspine|lora|adapter)(?=$|[ ._/-])",
+    r"sae|auto[-_ ]?verifier|draft(?:er)?|dflash\d*|dspark|dspine|lora|adapter)(?=$|[ ._/-])",
     re.I,
 )
 
@@ -249,7 +249,8 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
             raise ValueError("Hub response lacks a pinned revision")
         parameters = total_parameters(name, settings, safetensors=model.get("safetensors"))
         small = below_parameter_floor(parameters, settings)
-        if seen.get(model_id) == revision and not small:
+        rejected_revision = f"{revision}:below-{settings.get('minimum_total_parameters', 0)}"
+        if seen.get(model_id) in (revision, rejected_revision) and not small:
             continue
         url = f"{HUB}/{model_id}"
         forms = ["Gated"] if model.get("gated") else []
@@ -260,16 +261,8 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
             vendor, name, published, url, settings, aliases, prior_rows, revision=revision, forms=forms,
         )
         if small:
-            prior = prior_rows.get(row["key"])
-            if (
-                prior and slug(prior["model"]) == slug(name)
-                and url in (prior.get("hub_url"), prior["release_url"])
-                and prior.get("total_parameters") != parameters
-            ):
-                changed[row["key"]] = {**prior, "total_parameters": parameters}
+            save_small_variant(changed, prior_rows.get(row["key"]), name, url, parameters)
             continue
-        if parameters is not None:
-            row["total_parameters"] = max(row.get("total_parameters") or 0, parameters)
         if task in GENERATIVE_HUB_TASKS:
             row["hub_task"] = task
         known = row["key"] in existing or row["key"] in changed
@@ -287,10 +280,28 @@ def scan_hub(vendor, settings, aliases, existing, cursor, since, until, limit, a
         if not (matches_model(row["model"], card[:18000]) or official_model(name, settings)):
             seen[model_id] = revision
             continue
+        parameters = total_parameters(name, settings, stored=parameters, description=card)
+        if below_parameter_floor(parameters, settings):
+            save_small_variant(changed, prior_rows.get(row["key"]), name, url, parameters)
+            seen[model_id] = rejected_revision
+            continue
+        if parameters is not None:
+            if slug(name) != slug(row["model"]):
+                parameters = max(row.get("total_parameters") or 0, parameters)
+            row["total_parameters"] = parameters
         errors.extend(try_report(row, settings, arxiv, until, card=card))
         changed[row["key"]] = row
         seen[model_id] = revision
     return list(changed.values()), seen, errors, deferred
+
+
+def save_small_variant(changed, prior, name, url, parameters):
+    if (
+        prior and slug(prior["model"]) == slug(name)
+        and url in (prior.get("hub_url"), prior["release_url"])
+        and prior.get("total_parameters") != parameters
+    ):
+        changed[prior["key"]] = {**prior, "total_parameters": parameters}
 
 
 def official_entries(url, hosts):
@@ -380,12 +391,20 @@ def scan_official(vendor, settings, aliases, existing, cursor, since, until, lim
             name and published and published <= until
             and (bare_title or MODEL_RELEASE.search(subject))
             and model_in_scope(name, settings)
-            and not below_parameter_floor(total_parameters(name, settings), settings)
         ):
+            description = "\n".join([page.summary, *page.paragraphs])
+            parameters = total_parameters(name, settings, description=description)
             forms = [form for form, pattern in OFFICIAL_FORMS if pattern.search(subject)]
             row = record(
                 vendor, name, published, link, settings, aliases, {**existing, **changed}, forms=forms
             )
+            if parameters is not None:
+                row["total_parameters"] = parameters
+            if not release_in_scope(row, settings):
+                if row["key"] in existing or row["key"] in changed:
+                    changed[row["key"]] = row
+                seen[link] = stamp
+                continue
             if published >= since or row["key"] in existing or row["key"] in changed:
                 if body:
                     errors.extend(try_report(row, settings, arxiv, until, official_body=body))
@@ -516,6 +535,16 @@ def scan_reports(
                 official_body = body_text(row["official_url"], COMMON_HOSTS | set(config["hosts"]))
         except (URLError, OSError, ValueError):
             summaries.append({"source": row["key"], "error": "Official page unavailable for report retry"})
+        declared = declared_total(row["model"], card or "")
+        if declared is None and official_body:
+            page = Page(official_body)
+            declared = declared_total(row["model"], "\n".join([page.summary, *page.paragraphs]))
+        if declared is not None:
+            row["total_parameters"] = total_parameters(row["model"], config, stored=declared)
+        if not release_in_scope(row, config):
+            store.save([row])
+            rows[row["key"]] = row
+            continue
         try_report(row, config, arxiv, until, card=card, official_body=official_body)
         store.save([row])
         rows[row["key"]] = row

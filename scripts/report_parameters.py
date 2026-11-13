@@ -7,7 +7,8 @@ from decimal import Decimal
 from report_catalog import https_url, slug
 
 TOTAL_IN_NAME = re.compile(
-    r"(?<![A-Za-z0-9.])(\d+(?:\.\d+)?)([BT])(?![A-Za-z0-9]|[-_ ]+(?:active|activated)\b)",
+    r"(?<![A-Za-z0-9.])(?:\d+(?:\.\d+)?[BT]|\d{2,}(?:\.\d+)?M)"
+    r"(?![A-Za-z0-9]|[-_ ]+(?:active|activated|context)\b)",
     re.I,
 )
 PACKED_WEIGHTS = re.compile(
@@ -15,6 +16,15 @@ PACKED_WEIGHTS = re.compile(
     re.I,
 )
 FLOAT_DTYPES = {"F16", "BF16", "F32", "F64", "F8_E4M3", "F8_E5M2"}
+AMOUNT = r"(\d+(?:\.\d+)?)\s*(trillion|billion|million|[TBM])"
+PARAMETER_UNITS = {"T": 10**12, "B": 10**9, "M": 10**6}
+TOTAL_FIELD = re.compile(
+    rf"^\s*(?:[-*]\s+)?total\s+(?:model\s+)?parameters?\s*[:=]\s*{AMOUNT}(?=\s*(?:$|[.;(]))",
+    re.I,
+)
+PARAMETER_TABLE_ROW = re.compile(r"^\s*\|\s*(total\s+)?(?:model\s+)?parameters?\s*\|\s*([^|]+)\|\s*$", re.I)
+PARAMETER_AMOUNT = re.compile(rf"{AMOUNT}\s*", re.I)
+EXPLICIT_TOTAL = re.compile(rf"{AMOUNT}\s+total\s+(?:model\s+)?parameters?\b", re.I)
 
 
 def configure_parameters(settings, path):
@@ -38,15 +48,46 @@ def configure_parameters(settings, path):
         settings[vendor]["verified_total_parameters"][model] = count
 
 
-def total_parameters(name, settings, *, stored=None, safetensors=None):
+def declared_total(name, description):
+    text = re.sub(r"[*\x60]", "", description[:16000])
+    text = re.sub(r"https?://\S+", "", text)
+    model = r"[-_\s]+".join(re.escape(word) for word in re.split(r"[-_\s]+", name) if word)
+    if not model:
+        return None
+    subject = re.compile(
+        rf"(?im)^[ \t]*(?:>\s*)?{model}\s+(?:is|has)\s+(?:an?\s+)?"
+        rf"(?:approximately\s+|about\s+|~\s*)?{AMOUNT}\s*"
+        r"(?:total\s+parameters\b|parameters(?=[ \t]*[.!?]|[ \t]*$)|(?:[- ]parameter\s+)?"
+        r"(?:(?:foundation|language|multimodal|vision-language|MoE)\s+)*model\b)"
+    )
+    amounts = []
+    for line in text.splitlines():
+        if match := TOTAL_FIELD.match(line):
+            amounts.append(match.groups())
+        elif row := PARAMETER_TABLE_ROW.fullmatch(line):
+            if row[1] and (match := PARAMETER_AMOUNT.fullmatch(row[2].strip())):
+                amounts.append(match.groups())
+            else:
+                amounts.extend(EXPLICIT_TOTAL.findall(row[2]))
+        elif re.match(r"\s*(?:total\s+)?(?:model\s+)?parameters?\s*:", line, re.I):
+            amounts.extend(EXPLICIT_TOTAL.findall(line))
+    if not amounts:
+        amounts = subject.findall(text)
+    totals = {int(Decimal(value) * PARAMETER_UNITS[unit[0].upper()]) for value, unit in amounts}
+    return totals.pop() if len(totals) == 1 else None
+
+
+def total_parameters(name, settings, *, stored=None, safetensors=None, description=""):
     verified = settings.get("verified_total_parameters", {}).get(slug(name))
     if verified:
         return verified
+    if described := declared_total(name, description):
+        return described
     if type(stored) is int and stored > 0:
         return stored
     sizes = [
-        int(Decimal(value) * (10**12 if unit.upper() == "T" else 10**9))
-        for value, unit in TOTAL_IN_NAME.findall(name)
+        int(Decimal(size[:-1]) * PARAMETER_UNITS[size[-1].upper()])
+        for size in TOTAL_IN_NAME.findall(name)
     ]
     if sizes:
         return max(sizes)
