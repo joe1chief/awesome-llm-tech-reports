@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="762" viewBox="0 0 2000 762" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="814" viewBox="0 0 2000 814" role="img">
 <title>2026 model releases</title><desc>Up to 10 releases per month.</desc>
-<rect width="2000" height="762" fill="#f8f7f2"/>
+<rect width="2000" height="814" fill="#f8f7f2"/>
 <text font-family="Inter,Arial,sans-serif" x="50" y="42" fill="#716b60" font-size="12" font-weight="600">AI MODEL RELEASE TIMELINE  /  2026</text>
 <text font-family="Georgia,serif" x="50" y="99" fill="#201f1b" font-size="53" font-weight="400">2026  Model releases</text>
 <text font-family="Inter,Arial,sans-serif" x="50" y="130" fill="#716b60" font-size="13" font-weight="400">January–December  ·  One dot per release event  ·  Color by organization</text>
 <path d="M50 153H1950V153" stroke="#dcd6c8" fill="none"/>
-<circle cx="53" cy="172" r="3.5" fill="#137f72"/>
-<text font-family="Inter,Arial,sans-serif" x="64" y="176" fill="#201f1b" font-size="11" font-weight="400">InclusionAI (Ant Group)  34</text>
-<circle cx="259" cy="172" r="3.5" fill="#b6472f"/>
-<text font-family="Inter,Arial,sans-serif" x="270" y="176" fill="#201f1b" font-size="11" font-weight="400">NVIDIA  25</text>
+<circle cx="53" cy="172" r="3.5" fill="#b6472f"/>
+<text font-family="Inter,Arial,sans-serif" x="64" y="176" fill="#201f1b" font-size="11" font-weight="400">NVIDIA  35</text>
+<circle cx="140" cy="172" r="3.5" fill="#137f72"/>
+<text font-family="Inter,Arial,sans-serif" x="151" y="176" fill="#201f1b" font-size="11" font-weight="400">InclusionAI (Ant Group)  34</text>
 <circle cx="346" cy="172" r="3.5" fill="#2555bd"/>
 <text font-family="Inter,Arial,sans-serif" x="357" y="176" fill="#201f1b" font-size="11" font-weight="400">Google  24</text>
 <circle cx="433" cy="172" r="3.5" fill="#247553"/>
@@ -272,7 +272,7 @@
 <text font-family="Inter,Arial,sans-serif" x="855" y="494" fill="#201f1b" font-size="13" font-weight="600">Gemini 3.1 Flash-Lite</text>
 <text font-family="Inter,Arial,sans-serif" x="855" y="507" fill="#201f1b" font-size="13" font-weight="600">Image</text>
 <text font-family="Georgia,serif" x="1000" y="239" fill="#201f1b" font-size="23" font-weight="400">07</text>
-<text font-family="Inter,Arial,sans-serif" x="1035" y="238" fill="#716b60" font-size="10" font-weight="400">24 releases</text>
+<text font-family="Inter,Arial,sans-serif" x="1035" y="238" fill="#716b60" font-size="10" font-weight="400">27 releases</text>
 <path d="M1003 268H1003V294" stroke="#dcd6c8" fill="none"/>
 <circle cx="1003" cy="268" r="3.5" fill="#946410" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="271" fill="#946410" font-size="9" font-weight="600">07  Meituan</text>
@@ -319,9 +319,9 @@
 <circle cx="1003" cy="599" r="3.5" fill="#1984bf" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="602" fill="#1984bf" font-size="9" font-weight="600">07.31  ByteDance</text>
 <text font-family="Inter,Arial,sans-serif" x="1013" y="616" fill="#201f1b" font-size="13" font-weight="600">Seedance 2.5</text>
-<text font-family="Inter,Arial,sans-serif" x="1013" y="632" fill="#716b60" font-size="9" font-weight="400">+14 on the full timeline</text>
+<text font-family="Inter,Arial,sans-serif" x="1013" y="632" fill="#716b60" font-size="9" font-weight="400">+17 on the full timeline</text>
 <text font-family="Georgia,serif" x="1158" y="239" fill="#201f1b" font-size="23" font-weight="400">08</text>
-<text font-family="Inter,Arial,sans-serif" x="1193" y="238" fill="#716b60" font-size="10" font-weight="400">39 releases</text>
+<text font-family="Inter,Arial,sans-serif" x="1193" y="238" fill="#716b60" font-size="10" font-weight="400">46 releases</text>
 <path d="M1161 268H1161V294" stroke="#dcd6c8" fill="none"/>
 <circle cx="1161" cy="268" r="3.5" fill="#c23966" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="271" fill="#c23966" font-size="9" font-weight="600">08.03  MiniMax</text>
@@ -331,42 +331,48 @@
 <circle cx="1161" cy="306" r="3.5" fill="#c35216" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="309" fill="#c35216" font-size="9" font-weight="600">08.03  Alibaba</text>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="323" fill="#201f1b" font-size="13" font-weight="600">Qwen3.8-Max</text>
-<path d="M1161 335H1161V361" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="335" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="338" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="352" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
-<path d="M1161 364H1161V390" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="364" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="367" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="381" fill="#201f1b" font-size="13" font-weight="600">ContextPilot-14B</text>
-<path d="M1161 393H1161V419" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="393" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="396" fill="#b6472f" font-size="9" font-weight="600">08.27  NVIDIA</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="410" fill="#201f1b" font-size="13" font-weight="600">FastGen-AYF</text>
-<path d="M1161 422H1161V448" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="422" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="425" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="439" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="450" fill="#716b60" font-size="8" font-weight="400">Preview</text>
-<path d="M1161 460H1161V499" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="460" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="463" fill="#b6472f" font-size="9" font-weight="600">08.27  NVIDIA</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="477" fill="#201f1b" font-size="13" font-weight="600">Muse-</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="490" fill="#201f1b" font-size="13" font-weight="600">Glimmer-30B-NVFP4</text>
-<path d="M1161 502H1161V528" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="502" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="505" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="519" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
-<path d="M1161 531H1161V557" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="531" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="534" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="548" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image-Turbo</text>
-<path d="M1161 560H1161V599" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="560" r="3.5" fill="#086f96" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="563" fill="#086f96" font-size="9" font-weight="600">08.31  DeepSeek</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="577" fill="#201f1b" font-size="13" font-weight="600">DeepSeek-V4-Flash-</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="590" fill="#201f1b" font-size="13" font-weight="600">Vision-Exp</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="606" fill="#716b60" font-size="9" font-weight="400">+29 on the full timeline</text>
+<path d="M1161 335H1161V374" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="335" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="338" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="352" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="365" fill="#201f1b" font-size="13" font-weight="600">Teacher-Chat</text>
+<path d="M1161 377H1161V429" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="377" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="380" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="394" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="407" fill="#201f1b" font-size="13" font-weight="600">Teacher-Competition-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="420" fill="#201f1b" font-size="13" font-weight="600">Coding</text>
+<path d="M1161 432H1161V484" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="432" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="435" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="449" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="462" fill="#201f1b" font-size="13" font-weight="600">Teacher-General-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="475" fill="#201f1b" font-size="13" font-weight="600">Reasoning</text>
+<path d="M1161 487H1161V539" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="487" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="490" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="504" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="517" fill="#201f1b" font-size="13" font-weight="600">Teacher-Instruction-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="530" fill="#201f1b" font-size="13" font-weight="600">Following</text>
+<path d="M1161 542H1161V581" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="542" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="545" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="559" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="572" fill="#201f1b" font-size="13" font-weight="600">Teacher-STEM</text>
+<path d="M1161 584H1161V610" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="584" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="587" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="601" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
+<path d="M1161 613H1161V639" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="613" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="616" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="630" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="641" fill="#716b60" font-size="8" font-weight="400">Preview</text>
+<path d="M1161 651H1161V677" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="651" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="654" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="668" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="684" fill="#716b60" font-size="9" font-weight="400">+36 on the full timeline</text>
 <text font-family="Georgia,serif" x="1317" y="239" fill="#201f1b" font-size="23" font-weight="400">09</text>
 <text font-family="Inter,Arial,sans-serif" x="1352" y="238" fill="#716b60" font-size="10" font-weight="400">39 releases</text>
 <path d="M1320 268H1320V294" stroke="#dcd6c8" fill="none"/>
@@ -512,18 +518,18 @@
 <text font-family="Georgia,serif" x="1792" y="239" fill="#201f1b" font-size="23" font-weight="400">12</text>
 <text font-family="Inter,Arial,sans-serif" x="1827" y="238" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
 <text font-family="Inter,Arial,sans-serif" x="1792" y="273" fill="#716b60" font-size="10" font-weight="400">No releases</text>
-<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">204</text>
+<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">214</text>
 <text font-family="Inter,Arial,sans-serif" x="1430" y="101" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="1561" y="78" fill="#201f1b" font-size="32" font-weight="400">22</text>
 <text font-family="Inter,Arial,sans-serif" x="1561" y="101" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
-<text font-family="Georgia,serif" x="1692" y="78" fill="#201f1b" font-size="32" font-weight="400">18.5</text>
+<text font-family="Georgia,serif" x="1692" y="78" fill="#201f1b" font-size="32" font-weight="400">19.5</text>
 <text font-family="Inter,Arial,sans-serif" x="1692" y="101" fill="#716b60" font-size="11" font-weight="400">Per month</text>
 <text font-family="Georgia,serif" x="1823" y="78" fill="#201f1b" font-size="32" font-weight="400">89</text>
 <text font-family="Inter,Arial,sans-serif" x="1823" y="101" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
-<path d="M50 673H1950V673" stroke="#dcd6c8" fill="none"/>
-<text font-family="Inter,Arial,sans-serif" x="50" y="694" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="715" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Aug (39 releases)</text>
-<text font-family="Inter,Arial,sans-serif" x="570" y="715" fill="#201f1b" font-size="13" font-weight="600">0 releases awaiting documentation</text>
-<text font-family="Inter,Arial,sans-serif" x="1060" y="715" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="740" fill="#716b60" font-size="11" font-weight="400">Up to 10 events shown per month. Counts include all events for 2026. Month-only dates appear as MM.</text>
+<path d="M50 725H1950V725" stroke="#dcd6c8" fill="none"/>
+<text font-family="Inter,Arial,sans-serif" x="50" y="746" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="767" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Aug (46 releases)</text>
+<text font-family="Inter,Arial,sans-serif" x="570" y="767" fill="#201f1b" font-size="13" font-weight="600">0 releases awaiting documentation</text>
+<text font-family="Inter,Arial,sans-serif" x="1060" y="767" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="792" fill="#716b60" font-size="11" font-weight="400">Up to 10 events shown per month. Counts include all events for 2026. Month-only dates appear as MM.</text>
 </svg>

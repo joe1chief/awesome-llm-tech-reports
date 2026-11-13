@@ -1861,11 +1861,11 @@
       "release_url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
       "released_on": "2026-09-14",
       "report": {
-        "highlights": "We are excited to open-source Qwen-Image-2.1, a unified text-to-image generation and image editing model in the Qwen family. With just 7B parameters in its visual generation component (32 Single-Stream DiT layers), Qwen-Image-2.1 balances generation quality, inference efficiency, and versatility.",
-        "id": "https://github.com/QwenLM/Qwen-Image-2.1",
-        "kind": "official technical page",
-        "revision": "176290d98adfafcb9f4b555fb6ae7adad582a35875564d26458a8a2928e9ce8a",
-        "url": "https://github.com/QwenLM/Qwen-Image-2.1"
+        "highlights": "We are excited to open-source **Qwen-Image-2.1**, a unified text-to-image generation and image editing model in the Qwen family. With just **7B parameters in its visual generation component** (32 Single-Stream DiT layers), Qwen-Image-2.1 balances generation quality, inference efficiency, and versatility.",
+        "id": "https://huggingface.co/Qwen/Qwen-Image-2.1/README.md",
+        "kind": "model card",
+        "revision": "d26bb61231c349cf6b7896fa83353113880e1ba3",
+        "url": "https://huggingface.co/Qwen/Qwen-Image-2.1/blob/d26bb61231c349cf6b7896fa83353113880e1ba3/README.md"
       }
     },
     {
@@ -1877,7 +1877,7 @@
       "release_url": "https://huggingface.co/allenai/AstaBrief_8B_SFT",
       "released_on": "2026-09-10",
       "report": {
-        "highlights": "## Inference and Usage >[!NOTE] >**Recommended prompt**: This checkpoint was fine-tuned using this [SFT prompt](https://huggingface.co/datasets/allenai/AstaBrief_prompts/blob/main/sft_prompt.txt). For best results, we recommend using the same prompt format at inference time with your input query and section references. Using a different prompt or interaction format may lead to degraded or inconsistent behavior.",
+        "highlights": ">[!NOTE] >**Recommended prompt**: This checkpoint was fine-tuned using this [SFT prompt](https://huggingface.co/datasets/allenai/AstaBrief_prompts/blob/main/sft_prompt.txt). For best results, we recommend using the same prompt format at inference time with your input query and section references. Using a different prompt or interaction format may lead to degraded or inconsistent behavior.",
         "id": "https://huggingface.co/allenai/AstaBrief_8B_SFT/README.md",
         "kind": "model card",
         "revision": "d2d57580d2255422a4c1e4ca4efb6b169a134351",
@@ -2563,11 +2563,10 @@
       "release_url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
       "released_on": "2026-11-11",
       "report": {
-        "highlights": "qwen4-max-preview,Alibaba Cloud Model Studio:Explore Qwen4-Max-Preview's multimodal understanding, deep reasoning, tool calling, and Token Plan access",
+        "highlights": "qwen4-max-preview (Latest Model),Alibaba Cloud Model Studio:Explore Qwen4-Max-Preview's multimodal understanding, deep reasoning, tool calling, and Token Plan access",
         "id": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
         "kind": "official technical page",
-        "published_on": "2026-11-11",
-        "revision": "8e006f5e010ac398d0bdbfeb098986f5cdb69efd3b336743b916f55a1f41ec78",
+        "revision": "e9c543f7890d70305a216dc61710eb7e31136dc055c7bab7f1c7cdda5f16ef9e",
         "url": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview"
       }
     },
@@ -4069,23 +4068,6 @@
       "total_parameters": 560524603904
     },
     {
-      "hub_task": "text-generation",
-      "id": "nvidia--nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
-      "key": "nvidia/nvidia-nemotron-3-5-lightning-30b-a3b-nvfp4",
-      "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
-      "org": "NVIDIA",
-      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
-      "released_on": "2026-08-04",
-      "report": {
-        "highlights": "| | | |:---|:---| | **Total Parameters** | 30B (3B active) | | **Architecture** | MoE - Mamba-2 + MoE + Attention hybrid | | **Context Length** | Up to 1M tokens | | **Single-GPU Deployment** | 1× DGX Spark (GB10) or 1× H100 | | **Supported Hardware** | NVIDIA Blackwell (DGX Spark / GB10, GB200, GeForce RTX 5090); NVIDIA Hopper (H100, H200); NVIDIA Ampere via W4A16 | | **Supported Languages** | English (and coding languages), Spanish, French, German, Italian, Japanese | | **Speculative Decoding** | DSpark for low-concurrency Data Centre and DGX Spark Wor",
-        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4/README.md",
-        "kind": "model card",
-        "revision": "bee7596271d1495f6992ae224aefde4410e816b8",
-        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4/blob/bee7596271d1495f6992ae224aefde4410e816b8/README.md"
-      },
-      "total_parameters": 30000000000
-    },
-    {
       "forms": [
         "General availability"
       ],
@@ -4228,6 +4210,192 @@
         "url": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16/blob/b9b4f513ce36a3455d8717c74dc99912c8e15290/README.md"
       },
       "total_parameters": 31273088876
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-lightning-30b-a3b-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-lightning-30b-a3b-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "released_on": "2026-08-01",
+      "report": {
+        "highlights": "* The pre-training data has a cutoff date of September 2025. * The post-training data has a cutoff date of May 2026.",
+        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/README.md",
+        "kind": "model card",
+        "revision": "a9904d24bcc1d289a1950fa9d2b978c47cf903b9",
+        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/blob/a9904d24bcc1d289a1950fa9d2b978c47cf903b9/README.md"
+      },
+      "total_parameters": 31577937344
+    },
+    {
+      "hub_task": "image-to-video",
+      "id": "nvidia--cmd",
+      "key": "nvidia/cmd",
+      "model": "cmd",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/cmd",
+      "released_on": "2026-08-13",
+      "report": {
+        "highlights": "In the configuration names, `t` denotes frame duration and `l` denotes local attention. Checkpoint names do not include dataset names or training iteration information.",
+        "id": "https://huggingface.co/nvidia/cmd/README.md",
+        "kind": "model card",
+        "revision": "0fc41b5636e76591760542f19b857f77629012bd",
+        "url": "https://huggingface.co/nvidia/cmd/blob/0fc41b5636e76591760542f19b857f77629012bd/README.md"
+      }
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-labs-teacher-stem",
+      "key": "nvidia/nvidia-nemotron-labs-teacher-stem",
+      "model": "NVIDIA-Nemotron-Labs-Teacher-STEM",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-STEM",
+      "released_on": "2026-08-14",
+      "report": {
+        "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
+      },
+      "total_parameters": 560524578816
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-labs-teacher-instruction-following",
+      "key": "nvidia/nvidia-nemotron-labs-teacher-instruction-following",
+      "model": "NVIDIA-Nemotron-Labs-Teacher-Instruction-Following",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Instruction-Following",
+      "released_on": "2026-08-14",
+      "report": {
+        "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
+      },
+      "total_parameters": 560524578816
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-labs-teacher-competition-coding",
+      "key": "nvidia/nvidia-nemotron-labs-teacher-competition-coding",
+      "model": "NVIDIA-Nemotron-Labs-Teacher-Competition-Coding",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Competition-Coding",
+      "released_on": "2026-08-14",
+      "report": {
+        "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
+      },
+      "total_parameters": 560524578816
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-labs-teacher-chat",
+      "key": "nvidia/nvidia-nemotron-labs-teacher-chat",
+      "model": "NVIDIA-Nemotron-Labs-Teacher-Chat",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat",
+      "released_on": "2026-08-14",
+      "report": {
+        "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
+      },
+      "total_parameters": 560524578816
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-labs-teacher-general-reasoning",
+      "key": "nvidia/nvidia-nemotron-labs-teacher-general-reasoning",
+      "model": "NVIDIA-Nemotron-Labs-Teacher-General-Reasoning",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-General-Reasoning",
+      "released_on": "2026-08-14",
+      "report": {
+        "highlights": "2026-6-9 Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, e",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "b8c5e9bb8f29bdff41f876a24f5da8bc1762e16d12dbece512c443a96cbbc859",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Ultra-Technical-Report.pdf"
+      },
+      "total_parameters": 560524578816
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nemotron-labs-audex-30b-a3b",
+      "key": "nvidia/nemotron-labs-audex-30b-a3b",
+      "model": "Nemotron-Labs-Audex-30B-A3B",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B",
+      "released_on": "2026-07-06",
+      "report": {
+        "highlights": "We're excited to introduce [Nemotron-Labs-Audex-30B-A3B](https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B), a unified audio-text LLM built on [Nemotron-Cascade-2-30B-A3B](https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B), a strong text-only MoE LLM with 30B MoE model with 3B activated parameters. Audex-30B-A3B extends the vocabulary for discrete audio tokens used for speech and general audio outputs, as well as an audio encoder for speech and general audio inputs. Audex-30B-A3B delivers strong abilities on audio tasks (audio understandin",
+        "id": "https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/README.md",
+        "kind": "model card",
+        "revision": "4e7e342045736382ddf3e2952c313847a08642b8",
+        "url": "https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/blob/4e7e342045736382ddf3e2952c313847a08642b8/README.md"
+      },
+      "total_parameters": 30000000000
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nvidia-nemotron-3-5-lightning-30b-a3b-base-bf16",
+      "key": "nvidia/nvidia-nemotron-3-5-lightning-30b-a3b-base-bf16",
+      "model": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16",
+      "released_on": "2026-08-05",
+      "report": {
+        "highlights": "> *Looking for the post-trained model? See [NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16) for the full-precision release, or [NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4) for optimized inference.*",
+        "id": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16/README.md",
+        "kind": "model card",
+        "revision": "434456c9a6753f29d24e23c95d622aaf17111b3b",
+        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16/blob/434456c9a6753f29d24e23c95d622aaf17111b3b/README.md"
+      },
+      "total_parameters": 31577937344
+    },
+    {
+      "hub_task": "text-to-image",
+      "id": "nvidia--qwen-image-flash",
+      "key": "nvidia/qwen-image-flash",
+      "model": "Qwen-Image-Flash",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Qwen-Image-Flash",
+      "released_on": "2026-07-01",
+      "report": {
+        "highlights": "The NVIDIA Qwen-Image-Flash model generates images from text prompts using a four-step, DMD2-distilled version of [Qwen/Qwen-Image](https://huggingface.co/Qwen/Qwen-Image). The distillation used DMD2 from [NVIDIA FastGen](https://github.com/NVlabs/FastGen), [NVIDIA Model Optimizer](https://github.com/NVIDIA/Model-Optimizer), and [NVIDIA AutoModel](https://github.com/NVIDIA-NeMo/Automodel) while retaining the base model architecture. The packaged scheduler is configured for the four-step, shift-3 trajectory.",
+        "id": "https://huggingface.co/nvidia/Qwen-Image-Flash/README.md",
+        "kind": "model card",
+        "revision": "eafac15f6140e6dd9c6031217d658ac10bfb604b",
+        "url": "https://huggingface.co/nvidia/Qwen-Image-Flash/blob/eafac15f6140e6dd9c6031217d658ac10bfb604b/README.md"
+      },
+      "total_parameters": 20430401088
+    },
+    {
+      "base_model": "moonshotai/kimi-k2.7-code",
+      "hub_task": "text-generation",
+      "id": "nvidia--kimi-k2-7-code-nvfp4",
+      "key": "nvidia/kimi-k2-7-code-nvfp4",
+      "model": "Kimi-K2.7-Code-NVFP4",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Kimi-K2.7-Code-NVFP4",
+      "released_on": "2026-07-06",
+      "report": {
+        "highlights": "The NVIDIA Kimi-K2.7-Code NVFP4 model is the quantized version of the Moonshot AI's Kimi-K2.7-Code model, which is an auto-regressive language model that uses an optimized transformer architecture. For more information, please check [here](https://huggingface.co/moonshotai/Kimi-K2.7-Code). The NVIDIA Kimi-K2.7-Code NVFP4 model is quantized with [Model Optimizer](https://github.com/NVIDIA/Model-Optimizer).",
+        "id": "https://huggingface.co/nvidia/Kimi-K2.7-Code-NVFP4/README.md",
+        "kind": "model card",
+        "revision": "9f28d60908c98034bb288e755566764eac77cc0d",
+        "url": "https://huggingface.co/nvidia/Kimi-K2.7-Code-NVFP4/blob/9f28d60908c98034bb288e755566764eac77cc0d/README.md"
+      }
     }
   ],
   "version": 1
