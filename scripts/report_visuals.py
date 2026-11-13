@@ -198,15 +198,16 @@ def frequencies(rows, glossary):
 
 def cloud_position(term, size, placed):
     width, height = CLOUD_WIDTH, CLOUD_HEIGHT
-    word_width = round(sum(0.9 if c in "MWmw" else 0.43 if c in "Iiljt- " else 0.65 for c in term) * size) + 13
-    word_height = math.ceil(size * 1.16) + 7
+    width_units = sum(90 if c in "MWmw" else 43 if c in "Iiljt- " else 65 for c in term)
+    word_width = (width_units * size + 50) // 100 + 13
+    word_height = (116 * size + 99) // 100 + 7
     x_positions = range(28, width - 27 - word_width, 6)
     y_positions = range(108, height - 44 - word_height, 6)
     positions = sorted(
         ((x, y) for y in y_positions for x in x_positions),
         key=lambda point: (
-            ((point[0] + word_width / 2 - width / 2) / 2.2) ** 2
-            + (point[1] + word_height / 2 - (height + 57) / 2) ** 2
+            25 * (2 * point[0] + word_width - width) ** 2
+            + 121 * (2 * point[1] + word_height - height - 57) ** 2
         ),
     )
     for x, y in positions:

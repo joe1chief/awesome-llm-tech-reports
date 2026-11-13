@@ -5,7 +5,7 @@ from urllib.error import URLError
 
 import report_wordcloud
 from report_terms import document_key, terms_for_text, word_cloud_data
-from report_visuals import CLOUD_LIMIT, wordcloud_svg
+from report_visuals import CLOUD_LIMIT, cloud_position, wordcloud_svg
 
 
 def test_extract_technical_terms_beyond_glossary():
@@ -91,6 +91,11 @@ def test_revisions_deduplicate_documents_and_retry_with_excerpt(monkeypatch, tmp
     assert report_wordcloud.refresh_terms(tmp_path, rows, until=date(2026, 11, 13)) == 0
     updated = report_wordcloud.term_index(tmp_path, glossary)
     assert updated[document_key(report)]["check_on"] == "2026-11-20"
+
+
+def test_word_bounds_round_consistently_at_half_pixel():
+    x, _, right, _ = cloud_position("cc", 15, [])
+    assert right - x == 33
 
 
 def test_cloud_displays_more_than_the_old_layout_limit():
