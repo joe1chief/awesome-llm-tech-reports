@@ -216,6 +216,19 @@ def cloud_position(term, size, placed):
     return None
 
 
+def cloud_layout(counts, scale):
+    placed = []
+    words = []
+    for index, (term, count) in enumerate(counts[:CLOUD_LIMIT]):
+        size = round(14 + 35 * math.sqrt(count / counts[0][1]))
+        size = min(size, 48 - round(32 * index / (CLOUD_LIMIT - 1)))
+        size = max(14, round(size * scale))
+        if bounds := cloud_position(term, size, placed):
+            placed.append(bounds)
+            words.append((term, size, bounds))
+    return words
+
+
 def wordcloud_svg(year, counts, coverage):
     width, height = CLOUD_WIDTH, CLOUD_HEIGHT
     body_count = sum(coverage.get(source, 0) for source in BODY_SOURCES)
@@ -229,20 +242,18 @@ def wordcloud_svg(year, counts, coverage):
     parts.append(svg_text(30, 42, f"TECHNICAL WORD CLOUD  /  {year}", 12, MUTED, weight=600))
     parts.append(svg_text(29, 79, "Terms across model reports", 32, serif=True))
     parts.append(svg_line(29, 94, 1091, 94))
-    placed = []
+    layout = []
+    for scale in (1, 0.85, 0.7, 0.55, 0.45):
+        candidate = cloud_layout(counts, scale)
+        if len(candidate) > len(layout):
+            layout = candidate
+        if len(layout) >= min(CLOUD_LIMIT, len(counts)):
+            break
     displayed = []
-    for index, (term, count) in enumerate(counts[:CLOUD_LIMIT]):
-        size = round(14 + 35 * math.sqrt(count / counts[0][1]))
-        size = max(14, min(size, 48 - round(32 * index / (CLOUD_LIMIT - 1))))
-        for candidate in range(size, 13, -2):
-            if bounds := cloud_position(term, candidate, placed):
-                placed.append(bounds)
-                displayed.append(term)
-                color = PALETTE[index % len(PALETTE)]
-                parts.append(svg_text(bounds[0] + 6, bounds[1] + candidate, term, candidate, color, weight=700))
-                break
-            size -= 3
-    if not placed:
+    for index, (term, size, (x, y, _, _)) in enumerate(layout):
+        displayed.append(term)
+        parts.append(svg_text(x + 6, y + size, term, size, PALETTE[index % len(PALETTE)], weight=700))
+    if not displayed:
         parts.append(svg_text(30, 160, "Terms appear when verified reports are added.", 15, MUTED))
     parts.append(svg_line(29, height - 41, 1091, height - 41))
     parts.append(
