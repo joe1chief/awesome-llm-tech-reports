@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="814" viewBox="0 0 2000 814" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="801" viewBox="0 0 2000 801" role="img">
 <title>2026 model releases</title><desc>Up to 10 releases per month.</desc>
-<rect width="2000" height="814" fill="#f8f7f2"/>
+<rect width="2000" height="801" fill="#f8f7f2"/>
 <text font-family="Inter,Arial,sans-serif" x="50" y="42" fill="#716b60" font-size="12" font-weight="600">AI MODEL RELEASE TIMELINE  /  2026</text>
 <text font-family="Georgia,serif" x="50" y="99" fill="#201f1b" font-size="53" font-weight="400">2026  Model releases</text>
 <text font-family="Inter,Arial,sans-serif" x="50" y="130" fill="#716b60" font-size="13" font-weight="400">January–December  ·  One dot per release event  ·  Color by organization</text>
@@ -354,25 +354,24 @@
 <text font-family="Inter,Arial,sans-serif" x="1171" y="504" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="517" fill="#201f1b" font-size="13" font-weight="600">Teacher-Instruction-</text>
 <text font-family="Inter,Arial,sans-serif" x="1171" y="530" fill="#201f1b" font-size="13" font-weight="600">Following</text>
-<path d="M1161 542H1161V581" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="542" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="545" fill="#b6472f" font-size="9" font-weight="600">08.14  NVIDIA</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="559" fill="#201f1b" font-size="13" font-weight="600">NVIDIA-Nemotron-Labs-</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="572" fill="#201f1b" font-size="13" font-weight="600">Teacher-STEM</text>
-<path d="M1161 584H1161V610" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="584" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="587" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="601" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
-<path d="M1161 613H1161V639" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="613" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="616" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="630" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="641" fill="#716b60" font-size="8" font-weight="400">Preview</text>
-<path d="M1161 651H1161V677" stroke="#dcd6c8" fill="none"/>
-<circle cx="1161" cy="651" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="654" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="668" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
-<text font-family="Inter,Arial,sans-serif" x="1171" y="684" fill="#716b60" font-size="9" font-weight="400">+36 on the full timeline</text>
+<path d="M1161 542H1161V568" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="542" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="545" fill="#893fbd" font-size="9" font-weight="600">08.18  Zhipu AI</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="559" fill="#201f1b" font-size="13" font-weight="600">GLM-5.3</text>
+<path d="M1161 571H1161V597" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="571" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="574" fill="#137f72" font-size="9" font-weight="600">08.20  InclusionAI (Ant…</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="588" fill="#201f1b" font-size="13" font-weight="600">ArmorOCR</text>
+<path d="M1161 600H1161V626" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="600" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="603" fill="#247553" font-size="9" font-weight="600">08.27  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="617" fill="#201f1b" font-size="13" font-weight="600">Hy4-preview</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="628" fill="#716b60" font-size="8" font-weight="400">Preview</text>
+<path d="M1161 638H1161V664" stroke="#dcd6c8" fill="none"/>
+<circle cx="1161" cy="638" r="3.5" fill="#137f72" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="641" fill="#137f72" font-size="9" font-weight="600">08.28  InclusionAI (Ant…</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="655" fill="#201f1b" font-size="13" font-weight="600">LLaDA-Image</text>
+<text font-family="Inter,Arial,sans-serif" x="1171" y="671" fill="#716b60" font-size="9" font-weight="400">+36 on the full timeline</text>
 <text font-family="Georgia,serif" x="1317" y="239" fill="#201f1b" font-size="23" font-weight="400">09</text>
 <text font-family="Inter,Arial,sans-serif" x="1352" y="238" fill="#716b60" font-size="10" font-weight="400">39 releases</text>
 <path d="M1320 268H1320V294" stroke="#dcd6c8" fill="none"/>
@@ -526,10 +525,10 @@
 <text font-family="Inter,Arial,sans-serif" x="1692" y="101" fill="#716b60" font-size="11" font-weight="400">Per month</text>
 <text font-family="Georgia,serif" x="1823" y="78" fill="#201f1b" font-size="32" font-weight="400">89</text>
 <text font-family="Inter,Arial,sans-serif" x="1823" y="101" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
-<path d="M50 725H1950V725" stroke="#dcd6c8" fill="none"/>
-<text font-family="Inter,Arial,sans-serif" x="50" y="746" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="767" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Aug (46 releases)</text>
-<text font-family="Inter,Arial,sans-serif" x="570" y="767" fill="#201f1b" font-size="13" font-weight="600">0 releases awaiting documentation</text>
-<text font-family="Inter,Arial,sans-serif" x="1060" y="767" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
-<text font-family="Inter,Arial,sans-serif" x="50" y="792" fill="#716b60" font-size="11" font-weight="400">Up to 10 events shown per month. Counts include all events for 2026. Month-only dates appear as MM.</text>
+<path d="M50 712H1950V712" stroke="#dcd6c8" fill="none"/>
+<text font-family="Inter,Arial,sans-serif" x="50" y="733" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="754" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Aug (46 releases)</text>
+<text font-family="Inter,Arial,sans-serif" x="570" y="754" fill="#201f1b" font-size="13" font-weight="600">0 releases awaiting documentation</text>
+<text font-family="Inter,Arial,sans-serif" x="1060" y="754" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
+<text font-family="Inter,Arial,sans-serif" x="50" y="779" fill="#716b60" font-size="11" font-weight="400">Up to 10 events shown per month. Counts include all events for 2026. Month-only dates appear as MM.</text>
 </svg>

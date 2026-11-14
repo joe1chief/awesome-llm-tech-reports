@@ -3077,7 +3077,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash",
       "released_on": "2026-08-02",
       "report": {
-        "highlights": "## Introduction We're introducing Ling-3.0-flash, our next-generation native hybrid reasoning model. Operating with **124B** total and **5.1B** active parameters (~12.4% and ~8.1% of our previous 1T-class flagship Ring-2.6-1T), Ling-3.0-flash matches or outperforms its predecessor across key benchmarks.",
+        "highlights": "We're introducing Ling-3.0-flash, our next-generation native hybrid reasoning model. Operating with **124B** total and **5.1B** active parameters (~12.4% and ~8.1% of our previous 1T-class flagship Ring-2.6-1T), Ling-3.0-flash matches or outperforms its predecessor across key benchmarks.",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash/README.md",
         "kind": "model card",
         "revision": "fcc60a52b34c69c6271d0ac8a8cb0815020b6a43",
@@ -3094,7 +3094,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL",
       "released_on": "2026-09-04",
       "report": {
-        "highlights": "# Introduction We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with ex",
+        "highlights": "We are introducing Ling-3.0-flash-VL, our next-generation native multimodal model. Built upon Ling-3.0-flash, it brings visual information into the complete process of understanding, reasoning, acting, and verification—advancing beyond image and video perception to solving real-world tasks through vision. With 124B total parameters, only 5.5B activated parameters per token, support for image and video inputs, and a context window of up to 256K tokens, Ling-3.0-flash-VL delivers powerful multimodal reasoning and agentic capabilities with exceptional effic",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-VL/README.md",
         "kind": "model card",
         "revision": "c22bf252f15b66d18ca00a15989ac7ed46b7f09e",
@@ -3111,7 +3111,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny",
       "released_on": "2026-08-10",
       "report": {
-        "highlights": "# Introduction We are introducing **Ling-3.0-tiny**, a lightweight hybrid reasoning MoE model with **7.9B** total parameters and only **1.3B** activated parameters per token. It is designed to deliver strong reasoning and agentic capabilities at low inference cost, making advanced model capabilities more accessible for local and resource-constrained deployment. BF16, FP8, and INT4 weights are provided for a wide range of hardware and deployment settings.",
+        "highlights": "We are introducing **Ling-3.0-tiny**, a lightweight hybrid reasoning MoE model with **7.9B** total parameters and only **1.3B** activated parameters per token. It is designed to deliver strong reasoning and agentic capabilities at low inference cost, making advanced model capabilities more accessible for local and resource-constrained deployment. BF16, FP8, and INT4 weights are provided for a wide range of hardware and deployment settings.",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-tiny/README.md",
         "kind": "model card",
         "revision": "9a98e35fe1c9ee255f78dd64771c7ae15a799481",
@@ -3128,7 +3128,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin",
       "released_on": "2026-09-03",
       "report": {
-        "highlights": "## Introduction Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
+        "highlights": "Ling-3.0-flash-Fin is the first finance-enhanced model in the Ant Ling family. Developed by Ant Group with leading financial institutions and domain experts, it extends [Ling-3.0-flash](https://huggingface.co/inclusionAI/Ling-3.0-flash) through continued training on high-quality financial data.",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin/README.md",
         "kind": "model card",
         "revision": "a5b4afb48f526175991724472c179e5a065604de",
@@ -3715,11 +3715,12 @@
       "release_url": "https://huggingface.co/inclusionAI/ArmorOCR",
       "released_on": "2026-08-20",
       "report": {
-        "highlights": "This is the official inference code of ArmorOCR, a two-stage framework for grounded adversarial OCR perception via observation-transferred self-distillation and reward-driven refinement. ArmorOCR is built on Qwen3-VL-8B-Instruct and enables single-pass inference on the original image, without any inference-time visual transformations or tool assistance.",
-        "id": "https://github.com/ant-research/ArmorOCR",
-        "kind": "official technical page",
-        "revision": "c518e028606c4627262e9d2aa483c88b1cc5db359f0a0ad2e17fc962361f4fde",
-        "url": "https://github.com/ant-research/ArmorOCR"
+        "highlights": "Large multimodal models (LMMs) have demonstrated strong OCR recognition capabilities, yet remain vulnerable to adversarial visual text that is readable to humans but challenging for models to localize and recognize. Existing OCR benchmarks mainly focus on natural or document-style text, while adversarial OCR evaluations remain limited in scale, task coverage, or region-aware evaluation. In this paper, we formulate adversarial OCR as a \\textbf{grounded OCR perception} task and introduce \\textbf{AdvSpot}, the first benchmark for grounded adversarial OCR ev",
+        "id": "arxiv:2608.20122",
+        "kind": "technical report",
+        "published_on": "2026-08-20",
+        "revision": "1",
+        "url": "https://arxiv.org/abs/2608.20122v1"
       },
       "total_parameters": 8767123696
     },
@@ -3732,7 +3733,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-midtrain",
       "released_on": "2026-08-11",
       "report": {
-        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-midtrain/README.md",
         "kind": "model card",
         "revision": "34f7c1ed096bdb3118ec1474132ad21794d4510a",
@@ -3749,7 +3750,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-30T",
       "released_on": "2026-08-11",
       "report": {
-        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base-30T/README.md",
         "kind": "model card",
         "revision": "4c7a67683c9e7ea9fad199b58e7b54cd835b63c2",
@@ -3766,7 +3767,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base",
       "released_on": "2026-08-11",
       "report": {
-        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-flash-base/README.md",
         "kind": "model card",
         "revision": "0a96b0a3c68f93e5565d6f2d56c98557bded74fb",
@@ -3948,7 +3949,7 @@
       "release_url": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base",
       "released_on": "2026-08-11",
       "report": {
-        "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+        "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
         "id": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base/README.md",
         "kind": "model card",
         "revision": "bab7297fa02713af237e378bf21107718b8e0e1a",

@@ -390,25 +390,6 @@
         "Vision-Language"
       ]
     },
-    "193dc344d316e21a8458d8aaa10c4e91d705b9e9ee1c76f835c643dbf7376503": {
-      "check_on": "2026-12-13",
-      "revision": "4302ee2e9f5649938ab33f5c317165cd51f34b517f1cc061da8fa5a181a92a90",
-      "source": "source page",
-      "terms": [
-        "Data Parallel Inference",
-        "Distillation",
-        "GRPO",
-        "MoE",
-        "Multimodal",
-        "Parallel Inference",
-        "Policy Optimization",
-        "Policy Self Distillation",
-        "Post-training",
-        "Quantization",
-        "Self Distillation",
-        "Vision-Language"
-      ]
-    },
     "1b798d37e9bb542ed1f2b2fb7e884f16e705731eb52aae9582b844030ff475a9": {
       "check_on": "2026-12-14",
       "revision": "a3b90325fdb8f95a2afc158ec4f657df78a33b7f15c8e53b3f69901499b2dca0",
@@ -3638,6 +3619,27 @@
         "Training Data",
         "Vision-Language",
         "Weight Multimodal Reasoning"
+      ]
+    },
+    "fc0732c473f514bb1bd92d5705724808f598824f69292ef097545613425df100": {
+      "check_on": "2036-11-11",
+      "revision": "ba2c87649233d7523693f227a3e49e38c17e63bf69a9c7983f03cbfa15a68757",
+      "source": "source PDF",
+      "terms": [
+        "Chain of Thought",
+        "Context Fusion",
+        "Distillation",
+        "GRPO",
+        "Multimodal",
+        "Policy Optimization",
+        "Policy Self Distillation",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Self Distillation",
+        "Text Context",
+        "Text Context Fusion",
+        "Text Prediction",
+        "Training Data"
       ]
     },
     "fc1e82056dcc3d244a8994982ce54047717c69ec5f6d4f8da8419690e91c2253": {
