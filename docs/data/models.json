@@ -48,11 +48,11 @@
     },
     "tag_breakdown": {
       "Reasoning / CoT": 113,
-      "Vision & Multimodal": 116,
+      "Vision & Multimodal": 117,
       "Open Weights": 11,
-      "Agent & Coding": 108,
-      "MoE": 52,
-      "Medical & Science": 46,
+      "Agent & Coding": 107,
+      "Medical & Science": 47,
+      "MoE": 50,
       "Audio & Speech": 32,
       "Video": 30
     },
@@ -213,19 +213,17 @@
       "month": 11,
       "org": "Baidu",
       "model": "ERNIE 5.5 Flash Preview",
-      "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+      "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
       "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "MoE"
+        "Agent & Coding"
       ],
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
-      "total_parameters": 280000000000,
-      "document_published_on": "2026-11-11"
+      "total_parameters": 280000000000
     },
     {
       "id": "inclusionai--zoomgain-9b",
@@ -266,7 +264,7 @@
       "month": 11,
       "org": "ByteDance",
       "model": "Seedream 5.5",
-      "highlights": "",
+      "highlights": "To address this, Seedream 5.5 uses targeted training to preserve unedited regions at the pixel level, enabling creative teams to keep refining an image through successive edits.",
       "link": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
       "file": "",
       "camp": "China-based Labs",
@@ -275,7 +273,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-11-09",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-11-09"
     },
     {
       "id": "meta--muse-ember",
@@ -483,14 +482,14 @@
       "month": 10,
       "org": "Baidu",
       "model": "Unlimited-OCR-2",
-      "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench.",
+      "highlights": "Unlimited OCR ushers the era of long-horizon parsing, substantially mitigating the growth of working memory as document lengthens. However, as document length scales to hundreds of pages, the visual context grows substantially, sharply increasing the computational cost of each decoding step and limiting the scalability of ultra-long document parsing. Inspired by human book transcription via localized focus without re-scanning preceding pages, we introduce Unlimited OCR 2, a document parsing model that looks only at what it transcribes. Building on Unlimi",
       "link": "https://arxiv.org/abs/2610.39308v2",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "MoE"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-10-27",
       "report_kind": "technical report",
@@ -750,8 +749,8 @@
       "month": 10,
       "org": "NVIDIA",
       "model": "NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16",
-      "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: https://openmdw.ai/license/1-1/ pipeline_tag: text-generation language: - en tags: - nvidia - pytorch - nemotron-labs - dory datasets: - nvidia/nemotron-post-training-v3 - nvidia/nemotron-pre-training-datasets track_downloads: true ---",
-      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16/blob/f6c832e6963ddb74f62c75813a3e8c74b1af67b1/README.md",
+      "highlights": "* The pre-training data has a cutoff date of September 2025. * The post-training data has a cutoff date of May 2026. -->",
+      "link": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Dory1.0-4B-BF16/blob/ee517dd388a9b348890ae1e00dacc5eb4d0c750d/README.md",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
@@ -1178,7 +1177,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-22",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-22"
     },
     {
       "id": "xai--grok-4-7",
@@ -1598,13 +1598,13 @@
       "month": 9,
       "org": "NVIDIA",
       "model": "Nemotron-3.5-Parse",
-      "highlights": "- **Leading ParseBench accuracy:** **75.20** with triple-pass parsing, the highest overall score among the systems in our [reported comparison](#parsebench). - **Broad multilingual OCR:** evaluated across **163 language/script entries in 26 script groups**, plus 10 Indic languages. See [language results](#multilingual-ocr). - **Small and fast:** **0.631B parameters**, with an optional **89.3M-parameter DFlash2 drafter**. See [throughput measurements](#new-dflash2-speculative-decoding) for the hardware, concurrency, and parsing mode behind each result.",
-      "link": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/72ad4d71dd827135ee581502363e14748008900a/README.md",
+      "highlights": "One H200, BF16, 2,078 pages, median of three runs, using the best tested native draft length at each concurrency. See the [benchmark protocol and data](dflash2/performance/README.md). This direct-engine, greedy benchmark is separate from the HTTP pass-mode timings.",
+      "link": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/blob/ea2e1fe486bea3e7d0d505df9bafa4ad562407a0/README.md",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding"
+        "Medical & Science"
       ],
       "released_on": "2026-09-03",
       "report_kind": "model card"

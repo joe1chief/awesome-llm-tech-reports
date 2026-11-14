@@ -262,8 +262,8 @@
       ]
     },
     "0dd3bed5c7dd1c272c8dd6d9d053b51af44b0d51adc15317494c3f0ee0081a56": {
-      "check_on": "2026-12-13",
-      "revision": "d46acf592e6f4b3d4332b3b42bc453e22f24a6b3d68c57a7e29cab02cfe1a1f5",
+      "check_on": "2026-12-14",
+      "revision": "9402a8dee30c139c39122d109a0fd537e28d30c6004205ab25f59a881af1db3d",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -863,6 +863,33 @@
         "Safety Evaluation"
       ]
     },
+    "479d629d4e65050ee6fe3930f907982158f51cabd239c2735637515ff8e41358": {
+      "check_on": "2036-11-11",
+      "revision": "907c0ae05266b70f17637ecabb4c2b193e81dba7182d32a652cf24a559756e41",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Elastic Inference",
+        "Fine-tuning",
+        "GRPO",
+        "Instruction Tuning",
+        "KV Cache",
+        "Long Context",
+        "Policy Optimization",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Recurrent Attention",
+        "Reinforcement Learning",
+        "Sliding Window Attention",
+        "Supervised Fine-tuning",
+        "Synthetic Data",
+        "Tool Use",
+        "Training Data",
+        "Window Attention"
+      ]
+    },
     "480d279788dee0cf944db0b758e35823bc2b6bef5a37cc4fad0574d4b7f00c08": {
       "check_on": "2036-11-10",
       "revision": "ac140d0553f63aa8100d1b778c17e5789c74d0c5bcaa9f41162ba6268e155833",
@@ -1071,8 +1098,8 @@
       "revision": "86763aef6c6d944399bc2ba0fd4ae2702d21c3e3fdc3ca2b8d777e34e474583d"
     },
     "513a1ea67ff1f83ba8195a3e5198dff206b644ed0b332cc0aff4547e4b7bdfa8": {
-      "check_on": "2026-12-13",
-      "revision": "27055a6e4e57b82d2b64d507637b0c76543eee00659dda9cb63186a79d7ff442",
+      "check_on": "2026-12-14",
+      "revision": "92874b283fcb674fd9ad94e6c0b248d5288eb63617b47d9dce0b8f2ecc01ed93",
       "source": "source page",
       "terms": [
         "Image Generation"
@@ -1091,26 +1118,6 @@
         "Multimodal Reasoning",
         "Reasoning",
         "Video Understanding"
-      ]
-    },
-    "52df15794cc662b333f271860af7170c5eb4ea14f5a48b795667277b349c7efc": {
-      "check_on": "2036-11-10",
-      "revision": "1ecbaf4d9ef6d9e71e3a8739d8a3f4d1c0415659cbfa82946daf1d9b142da892",
-      "source": "model card",
-      "terms": [
-        "Image Training",
-        "Multi-token Prediction",
-        "Multimodal",
-        "Query Self Attention",
-        "Retrieval",
-        "Self Attention",
-        "Speculative Decoding",
-        "Text Training",
-        "Token Generation",
-        "Token Prediction",
-        "Token Speculative Decoding",
-        "Tokenizer",
-        "Training Data"
       ]
     },
     "533db992bfb84cdb151080aa447d6ea8af8381c961fea78e27a5c99b085acf00": {
@@ -1193,33 +1200,6 @@
         "Image Generation",
         "KV Cache",
         "Memory Optimization"
-      ]
-    },
-    "57d97439b8f7a90cd966f6472fb064151a37ed8ada7f9c78a0e41792b9a879f2": {
-      "check_on": "2036-11-10",
-      "revision": "cc7da2c56a83edbd30442f32444e7e493d6a1aa3e72fc8913974f862b7add56f",
-      "source": "model card",
-      "terms": [
-        "Agentic Coding",
-        "Elastic Inference",
-        "Fine-tuning",
-        "GRPO",
-        "Instruction Tuning",
-        "KV Cache",
-        "Long Context",
-        "Policy Optimization",
-        "Post-training",
-        "Pre-training",
-        "Quantization",
-        "Reasoning",
-        "Recurrent Attention",
-        "Reinforcement Learning",
-        "Sliding Window Attention",
-        "Supervised Fine-tuning",
-        "Synthetic Data",
-        "Tool Use",
-        "Training Data",
-        "Window Attention"
       ]
     },
     "583ce5a62ee40551c00918eb0f553dc0b765438b9d767602b16c97d40a6398d4": {
@@ -1871,6 +1851,26 @@
       "terms": [
         "Multimodal",
         "Video Generation"
+      ]
+    },
+    "7993a1284539459b111f01535ccc4c4b9f3ff1715dd4281af31ea6a1dcc3a6e2": {
+      "check_on": "2036-11-11",
+      "revision": "aca6585d0b7d837031edc899313d82a82b4eca983644837eb53ac0cf35c5aaf6",
+      "source": "model card",
+      "terms": [
+        "Image Training",
+        "Multi-token Prediction",
+        "Multimodal",
+        "Query Self Attention",
+        "Retrieval",
+        "Self Attention",
+        "Speculative Decoding",
+        "Text Training",
+        "Token Generation",
+        "Token Prediction",
+        "Token Speculative Decoding",
+        "Tokenizer",
+        "Training Data"
       ]
     },
     "7a21e7d503d582f137b55d110f45c7578de2272b856308a61621dc5d1299b7bb": {
@@ -3031,8 +3031,8 @@
       ]
     },
     "d79498a68e6eccc7b7631cc97a59ae557304d2c3cff1182b4d509a669d84c084": {
-      "check_on": "2026-12-13",
-      "revision": "3bf4b31dc89c9d476eac8f0c6b5af8d1c7af314e17b8a732c2dc3628f0631211",
+      "check_on": "2026-12-14",
+      "revision": "7f118c16a266f62eabe7f30ae48bf1a509f4fbbd5433b0722b68bc1e7a7aa0ea",
       "source": "source page",
       "terms": [
         "Diffusion",
@@ -3302,8 +3302,8 @@
       ]
     },
     "e7232d52f37fd859a2ad633164226f1c2f18c7af5a6da4e5e7f23ccb8f0263e9": {
-      "check_on": "2026-12-13",
-      "revision": "29d982a0b35194b6f4acb0aa0590e5a1447e0ea31a2457540657a90413905d16",
+      "check_on": "2026-12-14",
+      "revision": "66fc8945af04f96014ef3b1fd059e0158e6aca1c56b1ba0a114adda803d79155",
       "source": "source page",
       "terms": [
         "Agentic Coding",
