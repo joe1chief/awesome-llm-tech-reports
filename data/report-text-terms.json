@@ -409,6 +409,30 @@
         "Vision-Language"
       ]
     },
+    "1b798d37e9bb542ed1f2b2fb7e884f16e705731eb52aae9582b844030ff475a9": {
+      "check_on": "2026-12-14",
+      "revision": "a3b90325fdb8f95a2afc158ec4f657df78a33b7f15c8e53b3f69901499b2dca0",
+      "source": "source PDF",
+      "terms": [
+        "Agentic Coding",
+        "Chain of Thought",
+        "Computer Use",
+        "Distillation",
+        "Fine-tuning",
+        "Instruction Tuning",
+        "Long Context",
+        "Multimodal",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Reward Model",
+        "Safety Evaluation",
+        "Supervised Fine-tuning",
+        "Tool Use",
+        "Training Data"
+      ]
+    },
     "1d1bb9d73676c53580a8c62d87e4d5bff16e4f7eee4e020db031c2dab02d0b3f": {
       "check_on": "2026-12-13",
       "revision": "fcca4803d1b0c2a8a3225988a9bb8ec98db61379e26488904fba8a8351fb7633",
@@ -498,16 +522,6 @@
         "Training Data",
         "Weight Quantization",
         "Weight Scaling"
-      ]
-    },
-    "1e5b8618d900b42a6d0b1d1d120a68d5a6363388e52c74af5ad67348ab1581c0": {
-      "check_on": "2026-12-13",
-      "revision": "f88ed1056c0dc728bc9971525db86c48e7a5802720bc55e8f928eab82f7cd5e4",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Multimodal",
-        "Reasoning"
       ]
     },
     "1f0e60fded5cff012ee3c2fad39aeab4b82897d23e634f0be660ea1421726085": {
@@ -2843,6 +2857,22 @@
         "Reasoning"
       ]
     },
+    "c4c7ba8fda189a40b21e4d54ba8655ba30a940a7a16992295bac9bf491682f30": {
+      "check_on": "2026-12-14",
+      "revision": "04e673fd440cbef432c0c4cecb0f5752fab10091b898d3d729c98fe9f35a6fb6",
+      "source": "source page",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Instruction Tuning",
+        "Long Context",
+        "Multimodal",
+        "Policy Evaluation",
+        "Reasoning",
+        "Safety Evaluation",
+        "Training Data"
+      ]
+    },
     "c5c75145f18db804a54130a0b0881f742e42a6c14c79872b6406c46ea1a0493e": {
       "check_on": "2036-11-10",
       "revision": "0e12bd04d5070e6b4cc89cb790337bfc3479bb366d8e9330e8642e09af862e8f",
@@ -3618,26 +3648,6 @@
         "Instruction Tuning",
         "Quantization",
         "Reasoning"
-      ]
-    },
-    "fe07ff2b991041d1a55819d432cde921a5b1ee484fff177949751f620f0a2f61": {
-      "check_on": "2026-12-13",
-      "revision": "4c203b4680b10903adddd3b316e8bf8e8b9448a351e1b99caf5793cf1b9b4529",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Computer Use",
-        "Fine-tuning",
-        "Long Context",
-        "Multimodal",
-        "Policy Evaluation",
-        "Post-training",
-        "Pre-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Safety Evaluation",
-        "Supervised Fine-tuning",
-        "Training Data"
       ]
     }
   },

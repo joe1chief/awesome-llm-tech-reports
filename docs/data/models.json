@@ -50,8 +50,8 @@
       "Reasoning / CoT": 113,
       "Vision & Multimodal": 117,
       "Open Weights": 11,
-      "Agent & Coding": 107,
-      "Medical & Science": 47,
+      "Agent & Coding": 105,
+      "Medical & Science": 48,
       "MoE": 50,
       "Audio & Speech": 32,
       "Video": 30
@@ -466,14 +466,16 @@
       "month": 10,
       "org": "Google",
       "model": "Gemini 4 Carbon",
-      "highlights": "",
-      "link": "https://deepmind.google/models/model-cards/gemini-4-carbon/",
+      "highlights": "Training ......................................................................................................................................... 7",
+      "link": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_safety_report.pdf",
       "file": "",
       "camp": "Google",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Medical & Science"
+      ],
       "released_on": "2026-10-28",
-      "report_kind": "model card"
+      "report_kind": "technical report"
     },
     {
       "id": "baidu--unlimited-ocr-2",
@@ -1339,7 +1341,7 @@
         "Audio & Speech"
       ],
       "released_on": "2026-09-15",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-09-15"
     },
     {
@@ -1730,17 +1732,14 @@
       "month": 9,
       "org": "Google",
       "model": "Gemini 3.8 Flash",
-      "highlights": "Building on the momentum of 3.7 Flash from three weeks ago and marking our third Flash release in only six weeks, today we’re introducing Gemini 3.8, our best reasoning and coding model yet, at the same speed and low cost of 3.7. Gemini 3.8 introduces 2 variants:",
-      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "highlights": "Gemini 3.8 Flash is based on Gemini 3.7 Flash. For more information about the model architecture for Gemini 3.8 Flash, see the Gemini 3.7 Flash model card.",
+      "link": "https://deepmind.google/models/model-cards/gemini-3-8-flash/#page-content",
       "file": "",
       "camp": "Google",
       "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding"
-      ],
+      "tags": [],
       "released_on": "2026-09-02",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-09-02"
     },
     {
@@ -1996,7 +1995,7 @@
         "Audio & Speech"
       ],
       "released_on": "2026-08-26",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-08-26"
     },
     {
@@ -2360,7 +2359,7 @@
         "Video"
       ],
       "released_on": "2026-08-13",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-08-13"
     },
     {
@@ -2370,7 +2369,7 @@
       "month": 8,
       "org": "DeepSeek",
       "model": "DeepSeek-V4-Pro-0813",
-      "highlights": "| Benchmark | DeepSeek-V4-Pro-0813 | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Pro (Preview) | DeepSeek-V4-Flash (Preview) | GLM-5.2 | Kimi K3 | Opus-4.8 | Fable-5 (w/ fallback) | | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | | HLE (wo / w tools) | 42.7 / 60.0 | 37.8 / 51.5 | 37.7 / 48.2 | 34.8 / 45.1 | 40.5 / 54.7 | 43.5 / 56.0 | 49.8 / 57.9 | 53.3 / 63.0 | | Terminal Bench 2.1 | 87.9 | 82.7 | 72.1 | 61.8 | 81.0 | 88.3 | 85.0 | 88.0 | | NL2Repo | 61.5 | 54.2 | 38.5 | 39.4 | 48.9 | - | 69.7 | - | | Cybergym | 83.3 | 76.7 | 52.7 | 38",
+      "highlights": "Please refer to the [inference](inference/README.md) folder for detailed instructions on running DeepSeek-V4 locally, including model weight conversion and interactive chat demos.",
       "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813/blob/72e1d3230f6c080a530b0a1d46f8eb4602340597/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -2697,13 +2696,13 @@
       "month": 7,
       "org": "DeepSeek",
       "model": "DeepSeek-V4-Flash-0731",
-      "highlights": "| Benchmark | DeepSeek-V4-Flash-0731 | DeepSeek-V4-Flash (Preview) | DeepSeek-V4-Pro (Preview) | GLM-5.2 | Opus-4.8 | | :--- | :---: | :---: | :---: | :---: | :---: | | Terminal Bench 2.1 | 82.7 | 61.8 | 72.1 | 81.0 | 85.0 | | NL2Repo | 54.2 | 39.4 | 38.5 | 48.9 | 69.7 | | Cybergym | 76.7 | 38.7 | 52.7 | - | 83.1 | | DeepSWE | 54.4 | 7.3 | 12.8 | 46.2 | 58.0 | | Toolathlon-Verified | 70.3 | 49.7 | 55.9 | 59.9 | 76.2 | | Agents' Last Exam | 25.2 | 15.8 | 16.5 | 23.8 | 25.7 | | AutomationBench Public | 25.1 | 10.8 | 12.8 | 12.9 | 27.2 | | DSBench-FullStack",
+      "highlights": "For example, the command below serves the model with vLLM on a single 4×GB300 node. See the [vLLM recipe](https://recipes.vllm.ai/deepseek-ai/DeepSeek-V4-Flash?hardware=b300&features=tool_calling,reasoning) for detailed instructions and other hardware configurations.",
       "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731/blob/7872f01b1d1fe23eabc4c98b48bffcef5a386062/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding"
+        "Reasoning / CoT"
       ],
       "released_on": "2026-07-31",
       "report_kind": "model card"
@@ -2786,7 +2785,7 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-07-21",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-07-21"
     },
     {
@@ -2807,7 +2806,7 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-07-21",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "document_published_on": "2026-07-21"
     },
     {
