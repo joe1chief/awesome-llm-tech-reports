@@ -1959,7 +1959,7 @@
       "release_url": "https://huggingface.co/inclusionAI/ZoomGain-9B",
       "released_on": "2026-11-10",
       "report": {
-        "highlights": "![Table 3 showing RL training results for Qwen3.5-4B and Qwen3.5-9B on ZoomGain and ZwZ data](docs/figures/zoomgain-rl-training-results.png)",
+        "highlights": "Install the dependencies from the model section and run the benchmark from the repository root. Replace the example `MODEL_PATH` with the path to a local checkpoint directory for any compatible model.",
         "id": "https://huggingface.co/inclusionAI/ZoomGain-9B/README.md",
         "kind": "model card",
         "revision": "b4550ef2e5a30b33c5133278036a682197489145",
@@ -1974,7 +1974,7 @@
       "release_url": "https://huggingface.co/inclusionAI/ZoomGain-4B",
       "released_on": "2026-11-10",
       "report": {
-        "highlights": "![Table 3 showing RL training results for Qwen3.5-4B and Qwen3.5-9B on ZoomGain and ZwZ data](docs/figures/zoomgain-rl-training-results.png)",
+        "highlights": "Install the dependencies from the model section and run the benchmark from the repository root. Replace the example `MODEL_PATH` with the path to a local checkpoint directory for any compatible model.",
         "id": "https://huggingface.co/inclusionAI/ZoomGain-4B/README.md",
         "kind": "model card",
         "revision": "2ac9e28f1de993b4d7b6ebeda1368ff2e6982a71",
@@ -2022,7 +2022,7 @@
       "release_url": "https://huggingface.co/inclusionAI/ZwZ2-27B",
       "released_on": "2026-10-16",
       "report": {
-        "highlights": "--- library_name: transformers pipeline_tag: image-text-to-text datasets: - inclusionAI/ZwZ2-RL-VQA base_model: Qwen/Qwen3.6-27B language: - en tags: - zwz2 - vision-language - visual-reasoning - reinforcement-learning - grpo ---",
+        "highlights": "**ZwZ2-27B** is the **Qwen3.6-27B**-based model in **Zooming-without-Zooming-v2 (ZwZ2)**. It learns to connect visual evidence across regions through comparison, aggregation, matching, and multi-step reasoning. Training uses full images; inference requires no zooming tools.",
         "id": "https://huggingface.co/inclusionAI/ZwZ2-27B/README.md",
         "kind": "model card",
         "revision": "6decedf05c953da84fe272922e192499794244e9",
@@ -2038,7 +2038,7 @@
       "release_url": "https://huggingface.co/inclusionAI/ZwZ2-9B",
       "released_on": "2026-10-16",
       "report": {
-        "highlights": "--- library_name: transformers pipeline_tag: image-text-to-text datasets: - inclusionAI/ZwZ2-RL-VQA base_model: Qwen/Qwen3.5-9B language: - en tags: - zwz2 - vision-language - visual-reasoning - reinforcement-learning - grpo ---",
+        "highlights": "**ZwZ2-9B** is the **Qwen3.5-9B**-based model in **Zooming-without-Zooming-v2 (ZwZ2)**. It learns to connect visual evidence across regions through comparison, aggregation, matching, and multi-step reasoning. Training uses full images; inference requires no zooming tools.",
         "id": "https://huggingface.co/inclusionAI/ZwZ2-9B/README.md",
         "kind": "model card",
         "revision": "de52e7291860cf8f4e09c829c5f6d1337674926d",
@@ -2054,7 +2054,7 @@
       "release_url": "https://huggingface.co/inclusionAI/ZwZ2-4B",
       "released_on": "2026-10-15",
       "report": {
-        "highlights": "--- library_name: transformers pipeline_tag: image-text-to-text datasets: - inclusionAI/ZwZ2-RL-VQA base_model: Qwen/Qwen3.5-4B language: - en tags: - zwz2 - vision-language - visual-reasoning - reinforcement-learning - grpo ---",
+        "highlights": "**ZwZ2-4B** is the **Qwen3.5-4B**-based model in **Zooming-without-Zooming-v2 (ZwZ2)**. It learns to connect visual evidence across regions through comparison, aggregation, matching, and multi-step reasoning. Training uses full images; inference requires no zooming tools.",
         "id": "https://huggingface.co/inclusionAI/ZwZ2-4B/README.md",
         "kind": "model card",
         "revision": "f4cf5f31fb5578622312017a5a74d6b0cd1d64b8",
@@ -3966,7 +3966,7 @@
       "release_url": "https://huggingface.co/inclusionAI/SingGuard-NSFA-9B",
       "released_on": "2026-07-10",
       "report": {
-        "highlights": "# SingGuard-NSFA: Extensible Guardrails for Agentic AI via Generative Reasoning and Real-Time Classification",
+        "highlights": "SingGuard-NSFA is a dual-mode guardrail framework for securing agentic AI systems against operational threats such as prompt injection, sensitive information extraction, malicious code requests, dangerous tool misuse, and resource exhaustion. It combines SFT-based generative reasoning for interpretable offline auditing with lightweight discriminative classification heads on the frozen backbone, enabling real-time detection at approximately 50 ms. Four model sizes (0.8B, 2B, 4B, 9B) are released, all achieving >94% F1 on purpose-built multilingual benchma",
         "id": "https://huggingface.co/inclusionAI/SingGuard-NSFA-9B/README.md",
         "kind": "model card",
         "revision": "69d1e631e9ff34f4b990855dd2b1e60572d8829c",
