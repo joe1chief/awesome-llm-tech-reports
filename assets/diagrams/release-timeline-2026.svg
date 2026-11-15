@@ -18,7 +18,7 @@
 <circle cx="635" cy="172" r="3.5" fill="#137f72"/>
 <text font-family="Inter,Arial,sans-serif" x="646" y="176" fill="#201f1b" font-size="11" font-weight="400">OpenAI  12</text>
 <circle cx="722" cy="172" r="3.5" fill="#946410"/>
-<text font-family="Inter,Arial,sans-serif" x="733" y="176" fill="#201f1b" font-size="11" font-weight="400">Meituan  8</text>
+<text font-family="Inter,Arial,sans-serif" x="733" y="176" fill="#201f1b" font-size="11" font-weight="400">Meituan  9</text>
 <circle cx="809" cy="172" r="3.5" fill="#3f7550"/>
 <text font-family="Inter,Arial,sans-serif" x="820" y="176" fill="#201f1b" font-size="11" font-weight="400">Microsoft  8</text>
 <circle cx="910" cy="172" r="3.5" fill="#893fbd"/>
@@ -465,7 +465,7 @@
 <text font-family="Inter,Arial,sans-serif" x="1488" y="564" fill="#201f1b" font-size="13" font-weight="600">GenFirst</text>
 <text font-family="Inter,Arial,sans-serif" x="1488" y="580" fill="#716b60" font-size="9" font-weight="400">+26 on the full timeline</text>
 <text font-family="Georgia,serif" x="1633" y="239" fill="#201f1b" font-size="23" font-weight="400">11</text>
-<text font-family="Inter,Arial,sans-serif" x="1668" y="238" fill="#716b60" font-size="10" font-weight="400">16 releases</text>
+<text font-family="Inter,Arial,sans-serif" x="1668" y="238" fill="#716b60" font-size="10" font-weight="400">17 releases</text>
 <path d="M1636 268H1636V294" stroke="#dcd6c8" fill="none"/>
 <circle cx="1636" cy="268" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1646" y="271" fill="#247553" font-size="9" font-weight="600">11.04  Tencent</text>
@@ -513,17 +513,17 @@
 <circle cx="1636" cy="596" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="1646" y="599" fill="#2555bd" font-size="9" font-weight="600">11.12  Google</text>
 <text font-family="Inter,Arial,sans-serif" x="1646" y="613" fill="#201f1b" font-size="13" font-weight="600">Gemini 4 Hydrogen</text>
-<text font-family="Inter,Arial,sans-serif" x="1646" y="629" fill="#716b60" font-size="9" font-weight="400">+6 on the full timeline</text>
+<text font-family="Inter,Arial,sans-serif" x="1646" y="629" fill="#716b60" font-size="9" font-weight="400">+7 on the full timeline</text>
 <text font-family="Georgia,serif" x="1792" y="239" fill="#201f1b" font-size="23" font-weight="400">12</text>
 <text font-family="Inter,Arial,sans-serif" x="1827" y="238" fill="#716b60" font-size="10" font-weight="400">0 releases</text>
 <text font-family="Inter,Arial,sans-serif" x="1792" y="273" fill="#716b60" font-size="10" font-weight="400">No releases</text>
-<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">214</text>
+<text font-family="Georgia,serif" x="1430" y="78" fill="#201f1b" font-size="32" font-weight="400">215</text>
 <text font-family="Inter,Arial,sans-serif" x="1430" y="101" fill="#716b60" font-size="11" font-weight="400">Releases</text>
 <text font-family="Georgia,serif" x="1561" y="78" fill="#201f1b" font-size="32" font-weight="400">22</text>
 <text font-family="Inter,Arial,sans-serif" x="1561" y="101" fill="#716b60" font-size="11" font-weight="400">Organizations</text>
 <text font-family="Georgia,serif" x="1692" y="78" fill="#201f1b" font-size="32" font-weight="400">19.5</text>
 <text font-family="Inter,Arial,sans-serif" x="1692" y="101" fill="#716b60" font-size="11" font-weight="400">Per month</text>
-<text font-family="Georgia,serif" x="1823" y="78" fill="#201f1b" font-size="32" font-weight="400">89</text>
+<text font-family="Georgia,serif" x="1823" y="78" fill="#201f1b" font-size="32" font-weight="400">87</text>
 <text font-family="Inter,Arial,sans-serif" x="1823" y="101" fill="#716b60" font-size="11" font-weight="400">Last 72 days</text>
 <path d="M50 712H1950V712" stroke="#dcd6c8" fill="none"/>
 <text font-family="Inter,Arial,sans-serif" x="50" y="733" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>

@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 275,
+    "total_models": 276,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,13 +14,14 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
+      "China-based Labs": 145,
       "Google": 38,
-      "China-based Labs": 144,
       "Other Global": 60,
       "Anthropic": 17,
       "OpenAI": 16
     },
     "org_breakdown": {
+      "Meituan": 14,
       "Google": 38,
       "Alibaba": 20,
       "MiniMax": 8,
@@ -30,7 +31,6 @@
       "Meta": 4,
       "Anthropic": 17,
       "OpenAI": 16,
-      "Meituan": 13,
       "Tencent": 19,
       "Microsoft": 8,
       "Moonshot AI": 3,
@@ -47,14 +47,14 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
+      "Vision & Multimodal": 118,
+      "Audio & Speech": 33,
+      "Video": 31,
       "Reasoning / CoT": 113,
-      "Vision & Multimodal": 117,
       "Open Weights": 11,
       "Agent & Coding": 105,
       "Medical & Science": 48,
-      "MoE": 50,
-      "Audio & Speech": 32,
-      "Video": 30
+      "MoE": 49
     },
     "monthly_trend": [
       {
@@ -147,11 +147,31 @@
       },
       {
         "month": "2026-11",
-        "count": 14
+        "count": 15
       }
     ]
   },
   "models": [
+    {
+      "id": "meituan--longcat-video-avatar-1-6",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Meituan",
+      "model": "LongCat-Video-Avatar-1.6",
+      "highlights": "We are excited to announce the release of LongCat-Video-Avatar 1.6, the latest upgrade to our open-source framework for audio-driven human video generation. Building upon LongCat-Video-Avatar 1.5, 1.6 improves expressive naturalness, lip–audio synchronization, coordinated facial and body motion, and visual consistency during long-form generation. It also introduces comprehensive inference optimizations for faster and more efficient deployment.",
+      "link": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/blob/acfc628244201fc53fb6fe8a8903c5bac9bdf68f/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video"
+      ],
+      "released_on": "2026-11-13",
+      "report_kind": "model card"
+    },
     {
       "id": "google--gemini-4-hydrogen",
       "date": "2026-11",
@@ -504,7 +524,7 @@
       "month": 10,
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.1-flash-1019",
-      "highlights": "## Introduction We introduce **Ling-3.1-flash-1019**, an upgraded version of [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), with **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**. With further post-training optimizations, **Ling-3.1-flash-1019** demonstrates significant improvements in scientific and real-world agentic capabilities. Its **AA-Briefcase** score rises from 1397 to **1524**, while performance on **AutomationBench-AA** increases from 62% to **68%**. The model also makes gai",
+      "highlights": "We introduce **Ling-3.1-flash-1019**, an upgraded version of [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), with **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**. With further post-training optimizations, **Ling-3.1-flash-1019** demonstrates significant improvements in scientific and real-world agentic capabilities. Its **AA-Briefcase** score rises from 1397 to **1524**, while performance on **AutomationBench-AA** increases from 62% to **68%**. The model also makes gains on scientific",
       "link": "https://huggingface.co/inclusionAI/Ling-3.1-flash-1019/blob/2109a6863fb14361eecc346ef98b3db88b8cdaee/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -804,7 +824,7 @@
       "month": 10,
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.1-flash",
-      "highlights": "## Introduction We're introducing **Ling-3.1-flash**, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture and performance on real-world tasks.",
+      "highlights": "We're introducing **Ling-3.1-flash**, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture and performance on real-world tasks.",
       "link": "https://huggingface.co/inclusionAI/Ling-3.1-flash/blob/dde57b1c6a365aa0e0a33e15cecce0f2be96f5a3/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -1251,7 +1271,7 @@
       "month": 9,
       "org": "InclusionAI (Ant Group)",
       "model": "Ming-Image-0.1-Design",
-      "highlights": "--- license: mit library_name: custom pipeline_tag: text-to-image inference: false tags: - text-to-image - image-generation - graphic-design - text-rendering - rgba ---",
+      "highlights": "Use the companion [Ming-Image repository](https://github.com/inclusionAI/Ming-Image) for installation and inference:",
       "link": "https://huggingface.co/inclusionAI/Ming-Image-0.1-Design/blob/c57c49689d12ef7d4e24a170014f1dc43d3ce258/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -1618,15 +1638,14 @@
       "month": 9,
       "org": "InclusionAI (Ant Group)",
       "model": "Ming-3.0-audio-tiny",
-      "highlights": "--- language: - en - zh license: mit library_name: transformers pipeline_tag: audio-to-audio tags: - audio - speech - automatic-speech-recognition - audio-understanding - audio-reasoning - speech-to-text - text-to-speech - conversational - mixture-of-experts - custom_code model_name: Ming-3.0-audio-tiny ---",
+      "highlights": "Ming-3.0-audio-tiny is a compact native audio-language model from inclusionAI. It accepts audio together with text instructions and supports speech recognition, spoken question answering, audio understanding, audio reasoning, and optional synthesized-speech responses.",
       "link": "https://huggingface.co/inclusionAI/Ming-3.0-audio-tiny/blob/401b1abc63de0862dfbc9cd2a40895019d742d09/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Audio & Speech",
-        "MoE"
+        "Audio & Speech"
       ],
       "released_on": "2026-09-03",
       "report_kind": "model card",
@@ -1639,8 +1658,8 @@
       "month": 9,
       "org": "InclusionAI (Ant Group)",
       "model": "Ming-3.0-audio-flash",
-      "highlights": "A native audio model built for real-world speech recognition, audio understanding, reasoning, and end-to-end spoken interaction.",
-      "link": "https://github.com/inclusionAI/Ming-3.0-audio-flash",
+      "highlights": "Ming-3.0-audio-flash is a native audio-language model from inclusionAI. It accepts audio together with text instructions and supports speech recognition, spoken question answering, audio understanding, audio reasoning, and optional synthesized-speech responses.",
+      "link": "https://huggingface.co/inclusionAI/Ming-3.0-audio-flash/blob/db94e0de19f6d05adc0413c255a28eb480cd1fae/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -1649,7 +1668,7 @@
         "Audio & Speech"
       ],
       "released_on": "2026-09-03",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "total_parameters": 126000000000
     },
     {
@@ -2403,7 +2422,7 @@
       "month": 8,
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.0-tiny-base-midtrain",
-      "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+      "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
       "link": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-midtrain/blob/2c07d29ee370592bd804a0a865db5503d8a4bfa2/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -2420,7 +2439,7 @@
       "month": 8,
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.0-tiny-base-30T",
-      "highlights": "## Introduction We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
+      "highlights": "We have open-sourced the Ling-3.0 series, our most efficient language foundation model family to date. To support research and community-driven innovation, we are releasing **a collection of checkpoints during the training process** as following:",
       "link": "https://huggingface.co/inclusionAI/Ling-3.0-tiny-base-30T/blob/5ffd60dad2cd5df60fb916ab431682c563290797/README.md",
       "file": "",
       "camp": "China-based Labs",
@@ -2857,7 +2876,7 @@
       "month": 7,
       "org": "InclusionAI (Ant Group)",
       "model": "LLaDA2.2-flash",
-      "highlights": "## 📊 Benchmarks The following tables compare **LLaDA2.2-flash** and **Ling-2.6-flash** in terms of agentic benchmark scores and throughput (TPS).",
+      "highlights": "The following tables compare **LLaDA2.2-flash** and **Ling-2.6-flash** in terms of agentic benchmark scores and throughput (TPS).",
       "link": "https://huggingface.co/inclusionAI/LLaDA2.2-flash/blob/9b78da3f9149f1e239fb6d15f20a326fde574b9f/README.md",
       "file": "",
       "camp": "China-based Labs",

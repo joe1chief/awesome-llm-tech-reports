@@ -2545,6 +2545,20 @@
         "Vision-Language"
       ]
     },
+    "b28963cc01ef01e46553994df5e1b7973ade79e23d779627bccfe7c706a63984": {
+      "check_on": "2036-11-12",
+      "revision": "d92caf575ba70882f0457fea5102d84898af3877a2e861f37eeadad66b2ba950",
+      "source": "model card",
+      "terms": [
+        "Diffusion",
+        "FlashAttention",
+        "FP8",
+        "Long Video Generation",
+        "LoRA",
+        "Quantization",
+        "Video Generation"
+      ]
+    },
     "b47311b9529f614f678d1e2b73ddcabe9ce1f8a9d0cf1034bf783e66652dc5a7": {
       "check_on": "2036-11-10",
       "revision": "0e75b2a9c44449494560346ff849bbc55d941c8e96f8e4f404c95cfae16b901e",
@@ -3041,6 +3055,18 @@
         "Training Data"
       ]
     },
+    "d6e407192b27fc52768f1e5d86104931d8beb0f96838e653ce615123e853ab18": {
+      "check_on": "2036-11-12",
+      "revision": "668212d080b96311138376131bbcb330451cec7a89cf3d99fdd649021d6eb2bf",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "MoE",
+        "Reasoning",
+        "Speech Recognition",
+        "Tensor Parallelism"
+      ]
+    },
     "d79498a68e6eccc7b7631cc97a59ae557304d2c3cff1182b4d509a669d84c084": {
       "check_on": "2026-12-14",
       "revision": "7f118c16a266f62eabe7f30ae48bf1a509f4fbbd5433b0722b68bc1e7a7aa0ea",
@@ -3268,12 +3294,6 @@
       "terms": [
         "Image Generation"
       ]
-    },
-    "e27dd6d4fe08eb9fe1464324cedbd6224839ba75704f87b41796d8afe2a1a301": {
-      "check_on": "2026-12-13",
-      "revision": "14dd8b5795ddfcbff29b2cdc3382893e315e24b658427addf4e26abfb84839c9",
-      "source": "source page",
-      "terms": []
     },
     "e32bc1d70ec69a31b199da7395b31ca86779b737c7a21e6c83fc467353942db8": {
       "check_on": "2036-11-10",
