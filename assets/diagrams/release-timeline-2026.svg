@@ -165,42 +165,42 @@
 <text font-family="Inter,Arial,sans-serif" x="380" y="575" fill="#716b60" font-size="9" font-weight="400">+1 on the full timeline</text>
 <text font-family="Georgia,serif" x="525" y="239" fill="#201f1b" font-size="23" font-weight="400">04</text>
 <text font-family="Inter,Arial,sans-serif" x="560" y="238" fill="#716b60" font-size="10" font-weight="400">11 releases</text>
-<path d="M528 268H528V294" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="268" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="271" fill="#893fbd" font-size="9" font-weight="600">04  Zhipu AI</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="285" fill="#201f1b" font-size="13" font-weight="600">GLM-5V-Turbo</text>
-<path d="M528 297H528V349" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="297" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="300" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="314" fill="#201f1b" font-size="13" font-weight="600">Gemini 3.1 Flash</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="327" fill="#201f1b" font-size="13" font-weight="600">Audio (Flash Live,</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="340" fill="#201f1b" font-size="13" font-weight="600">TTS)</text>
-<path d="M528 352H528V391" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="352" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="355" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="369" fill="#201f1b" font-size="13" font-weight="600">Gemini Robotics-ER</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="382" fill="#201f1b" font-size="13" font-weight="600">1.6</text>
+<path d="M528 268H528V320" stroke="#dcd6c8" fill="none"/>
+<circle cx="528" cy="268" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="271" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="285" fill="#201f1b" font-size="13" font-weight="600">Gemini 3.1 Flash</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="298" fill="#201f1b" font-size="13" font-weight="600">Audio (Flash Live,</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="311" fill="#201f1b" font-size="13" font-weight="600">TTS)</text>
+<path d="M528 323H528V362" stroke="#dcd6c8" fill="none"/>
+<circle cx="528" cy="323" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="326" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="340" fill="#201f1b" font-size="13" font-weight="600">Gemini Robotics-ER</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="353" fill="#201f1b" font-size="13" font-weight="600">1.6</text>
+<path d="M528 365H528V391" stroke="#dcd6c8" fill="none"/>
+<circle cx="528" cy="365" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="368" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="382" fill="#201f1b" font-size="13" font-weight="600">Gemma 4</text>
 <path d="M528 394H528V420" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="394" r="3.5" fill="#2555bd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="397" fill="#2555bd" font-size="9" font-weight="600">04  Google</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="411" fill="#201f1b" font-size="13" font-weight="600">Gemma 4</text>
+<circle cx="528" cy="394" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="397" fill="#247553" font-size="9" font-weight="600">04  Tencent</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="411" fill="#201f1b" font-size="13" font-weight="600">Hy3-preview</text>
 <path d="M528 423H528V449" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="423" r="3.5" fill="#247553" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="426" fill="#247553" font-size="9" font-weight="600">04  Tencent</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="440" fill="#201f1b" font-size="13" font-weight="600">Hy3-preview</text>
+<circle cx="528" cy="423" r="3.5" fill="#7545b7" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="426" fill="#7545b7" font-size="9" font-weight="600">04  OpenBMB</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="440" fill="#201f1b" font-size="13" font-weight="600">MiniCPM-o 4.5</text>
 <path d="M528 452H528V478" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="452" r="3.5" fill="#7545b7" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="455" fill="#7545b7" font-size="9" font-weight="600">04  OpenBMB</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="469" fill="#201f1b" font-size="13" font-weight="600">MiniCPM-o 4.5</text>
-<path d="M528 481H528V507" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="481" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="484" fill="#b6472f" font-size="9" font-weight="600">04.07  Anthropic</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="498" fill="#201f1b" font-size="13" font-weight="600">Claude Mythos Preview</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="509" fill="#716b60" font-size="8" font-weight="400">Preview</text>
+<circle cx="528" cy="452" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="455" fill="#b6472f" font-size="9" font-weight="600">04.07  Anthropic</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="469" fill="#201f1b" font-size="13" font-weight="600">Claude Mythos Preview</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="480" fill="#716b60" font-size="8" font-weight="400">Preview</text>
+<path d="M528 490H528V516" stroke="#dcd6c8" fill="none"/>
+<circle cx="528" cy="490" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="493" fill="#893fbd" font-size="9" font-weight="600">04.07  Zhipu AI</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="507" fill="#201f1b" font-size="13" font-weight="600">GLM-5.1</text>
 <path d="M528 519H528V545" stroke="#dcd6c8" fill="none"/>
-<circle cx="528" cy="519" r="3.5" fill="#893fbd" stroke="#f8f7f2" stroke-width="1"/>
-<text font-family="Inter,Arial,sans-serif" x="538" y="522" fill="#893fbd" font-size="9" font-weight="600">04.07  Zhipu AI</text>
-<text font-family="Inter,Arial,sans-serif" x="538" y="536" fill="#201f1b" font-size="13" font-weight="600">GLM-5.1</text>
+<circle cx="528" cy="519" r="3.5" fill="#7545b7" stroke="#f8f7f2" stroke-width="1"/>
+<text font-family="Inter,Arial,sans-serif" x="538" y="522" fill="#7545b7" font-size="9" font-weight="600">04.08  Meta</text>
+<text font-family="Inter,Arial,sans-serif" x="538" y="536" fill="#201f1b" font-size="13" font-weight="600">Muse Spark</text>
 <path d="M528 548H528V574" stroke="#dcd6c8" fill="none"/>
 <circle cx="528" cy="548" r="3.5" fill="#b6472f" stroke="#f8f7f2" stroke-width="1"/>
 <text font-family="Inter,Arial,sans-serif" x="538" y="551" fill="#b6472f" font-size="9" font-weight="600">04.16  Anthropic</text>

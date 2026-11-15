@@ -50,9 +50,9 @@
       "Vision & Multimodal": 118,
       "Audio & Speech": 33,
       "Video": 31,
-      "Reasoning / CoT": 113,
-      "Open Weights": 11,
-      "Agent & Coding": 105,
+      "Reasoning / CoT": 112,
+      "Open Weights": 10,
+      "Agent & Coding": 104,
       "Medical & Science": 48,
       "MoE": 49
     },
@@ -303,17 +303,16 @@
       "month": 11,
       "org": "Meta",
       "model": "Muse Ember",
-      "highlights": "Muse Ember is our smallest and most efficient model, designed for complex reasoning execution and the work agents repeat all day.",
-      "link": "https://research.meta.ai/blog/muse-ember",
+      "highlights": "Evaluation Methodology We evaluate Muse Ember on benchmarks spanning general intelligence, agents, coding, and",
+      "link": "https://research.meta.ai/static/muse-ember-evaluation-report",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
-        "Reasoning / CoT",
         "Agent & Coding"
       ],
       "released_on": "2026-11-09",
-      "report_kind": "official technical page"
+      "report_kind": "technical report"
     },
     {
       "id": "anthropic--claude-fable-5-2-mythos-5-2",
@@ -3454,20 +3453,17 @@
       "month": 4,
       "org": "Meta",
       "model": "Muse Spark",
-      "highlights": "Today, we’re releasing the weights for Muse Spark Open, the most capable US open-weight model to date. Muse Spark Open is a natively multimodal model with 816B total parameters (42B active) and a 1M-token context window. Built for coding and agentic work, it excels at long-horizon tasks, complex software engineering, and multi-step reasoning.",
-      "link": "https://research.meta.ai/blog/muse-spark-open",
+      "highlights": "Muse Spark Eval Methodology We evaluate Muse Spark models over a diverse set of benchmarks including reasoning, multimodal,",
+      "link": "https://ai.meta.com/static-resource/muse-spark-eval-methodology",
       "file": "",
       "camp": "Other Global",
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
-        "Agent & Coding",
-        "Vision & Multimodal",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-04-08",
-      "report_kind": "official technical page",
-      "document_published_on": "2026-10-15"
+      "report_kind": "technical report"
     },
     {
       "id": "2026-04_glm_5_1",

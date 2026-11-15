@@ -2747,10 +2747,11 @@
       "release_url": "https://research.meta.ai/blog/muse-ember",
       "released_on": "2026-11-09",
       "report": {
-        "highlights": "Muse Ember is our smallest and most efficient model, designed for complex reasoning execution and the work agents repeat all day.",
-        "id": "https://research.meta.ai/blog/muse-ember",
-        "kind": "official technical page",
-        "url": "https://research.meta.ai/blog/muse-ember"
+        "highlights": "Evaluation Methodology We evaluate Muse Ember on benchmarks spanning general intelligence, agents, coding, and",
+        "id": "https://research.meta.ai/static/muse-ember-evaluation-report",
+        "kind": "technical report",
+        "revision": "9738837b51e7bcf589a7856a84de9a11bc9184c7ca9504e86aaf97ed86d71efd",
+        "url": "https://research.meta.ai/static/muse-ember-evaluation-report"
       }
     },
     {
@@ -3164,12 +3165,11 @@
       "release_url": "https://research.meta.ai/blog/introducing-muse-spark-msl",
       "released_on": "2026-04-08",
       "report": {
-        "highlights": "Today, we’re releasing the weights for Muse Spark Open, the most capable US open-weight model to date. Muse Spark Open is a natively multimodal model with 816B total parameters (42B active) and a 1M-token context window. Built for coding and agentic work, it excels at long-horizon tasks, complex software engineering, and multi-step reasoning.",
-        "id": "https://research.meta.ai/blog/muse-spark-open",
-        "kind": "official technical page",
-        "published_on": "2026-10-15",
-        "revision": "85bfaf705f1ffd0231336c195e8d5facdb3d3b568c2a657da97f0ea474e532f1",
-        "url": "https://research.meta.ai/blog/muse-spark-open"
+        "highlights": "Muse Spark Eval Methodology We evaluate Muse Spark models over a diverse set of benchmarks including reasoning, multimodal,",
+        "id": "https://ai.meta.com/static-resource/muse-spark-eval-methodology",
+        "kind": "technical report",
+        "revision": "06c894b2d148e5f45d3b1949eae1f22a79e76e28859e59105f3c5e51d2c9ba14",
+        "url": "https://ai.meta.com/static-resource/muse-spark-eval-methodology"
       }
     },
     {

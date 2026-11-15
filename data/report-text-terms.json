@@ -439,6 +439,17 @@
         "Training Data"
       ]
     },
+    "1d500b44ca854f7b96c42b8aa461534933a3014580aa846d4881d4c3654cc1f3": {
+      "check_on": "2026-12-15",
+      "revision": "cddc1587343a2814ec56644aa20c72471b07f3af8609f24b35c4425dec1efb90",
+      "source": "source PDF",
+      "terms": [
+        "Multimodal",
+        "Reasoning",
+        "Test-time Scaling",
+        "Tool Use"
+      ]
+    },
     "1e31be6807c57cf01ce5d42362f8e9e3710ea7f1b6c6611a31e4784b486f7825": {
       "check_on": "2026-12-13",
       "revision": "93f79d1b5c9a07396613bfc50c89ff577076a605356f62514e6d62be9cd2f905",
@@ -546,6 +557,17 @@
         "Memory Retrieval",
         "Reasoning",
         "Retrieval"
+      ]
+    },
+    "295e12c792211d89e96df5c6d785e25ffe248d54ebbcf1924f61144414474443": {
+      "check_on": "2026-12-15",
+      "revision": "4b85dd4175317d53c0473db30a6985db414ef017408be6042d84cf3c1945b0c0",
+      "source": "source PDF",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Multimodal",
+        "Reasoning"
       ]
     },
     "29f1265c4a98e343d5e8f169fae4038c88cf3df38e5f2cb26549ac49b882ad64": {
@@ -902,18 +924,6 @@
         "Preference Optimization",
         "Reasoning",
         "Supervised Fine-tuning"
-      ]
-    },
-    "499fcbd081b8b35bf4722856fa5b3b40d9b4794609079e10c8914519004d979e": {
-      "check_on": "2026-12-13",
-      "revision": "4ba685fa5ea5bda58ba15ea06cebe3f75c96c1981612d88ce5b4a5273a8ded58",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Long Context",
-        "Multimodal",
-        "Post-training",
-        "Reasoning"
       ]
     },
     "49b343b28076e3b3eee0012e9ef37ea20714440fcfd246459201b1639935e2ef": {
@@ -1907,17 +1917,6 @@
         "Reasoning",
         "Reinforcement Learning",
         "Supervised Fine-tuning"
-      ]
-    },
-    "86708699833d3a97966600b802e469ca582767ce90cf5e85b1122261eddb89ec": {
-      "check_on": "2026-12-13",
-      "revision": "aa419b897f28e9e82d8299271c0a196e9f49568955428fce8b01b8fe0939e086",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Long Context",
-        "Multimodal",
-        "Reasoning"
       ]
     },
     "8cf74c7ad9bf83f53897bc848ca298d049ede2f0aa0a466c3a5e4995e65374fa": {
