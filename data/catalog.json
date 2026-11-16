@@ -2285,10 +2285,11 @@
       "release_url": "https://www.minimax.io/blog/minimax-h3-image",
       "released_on": "2026-11-11",
       "report": {
-        "highlights": "Building on H3's pre-training capabilities, we've made improvements across the entire post-training pipeline, from data and reinforcement learning to sampling-step reduction, PE, and deployment optimization.",
-        "id": "https://www.minimax.io/blog/minimax-h3-image",
-        "kind": "official technical page",
-        "url": "https://www.minimax.io/blog/minimax-h3-image"
+        "highlights": "It generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to 6272x2688 (21:9), directly and without an upscaler (see [Sizes](#sizes)). The checkpoint is distilled to 6 sampling steps (6 NFEs) with no classifier-free guidance. Its diffusion transformer (DiT) has the H3 architecture without the audio layers, and it uses the MiniMax-H3 text encoder unchanged.",
+        "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/README.md",
+        "kind": "model card",
+        "revision": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/5f90473023975e6271b0ed1dd84c4e88e4bbc6d3/README.md"
       }
     },
     {
@@ -2300,10 +2301,11 @@
       "release_url": "https://www.minimax.io/blog/minimax-m31f",
       "released_on": "2026-10-19",
       "report": {
-        "highlights": "Today, we officially roll out MiniMax M3.1 Flash. As a next-generation Flash model, M3.1 Flash delivers a generational leap in agentic tasks, coding, Computer Use and cybersecurity, while making online inference nearly three times faster and reducing usage costs by 70%.",
-        "id": "https://www.minimax.io/blog/minimax-m31f",
-        "kind": "official technical page",
-        "url": "https://www.minimax.io/blog/minimax-m31f"
+        "highlights": "Building on MiniMax-M3, M3.1-Flash improves task performance and inference efficiency with sparse attention throughout the model, quantization-aware training, and DSpark speculative decoding.",
+        "id": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/README.md",
+        "kind": "model card",
+        "revision": "ce7f4df87d2e05262f5775f373dac4772f134041",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/blob/ce7f4df87d2e05262f5775f373dac4772f134041/README.md"
       }
     },
     {
@@ -2888,7 +2890,7 @@
       "release_url": "https://github.com/baidu/Unlimited-OCR",
       "released_on": "2026-10-27",
       "report": {
-        "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench.",
+        "highlights": "Unlimited OCR ushers the era of long-horizon parsing, substantially mitigating the growth of working memory as document lengthens. However, as document length scales to hundreds of pages, the visual context grows substantially, sharply increasing the computational cost of each decoding step and limiting the scalability of ultra-long document parsing. Inspired by human book transcription via localized focus without re-scanning preceding pages, we introduce Unlimited OCR 2, a document parsing model that looks only at what it transcribes. Building on Unlimi",
         "id": "arxiv:2610.39308",
         "kind": "technical report",
         "published_on": "2026-10-29",
@@ -3261,7 +3263,7 @@
       "release_url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Basketball",
       "released_on": "2026-09-17",
       "report": {
-        "highlights": "--- base_model: nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16 base_model_relation: finetune library_name: transformers license: other license_name: openmdw-1.1 license_link: >- https://openmdw.ai/license/1-1/ pipeline_tag: any-to-any tags: - nvidia - pytorch - multimodal track_downloads: true ---",
+        "highlights": "This model is fine-tuned from Nemotron 3 Nano Omni on Q&A pairs generated from the public [BARD dataset](https://huggingface.co/datasets/GabrieleGiudici/BARD) (Basketball Action Recognition Dataset, CC BY 4.0) of basketball play video clips using the [NVIDIA Sports Intelligence playbooks](https://github.com/NVIDIA/sports-intelligence-playbooks). For base model details, see the [base model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16).",
         "id": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Basketball/README.md",
         "kind": "model card",
         "revision": "632ddf0d709b0d3d550e2567a5745c067d8ee08f",
@@ -3978,11 +3980,12 @@
       "release_url": "https://huggingface.co/nvidia/NV-Reason-CT",
       "released_on": "2026-09-08",
       "report": {
-        "highlights": "NV-Reason-CT is a 3D vision-language model (VLM) for CT image analysis. It combines a native 3D vision encoder (3D ViT) with a language model and is designed for radiology report generation, general question answering, and multi-step reasoning across chest and abdominal CT volumes.",
-        "id": "https://huggingface.co/nvidia/NV-Reason-CT/README.md",
-        "kind": "model card",
-        "revision": "386b93e034983f6c1fc841a43833a1b6a0cd9c13",
-        "url": "https://huggingface.co/nvidia/NV-Reason-CT/blob/386b93e034983f6c1fc841a43833a1b6a0cd9c13/README.md"
+        "highlights": "We present NV-Reason-CT, a generative vision--language model for chest and abdominal CT combining native 3D visual encoding with radiologist-guided reasoning. The model couples a native 3D vision transformer with a language model, passing all visual tokens and their explicit 3D coordinates into language decoding without further spatial token merging. This retains volumetric spatial information within the vision encoder and through the language model's positional encoding during joint processing with text. We train on a curated corpus of approximately 550",
+        "id": "arxiv:2609.27511",
+        "kind": "technical report",
+        "published_on": "2026-09-23",
+        "revision": "2",
+        "url": "https://arxiv.org/abs/2609.27511v2"
       },
       "total_parameters": 5322014624
     },
@@ -4029,7 +4032,7 @@
       "release_url": "https://huggingface.co/nvidia/Muse-Glimmer-30B-NVFP4",
       "released_on": "2026-08-27",
       "report": {
-        "highlights": "## Description: The NVIDIA Muse-Glimmer-30B NVFP4 model is the quantized version of Meta Superintelligence Lab's Muse-Glimmer-30B model, which is an auto-regressive language model that uses an optimized transformer architecture. Muse Glimmer is a dense causal transformer with a dedicated perception encoder for interleaved text and image input, purpose-built for local agentic tasks including multi-step reasoning, tool use, and multimodal understanding. For more information, please check [here](https://huggingface.co/meta-models/Muse-Glimmer-30B). The NVID",
+        "highlights": "The NVIDIA Muse-Glimmer-30B NVFP4 model is the quantized version of Meta Superintelligence Lab's Muse-Glimmer-30B model, which is an auto-regressive language model that uses an optimized transformer architecture. Muse Glimmer is a dense causal transformer with a dedicated perception encoder for interleaved text and image input, purpose-built for local agentic tasks including multi-step reasoning, tool use, and multimodal understanding. For more information, please check [here](https://huggingface.co/meta-models/Muse-Glimmer-30B). The NVIDIA Muse-Glimmer-",
         "id": "https://huggingface.co/nvidia/Muse-Glimmer-30B-NVFP4/README.md",
         "kind": "model card",
         "revision": "47818374517751c48c55cde2621594926b1888b6",
