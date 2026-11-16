@@ -1,0 +1,12 @@
+name: Wait for Pages artifact visibility
+description: Check the uploaded artifact before starting a single Pages deployment
+inputs:
+  artifact-name:
+    required: true
+    description: Attempt-scoped artifact name
+  artifact-id:
+    required: true
+    description: ID returned by upload-pages-artifact
+runs:
+  using: node24
+  main: index.mjs

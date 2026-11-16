@@ -18,6 +18,7 @@ on:
       - data/report-text-terms.json
       - .github/workflows/refresh-reports.yml
       - .github/workflows/deploy.yml
+      - .github/actions/wait-pages-artifact/**
   workflow_dispatch:
     inputs:
       mode:
@@ -38,6 +39,7 @@ on:
     paths:
       - .github/workflows/refresh-reports.yml
       - .github/workflows/deploy.yml
+      - .github/actions/wait-pages-artifact/**
       - scripts/**
       - configs/**
       - tests/**
@@ -71,6 +73,29 @@ jobs:
       - if: github.event_name == 'push'
         run: uv run python scripts/report_catalog.py build
       - run: make check
+
+  pages-artifact-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --no-audit --no-fund --prefix .github/actions/wait-pages-artifact
+      - uses: actions/upload-pages-artifact@v4
+        id: upload
+        with:
+          path: docs/
+          name: pages-check-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: ./.github/actions/wait-pages-artifact
+        timeout-minutes: 2
+        with:
+          artifact-name: pages-check-${{ github.run_id }}-${{ github.run_attempt }}
+          artifact-id: ${{ steps.upload.outputs.artifact_id }}
 
   refresh:
     if: >-
