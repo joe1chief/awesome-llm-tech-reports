@@ -2288,8 +2288,8 @@
         "highlights": "It generates images of about 16 megapixels at every aspect ratio, from 4096x4096 (1:1) to 6272x2688 (21:9), directly and without an upscaler (see [Sizes](#sizes)). The checkpoint is distilled to 6 sampling steps (6 NFEs) with no classifier-free guidance. Its diffusion transformer (DiT) has the H3 architecture without the audio layers, and it uses the MiniMax-H3 text encoder unchanged.",
         "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/README.md",
         "kind": "model card",
-        "revision": "5f90473023975e6271b0ed1dd84c4e88e4bbc6d3",
-        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/5f90473023975e6271b0ed1dd84c4e88e4bbc6d3/README.md"
+        "revision": "8ced60068623def5b74b4d10558117cb61d6482d",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image/blob/8ced60068623def5b74b4d10558117cb61d6482d/README.md"
       }
     },
     {
@@ -2801,6 +2801,8 @@
         "highlights": "GPT-6.1 Sol delivers capabilities comparable to those of our most powerful model, GPT-6 Astra, with an unmatched combination of speed and affordability. This system card addendum provides updates on the baseline safety metrics and evaluation results for GPT-6.1 Sol.1",
         "id": "https://deploymentsafety.openai.com/gpt-6-1-sol",
         "kind": "system card",
+        "published_on": "2026-09-29",
+        "revision": "dde99916f8b0719294c7e896ef44789a73952067b8f9880f9d9b4443c34be11d",
         "url": "https://deploymentsafety.openai.com/gpt-6-1-sol"
       }
     },
@@ -2812,9 +2814,11 @@
       "release_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
       "released_on": "2026-10-26",
       "report": {
-        "id": "https://deploymentsafety.openai.com/gpt-6-1-terra",
-        "kind": "system card",
-        "url": "https://deploymentsafety.openai.com/gpt-6-1-terra"
+        "highlights": "OpenAI – Hugging Face Incident Technical Report OpenAI 2 Table of Contents I. Introduction 4 II. OpenAI’s Evaluation Environment 5 A. OpenAI conducts evaluations to make its models safer 5 B. Cybersecurity evaluations like ExploitGym were conducted in a secure environment 6 III. Relevant Activity Prior to Incident 6 A. Agents used Artifactory in unexpected ways to communicate with one another in May, prior to the Hugging Face incident 6 B. Agents compromised Artifactory, leading to an outage in early July 7 IV. Hugging Face Intrusion 8 A. Agents exploite",
+        "id": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "dd635cf6e5f39f0e1f646f08c36549090d77156ed89cbd3d733ed496648cae9c",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
       }
     },
     {
@@ -2825,10 +2829,11 @@
       "release_url": "https://deploymentsafety.openai.com/gpt-6-cyber",
       "released_on": "2026-11-05",
       "report": {
-        "highlights": "GPT-6 Cyber is a cyber-specialized variant of GPT-6 Astra designed for authorized security work, including tasks such as vulnerability discovery, exploit development, and web pentesting. The model has specialized post-training that aims to improve cybersecurity capabilities and reduce cyber refusals. The goal is to expand the security work the model can perform while keeping it within the user’s authorized scope and preserving refusals outside cybersecurity. In our evaluations, GPT-6 Cyber shows substantially stronger cybersecurity capabilities and impro",
-        "id": "https://deploymentsafety.openai.com/gpt-6-cyber",
-        "kind": "system card",
-        "url": "https://deploymentsafety.openai.com/gpt-6-cyber"
+        "highlights": "Contents 1 Introduction 3 2 Model Data and Training 3 3 Model Safety 3 3.1 Cyber Refusals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.2 Safe Completions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.2.1 Evaluations with Challenging Prompts . . . . . . . . . . . . . . . . . . . . 4 3.2.2 Agentic Safe Completions . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 3.3 Biological Safety and Over-Refusal . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4 Alignment and Agent Safety 6 4.1",
+        "id": "https://deploymentsafety.openai.com/gpt-6-cyber/gpt-6-cyber.pdf",
+        "kind": "technical report",
+        "revision": "5f00c755943a8ab5771f6901ff636396fe200202a957ca310564edd05ab52967",
+        "url": "https://deploymentsafety.openai.com/gpt-6-cyber/gpt-6-cyber.pdf"
       }
     },
     {
@@ -3280,7 +3285,7 @@
       "release_url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Tennis",
       "released_on": "2026-09-01",
       "report": {
-        "highlights": "--- library_name: transformers license: other license_name: openmdw-1.1 license_link: >- https://openmdw.ai/license/1-1/ base_model: nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16 base_model_relation: finetune pipeline_tag: any-to-any tags: - nvidia - pytorch - multimodal track_downloads: true ---",
+        "highlights": "This model is fine-tuned from Nemotron 3 Nano Omni on an in-house NVIDIA tennis dataset of tennis point video clips using the [NVIDIA Sports Intelligence playbooks](https://github.com/NVIDIA/sports-intelligence-playbooks). For base model details, see the [base model card](https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16).",
         "id": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-AI-for-Media-Sports-Tennis/README.md",
         "kind": "model card",
         "revision": "45f95d0da098aeefe5e16603714ccfe24c334488",
@@ -3329,12 +3334,11 @@
       "release_url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum",
       "released_on": "2026-10-29",
       "report": {
-        "highlights": "GPT-6 Luna (October 29) uses the same types of data and training as GPT-6 Luna (October 7), described in the GPT-6 Luna (October 7) card.",
-        "id": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum",
-        "kind": "system card",
-        "published_on": "2026-10-29",
-        "revision": "721bdf0f75408a13042581645216692ecdd713af905f1ca9843831973cc8c6da",
-        "url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum"
+        "highlights": "Contents 1 Introduction 3 2 Model Data and Training 3 3 Model Safety 3 3.1 Safe Completions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 3.1.1 Evaluations with Challenging Prompts . . . . . . . . . . . . . . . . . . . . 3 3.1.2 Safe Completions for Users Under 18 . . . . . . . . . . . . . . . . . . . . 5 3.2 Vision . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4 Robustness 5 4.1 Jailbreaks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4.2 Prompt Injecti",
+        "id": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum/gpt-6-luna-october-28-2026-addendum.pdf",
+        "kind": "technical report",
+        "revision": "766262a78fcaeae31534174554bae5b259a418eaffbf9f23a9460343943b9d8e",
+        "url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum/gpt-6-luna-october-28-2026-addendum.pdf"
       }
     },
     {
@@ -3346,7 +3350,7 @@
       "release_url": "https://huggingface.co/openbmb/MathForm-8B",
       "released_on": "2026-08-14",
       "report": {
-        "highlights": "--- license: apache-2.0 language: - en base_model: - Qwen/Qwen3-8B datasets: - openbmb/FormalVerse pipeline_tag: text-generation library_name: transformers tags: - arxiv:2608.14221 - lean4 - autoformalization - mathematics - formal-verification - reasoning ---",
+        "highlights": "Figure 1: Overview of the MathForm data construction and training pipeline. The system combines Mathlib knowledge retrieval, compilation and semantic verification, and iterative refinement to generate reliable formal data, followed by trajectory reconstruction and training of MathForm-8B.",
         "id": "https://huggingface.co/openbmb/MathForm-8B/README.md",
         "kind": "model card",
         "revision": "8f6d09e66bd5821d985a2150ba3f09ba42e028ba",
@@ -3897,7 +3901,7 @@
       "release_url": "https://huggingface.co/nvidia/PixelUMM",
       "released_on": "2026-10-01",
       "report": {
-        "highlights": "- **Architecture:** Decoder-only Transformer with raw-pixel patch embeddings and an iterative pixel-generation head. - **Language backbone:** [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B), revision `b968826d9c46dd6066d109eabc6255188de91218`. - **Image representation:** RGB images divided into 16-by-16 pixel patches. - **Generation:** Iterative denoising for image and video generation. - **Parameters:** 15,199,672,064.",
+        "highlights": "The PixelUMM model checkpoint is a separate artifact licensed under the [NVIDIA One-Way Noncommercial License](https://developer.download.nvidia.com/licenses/NVIDIA-OneWay-Noncommercial-License-22Mar2022.pdf). Its use is limited to non-commercial research or evaluation purposes.",
         "id": "https://huggingface.co/nvidia/PixelUMM/README.md",
         "kind": "model card",
         "revision": "4bb3ce9a112e7e1c7d375b1c5bd64f54d259ecc8",
@@ -3998,7 +4002,7 @@
       "release_url": "https://huggingface.co/nvidia/Qwen3.8-27B-NVFP4",
       "released_on": "2026-09-04",
       "report": {
-        "highlights": "## Description: The NVIDIA Qwen3.8-27B NVFP4 model is a quantized version of Alibaba's Qwen3.8-27B model, which is an auto-regressive language model that uses an optimized transformer architecture. For more information on the model, please check [here](https://huggingface.co/Qwen/Qwen3.8-27B). The model is quantized with [Model Optimizer](https://github.com/NVIDIA/Model-Optimizer).",
+        "highlights": "The NVIDIA Qwen3.8-27B NVFP4 model is a quantized version of Alibaba's Qwen3.8-27B model, which is an auto-regressive language model that uses an optimized transformer architecture. For more information on the model, please check [here](https://huggingface.co/Qwen/Qwen3.8-27B). The model is quantized with [Model Optimizer](https://github.com/NVIDIA/Model-Optimizer).",
         "id": "https://huggingface.co/nvidia/Qwen3.8-27B-NVFP4/README.md",
         "kind": "model card",
         "revision": "482ca0f3832238542f8f5295dde86b5f22711d80",
@@ -4419,6 +4423,92 @@
         "revision": "acfc628244201fc53fb6fe8a8903c5bac9bdf68f",
         "url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6/blob/acfc628244201fc53fb6fe8a8903c5bac9bdf68f/README.md"
       }
+    },
+    {
+      "base_model": "nvidia/nvidia-nemotron-3.5-super-vl-120b-a12b-bf16",
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
+      "key": "nvidia/nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
+      "model": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4",
+      "released_on": "2026-10-12",
+      "report": {
+        "highlights": "2026-10-27 Nemotron 3.5 Super and Lightning: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Models for Agentic AI NVIDIA Abstract. We introduce Nemotron 3.5 Super and Nemotron 3.5 Lightning, open and efficient Mixture-of-Experts Hybrid Mamba-Transformer models designed for reasoning, long-context understanding, and agentic workloads. Super is a 120B-parameter, 12B-active multimodal model, while Lightning is a smaller 30B-parameter, 3B-active text model; both designed for efficient deployment. Both models combine large-scale distillation, lon",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "6ce6f95fb154935eed1a2f6149715cde6849b1459d32bab185085eb9bd4ea045",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3.5-Super-and-Lightning-Technical-Report.pdf"
+      },
+      "total_parameters": 120000000000
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nemotron-labs-sigma-8b-instruct",
+      "key": "nvidia/nemotron-labs-sigma-8b-instruct",
+      "model": "Nemotron-Labs-Sigma-8B-instruct",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B-instruct",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Developers and researchers building and studying instruction-following assistants based on diffusion parallel decoding: chat, question answering, reasoning, and code generation workloads, and research on efficient few-step text generation. The model runs offline on the user's own hardware; NVIDIA hosts no service.",
+        "id": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B-instruct/README.md",
+        "kind": "model card",
+        "revision": "e5aab187fd3312cdaebe3335e29a757eb52470ba",
+        "url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B-instruct/blob/e5aab187fd3312cdaebe3335e29a757eb52470ba/README.md"
+      },
+      "total_parameters": 8492044322
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nemotron-labs-sigma-8b",
+      "key": "nvidia/nemotron-labs-sigma-8b",
+      "model": "Nemotron-Labs-Sigma-8B",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Our AI models are designed and/or optimized to run on NVIDIA GPU-accelerated systems. By leveraging NVIDIA's hardware (e.g. GPU cores) and software frameworks (e.g., CUDA libraries), the model achieves faster training and inference times compared to CPU-only solutions.",
+        "id": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B/README.md",
+        "kind": "model card",
+        "revision": "a9f90c4f4fe930d22d47756303237365b5d767f5",
+        "url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-8B/blob/a9f90c4f4fe930d22d47756303237365b5d767f5/README.md"
+      },
+      "total_parameters": 8492044322
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nemotron-labs-sigma-3b-instruct",
+      "key": "nvidia/nemotron-labs-sigma-3b-instruct",
+      "model": "Nemotron-Labs-Sigma-3B-instruct",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B-instruct",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Developers and researchers building and studying instruction-following assistants based on diffusion parallel decoding: chat, question answering, reasoning, and code generation workloads, and research on efficient few-step text generation. The model runs offline on the user's own hardware; NVIDIA hosts no service.",
+        "id": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B-instruct/README.md",
+        "kind": "model card",
+        "revision": "057a0843f4979c1f8ef0182b194dd1133e85b764",
+        "url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B-instruct/blob/057a0843f4979c1f8ef0182b194dd1133e85b764/README.md"
+      },
+      "total_parameters": 3834051618
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "nvidia--nemotron-labs-sigma-3b",
+      "key": "nvidia/nemotron-labs-sigma-3b",
+      "model": "Nemotron-Labs-Sigma-3B",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B",
+      "released_on": "2026-10-05",
+      "report": {
+        "highlights": "Our AI models are designed and/or optimized to run on NVIDIA GPU-accelerated systems. By leveraging NVIDIA's hardware (e.g. GPU cores) and software frameworks (e.g., CUDA libraries), the model achieves faster training and inference times compared to CPU-only solutions.",
+        "id": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B/README.md",
+        "kind": "model card",
+        "revision": "7eff02e0b72dace46d9084430330c192bf5a4386",
+        "url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B/blob/7eff02e0b72dace46d9084430330c192bf5a4386/README.md"
+      },
+      "total_parameters": 3834051618
     }
   ],
   "version": 1

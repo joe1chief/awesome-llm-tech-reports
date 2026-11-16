@@ -87,6 +87,28 @@
         "Vision-Language"
       ]
     },
+    "04fa4f552133bbcddc80a1e9a5ea9fa94be8fe431624c921b00a64e7e7b33683": {
+      "check_on": "2036-11-13",
+      "revision": "2b984628227cbe6ca14e99b5886f6dd28db93f043c8971bfaef2c0545290793d",
+      "source": "model card",
+      "terms": [
+        "Block Parallel Decoding",
+        "Code Generation",
+        "Continuous Token Embedding",
+        "Diffusion",
+        "Diffusion Parallel Decoding",
+        "Distillation",
+        "Embeddings",
+        "FlashAttention",
+        "Instruction Tuning",
+        "KV Cache",
+        "Parallel Decoding",
+        "Reasoning",
+        "Supervised Fine-tuning",
+        "Text Generation",
+        "Token Embedding"
+      ]
+    },
     "0533e59867ff47167a7a335ba0fb25151ebb08189e912f6862355bbc2a3ffee1": {
       "check_on": "2036-11-10",
       "revision": "b196a5cdfaf6b3bad886b8cda6ecdf592a930312e8c47941c7f3a67d9678c9d6",
@@ -536,6 +558,48 @@
         "Training Data"
       ]
     },
+    "2869273e2d01cccce129403edc2026112f2fc3d4ee99280c27d7cb76aca77aff": {
+      "check_on": "2026-12-16",
+      "revision": "e7557c4c03a7cdb7a84ef5d8540abe9a8f77f35db8bcfda46d3e1020c04f7cca",
+      "source": "source PDF",
+      "terms": [
+        "Agentic Coding",
+        "Chain of Thought",
+        "Distillation",
+        "Image Cache",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Reward Model",
+        "Synthetic Data",
+        "Tool Use",
+        "Training Data"
+      ]
+    },
+    "287149b5b46712d8f580993b98272437b4f171ec4f7379d9ad44169fca390f81": {
+      "check_on": "2036-11-13",
+      "revision": "b101db72e66a7cc08850b9b282e6565c212d0e3a091ab8f8ac3c4157d3014a64",
+      "source": "model card",
+      "terms": [
+        "Block Parallel Decoding",
+        "Continuous Token Embedding",
+        "Diffusion",
+        "Distillation",
+        "Embeddings",
+        "Fine-tuning",
+        "FlashAttention",
+        "Instruction Tuning",
+        "KV Cache",
+        "Parallel Decoding",
+        "Parallel Text Generation",
+        "Pre-training",
+        "Reasoning",
+        "Text Generation",
+        "Token Embedding"
+      ]
+    },
     "288857ab4e0eed679b5c7dd158b161f832b2fdb01e38955d7d86bc352a60f08f": {
       "check_on": "2036-11-10",
       "revision": "65d50f4f739eaab75dc5c3620520606ec6a588fca70a9dcd74eb59ba61d5dec8",
@@ -853,19 +917,6 @@
         "MoE",
         "Multimodal",
         "Reinforcement Learning"
-      ]
-    },
-    "45e40aaafa12cf5799a60cce88c1b284e9a283680b36cf97ba56d5b6b15ff6ce": {
-      "check_on": "2026-12-13",
-      "revision": "0caebf35bae5e31d00920a39dc6ddb4af795ce0998a68e6e991fd5d2b48751aa",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Chain of Thought",
-        "Computer Use",
-        "Multimodal",
-        "Reasoning",
-        "Safety Evaluation"
       ]
     },
     "479d629d4e65050ee6fe3930f907982158f51cabd239c2735637515ff8e41358": {
@@ -1327,6 +1378,23 @@
         "Training Data"
       ]
     },
+    "5ee9298c73463c68ca7cac8f387320d908bb40ad173652900c9ed2671b69810d": {
+      "check_on": "2036-11-13",
+      "revision": "138404c57247ca82e989224643577314869fef23efa3cbde3ab259d5a6446af4",
+      "source": "model card",
+      "terms": [
+        "Diffusion",
+        "Distillation",
+        "Image Context",
+        "Image Generation",
+        "Inference Training",
+        "Instruction Tuning",
+        "Multimodal",
+        "Reasoning",
+        "Sequence Parallelism",
+        "Tokenizer"
+      ]
+    },
     "5efacec87626fda5f6e2771744385774b27fa88ea3db54efe5fbfd4507d9c5c8": {
       "check_on": "2036-11-10",
       "revision": "bc0c87f40af70df9b1f69d783bc65cbec368a8a1e5f901cf2c2ad62575a0e6c6",
@@ -1452,8 +1520,8 @@
       ]
     },
     "64db3e9feb199dc48f5ab9db3b2646372b425bad1cda31c4459e22bbb39a0a5d": {
-      "check_on": "2026-12-13",
-      "revision": "a8fcdca046b39a2c369850db7007caa884906ea28ea6c79d6ae8eba77ca05398",
+      "check_on": "2026-12-16",
+      "revision": "6110e6f34cacaa13d4d8fe13f5c0853a2e010429c9e76833ac51219e0ba29c20",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -1628,6 +1696,17 @@
         "Speculative Decoding"
       ]
     },
+    "6f11669bb604d6aea0c0dc5c90027dbfa34c4fcb5328b9fc74a34b8d2cc3c521": {
+      "check_on": "2026-12-16",
+      "revision": "a5641cfc854dba8fa80feab5348972c2ba781bf9892ad3c2c712c51e8b3e3cb3",
+      "source": "source PDF",
+      "terms": [
+        "Multimodal",
+        "Reasoning",
+        "Safety Evaluation",
+        "Tool Evaluation"
+      ]
+    },
     "6f616c4af4e825bde05ef0347928025441c3238a975e520207e8f9aae5df8419": {
       "check_on": "2036-11-10",
       "revision": "84d95e69321308f3f224fa94e2431780b3c65ace0cff7a445d27bf05204c6160",
@@ -1729,17 +1808,6 @@
         "Long Context",
         "Post-training",
         "Reasoning"
-      ]
-    },
-    "73e5969d23ae23be63c05b67aba924850f7835f875ae4273d936591d53da0bae": {
-      "check_on": "2026-12-13",
-      "revision": "4a9179a534ee4f09dd842fa93ae1ff3ddd35944a2877bf90e9d699e025d7419a",
-      "source": "source page",
-      "terms": [
-        "Multimodal",
-        "Reasoning",
-        "Safety Evaluation",
-        "Tool Evaluation"
       ]
     },
     "744e7330e24d3e2f00bdfa93917e1484e83700fbd7e523fa321f7708c199f250": {
@@ -2336,6 +2404,28 @@
       "check_on": "2026-11-20",
       "revision": "a8b2445dbafb11e2269a93cf78a75ef4fb60dad88c5fe33e58937a34640e495e"
     },
+    "a3640398a34fe80edd31e83686c8774c90269f2e08e6c8565d39a2d1c8a24569": {
+      "check_on": "2036-11-13",
+      "revision": "37b4d119e6fa209d9957ce3880f38c1baeb48b06eeb4328b03534decd6d56fb1",
+      "source": "model card",
+      "terms": [
+        "Block Parallel Decoding",
+        "Code Generation",
+        "Continuous Token Embedding",
+        "Diffusion",
+        "Diffusion Parallel Decoding",
+        "Distillation",
+        "Embeddings",
+        "FlashAttention",
+        "Instruction Tuning",
+        "KV Cache",
+        "Parallel Decoding",
+        "Reasoning",
+        "Supervised Fine-tuning",
+        "Text Generation",
+        "Token Embedding"
+      ]
+    },
     "a4745e9cae02430007c3c4ed62cc858dcedea48320962910d8a45909d560855a": {
       "check_on": "2036-11-10",
       "revision": "2ecd4877bd795eb1b26431792b3973827db50d66c92843c8651ae9c6e70c975d",
@@ -2420,22 +2510,6 @@
     "add74e2fa0d003e6420f77e86f52928ea8a4613c9a516102c3cfb56b91be3af8": {
       "check_on": "2026-11-20",
       "revision": "733be12d2514f813f750e0e9b3d4e8691bb15bbf4fd3f02e6b7421693e0ae067"
-    },
-    "b16a0b2897e1230945ae1375a58168c9545f9559371459fa38dd34e001ec75ed": {
-      "check_on": "2036-11-13",
-      "revision": "a155123db1f86eeddad5c77ae153f1e789ae88c5aefc94d378c89dfbed95ee3f",
-      "source": "model card",
-      "terms": [
-        "Diffusion",
-        "Distillation",
-        "Image Context",
-        "Image Generation",
-        "Instruction Tuning",
-        "Multimodal",
-        "Reasoning",
-        "Sequence Parallelism",
-        "Tokenizer"
-      ]
     },
     "b221a072db217b27a0252e770482eb34ea073bb464c319c1e511e89d08090eaf": {
       "check_on": "2026-12-13",
@@ -2853,6 +2927,18 @@
         "Safety Evaluation",
         "Synthetic Data",
         "Training Data"
+      ]
+    },
+    "bf4a6191e89abf75aadf24118feda9353db1a05989c2527c87c0b196aab00d53": {
+      "check_on": "2026-12-16",
+      "revision": "e1fbf5fdd678c372e96446f640a1965050ce0120fa950ceb27fd9ecd01fb8bb5",
+      "source": "source PDF",
+      "terms": [
+        "Agentic Coding",
+        "Post-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Tool Evaluation"
       ]
     },
     "c28531c672d8779bc02c54ca37e51590326d1876564033d21668eaf224822cbc": {
@@ -3366,6 +3452,28 @@
         "Supervised Fine-tuning"
       ]
     },
+    "e4fd2728732d73ea7408ca6ba443d425703494fd19025d9a4426127ff49d2035": {
+      "check_on": "2036-11-13",
+      "revision": "bcb80d8b81b87f99747e9a6b966178b6fd67e6ebe07414d3f7c3ddc5d661b652",
+      "source": "model card",
+      "terms": [
+        "Block Parallel Decoding",
+        "Continuous Token Embedding",
+        "Diffusion",
+        "Distillation",
+        "Embeddings",
+        "Fine-tuning",
+        "FlashAttention",
+        "Instruction Tuning",
+        "KV Cache",
+        "Parallel Decoding",
+        "Parallel Text Generation",
+        "Pre-training",
+        "Reasoning",
+        "Text Generation",
+        "Token Embedding"
+      ]
+    },
     "e7232d52f37fd859a2ad633164226f1c2f18c7af5a6da4e5e7f23ccb8f0263e9": {
       "check_on": "2026-12-16",
       "revision": "29d982a0b35194b6f4acb0aa0590e5a1447e0ea31a2457540657a90413905d16",
@@ -3448,18 +3556,6 @@
         "Reasoning",
         "Reinforcement Learning",
         "Self Optimization"
-      ]
-    },
-    "eddbb96dadcf8bf2caa143c68b88fdb0cd3a54b103705db8a51a06b09b62207f": {
-      "check_on": "2026-12-13",
-      "revision": "cced3b5d10243586fd45a33115b3d99e2b7b5eb2c1d564dd9ddf0817e7aef6d6",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Post-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Tool Evaluation"
       ]
     },
     "ef396d4ac2f836349f25338cde479026aab9168ff99125f010ea87fe9e1f0b06": {
