@@ -39,14 +39,34 @@ jobs:
       - name: Validate catalog and generated files
         run: python3 scripts/report_catalog.py check
 
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install artifact readiness dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund --prefix .github/actions/wait-pages-artifact
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
       - name: Upload Pages Artifact
+        id: upload
         uses: actions/upload-pages-artifact@v4
         with:
           path: 'docs/'
+          # A rerun must not collide with artifacts from earlier attempts.
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Wait for uploaded artifact visibility
+        uses: ./.github/actions/wait-pages-artifact
+        timeout-minutes: 2
+        with:
+          artifact-name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          artifact-id: ${{ steps.upload.outputs.artifact_id }}
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}

@@ -1,0 +1,1 @@
+{"name":"wait-pages-artifact","private":true,"version":"1.0.0","dependencies":{"@actions/artifact":"6.3.1","@actions/core":"3.0.1"}}

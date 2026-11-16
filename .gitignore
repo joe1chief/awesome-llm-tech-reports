@@ -6,3 +6,5 @@ docs/plans/
 .venv/
 .env
 .report-state/
+
+.github/actions/wait-pages-artifact/node_modules/
