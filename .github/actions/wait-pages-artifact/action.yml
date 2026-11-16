@@ -9,4 +9,4 @@ inputs:
     description: ID returned by upload-pages-artifact
 runs:
   using: node24
-  main: index.cjs
+  main: index.mjs

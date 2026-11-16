@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const { DefaultArtifactClient } = require('@actions/artifact');
-const { waitForArtifact, ReadinessError } = require('./wait.cjs');
+import * as core from '@actions/core';
+import { DefaultArtifactClient } from '@actions/artifact';
+import { waitForArtifact, ReadinessError } from './wait.cjs';
 
 waitForArtifact(
   new DefaultArtifactClient(),
