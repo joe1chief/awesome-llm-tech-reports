@@ -185,6 +185,34 @@ def report_links(links, model, hosts, hub_url=""):
     )]
 
 
+def official_document_links(body, url, model):
+    links = document_links(body, url)
+    if not links:
+        return links
+    page = Page(body)
+    title = f"{page.heading} {page.title}"
+    card = CARD_KIND.search(title)
+    if not card or not matches_model(model, title):
+        return links
+    source = urlsplit(url)
+    path = unquote(source.path).rstrip("/")
+    parent, _, stem = path.rpartition("/")
+    card_label = f"{card[1]} card"
+    for index, (link, label) in enumerate(links):
+        target = urlsplit(link)
+        directory, _, filename = unquote(target.path).rpartition("/")
+        if (
+            source.netloc == target.netloc
+            and target.scheme == "https"
+            and directory in {parent, path}
+            and filename.lower().endswith(".pdf")
+            and words(filename[:-4]) == words(stem)
+            and words(label) in (["view", "pdf"], ["download", "pdf"], ["pdf"])
+        ):
+            links[index] = (link, card_label)
+    return links
+
+
 def cited_papers(model, card, official_body):
     citations = {}
     name = " ".join(words(model))
@@ -249,7 +277,7 @@ def resolve_report(release, card, settings, arxiv, official_body=None):
         hub_url = ""
     official_url = release.get("official_url", url)
     hub_links = document_links(card or "", hub_url + "/") if hub_url else []
-    official_links = document_links(official_body or "", official_url)
+    official_links = official_document_links(official_body or "", official_url, model)
     candidates = report_links(hub_links, model, hosts, hub_url)
     errors = []
     best = linked_report([item for item in candidates if item[2]][:4], release, hosts | HUB_FILES, errors, hub_url=hub_url)

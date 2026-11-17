@@ -756,6 +756,34 @@ def test_official_system_card_can_redirect_to_pdf(monkeypatch):
     assert report["url"] == pdf
 
 
+@pytest.mark.parametrize(("path", "label", "kind"), [
+    ("/qwen3/qwen3.pdf", "View PDF↗", "system card"),
+    ("/qwen3/qwen3.pdf", "Technical Report", "technical report"),
+    ("/appendices/qwen3.pdf", "View PDF↗", "technical report"),
+])
+def test_official_card_pdf_inherits_kind_only_for_matching_download(monkeypatch, path, label, kind):
+    import report_resolution
+
+    official = "https://qwen.ai/qwen3"
+    pdf = f"https://qwen.ai{path}"
+    requested = []
+
+    def fetch(url, *_):
+        requested.append(url)
+        return b"%PDF-1.7\n%%EOF", {}
+
+    monkeypatch.setattr(report_resolution, "fetch", fetch)
+    body = (
+        '<h1>Qwen3 System Card</h1><meta name="description" content="Training benchmarks">'
+        f'<a href="{pdf}">{label}</a>'
+    )
+    report, errors = resolve_report(
+        {**release(), "release_url": official}, None, SETTINGS, ArxivFixture([]), official_body=body,
+    )
+    assert errors == [] and requested == [pdf]
+    assert (report["kind"], report["url"], report["pdf"]) == (kind, pdf, pdf)
+
+
 def test_cli_refresh_rebuilds_all_outputs_and_replays_idempotently(monkeypatch, tmp_path, capsys):
     import sys
 
