@@ -540,6 +540,53 @@ def test_configured_backfill_projects_a_valid_catalog():
     assert by_key["stepfun/step-5-preview"]["released_on"] == "2026-09-20"
 
 
+@pytest.mark.parametrize("backfill_only", [True, False], ids=["main-push", "schedule"])
+@pytest.mark.parametrize(("kind", "same_pdf", "same_revision", "expected"), [
+    ("system card", True, True, "system card"),
+    ("model card", True, True, "model card"),
+    ("system card", False, True, "technical report"),
+    ("system card", True, False, "technical report"),
+])
+def test_saved_generic_pdf_keeps_only_same_published_card_kind(
+    monkeypatch, backfill_only, kind, same_pdf, same_revision, expected,
+):
+    official = "https://qwen.ai/qwen3"
+    pdf = f"{official}/qwen3.pdf"
+    baseline = {
+        **release(), "release_url": official,
+        "report": {"kind": kind, "url": pdf, "id": pdf, "revision": "old", "highlights": "Published synopsis"},
+    }
+    saved_pdf = pdf if same_pdf else f"{official}/new-report.pdf"
+    saved_report = {
+        **baseline["report"], "kind": "technical report", "url": saved_pdf, "id": saved_pdf,
+        "revision": "old" if same_revision else "new", "highlights": "Saved synopsis", "rank": 2,
+    }
+    saved = {**baseline, "report": saved_report, "report_checked_on": DATES[1]}
+
+    def unexpected_fetch(*_):
+        pytest.fail("An already-classified report should not be fetched for retry")
+
+    monkeypatch.setattr(report_watch, "body_text", unexpected_fetch)
+    monkeypatch.setattr(report_watch, "scan_hub", lambda *_: ([], {}, [], 0))
+    monkeypatch.setattr(report_watch, "scan_official", lambda *_: ([], {}, [], 0))
+    backfill = {
+        "alibaba_qwen": [{
+            "model": "Qwen3", "released_on": baseline["released_on"], "release_url": official,
+            "report": {"url": official, "kind": kind},
+        }],
+    } if backfill_only else None
+    with Store(":memory:").lock() as store:
+        store.save([saved])
+        settings = {"alibaba_qwen": SETTINGS}
+        rows, _ = report_watch.scan_reports(
+            store, [baseline], settings, {}, list(settings), *DATES, 12,
+            backfill=backfill, backfill_only=backfill_only,
+        )
+    projected, = report_watch.project(rows, settings)
+    expected_report = {key: value for key, value in saved_report.items() if key != "rank"}
+    assert projected["report"] == {**expected_report, "kind": expected}
+
+
 def test_public_assets_share_date_and_escape_external_text():
     row = release("Qwen3 <script> & Test")
     row["report"] = {

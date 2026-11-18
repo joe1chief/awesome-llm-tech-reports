@@ -606,12 +606,22 @@ def scan_reports(
     for saved in store.releases():
         prior = rows.get(saved["key"])
         report = saved.get("report")
-        archived = prior.get("report") if prior else None
-        if archived and archived.get("file"):
-            if archived["kind"] == "archive":
-                saved["report"] = archived
-            elif report and archived["id"] == report["id"] and archived.get("revision") == report.get("revision"):
-                saved["report"] = {**report, "file": archived["file"]}
+        published = prior.get("report") if prior else None
+        if (
+            published and report
+            and published["kind"] in {"system card", "model card"}
+            and report["kind"] == "technical report"
+            and published.get("revision")
+            and published["revision"] == report.get("revision")
+            and published["id"] == published["url"] == report["id"] == report["url"]
+            and urlsplit(published["url"]).path.lower().endswith(".pdf")
+        ):
+            report = saved["report"] = {**report, "kind": published["kind"]}
+        if published and published.get("file"):
+            if published["kind"] == "archive":
+                saved["report"] = published
+            elif report and published["id"] == report["id"] and published.get("revision") == report.get("revision"):
+                saved["report"] = {**report, "file": published["file"]}
         rows[saved["key"]] = saved
     summaries = []
     for vendor in vendors:
