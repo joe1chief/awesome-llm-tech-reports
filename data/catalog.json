@@ -2831,7 +2831,7 @@
       "report": {
         "highlights": "Contents 1 Introduction 3 2 Model Data and Training 3 3 Model Safety 3 3.1 Cyber Refusals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.2 Safe Completions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3.2.1 Evaluations with Challenging Prompts . . . . . . . . . . . . . . . . . . . . 4 3.2.2 Agentic Safe Completions . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 3.3 Biological Safety and Over-Refusal . . . . . . . . . . . . . . . . . . . . . . . . . . 5 4 Alignment and Agent Safety 6 4.1",
         "id": "https://deploymentsafety.openai.com/gpt-6-cyber/gpt-6-cyber.pdf",
-        "kind": "technical report",
+        "kind": "system card",
         "revision": "5f00c755943a8ab5771f6901ff636396fe200202a957ca310564edd05ab52967",
         "url": "https://deploymentsafety.openai.com/gpt-6-cyber/gpt-6-cyber.pdf"
       }
