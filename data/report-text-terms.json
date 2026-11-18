@@ -1156,6 +1156,18 @@
         "Video Understanding"
       ]
     },
+    "525f5e725e1fef39df359e62ff13b63c8861cbc396e88343f8fa9fddd139d922": {
+      "check_on": "2036-11-15",
+      "revision": "4cb45096b47a5dd8382de23c38337b467e6053751ea73128321b3f5aaf02e4e8",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "MoE",
+        "Reasoning",
+        "Speech Recognition",
+        "Tensor Parallelism"
+      ]
+    },
     "533db992bfb84cdb151080aa447d6ea8af8381c961fea78e27a5c99b085acf00": {
       "check_on": "2036-11-10",
       "revision": "423640ea4d755aaa10acb7b0e199df2f2404f105dab6d49d4ba2d16754ff5b5e",
@@ -1209,6 +1221,17 @@
         "Video Understanding",
         "Vision Encoding",
         "Vision-Language"
+      ]
+    },
+    "565d6a650032fe2f59e9184a984b29ff4eb36c5daba8426ec2fa03f72b4b9417": {
+      "check_on": "2036-11-15",
+      "revision": "7c7486606af4e288331d37b7fe8e5bf0d4539f93b070a5a2a732a4ac6bff90fb",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "MoE",
+        "Reasoning",
+        "Speech Recognition"
       ]
     },
     "56f9dadd63b1dcff3da46753646868ce2fba0e8099ff85ed7b248688ec676919": {
@@ -1543,8 +1566,8 @@
       ]
     },
     "66321e57ae7a50676743cff3c18b07d268b97e6c04ae727c87f41701b8e73dae": {
-      "check_on": "2026-12-13",
-      "revision": "beb997fca34bfd7fe657bc2e7f4a9dd354ddfd792454df0d74ddd7caeb42537b",
+      "check_on": "2026-12-18",
+      "revision": "0385a08c501fd5eaca558a73a40eef987b60a0062e6c6727823bfe0b9d89e4d1",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -2367,16 +2390,6 @@
         "Video Understanding"
       ]
     },
-    "a098492e4ebe297223aa0be510961ce5ee442c85fc56e7a7c999419a01834c8c": {
-      "check_on": "2036-11-15",
-      "revision": "e5083b47f894ca9a6524a84c9a7cc29ee61f3be1e08981908bb559af89928214",
-      "source": "model card",
-      "terms": [
-        "Multimodal",
-        "Text Vision Evaluation",
-        "Vision Evaluation"
-      ]
-    },
     "a108b62824f1306a334b9529f253c9b795b0415e0737429efdd723b82608bb9b": {
       "check_on": "2036-11-10",
       "revision": "9e64a42794e411f2785b66e046f14087232246d01a8ad639df35bf32c824cf4a",
@@ -2751,17 +2764,6 @@
         "Training Data"
       ]
     },
-    "b8c4fba4be402b007eb8232bcd711f3509b1fe47692b3afd92c2aa81ca7bc254": {
-      "check_on": "2036-11-10",
-      "revision": "26f80e8b19acaec0178c5b1022cc09ec0d42dad4b1a343a0b7facecfacbecf05",
-      "source": "model card",
-      "terms": [
-        "Audio Understanding",
-        "MoE",
-        "Reasoning",
-        "Speech Recognition"
-      ]
-    },
     "b8fdd5220b17844b06c28b91d75179beaecd4aae50bd4def67e36c3b04cb4c61": {
       "check_on": "2036-11-10",
       "revision": "acfa3c45e6543e68d80b37a37173ea148f8957384739f34a09b7904a15d868c3",
@@ -3008,6 +3010,16 @@
         "Tool Evaluation"
       ]
     },
+    "bfce1e76b4dfc2d1fec719376d4eedb1336268935dc33b8e85fa18856be27ec9": {
+      "check_on": "2036-11-15",
+      "revision": "ab7f4dd695a47ad7a31c56d8036dc8afe31ee855c72030ede1891bb3fc69d3e8",
+      "source": "model card",
+      "terms": [
+        "Multimodal",
+        "Text Vision Evaluation",
+        "Vision Evaluation"
+      ]
+    },
     "c28531c672d8779bc02c54ca37e51590326d1876564033d21668eaf224822cbc": {
       "check_on": "2026-12-13",
       "revision": "e64a80dc594320028d28a27b3b97df602bba6e6c2720f872ebb80633ca0a054d",
@@ -3084,8 +3096,8 @@
       "terms": []
     },
     "c5fe4e158440bf6accd86d9ebefe93caad92a136cad1fceb289cb91c5ba6cc44": {
-      "check_on": "2026-12-13",
-      "revision": "f2ba98755d0e88d3e092c4762ae06695fa3ba08a07b19b574755ff7679d0fb79",
+      "check_on": "2026-12-18",
+      "revision": "d36dd389d3e162e6500cd1ff9fa4040674a4ef166854b5cc56feb0e33d460e8c",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -3262,18 +3274,6 @@
         "Safety Evaluation",
         "Tokenizer",
         "Training Data"
-      ]
-    },
-    "d6e407192b27fc52768f1e5d86104931d8beb0f96838e653ce615123e853ab18": {
-      "check_on": "2036-11-12",
-      "revision": "668212d080b96311138376131bbcb330451cec7a89cf3d99fdd649021d6eb2bf",
-      "source": "model card",
-      "terms": [
-        "Audio Understanding",
-        "MoE",
-        "Reasoning",
-        "Speech Recognition",
-        "Tensor Parallelism"
       ]
     },
     "d79498a68e6eccc7b7631cc97a59ae557304d2c3cff1182b4d509a669d84c084": {
