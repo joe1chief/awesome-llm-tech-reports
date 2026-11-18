@@ -3419,13 +3419,13 @@
       "release_url": "https://huggingface.co/tencent/Hy4-preview",
       "released_on": "2026-08-27",
       "report": {
-        "highlights": "Hy4 preview is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team. The model comprises 770B total parameters, of which 49B are activated per token. The backbone consists of 78 layers, where the first layer uses a standard dense FFN and the remaining 77 layers replace it with MoE, each containing 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, 1 native MTP layer (10B total parameters, 0.7B activated) is built in for spec",
-        "id": "https://github.com/Tencent-Hunyuan/Hy4-preview",
-        "kind": "official technical page",
-        "revision": "4848eafc9649217543d7db03bdcf5a3a0bfc43903a0aca6b85b9de21e70922a0",
-        "url": "https://github.com/Tencent-Hunyuan/Hy4-preview"
+        "highlights": "**Hy4 preview** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team. The model comprises 770B total parameters, of which 49B are activated per token. The backbone consists of 78 layers, where the first layer uses a standard dense FFN and the remaining 77 layers replace it with MoE, each containing 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, 1 native MTP layer (10B total parameters, 0.7B activated) is built in for ",
+        "id": "https://huggingface.co/tencent/Hy4-preview/README.md",
+        "kind": "model card",
+        "revision": "705d81ee51566a186d645b74c974d642ef2828fe",
+        "url": "https://huggingface.co/tencent/Hy4-preview/blob/705d81ee51566a186d645b74c974d642ef2828fe/README.md"
       },
-      "total_parameters": 779960992733
+      "total_parameters": 770000000000
     },
     {
       "hub_task": "image-text-to-text",
@@ -3436,7 +3436,7 @@
       "release_url": "https://huggingface.co/tencent/UI-Mate-democua-27B",
       "released_on": "2026-08-14",
       "report": {
-        "highlights": "- **Parameters:** 27B - **Base model:** [Qwen3.6-27B](https://huggingface.co/Qwen/Qwen3.6-27B) - **Input:** task instruction, screenshots, interaction history, and an optional demonstration workflow - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, subtask completion, and task completion - **Training:** supervised fine-tuning, online reinforcement learning in executable GUI environments, then supervised fine-tuning on mixed general and d",
+        "highlights": "Training deliberately withholds part of this guidance. The full trajectory remains the supervision target, but the workflow shown to the model keeps only key actions — focus clicks, scrolling, and popup dismissal are omitted — so the model cannot reduce the task to copying the next line and must infer the missing steps from the screenshot. The training mixture also covers three guidance-to-screen relationships: full alignment, partial misalignment where the model corrects mismatched steps from the screenshot, and irrelevance where it ignores the workflow",
         "id": "https://huggingface.co/tencent/UI-Mate-democua-27B/README.md",
         "kind": "model card",
         "revision": "a76300b510ee8c9b509cdd933ff5e31a994a3400",
@@ -3453,7 +3453,7 @@
       "release_url": "https://huggingface.co/tencent/UI-Mate-27B",
       "released_on": "2026-08-14",
       "report": {
-        "highlights": "- **Parameters:** 27B - **Base model:** [Qwen3.6-27B](https://huggingface.co/Qwen/Qwen3.6-27B) - **Input:** task instruction, screenshots, and interaction history - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, and task completion - **Training:** supervised fine-tuning followed by online reinforcement learning in executable GUI environments - **License:** Apache-2.0",
+        "highlights": "Its behavior can be affected by application versions, screen layouts, display scaling, latency, and unexpected UI state. Benchmark performance does not guarantee reliable execution in arbitrary environments, and the model requires an external runtime to execute its predicted actions.",
         "id": "https://huggingface.co/tencent/UI-Mate-27B/README.md",
         "kind": "model card",
         "revision": "3ade2378fc84032d5017c1a9c93c4eaa77d65e57",
@@ -3470,7 +3470,7 @@
       "release_url": "https://huggingface.co/tencent/UI-Mate-9B",
       "released_on": "2026-08-14",
       "report": {
-        "highlights": "- **Parameters:** 9B - **Base model:** [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B) - **Input:** task instruction, screenshots, and interaction history - **Output:** reasoning, a concise action description, and structured computer-use tool calls - **Action space:** mouse, keyboard, scrolling, waiting, user interaction, and task completion - **Training:** supervised fine-tuning followed by online reinforcement learning in executable GUI environments - **License:** Apache-2.0",
+        "highlights": "Its behavior can be affected by application versions, screen layouts, display scaling, latency, and unexpected UI state. Benchmark performance does not guarantee reliable execution in arbitrary environments, and the model requires an external runtime to execute its predicted actions.",
         "id": "https://huggingface.co/tencent/UI-Mate-9B/README.md",
         "kind": "model card",
         "revision": "05dd5f2975195a5bb03d4363e8767f12158c8421",
@@ -3504,13 +3504,13 @@
       "release_url": "https://huggingface.co/tencent/Hy3",
       "released_on": "2026-07-02",
       "report": {
-        "highlights": "Hy3 (295B A21B), a leading reasoning and agent model in its size, with great cost efficiency. - Tencent-Hunyuan/Hy3",
-        "id": "https://github.com/Tencent-Hunyuan/Hy3",
-        "kind": "official technical page",
-        "revision": "68491e2fd184d6f39ea4c3a0a5fc16cb50063d53ac08399cecb45b9c09a99dea",
-        "url": "https://github.com/Tencent-Hunyuan/Hy3"
+        "highlights": "**Hy3** is a 295B-parameter Mixture-of-Experts (MoE) model with 21B active parameters and 3.8B MTP layer parameters, developed by the Tencent Hy Team. Following the Hy3 Preview launch in late April, we gathered feedback from 50+ products and scaled up post-training with higher quality data. Today, we introduce Hy3, which outperforms similar-size models and rivals flagship open-source models with 2-5x parameters. It also shows significant gains in utility across various products and productivity tasks.",
+        "id": "https://huggingface.co/tencent/Hy3/README.md",
+        "kind": "model card",
+        "revision": "a960ebc3da325ba167f069f76c41eb62c9280d22",
+        "url": "https://huggingface.co/tencent/Hy3/blob/a960ebc3da325ba167f069f76c41eb62c9280d22/README.md"
       },
-      "total_parameters": 298786155776
+      "total_parameters": 295000000000
     },
     {
       "id": "google--gemini-4-hydrogen",
@@ -3915,11 +3915,11 @@
       "release_url": "https://huggingface.co/tencent/Hy-Embodied-RxBrain-1.0",
       "released_on": "2026-07-14",
       "report": {
-        "highlights": "RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination - Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0",
-        "id": "https://github.com/Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0",
-        "kind": "official technical page",
-        "revision": "17d1cc407909a673b09563cd318b6d0912b843f519c9a70eb44205d2f1d7b177",
-        "url": "https://github.com/Tencent-Hunyuan/Hy-Embodied-RxBrain-1.0"
+        "highlights": "RxBrain Embodied Cognition Foundation Model with Joint Language–Visual Reasoning and Imagination Tencent Robotics X × Futian Laboratory × Tencent Hy Team",
+        "id": "https://huggingface.co/tencent/Hy-Embodied-RxBrain-1.0/README.md",
+        "kind": "model card",
+        "revision": "4eb95ee980ed708d868bdb577fb839c71445a149",
+        "url": "https://huggingface.co/tencent/Hy-Embodied-RxBrain-1.0/blob/4eb95ee980ed708d868bdb577fb839c71445a149/README.md"
       },
       "total_parameters": 6208221232
     },
@@ -3932,11 +3932,11 @@
       "release_url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0",
       "released_on": "2026-07-14",
       "report": {
-        "highlights": "HY-Embodied: Embodied Foundation Models for Real-World Agents - HY-Embodied/Hy-Embodied-VLM-1.0/inference/vllm/README.md at master · Tencent-Hunyuan/HY-Embodied",
-        "id": "https://github.com/Tencent-Hunyuan/HY-Embodied/blob/master/Hy-Embodied-VLM-1.0/inference/vllm/README.md",
-        "kind": "official technical page",
-        "revision": "353c74dfa723309d77af36708f900b60cb9886d389fa5c82dab450609a8bd6dd",
-        "url": "https://github.com/Tencent-Hunyuan/HY-Embodied/blob/master/Hy-Embodied-VLM-1.0/inference/vllm/README.md"
+        "highlights": "* **`[2026-07-15]`** 🚀 We have released **Hy-Embodied-VLM-1.0**! An efficient Mixture-of-Experts vision–language foundation model for embodied agents in the physical world, activating only **~3B parameters** per token (~30B total) for high inference efficiency. Weights are available on [Hugging Face](https://huggingface.co/tencent/Hy-Embodied-VLM-1.0), together with inference code for both HuggingFace `transformers` and vLLM. * **`[2026-06-15]`** 🤖 We have released **HY-VLA-0.5**! The [official code](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA",
+        "id": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/README.md",
+        "kind": "model card",
+        "revision": "d26cbcc2a7f3e2e4e9fd93398645638465ba5581",
+        "url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/blob/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md"
       },
       "total_parameters": 30526584176
     },
@@ -4507,6 +4507,79 @@
         "url": "https://huggingface.co/nvidia/Nemotron-Labs-Sigma-3B/blob/7eff02e0b72dace46d9084430330c192bf5a4386/README.md"
       },
       "total_parameters": 3834051618
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--singvl-s1-4b",
+      "key": "inclusionai/singvl-s1-4b",
+      "model": "SingVL_S1_4B",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/SingVL_S1_4B",
+      "released_on": "2026-11-11",
+      "report": {
+        "highlights": "The breakdown below belongs to the historical **73.94** run. The submitted 1.6 MP-capped run scores **73.7495**; its per-benchmark values are in the [pinned vision-scores.json](https://huggingface.co/datasets/echoxvf/SingVL_S1_4B-DI-results/blob/90ec7e159da6fa21d762f1f75876ea79049d0f4a/runs/singvl-s1-4b-vision/vision-scores.json).",
+        "id": "https://huggingface.co/inclusionAI/SingVL_S1_4B/README.md",
+        "kind": "model card",
+        "revision": "0f0600fe48031fad1a4068d4547bbfda1e53610f",
+        "url": "https://huggingface.co/inclusionAI/SingVL_S1_4B/blob/0f0600fe48031fad1a4068d4547bbfda1e53610f/README.md"
+      },
+      "total_parameters": 4539265536
+    },
+    {
+      "id": "openai--gpt-6-2",
+      "key": "openai/gpt-6-2",
+      "model": "GPT-6.2",
+      "org": "OpenAI",
+      "release_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "OpenAI – Hugging Face Incident Technical Report OpenAI 2 Table of Contents I. Introduction 4 II. OpenAI’s Evaluation Environment 5 A. OpenAI conducts evaluations to make its models safer 5 B. Cybersecurity evaluations like ExploitGym were conducted in a secure environment 6 III. Relevant Activity Prior to Incident 6 A. Agents used Artifactory in unexpected ways to communicate with one another in May, prior to the Hugging Face incident 6 B. Agents compromised Artifactory, leading to an outage in early July 7 IV. Hugging Face Intrusion 8 A. Agents exploite",
+        "id": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "dd635cf6e5f39f0e1f646f08c36549090d77156ed89cbd3d733ed496648cae9c",
+        "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf"
+      }
+    },
+    {
+      "id": "openai--gpt-6-2-astra",
+      "key": "openai/gpt-6-2-astra",
+      "model": "GPT-6.2 Astra",
+      "org": "OpenAI",
+      "release_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "released_on": "2026-11-17",
+      "report": null
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--hy4-flash",
+      "key": "tencent/hy4-flash",
+      "model": "Hy4-flash",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy4-flash",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
+        "id": "https://huggingface.co/tencent/Hy4-flash/README.md",
+        "kind": "model card",
+        "revision": "d88c9dfd96ba4f2e6b92adba0b8e8f1c8696f959",
+        "url": "https://huggingface.co/tencent/Hy4-flash/blob/d88c9dfd96ba4f2e6b92adba0b8e8f1c8696f959/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--hy4-flash-base",
+      "key": "tencent/hy4-flash-base",
+      "model": "Hy4-flash-base",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy4-flash-base",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
+        "id": "https://huggingface.co/tencent/Hy4-flash-base/README.md",
+        "kind": "model card",
+        "revision": "95b9f8239e2f63cb837c91704f070ae47332ebdf",
+        "url": "https://huggingface.co/tencent/Hy4-flash-base/blob/95b9f8239e2f63cb837c91704f070ae47332ebdf/README.md"
+      }
     }
   ],
   "version": 1

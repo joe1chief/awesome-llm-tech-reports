@@ -386,10 +386,6 @@
         "Reasoning"
       ]
     },
-    "178145e70c8c40be1efc4f5de338aa166099f09d939f7389595598197e006616": {
-      "check_on": "2026-11-20",
-      "revision": "53314259e587c9085ddc346ea8f03a8c89409c2b951b1ea3ee5938cdc8d7335a"
-    },
     "182d95e4f36fcd03ed1ec9234fa4375e801803761d9beab7b5c7e0a50d13c08c": {
       "check_on": "2036-11-10",
       "revision": "8c5a4e0ac6d7ae1f6e0527c6b2383cbb5d6bc6f8df740f0c2b4853003fa9c058",
@@ -1137,10 +1133,6 @@
         "Speculative Decoding"
       ]
     },
-    "500e16ae2e7ea12db29e359d43359b1e034e2e3c8fbf464f0d54c9d65e88e121": {
-      "check_on": "2026-11-20",
-      "revision": "86763aef6c6d944399bc2ba0fd4ae2702d21c3e3fdc3ca2b8d777e34e474583d"
-    },
     "513a1ea67ff1f83ba8195a3e5198dff206b644ed0b332cc0aff4547e4b7bdfa8": {
       "check_on": "2026-12-16",
       "revision": "27055a6e4e57b82d2b64d507637b0c76543eee00659dda9cb63186a79d7ff442",
@@ -1582,6 +1574,42 @@
         "Reasoning",
         "Speculative Decoding",
         "Tool Use"
+      ]
+    },
+    "68a46c24e54ac77fbcd0f61fb41e26cf30a1242bd0f7add045b159028ad44873": {
+      "check_on": "2036-11-15",
+      "revision": "fb126cdfcfb1d76c5aa5b13b8412ae9ea45919432796916077e6492ee7ce9595",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Hybrid Attention",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Multimodal Position Encoding",
+        "Position Embedding",
+        "Position Encoding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Self Distillation",
+        "Sliding Window Attention",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Vision Position Embedding",
+        "Window Attention"
       ]
     },
     "68d9c7d0ec6b441512155b0f35b0064df1c9a81ec061c4c46e20dbbcfcbe895b": {
@@ -2127,12 +2155,6 @@
         "Video Training"
       ]
     },
-    "8ebb9ab14533c0cb72b150664c3e13305477447a72853b030d0d71d397747de7": {
-      "check_on": "2026-12-13",
-      "revision": "b972cde46cbf0d429f3794c7f35251d2467249d429510561a6b7b1fe5b075a49",
-      "source": "source page",
-      "terms": []
-    },
     "915a0b7e016ae44df78bba2d0ecb7ecfbcd5809545be34363f40112a11d76d61": {
       "check_on": "2036-11-10",
       "revision": "7d89ec4adbc05c370776893a4aaeeb64ae5a0a0ca32fac892b5326708737574b",
@@ -2201,18 +2223,6 @@
         "Speech Recognition",
         "Tool Use",
         "Video Generation",
-        "Vision-Language"
-      ]
-    },
-    "94bc2d9e1a815d4bd61dbd5e0c7326083a7b5b9a6afb666f1f621b4c0da68492": {
-      "check_on": "2026-12-13",
-      "revision": "2d79068cc59c4647b0b709a567d8e2c4baa9983dfaf96fb42494090b8fdb2f03",
-      "source": "source page",
-      "terms": [
-        "Chain of Thought",
-        "Hybrid Reasoning",
-        "Long Context",
-        "Reasoning",
         "Vision-Language"
       ]
     },
@@ -2355,6 +2365,16 @@
         "Text Generation",
         "Tool Use",
         "Video Understanding"
+      ]
+    },
+    "a098492e4ebe297223aa0be510961ce5ee442c85fc56e7a7c999419a01834c8c": {
+      "check_on": "2036-11-15",
+      "revision": "e5083b47f894ca9a6524a84c9a7cc29ee61f3be1e08981908bb559af89928214",
+      "source": "model card",
+      "terms": [
+        "Multimodal",
+        "Text Vision Evaluation",
+        "Vision Evaluation"
       ]
     },
     "a108b62824f1306a334b9529f253c9b795b0415e0737429efdd723b82608bb9b": {
@@ -2632,6 +2652,28 @@
         "LoRA",
         "Quantization",
         "Video Generation"
+      ]
+    },
+    "b3ef66fff50abf02ff4c57bfb15c3c71602f659b99e6196d5c934b36231f5e16": {
+      "check_on": "2036-11-15",
+      "revision": "42a10a2d69b9a6edbf11984e99e3805dbe9f72431291b7d8460adcd7c4212e66",
+      "source": "model card",
+      "terms": [
+        "Adaptive Reasoning",
+        "Agentic Reasoning",
+        "Fine-tuning",
+        "Hybrid Reasoning",
+        "Long Context",
+        "MoE",
+        "Multimodal",
+        "Offline Inference",
+        "Post-training",
+        "Pre-training",
+        "Precision Inference",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Tensor Parallelism",
+        "Vision-Language"
       ]
     },
     "b47311b9529f614f678d1e2b73ddcabe9ce1f8a9d0cf1034bf783e66652dc5a7": {
@@ -2916,6 +2958,31 @@
         "Window Attention"
       ]
     },
+    "bd16f03d8304b4ce5c83eaf49f7fc3b5c805d130c622037eaa9c28784c7ac5f3": {
+      "check_on": "2036-11-15",
+      "revision": "14f0d7960683a94e1ae0bc3487598bd1e816d088a2f097d4b442415ff99cffe0",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Chain of Thought",
+        "Fine-tuning",
+        "FP8",
+        "Key Value Compression",
+        "Long Context",
+        "MoE",
+        "Multi-token Prediction",
+        "Multimodal",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Query Compression",
+        "Reasoning",
+        "Sparse Attention",
+        "Speculative Decoding",
+        "Training Data",
+        "Value Compression"
+      ]
+    },
     "be9bc722717777559c39c1e5e0807ea0b7cdbb06a1f89e3e1bac870a6f021e4d": {
       "check_on": "2036-11-10",
       "revision": "13da9b7056393bfc810f84f2db0e4ca54101c928553a2af1e8c2a4e2629c2658",
@@ -2970,6 +3037,28 @@
         "Computer Use",
         "Prompt Cache",
         "Reasoning"
+      ]
+    },
+    "c4ab50e9b65f4b30807c084266369a49257522767d737e6a423be4741c863beb": {
+      "check_on": "2036-11-15",
+      "revision": "6a5f09daff534f268712b7fa69651cb80317c6780f30a15f422830654ef79540",
+      "source": "model card",
+      "terms": [
+        "Fine-tuning",
+        "FP8",
+        "Grouped Query Attention",
+        "GRPO",
+        "Long Context",
+        "MoE",
+        "Multi-token Prediction",
+        "Multimodal",
+        "Post-training",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Speculative Decoding",
+        "Supervised Fine-tuning",
+        "Training Data"
       ]
     },
     "c4c7ba8fda189a40b21e4d54ba8655ba30a940a7a16992295bac9bf491682f30": {
@@ -3243,6 +3332,42 @@
         "Vision-Language"
       ]
     },
+    "d94b5e52753d306e43743ea5b2fbbd8aef4eabc99241a3b147f11769e1e0b687": {
+      "check_on": "2036-11-15",
+      "revision": "636be855a691bf90a5b794c399726402b4bf6308cf741f39c9738ca7fc5e6e0b",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Hybrid Attention",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Multimodal Position Encoding",
+        "Position Embedding",
+        "Position Encoding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Self Distillation",
+        "Sliding Window Attention",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Vision Position Embedding",
+        "Window Attention"
+      ]
+    },
     "d99b34e16c5474d7a639cb6bd716d53cc639cb430d07a4daf29be93a762a64ad": {
       "check_on": "2036-11-10",
       "revision": "2311acb3f606d807eee5633fea6d0203de7721583617ed1bd35ccfce29421ff6",
@@ -3486,6 +3611,24 @@
         "Long Context",
         "Reasoning",
         "Training Data"
+      ]
+    },
+    "e9375a24534a44aafc8b0e6509335139be8e6651755a0f02fc4b7a528c2be505": {
+      "check_on": "2036-11-15",
+      "revision": "ba99fd18c8c61235a1a71fa7c359f3ac863a9133df90b46b5c63c4064d7ca77e",
+      "source": "model card",
+      "terms": [
+        "Chain of Thought",
+        "Fine-tuning",
+        "Flow Matching",
+        "Image Decoding",
+        "Image Generation",
+        "Multimodal",
+        "Reasoning",
+        "Text Image Decoding",
+        "Text Reasoning",
+        "Text Vision Generation",
+        "Vision Generation"
       ]
     },
     "e97548f537a6ab17cf701967d262c9722c7db326abcea3a8eb46e5f9f9b5979b": {
