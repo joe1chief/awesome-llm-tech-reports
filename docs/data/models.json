@@ -47,13 +47,13 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Vision & Multimodal": 119,
+      "Vision & Multimodal": 118,
       "Audio & Speech": 34,
       "Video": 32,
       "Reasoning / CoT": 115,
       "Open Weights": 10,
       "Agent & Coding": 110,
-      "MoE": 52,
+      "MoE": 53,
       "Medical & Science": 48
     },
     "monthly_trend": [
@@ -508,14 +508,14 @@
       "month": 10,
       "org": "Baidu",
       "model": "Unlimited-OCR-2",
-      "highlights": "Unlimited OCR ushers the era of long-horizon parsing, substantially mitigating the growth of working memory as document lengthens. However, as document length scales to hundreds of pages, the visual context grows substantially, sharply increasing the computational cost of each decoding step and limiting the scalability of ultra-long document parsing. Inspired by human book transcription via localized focus without re-scanning preceding pages, we introduce Unlimited OCR 2, a document parsing model that looks only at what it transcribes. Building on Unlimi",
+      "highlights": "Sparse Reference Sliding Window Attention bounds the decoder's active reference tokens during document parsing. The report evaluates hundred-page decoding and long-document accuracy on MPDocBench and MarathonDocBench.",
       "link": "https://arxiv.org/abs/2610.39308v2",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
         "Agent & Coding",
-        "Vision & Multimodal"
+        "MoE"
       ],
       "released_on": "2026-10-27",
       "report_kind": "technical report",
@@ -1195,8 +1195,7 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-29",
-      "report_kind": "system card",
-      "document_published_on": "2026-09-29"
+      "report_kind": "system card"
     },
     {
       "id": "microsoft--aescode-8b",
