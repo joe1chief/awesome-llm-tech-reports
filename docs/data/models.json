@@ -309,7 +309,7 @@
       "month": 11,
       "org": "Baidu",
       "model": "ERNIE 5.5 Flash Preview",
-      "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
+      "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
       "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "file": "",
       "camp": "China-based Labs",
@@ -320,7 +320,8 @@
       ],
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
-      "total_parameters": 280000000000
+      "total_parameters": 280000000000,
+      "document_published_on": "2026-11-11"
     },
     {
       "id": "inclusionai--zoomgain-9b",
@@ -1373,8 +1374,7 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-22",
-      "report_kind": "official technical page",
-      "document_published_on": "2026-09-22"
+      "report_kind": "official technical page"
     },
     {
       "id": "xai--grok-4-7",
