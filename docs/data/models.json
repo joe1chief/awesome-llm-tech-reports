@@ -48,7 +48,7 @@
     },
     "tag_breakdown": {
       "Vision & Multimodal": 119,
-      "MoE": 57,
+      "MoE": 56,
       "Agent & Coding": 110,
       "Audio & Speech": 34,
       "Video": 32,
@@ -270,7 +270,7 @@
       "month": 11,
       "org": "Alibaba",
       "model": "Qwen4-Max Preview",
-      "highlights": "qwen4-max-preview (Latest Model),Alibaba Cloud Model Studio:Explore Qwen4-Max-Preview's multimodal understanding, deep reasoning, tool calling, and Token Plan access",
+      "highlights": "qwen4-max-preview,Alibaba Cloud Model Studio:Explore Qwen4-Max-Preview's multimodal understanding, deep reasoning, tool calling, and Token Plan access",
       "link": "https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview",
       "file": "",
       "camp": "China-based Labs",
@@ -309,19 +309,17 @@
       "month": 11,
       "org": "Baidu",
       "model": "ERNIE 5.5 Flash Preview",
-      "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+      "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
       "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding",
-        "MoE"
+        "Agent & Coding"
       ],
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
-      "total_parameters": 280000000000,
-      "document_published_on": "2026-11-11"
+      "total_parameters": 280000000000
     },
     {
       "id": "inclusionai--zoomgain-9b",
@@ -1374,7 +1372,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-22",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-22"
     },
     {
       "id": "xai--grok-4-7",
