@@ -48,7 +48,7 @@
     },
     "tag_breakdown": {
       "Vision & Multimodal": 119,
-      "MoE": 56,
+      "MoE": 57,
       "Agent & Coding": 110,
       "Audio & Speech": 34,
       "Video": 32,
@@ -315,7 +315,8 @@
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
-        "Agent & Coding"
+        "Agent & Coding",
+        "MoE"
       ],
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
