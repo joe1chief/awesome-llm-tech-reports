@@ -80,7 +80,14 @@ def extract_tags(model_name: str, highlights: str, link: str) -> list:
         tags.append("Medical & Science")
 
     # MoE Architecture
-    if any(k in combined for k in ["moe", "mixture-of-experts", "mixture of experts", "sparse", "active parameter", "activated parameter"]):
+    active_parameter_counts = re.search(
+        r"\b\d+(?:\.\d+)?\s*[bmt]\s+total parameters(?:,\s*|\s+(?:with|and)\s+)"
+        r"\d+(?:\.\d+)?\s*[bmt]\s+active\b(?=\s*(?:[.,;)]|$)|\s+and\b)",
+        highlights.lower(),
+    )
+    if active_parameter_counts or any(
+        k in combined for k in ["moe", "mixture-of-experts", "mixture of experts", "sparse", "active parameter", "activated parameter"]
+    ):
         tags.append("MoE")
 
     if re.search(r"\b(?:open[- ]weights?|weights (?:are|have been) (?:public|available))\b", combined):
