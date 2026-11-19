@@ -49,10 +49,10 @@
     "tag_breakdown": {
       "Vision & Multimodal": 119,
       "MoE": 57,
-      "Agent & Coding": 110,
+      "Agent & Coding": 111,
       "Audio & Speech": 34,
       "Video": 32,
-      "Reasoning / CoT": 111,
+      "Reasoning / CoT": 112,
       "Open Weights": 11,
       "Medical & Science": 48
     },
@@ -179,7 +179,7 @@
       "org": "Tencent",
       "model": "Hy4-flash",
       "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
-      "link": "https://huggingface.co/tencent/Hy4-flash/blob/d88c9dfd96ba4f2e6b92adba0b8e8f1c8696f959/README.md",
+      "link": "https://huggingface.co/tencent/Hy4-flash/blob/b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -371,7 +371,8 @@
         "Vision & Multimodal"
       ],
       "released_on": "2026-11-09",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-11-09"
     },
     {
       "id": "meta--muse-ember",
@@ -1332,7 +1333,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "Ming-3.0-tts-tiny",
       "highlights": "This repository contains **Ming-3.0-tts-tiny**, the Ming-3.0-tts mixture-of-experts checkpoint built on Ling V3. Its Ling V3 backbone has 7.9B total parameters and activates about 1.3B parameters per token. The repository includes sharded weights, supporting model code, audio tokenizer, speaker encoder and text tokenizer.",
-      "link": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/blob/4715ef5a2f02901f75687d538b6920fd0dd11e6b/README.md",
+      "link": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/blob/4eda056fd56d6e368514b6f0aac6271f6e486f6c/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -3448,17 +3449,20 @@
       "month": 6,
       "org": "MiniMax",
       "model": "MiniMax M3",
-      "highlights": "MiniMax Sparse Attention uses group-specific retrieval of key-value blocks for long contexts. The report evaluates quality and attention efficiency and links to the MiniMax M3 checkpoint.",
+      "highlights": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enablin",
       "link": "https://arxiv.org/abs/2606.13392v2",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
         "MoE",
         "Open Weights"
       ],
       "released_on": "2026-06-01",
       "report_kind": "technical report",
+      "total_parameters": 427040140160,
       "document_published_on": "2026-06-11"
     },
     {
@@ -4055,7 +4059,8 @@
       "tags": [
         "Agent & Coding"
       ],
-      "released_on": "2026-02-12"
+      "released_on": "2026-02-12",
+      "total_parameters": 228689764864
     },
     {
       "id": "2026-02_gpt_5_3_codex",
@@ -4313,7 +4318,8 @@
       "is_milestone": false,
       "tags": [
         "Agent & Coding"
-      ]
+      ],
+      "total_parameters": 228689764864
     },
     {
       "id": "2025-12_longcat_image",
@@ -4566,7 +4572,8 @@
       "tags": [
         "Agent & Coding",
         "Vision & Multimodal"
-      ]
+      ],
+      "total_parameters": 228689764864
     },
     {
       "id": "2025-10_longcat_video",

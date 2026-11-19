@@ -1134,8 +1134,8 @@
       ]
     },
     "513a1ea67ff1f83ba8195a3e5198dff206b644ed0b332cc0aff4547e4b7bdfa8": {
-      "check_on": "2026-12-16",
-      "revision": "27055a6e4e57b82d2b64d507637b0c76543eee00659dda9cb63186a79d7ff442",
+      "check_on": "2026-12-19",
+      "revision": "92874b283fcb674fd9ad94e6c0b248d5288eb63617b47d9dce0b8f2ecc01ed93",
       "source": "source page",
       "terms": [
         "Image Generation"
@@ -2411,6 +2411,16 @@
         "Training Data"
       ]
     },
+    "a1b22dd5e9468398bfbb8afb57314300060112d0d77316bd28c8acbf37eed400": {
+      "check_on": "2036-11-16",
+      "revision": "f92d918b13517b72a2f87a0afdafa2946e5125b2f921d7d9a40e86438ee0ee68",
+      "source": "model card",
+      "terms": [
+        "MoE",
+        "Speech Recognition",
+        "Tokenizer"
+      ]
+    },
     "a1e8313ff9998a2042c473eb3b8018aa1a93825cd092f25ee21c9668d87bc6cd": {
       "check_on": "2026-12-13",
       "revision": "632ed1f9a62d54b16a38c77c51fdf33f33b3684c902218e181de13d1a9c39f45",
@@ -2687,6 +2697,42 @@
         "Reinforcement Learning",
         "Tensor Parallelism",
         "Vision-Language"
+      ]
+    },
+    "b412594b87004484462894d88d00161ce78e2021dcc6c8bed0c629428e6eebac": {
+      "check_on": "2036-11-16",
+      "revision": "fce55c1e0e4aea84eea7847258f4bc5be25d19dc323367725e3e0db44052b102",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Hybrid Attention",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Multimodal Position Encoding",
+        "Position Embedding",
+        "Position Encoding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Self Distillation",
+        "Sliding Window Attention",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Vision Position Embedding",
+        "Window Attention"
       ]
     },
     "b47311b9529f614f678d1e2b73ddcabe9ce1f8a9d0cf1034bf783e66652dc5a7": {
@@ -3332,42 +3378,6 @@
         "Vision-Language"
       ]
     },
-    "d94b5e52753d306e43743ea5b2fbbd8aef4eabc99241a3b147f11769e1e0b687": {
-      "check_on": "2036-11-15",
-      "revision": "636be855a691bf90a5b794c399726402b4bf6308cf741f39c9738ca7fc5e6e0b",
-      "source": "model card",
-      "terms": [
-        "Agentic Coding",
-        "Computer Use",
-        "Context Speculative Decoding",
-        "Distillation",
-        "Fine-tuning",
-        "FP8",
-        "Hybrid Attention",
-        "KV Cache",
-        "Latent Attention",
-        "Long Context",
-        "LoRA",
-        "MLA",
-        "MoE",
-        "Multimodal",
-        "Multimodal Position Encoding",
-        "Position Embedding",
-        "Position Encoding",
-        "Post-training",
-        "Pre-training",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Self Distillation",
-        "Sliding Window Attention",
-        "Sparse Attention",
-        "Sparse Context",
-        "Speculative Decoding",
-        "Vision Position Embedding",
-        "Window Attention"
-      ]
-    },
     "d99b34e16c5474d7a639cb6bd716d53cc639cb430d07a4daf29be93a762a64ad": {
       "check_on": "2036-11-10",
       "revision": "2311acb3f606d807eee5633fea6d0203de7721583617ed1bd35ccfce29421ff6",
@@ -3739,16 +3749,6 @@
         "Token Prediction",
         "Video Understanding",
         "Vision-Language"
-      ]
-    },
-    "f178e0a2b298adfaecf6c88a34166354d1f99d2e18a34f77a1f3cfb32b4c10df": {
-      "check_on": "2036-11-10",
-      "revision": "546eef2b86dc2ebb635bd304d888cc9ee84f28ebb7b30cb13a0f0375fb227701",
-      "source": "model card",
-      "terms": [
-        "MoE",
-        "Speech Recognition",
-        "Tokenizer"
       ]
     },
     "f241b85782fd5cbd51be793c6ee5b674058429c1eeeaf91c1f2e698194e69d5f": {

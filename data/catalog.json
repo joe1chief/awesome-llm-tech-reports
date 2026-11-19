@@ -536,7 +536,8 @@
         "id": "https://www.minimax.io/news/minimax-m25",
         "kind": "archive",
         "url": "https://www.minimax.io/news/minimax-m25"
-      }
+      },
+      "total_parameters": 228689764864
     },
     {
       "id": "2026-02_ling_2_5",
@@ -747,7 +748,8 @@
         "id": "https://www.minimax.io/news/minimax-m21",
         "kind": "archive",
         "url": "https://www.minimax.io/news/minimax-m21"
-      }
+      },
+      "total_parameters": 228689764864
     },
     {
       "id": "2025-12_longcat_image",
@@ -988,7 +990,8 @@
         "id": "https://www.minimax.io/news/minimax-m2",
         "kind": "archive",
         "url": "https://www.minimax.io/news/minimax-m2"
-      }
+      },
+      "total_parameters": 228689764864
     },
     {
       "id": "2025-10_longcat_video",
@@ -2674,6 +2677,8 @@
         "highlights": "To address this, Seedream 5.5 uses targeted training to preserve unedited regions at the pixel level, enabling creative teams to keep refining an image through successive edits.",
         "id": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/",
         "kind": "official technical page",
+        "published_on": "2026-11-09",
+        "revision": "5cde8ac482a3457798f3b3080830b64720b2af06b7910766811db72f6a76ef37",
         "url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5/"
       }
     },
@@ -2945,8 +2950,8 @@
         "highlights": "This repository contains **Ming-3.0-tts-tiny**, the Ming-3.0-tts mixture-of-experts checkpoint built on Ling V3. Its Ling V3 backbone has 7.9B total parameters and activates about 1.3B parameters per token. The repository includes sharded weights, supporting model code, audio tokenizer, speaker encoder and text tokenizer.",
         "id": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/README.md",
         "kind": "model card",
-        "revision": "4715ef5a2f02901f75687d538b6920fd0dd11e6b",
-        "url": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/blob/4715ef5a2f02901f75687d538b6920fd0dd11e6b/README.md"
+        "revision": "4eda056fd56d6e368514b6f0aac6271f6e486f6c",
+        "url": "https://huggingface.co/inclusionAI/Ming-3.0-tts-tiny/blob/4eda056fd56d6e368514b6f0aac6271f6e486f6c/README.md"
       },
       "total_parameters": 8981004468
     },
@@ -4141,6 +4146,7 @@
       "forms": [
         "Open weights"
       ],
+      "hub_task": "image-text-to-text",
       "id": "minimax--minimax-m3",
       "key": "minimax/minimax-m3",
       "model": "MiniMax M3",
@@ -4148,13 +4154,14 @@
       "release_url": "https://www.minimax.io/blog/minimax-m3",
       "released_on": "2026-06-01",
       "report": {
-        "highlights": "MiniMax Sparse Attention uses group-specific retrieval of key-value blocks for long contexts. The report evaluates quality and attention efficiency and links to the MiniMax M3 checkpoint.",
+        "highlights": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enablin",
         "id": "arxiv:2606.13392",
         "kind": "technical report",
         "published_on": "2026-06-11",
         "revision": "2",
         "url": "https://arxiv.org/abs/2606.13392v2"
-      }
+      },
+      "total_parameters": 427040140160
     },
     {
       "id": "stepfun--step-3-7-flash",
@@ -4561,8 +4568,8 @@
         "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
         "id": "https://huggingface.co/tencent/Hy4-flash/README.md",
         "kind": "model card",
-        "revision": "d88c9dfd96ba4f2e6b92adba0b8e8f1c8696f959",
-        "url": "https://huggingface.co/tencent/Hy4-flash/blob/d88c9dfd96ba4f2e6b92adba0b8e8f1c8696f959/README.md"
+        "revision": "b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f",
+        "url": "https://huggingface.co/tencent/Hy4-flash/blob/b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f/README.md"
       }
     },
     {
