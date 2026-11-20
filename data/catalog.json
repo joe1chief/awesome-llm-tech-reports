@@ -2844,6 +2844,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "tencent--hunyuan-hy4",
       "key": "tencent/hunyuan-hy4",
       "model": "Hunyuan Hy4",
@@ -2851,10 +2852,13 @@
       "release_url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
       "released_on": "2026-11-04",
       "report": {
-        "id": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
-        "kind": "official technical page",
-        "url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release"
-      }
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "id": "https://huggingface.co/tencent/Hy4/README.md",
+        "kind": "model card",
+        "revision": "c10c0de5b6f850703fb0a90e65d1c32b558b9167",
+        "url": "https://huggingface.co/tencent/Hy4/blob/c10c0de5b6f850703fb0a90e65d1c32b558b9167/README.md"
+      },
+      "total_parameters": 774434002142
     },
     {
       "hub_task": "text-generation",
@@ -4112,7 +4116,8 @@
         "id": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
         "kind": "model card",
         "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
-      }
+      },
+      "total_parameters": 33122992896
     },
     {
       "forms": [
@@ -4635,23 +4640,6 @@
       "report": null
     },
     {
-      "base_model": "tencent/wemm-video-35ba3b",
-      "hub_task": "image-text-to-text",
-      "id": "tencent--wemm-video-35ba3b-awq",
-      "key": "tencent/wemm-video-35ba3b-awq",
-      "model": "WeMM-Video-35BA3B-AWQ",
-      "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ",
-      "released_on": "2026-11-17",
-      "report": {
-        "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-35B-A3B](https://huggingface.co/tencent/WeMM-Video-35BA3B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
-        "id": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ/README.md",
-        "kind": "model card",
-        "revision": "8fc094bc2a67d39289f2e97281853a899a792439",
-        "url": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ/blob/8fc094bc2a67d39289f2e97281853a899a792439/README.md"
-      }
-    },
-    {
       "hub_task": "image-text-to-text",
       "id": "tencent--wemm-video-9b",
       "key": "tencent/wemm-video-9b",
@@ -4669,22 +4657,71 @@
       "total_parameters": 9000000000
     },
     {
-      "base_model": "tencent/wemm-video-4b",
       "hub_task": "image-text-to-text",
-      "id": "tencent--wemm-video-4b-awq",
-      "key": "tencent/wemm-video-4b-awq",
-      "model": "WeMM-Video-4B-AWQ",
+      "id": "tencent--wemm-video-4b",
+      "key": "tencent/wemm-video-4b",
+      "model": "WeMM-Video-4B",
       "org": "Tencent",
-      "release_url": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ",
+      "release_url": "https://huggingface.co/tencent/WeMM-Video-4B",
       "released_on": "2026-11-17",
       "report": {
-        "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-4B](https://huggingface.co/tencent/WeMM-Video-4B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
-        "id": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ/README.md",
+        "highlights": "**WeMM-Video-4B** is the dense 4B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+        "id": "https://huggingface.co/tencent/WeMM-Video-4B/README.md",
         "kind": "model card",
-        "revision": "0009724ffa39f734aaf7e11b9ef90650b8d451a2",
-        "url": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ/blob/0009724ffa39f734aaf7e11b9ef90650b8d451a2/README.md"
+        "revision": "04d1e7374f761a66951a6b47e9a84e320b9d73fe",
+        "url": "https://huggingface.co/tencent/WeMM-Video-4B/blob/04d1e7374f761a66951a6b47e9a84e320b9d73fe/README.md"
       },
       "total_parameters": 4000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-video-35ba3b",
+      "key": "tencent/wemm-video-35ba3b",
+      "model": "WeMM-Video-35BA3B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Video-35BA3B",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "**WeMM-Video-35B-A3B** is the mixture-of-experts (35B total, 3B active) checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+        "id": "https://huggingface.co/tencent/WeMM-Video-35BA3B/README.md",
+        "kind": "model card",
+        "revision": "4375278c69e03c6ee3af6d34124c2888417cdbe4",
+        "url": "https://huggingface.co/tencent/WeMM-Video-35BA3B/blob/4375278c69e03c6ee3af6d34124c2888417cdbe4/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--hy4-base",
+      "key": "tencent/hy4-base",
+      "model": "Hy4-base",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy4-base",
+      "released_on": "2026-11-18",
+      "report": {
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "id": "https://huggingface.co/tencent/Hy4-base/README.md",
+        "kind": "model card",
+        "revision": "590e462ff0c58c07ec2e2555b3829a24718b33e1",
+        "url": "https://huggingface.co/tencent/Hy4-base/blob/590e462ff0c58c07ec2e2555b3829a24718b33e1/README.md"
+      },
+      "total_parameters": 771142535581
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--hy4-fp8",
+      "key": "tencent/hy4-fp8",
+      "model": "Hy4-FP8",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy4-FP8",
+      "released_on": "2026-11-18",
+      "report": {
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "id": "https://huggingface.co/tencent/Hy4-FP8/README.md",
+        "kind": "model card",
+        "revision": "d063b5853ecf56e0776266dab28305fc17a137cc",
+        "url": "https://huggingface.co/tencent/Hy4-FP8/blob/d063b5853ecf56e0776266dab28305fc17a137cc/README.md"
+      },
+      "total_parameters": 774434002142
     }
   ],
   "version": 1

@@ -297,18 +297,6 @@
         "Tool Use"
       ]
     },
-    "0ec3966a1a759ddae6c4f693286b501285f9503b9cc694682d4c00bd58f45748": {
-      "check_on": "2036-11-17",
-      "revision": "486d2baedd0e4bd4a85fc96914204a184c8b7571682e1f627d1153ceaa3d5d99",
-      "source": "model card",
-      "terms": [
-        "Embeddings",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning"
-      ]
-    },
     "0f3b8510765217d84ed1aaab0d9df7d7fd0ff639dc1b84896f6ae6dbdc9307f5": {
       "check_on": "2036-11-10",
       "revision": "9e28726ab6c18cc034359aff24ad9de3f3cb8b9e089702d88fc4e332c3c0a539",
@@ -927,6 +915,21 @@
         "Reinforcement Learning"
       ]
     },
+    "440fa7fa39dd5b0ae452e40353ea82e95413c009ae2d8a19ff22ee87f3fe0e90": {
+      "check_on": "2036-11-17",
+      "revision": "cc0ce9453f7d3416903ce92e1d66af35f6edd2e4a29282ca6285d9982cf7d913",
+      "source": "model card",
+      "terms": [
+        "FP8",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Tensor Parallelism",
+        "Text Generation"
+      ]
+    },
     "479d629d4e65050ee6fe3930f907982158f51cabd239c2735637515ff8e41358": {
       "check_on": "2036-11-11",
       "revision": "907c0ae05266b70f17637ecabb4c2b193e81dba7182d32a652cf24a559756e41",
@@ -988,15 +991,6 @@
         "Text Training",
         "Token Prediction",
         "Training Data"
-      ]
-    },
-    "49da776d6b464e140291f52b72ecbcd2ef74e2016543b54825f2832dcef31072": {
-      "check_on": "2026-12-13",
-      "revision": "a7941c4c24c8c10e79efab64c3f6a66e1e6dc33a27318c4c5fbb26a431f12101",
-      "source": "source page",
-      "terms": [
-        "Post-training",
-        "Pre-training"
       ]
     },
     "4aa1fef9d88fcd03a3343785300b9d3abb21cfe22e139ec780ef97cdc1a85aeb": {
@@ -1166,6 +1160,39 @@
         "Multimodal Reasoning",
         "Reasoning",
         "Video Understanding"
+      ]
+    },
+    "5250d81dd3013886de27225e53f06051d08a00b8d20eae95511d5a76e684d887": {
+      "check_on": "2036-11-17",
+      "revision": "caad1b28de766b056b05273f1d4f5664f3c0d964550e4dfcd1cbb47d7108a0b6",
+      "source": "model card",
+      "terms": [
+        "Chain of Thought",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Fine-tuning",
+        "FP8",
+        "Instruction Tuning",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Position Embedding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Retrieval",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Tool Use",
+        "Training Data",
+        "Video Understanding",
+        "Vision Position Embedding"
       ]
     },
     "525f5e725e1fef39df359e62ff13b63c8861cbc396e88343f8fa9fddd139d922": {
@@ -2455,6 +2482,19 @@
         "Training Data"
       ]
     },
+    "a34b1a6c149551e3c2c44fa04d02b0c1967586a96e6fdcd211ba0458c6751a9b": {
+      "check_on": "2036-11-17",
+      "revision": "0eb79408fc5c80abd6d57cbd7433b0f0e49176b1e4aca90fb0e96417a35950c9",
+      "source": "model card",
+      "terms": [
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Text Generation"
+      ]
+    },
     "a34f0eb394495ff7e8a91c716579aa7db36b1c7936a865a41db806d113908a82": {
       "check_on": "2026-11-27",
       "revision": "a8b2445dbafb11e2269a93cf78a75ef4fb60dad88c5fe33e58937a34640e495e"
@@ -2501,15 +2541,37 @@
         "Vision-Language"
       ]
     },
-    "a82daf7860e8976fc8be13b6d3ee87a83e9e34cd6ef0a01d701dd0140e30d9ee": {
+    "a8051a66c7b1a8d21117dc87878b101400919087774f610fa14453ddd620a04d": {
       "check_on": "2036-11-17",
-      "revision": "705ae93983da8f35c735588f37025c0ad04b95538e2fc3399aa630c8ed790b37",
+      "revision": "8a5b4753ddbfc2277c4c79347fd846d1f7851b366cecbc0532d2c0c475584008",
       "source": "model card",
       "terms": [
+        "Chain of Thought",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Fine-tuning",
+        "FP8",
+        "Instruction Tuning",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
         "Multimodal",
+        "Position Embedding",
+        "Post-training",
+        "Pre-training",
         "Quantization",
         "Reasoning",
-        "Reinforcement Learning"
+        "Retrieval",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Tool Use",
+        "Training Data",
+        "Video Understanding",
+        "Vision Position Embedding"
       ]
     },
     "aa446eb4aa9e9fadca3e5be11a4a5cef2a5f24238a62b4affd7b58489bb530cc": {
@@ -3983,6 +4045,39 @@
         "Instruction Tuning",
         "Quantization",
         "Reasoning"
+      ]
+    },
+    "ffa9faa98e3773b9c3d2227aa05e8d08cdd617276100026c73c0dc683b0e4e0a": {
+      "check_on": "2036-11-17",
+      "revision": "4cdf3128094553cac12b4287b586e7233d573ff48de456ddeb57ed549c9dbefc",
+      "source": "model card",
+      "terms": [
+        "Chain of Thought",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Fine-tuning",
+        "FP8",
+        "Instruction Tuning",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Position Embedding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Retrieval",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Tool Use",
+        "Training Data",
+        "Video Understanding",
+        "Vision Position Embedding"
       ]
     }
   },
