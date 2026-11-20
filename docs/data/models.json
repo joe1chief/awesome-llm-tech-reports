@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 285,
+    "total_models": 288,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,14 +14,14 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 148,
+      "China-based Labs": 151,
       "OpenAI": 17,
       "Google": 38,
       "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
-      "Tencent": 21,
+      "Tencent": 24,
       "OpenAI": 17,
       "Meituan": 14,
       "Google": 38,
@@ -47,14 +47,14 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Vision & Multimodal": 119,
+      "Reasoning / CoT": 115,
+      "Vision & Multimodal": 122,
+      "Audio & Speech": 37,
+      "Video": 35,
       "MoE": 57,
       "Agent & Coding": 111,
-      "Audio & Speech": 34,
-      "Video": 32,
-      "Reasoning / CoT": 112,
-      "Open Weights": 11,
-      "Medical & Science": 48
+      "Medical & Science": 49,
+      "Open Weights": 11
     },
     "monthly_trend": [
       {
@@ -147,11 +147,76 @@
       },
       {
         "month": "2026-11",
-        "count": 19
+        "count": 22
       }
     ]
   },
   "models": [
+    {
+      "id": "tencent--wemm-video-9b",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Video-9B",
+      "highlights": "**WeMM-Video-9B** is the dense 9B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+      "link": "https://huggingface.co/tencent/WeMM-Video-9B/blob/33c084c098d97adbf174a1586a01dfb86a553f00/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video"
+      ],
+      "released_on": "2026-11-17",
+      "report_kind": "model card",
+      "total_parameters": 9000000000
+    },
+    {
+      "id": "tencent--wemm-video-4b-awq",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Video-4B-AWQ",
+      "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-4B](https://huggingface.co/tencent/WeMM-Video-4B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+      "link": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ/blob/0009724ffa39f734aaf7e11b9ef90650b8d451a2/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video"
+      ],
+      "released_on": "2026-11-17",
+      "report_kind": "model card",
+      "total_parameters": 4000000000
+    },
+    {
+      "id": "tencent--wemm-video-35ba3b-awq",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Video-35BA3B-AWQ",
+      "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-35B-A3B](https://huggingface.co/tencent/WeMM-Video-35BA3B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+      "link": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ/blob/8fc094bc2a67d39289f2e97281853a899a792439/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video"
+      ],
+      "released_on": "2026-11-17",
+      "report_kind": "model card"
+    },
     {
       "id": "tencent--hy4-flash-base",
       "date": "2026-11",
@@ -235,14 +300,16 @@
       "month": 11,
       "org": "Google",
       "model": "Gemini 4 Hydrogen",
-      "highlights": "",
-      "link": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
+      "highlights": "Training ............................................................................................................................................... 5",
+      "link": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf",
       "file": "",
       "camp": "Google",
       "is_milestone": false,
-      "tags": [],
+      "tags": [
+        "Medical & Science"
+      ],
       "released_on": "2026-11-12",
-      "report_kind": "model card"
+      "report_kind": "technical report"
     },
     {
       "id": "inclusionai--singvl-s1-4b",
@@ -4237,7 +4304,8 @@
         "Reasoning / CoT",
         "Agent & Coding",
         "Vision & Multimodal"
-      ]
+      ],
+      "total_parameters": 1000000000000
     },
     {
       "id": "2026-01_glm_4_7_flash",
@@ -4657,7 +4725,8 @@
       "is_milestone": true,
       "tags": [
         "Agent & Coding"
-      ]
+      ],
+      "total_parameters": 27781427952
     },
     {
       "id": "2025-09_qwen3_omni",

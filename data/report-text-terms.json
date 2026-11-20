@@ -297,6 +297,18 @@
         "Tool Use"
       ]
     },
+    "0ec3966a1a759ddae6c4f693286b501285f9503b9cc694682d4c00bd58f45748": {
+      "check_on": "2036-11-17",
+      "revision": "486d2baedd0e4bd4a85fc96914204a184c8b7571682e1f627d1153ceaa3d5d99",
+      "source": "model card",
+      "terms": [
+        "Embeddings",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning"
+      ]
+    },
     "0f3b8510765217d84ed1aaab0d9df7d7fd0ff639dc1b84896f6ae6dbdc9307f5": {
       "check_on": "2036-11-10",
       "revision": "9e28726ab6c18cc034359aff24ad9de3f3cb8b9e089702d88fc4e332c3c0a539",
@@ -1848,7 +1860,7 @@
       ]
     },
     "737d50c2c12bee602e1d707e7d3b4023dd63d9b525a0b276680042b80c45e90c": {
-      "check_on": "2026-11-20",
+      "check_on": "2026-11-27",
       "revision": "cf25df53a4f01f51e420c2aabb21498692d0419962fe8d2f531f0c17e51b7179"
     },
     "738c010e08696ce004958b1ca65064348d1b06bd0f5a17f0cbb915f46b840853": {
@@ -2014,7 +2026,7 @@
       ]
     },
     "7d653e98ddfa60f99ec3a05c7f814a9cad20a584c0a8fda74845f9f4efcc1c17": {
-      "check_on": "2026-11-20",
+      "check_on": "2026-11-27",
       "revision": "74147efbabab817c0c0f98db8c93228fe84c656ecbbce47c1304e02b3e6a1b59"
     },
     "837d7cc54c3493c462aa025c9847993f63a068ec167c00f9b02d8596ce6718a8": {
@@ -2444,7 +2456,7 @@
       ]
     },
     "a34f0eb394495ff7e8a91c716579aa7db36b1c7936a865a41db806d113908a82": {
-      "check_on": "2026-11-20",
+      "check_on": "2026-11-27",
       "revision": "a8b2445dbafb11e2269a93cf78a75ef4fb60dad88c5fe33e58937a34640e495e"
     },
     "a3640398a34fe80edd31e83686c8774c90269f2e08e6c8565d39a2d1c8a24569": {
@@ -2487,6 +2499,17 @@
         "Reward Model",
         "Supervised Fine-tuning",
         "Vision-Language"
+      ]
+    },
+    "a82daf7860e8976fc8be13b6d3ee87a83e9e34cd6ef0a01d701dd0140e30d9ee": {
+      "check_on": "2036-11-17",
+      "revision": "705ae93983da8f35c735588f37025c0ad04b95538e2fc3399aa630c8ed790b37",
+      "source": "model card",
+      "terms": [
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning"
       ]
     },
     "aa446eb4aa9e9fadca3e5be11a4a5cef2a5f24238a62b4affd7b58489bb530cc": {
@@ -2551,7 +2574,7 @@
       ]
     },
     "add74e2fa0d003e6420f77e86f52928ea8a4613c9a516102c3cfb56b91be3af8": {
-      "check_on": "2026-11-20",
+      "check_on": "2026-11-27",
       "revision": "733be12d2514f813f750e0e9b3d4e8691bb15bbf4fd3f02e6b7421693e0ae067"
     },
     "b221a072db217b27a0252e770482eb34ea073bb464c319c1e511e89d08090eaf": {
@@ -2784,6 +2807,19 @@
         "Reinforcement Learning",
         "Retrieval",
         "Tool Use"
+      ]
+    },
+    "b65972e7fdc08a739abaecbdb5a205a06de606fae8613b9ed5abba3e4663a4cc": {
+      "check_on": "2036-11-17",
+      "revision": "c4a3554e4e48930b39f2f4fb41193a968e2e03b214f8ee85d741139e66cd3479",
+      "source": "model card",
+      "terms": [
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Text Generation"
       ]
     },
     "b7fa08117c6e5ba659bdda5615b183119781c6ca6833763479a1ff3a4d15bb47": {
@@ -3066,26 +3102,6 @@
         "Vision Evaluation"
       ]
     },
-    "c28531c672d8779bc02c54ca37e51590326d1876564033d21668eaf224822cbc": {
-      "check_on": "2026-12-13",
-      "revision": "e64a80dc594320028d28a27b3b97df602bba6e6c2720f872ebb80633ca0a054d",
-      "source": "source page",
-      "terms": [
-        "Agentic Coding",
-        "Computer Use",
-        "Fine-tuning",
-        "Long Context",
-        "Multimodal",
-        "Policy Evaluation",
-        "Post-training",
-        "Pre-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Safety Evaluation",
-        "Supervised Fine-tuning",
-        "Training Data"
-      ]
-    },
     "c34a327604b5be4a7c98002df4365d3ba7ea31a8a315f02f0082d8694e23de2f": {
       "check_on": "2026-12-13",
       "revision": "bf4f6831f87cd6637b4e133aab91c0467b0fdfea1064b52027fda2609cdfb20c",
@@ -3296,6 +3312,30 @@
         "Reasoning",
         "Supervised Fine-tuning",
         "Token Embedding",
+        "Training Data"
+      ]
+    },
+    "d522c7a52cee1fb6e86db63f2d1e9c8f55edcbcb9590f799c29bb54fd29f73c8": {
+      "check_on": "2026-12-20",
+      "revision": "fa5720cb8456b8f0583b571acb723d0b347b0caead4c311ec5bd353f7262314d",
+      "source": "source PDF",
+      "terms": [
+        "Agentic Coding",
+        "Chain of Thought",
+        "Computer Use",
+        "Distillation",
+        "Fine-tuning",
+        "Long Context",
+        "Multimodal",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Safety Evaluation",
+        "Supervised Fine-tuning",
+        "Token Generation",
+        "Tool Use",
         "Training Data"
       ]
     },
@@ -3563,7 +3603,7 @@
       ]
     },
     "e45291d44ea421d46db9a7a7f20414aaa7dfc6304f21dc9ba9ac77d528eac607": {
-      "check_on": "2026-11-20",
+      "check_on": "2026-11-27",
       "revision": "d21e5e853ee13e1479372ff5f46b8299ac54e7aefbf79617c1ce591a5f8f3d2c"
     },
     "e47c50567feed68fd45e76d0afc9b555c698a79daf963804754db7ea09110ceb": {

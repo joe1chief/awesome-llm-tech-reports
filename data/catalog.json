@@ -675,6 +675,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "2026-01_kimi_k2_5",
       "key": "moonshot/kimi-k2-5",
       "model": "Kimi K2.5",
@@ -687,7 +688,8 @@
         "id": "https://github.com/MoonshotAI/Kimi-K2.5",
         "kind": "archive",
         "url": "https://github.com/MoonshotAI/Kimi-K2.5"
-      }
+      },
+      "total_parameters": 1000000000000
     },
     {
       "id": "2026-01_longcat_flash_lite",
@@ -1130,6 +1132,7 @@
       }
     },
     {
+      "hub_task": "image-text-to-text",
       "id": "2025-09_qwen3_5",
       "key": "alibaba_qwen/qwen3-5",
       "model": "Qwen3.5",
@@ -1142,7 +1145,8 @@
         "id": "https://qwen.ai/blog?id=qwen3.5",
         "kind": "archive",
         "url": "https://qwen.ai/blog?id=qwen3.5"
-      }
+      },
+      "total_parameters": 27781427952
     },
     {
       "id": "2025-09_qwen3_next",
@@ -3525,9 +3529,11 @@
       "release_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
       "released_on": "2026-11-12",
       "report": {
-        "id": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/",
-        "kind": "model card",
-        "url": "https://deepmind.google/models/model-cards/gemini-4-hydrogen/"
+        "highlights": "Training ............................................................................................................................................... 5",
+        "id": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf",
+        "kind": "technical report",
+        "revision": "531e8ff0603a0013117e17887df14a08ea1994bf81b70c3c3e8a46654881ab7b",
+        "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf"
       }
     },
     {
@@ -4627,6 +4633,58 @@
       "release_url": "https://huggingface.co/inclusionAI/Duo-1.0-causal-base",
       "released_on": "2026-11-12",
       "report": null
+    },
+    {
+      "base_model": "tencent/wemm-video-35ba3b",
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-video-35ba3b-awq",
+      "key": "tencent/wemm-video-35ba3b-awq",
+      "model": "WeMM-Video-35BA3B-AWQ",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-35B-A3B](https://huggingface.co/tencent/WeMM-Video-35BA3B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+        "id": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ/README.md",
+        "kind": "model card",
+        "revision": "8fc094bc2a67d39289f2e97281853a899a792439",
+        "url": "https://huggingface.co/tencent/WeMM-Video-35BA3B-AWQ/blob/8fc094bc2a67d39289f2e97281853a899a792439/README.md"
+      }
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-video-9b",
+      "key": "tencent/wemm-video-9b",
+      "model": "WeMM-Video-9B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Video-9B",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "**WeMM-Video-9B** is the dense 9B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+        "id": "https://huggingface.co/tencent/WeMM-Video-9B/README.md",
+        "kind": "model card",
+        "revision": "33c084c098d97adbf174a1586a01dfb86a553f00",
+        "url": "https://huggingface.co/tencent/WeMM-Video-9B/blob/33c084c098d97adbf174a1586a01dfb86a553f00/README.md"
+      },
+      "total_parameters": 9000000000
+    },
+    {
+      "base_model": "tencent/wemm-video-4b",
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-video-4b-awq",
+      "key": "tencent/wemm-video-4b-awq",
+      "model": "WeMM-Video-4B-AWQ",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "This repository contains the **AWQ W4A16** Safetensors variant of [WeMM-Video-4B](https://huggingface.co/tencent/WeMM-Video-4B). WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
+        "id": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ/README.md",
+        "kind": "model card",
+        "revision": "0009724ffa39f734aaf7e11b9ef90650b8d451a2",
+        "url": "https://huggingface.co/tencent/WeMM-Video-4B-AWQ/blob/0009724ffa39f734aaf7e11b9ef90650b8d451a2/README.md"
+      },
+      "total_parameters": 4000000000
     }
   ],
   "version": 1
