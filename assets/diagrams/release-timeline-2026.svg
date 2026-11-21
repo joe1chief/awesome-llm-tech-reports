@@ -528,7 +528,7 @@
 <path d="M50 712H1950V712" stroke="#dcd6c8" fill="none"/>
 <text font-family="Inter,Arial,sans-serif" x="50" y="733" fill="#716b60" font-size="10" font-weight="600">2026 RELEASE NOTES</text>
 <text font-family="Inter,Arial,sans-serif" x="50" y="754" fill="#201f1b" font-size="13" font-weight="600">Busiest month: Aug (46 releases)</text>
-<text font-family="Inter,Arial,sans-serif" x="570" y="754" fill="#201f1b" font-size="13" font-weight="600">5 releases awaiting documentation</text>
+<text font-family="Inter,Arial,sans-serif" x="570" y="754" fill="#201f1b" font-size="13" font-weight="600">4 releases awaiting documentation</text>
 <text font-family="Inter,Arial,sans-serif" x="1060" y="754" fill="#716b60" font-size="12" font-weight="400">Preview · Open weights · General availability</text>
 <text font-family="Inter,Arial,sans-serif" x="50" y="779" fill="#716b60" font-size="11" font-weight="400">Up to 10 events shown per month. Counts include all events for 2026. Month-only dates appear as MM.</text>
 </svg>

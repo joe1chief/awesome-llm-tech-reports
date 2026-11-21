@@ -4565,7 +4565,13 @@
       "org": "OpenAI",
       "release_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
       "released_on": "2026-11-17",
-      "report": null
+      "report": {
+        "highlights": "Its speed and intelligence also make it ideal for the important tasks people turn to AI for outside of work. On our recently released LifeVal⁠ evaluation, which measures performance on challenging everyday tasks, GPT‑6.2 Sol outscores GPT‑6 Astra at about one-seventh the cost.",
+        "id": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+        "kind": "official technical page",
+        "revision": "6e352d420e1a462a9b721b6d18f41b83ff6bb0fbcab5710f3f5a7c76d98a0c15",
+        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+      }
     },
     {
       "hub_task": "image-text-to-text",
@@ -4668,8 +4674,8 @@
         "highlights": "**WeMM-Video-4B** is the dense 4B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
         "id": "https://huggingface.co/tencent/WeMM-Video-4B/README.md",
         "kind": "model card",
-        "revision": "04d1e7374f761a66951a6b47e9a84e320b9d73fe",
-        "url": "https://huggingface.co/tencent/WeMM-Video-4B/blob/04d1e7374f761a66951a6b47e9a84e320b9d73fe/README.md"
+        "revision": "1c8b93ef025a107a4b48d682588544286e1260d6",
+        "url": "https://huggingface.co/tencent/WeMM-Video-4B/blob/1c8b93ef025a107a4b48d682588544286e1260d6/README.md"
       },
       "total_parameters": 4000000000
     },

@@ -11,6 +11,19 @@
         "Supervised Fine-tuning"
       ]
     },
+    "017296a71e7fad7dda42ed3b99cee13bb1ce5d9d3ca20394dba50e250fc97107": {
+      "check_on": "2036-11-18",
+      "revision": "44365b9cda219fa8b09066dd32a3cf900e2b3cd8e79bd7ad7bd1c8fb161ee45f",
+      "source": "model card",
+      "terms": [
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Text Generation"
+      ]
+    },
     "032ae39a7b474333370bbb3fd9c16650315f44c496698b5221718c524a4a6fed": {
       "check_on": "2036-11-10",
       "revision": "9b882b64ca47e7efb948c61e6a493bfef870331a01aa05595de58de92136b09a",
@@ -2216,6 +2229,16 @@
         "Video Training"
       ]
     },
+    "8f6af8c44a4a1bfb5de31585ff7d049da9f0b0c7303ae5eb79fd652e216c50e9": {
+      "check_on": "2026-12-21",
+      "revision": "72c38d9d279371f5bffe4a4ad92a08b0536d287f2aace8e6aca45642030a32ca",
+      "source": "source page",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Reasoning"
+      ]
+    },
     "915a0b7e016ae44df78bba2d0ecb7ecfbcd5809545be34363f40112a11d76d61": {
       "check_on": "2036-11-10",
       "revision": "7d89ec4adbc05c370776893a4aaeeb64ae5a0a0ca32fac892b5326708737574b",
@@ -2479,19 +2502,6 @@
         "Safety Evaluation",
         "Synthetic Data",
         "Training Data"
-      ]
-    },
-    "a34b1a6c149551e3c2c44fa04d02b0c1967586a96e6fdcd211ba0458c6751a9b": {
-      "check_on": "2036-11-17",
-      "revision": "0eb79408fc5c80abd6d57cbd7433b0f0e49176b1e4aca90fb0e96417a35950c9",
-      "source": "model card",
-      "terms": [
-        "FP8",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Text Generation"
       ]
     },
     "a34f0eb394495ff7e8a91c716579aa7db36b1c7936a865a41db806d113908a82": {

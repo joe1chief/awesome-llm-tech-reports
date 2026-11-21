@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 290,
+    "total_models": 291,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -15,14 +15,14 @@
     },
     "camp_breakdown": {
       "China-based Labs": 153,
-      "OpenAI": 17,
+      "OpenAI": 18,
       "Google": 38,
       "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
       "Tencent": 26,
-      "OpenAI": 17,
+      "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
       "InclusionAI (Ant Group)": 35,
@@ -147,7 +147,7 @@
       },
       {
         "month": "2026-11",
-        "count": 24
+        "count": 25
       }
     ]
   },
@@ -224,7 +224,7 @@
       "org": "Tencent",
       "model": "WeMM-Video-4B",
       "highlights": "**WeMM-Video-4B** is the dense 4B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
-      "link": "https://huggingface.co/tencent/WeMM-Video-4B/blob/04d1e7374f761a66951a6b47e9a84e320b9d73fe/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Video-4B/blob/1c8b93ef025a107a4b48d682588544286e1260d6/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -297,6 +297,22 @@
       ],
       "released_on": "2026-11-17",
       "report_kind": "model card"
+    },
+    {
+      "id": "openai--gpt-6-2-astra",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "OpenAI",
+      "model": "GPT-6.2 Astra",
+      "highlights": "Its speed and intelligence also make it ideal for the important tasks people turn to AI for outside of work. On our recently released LifeVal⁠ evaluation, which measures performance on challenging everyday tasks, GPT‑6.2 Sol outscores GPT‑6 Astra at about one-seventh the cost.",
+      "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "file": "",
+      "camp": "OpenAI",
+      "is_milestone": false,
+      "tags": [],
+      "released_on": "2026-11-17",
+      "report_kind": "official technical page"
     },
     {
       "id": "openai--gpt-6-2",

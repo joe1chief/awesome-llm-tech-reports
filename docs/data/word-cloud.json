@@ -5,7 +5,7 @@
     "catalog excerpt": 5,
     "model card": 111,
     "source PDF": 25,
-    "source page": 26
+    "source page": 27
   },
   "displayed_terms": [
     "Reasoning",
@@ -25,9 +25,9 @@
     "Retrieval",
     "Chain of Thought",
     "Quantization",
+    "Computer Use",
     "Safety Evaluation",
     "Vision-Language",
-    "Computer Use",
     "FP8",
     "KV Cache",
     "Embeddings",
@@ -74,14 +74,14 @@
     "Agentic Training"
   ],
   "terms": {
-    "Reasoning": 159,
+    "Reasoning": 160,
     "Multimodal": 111,
     "Long Context": 108,
     "Training Data": 89,
     "Pre-training": 73,
     "Fine-tuning": 71,
     "Reinforcement Learning": 71,
-    "Agentic Coding": 69,
+    "Agentic Coding": 70,
     "MoE": 68,
     "Post-training": 67,
     "Tool Use": 64,
@@ -91,9 +91,9 @@
     "Retrieval": 46,
     "Chain of Thought": 40,
     "Quantization": 40,
+    "Computer Use": 38,
     "Safety Evaluation": 38,
     "Vision-Language": 38,
-    "Computer Use": 37,
     "FP8": 33,
     "KV Cache": 32,
     "Embeddings": 28,
