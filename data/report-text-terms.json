@@ -915,21 +915,6 @@
         "Reinforcement Learning"
       ]
     },
-    "440fa7fa39dd5b0ae452e40353ea82e95413c009ae2d8a19ff22ee87f3fe0e90": {
-      "check_on": "2036-11-17",
-      "revision": "cc0ce9453f7d3416903ce92e1d66af35f6edd2e4a29282ca6285d9982cf7d913",
-      "source": "model card",
-      "terms": [
-        "FP8",
-        "MoE",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Tensor Parallelism",
-        "Text Generation"
-      ]
-    },
     "479d629d4e65050ee6fe3930f907982158f51cabd239c2735637515ff8e41358": {
       "check_on": "2036-11-11",
       "revision": "907c0ae05266b70f17637ecabb4c2b193e81dba7182d32a652cf24a559756e41",
@@ -1773,6 +1758,20 @@
       "revision": "941fb3c389aed54796cf89bf076c2f768a5496c0609d0dcc1dc0b33481103bfc",
       "source": "archive PDF",
       "terms": [
+        "Text Generation"
+      ]
+    },
+    "6e7befa00fdcf2f763d025053d905922a5bef56e4903663dcf48d530fe7e220f": {
+      "check_on": "2036-11-18",
+      "revision": "d5a5d2afe7fd354c4e92cac760bc0505af4f4a81d269bfd7d21dbbc98f72e65e",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
         "Text Generation"
       ]
     },
@@ -2871,19 +2870,6 @@
         "Tool Use"
       ]
     },
-    "b65972e7fdc08a739abaecbdb5a205a06de606fae8613b9ed5abba3e4663a4cc": {
-      "check_on": "2036-11-17",
-      "revision": "c4a3554e4e48930b39f2f4fb41193a968e2e03b214f8ee85d741139e66cd3479",
-      "source": "model card",
-      "terms": [
-        "FP8",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Text Generation"
-      ]
-    },
     "b7fa08117c6e5ba659bdda5615b183119781c6ca6833763479a1ff3a4d15bb47": {
       "check_on": "2026-12-13",
       "revision": "d6c624d69f0d99160c1c4c83a5ca1e9f1b52fdea4492fe8aedb5a0e6d039266a",
@@ -3127,6 +3113,23 @@
         "Speculative Decoding",
         "Training Data",
         "Value Compression"
+      ]
+    },
+    "bdcc80e0ba3c66b3eba8801d7a91ebb76d0bca033bdfb6777c55e5d28597c09d": {
+      "check_on": "2036-11-18",
+      "revision": "e52bedab45256bbf99eca49e6452a40b8ec3be84cf8e99c1f5844f6e4d28f903",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "FP8",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Tensor Parallelism",
+        "Text Generation",
+        "Video Understanding"
       ]
     },
     "be9bc722717777559c39c1e5e0807ea0b7cdbb06a1f89e3e1bac870a6f021e4d": {
