@@ -785,6 +785,24 @@
         "Video Generation"
       ]
     },
+    "3194a27de6063be4e5acf03d151ca1583f889e94b1753fe4cd2bbc687741ebc2": {
+      "check_on": "2036-11-19",
+      "revision": "ad8f7e5cf31d15daa5239271cb30fd5db679c73fd51bd558b060ca1630f52e98",
+      "source": "model card",
+      "terms": [
+        "Computer Use",
+        "FP8",
+        "Long Context",
+        "MoE",
+        "Multi-token Prediction",
+        "Multimodal",
+        "Multimodal Reasoning",
+        "Reasoning",
+        "Retrieval",
+        "Speculative Decoding",
+        "Tool Use"
+      ]
+    },
     "33acecc99535e7cb0bea5823511b075db9dc1a0c8fe65852ac6a07cde9fa840f": {
       "check_on": "2036-11-10",
       "revision": "0e90f91b39f5398dbdc77f33875468b634e48d7d7ae1a6bbeb228f437947f411",
@@ -3672,6 +3690,29 @@
         "Image Generation"
       ]
     },
+    "e0d3381708569531abd66aba7294f8fb554cb000566b5c9f7cabe337b10a326d": {
+      "check_on": "2036-11-19",
+      "revision": "a27fceb4a8d241cc459865c6e57ace4f74ec1c6c6776722c2767ed4e367c48ae",
+      "source": "model card",
+      "terms": [
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multi-token Prediction",
+        "Policy Distillation",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Speculative Decoding",
+        "Supervised Fine-tuning",
+        "Tool Use"
+      ]
+    },
     "e32bc1d70ec69a31b199da7395b31ca86779b737c7a21e6c83fc467353942db8": {
       "check_on": "2036-11-10",
       "revision": "ea9c98915024e2fe03a846fe3ed3d1b3e1d1472ced8b042c04b0770520770438",
@@ -3912,29 +3953,6 @@
         "Safety Evaluation",
         "Tool Use",
         "Training Data"
-      ]
-    },
-    "f4db5c1909f4aa19bcb6538cf665dfb0acf66dbaf710a97be45faa0846e7aa1a": {
-      "check_on": "2036-11-19",
-      "revision": "4088fafab394666237e25d9b0d3476ad32ac5a3a9c9daf25283d00402d282995",
-      "source": "model card",
-      "terms": [
-        "Distillation",
-        "Fine-tuning",
-        "FP8",
-        "Long Context",
-        "MLA",
-        "MoE",
-        "Multi-token Prediction",
-        "Policy Distillation",
-        "Post-training",
-        "Pre-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Retrieval",
-        "Speculative Decoding",
-        "Supervised Fine-tuning",
-        "Tool Use"
       ]
     },
     "fa36527dbed672d422cfdc7addf489a85977ce0343a376a96038e222a0ca6253": {

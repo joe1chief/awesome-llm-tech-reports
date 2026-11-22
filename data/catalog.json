@@ -4742,10 +4742,27 @@
         "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
         "id": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/README.md",
         "kind": "model card",
-        "revision": "5c73d24d7813f209ef685be8303aae1e746a7bba",
-        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/5c73d24d7813f209ef685be8303aae1e746a7bba/README.md"
+        "revision": "af553189673cc8cf33b0bbc1c7d5b097e23d116d",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/af553189673cc8cf33b0bbc1c7d5b097e23d116d/README.md"
       },
       "total_parameters": 560000000000
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "inclusionai--lingsante-3-1-air-vl",
+      "key": "inclusionai/lingsante-3-1-air-vl",
+      "model": "LingSante-3.1-air-VL",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL",
+      "released_on": "2026-11-19",
+      "report": {
+        "highlights": "**LingSante-3.1-air-VL** is a lightweight, natively multimodal mixture-of-experts (MoE) model for real-world healthcare. Built on [Ling-3.0-flash-VL](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL), it has **124B parameters** and **5.5B active parameters per token**. It accepts text and images and supports **256K-token context window**. It is the first large multimodal medical model that Ant Group's healthcare team has released as open source.",
+        "id": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL/README.md",
+        "kind": "model card",
+        "revision": "1f398c937d6069994a156689636832c47d8c09be",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL/blob/1f398c937d6069994a156689636832c47d8c09be/README.md"
+      },
+      "total_parameters": 124848460496
     }
   ],
   "version": 1

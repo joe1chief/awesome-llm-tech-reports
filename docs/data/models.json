@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 292,
+    "total_models": 293,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,14 +14,14 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 154,
+      "China-based Labs": 155,
       "OpenAI": 18,
       "Google": 38,
       "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
-      "InclusionAI (Ant Group)": 36,
+      "InclusionAI (Ant Group)": 37,
       "Tencent": 26,
       "OpenAI": 18,
       "Meituan": 14,
@@ -48,10 +48,10 @@
     },
     "tag_breakdown": {
       "Reasoning / CoT": 117,
-      "Medical & Science": 50,
-      "MoE": 61,
+      "Medical & Science": 51,
+      "MoE": 62,
       "Open Weights": 11,
-      "Vision & Multimodal": 125,
+      "Vision & Multimodal": 126,
       "Video": 38,
       "Audio & Speech": 37,
       "Agent & Coding": 111
@@ -147,7 +147,7 @@
       },
       {
         "month": "2026-11",
-        "count": 26
+        "count": 27
       }
     ]
   },
@@ -160,7 +160,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "LingSante-3.1-flash",
       "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
-      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/5c73d24d7813f209ef685be8303aae1e746a7bba/README.md",
+      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/af553189673cc8cf33b0bbc1c7d5b097e23d116d/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -173,6 +173,27 @@
       "released_on": "2026-11-19",
       "report_kind": "model card",
       "total_parameters": 560000000000
+    },
+    {
+      "id": "inclusionai--lingsante-3-1-air-vl",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InclusionAI (Ant Group)",
+      "model": "LingSante-3.1-air-VL",
+      "highlights": "**LingSante-3.1-air-VL** is a lightweight, natively multimodal mixture-of-experts (MoE) model for real-world healthcare. Built on [Ling-3.0-flash-VL](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL), it has **124B parameters** and **5.5B active parameters per token**. It accepts text and images and supports **256K-token context window**. It is the first large multimodal medical model that Ant Group's healthcare team has released as open source.",
+      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL/blob/1f398c937d6069994a156689636832c47d8c09be/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Medical & Science",
+        "MoE"
+      ],
+      "released_on": "2026-11-19",
+      "report_kind": "model card",
+      "total_parameters": 124848460496
     },
     {
       "id": "tencent--hy4-base",
