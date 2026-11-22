@@ -218,6 +218,16 @@
         "Vision-Language"
       ]
     },
+    "08b2c97c89629770b8943c536a0f12fbd717b191b2be4fcd3fc7a0b75b2f3380": {
+      "check_on": "2036-11-19",
+      "revision": "5a24213e65aa8d52d2d5b94d3a5ba37028c7ba8ab8f0685f8d143fbf28a28bac",
+      "source": "model card",
+      "terms": [
+        "Multimodal",
+        "Text Vision Evaluation",
+        "Vision Evaluation"
+      ]
+    },
     "0a098c6bdea13f5e7d3b5a7b500bd8b78372fb1c59bb92f1280c8b714efbfc10": {
       "check_on": "2036-11-10",
       "revision": "1daf93c6b43b3d8704f1d463fd45a3032c7deb37af96b5e7e0d53d7abfe26fca",
@@ -2068,6 +2078,35 @@
       "check_on": "2026-11-27",
       "revision": "74147efbabab817c0c0f98db8c93228fe84c656ecbbce47c1304e02b3e6a1b59"
     },
+    "826dbad86846bb80ae72b9cfbfc9cab8decbd2a0e78bdc26d236697fc1a78d5e": {
+      "check_on": "2036-11-19",
+      "revision": "f1a0251101c7c5066f55c09d8e9843c5ed33c654d22e8761e6c24992462f5734",
+      "source": "source PDF",
+      "terms": [
+        "Adaptive Reasoning",
+        "Agentic Reasoning",
+        "Chain of Thought",
+        "Distillation",
+        "Fine-tuning",
+        "Group Evaluation",
+        "GRPO",
+        "Instruction Grounding",
+        "Instruction Tuning",
+        "Memory Reasoning",
+        "MoE",
+        "Multimodal",
+        "Policy Optimization",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Supervised Fine-tuning",
+        "Text Generation",
+        "Tool Use",
+        "Training Data",
+        "Vision-Language"
+      ]
+    },
     "837d7cc54c3493c462aa025c9847993f63a068ec167c00f9b02d8596ce6718a8": {
       "check_on": "2036-11-10",
       "revision": "41d114ddd863d034d722dc3981a31b92dc2b967d61bced82d493deda888bdd9c",
@@ -2771,28 +2810,6 @@
         "Video Generation"
       ]
     },
-    "b3ef66fff50abf02ff4c57bfb15c3c71602f659b99e6196d5c934b36231f5e16": {
-      "check_on": "2036-11-15",
-      "revision": "42a10a2d69b9a6edbf11984e99e3805dbe9f72431291b7d8460adcd7c4212e66",
-      "source": "model card",
-      "terms": [
-        "Adaptive Reasoning",
-        "Agentic Reasoning",
-        "Fine-tuning",
-        "Hybrid Reasoning",
-        "Long Context",
-        "MoE",
-        "Multimodal",
-        "Offline Inference",
-        "Post-training",
-        "Pre-training",
-        "Precision Inference",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Tensor Parallelism",
-        "Vision-Language"
-      ]
-    },
     "b412594b87004484462894d88d00161ce78e2021dcc6c8bed0c629428e6eebac": {
       "check_on": "2036-11-16",
       "revision": "fce55c1e0e4aea84eea7847258f4bc5be25d19dc323367725e3e0db44052b102",
@@ -3165,16 +3182,6 @@
         "Reasoning",
         "Reinforcement Learning",
         "Tool Evaluation"
-      ]
-    },
-    "bfce1e76b4dfc2d1fec719376d4eedb1336268935dc33b8e85fa18856be27ec9": {
-      "check_on": "2036-11-15",
-      "revision": "ab7f4dd695a47ad7a31c56d8036dc8afe31ee855c72030ede1891bb3fc69d3e8",
-      "source": "model card",
-      "terms": [
-        "Multimodal",
-        "Text Vision Evaluation",
-        "Vision Evaluation"
       ]
     },
     "c34a327604b5be4a7c98002df4365d3ba7ea31a8a315f02f0082d8694e23de2f": {
@@ -3905,6 +3912,29 @@
         "Safety Evaluation",
         "Tool Use",
         "Training Data"
+      ]
+    },
+    "f4db5c1909f4aa19bcb6538cf665dfb0acf66dbaf710a97be45faa0846e7aa1a": {
+      "check_on": "2036-11-19",
+      "revision": "4088fafab394666237e25d9b0d3476ad32ac5a3a9c9daf25283d00402d282995",
+      "source": "model card",
+      "terms": [
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multi-token Prediction",
+        "Policy Distillation",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Speculative Decoding",
+        "Supervised Fine-tuning",
+        "Tool Use"
       ]
     },
     "fa36527dbed672d422cfdc7addf489a85977ce0343a376a96038e222a0ca6253": {

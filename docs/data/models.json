@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 291,
+    "total_models": 292,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,18 +14,18 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 153,
+      "China-based Labs": 154,
       "OpenAI": 18,
       "Google": 38,
       "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
+      "InclusionAI (Ant Group)": 36,
       "Tencent": 26,
       "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
-      "InclusionAI (Ant Group)": 35,
       "Alibaba": 20,
       "MiniMax": 8,
       "Baidu": 3,
@@ -47,14 +47,14 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
+      "Reasoning / CoT": 117,
+      "Medical & Science": 50,
+      "MoE": 61,
+      "Open Weights": 11,
       "Vision & Multimodal": 125,
       "Video": 38,
-      "MoE": 61,
-      "Reasoning / CoT": 115,
       "Audio & Speech": 37,
-      "Agent & Coding": 111,
-      "Medical & Science": 49,
-      "Open Weights": 11
+      "Agent & Coding": 111
     },
     "monthly_trend": [
       {
@@ -147,11 +147,33 @@
       },
       {
         "month": "2026-11",
-        "count": 25
+        "count": 26
       }
     ]
   },
   "models": [
+    {
+      "id": "inclusionai--lingsante-3-1-flash",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InclusionAI (Ant Group)",
+      "model": "LingSante-3.1-flash",
+      "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
+      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/5c73d24d7813f209ef685be8303aae1e746a7bba/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Medical & Science",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-11-19",
+      "report_kind": "model card",
+      "total_parameters": 560000000000
+    },
     {
       "id": "tencent--hy4-base",
       "date": "2026-11",
@@ -378,7 +400,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "SingVL_S1_4B",
       "highlights": "The breakdown below belongs to the historical **73.94** run. The submitted 1.6 MP-capped run scores **73.7495**; its per-benchmark values are in the [pinned vision-scores.json](https://huggingface.co/datasets/echoxvf/SingVL_S1_4B-DI-results/blob/90ec7e159da6fa21d762f1f75876ea79049d0f4a/runs/singvl-s1-4b-vision/vision-scores.json).",
-      "link": "https://huggingface.co/inclusionAI/SingVL_S1_4B/blob/c7a7f32ab027735b7dd2742e5b6cfcacaa43f97a/README.md",
+      "link": "https://huggingface.co/inclusionAI/SingVL_S1_4B/blob/c0846efa6a53bd21537f0f78e262dadcdabf39f7/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -3242,20 +3264,20 @@
       "month": 7,
       "org": "Tencent",
       "model": "Hy-Embodied-VLM-1.0",
-      "highlights": "* **`[2026-07-15]`** 🚀 We have released **Hy-Embodied-VLM-1.0**! An efficient Mixture-of-Experts vision–language foundation model for embodied agents in the physical world, activating only **~3B parameters** per token (~30B total) for high inference efficiency. Weights are available on [Hugging Face](https://huggingface.co/tencent/Hy-Embodied-VLM-1.0), together with inference code for both HuggingFace `transformers` and vLLM. * **`[2026-06-15]`** 🤖 We have released **HY-VLA-0.5**! The [official code](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA",
-      "link": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/blob/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md",
+      "highlights": "Building capable embodied agents requires not only multimodal perception and understanding, but also agentic capabilities for reasoning about actions, adapting to evolving situations, and interacting with the physical world. In this report, we introduce Hy-Embodied-VLM-1.0, an efficient and powerful embodied foundation model specifically designed for embodied agents operating in the physical world. To cultivate such capabilities from the pre-training stage onward, we define an action-centric capability taxonomy comprising three progressive dimensions: Ac",
+      "link": "https://arxiv.org/abs/2607.12894v1",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
       "tags": [
+        "Reasoning / CoT",
         "Agent & Coding",
-        "Vision & Multimodal",
-        "MoE",
-        "Open Weights"
+        "Vision & Multimodal"
       ],
       "released_on": "2026-07-14",
-      "report_kind": "model card",
-      "total_parameters": 30526584176
+      "report_kind": "technical report",
+      "total_parameters": 30526584176,
+      "document_published_on": "2026-07-14"
     },
     {
       "id": "tencent--hy-embodied-rxbrain-1-0",

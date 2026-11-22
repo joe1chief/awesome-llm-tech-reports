@@ -3947,11 +3947,12 @@
       "release_url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0",
       "released_on": "2026-07-14",
       "report": {
-        "highlights": "* **`[2026-07-15]`** 🚀 We have released **Hy-Embodied-VLM-1.0**! An efficient Mixture-of-Experts vision–language foundation model for embodied agents in the physical world, activating only **~3B parameters** per token (~30B total) for high inference efficiency. Weights are available on [Hugging Face](https://huggingface.co/tencent/Hy-Embodied-VLM-1.0), together with inference code for both HuggingFace `transformers` and vLLM. * **`[2026-06-15]`** 🤖 We have released **HY-VLA-0.5**! The [official code](https://github.com/Tencent-Hunyuan/Hy-Embodied-0.5-VLA",
-        "id": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/README.md",
-        "kind": "model card",
-        "revision": "d26cbcc2a7f3e2e4e9fd93398645638465ba5581",
-        "url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/blob/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md"
+        "highlights": "Building capable embodied agents requires not only multimodal perception and understanding, but also agentic capabilities for reasoning about actions, adapting to evolving situations, and interacting with the physical world. In this report, we introduce Hy-Embodied-VLM-1.0, an efficient and powerful embodied foundation model specifically designed for embodied agents operating in the physical world. To cultivate such capabilities from the pre-training stage onward, we define an action-centric capability taxonomy comprising three progressive dimensions: Ac",
+        "id": "arxiv:2607.12894",
+        "kind": "technical report",
+        "published_on": "2026-07-14",
+        "revision": "1",
+        "url": "https://arxiv.org/abs/2607.12894v1"
       },
       "total_parameters": 30526584176
     },
@@ -4538,8 +4539,8 @@
         "highlights": "The breakdown below belongs to the historical **73.94** run. The submitted 1.6 MP-capped run scores **73.7495**; its per-benchmark values are in the [pinned vision-scores.json](https://huggingface.co/datasets/echoxvf/SingVL_S1_4B-DI-results/blob/90ec7e159da6fa21d762f1f75876ea79049d0f4a/runs/singvl-s1-4b-vision/vision-scores.json).",
         "id": "https://huggingface.co/inclusionAI/SingVL_S1_4B/README.md",
         "kind": "model card",
-        "revision": "c7a7f32ab027735b7dd2742e5b6cfcacaa43f97a",
-        "url": "https://huggingface.co/inclusionAI/SingVL_S1_4B/blob/c7a7f32ab027735b7dd2742e5b6cfcacaa43f97a/README.md"
+        "revision": "c0846efa6a53bd21537f0f78e262dadcdabf39f7",
+        "url": "https://huggingface.co/inclusionAI/SingVL_S1_4B/blob/c0846efa6a53bd21537f0f78e262dadcdabf39f7/README.md"
       },
       "total_parameters": 4539265536
     },
@@ -4728,6 +4729,23 @@
         "url": "https://huggingface.co/tencent/Hy4-FP8/blob/d063b5853ecf56e0776266dab28305fc17a137cc/README.md"
       },
       "total_parameters": 774434002142
+    },
+    {
+      "hub_task": "text-generation",
+      "id": "inclusionai--lingsante-3-1-flash",
+      "key": "inclusionai/lingsante-3-1-flash",
+      "model": "LingSante-3.1-flash",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash",
+      "released_on": "2026-11-19",
+      "report": {
+        "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
+        "id": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/README.md",
+        "kind": "model card",
+        "revision": "5c73d24d7813f209ef685be8303aae1e746a7bba",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/5c73d24d7813f209ef685be8303aae1e746a7bba/README.md"
+      },
+      "total_parameters": 560000000000
     }
   ],
   "version": 1
