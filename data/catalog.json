@@ -2016,9 +2016,10 @@
         "highlights": "We're introducing **Ling-3.1-flash**, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture and performance on real-world tasks.",
         "id": "https://huggingface.co/inclusionAI/Ling-3.1-flash/README.md",
         "kind": "model card",
-        "revision": "dde57b1c6a365aa0e0a33e15cecce0f2be96f5a3",
-        "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash/blob/dde57b1c6a365aa0e0a33e15cecce0f2be96f5a3/README.md"
-      }
+        "revision": "c252f7838ab7192c982ec503f3a32b32bad0bd1f",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash/blob/c252f7838ab7192c982ec503f3a32b32bad0bd1f/README.md"
+      },
+      "total_parameters": 572120680768
     },
     {
       "hub_task": "image-text-to-text",
@@ -2619,6 +2620,8 @@
         "highlights": "Safety. Opus 5.5 achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands of simulated scenarios. It is much less likely than recent models to take hard-to-reverse actions or act outside the boundaries it’s been given, and it’s more resistant than Opus 5 to prompt injection. We’ve also broadened our alignment testing to cover longer tasks, impossible tasks, and scenarios modeled on real incidents, though it still has limits. Full details of our evaluation are available in the ",
         "id": "https://www.anthropic.com/claude-opus-5-5",
         "kind": "official technical page",
+        "published_on": "2026-09-22",
+        "revision": "9acbd9c3300b691d4623efaacccc60b55892a71d7cf9345852a16835e4c50d75",
         "url": "https://www.anthropic.com/claude-opus-5-5"
       }
     },
@@ -2646,10 +2649,10 @@
       "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "released_on": "2026-11-11",
       "report": {
-        "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+        "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
         "id": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
         "kind": "official technical page",
-        "published_on": "2026-11-11",
+        "revision": "e0275d88e0fb3cfb14b3964f9405fa3f7ef66cb20ce36987447e8d27c8dc1db8",
         "url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"
       },
       "total_parameters": 280000000000
@@ -4749,8 +4752,8 @@
         "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
         "id": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/README.md",
         "kind": "model card",
-        "revision": "ed0e58e6031460327cbb7c6fbe84bde7ba015762",
-        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/ed0e58e6031460327cbb7c6fbe84bde7ba015762/README.md"
+        "revision": "9d92993a197c21d43e3866bccae22a44c3a8966f",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/9d92993a197c21d43e3866bccae22a44c3a8966f/README.md"
       },
       "total_parameters": 560000000000
     },
@@ -4787,6 +4790,73 @@
         "url": "https://huggingface.co/tencent/WePocketModel1.0-4B/blob/47fb682a20f1c3af96628bf81e3f43d9c3b5525d/README.md"
       },
       "total_parameters": 4539265536
+    },
+    {
+      "id": "inclusionai--ling-3-2-air",
+      "key": "inclusionai/ling-3-2-air",
+      "model": "Ling-3.2-air",
+      "org": "InclusionAI (Ant Group)",
+      "release_url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+      "released_on": "2026-11-23",
+      "report": {
+        "highlights": "We introduce **Ling-3.2-air**, an open-weight model that shares the same native multimodal architecture as [**Ling-3.0-flash-VL**](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL). Compared with its predecessor, Ling-3.2-air shows stronger performance in workflow automation and reasoning over professional documents. Its **AutomationBench-AA** score rises from 15.7% to **61%**, while its **GDP.pdf** all-pass rate increases from 8.4% to **16%**. On **AA-Briefcase v1.1**, its Elo rating rises from 987 to **1340**, a gain of **353 points**. On **Termina",
+        "id": "https://huggingface.co/inclusionAI/Ling-3.2-air/README.md",
+        "kind": "model card",
+        "revision": "1613b1a4dcc6aa0d8f346606628cd9a92061a525",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/1613b1a4dcc6aa0d8f346606628cd9a92061a525/README.md"
+      },
+      "total_parameters": 127920654544
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-ecom-35b-a3b",
+      "key": "tencent/wemm-ecom-35b-a3b",
+      "model": "WeMM-Ecom-35B-A3B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B",
+      "released_on": "2026-11-18",
+      "report": {
+        "highlights": "**WeMM-Ecom-35B-A3B** is a mixture-of-experts model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+        "id": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/README.md",
+        "kind": "model card",
+        "revision": "1d8bc85c58d7f3a6469bb455054375d33f7a2b18",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/1d8bc85c58d7f3a6469bb455054375d33f7a2b18/README.md"
+      },
+      "total_parameters": 35107181936
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-ecom-4b",
+      "key": "tencent/wemm-ecom-4b",
+      "model": "WeMM-Ecom-4B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Ecom-4B",
+      "released_on": "2026-11-18",
+      "report": {
+        "highlights": "**WeMM-Ecom-4B** is a 4B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+        "id": "https://huggingface.co/tencent/WeMM-Ecom-4B/README.md",
+        "kind": "model card",
+        "revision": "c3e3ed8e6af28d868eaadfebad60167385d82308",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/c3e3ed8e6af28d868eaadfebad60167385d82308/README.md"
+      },
+      "total_parameters": 4539265536
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wemm-ecom-9b",
+      "key": "tencent/wemm-ecom-9b",
+      "model": "WeMM-Ecom-9B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WeMM-Ecom-9B",
+      "released_on": "2026-11-18",
+      "report": {
+        "highlights": "**WeMM-Ecom-9B** is a 9B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+        "id": "https://huggingface.co/tencent/WeMM-Ecom-9B/README.md",
+        "kind": "model card",
+        "revision": "95f26d457079fcb14cd35b932e84e9d23d8cb1de",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/95f26d457079fcb14cd35b932e84e9d23d8cb1de/README.md"
+      },
+      "total_parameters": 9409813744
     }
   ],
   "version": 1

@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 294,
+    "total_models": 298,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,15 +14,15 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 156,
+      "China-based Labs": 160,
       "OpenAI": 18,
       "Google": 38,
       "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
-      "InclusionAI (Ant Group)": 37,
-      "Tencent": 27,
+      "InclusionAI (Ant Group)": 38,
+      "Tencent": 30,
       "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
@@ -47,11 +47,11 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Reasoning / CoT": 117,
+      "Reasoning / CoT": 121,
+      "Vision & Multimodal": 131,
+      "Open Weights": 12,
       "Medical & Science": 51,
-      "MoE": 62,
-      "Open Weights": 11,
-      "Vision & Multimodal": 127,
+      "MoE": 63,
       "Video": 38,
       "Audio & Speech": 37,
       "Agent & Coding": 111
@@ -147,11 +147,32 @@
       },
       {
         "month": "2026-11",
-        "count": 28
+        "count": 32
       }
     ]
   },
   "models": [
+    {
+      "id": "inclusionai--ling-3-2-air",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ling-3.2-air",
+      "highlights": "We introduce **Ling-3.2-air**, an open-weight model that shares the same native multimodal architecture as [**Ling-3.0-flash-VL**](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL). Compared with its predecessor, Ling-3.2-air shows stronger performance in workflow automation and reasoning over professional documents. Its **AutomationBench-AA** score rises from 15.7% to **61%**, while its **GDP.pdf** all-pass rate increases from 8.4% to **16%**. On **AA-Briefcase v1.1**, its Elo rating rises from 987 to **1340**, a gain of **353 points**. On **Termina",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/1613b1a4dcc6aa0d8f346606628cd9a92061a525/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-11-23",
+      "report_kind": "model card",
+      "total_parameters": 127920654544
+    },
     {
       "id": "inclusionai--lingsante-3-1-flash",
       "date": "2026-11",
@@ -160,7 +181,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "LingSante-3.1-flash",
       "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
-      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/ed0e58e6031460327cbb7c6fbe84bde7ba015762/README.md",
+      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/9d92993a197c21d43e3866bccae22a44c3a8966f/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -194,6 +215,67 @@
       "released_on": "2026-11-19",
       "report_kind": "model card",
       "total_parameters": 124848460496
+    },
+    {
+      "id": "tencent--wemm-ecom-9b",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Ecom-9B",
+      "highlights": "**WeMM-Ecom-9B** is a 9B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/95f26d457079fcb14cd35b932e84e9d23d8cb1de/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-18",
+      "report_kind": "model card",
+      "total_parameters": 9409813744
+    },
+    {
+      "id": "tencent--wemm-ecom-4b",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Ecom-4B",
+      "highlights": "**WeMM-Ecom-4B** is a 4B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/c3e3ed8e6af28d868eaadfebad60167385d82308/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-18",
+      "report_kind": "model card",
+      "total_parameters": 4539265536
+    },
+    {
+      "id": "tencent--wemm-ecom-35b-a3b",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WeMM-Ecom-35B-A3B",
+      "highlights": "**WeMM-Ecom-35B-A3B** is a mixture-of-experts model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/1d8bc85c58d7f3a6469bb455054375d33f7a2b18/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal",
+        "MoE"
+      ],
+      "released_on": "2026-11-18",
+      "report_kind": "model card",
+      "total_parameters": 35107181936
     },
     {
       "id": "tencent--hy4-base",
@@ -497,7 +579,7 @@
       "month": 11,
       "org": "Baidu",
       "model": "ERNIE 5.5 Flash Preview",
-      "highlights": "The post-trained preview has 280B total and 14B active parameters, with a 1M-token context. Baidu provides benchmark results and examples across coding, design and content creation.",
+      "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
       "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "file": "",
       "camp": "China-based Labs",
@@ -508,8 +590,7 @@
       ],
       "released_on": "2026-11-11",
       "report_kind": "official technical page",
-      "total_parameters": 280000000000,
-      "document_published_on": "2026-11-11"
+      "total_parameters": 280000000000
     },
     {
       "id": "inclusionai--zoomgain-9b",
@@ -1101,7 +1182,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.1-flash",
       "highlights": "We're introducing **Ling-3.1-flash**, an upgraded native hybrid reasoning model designed for complex, real-world tasks. With **560B** total parameters, **25B** active parameters per token, and a **1M-token context window**, Ling-3.1-flash builds upon Ling-3.0-flash with improvements in architecture and performance on real-world tasks.",
-      "link": "https://huggingface.co/inclusionAI/Ling-3.1-flash/blob/dde57b1c6a365aa0e0a33e15cecce0f2be96f5a3/README.md",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.1-flash/blob/c252f7838ab7192c982ec503f3a32b32bad0bd1f/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -1110,7 +1191,8 @@
         "MoE"
       ],
       "released_on": "2026-10-13",
-      "report_kind": "model card"
+      "report_kind": "model card",
+      "total_parameters": 572120680768
     },
     {
       "id": "nvidia--nvidia-nemotron-3-5-super-vl-120b-a12b-nvfp4",
@@ -1568,7 +1650,8 @@
       "is_milestone": false,
       "tags": [],
       "released_on": "2026-09-22",
-      "report_kind": "official technical page"
+      "report_kind": "official technical page",
+      "document_published_on": "2026-09-22"
     },
     {
       "id": "xai--grok-4-7",
