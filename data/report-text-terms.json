@@ -2828,42 +2828,6 @@
         "Video Generation"
       ]
     },
-    "b412594b87004484462894d88d00161ce78e2021dcc6c8bed0c629428e6eebac": {
-      "check_on": "2036-11-16",
-      "revision": "fce55c1e0e4aea84eea7847258f4bc5be25d19dc323367725e3e0db44052b102",
-      "source": "model card",
-      "terms": [
-        "Agentic Coding",
-        "Computer Use",
-        "Context Speculative Decoding",
-        "Distillation",
-        "Fine-tuning",
-        "FP8",
-        "Hybrid Attention",
-        "KV Cache",
-        "Latent Attention",
-        "Long Context",
-        "LoRA",
-        "MLA",
-        "MoE",
-        "Multimodal",
-        "Multimodal Position Encoding",
-        "Position Embedding",
-        "Position Encoding",
-        "Post-training",
-        "Pre-training",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Self Distillation",
-        "Sliding Window Attention",
-        "Sparse Attention",
-        "Sparse Context",
-        "Speculative Decoding",
-        "Vision Position Embedding",
-        "Window Attention"
-      ]
-    },
     "b47311b9529f614f678d1e2b73ddcabe9ce1f8a9d0cf1034bf783e66652dc5a7": {
       "check_on": "2036-11-10",
       "revision": "0e75b2a9c44449494560346ff849bbc55d941c8e96f8e4f404c95cfae16b901e",
@@ -3362,6 +3326,42 @@
         "Window Attention"
       ]
     },
+    "cdcaa0205338782c4c91225e456380806bb9c399824b64357ec21c66e96b26fa": {
+      "check_on": "2036-11-20",
+      "revision": "1eb031c014bed4640ec70b118cf88cecd0e56c9f016c5410352252d2a0bd974b",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Computer Use",
+        "Context Speculative Decoding",
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Hybrid Attention",
+        "KV Cache",
+        "Latent Attention",
+        "Long Context",
+        "LoRA",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Multimodal Position Encoding",
+        "Position Embedding",
+        "Position Encoding",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Self Distillation",
+        "Sliding Window Attention",
+        "Sparse Attention",
+        "Sparse Context",
+        "Speculative Decoding",
+        "Vision Position Embedding",
+        "Window Attention"
+      ]
+    },
     "ce3484054f83f3fbcab073b33ea3cc157cb13de1af6381a551cee8cc889ca723": {
       "check_on": "2026-12-13",
       "revision": "86a738a28d23c22927acd1f62348675ac05ccd63e458e93fa63a7cf7f465ae17",
@@ -3449,6 +3449,20 @@
         "KV Cache",
         "Quantization",
         "Speech Recognition"
+      ]
+    },
+    "d5a6c6489f2727cc448d9bfeb5da1b4e4bedaaa6e4835985c88ac9fee298afb7": {
+      "check_on": "2036-11-20",
+      "revision": "a5d43997fbc80de356c46a8cf4ac9f8796c50ecd04361d59f921d883569742e7",
+      "source": "model card",
+      "terms": [
+        "Embeddings",
+        "KV Cache",
+        "Multimodal",
+        "Multimodal Retrieval",
+        "Retrieval",
+        "Tokenizer",
+        "Vision-Language"
       ]
     },
     "d69b0e2a2d127d53d9e53ca2d52d25e47987822c589e743f273d13954b27445a": {
@@ -3690,29 +3704,6 @@
         "Image Generation"
       ]
     },
-    "e0d3381708569531abd66aba7294f8fb554cb000566b5c9f7cabe337b10a326d": {
-      "check_on": "2036-11-19",
-      "revision": "a27fceb4a8d241cc459865c6e57ace4f74ec1c6c6776722c2767ed4e367c48ae",
-      "source": "model card",
-      "terms": [
-        "Distillation",
-        "Fine-tuning",
-        "FP8",
-        "Long Context",
-        "MLA",
-        "MoE",
-        "Multi-token Prediction",
-        "Policy Distillation",
-        "Post-training",
-        "Pre-training",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Retrieval",
-        "Speculative Decoding",
-        "Supervised Fine-tuning",
-        "Tool Use"
-      ]
-    },
     "e32bc1d70ec69a31b199da7395b31ca86779b737c7a21e6c83fc467353942db8": {
       "check_on": "2036-11-10",
       "revision": "ea9c98915024e2fe03a846fe3ed3d1b3e1d1472ced8b042c04b0770520770438",
@@ -3773,8 +3764,8 @@
       ]
     },
     "e7232d52f37fd859a2ad633164226f1c2f18c7af5a6da4e5e7f23ccb8f0263e9": {
-      "check_on": "2026-12-19",
-      "revision": "29d982a0b35194b6f4acb0aa0590e5a1447e0ea31a2457540657a90413905d16",
+      "check_on": "2026-12-23",
+      "revision": "66fc8945af04f96014ef3b1fd059e0158e6aca1c56b1ba0a114adda803d79155",
       "source": "source page",
       "terms": [
         "Agentic Coding",
@@ -3843,6 +3834,29 @@
         "Synthetic Data",
         "Tool Use",
         "Training Data"
+      ]
+    },
+    "ea3137509e06eb695c33df8e6ad20ed8e101503e412f0ce63a76282acb5527b4": {
+      "check_on": "2036-11-20",
+      "revision": "6cb60c5e17981a78ecff1403171b387cb726c66545f9a59b3924648fb63a01c2",
+      "source": "model card",
+      "terms": [
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multi-token Prediction",
+        "Policy Distillation",
+        "Post-training",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Speculative Decoding",
+        "Supervised Fine-tuning",
+        "Tool Use"
       ]
     },
     "ebd7b222ca8f02bfe5dac9aaad75f7351da2f3f2cea6e7e278ab13e36559a38e": {

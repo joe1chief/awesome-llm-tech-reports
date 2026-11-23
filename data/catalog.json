@@ -2604,6 +2604,7 @@
         "highlights": "“As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”",
         "id": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
         "kind": "official technical page",
+        "revision": "f72697d88c97008b43fdf741f0b3b1ec2d9e4a6d896b4b3b79ac39de7c3923bf",
         "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
       }
     },
@@ -4155,16 +4156,22 @@
       }
     },
     {
-      "forms": [
-        "Open weights"
-      ],
       "hub_task": "image-text-to-text",
       "id": "minimax--minimax-m3",
       "key": "minimax/minimax-m3",
       "model": "MiniMax M3",
       "org": "MiniMax",
+      "release_events": [
+        {
+          "forms": [
+            "Open weights"
+          ],
+          "release_url": "https://www.minimax.io/blog/minimax-m3",
+          "released_on": "2026-06-01"
+        }
+      ],
       "release_url": "https://www.minimax.io/blog/minimax-m3",
-      "released_on": "2026-06-01",
+      "released_on": "2026-05-31",
       "report": {
         "highlights": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enablin",
         "id": "arxiv:2606.13392",
@@ -4586,8 +4593,8 @@
         "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
         "id": "https://huggingface.co/tencent/Hy4-flash/README.md",
         "kind": "model card",
-        "revision": "b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f",
-        "url": "https://huggingface.co/tencent/Hy4-flash/blob/b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f/README.md"
+        "revision": "eccd3123eec73f2040f4c9ed0de1883593470510",
+        "url": "https://huggingface.co/tencent/Hy4-flash/blob/eccd3123eec73f2040f4c9ed0de1883593470510/README.md"
       }
     },
     {
@@ -4742,8 +4749,8 @@
         "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
         "id": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/README.md",
         "kind": "model card",
-        "revision": "af553189673cc8cf33b0bbc1c7d5b097e23d116d",
-        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/af553189673cc8cf33b0bbc1c7d5b097e23d116d/README.md"
+        "revision": "ed0e58e6031460327cbb7c6fbe84bde7ba015762",
+        "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/ed0e58e6031460327cbb7c6fbe84bde7ba015762/README.md"
       },
       "total_parameters": 560000000000
     },
@@ -4763,6 +4770,23 @@
         "url": "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL/blob/1f398c937d6069994a156689636832c47d8c09be/README.md"
       },
       "total_parameters": 124848460496
+    },
+    {
+      "hub_task": "image-text-to-text",
+      "id": "tencent--wepocketmodel1-0-4b",
+      "key": "tencent/wepocketmodel1-0-4b",
+      "model": "WePocketModel1.0-4B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/WePocketModel1.0-4B",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "WePM uses Multi-Granularity Visual Budgeting (MGVB) to allocate visual tokens across global, regional, and fine-grained views. The runtime uses separate learned slots for embedding and decision. [Architecture overview](https://github.com/Tencent/WePocketModel#reconciling-conflicts-in-a-unified-model)",
+        "id": "https://huggingface.co/tencent/WePocketModel1.0-4B/README.md",
+        "kind": "model card",
+        "revision": "47fb682a20f1c3af96628bf81e3f43d9c3b5525d",
+        "url": "https://huggingface.co/tencent/WePocketModel1.0-4B/blob/47fb682a20f1c3af96628bf81e3f43d9c3b5525d/README.md"
+      },
+      "total_parameters": 4539265536
     }
   ],
   "version": 1

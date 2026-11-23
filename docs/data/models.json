@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 293,
+    "total_models": 294,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,7 +14,7 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 155,
+      "China-based Labs": 156,
       "OpenAI": 18,
       "Google": 38,
       "Other Global": 65,
@@ -22,7 +22,7 @@
     },
     "org_breakdown": {
       "InclusionAI (Ant Group)": 37,
-      "Tencent": 26,
+      "Tencent": 27,
       "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
@@ -51,7 +51,7 @@
       "Medical & Science": 51,
       "MoE": 62,
       "Open Weights": 11,
-      "Vision & Multimodal": 126,
+      "Vision & Multimodal": 127,
       "Video": 38,
       "Audio & Speech": 37,
       "Agent & Coding": 111
@@ -123,11 +123,11 @@
       },
       {
         "month": "2026-05",
-        "count": 6
+        "count": 7
       },
       {
         "month": "2026-06",
-        "count": 7
+        "count": 6
       },
       {
         "month": "2026-07",
@@ -147,7 +147,7 @@
       },
       {
         "month": "2026-11",
-        "count": 27
+        "count": 28
       }
     ]
   },
@@ -160,7 +160,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "LingSante-3.1-flash",
       "highlights": "**LingSante-3.1-flash** is an open-weight Mixture-of-Experts model that combines complex medical reasoning, professional healthcare communication, evidence-based deep research, and long-horizon medical tasks. Built on [Ling-3.1-flash](https://huggingface.co/inclusionAI/Ling-3.1-flash), it has **560 billion total parameters**, activates **25 billion parameters per token**, and supports a **1-million-token context window**.",
-      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/af553189673cc8cf33b0bbc1c7d5b097e23d116d/README.md",
+      "link": "https://huggingface.co/inclusionAI/LingSante-3.1-flash/blob/ed0e58e6031460327cbb7c6fbe84bde7ba015762/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -236,6 +236,25 @@
       "released_on": "2026-11-18",
       "report_kind": "model card",
       "total_parameters": 774434002142
+    },
+    {
+      "id": "tencent--wepocketmodel1-0-4b",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "Tencent",
+      "model": "WePocketModel1.0-4B",
+      "highlights": "WePM uses Multi-Granularity Visual Budgeting (MGVB) to allocate visual tokens across global, regional, and fine-grained views. The runtime uses separate learned slots for embedding and decision. [Architecture overview](https://github.com/Tencent/WePocketModel#reconciling-conflicts-in-a-unified-model)",
+      "link": "https://huggingface.co/tencent/WePocketModel1.0-4B/blob/47fb682a20f1c3af96628bf81e3f43d9c3b5525d/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-11-17",
+      "report_kind": "model card",
+      "total_parameters": 4539265536
     },
     {
       "id": "tencent--wemm-video-9b",
@@ -330,7 +349,7 @@
       "org": "Tencent",
       "model": "Hy4-flash",
       "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
-      "link": "https://huggingface.co/tencent/Hy4-flash/blob/b2498eba6a1a3f9bbcab4190bc1313a3c7010c2f/README.md",
+      "link": "https://huggingface.co/tencent/Hy4-flash/blob/eccd3123eec73f2040f4c9ed0de1883593470510/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -3618,29 +3637,6 @@
       "released_on": "2026-06-09"
     },
     {
-      "id": "minimax--minimax-m3",
-      "date": "2026-06",
-      "year": 2026,
-      "month": 6,
-      "org": "MiniMax",
-      "model": "MiniMax M3",
-      "highlights": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enablin",
-      "link": "https://arxiv.org/abs/2606.13392v2",
-      "file": "",
-      "camp": "China-based Labs",
-      "is_milestone": false,
-      "tags": [
-        "Reasoning / CoT",
-        "Agent & Coding",
-        "MoE",
-        "Open Weights"
-      ],
-      "released_on": "2026-06-01",
-      "report_kind": "technical report",
-      "total_parameters": 427040140160,
-      "document_published_on": "2026-06-11"
-    },
-    {
       "id": "2026-06_gemini_3_5_audio__live_translate",
       "date": "2026-06",
       "year": 2026,
@@ -3656,6 +3652,29 @@
         "Audio & Speech",
         "Medical & Science"
       ]
+    },
+    {
+      "id": "minimax--minimax-m3",
+      "date": "2026-05",
+      "year": 2026,
+      "month": 5,
+      "org": "MiniMax",
+      "model": "MiniMax M3",
+      "highlights": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMax Sparse Attention (MSA), a blockwise sparse attention built upon Grouped Query Attention (GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enablin",
+      "link": "https://arxiv.org/abs/2606.13392v2",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Agent & Coding",
+        "MoE",
+        "Open Weights"
+      ],
+      "released_on": "2026-05-31",
+      "report_kind": "technical report",
+      "total_parameters": 427040140160,
+      "document_published_on": "2026-06-11"
     },
     {
       "id": "stepfun--step-3-7-flash",
