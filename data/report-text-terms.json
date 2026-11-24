@@ -419,19 +419,6 @@
         "Vision-Language"
       ]
     },
-    "1897779bd958bd153b8c0c3d067268e25d7aeb7e652bffa7d729ae382646a093": {
-      "check_on": "2036-11-20",
-      "revision": "dbbc622262c5d0b067c22a61d1207a4909778f6d5048e752d412ba33fedeafb3",
-      "source": "model card",
-      "terms": [
-        "MLA",
-        "MoE",
-        "Multi-token Prediction",
-        "Multimodal",
-        "Reasoning",
-        "Speculative Decoding"
-      ]
-    },
     "1b798d37e9bb542ed1f2b2fb7e884f16e705731eb52aae9582b844030ff475a9": {
       "check_on": "2026-12-14",
       "revision": "a3b90325fdb8f95a2afc158ec4f657df78a33b7f15c8e53b3f69901499b2dca0",
@@ -909,6 +896,30 @@
       "source": "source page",
       "terms": [
         "Reinforcement Learning"
+      ]
+    },
+    "3e12850a746526d4f1957284f42f3a954c29e24ceee925f1ee4c96c0adcb1d5f": {
+      "check_on": "2036-11-21",
+      "revision": "c2002f828883151e0e1dd85861aa8357267f46380687912746f5c2f0c74a2169",
+      "source": "model card",
+      "terms": [
+        "Agentic Coding",
+        "Distillation",
+        "Fine-tuning",
+        "FP8",
+        "KV Cache",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multi-token Prediction",
+        "Online Distillation",
+        "Post-training",
+        "Quantization",
+        "Reasoning",
+        "Sparse Attention",
+        "Speculative Decoding",
+        "Token Prediction",
+        "Tokenizer"
       ]
     },
     "3e701eed2887d31237c500ee3ca669545886f537520c4d0d301b2bef2ef65d7d": {
@@ -1635,6 +1646,17 @@
         "Speculative Decoding"
       ]
     },
+    "64c65b76b54138820f1b6c66f60cce5ff24570424121c2ff13c4d2c4eb250049": {
+      "check_on": "2036-11-21",
+      "revision": "fa1ad2f6788b3872807a47af16c7e19773bc0ad707d7a770625ec17ff22eb0a9",
+      "source": "model card",
+      "terms": [
+        "Long Context",
+        "MoE",
+        "Quantization",
+        "Retrieval"
+      ]
+    },
     "64db3e9feb199dc48f5ab9db3b2646372b425bad1cda31c4459e22bbb39a0a5d": {
       "check_on": "2026-12-18",
       "revision": "a8fcdca046b39a2c369850db7007caa884906ea28ea6c79d6ae8eba77ca05398",
@@ -1674,24 +1696,6 @@
         "Agentic Coding",
         "Reasoning",
         "Supervised Fine-tuning"
-      ]
-    },
-    "6793d99d7be822cbd70c0489246122fc38e7e7ca2368549dade747a0424e822a": {
-      "check_on": "2036-11-20",
-      "revision": "07d36e34ccc2cd097c6a6340732bc67f4654dc9fa4db614c1ea57903eff61ed8",
-      "source": "model card",
-      "terms": [
-        "Dense Model",
-        "FlashAttention",
-        "FP8",
-        "Instruction Tuning",
-        "Long Context",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Retrieval",
-        "Tensor Parallelism",
-        "Video Understanding"
       ]
     },
     "685778d763865fc5d78393a77c532220400bd6205f0bbc39abf7402da6ac404f": {
@@ -2472,6 +2476,24 @@
         "Tool Use"
       ]
     },
+    "991016bdd5c54ce799b599899375ad3c43f0572655adb24ed3e8ce0abe33556a": {
+      "check_on": "2036-11-21",
+      "revision": "dba95ed1c7b2aa27f31904df2add986cc08c5aa112b68b3c06050e88beae5691",
+      "source": "model card",
+      "terms": [
+        "Dense Model",
+        "FlashAttention",
+        "FP8",
+        "Instruction Tuning",
+        "Long Context",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Retrieval",
+        "Tensor Parallelism",
+        "Video Understanding"
+      ]
+    },
     "99d44169d8a8316fd0d436631486680b92b963df54c5f455b71e352bcc9aab03": {
       "check_on": "2036-11-10",
       "revision": "cec2e6b8d0bcaaff5dccfe385873b5449d2dc26022032c81fa8d05ea2a8ad393",
@@ -2939,24 +2961,6 @@
         "Training Data"
       ]
     },
-    "b8198ba2ad748a368178d31a8f0843980115a0f57c0d16b00e336ab9bb6d5771": {
-      "check_on": "2036-11-20",
-      "revision": "16f15a86fb428f0b79a41441fabda22696b992f59407f9e181a05af23179174f",
-      "source": "model card",
-      "terms": [
-        "FlashAttention",
-        "FP8",
-        "Instruction Tuning",
-        "Long Context",
-        "MoE",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Retrieval",
-        "Tensor Parallelism",
-        "Video Understanding"
-      ]
-    },
     "b8fdd5220b17844b06c28b91d75179beaecd4aae50bd4def67e36c3b04cb4c61": {
       "check_on": "2036-11-10",
       "revision": "acfa3c45e6543e68d80b37a37173ea148f8957384739f34a09b7904a15d868c3",
@@ -2975,6 +2979,19 @@
         "Training Data",
         "Video Inference",
         "Video Training"
+      ]
+    },
+    "b9a7c1ea2f9a1800780ab28785b51bc43cffe4c49dfde026f20505060c8170df": {
+      "check_on": "2036-11-21",
+      "revision": "0d951ba70458f729975955ebb3d05c6c4e70ef61313a3572dccc790f9991ba55",
+      "source": "model card",
+      "terms": [
+        "MLA",
+        "MoE",
+        "Multi-token Prediction",
+        "Multimodal",
+        "Reasoning",
+        "Speculative Decoding"
       ]
     },
     "ba02465852e25b081c3098023ff7f79622cb3df1a84673d8d828e0a68087ded9": {
@@ -3548,18 +3565,6 @@
         "Training Data"
       ]
     },
-    "d79498a68e6eccc7b7631cc97a59ae557304d2c3cff1182b4d509a669d84c084": {
-      "check_on": "2026-12-23",
-      "revision": "7f118c16a266f62eabe7f30ae48bf1a509f4fbbd5433b0722b68bc1e7a7aa0ea",
-      "source": "source page",
-      "terms": [
-        "Diffusion",
-        "Image Generation",
-        "Post-training",
-        "Reasoning",
-        "Training Data"
-      ]
-    },
     "d7d8f85d87b95945ac3fdafe802407c8776d2bd2468c5c891ebbbc5a384e392b": {
       "check_on": "2036-11-10",
       "revision": "1b648676470e5a17f497f3ccdee84ed5c2b48f23302411c867ce041c2c343795",
@@ -3632,24 +3637,6 @@
         "Token Prediction",
         "Tokenizer",
         "Training Data"
-      ]
-    },
-    "d9d35ecf9355c29b528c96dc1564ac302e9b03e0b1563f023d931c3227cf0a86": {
-      "check_on": "2036-11-20",
-      "revision": "c28ccbb5a8e62f0a165b27188823cafee60fdcaf60e3327280a0817e8337ba73",
-      "source": "model card",
-      "terms": [
-        "Dense Model",
-        "FlashAttention",
-        "FP8",
-        "Instruction Tuning",
-        "Long Context",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Retrieval",
-        "Tensor Parallelism",
-        "Video Understanding"
       ]
     },
     "dc37a18818462816a4cfe8e595c660cb652a71bad20e71a08aed483aeb598499": {
@@ -3786,12 +3773,48 @@
         "Training Data"
       ]
     },
+    "df8940a26538f0ed184f18b3b2ad6db76291b981477ae5d4c9469b0d1566a65f": {
+      "check_on": "2036-11-21",
+      "revision": "0464bb4967b1941082ae7386d415fdf416b5487b571ebd00fd4b63780b6630cd",
+      "source": "model card",
+      "terms": [
+        "FlashAttention",
+        "FP8",
+        "Instruction Tuning",
+        "Long Context",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Retrieval",
+        "Tensor Parallelism",
+        "Video Understanding"
+      ]
+    },
     "dfbaff036681afa916b2e2ac31595eb7dcb4734ac4fd133b628e0183e1f2142c": {
       "check_on": "2036-11-10",
       "revision": "c99b1c173a09e48f739defe72a00adc03be381651c23f13728bf1c992ffbcd92",
       "source": "model card",
       "terms": [
         "Image Generation"
+      ]
+    },
+    "e15a1f3b03de47986d9cbbdca6af299ddee901cfdfa291b7750b3dbea3406c60": {
+      "check_on": "2036-11-21",
+      "revision": "7fb16894e5ec36b4877e6189bd49967d1ddd7b10a7f4828f29a949868b32de29",
+      "source": "model card",
+      "terms": [
+        "Dense Model",
+        "FlashAttention",
+        "FP8",
+        "Instruction Tuning",
+        "Long Context",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Retrieval",
+        "Tensor Parallelism",
+        "Video Understanding"
       ]
     },
     "e32bc1d70ec69a31b199da7395b31ca86779b737c7a21e6c83fc467353942db8": {

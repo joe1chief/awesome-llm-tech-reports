@@ -2642,6 +2642,7 @@
       "forms": [
         "Preview"
       ],
+      "hub_task": "text-generation",
       "id": "baidu--ernie-5-5-flash-preview",
       "key": "baidu/ernie-5-5-flash-preview",
       "model": "ERNIE 5.5 Flash Preview",
@@ -2649,11 +2650,11 @@
       "release_url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
       "released_on": "2026-11-11",
       "report": {
-        "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
-        "id": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
-        "kind": "official technical page",
-        "revision": "e0275d88e0fb3cfb14b3964f9405fa3f7ef66cb20ce36987447e8d27c8dc1db8",
-        "url": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/"
+        "highlights": "ERNIE 5.5 Flash Preview is the first post-trained model built on [ERNIE 5.5 Flash Base](https://huggingface.co/baidu/ERNIE-5.5-Flash-Base), which we released earlier. It is a Mixture-of-Experts (MoE) language model with **280B total parameters, 14B of them active per token**, and a **1M-token context window**. It does well at coding, 3D modeling, knowledge work and content creation, scores competitively on major benchmarks, and still decodes quickly.",
+        "id": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview/README.md",
+        "kind": "model card",
+        "revision": "ace1100dcde7bf4eb06add6ae11ce4f43a11ddfe",
+        "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview/blob/ace1100dcde7bf4eb06add6ae11ce4f43a11ddfe/README.md"
       },
       "total_parameters": 280000000000
     },
@@ -3826,6 +3827,7 @@
       "total_parameters": 8209997600
     },
     {
+      "base_model": "nvidia/nvidia-nemotron-3.5-bolt-e4b-bf16",
       "hub_task": "text-generation",
       "id": "nvidia--nvidia-nemotron-3-5-bolt-e4b-4gb",
       "key": "nvidia/nvidia-nemotron-3-5-bolt-e4b-4gb",
@@ -4802,8 +4804,8 @@
         "highlights": "We introduce **Ling-3.2-air**, an open-weight model that shares the same native multimodal architecture as [**Ling-3.0-flash-VL**](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL). Compared with its predecessor, Ling-3.2-air shows stronger performance in workflow automation and reasoning over professional documents. Its **AutomationBench-AA** score rises from 15.7% to **61%**, while its **GDP.pdf** all-pass rate increases from 8.4% to **16%**. On **AA-Briefcase v1.1**, its Elo rating rises from 987 to **1340**, a gain of **353 points**. On **Termina",
         "id": "https://huggingface.co/inclusionAI/Ling-3.2-air/README.md",
         "kind": "model card",
-        "revision": "1613b1a4dcc6aa0d8f346606628cd9a92061a525",
-        "url": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/1613b1a4dcc6aa0d8f346606628cd9a92061a525/README.md"
+        "revision": "ff099487f6f57165e6fa9386ad61fddfafc78b76",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/ff099487f6f57165e6fa9386ad61fddfafc78b76/README.md"
       },
       "total_parameters": 127920654544
     },
@@ -4819,8 +4821,8 @@
         "highlights": "**WeMM-Ecom-35B-A3B** is a mixture-of-experts model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
         "id": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/README.md",
         "kind": "model card",
-        "revision": "1d8bc85c58d7f3a6469bb455054375d33f7a2b18",
-        "url": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/1d8bc85c58d7f3a6469bb455054375d33f7a2b18/README.md"
+        "revision": "0cdd0771547284fb8627c5ea707b2ef444970aec",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/0cdd0771547284fb8627c5ea707b2ef444970aec/README.md"
       },
       "total_parameters": 35107181936
     },
@@ -4836,8 +4838,8 @@
         "highlights": "**WeMM-Ecom-4B** is a 4B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
         "id": "https://huggingface.co/tencent/WeMM-Ecom-4B/README.md",
         "kind": "model card",
-        "revision": "c3e3ed8e6af28d868eaadfebad60167385d82308",
-        "url": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/c3e3ed8e6af28d868eaadfebad60167385d82308/README.md"
+        "revision": "6b89c780d51a52fe1e178ae9d7499d5ad0393586",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/6b89c780d51a52fe1e178ae9d7499d5ad0393586/README.md"
       },
       "total_parameters": 4539265536
     },
@@ -4853,10 +4855,27 @@
         "highlights": "**WeMM-Ecom-9B** is a 9B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
         "id": "https://huggingface.co/tencent/WeMM-Ecom-9B/README.md",
         "kind": "model card",
-        "revision": "95f26d457079fcb14cd35b932e84e9d23d8cb1de",
-        "url": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/95f26d457079fcb14cd35b932e84e9d23d8cb1de/README.md"
+        "revision": "9761812e30c6948ebcbde818caafc26f5a6ea89d",
+        "url": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/9761812e30c6948ebcbde818caafc26f5a6ea89d/README.md"
       },
       "total_parameters": 9409813744
+    },
+    {
+      "base_model": "xiaomimimo/mimo-v2.6-flash-rl",
+      "hub_task": "image-text-to-text",
+      "id": "nvidia--mimo-v2-6-flash-rl-nvfp4",
+      "key": "nvidia/mimo-v2-6-flash-rl-nvfp4",
+      "model": "MiMo-V2.6-Flash-RL-NVFP4",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/MiMo-V2.6-Flash-RL-NVFP4",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "The NVIDIA MiMo-V2.6-Flash-RL-NVFP4 model is the quantized version of Xiaomi MiMo's MiMo-V2.6-Flash-RL model, which is an auto-regressive language model that uses an optimized transformer architecture. MiMo-V2.6-Flash-RL is a sparse Mixture-of-Experts model with 309B total parameters, 15B activated parameters, a 1,048,576-token context window, and text, image, video, and audio input. For more information, please check [here](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL). The NVIDIA MiMo-V2.6-Flash-RL-NVFP4 model is quantized with [Model Optimizer",
+        "id": "https://huggingface.co/nvidia/MiMo-V2.6-Flash-RL-NVFP4/README.md",
+        "kind": "model card",
+        "revision": "a8e51405a16b441ff0a08ef272ec6256d6ac822a",
+        "url": "https://huggingface.co/nvidia/MiMo-V2.6-Flash-RL-NVFP4/blob/a8e51405a16b441ff0a08ef272ec6256d6ac822a/README.md"
+      }
     }
   ],
   "version": 1

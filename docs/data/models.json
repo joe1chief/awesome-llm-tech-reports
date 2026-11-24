@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 298,
+    "total_models": 299,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -15,14 +15,15 @@
     },
     "camp_breakdown": {
       "China-based Labs": 160,
+      "Other Global": 66,
       "OpenAI": 18,
       "Google": 38,
-      "Other Global": 65,
       "Anthropic": 17
     },
     "org_breakdown": {
       "InclusionAI (Ant Group)": 38,
       "Tencent": 30,
+      "NVIDIA": 42,
       "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
@@ -36,7 +37,6 @@
       "Moonshot AI": 3,
       "InternLM": 10,
       "DeepSeek": 6,
-      "NVIDIA": 41,
       "OpenBMB": 3,
       "xAI": 5,
       "StepFun": 3,
@@ -48,12 +48,12 @@
     },
     "tag_breakdown": {
       "Reasoning / CoT": 121,
-      "Vision & Multimodal": 131,
+      "Vision & Multimodal": 132,
       "Open Weights": 12,
       "Medical & Science": 51,
-      "MoE": 63,
-      "Video": 38,
-      "Audio & Speech": 37,
+      "MoE": 64,
+      "Video": 39,
+      "Audio & Speech": 38,
       "Agent & Coding": 111
     },
     "monthly_trend": [
@@ -147,7 +147,7 @@
       },
       {
         "month": "2026-11",
-        "count": 32
+        "count": 33
       }
     ]
   },
@@ -160,7 +160,7 @@
       "org": "InclusionAI (Ant Group)",
       "model": "Ling-3.2-air",
       "highlights": "We introduce **Ling-3.2-air**, an open-weight model that shares the same native multimodal architecture as [**Ling-3.0-flash-VL**](https://huggingface.co/inclusionAI/Ling-3.0-flash-VL). Compared with its predecessor, Ling-3.2-air shows stronger performance in workflow automation and reasoning over professional documents. Its **AutomationBench-AA** score rises from 15.7% to **61%**, while its **GDP.pdf** all-pass rate increases from 8.4% to **16%**. On **AA-Briefcase v1.1**, its Elo rating rises from 987 to **1340**, a gain of **353 points**. On **Termina",
-      "link": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/1613b1a4dcc6aa0d8f346606628cd9a92061a525/README.md",
+      "link": "https://huggingface.co/inclusionAI/Ling-3.2-air/blob/ff099487f6f57165e6fa9386ad61fddfafc78b76/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -224,7 +224,7 @@
       "org": "Tencent",
       "model": "WeMM-Ecom-9B",
       "highlights": "**WeMM-Ecom-9B** is a 9B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
-      "link": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/95f26d457079fcb14cd35b932e84e9d23d8cb1de/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-9B/blob/9761812e30c6948ebcbde818caafc26f5a6ea89d/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -244,7 +244,7 @@
       "org": "Tencent",
       "model": "WeMM-Ecom-4B",
       "highlights": "**WeMM-Ecom-4B** is a 4B-scale dense model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
-      "link": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/c3e3ed8e6af28d868eaadfebad60167385d82308/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-4B/blob/6b89c780d51a52fe1e178ae9d7499d5ad0393586/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -264,7 +264,7 @@
       "org": "Tencent",
       "model": "WeMM-Ecom-35B-A3B",
       "highlights": "**WeMM-Ecom-35B-A3B** is a mixture-of-experts model in the WeMM-Ecom family developed by **WeChat Vision, Tencent**. It combines fine-grained e-commerce understanding with broad visual-language and reasoning capabilities and supports **hybrid thinking**.",
-      "link": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/1d8bc85c58d7f3a6469bb455054375d33f7a2b18/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Ecom-35B-A3B/blob/0cdd0771547284fb8627c5ea707b2ef444970aec/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -396,6 +396,27 @@
       "is_milestone": false,
       "tags": [
         "Reasoning / CoT",
+        "Vision & Multimodal",
+        "Audio & Speech",
+        "Video",
+        "MoE"
+      ],
+      "released_on": "2026-11-17",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--mimo-v2-6-flash-rl-nvfp4",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "NVIDIA",
+      "model": "MiMo-V2.6-Flash-RL-NVFP4",
+      "highlights": "The NVIDIA MiMo-V2.6-Flash-RL-NVFP4 model is the quantized version of Xiaomi MiMo's MiMo-V2.6-Flash-RL model, which is an auto-regressive language model that uses an optimized transformer architecture. MiMo-V2.6-Flash-RL is a sparse Mixture-of-Experts model with 309B total parameters, 15B activated parameters, a 1,048,576-token context window, and text, image, video, and audio input. For more information, please check [here](https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL). The NVIDIA MiMo-V2.6-Flash-RL-NVFP4 model is quantized with [Model Optimizer",
+      "link": "https://huggingface.co/nvidia/MiMo-V2.6-Flash-RL-NVFP4/blob/a8e51405a16b441ff0a08ef272ec6256d6ac822a/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
         "Vision & Multimodal",
         "Audio & Speech",
         "Video",
@@ -579,8 +600,8 @@
       "month": 11,
       "org": "Baidu",
       "model": "ERNIE 5.5 Flash Preview",
-      "highlights": "ERNIE 5.5 Flash Preview has 280B total parameters, 14B active and a 1M-token context, with across-the-board improvements in coding, agentic tasks, knowledge work and deep research. The weights will be open-sourced under Apache 2.0 soon.",
-      "link": "https://ernie.baidu.com/release/ernie-5-5-flash-preview/",
+      "highlights": "ERNIE 5.5 Flash Preview is the first post-trained model built on [ERNIE 5.5 Flash Base](https://huggingface.co/baidu/ERNIE-5.5-Flash-Base), which we released earlier. It is a Mixture-of-Experts (MoE) language model with **280B total parameters, 14B of them active per token**, and a **1M-token context window**. It does well at coding, 3D modeling, knowledge work and content creation, scores competitively on major benchmarks, and still decodes quickly.",
+      "link": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview/blob/ace1100dcde7bf4eb06add6ae11ce4f43a11ddfe/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -589,7 +610,7 @@
         "MoE"
       ],
       "released_on": "2026-11-11",
-      "report_kind": "official technical page",
+      "report_kind": "model card",
       "total_parameters": 280000000000
     },
     {
