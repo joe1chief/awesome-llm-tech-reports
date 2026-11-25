@@ -4704,8 +4704,8 @@
         "highlights": "**WeMM-Video-35B-A3B** is the mixture-of-experts (35B total, 3B active) checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
         "id": "https://huggingface.co/tencent/WeMM-Video-35BA3B/README.md",
         "kind": "model card",
-        "revision": "28f693611174f6228f665bddfb77ed0751362500",
-        "url": "https://huggingface.co/tencent/WeMM-Video-35BA3B/blob/28f693611174f6228f665bddfb77ed0751362500/README.md"
+        "revision": "c20f1842f365616d6a13ed6937e88488ca53d9b3",
+        "url": "https://huggingface.co/tencent/WeMM-Video-35BA3B/blob/c20f1842f365616d6a13ed6937e88488ca53d9b3/README.md"
       }
     },
     {
@@ -4876,6 +4876,57 @@
         "revision": "a8e51405a16b441ff0a08ef272ec6256d6ac822a",
         "url": "https://huggingface.co/nvidia/MiMo-V2.6-Flash-RL-NVFP4/blob/a8e51405a16b441ff0a08ef272ec6256d6ac822a/README.md"
       }
+    },
+    {
+      "hub_task": "text-to-image",
+      "id": "nvidia--nemotron-labs-image-30b-a3b",
+      "key": "nvidia/nemotron-labs-image-30b-a3b",
+      "model": "Nemotron-Labs-Image-30B-A3B",
+      "org": "NVIDIA",
+      "release_url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+      "released_on": "2026-09-24",
+      "report": {
+        "highlights": "2025-12-23 Nemotron 3 Nano: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning NVIDIA Abstract. We present Nemotron 3 Nano 30B-A3B, a Mixture-of-Experts hybrid Mamba- Transformer language model. Nemotron 3 Nano was pretrained on 25 trillion text tokens, including more than 3 trillion new unique tokens over Nemotron 2, followed by supervised fine tuning and large-scale RL on diverse environments. Nemotron 3 Nano achieves better accuracy than our previous generation Nemotron 2 Nano while activating less than half of the",
+        "id": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf",
+        "kind": "technical report",
+        "revision": "d3787f5cd9cef64bb3fe20db345aec1a54cde1dbda99fbac96595105048f49ed",
+        "url": "https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf"
+      },
+      "total_parameters": 32634904896
+    },
+    {
+      "hub_task": "translation",
+      "id": "tencent--hy-mt3-7b",
+      "key": "tencent/hy-mt3-7b",
+      "model": "Hy-MT3-7B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy-MT3-7B",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
+        "id": "https://huggingface.co/tencent/Hy-MT3-7B/README.md",
+        "kind": "model card",
+        "revision": "f83bea866d226a9fcca25c34e7422d7ec2f2fa5a",
+        "url": "https://huggingface.co/tencent/Hy-MT3-7B/blob/f83bea866d226a9fcca25c34e7422d7ec2f2fa5a/README.md"
+      },
+      "total_parameters": 7504568320
+    },
+    {
+      "hub_task": "translation",
+      "id": "tencent--hy-mt3-30b-a3b",
+      "key": "tencent/hy-mt3-30b-a3b",
+      "model": "Hy-MT3-30B-A3B",
+      "org": "Tencent",
+      "release_url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B",
+      "released_on": "2026-11-17",
+      "report": {
+        "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
+        "id": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/README.md",
+        "kind": "model card",
+        "revision": "08ae9acea91abe265c6236e757e49d8851e1ce06",
+        "url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/08ae9acea91abe265c6236e757e49d8851e1ce06/README.md"
+      },
+      "total_parameters": 30064725888
     }
   ],
   "version": 1

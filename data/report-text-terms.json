@@ -577,6 +577,53 @@
         "Training Data"
       ]
     },
+    "25258e9bbe36c26e06dd6cb162dac689196d9a4f1e4c01134be7d123841a53cf": {
+      "check_on": "2026-12-25",
+      "revision": "027033102ad47d450320edf8170985f4a4f97cb9126d9197522e3b2af546948c",
+      "source": "source PDF",
+      "terms": [
+        "AdamW",
+        "Agentic Coding",
+        "Agentic Reasoning",
+        "Cache Quantization",
+        "Chain of Thought",
+        "Code Generation",
+        "Context Parallelism",
+        "Curriculum Sampling",
+        "Curriculum Training",
+        "Dynamic Sampling",
+        "Embeddings",
+        "Expert Parallelism",
+        "Fine-tuning",
+        "FP8",
+        "FP8 Quantization",
+        "Grouped Query Attention",
+        "GRPO",
+        "Instruction Tuning",
+        "KV Cache",
+        "Layer Quantization",
+        "Long Context",
+        "Model Post Training",
+        "MoE",
+        "Pipeline Parallelism",
+        "Post Reasoning",
+        "Post-training",
+        "Pre-training",
+        "Quantization",
+        "Query Attention",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Retrieval",
+        "Reward Model",
+        "RLHF",
+        "Self Attention",
+        "Supervised Fine-tuning",
+        "Synthetic Data",
+        "Tensor Parallelism",
+        "Tool Use",
+        "Training Data"
+      ]
+    },
     "2869273e2d01cccce129403edc2026112f2fc3d4ee99280c27d7cb76aca77aff": {
       "check_on": "2026-12-16",
       "revision": "e7557c4c03a7cdb7a84ef5d8540abe9a8f77f35db8bcfda46d3e1020c04f7cca",
@@ -1382,6 +1429,23 @@
         "Reasoning",
         "Tool Use",
         "Video Generation"
+      ]
+    },
+    "58f76e6782296232f5b5ff3a0bd5c00476a506d138bac1d47eb98a33036f08af": {
+      "check_on": "2036-11-22",
+      "revision": "f797674dbb7122b30eb094d7fa8b8868844bf90c43c719d1f452029d54df2dd8",
+      "source": "model card",
+      "terms": [
+        "Fine-tuning",
+        "FP8",
+        "FP8 Quantization",
+        "Instruction Tuning",
+        "LoRA",
+        "Model FP8 Quantization",
+        "MoE",
+        "Parameter Fine Tuning",
+        "Quantization",
+        "Speculative Decoding"
       ]
     },
     "5964d37f50b3a514945a82d423a5d784fe5014c8ad5696f9e44b110c5b209118": {
@@ -2456,6 +2520,23 @@
         "Supervised Fine-tuning"
       ]
     },
+    "98109826c759b735043ecffaacfb9050befa01c4f3c8a5c2880238016734a436": {
+      "check_on": "2036-11-22",
+      "revision": "fd0c3079813ae45433958f9e8021d633fe54d4b460d44c7b6fee8d51af2c4f72",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "FP8",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Tensor Parallelism",
+        "Text Generation",
+        "Video Understanding"
+      ]
+    },
     "98fa5ac065c6dd76b45c811ae35e1ee033189a89ef0d6bb4b4d24d75a883dbc3": {
       "check_on": "2036-11-10",
       "revision": "3c9f0ad24f0c8db29d2b9e21353f27b8625c94a645bba66aeea298e341a744f5",
@@ -3195,23 +3276,6 @@
         "Value Compression"
       ]
     },
-    "bdcc80e0ba3c66b3eba8801d7a91ebb76d0bca033bdfb6777c55e5d28597c09d": {
-      "check_on": "2036-11-18",
-      "revision": "e52bedab45256bbf99eca49e6452a40b8ec3be84cf8e99c1f5844f6e4d28f903",
-      "source": "model card",
-      "terms": [
-        "Audio Understanding",
-        "FP8",
-        "MoE",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Tensor Parallelism",
-        "Text Generation",
-        "Video Understanding"
-      ]
-    },
     "be9bc722717777559c39c1e5e0807ea0b7cdbb06a1f89e3e1bac870a6f021e4d": {
       "check_on": "2036-11-10",
       "revision": "13da9b7056393bfc810f84f2db0e4ca54101c928553a2af1e8c2a4e2629c2658",
@@ -3488,6 +3552,23 @@
         "Synthetic Data",
         "Tool Use",
         "Training Data"
+      ]
+    },
+    "d1da05c408c2d9256e22d074fb33b14b906ad013b35862fd288f26b18f98cde9": {
+      "check_on": "2036-11-22",
+      "revision": "95ea4da962f62b4ee031e67c70b91d06149baeb5488bb64ad53f0bc023f60f0f",
+      "source": "model card",
+      "terms": [
+        "Fine-tuning",
+        "FP8",
+        "FP8 Quantization",
+        "Instruction Tuning",
+        "LoRA",
+        "Model FP8 Quantization",
+        "MoE",
+        "Parameter Fine Tuning",
+        "Quantization",
+        "Speculative Decoding"
       ]
     },
     "d45ebdaac63c5d9401c82895c99d79d5b5e1ea837cc258753343c8290af02bfc": {
