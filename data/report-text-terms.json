@@ -11,19 +11,6 @@
         "Supervised Fine-tuning"
       ]
     },
-    "017296a71e7fad7dda42ed3b99cee13bb1ce5d9d3ca20394dba50e250fc97107": {
-      "check_on": "2036-11-18",
-      "revision": "44365b9cda219fa8b09066dd32a3cf900e2b3cd8e79bd7ad7bd1c8fb161ee45f",
-      "source": "model card",
-      "terms": [
-        "FP8",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Text Generation"
-      ]
-    },
     "032ae39a7b474333370bbb3fd9c16650315f44c496698b5221718c524a4a6fed": {
       "check_on": "2036-11-10",
       "revision": "9b882b64ca47e7efb948c61e6a493bfef870331a01aa05595de58de92136b09a",
@@ -306,6 +293,19 @@
         "Tool Use"
       ]
     },
+    "0d36b1728c31db9fcbb8e070ef1106071f21f3b97fa1e6f8560d95da662458b4": {
+      "check_on": "2036-11-22",
+      "revision": "b1b1c42b6c7882d5bab6dbdb65fe0ad0ff55ee84f7ea4ed25cffb9111e39b3f7",
+      "source": "model card",
+      "terms": [
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Text Generation"
+      ]
+    },
     "0dd3bed5c7dd1c272c8dd6d9d053b51af44b0d51adc15317494c3f0ee0081a56": {
       "check_on": "2026-12-23",
       "revision": "9402a8dee30c139c39122d109a0fd537e28d30c6004205ab25f59a881af1db3d",
@@ -370,6 +370,20 @@
         "Training Data",
         "Video Understanding",
         "Vision-Language"
+      ]
+    },
+    "11feba227ecdaed6d7ffba2ec7c84d7cd3d05b77f7f72fb9a6a72299fa9255a2": {
+      "check_on": "2036-11-22",
+      "revision": "f3a4ebbca3e3c583c450c3012565b0c07700760b8274d4e7a9fc6446ed9db14d",
+      "source": "model card",
+      "terms": [
+        "Audio Understanding",
+        "FP8",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Text Generation"
       ]
     },
     "1372b4d3eb44d925af63d89d8dab0e76a500862803b509c091457a4776507b47": {
@@ -871,22 +885,6 @@
         "Retrieval",
         "Speculative Decoding",
         "Tool Use"
-      ]
-    },
-    "33acecc99535e7cb0bea5823511b075db9dc1a0c8fe65852ac6a07cde9fa840f": {
-      "check_on": "2036-11-10",
-      "revision": "0e90f91b39f5398dbdc77f33875468b634e48d7d7ae1a6bbeb228f437947f411",
-      "source": "model card",
-      "terms": [
-        "Image Generation",
-        "Long Context",
-        "MLA",
-        "MoE",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Sparse Attention"
       ]
     },
     "33f0c5541761f14ea7a96e44554bc07090db45e9107328374207e3eebe5348f7": {
@@ -1906,20 +1904,6 @@
         "Text Generation"
       ]
     },
-    "6e7befa00fdcf2f763d025053d905922a5bef56e4903663dcf48d530fe7e220f": {
-      "check_on": "2036-11-18",
-      "revision": "d5a5d2afe7fd354c4e92cac760bc0505af4f4a81d269bfd7d21dbbc98f72e65e",
-      "source": "model card",
-      "terms": [
-        "Audio Understanding",
-        "FP8",
-        "Multimodal",
-        "Quantization",
-        "Reasoning",
-        "Reinforcement Learning",
-        "Text Generation"
-      ]
-    },
     "6ea73baba8109244c0fff8a3e687d29e35e6da348a62f06836cda15849bebbdc": {
       "check_on": "2036-11-10",
       "revision": "2f3b82ebb09a3c062e03fc5b2634a2ff95c44505ee63bde6671eb4adffa60989",
@@ -2454,6 +2438,15 @@
         "Reasoning",
         "Retrieval",
         "Supervised Fine-tuning"
+      ]
+    },
+    "92a99807f67b01b12ef70aa41b25805c3d707af568e91b940aa12220610b56c9": {
+      "check_on": "2036-11-22",
+      "revision": "f50ac6ff0062852e579dba131c998e05215e7d32f7606cc0c029583e3c178425",
+      "source": "model card",
+      "terms": [
+        "Reasoning",
+        "Video Understanding"
       ]
     },
     "93d7f6276a2a6fd838e53b6806220313b8d22a7532958462172e76fba23ad298": {
@@ -3479,6 +3472,28 @@
         "Window Attention"
       ]
     },
+    "cca0a49b60911636364dbc74ae48b89a4607310a13252dfe91f25f18dd584c4b": {
+      "check_on": "2036-11-22",
+      "revision": "ceac9cbaea4d7f8d7145b7da0347b63900daf2b2b1a55867a98cce3a6fb0f165",
+      "source": "model card",
+      "terms": [
+        "Chain of Thought",
+        "Fine-tuning",
+        "GRPO",
+        "Image Training",
+        "Long Context",
+        "Policy Optimization",
+        "Positional Encoding",
+        "Reasoning",
+        "Supervised Fine-tuning",
+        "Synthetic Data",
+        "Text Reasoning",
+        "Text Training",
+        "Tokenizer",
+        "Training Data",
+        "Vision-Language"
+      ]
+    },
     "cdcaa0205338782c4c91225e456380806bb9c399824b64357ec21c66e96b26fa": {
       "check_on": "2036-11-20",
       "revision": "1eb031c014bed4640ec70b118cf88cecd0e56c9f016c5410352252d2a0bd974b",
@@ -3571,6 +3586,20 @@
         "Speculative Decoding"
       ]
     },
+    "d275eef5192c69a80a0d58ccb9745c2de35e139d9948bb050f8cae2cf831e002": {
+      "check_on": "2036-11-22",
+      "revision": "21ab6384a475878273cbce72fdeb11c78a6d37d949af58a72bb1db6271a96661",
+      "source": "model card",
+      "terms": [
+        "Embeddings",
+        "KV Cache",
+        "Multimodal",
+        "Multimodal Retrieval",
+        "Retrieval",
+        "Tokenizer",
+        "Vision-Language"
+      ]
+    },
     "d45ebdaac63c5d9401c82895c99d79d5b5e1ea837cc258753343c8290af02bfc": {
       "check_on": "2036-11-10",
       "revision": "96f7ff1792ba5225b06e323cef4cfc270c681fd78430089bfcce185f6a6651cc",
@@ -3619,20 +3648,6 @@
         "KV Cache",
         "Quantization",
         "Speech Recognition"
-      ]
-    },
-    "d5a6c6489f2727cc448d9bfeb5da1b4e4bedaaa6e4835985c88ac9fee298afb7": {
-      "check_on": "2036-11-20",
-      "revision": "a5d43997fbc80de356c46a8cf4ac9f8796c50ecd04361d59f921d883569742e7",
-      "source": "model card",
-      "terms": [
-        "Embeddings",
-        "KV Cache",
-        "Multimodal",
-        "Multimodal Retrieval",
-        "Retrieval",
-        "Tokenizer",
-        "Vision-Language"
       ]
     },
     "d69b0e2a2d127d53d9e53ca2d52d25e47987822c589e743f273d13954b27445a": {
@@ -4097,6 +4112,22 @@
         "Token Prediction",
         "Video Understanding",
         "Vision-Language"
+      ]
+    },
+    "f1b72ff963218e4eb1dde240835671ff6c39afeb0d293858e8c2a932475ebe69": {
+      "check_on": "2036-11-22",
+      "revision": "f4f8fbe4e3e189eb67329e4d03e0644192e46c8a496abc7eb51e9913ec7f3ade",
+      "source": "model card",
+      "terms": [
+        "Image Generation",
+        "Long Context",
+        "MLA",
+        "MoE",
+        "Multimodal",
+        "Quantization",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Sparse Attention"
       ]
     },
     "f241b85782fd5cbd51be793c6ee5b674058429c1eeeaf91c1f2e698194e69d5f": {

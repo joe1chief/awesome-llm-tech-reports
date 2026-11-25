@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 302,
+    "total_models": 304,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,16 +14,17 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 162,
-      "Other Global": 67,
+      "China-based Labs": 163,
+      "Other Global": 68,
       "OpenAI": 18,
       "Google": 38,
       "Anthropic": 17
     },
     "org_breakdown": {
+      "InternLM": 11,
       "InclusionAI (Ant Group)": 38,
       "Tencent": 32,
-      "NVIDIA": 43,
+      "NVIDIA": 44,
       "OpenAI": 18,
       "Meituan": 14,
       "Google": 38,
@@ -35,7 +36,6 @@
       "Anthropic": 17,
       "Microsoft": 8,
       "Moonshot AI": 3,
-      "InternLM": 10,
       "DeepSeek": 6,
       "OpenBMB": 3,
       "xAI": 5,
@@ -47,8 +47,8 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Reasoning / CoT": 124,
-      "Vision & Multimodal": 133,
+      "Reasoning / CoT": 126,
+      "Vision & Multimodal": 134,
       "Open Weights": 12,
       "Medical & Science": 51,
       "MoE": 67,
@@ -143,15 +143,34 @@
       },
       {
         "month": "2026-10",
-        "count": 39
+        "count": 40
       },
       {
         "month": "2026-11",
-        "count": 35
+        "count": 36
       }
     ]
   },
   "models": [
+    {
+      "id": "internlm--sage-interaction",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InternLM",
+      "model": "Sage-Interaction",
+      "highlights": "The model can delegate longer tasks to a backend while continuing the conversation. The frontend handles real-time interaction, and the backend performs longer reasoning or tool-assisted tasks. When the result arrives, the frontend brings it into the ongoing conversation.",
+      "link": "https://huggingface.co/internlm/Sage-Interaction/blob/d1a9ca4b0a478203ebce882db61279fa9aecd878/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT"
+      ],
+      "released_on": "2026-11-23",
+      "report_kind": "model card",
+      "total_parameters": 9371795858
+    },
     {
       "id": "inclusionai--ling-3-2-air",
       "date": "2026-11",
@@ -327,7 +346,7 @@
       "org": "Tencent",
       "model": "WePocketModel1.0-4B",
       "highlights": "WePM uses Multi-Granularity Visual Budgeting (MGVB) to allocate visual tokens across global, regional, and fine-grained views. The runtime uses separate learned slots for embedding and decision. [Architecture overview](https://github.com/Tencent/WePocketModel#reconciling-conflicts-in-a-unified-model)",
-      "link": "https://huggingface.co/tencent/WePocketModel1.0-4B/blob/47fb682a20f1c3af96628bf81e3f43d9c3b5525d/README.md",
+      "link": "https://huggingface.co/tencent/WePocketModel1.0-4B/blob/d57517468ff546df8cb9c6da5c76319810d3523b/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -346,7 +365,7 @@
       "org": "Tencent",
       "model": "WeMM-Video-9B",
       "highlights": "**WeMM-Video-9B** is the dense 9B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
-      "link": "https://huggingface.co/tencent/WeMM-Video-9B/blob/85491a8db7c2bf61276a0a270bf1d7f10fefc3f1/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Video-9B/blob/c72d71171d1144f3b87195d2a349cea634e58e36/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -368,7 +387,7 @@
       "org": "Tencent",
       "model": "WeMM-Video-4B",
       "highlights": "**WeMM-Video-4B** is the dense 4B checkpoint in the WeMM-Video family. WeMM-Video is a Chinese–English bilingual family for joint audio-visual understanding and reasoning. It accepts text, images, audio, and video and generates text responses.",
-      "link": "https://huggingface.co/tencent/WeMM-Video-4B/blob/1c8b93ef025a107a4b48d682588544286e1260d6/README.md",
+      "link": "https://huggingface.co/tencent/WeMM-Video-4B/blob/abcbb4422b76a2a673a9ca73de1f297ae663ae6a/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -1016,7 +1035,7 @@
       "org": "Moonshot AI",
       "model": "Kimi-K3.1-Pro",
       "highlights": "Architecture Mixture-of-Experts (MoE) Total Parameters 2.8T Activated Parameters 104B Number of Layers 93 Number of Dense Layers 1 Attention-Layer Composition 69 KDA + 24 Gated DSA * Attention Hidden Dimension 7168 Number of Attention Heads 96 DSA Index Head Dimension 128 DSA Index Number of Heads 32 DSA Index Top-K 2048 Latent MoE Dimension 3584 MoE Hidden Dimension (per Expert) 3072 Number of Experts 896 Selected Experts per Token 16 Number of Shared Experts 2 Vocabulary Size 160K Context Length 1048576 Attention Mechanism KDA &amp; Gated DSA Activatio",
-      "link": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/80aff651e9b2d2f5b9f70f92a0a7a77054418e16/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -1081,6 +1100,25 @@
         "Audio & Speech"
       ],
       "released_on": "2026-10-22",
+      "report_kind": "model card"
+    },
+    {
+      "id": "nvidia--nv-reason-pathwsi",
+      "date": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "org": "NVIDIA",
+      "model": "NV-Reason-PathWSI",
+      "highlights": "NV-Reason-PathWSI is a 2D vision-language model (VLM) for pathology whole-slide image (WSI) analysis. It combines a 2D vision encoder (Vision Transformer (ViT)) with a language model and is designed for pathology report generation, general question answering, and multi-step reasoning across digitized histopathology slides.",
+      "link": "https://huggingface.co/nvidia/NV-Reason-PathWSI/blob/948617198aa4b21fc94dbfefb40ecac48273c087/README.md",
+      "file": "",
+      "camp": "Other Global",
+      "is_milestone": false,
+      "tags": [
+        "Reasoning / CoT",
+        "Vision & Multimodal"
+      ],
+      "released_on": "2026-10-21",
       "report_kind": "model card"
     },
     {
