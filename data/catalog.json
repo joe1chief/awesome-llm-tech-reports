@@ -2857,11 +2857,11 @@
       "release_url": "https://adp.tencent.com/zh/blog/tencent-cloud-adp-hunyuan-hy4-release",
       "released_on": "2026-11-04",
       "report": {
-        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text and image understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B parameters) ",
         "id": "https://huggingface.co/tencent/Hy4/README.md",
         "kind": "model card",
-        "revision": "c10c0de5b6f850703fb0a90e65d1c32b558b9167",
-        "url": "https://huggingface.co/tencent/Hy4/blob/c10c0de5b6f850703fb0a90e65d1c32b558b9167/README.md"
+        "revision": "d5189e504c89ca3bcf58a2d1b58e5a9f2ecdbe3d",
+        "url": "https://huggingface.co/tencent/Hy4/blob/d5189e504c89ca3bcf58a2d1b58e5a9f2ecdbe3d/README.md"
       },
       "total_parameters": 774434002142
     },
@@ -4598,8 +4598,8 @@
         "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
         "id": "https://huggingface.co/tencent/Hy4-flash/README.md",
         "kind": "model card",
-        "revision": "eccd3123eec73f2040f4c9ed0de1883593470510",
-        "url": "https://huggingface.co/tencent/Hy4-flash/blob/eccd3123eec73f2040f4c9ed0de1883593470510/README.md"
+        "revision": "1e3e4005da28b6ef7f53c1298b09c8e00bfc659e",
+        "url": "https://huggingface.co/tencent/Hy4-flash/blob/1e3e4005da28b6ef7f53c1298b09c8e00bfc659e/README.md"
       }
     },
     {
@@ -4614,8 +4614,8 @@
         "highlights": "**Hy4 flash** is our most cost-effective Hy model to date, featuring 220B total parameters (including 64B Engram parameters) with just 12B active parameters per token. It natively accepts text and image inputs, generates text, and supports a context window of up to 1M tokens.",
         "id": "https://huggingface.co/tencent/Hy4-flash-base/README.md",
         "kind": "model card",
-        "revision": "95b9f8239e2f63cb837c91704f070ae47332ebdf",
-        "url": "https://huggingface.co/tencent/Hy4-flash-base/blob/95b9f8239e2f63cb837c91704f070ae47332ebdf/README.md"
+        "revision": "92ea759bac93e6eda1837d474d180b368dcb69a8",
+        "url": "https://huggingface.co/tencent/Hy4-flash-base/blob/92ea759bac93e6eda1837d474d180b368dcb69a8/README.md"
       }
     },
     {
@@ -4717,11 +4717,11 @@
       "release_url": "https://huggingface.co/tencent/Hy4-base",
       "released_on": "2026-11-18",
       "report": {
-        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text and image understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B parameters) ",
         "id": "https://huggingface.co/tencent/Hy4-base/README.md",
         "kind": "model card",
-        "revision": "590e462ff0c58c07ec2e2555b3829a24718b33e1",
-        "url": "https://huggingface.co/tencent/Hy4-base/blob/590e462ff0c58c07ec2e2555b3829a24718b33e1/README.md"
+        "revision": "675c0473ce606f8f8f1e9c079de1caa79eb1db40",
+        "url": "https://huggingface.co/tencent/Hy4-base/blob/675c0473ce606f8f8f1e9c079de1caa79eb1db40/README.md"
       },
       "total_parameters": 771142535581
     },
@@ -4734,11 +4734,11 @@
       "release_url": "https://huggingface.co/tencent/Hy4-FP8",
       "released_on": "2026-11-18",
       "report": {
-        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text, image, and video understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B para",
+        "highlights": "**Hy4** is a new-generation Mixture-of-Experts (MoE) flagship model developed by the Tencent Hy Team, supporting text and image understanding. The language backbone comprises 770B total parameters, of which 49B are activated per token. It consists of 78 layers, with a standard dense FFN in the first layer and MoE FFNs in the remaining 77 layers. Each MoE layer contains 256 routed experts and 1 shared expert; every token activates the top-8 routed experts along with the shared expert. In addition to the backbone, a 5-layer DFly2 drafter (3.3B parameters) ",
         "id": "https://huggingface.co/tencent/Hy4-FP8/README.md",
         "kind": "model card",
-        "revision": "d063b5853ecf56e0776266dab28305fc17a137cc",
-        "url": "https://huggingface.co/tencent/Hy4-FP8/blob/d063b5853ecf56e0776266dab28305fc17a137cc/README.md"
+        "revision": "78037597c0ed338334957bd94f881f6853cf5dc5",
+        "url": "https://huggingface.co/tencent/Hy4-FP8/blob/78037597c0ed338334957bd94f881f6853cf5dc5/README.md"
       },
       "total_parameters": 774434002142
     },
