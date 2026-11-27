@@ -591,9 +591,9 @@
         "Training Data"
       ]
     },
-    "22443f59e904d91fba1b46bac3f9e7f767ea6f3d3a505e36e6cc8599f3dfdb09": {
+    "247cd5fa469a8c19ebebabff16214b06cd39956a5e1198bbd59a5bc535ab1d20": {
       "check_on": "2036-11-24",
-      "revision": "b1da7c51f13c1b085aa84be7f3bdf8030e1efc903416f4181713bb1d44ecc848",
+      "revision": "f17c98d59258f6919a30a88e6df5e708a124c51994c48da09e6381a60bd9941c",
       "source": "model card",
       "terms": [
         "Fine-tuning",
@@ -1763,6 +1763,23 @@
         "Supervised Fine-tuning"
       ]
     },
+    "6692f91fe003aca6aa142ec763cb76db4457853b803cb7e2f4e57ec53bc28eea": {
+      "check_on": "2036-11-24",
+      "revision": "86e6fa47ad3d20fb445b1dfdb1b156cf9af2b9aa8a93d6592c86d270cbf87c6d",
+      "source": "model card",
+      "terms": [
+        "Fine-tuning",
+        "FP8",
+        "FP8 Quantization",
+        "Instruction Tuning",
+        "LoRA",
+        "Model FP8 Quantization",
+        "MoE",
+        "Parameter Fine Tuning",
+        "Quantization",
+        "Speculative Decoding"
+      ]
+    },
     "685778d763865fc5d78393a77c532220400bd6205f0bbc39abf7402da6ac404f": {
       "check_on": "2036-11-10",
       "revision": "393c1faad03bea9610fc84b4ce482a8ca0cbdf262372d696e49f6ec6f71a1dc5",
@@ -2246,23 +2263,6 @@
         "Supervised Fine-tuning"
       ]
     },
-    "88f2cdc117c1ed5e7916ac70e18a35c98fada5f5c77866a1bd2ad1fae2211b7e": {
-      "check_on": "2036-11-24",
-      "revision": "8b2ef4f487bce10a81b18a380016428e8ea21837d19c1a6a12bdb5f88f5e3c39",
-      "source": "model card",
-      "terms": [
-        "Fine-tuning",
-        "FP8",
-        "FP8 Quantization",
-        "Instruction Tuning",
-        "LoRA",
-        "Model FP8 Quantization",
-        "MoE",
-        "Parameter Fine Tuning",
-        "Quantization",
-        "Speculative Decoding"
-      ]
-    },
     "8cf74c7ad9bf83f53897bc848ca298d049ede2f0aa0a466c3a5e4995e65374fa": {
       "check_on": "2036-11-10",
       "revision": "f6124407db5fb2b97ea43d9b62a9517df986af41f41595cee31953c78a4b6d1f",
@@ -2508,6 +2508,21 @@
       "terms": [
         "Reasoning",
         "Video Understanding"
+      ]
+    },
+    "9343f566d44a4f71eb3db1a766f11f1bf9452c6e59cac0b00315c77034ebc74f": {
+      "check_on": "2036-11-24",
+      "revision": "7a7dd507ebaf2df0097bca1a296150e659f68fef152692963aa1328282531ede",
+      "source": "model card",
+      "terms": [
+        "Fine-tuning",
+        "Instruction Alignment",
+        "Multimodal",
+        "Pre-training",
+        "Reasoning",
+        "Reinforcement Learning",
+        "Supervised Fine-tuning",
+        "Training Data"
       ]
     },
     "93d7f6276a2a6fd838e53b6806220313b8d22a7532958462172e76fba23ad298": {

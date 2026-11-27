@@ -4906,8 +4906,8 @@
         "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
         "id": "https://huggingface.co/tencent/Hy-MT3-7B/README.md",
         "kind": "model card",
-        "revision": "38d6c3c31d6b4dbdfc208e0621b822ae7bf6aeb2",
-        "url": "https://huggingface.co/tencent/Hy-MT3-7B/blob/38d6c3c31d6b4dbdfc208e0621b822ae7bf6aeb2/README.md"
+        "revision": "769b1a2c00af445807aa1b623a43f21549b9feae",
+        "url": "https://huggingface.co/tencent/Hy-MT3-7B/blob/769b1a2c00af445807aa1b623a43f21549b9feae/README.md"
       },
       "total_parameters": 7504568320
     },
@@ -4923,8 +4923,8 @@
         "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
         "id": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/README.md",
         "kind": "model card",
-        "revision": "8ef8ceef5bdf75c168756a486536ade445f668e2",
-        "url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/8ef8ceef5bdf75c168756a486536ade445f668e2/README.md"
+        "revision": "e49cfa2853de9219845c81d3e96cb1010cacf133",
+        "url": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/e49cfa2853de9219845c81d3e96cb1010cacf133/README.md"
       },
       "total_parameters": 30064725888
     },
@@ -4976,6 +4976,26 @@
         "revision": "3538f4c311cf8f5256d631ddb7f47793f741aa2e",
         "url": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design/blob/3538f4c311cf8f5256d631ddb7f47793f741aa2e/README.md"
       }
+    },
+    {
+      "forms": [
+        "Preview"
+      ],
+      "hub_task": "image-text-to-text",
+      "id": "internlm--sage-med-preview",
+      "key": "internlm/sage-med-preview",
+      "model": "Sage-Med-Preview",
+      "org": "InternLM",
+      "release_url": "https://huggingface.co/internlm/Sage-Med-Preview",
+      "released_on": "2026-11-27",
+      "report": {
+        "highlights": "**Sage-Med-Preview** is a medical multimodal model developed by the **Shanghai Artificial Intelligence Laboratory**, built on **Intern-S2-Preview** with **35B total and 3B active parameters**. It brings medical knowledge, image understanding, report generation and visual grounding into one model.",
+        "id": "https://huggingface.co/internlm/Sage-Med-Preview/README.md",
+        "kind": "model card",
+        "revision": "aff4a4afe26cceddd2c71999e605823b802e7aba",
+        "url": "https://huggingface.co/internlm/Sage-Med-Preview/blob/aff4a4afe26cceddd2c71999e605823b802e7aba/README.md"
+      },
+      "total_parameters": 35253613888
     }
   ],
   "version": 1

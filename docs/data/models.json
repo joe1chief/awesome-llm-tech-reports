@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 305,
+    "total_models": 306,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,15 +14,15 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 164,
+      "China-based Labs": 165,
       "Other Global": 68,
       "OpenAI": 18,
       "Google": 38,
       "Anthropic": 17
     },
     "org_breakdown": {
+      "InternLM": 12,
       "InclusionAI (Ant Group)": 39,
-      "InternLM": 11,
       "Tencent": 32,
       "NVIDIA": 44,
       "OpenAI": 18,
@@ -47,11 +47,11 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
-      "Vision & Multimodal": 135,
+      "Vision & Multimodal": 136,
+      "Medical & Science": 52,
+      "MoE": 68,
       "Open Weights": 13,
       "Reasoning / CoT": 126,
-      "Medical & Science": 51,
-      "MoE": 67,
       "Audio & Speech": 38,
       "Video": 36,
       "Agent & Coding": 112
@@ -147,11 +147,32 @@
       },
       {
         "month": "2026-11",
-        "count": 37
+        "count": 38
       }
     ]
   },
   "models": [
+    {
+      "id": "internlm--sage-med-preview",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InternLM",
+      "model": "Sage-Med-Preview",
+      "highlights": "**Sage-Med-Preview** is a medical multimodal model developed by the **Shanghai Artificial Intelligence Laboratory**, built on **Intern-S2-Preview** with **35B total and 3B active parameters**. It brings medical knowledge, image understanding, report generation and visual grounding into one model.",
+      "link": "https://huggingface.co/internlm/Sage-Med-Preview/blob/aff4a4afe26cceddd2c71999e605823b802e7aba/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Medical & Science",
+        "MoE"
+      ],
+      "released_on": "2026-11-27",
+      "report_kind": "model card",
+      "total_parameters": 35253613888
+    },
     {
       "id": "inclusionai--ming-image-0-2-design",
       "date": "2026-11",
@@ -507,7 +528,7 @@
       "org": "Tencent",
       "model": "Hy-MT3-7B",
       "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
-      "link": "https://huggingface.co/tencent/Hy-MT3-7B/blob/38d6c3c31d6b4dbdfc208e0621b822ae7bf6aeb2/README.md",
+      "link": "https://huggingface.co/tencent/Hy-MT3-7B/blob/769b1a2c00af445807aa1b623a43f21549b9feae/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -527,7 +548,7 @@
       "org": "Tencent",
       "model": "Hy-MT3-30B-A3B",
       "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
-      "link": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/8ef8ceef5bdf75c168756a486536ade445f668e2/README.md",
+      "link": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/e49cfa2853de9219845c81d3e96cb1010cacf133/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
