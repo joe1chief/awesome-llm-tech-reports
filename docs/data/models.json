@@ -6,7 +6,7 @@
     "pdf_base_url": "https://raw.githubusercontent.com/joe1chief/awesome-llm-tech-reports/main/"
   },
   "stats": {
-    "total_models": 304,
+    "total_models": 305,
     "total_orgs": 24,
     "milestones_count": 56,
     "date_range": {
@@ -14,15 +14,15 @@
       "end": "2026-11"
     },
     "camp_breakdown": {
-      "China-based Labs": 163,
+      "China-based Labs": 164,
       "Other Global": 68,
       "OpenAI": 18,
       "Google": 38,
       "Anthropic": 17
     },
     "org_breakdown": {
+      "InclusionAI (Ant Group)": 39,
       "InternLM": 11,
-      "InclusionAI (Ant Group)": 38,
       "Tencent": 32,
       "NVIDIA": 44,
       "OpenAI": 18,
@@ -47,9 +47,9 @@
       "Quark (Alibaba)": 1
     },
     "tag_breakdown": {
+      "Vision & Multimodal": 135,
+      "Open Weights": 13,
       "Reasoning / CoT": 126,
-      "Vision & Multimodal": 134,
-      "Open Weights": 12,
       "Medical & Science": 51,
       "MoE": 67,
       "Audio & Speech": 38,
@@ -147,11 +147,30 @@
       },
       {
         "month": "2026-11",
-        "count": 36
+        "count": 37
       }
     ]
   },
   "models": [
+    {
+      "id": "inclusionai--ming-image-0-2-design",
+      "date": "2026-11",
+      "year": 2026,
+      "month": 11,
+      "org": "InclusionAI (Ant Group)",
+      "model": "Ming-Image-0.2-Design",
+      "highlights": "Preliminary evaluation results from November 23 show that Ming ranks first among open-weight models on the overall text-to-image leaderboard.",
+      "link": "https://huggingface.co/inclusionAI/Ming-Image-0.2-Design/blob/3538f4c311cf8f5256d631ddb7f47793f741aa2e/README.md",
+      "file": "",
+      "camp": "China-based Labs",
+      "is_milestone": false,
+      "tags": [
+        "Vision & Multimodal",
+        "Open Weights"
+      ],
+      "released_on": "2026-11-25",
+      "report_kind": "model card"
+    },
     {
       "id": "internlm--sage-interaction",
       "date": "2026-11",
@@ -488,7 +507,7 @@
       "org": "Tencent",
       "model": "Hy-MT3-7B",
       "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
-      "link": "https://huggingface.co/tencent/Hy-MT3-7B/blob/f83bea866d226a9fcca25c34e7422d7ec2f2fa5a/README.md",
+      "link": "https://huggingface.co/tencent/Hy-MT3-7B/blob/38d6c3c31d6b4dbdfc208e0621b822ae7bf6aeb2/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
@@ -508,7 +527,7 @@
       "org": "Tencent",
       "model": "Hy-MT3-30B-A3B",
       "highlights": "With only 3B activated parameters, **Hy-MT3-30B-A3B achieves the best overall performance among all evaluated models in non-thinking mode**, including flagship models such as Qwen3.8-Max, Kimi-K3.1-Pro and DeepSeek-V4.1-Flash, and approaches the strongest closed-source thinking models such as GPT-6.1-Sol and Gemini-4-Argon, while surpassing models that consume **more than 30×** its inference compute. The lightweight Hy-MT3-1.8B also outperforms commercial translation APIs such as iFlytek Translator, Microsoft Translator and Qwen-MT-Flash on general trans",
-      "link": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/08ae9acea91abe265c6236e757e49d8851e1ce06/README.md",
+      "link": "https://huggingface.co/tencent/Hy-MT3-30B-A3B/blob/8ef8ceef5bdf75c168756a486536ade445f668e2/README.md",
       "file": "",
       "camp": "China-based Labs",
       "is_milestone": false,
